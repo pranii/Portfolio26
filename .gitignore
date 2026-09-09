@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+
+# Die Mediendateien werden aus Desktop/Portofolio erzeugt (npm run import).
+# Willst du sie mit ins Repository nehmen, diese Zeile loeschen — Achtung,
+# der Ordner ist knapp 300 MB gross.
+public/media/
+
+# Der Godot-Web-Export ist ~91 MB und wird mit `npm run export:spiel` erzeugt.
+public/spiel/
+
+# Rohvideo fuer den Launcher (~70 MB) — nur opener.gif wird ausgeliefert.
+public/launcher/OPENER.mp4

@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "import": "node scripts/import-assets.mjs",
+    "check": "node scripts/check-content.mjs && node scripts/smoke-test.mjs",
+    "export:spiel": "node scripts/export-game.mjs",
+    "crops": "node scripts/make-crops.mjs",
+    "launcher-gif": "node scripts/make-launcher-gif.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "gifenc": "^1.0.3",
+    "jsdom": "^30.0.1",
+    "pdf-to-img": "^7.0.0",
+    "prettier": "^3.9.6",
+    "sharp": "^0.34.2",
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.4"
+  }
+}

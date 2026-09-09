@@ -1,0 +1,1525 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════════
+   PORTFOLIO — Stylesheet
+
+   Haltung
+   ───────
+   8-Bit-Handheld, angelehnt an das monochrome Display eines Nokia 3310:
+   zwei Graustufen, Pixelraster, blockige Schrift. Keine Farbflaechen,
+   keine Verlaeufe, keine Schatten — nur An und Aus.
+
+   Prinzipien
+   ──────────
+   1  Ein Massstab.  Alle Groessen kommen aus einer Skala (Faktor 1.25),
+      alle Abstaende aus einer zweiten. Nichts wird frei geschaetzt.
+   2  Luft als Gliederung.  Abschnitte werden durch Abstand getrennt,
+      nicht durch Linien oder Kaesten. Je wichtiger der Schnitt, desto
+      groesser der Abstand.
+   3  Feste Satzbreite.  Fliesstext laeuft nie breiter als 62 Zeichen,
+      Einleitungen nie breiter als 34 — unabhaengig vom Bildschirm.
+   4  Ruhiges Raster.  Alle Bildkacheln haben dasselbe Seitenformat.
+      Was nicht hineinpasst, wird eingepasst statt beschnitten.
+   5  Zwei Farben, kein Bereich in Farbe — Bilder werden fuer den
+      Bildschirm entsaettigt statt bunt zu bleiben.
+
+   Aufbau:  1 Tokens · 2 Reset · 3 Typografie · 4 Layout · 5 Kopf
+            6 Startseite · 7 Uebersicht · 8 Projektseite · 9 Bilder
+            10 Spiel · 11 Lightbox · 12 Fuss · 13 Responsive
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── 1 Tokens ─────────────────────────────────────────────────────── */
+
+:root {
+  /* Die zwei Farben des Displays. */
+  --primary: #7d7d7d;
+  --secondary: #1c1c1e;
+
+  --paper: var(--secondary);
+  --paper-sunk: color-mix(in oklab, var(--secondary) 82%, var(--primary) 18%);
+  --ink: var(--primary);
+  --ink-soft: color-mix(in oklab, var(--primary) 80%, var(--secondary) 20%);
+  --ink-dim: color-mix(in oklab, var(--primary) 52%, var(--secondary) 48%);
+  --rule: color-mix(in oklab, var(--secondary) 65%, var(--primary) 35%);
+
+  /* Kein Bereich bekommt mehr eine eigene Farbe — nur An und Aus. */
+  --accent: var(--primary);
+  --accent-ink: var(--secondary);
+
+  --font-display: 'Press Start 2P', var(--font-mono);
+  --font: 'VT323', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-mono: 'VT323', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Groessenskala, Faktor 1.25 — jede Stufe leitet sich aus der vorigen ab */
+  --t--2: 0.64rem;
+  --t--1: 0.8rem;
+  --t-0: 1rem;
+  --t-1: 1.25rem;
+  --t-2: 1.5625rem;
+  --t-3: 1.953rem;
+  --t-4: 2.441rem;
+  --t-5: 3.052rem;
+  --t-6: 3.815rem;
+
+  /* Abstandsskala — bewusst grob, damit Zwischenwerte gar nicht erst
+     in Versuchung fuehren */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: 7rem;
+  --s-10: 10rem;
+  --s-11: 14rem;
+
+  /* Satzbreiten */
+  --measure: 62ch;
+  --measure-short: 34ch;
+
+  /* Raster */
+  --shell: 78rem;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --tile-ratio: 3 / 2;
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ── 2 Reset ──────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ── 3 Typografie ─────────────────────────────────────────────────── */
+
+/* Auszeichnung: klein, weit gesperrt, Versalien. Traegt alle Labels. */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* Grosse Titel sitzen eng — bei dieser Groesse wirken normale Abstaende
+   auseinandergefallen. */
+.h-display {
+  font-size: clamp(var(--t-4), 8vw, var(--t-6));
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.h-section {
+  font-size: clamp(var(--t-2), 3.5vw, var(--t-3));
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.prose {
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+/* Einleitungen laufen schmaler als Fliesstext — sie sollen als Block
+   gelesen werden, nicht als Absatz. */
+.lead {
+  max-width: var(--measure-short);
+  font-size: clamp(var(--t-1), 2vw, var(--t-2));
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+/* ── 4 Layout ─────────────────────────────────────────────────────── */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Abschnitte werden durch Luft getrennt, nicht durch Linien. */
+.section {
+  padding-block: var(--s-9);
+}
+.section--tight {
+  padding-block: var(--s-7);
+}
+.section--airy {
+  padding-block: var(--s-10);
+}
+
+/* Die einzige Linie, die vorkommt. */
+.rule {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+/* Kopfzeile eines Abschnitts: Label, Titel, Erklaerung. */
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.section-head__hint {
+  margin: 0;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+/* ── 5 Kopf und Pfad ──────────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-5);
+  padding: var(--s-4) var(--gutter);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header__mark {
+  font-size: var(--t-0);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--s-2) var(--s-5);
+}
+
+.site-nav a {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  padding: var(--s-1) var(--s-2);
+  transition:
+    color 0.15s steps(2),
+    background-color 0.15s steps(2);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current='page'] {
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 70;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* Feines Pixelraster ueber der ganzen Seite — die Anleihe beim
+   LCD-Raster eines Nokia 3310. */
+.grain {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image:
+    repeating-linear-gradient(0deg, var(--primary) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, var(--primary) 0 1px, transparent 1px 3px);
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 0;
+  background: var(--accent);
+  pointer-events: none;
+  transition:
+    width 0.3s var(--ease),
+    height 0.3s var(--ease),
+    margin 0.3s var(--ease);
+}
+
+.cursor[data-state='link'] {
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+}
+
+.cursor__label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+
+.cursor[data-state='link'] .cursor__label {
+  opacity: 1;
+}
+
+.wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  background: var(--paper);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  pointer-events: none;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  padding-top: var(--s-6);
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+}
+
+.breadcrumb a {
+  transition: color 0.3s var(--ease);
+}
+.breadcrumb a:hover {
+  color: var(--ink);
+}
+.breadcrumb [aria-current] {
+  color: var(--ink);
+}
+
+/* ── 5b Launcher ──────────────────────────────────────────────────── */
+
+/* Boot-Screen vor der Startseite: Opener-GIF im Hintergrund, Titel, blinkende
+   Unterzeile. Liegt ueber allem, auch der Lightbox. */
+.launcher {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  background: var(--secondary);
+  transition: opacity 0.4s steps(4);
+}
+
+.launcher.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.launcher__gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.launcher__text {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--s-3);
+  text-align: center;
+  padding: 0 var(--gutter);
+}
+
+.launcher__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-3), 8vw, var(--t-5));
+  color: var(--primary);
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s steps(3);
+}
+.launcher__title.is-visible {
+  opacity: 1;
+}
+
+.launcher__subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--t-1);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0;
+  opacity: 0;
+}
+.launcher__subtitle.is-visible {
+  opacity: 1;
+}
+
+html.launcher-active,
+html.launcher-active body {
+  overflow: hidden;
+}
+
+/* ── 6 Startseite ─────────────────────────────────────────────────── */
+
+/* Der Einstieg besteht fast nur aus Luft: Titel, Rolle, ein Pfeil zum
+   Runterscrollen. Darunter das Menue mit den drei Bereichen. */
+.hero {
+  padding-block: var(--s-10) var(--s-9);
+  display: grid;
+  gap: var(--s-5);
+  justify-items: start;
+}
+
+.hero__title {
+  font-size: clamp(var(--t-4), 9vw, 4.75rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero__role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: 0;
+}
+
+.tagbox {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: var(--s-1) var(--s-3);
+}
+
+/* Kurzer Vorstellungstext — bewusst schmal, damit er als Block gelesen
+   wird und nicht mit dem Titel konkurriert. */
+.hero__intro {
+  max-width: var(--measure-short);
+  font-size: clamp(var(--t-0), 1.6vw, var(--t-1));
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: var(--s-2) 0 0;
+}
+
+/* Pfeil als Scroll-Hinweis, im selben Pixelraster wie die Icons. */
+.hero__scroll {
+  display: block;
+  width: 28px;
+  height: 16px;
+  margin-top: var(--s-4);
+  color: var(--ink-dim);
+  animation: hero-scroll-bounce 1.6s steps(4) infinite;
+}
+.hero__scroll svg {
+  width: 100%;
+  height: 100%;
+  shape-rendering: crispEdges;
+}
+
+@keyframes hero-scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* Die drei Bereiche als Menuekacheln: Icon, Titel, sonst nichts —
+   der Rest steht auf der jeweiligen Bereichsseite. */
+.areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--s-5);
+  margin-top: var(--s-8);
+}
+
+.area {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-4);
+  padding: var(--s-7) var(--s-4);
+  border: 1px solid var(--ink);
+  text-align: center;
+  transition:
+    background-color 0.15s steps(2),
+    color 0.15s steps(2);
+}
+
+.area:hover {
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+.area__icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.area__icon svg {
+  width: 100%;
+  height: 100%;
+  shape-rendering: crispEdges;
+}
+
+.area__title {
+  font-size: var(--t-1);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ── 7 Uebersicht ─────────────────────────────────────────────────── */
+
+.intro {
+  padding-block: var(--s-8) var(--s-7);
+  display: grid;
+  gap: var(--s-5);
+}
+
+.intro__kicker {
+  margin: 0;
+}
+
+.intro__title {
+  font-size: clamp(var(--t-4), 9vw, var(--t-6));
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.intro__lead {
+  max-width: var(--measure-short);
+  font-size: clamp(var(--t-1), 2vw, var(--t-2));
+  line-height: 1.35;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.intro__count {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Karten ohne Kasten: Bild, darunter Text. Der Abstand haelt sie
+   zusammen, kein Rahmen noetig. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: var(--s-8) var(--s-6);
+  margin-top: var(--s-7);
+}
+
+.card {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+}
+
+.card__body {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.card__media {
+  display: block;
+  aspect-ratio: var(--tile-ratio);
+  background: var(--paper-sunk);
+  overflow: hidden;
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  transition:
+    transform 0.8s var(--ease),
+    filter 0.5s var(--ease);
+}
+
+.card:hover .card__media img {
+  filter: brightness(1.1);
+}
+
+/* Fotos fuellen die Karte, Plakate und Logos werden eingepasst —
+   dieselbe Regel wie in den Galerien. */
+.card__media--fill img {
+  object-fit: cover;
+}
+.card__media--fit img {
+  object-fit: contain;
+  padding: var(--s-5);
+}
+
+.card:hover .card__media--fill img {
+  transform: scale(1.03);
+}
+.card:hover .card__media--fit img {
+  transform: scale(1.015);
+}
+
+.card__placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: var(--t-2);
+  font-weight: 700;
+  color: var(--ink-dim);
+  letter-spacing: -0.02em;
+}
+
+.card__title {
+  font-size: var(--t-1);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.card__sub {
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+
+.card__meta {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.08em;
+  color: var(--ink-dim);
+}
+
+/* ── 8 Projektseite ───────────────────────────────────────────────── */
+
+.project-head {
+  padding-block: var(--s-7) 0;
+  display: grid;
+  gap: var(--s-5);
+}
+
+.project-head__kicker {
+  margin: 0;
+}
+
+.project-head__title {
+  font-size: clamp(var(--t-4), 7vw, var(--t-6));
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.project-head__sub {
+  margin: 0;
+  font-size: clamp(var(--t-1), 2.2vw, var(--t-2));
+  color: var(--ink-soft);
+  line-height: 1.3;
+  max-width: var(--measure-short);
+}
+
+/* Text links breit, Eckdaten rechts schmal — klassisches Verhaeltnis
+   etwa 3:2, damit die Spalten nicht konkurrieren. */
+.project-head__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--s-6) var(--s-8);
+  align-items: start;
+  margin-top: var(--s-5);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+
+.project-head__text {
+  margin: 0;
+  max-width: var(--measure);
+  color: var(--ink-soft);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  list-style: none;
+  margin: var(--s-5) 0 0;
+  padding: 0;
+}
+
+.tags li {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+}
+
+/* Trennzeichen statt Rahmen — spart Kontur und wirkt ruhiger. */
+.tags li + li::before {
+  content: '· ';
+  color: var(--rule);
+}
+
+.facts {
+  margin: 0;
+  display: grid;
+  gap: var(--s-3);
+}
+
+.facts__row {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: var(--s-3);
+  align-items: baseline;
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--rule);
+}
+
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.facts dd {
+  margin: 0;
+  font-size: var(--t--1);
+}
+
+/* Knopf zu Spiel oder externer Seite */
+.play {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+  margin: var(--s-6) 0 0;
+}
+
+.play__button {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--s-3) var(--s-5);
+  transition: background 0.3s var(--ease);
+}
+
+.play__button:hover {
+  background: var(--paper);
+  color: var(--ink);
+  outline: 1px solid var(--ink);
+}
+
+.play__note {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  color: var(--ink-dim);
+}
+
+/* Titelbild ueber die volle Breite, mit Luft darum */
+.project-head__cover {
+  margin: var(--s-8) 0 0;
+  background: var(--paper-sunk);
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+}
+
+.project-head__cover img {
+  width: 100%;
+  height: 100%;
+}
+.project-head__cover--fill img {
+  object-fit: cover;
+}
+
+/* Ein Plakat als Titelbild wird nicht auf 2:1 zurechtgestutzt — es steht
+   mittig auf der Flaeche, mit reichlich Luft. */
+.project-head__cover--fit {
+  aspect-ratio: auto;
+  background: var(--paper-sunk);
+}
+.project-head__cover--fit img {
+  object-fit: contain;
+  max-height: 70svh;
+  padding: var(--s-7) var(--s-6);
+}
+
+/* Kurzer Ablauf — nummerierte Liste, keine Kaesten */
+.ablauf {
+  margin-top: var(--s-8);
+  display: grid;
+  gap: var(--s-5);
+}
+
+.ablauf__label {
+  margin: 0;
+}
+
+.ablauf__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: var(--s-3) var(--s-6);
+  border-top: 1px solid var(--rule);
+  padding-top: var(--s-5);
+}
+
+.ablauf__list li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  font-size: var(--t--1);
+  color: var(--ink-soft);
+}
+
+.ablauf__num {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  color: var(--accent);
+  min-width: 1.5rem;
+}
+
+/* Schritte — der grosse Abstand zwischen ihnen ist die Gliederung */
+.steps {
+  padding-block: var(--s-9) 0;
+  display: grid;
+  gap: var(--s-10);
+}
+
+.step {
+  display: grid;
+  gap: var(--s-6);
+}
+
+/* Der Kopf eines Schritts sitzt in der linken Haelfte und laesst rechts
+   bewusst Platz — das Auge bekommt eine Pause vor den Bildern. */
+.step__head {
+  display: grid;
+  gap: var(--s-3);
+  max-width: var(--measure);
+}
+
+.step__num {
+  margin: 0;
+  color: var(--accent);
+}
+
+.step__title {
+  font-size: clamp(var(--t-2), 3.5vw, var(--t-3));
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.step__text {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+.step__downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  margin: var(--s-2) 0 0;
+}
+
+.step__downloads a {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition:
+    border-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+.step__downloads a:hover {
+  filter: brightness(1.4);
+}
+
+.step--leftover .step__title,
+.step--leftover .step__num {
+  color: var(--ink-dim);
+}
+
+/* ── 9 Bilder ─────────────────────────────────────────────────────── */
+
+/* Alle Kacheln teilen ein Seitenformat. Das ist der Unterschied
+   zwischen einem Raster und einem Haufen. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: var(--s-5);
+}
+
+.gallery--wide {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+}
+
+.figure {
+  margin: 0;
+  background: var(--paper-sunk);
+  aspect-ratio: var(--tile-ratio);
+  overflow: hidden;
+}
+
+.figure--wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 9;
+  background: var(--secondary);
+}
+.figure.is-hidden {
+  display: none;
+}
+
+.figure__button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+
+.figure__button img {
+  width: 100%;
+  height: 100%;
+  transition:
+    transform 0.7s var(--ease),
+    opacity 0.3s var(--ease);
+}
+
+/* Fotos und Screenshots fuellen die Kachel. */
+.figure--fill img {
+  object-fit: cover;
+}
+
+/* Plakate, Logos und Seiten werden eingepasst statt beschnitten —
+   ein angeschnittenes Plakat waere eine Falschaussage ueber die Arbeit.
+   Die Luft ringsum ist Absicht. */
+.figure--fit {
+  background: var(--paper-sunk);
+}
+.figure--fit img {
+  object-fit: contain;
+  padding: var(--s-5);
+}
+
+.figure__button:hover img {
+  transform: scale(1.02);
+  opacity: 0.92;
+}
+.figure--fit .figure__button:hover img {
+  transform: none;
+  opacity: 0.85;
+}
+
+.more {
+  justify-self: start;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 3px;
+  transition:
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.more:hover {
+  filter: brightness(1.4);
+}
+
+/* Reservierter Platz fuer ein Video, das noch fehlt */
+.slot.is-empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background: var(--paper-sunk);
+  border: 1px dashed var(--rule);
+}
+
+.slot__note {
+  text-align: center;
+  padding: var(--s-6);
+  max-width: 44ch;
+}
+
+.slot__name {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--t-0);
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.slot__text {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
+.slot__text code {
+  color: var(--ink-soft);
+  word-break: break-all;
+}
+
+/* Grosser Zwischenruf — steht allein auf der Seite */
+.pull {
+  margin: 0;
+  padding-block: var(--s-9);
+  font-size: clamp(var(--t-2), 4.5vw, var(--t-4));
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  max-width: 24ch;
+  text-wrap: balance;
+}
+
+.pull::before {
+  content: '';
+  display: block;
+  width: var(--s-7);
+  border-top: 2px solid var(--accent);
+  margin-bottom: var(--s-5);
+}
+
+/* Vor und zurueck */
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-5);
+  justify-content: space-between;
+  padding-block: var(--s-8);
+  border-top: 1px solid var(--rule);
+  margin-top: var(--s-9);
+}
+
+.pager__link {
+  display: grid;
+  gap: var(--s-1);
+  max-width: 20rem;
+}
+.pager__link--next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.pager__dir {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.pager__title {
+  font-size: var(--t-1);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  transition: color 0.3s var(--ease);
+}
+
+.pager__link:hover .pager__title {
+  filter: brightness(1.4);
+}
+
+.empty {
+  padding-block: var(--s-10);
+  max-width: var(--measure-short);
+  display: grid;
+  gap: var(--s-5);
+}
+.empty__title {
+  font-size: var(--t-4);
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+.empty__text {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.button {
+  justify-self: start;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--s-3) var(--s-5);
+  transition: background 0.3s var(--ease);
+}
+
+.button:hover {
+  background: var(--paper);
+  color: var(--ink);
+  outline: 1px solid var(--ink);
+}
+
+/* ── 10 Spielfenster ──────────────────────────────────────────────── */
+
+/* Das Spiel bekommt als einziges Element einen Rahmen: es ist ein
+   Programm, kein Bild. Der Fensterbezug ist die Anleihe bei krazam.tv. */
+.window {
+  margin-block: var(--s-7);
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.window__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-2) var(--s-3);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.window__title {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.1em;
+}
+
+.window__icon {
+  color: var(--accent);
+}
+.window__buttons {
+  display: flex;
+  gap: var(--s-1);
+}
+
+.window__btn {
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.1rem;
+  border: 1px solid color-mix(in oklab, var(--paper) 40%, transparent);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+}
+
+.window__body {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  display: grid;
+  place-items: center;
+}
+
+.window__frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.window__status {
+  display: flex;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  color: var(--ink-dim);
+}
+
+.window__status-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.window__status-cell--grow {
+  flex: 1;
+}
+
+.boot {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-4);
+  text-align: center;
+  padding: var(--s-7);
+  max-width: 44ch;
+  color: var(--ink);
+}
+
+.boot__logo {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t-2);
+  letter-spacing: 0.4em;
+  color: var(--accent);
+}
+
+.boot__title {
+  margin: 0;
+  font-size: var(--t-3);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+.boot__text {
+  margin: 0;
+  color: color-mix(in oklab, var(--ink) 70%, transparent);
+}
+
+.boot__start {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper);
+  padding: var(--s-3) var(--s-6);
+  transition:
+    background 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+.boot__start:hover {
+  background: var(--paper);
+  color: var(--ink);
+  outline: 1px solid var(--ink);
+}
+
+.boot__note {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  line-height: 1.7;
+  color: color-mix(in oklab, var(--ink) 55%, transparent);
+}
+
+.keys {
+  margin: var(--s-6) 0 var(--s-5);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: var(--s-3) var(--s-6);
+}
+
+.keys__row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--s-2);
+}
+
+.keys dt {
+  margin: 0;
+}
+.keys dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--t--1);
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.06em;
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  padding: 0.2rem 0.45rem;
+  background: var(--paper-sunk);
+  white-space: nowrap;
+}
+
+/* ── 11 Lightbox ──────────────────────────────────────────────────── */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  place-items: center;
+  background: color-mix(in oklab, var(--paper) 97%, var(--ink));
+  padding: var(--s-8) var(--gutter);
+}
+
+.lightbox.is-open {
+  display: grid;
+}
+.lightbox img {
+  max-width: min(100%, 72rem);
+  max-height: 80svh;
+  object-fit: contain;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  padding: var(--s-3) var(--s-4);
+  transition: color 0.3s var(--ease);
+}
+
+.lightbox__close:hover,
+.lightbox__nav:hover {
+  color: var(--ink);
+}
+.lightbox__close {
+  top: var(--s-4);
+  right: var(--s-4);
+}
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--t-1);
+}
+.lightbox__nav[data-dir='prev'] {
+  left: var(--s-3);
+}
+.lightbox__nav[data-dir='next'] {
+  right: var(--s-3);
+}
+
+.lightbox__counter {
+  position: absolute;
+  bottom: var(--s-5);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  color: var(--ink-dim);
+}
+
+/* ── 12 Fuss ──────────────────────────────────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: var(--s-8) var(--gutter) var(--s-7);
+  max-width: var(--shell);
+  margin-inline: auto;
+  display: grid;
+  gap: var(--s-5);
+}
+
+.site-footer__note {
+  margin: 0;
+  font-size: clamp(var(--t-2), 3vw, var(--t-3));
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-5);
+}
+
+.site-footer__links a {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition:
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+
+.site-footer__links a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-5);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+}
+
+.readout__cell--version {
+  color: var(--accent);
+}
+
+.site-footer__copy {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  color: var(--ink-dim);
+}
+
+/* Alle grossen/fetten Titel bekommen die blockige 8-Bit-Schrift statt
+   Fett — Press Start 2P kennt kein "bold", also wird der Schriftschnitt
+   mit zurueckgesetzt, sonst faelscht der Browser ein Fett dazu. Steht
+   bewusst ganz unten, damit es die einzelnen Regeln oben ueberschreibt. */
+.h-display,
+.h-section,
+.hero__title,
+.intro__title,
+.project-head__title,
+.step__title,
+.site-footer__note,
+.site-header__mark,
+.area__title,
+.card__title,
+.pager__title,
+.empty__title,
+.boot__title,
+.card__placeholder {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+/* ── 13 Responsive & Barrierefreiheit ─────────────────────────────── */
+
+@media (max-width: 60rem) {
+  .project-head__grid {
+    grid-template-columns: 1fr;
+  }
+  .hero__intro {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 48rem) {
+  :root {
+    --s-9: 4.5rem;
+    --s-10: 6rem;
+    --s-11: 8rem;
+  }
+
+  .facts__row {
+    grid-template-columns: 7rem 1fr;
+  }
+  .cursor {
+    display: none;
+  }
+  .pager__link--next {
+    text-align: left;
+    margin-left: 0;
+  }
+  .site-header {
+    position: static;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

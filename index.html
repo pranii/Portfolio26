@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <meta name="description" content="Portfolio — Kommunikationsdesign, Film und Game." />
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body data-page="index">
+    <div class="launcher" data-slot="launcher" aria-hidden="true">
+      <img class="launcher__gif" src="/launcher/opener.gif" alt="" />
+      <div class="launcher__text">
+        <p class="launcher__title" data-slot="launcher-title">Portfolio</p>
+        <p class="launcher__subtitle">Loading&hellip;</p>
+      </div>
+    </div>
+
+    <div class="progress" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="site-header__mark" href="index.html" data-slot="name">Portfolio</a>
+      <nav class="site-nav" aria-label="Bereiche">
+        <a href="arbeit.html">Arbeit</a>
+        <a href="freizeit.html">Freizeit</a>
+        <a href="uni.html">Uni</a>
+        <a href="spiel.html">Spiel</a>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <section class="hero">
+        <h1 class="hero__title" data-fade data-slot="hero">Portfolio</h1>
+        <p class="hero__role" data-fade="0.1" data-slot="role"></p>
+        <p class="hero__intro" data-fade="0.15" data-slot="intro"></p>
+        <span class="hero__scroll" data-fade="0.25" aria-hidden="true">
+          <svg viewBox="0 0 7 4" preserveAspectRatio="xMidYMid meet" fill="currentColor">
+            <rect x="0" y="0" width="7" height="1" />
+            <rect x="1" y="1" width="5" height="1" />
+            <rect x="2" y="2" width="3" height="1" />
+            <rect x="3" y="3" width="1" height="1" />
+          </svg>
+        </span>
+      </section>
+
+      <section class="areas-section">
+        <nav class="areas" data-slot="areas" aria-label="Bereiche"></nav>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__note">Fragen oder Interesse an einer Zusammenarbeit?</p>
+      <div class="site-footer__links" data-slot="footer-links"></div>
+      <div class="readout" data-slot="readout"></div>
+      <p class="site-footer__copy">
+        © <span data-slot="footer-name"></span> — <span id="year"></span>
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script type="module" src="/src/scripts/main.js"></script>
+  </body>
+</html>

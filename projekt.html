@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projekt — Portfolio</title>
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body data-page="projekt">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="site-header__mark" href="index.html" data-slot="name">Portfolio</a>
+      <nav class="site-nav" aria-label="Bereiche">
+        <a href="arbeit.html">Arbeit</a>
+        <a href="freizeit.html">Freizeit</a>
+        <a href="uni.html">Uni</a>
+        <a href="spiel.html">Spiel</a>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <nav class="breadcrumb" aria-label="Pfad">
+        <a href="index.html">Start</a>
+        <span aria-hidden="true">/</span>
+        <a data-slot="crumb-category" href="#">Bereich</a>
+        <span aria-hidden="true">/</span>
+        <span data-slot="crumb-project" aria-current="page">Projekt</span>
+      </nav>
+
+      <div data-slot="projekt"></div>
+
+      <nav class="pager" aria-label="Weitere Projekte">
+        <a class="pager__link" data-slot="prev" href="#"></a>
+        <a class="pager__link pager__link--next" data-slot="next" href="#"></a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__note">Fragen oder Interesse an einer Zusammenarbeit?</p>
+      <div class="site-footer__links" data-slot="footer-links"></div>
+      <div class="readout" data-slot="readout"></div>
+      <p class="site-footer__copy">© <span data-slot="footer-name"></span></p>
+    </footer>
+
+    <script type="module" src="/src/scripts/project.js"></script>
+  </body>
+</html>
