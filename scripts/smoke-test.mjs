@@ -39,7 +39,13 @@ const PAGES = [
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=uni/kamamuta',
+    query: '?id=freizeit/kamamuta',
+  },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.step',
+    query: '?id=uni/in-lakech',
   },
   {
     html: 'projekt.html',
@@ -75,6 +81,7 @@ function bundle(entry) {
     loader: { '.css': 'text' },
     logLevel: 'error',
     absWorkingDir: ROOT,
+    define: { 'import.meta.env.BASE_URL': '"/"' },
   });
   return result.outputFiles[0].text;
 }

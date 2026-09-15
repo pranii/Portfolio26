@@ -1,1886 +1,4 @@
 {
-  "freizeit": {
-    "love": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/freizeit/love/header.webp",
-          "thumb": "/media/freizeit/love/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/love/love.webp",
-          "thumb": "/media/freizeit/love/love-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/love/love-01.webp",
-          "thumb": "/media/freizeit/love/love-01-thumb.webp",
-          "width": 1080,
-          "height": 1920
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/love/love-02.webp",
-          "thumb": "/media/freizeit/love/love-02-thumb.webp",
-          "width": 1080,
-          "height": 1920
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/love/love-03.webp",
-          "thumb": "/media/freizeit/love/love-03-thumb.webp",
-          "width": 1080,
-          "height": 1920
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/love/love-04.webp",
-          "thumb": "/media/freizeit/love/love-04-thumb.webp",
-          "width": 1080,
-          "height": 1920
-        }
-      ],
-      "videos": [],
-      "docs": []
-    },
-    "musikvideos": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/freizeit/musikvideos/header.webp",
-          "thumb": "/media/freizeit/musikvideos/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        }
-      ],
-      "videos": [
-        {
-          "type": "video",
-          "src": "/media/freizeit/musikvideos/ereza-a-kishe-guxu-official-video.mp4",
-          "bytes": 5794196
-        }
-      ],
-      "docs": []
-    }
-  },
-  "uni": {
-    "rreth": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/header.webp",
-          "thumb": "/media/uni/rreth/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-01.webp",
-          "thumb": "/media/uni/rreth/symbolik-01-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-02.webp",
-          "thumb": "/media/uni/rreth/symbolik-02-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-03.webp",
-          "thumb": "/media/uni/rreth/symbolik-03-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-04.webp",
-          "thumb": "/media/uni/rreth/symbolik-04-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-05.webp",
-          "thumb": "/media/uni/rreth/symbolik-05-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-06.webp",
-          "thumb": "/media/uni/rreth/symbolik-06-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-07.webp",
-          "thumb": "/media/uni/rreth/symbolik-07-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/symbolik-08.webp",
-          "thumb": "/media/uni/rreth/symbolik-08-thumb.webp",
-          "width": 1668,
-          "height": 2388
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/pitch-version-1-s01.webp",
-          "thumb": "/media/uni/rreth/pitch-version-1-s01-thumb.webp",
-          "fromPdf": "pitch-version-1",
-          "page": 1,
-          "width": 1190,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/pitch-version-1-s02.webp",
-          "thumb": "/media/uni/rreth/pitch-version-1-s02-thumb.webp",
-          "fromPdf": "pitch-version-1",
-          "page": 2,
-          "width": 1190,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/pitch-version-1-s03.webp",
-          "thumb": "/media/uni/rreth/pitch-version-1-s03-thumb.webp",
-          "fromPdf": "pitch-version-1",
-          "page": 3,
-          "width": 1190,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/pitch-version-1-s04.webp",
-          "thumb": "/media/uni/rreth/pitch-version-1-s04-thumb.webp",
-          "fromPdf": "pitch-version-1",
-          "page": 4,
-          "width": 1190,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/pitch-version-1-s05.webp",
-          "thumb": "/media/uni/rreth/pitch-version-1-s05-thumb.webp",
-          "fromPdf": "pitch-version-1",
-          "page": 5,
-          "width": 1190,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/pitch-version-1-s06.webp",
-          "thumb": "/media/uni/rreth/pitch-version-1-s06-thumb.webp",
-          "fromPdf": "pitch-version-1",
-          "page": 6,
-          "width": 1190,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/pitch-version-1-s07.webp",
-          "thumb": "/media/uni/rreth/pitch-version-1-s07-thumb.webp",
-          "fromPdf": "pitch-version-1",
-          "page": 7,
-          "width": 1190,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/wheel-of-shame-s01.webp",
-          "thumb": "/media/uni/rreth/wheel-of-shame-s01-thumb.webp",
-          "fromPdf": "wheel-of-shame",
-          "page": 1,
-          "width": 1800,
-          "height": 1012
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/wheel-of-shame-s02.webp",
-          "thumb": "/media/uni/rreth/wheel-of-shame-s02-thumb.webp",
-          "fromPdf": "wheel-of-shame",
-          "page": 2,
-          "width": 1800,
-          "height": 1012
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/wheel-of-shame-s03.webp",
-          "thumb": "/media/uni/rreth/wheel-of-shame-s03-thumb.webp",
-          "fromPdf": "wheel-of-shame",
-          "page": 3,
-          "width": 1800,
-          "height": 1012
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/wheel-of-shame-s04.webp",
-          "thumb": "/media/uni/rreth/wheel-of-shame-s04-thumb.webp",
-          "fromPdf": "wheel-of-shame",
-          "page": 4,
-          "width": 1800,
-          "height": 1012
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/wheel-of-shame-s05.webp",
-          "thumb": "/media/uni/rreth/wheel-of-shame-s05-thumb.webp",
-          "fromPdf": "wheel-of-shame",
-          "page": 5,
-          "width": 1800,
-          "height": 1012
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/wheel-of-shame-s06.webp",
-          "thumb": "/media/uni/rreth/wheel-of-shame-s06-thumb.webp",
-          "fromPdf": "wheel-of-shame",
-          "page": 6,
-          "width": 1800,
-          "height": 1012
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/have-s01.webp",
-          "thumb": "/media/uni/rreth/have-s01-thumb.webp",
-          "fromPdf": "have",
-          "page": 1,
-          "width": 1800,
-          "height": 2385
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/have-s02.webp",
-          "thumb": "/media/uni/rreth/have-s02-thumb.webp",
-          "fromPdf": "have",
-          "page": 2,
-          "width": 1800,
-          "height": 4458
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/have-s03.webp",
-          "thumb": "/media/uni/rreth/have-s03-thumb.webp",
-          "fromPdf": "have",
-          "page": 3,
-          "width": 1800,
-          "height": 3047
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/in-halt-s01.webp",
-          "thumb": "/media/uni/rreth/in-halt-s01-thumb.webp",
-          "fromPdf": "in-halt",
-          "page": 1,
-          "width": 1800,
-          "height": 2401
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/skam-koh-per-depressiona-s01.webp",
-          "thumb": "/media/uni/rreth/skam-koh-per-depressiona-s01-thumb.webp",
-          "fromPdf": "skam-koh-per-depressiona",
-          "page": 1,
-          "width": 1800,
-          "height": 1782
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/rreth/raumskizze-laura-01.webp",
-          "thumb": "/media/uni/rreth/raumskizze-laura-01-thumb.webp",
-          "width": 1747,
-          "height": 988
-        }
-      ],
-      "videos": [],
-      "docs": [
-        {
-          "type": "doc",
-          "src": "/media/uni/rreth/pitch-version-1.pdf",
-          "label": "PITCH VERSION 1.pdf",
-          "bytes": 993293
-        },
-        {
-          "type": "doc",
-          "src": "/media/uni/rreth/wheel-of-shame.pdf",
-          "label": "wheel of shame.pdf",
-          "bytes": 9493507
-        }
-      ]
-    },
-    "kamamuta": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/header.webp",
-          "thumb": "/media/uni/kamamuta/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-01.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-01-thumb.webp",
-          "width": 921,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-02.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-02-thumb.webp",
-          "width": 902,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-03.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-03-thumb.webp",
-          "width": 888,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-04.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-04-thumb.webp",
-          "width": 894,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-05.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-05-thumb.webp",
-          "width": 888,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-06.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-06-thumb.webp",
-          "width": 879,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-07.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-07-thumb.webp",
-          "width": 897,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-08.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-08-thumb.webp",
-          "width": 878,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-09.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-09-thumb.webp",
-          "width": 934,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-10.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-10-thumb.webp",
-          "width": 858,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-11.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-11-thumb.webp",
-          "width": 857,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-12.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-12-thumb.webp",
-          "width": 892,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-13.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-13-thumb.webp",
-          "width": 899,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-14.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-14-thumb.webp",
-          "width": 879,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-15.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-15-thumb.webp",
-          "width": 881,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-16.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-16-thumb.webp",
-          "width": 879,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-17.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-17-thumb.webp",
-          "width": 937,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-18.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-18-thumb.webp",
-          "width": 811,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-19.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-19-thumb.webp",
-          "width": 888,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-20.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-20-thumb.webp",
-          "width": 864,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-21.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-21-thumb.webp",
-          "width": 909,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-22.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-22-thumb.webp",
-          "width": 825,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-23.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-23-thumb.webp",
-          "width": 889,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-24.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-24-thumb.webp",
-          "width": 883,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-01.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-01-thumb.webp",
-          "width": 892,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-02.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-02-thumb.webp",
-          "width": 820,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-03.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-03-thumb.webp",
-          "width": 879,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-04.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-04-thumb.webp",
-          "width": 888,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-05.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-05-thumb.webp",
-          "width": 917,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-06.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-06-thumb.webp",
-          "width": 893,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-07.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-07-thumb.webp",
-          "width": 909,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-08.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-08-thumb.webp",
-          "width": 890,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-09.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-09-thumb.webp",
-          "width": 910,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/in-lakech-2-10.webp",
-          "thumb": "/media/uni/kamamuta/in-lakech-2-10-thumb.webp",
-          "width": 918,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-01.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-01-thumb.webp",
-          "width": 342,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-02.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-02-thumb.webp",
-          "width": 337,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-03.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-03-thumb.webp",
-          "width": 329,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-04.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-04-thumb.webp",
-          "width": 330,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-05.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-05-thumb.webp",
-          "width": 686,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-06.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-06-thumb.webp",
-          "width": 696,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-07.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-07-thumb.webp",
-          "width": 665,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-08.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-08-thumb.webp",
-          "width": 658,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-09.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-09-thumb.webp",
-          "width": 662,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-10.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-10-thumb.webp",
-          "width": 668,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-11.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-11-thumb.webp",
-          "width": 654,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-12.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-12-thumb.webp",
-          "width": 664,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/spaziergang-13.webp",
-          "thumb": "/media/uni/kamamuta/spaziergang-13-thumb.webp",
-          "width": 743,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-01.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-01-thumb.webp",
-          "width": 1024,
-          "height": 683
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-02.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-02-thumb.webp",
-          "width": 744,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-03.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-03-thumb.webp",
-          "width": 659,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-04.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-04-thumb.webp",
-          "width": 1024,
-          "height": 737
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-05.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-05-thumb.webp",
-          "width": 672,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-06.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-06-thumb.webp",
-          "width": 1024,
-          "height": 753
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-07.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-07-thumb.webp",
-          "width": 1024,
-          "height": 748
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-08.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-08-thumb.webp",
-          "width": 699,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-09.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-09-thumb.webp",
-          "width": 609,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/black-swan-10.webp",
-          "thumb": "/media/uni/kamamuta/black-swan-10-thumb.webp",
-          "width": 682,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-01.webp",
-          "thumb": "/media/uni/kamamuta/visions-01-thumb.webp",
-          "width": 376,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-02.webp",
-          "thumb": "/media/uni/kamamuta/visions-02-thumb.webp",
-          "width": 387,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-03.webp",
-          "thumb": "/media/uni/kamamuta/visions-03-thumb.webp",
-          "width": 457,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-04.webp",
-          "thumb": "/media/uni/kamamuta/visions-04-thumb.webp",
-          "width": 382,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-05.webp",
-          "thumb": "/media/uni/kamamuta/visions-05-thumb.webp",
-          "width": 397,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-06.webp",
-          "thumb": "/media/uni/kamamuta/visions-06-thumb.webp",
-          "width": 399,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-07.webp",
-          "thumb": "/media/uni/kamamuta/visions-07-thumb.webp",
-          "width": 409,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-08.webp",
-          "thumb": "/media/uni/kamamuta/visions-08-thumb.webp",
-          "width": 395,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/visions-09.webp",
-          "thumb": "/media/uni/kamamuta/visions-09-thumb.webp",
-          "width": 742,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/arcade-01.webp",
-          "thumb": "/media/uni/kamamuta/arcade-01-thumb.webp",
-          "width": 774,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/arcade-02.webp",
-          "thumb": "/media/uni/kamamuta/arcade-02-thumb.webp",
-          "width": 1024,
-          "height": 704
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/arcade-03.webp",
-          "thumb": "/media/uni/kamamuta/arcade-03-thumb.webp",
-          "width": 714,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/arcade-04.webp",
-          "thumb": "/media/uni/kamamuta/arcade-04-thumb.webp",
-          "width": 734,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/arcade-05.webp",
-          "thumb": "/media/uni/kamamuta/arcade-05-thumb.webp",
-          "width": 720,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/arcade-06.webp",
-          "thumb": "/media/uni/kamamuta/arcade-06-thumb.webp",
-          "width": 765,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/arcade-07.webp",
-          "thumb": "/media/uni/kamamuta/arcade-07-thumb.webp",
-          "width": 729,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/archive-01.webp",
-          "thumb": "/media/uni/kamamuta/archive-01-thumb.webp",
-          "width": 669,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/archive-02.webp",
-          "thumb": "/media/uni/kamamuta/archive-02-thumb.webp",
-          "width": 670,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/archive-03.webp",
-          "thumb": "/media/uni/kamamuta/archive-03-thumb.webp",
-          "width": 633,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/archive-04.webp",
-          "thumb": "/media/uni/kamamuta/archive-04-thumb.webp",
-          "width": 669,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/archive-05.webp",
-          "thumb": "/media/uni/kamamuta/archive-05-thumb.webp",
-          "width": 669,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/archive-06.webp",
-          "thumb": "/media/uni/kamamuta/archive-06-thumb.webp",
-          "width": 1024,
-          "height": 1021
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/archive-07.webp",
-          "thumb": "/media/uni/kamamuta/archive-07-thumb.webp",
-          "width": 757,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/first-ideas-01.webp",
-          "thumb": "/media/uni/kamamuta/first-ideas-01-thumb.webp",
-          "width": 661,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/first-ideas-02.webp",
-          "thumb": "/media/uni/kamamuta/first-ideas-02-thumb.webp",
-          "width": 688,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/first-ideas-03.webp",
-          "thumb": "/media/uni/kamamuta/first-ideas-03-thumb.webp",
-          "width": 1024,
-          "height": 681
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/first-ideas-04.webp",
-          "thumb": "/media/uni/kamamuta/first-ideas-04-thumb.webp",
-          "width": 757,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/first-ideas-05.webp",
-          "thumb": "/media/uni/kamamuta/first-ideas-05-thumb.webp",
-          "width": 1024,
-          "height": 826
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/first-ideas-06.webp",
-          "thumb": "/media/uni/kamamuta/first-ideas-06-thumb.webp",
-          "width": 1016,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/first-ideas-07.webp",
-          "thumb": "/media/uni/kamamuta/first-ideas-07-thumb.webp",
-          "width": 774,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/veites-kapitee-01.webp",
-          "thumb": "/media/uni/kamamuta/veites-kapitee-01-thumb.webp",
-          "width": 392,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/veites-kapitee-02.webp",
-          "thumb": "/media/uni/kamamuta/veites-kapitee-02-thumb.webp",
-          "width": 392,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/veites-kapitee-03.webp",
-          "thumb": "/media/uni/kamamuta/veites-kapitee-03-thumb.webp",
-          "width": 378,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/prototyp-01.webp",
-          "thumb": "/media/uni/kamamuta/prototyp-01-thumb.webp",
-          "width": 353,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/prototyp-02.webp",
-          "thumb": "/media/uni/kamamuta/prototyp-02-thumb.webp",
-          "width": 343,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/prototyp-03.webp",
-          "thumb": "/media/uni/kamamuta/prototyp-03-thumb.webp",
-          "width": 675,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/prototyp-04.webp",
-          "thumb": "/media/uni/kamamuta/prototyp-04-thumb.webp",
-          "width": 703,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/nokia-01.gif",
-          "thumb": "/media/uni/kamamuta/nokia-01.gif"
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/nokia-02.gif",
-          "thumb": "/media/uni/kamamuta/nokia-02.gif"
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/kamamuta/kama-muta-magazine-prototype-s01.webp",
-          "thumb": "/media/uni/kamamuta/kama-muta-magazine-prototype-s01-thumb.webp",
-          "fromPdf": "kama-muta-magazine-prototype",
-          "page": 1,
-          "width": 1738,
-          "height": 5044
-        }
-      ],
-      "videos": [],
-      "docs": [
-        {
-          "type": "doc",
-          "src": "/media/uni/kamamuta/kama-muta-magazine-prototype.pdf",
-          "label": "KAMA MUTA MAGAZINE PROTOTYPE.pdf",
-          "bytes": 7845601
-        }
-      ]
-    },
-    "botlnick-gamejam": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/header.webp",
-          "thumb": "/media/uni/botlnick-gamejam/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/photogrammetrie-01.webp",
-          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-01-thumb.webp",
-          "width": 1800,
-          "height": 1560
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/photogrammetrie-02.webp",
-          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-02-thumb.webp",
-          "width": 1800,
-          "height": 942
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/photogrammetrie-03.webp",
-          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-03-thumb.webp",
-          "width": 1800,
-          "height": 1553
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/photogrammetrie-04.webp",
-          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-04-thumb.webp",
-          "width": 1800,
-          "height": 1488
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/photogrammetrie-05.webp",
-          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-05-thumb.webp",
-          "width": 1800,
-          "height": 1772
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/photogrammetrie-06.webp",
-          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-06-thumb.webp",
-          "width": 1800,
-          "height": 1613
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/photogrammetrie-07.webp",
-          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-07-thumb.webp",
-          "width": 1800,
-          "height": 1124
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/character-ref-01.webp",
-          "thumb": "/media/uni/botlnick-gamejam/character-ref-01-thumb.webp",
-          "width": 1206,
-          "height": 2622
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/character-ref-02.webp",
-          "thumb": "/media/uni/botlnick-gamejam/character-ref-02-thumb.webp",
-          "width": 1206,
-          "height": 2622
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/character-ref-03.webp",
-          "thumb": "/media/uni/botlnick-gamejam/character-ref-03-thumb.webp",
-          "width": 1206,
-          "height": 2622
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/character-ref-04.webp",
-          "thumb": "/media/uni/botlnick-gamejam/character-ref-04-thumb.webp",
-          "width": 1206,
-          "height": 2622
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/comedic-relief.webp",
-          "thumb": "/media/uni/botlnick-gamejam/comedic-relief-thumb.webp",
-          "width": 1479,
-          "height": 1021
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/cutscenes.webp",
-          "thumb": "/media/uni/botlnick-gamejam/cutscenes-thumb.webp",
-          "width": 765,
-          "height": 996
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/key-objects.webp",
-          "thumb": "/media/uni/botlnick-gamejam/key-objects-thumb.webp",
-          "width": 1082,
-          "height": 751
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/sidecharacter.webp",
-          "thumb": "/media/uni/botlnick-gamejam/sidecharacter-thumb.webp",
-          "width": 1086,
-          "height": 514
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/stagedesign.webp",
-          "thumb": "/media/uni/botlnick-gamejam/stagedesign-thumb.webp",
-          "width": 1722,
-          "height": 1073
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/stagedesignphotogrammetry.webp",
-          "thumb": "/media/uni/botlnick-gamejam/stagedesignphotogrammetry-thumb.webp",
-          "width": 1486,
-          "height": 793
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/style.webp",
-          "thumb": "/media/uni/botlnick-gamejam/style-thumb.webp",
-          "width": 1800,
-          "height": 803
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/hauptcharacter.webp",
-          "thumb": "/media/uni/botlnick-gamejam/hauptcharacter-thumb.webp",
-          "width": 962,
-          "height": 1112
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/nebencharacter.webp",
-          "thumb": "/media/uni/botlnick-gamejam/nebencharacter-thumb.webp",
-          "width": 1562,
-          "height": 1308
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/erste-szene-ergebnis.webp",
-          "thumb": "/media/uni/botlnick-gamejam/erste-szene-ergebnis-thumb.webp",
-          "width": 793,
-          "height": 194
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/liminal-space.webp",
-          "thumb": "/media/uni/botlnick-gamejam/liminal-space-thumb.webp",
-          "width": 1800,
-          "height": 787
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/scenerie.webp",
-          "thumb": "/media/uni/botlnick-gamejam/scenerie-thumb.webp",
-          "width": 1447,
-          "height": 809
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/screenshot.webp",
-          "thumb": "/media/uni/botlnick-gamejam/screenshot-thumb.webp",
-          "width": 1800,
-          "height": 822
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s01.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s01-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 1,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s02.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s02-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 2,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s03.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s03-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 3,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s04.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s04-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 4,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s05.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s05-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 5,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s06.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s06-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 6,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s07.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s07-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 7,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s08.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s08-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 8,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s09.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s09-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 9,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s10.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s10-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 10,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s11.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s11-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 11,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s12.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s12-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 12,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s13.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s13-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 13,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s14.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s14-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 14,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s15.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s15-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 15,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s16.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s16-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 16,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s17.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s17-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 17,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s18.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s18-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 18,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s19.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s19-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 19,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s20.webp",
-          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s20-thumb.webp",
-          "fromPdf": "botlnick-dokumentation-2",
-          "page": 20,
-          "width": 1191,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s01.webp",
-          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s01-thumb.webp",
-          "fromPdf": "game-studies-gdd",
-          "page": 1,
-          "width": 1191,
-          "height": 1685
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s02.webp",
-          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s02-thumb.webp",
-          "fromPdf": "game-studies-gdd",
-          "page": 2,
-          "width": 1191,
-          "height": 1685
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s03.webp",
-          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s03-thumb.webp",
-          "fromPdf": "game-studies-gdd",
-          "page": 3,
-          "width": 1191,
-          "height": 1685
-        }
-      ],
-      "videos": [
-        {
-          "type": "video",
-          "src": "/media/uni/botlnick-gamejam/beginning.mp4",
-          "bytes": 11032143
-        },
-        {
-          "type": "video",
-          "src": "/media/uni/botlnick-gamejam/gamejamstartscreen.mp4",
-          "bytes": 26177330
-        },
-        {
-          "type": "video",
-          "src": "/media/uni/botlnick-gamejam/revolution.mp4",
-          "bytes": 17907280
-        }
-      ],
-      "docs": [
-        {
-          "type": "doc",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2.pdf",
-          "label": "BOTLNICK.Dokumentation-2.pdf",
-          "bytes": 12627464
-        },
-        {
-          "type": "doc",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd.pdf",
-          "label": "Game Studies (GDD).pdf",
-          "bytes": 121571
-        }
-      ]
-    },
-    "zodizine": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/zodizine/header.webp",
-          "thumb": "/media/uni/zodizine/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/zodizine/zodizine-01.webp",
-          "thumb": "/media/uni/zodizine/zodizine-01-thumb.webp",
-          "width": 1800,
-          "height": 995
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/zodizine/zodizine-02.webp",
-          "thumb": "/media/uni/zodizine/zodizine-02-thumb.webp",
-          "width": 1072,
-          "height": 975
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/zodizine/zodizine-03.webp",
-          "thumb": "/media/uni/zodizine/zodizine-03-thumb.webp",
-          "width": 1077,
-          "height": 1284
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/zodizine/zineprojektbericht-s01.webp",
-          "thumb": "/media/uni/zodizine/zineprojektbericht-s01-thumb.webp",
-          "fromPdf": "zineprojektbericht",
-          "page": 1,
-          "width": 1800,
-          "height": 5700
-        }
-      ],
-      "videos": [
-        {
-          "type": "video",
-          "src": "/media/uni/zodizine/dji-20260209183201-0009-d.mp4",
-          "bytes": 39277073
-        }
-      ],
-      "docs": [
-        {
-          "type": "doc",
-          "src": "/media/uni/zodizine/zineprojektbericht.pdf",
-          "label": "ZineProjektbericht.pdf",
-          "bytes": 1163188
-        }
-      ]
-    },
-    "art-of-peace": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/art-of-peace/header.webp",
-          "thumb": "/media/uni/art-of-peace/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/art-of-peace/medienpreis-scan-pdf.webp",
-          "thumb": "/media/uni/art-of-peace/medienpreis-scan-pdf-thumb.webp",
-          "width": 794,
-          "height": 1123
-        }
-      ],
-      "videos": [],
-      "docs": []
-    },
-    "interaktionsdesign": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/header.webp",
-          "thumb": "/media/uni/interaktionsdesign/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s01.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s01-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 1,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s02.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s02-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 2,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s03.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s03-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 3,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s04.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s04-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 4,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s05.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s05-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 5,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s06.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s06-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 6,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s07.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s07-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 7,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s08.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s08-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 8,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s09.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s09-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 9,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s10.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s10-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 10,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s11.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s11-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 11,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s12.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s12-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 12,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s13.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s13-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 13,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s14.webp",
-          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s14-thumb.webp",
-          "fromPdf": "interaktionsdesign-projektbericht",
-          "page": 14,
-          "width": 1192,
-          "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/interaktionsdesign/bano.webp",
-          "thumb": "/media/uni/interaktionsdesign/bano-thumb.webp",
-          "width": 1600,
-          "height": 1200
-        }
-      ],
-      "videos": [],
-      "docs": [
-        {
-          "type": "doc",
-          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht.pdf",
-          "label": "Interaktionsdesign-Projektbericht.pdf",
-          "bytes": 2088984
-        }
-      ]
-    },
-    "shepard-tone": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/shepard-tone/header.webp",
-          "thumb": "/media/uni/shepard-tone/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/shepard-tone/shepard-tone-s01.webp",
-          "thumb": "/media/uni/shepard-tone/shepard-tone-s01-thumb.webp",
-          "fromPdf": "shepard-tone",
-          "page": 1,
-          "width": 1800,
-          "height": 1012
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/shepard-tone/shepard-tone-s02.webp",
-          "thumb": "/media/uni/shepard-tone/shepard-tone-s02-thumb.webp",
-          "fromPdf": "shepard-tone",
-          "page": 2,
-          "width": 1800,
-          "height": 1012
-        }
-      ],
-      "videos": [],
-      "docs": [
-        {
-          "type": "doc",
-          "src": "/media/uni/shepard-tone/shepard-tone.pdf",
-          "label": "Shepard tone.pdf",
-          "bytes": 1322407
-        }
-      ]
-    },
-    "nostalgia": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/header.webp",
-          "thumb": "/media/uni/nostalgia/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/liminal-01.webp",
-          "thumb": "/media/uni/nostalgia/liminal-01-thumb.webp",
-          "width": 1800,
-          "height": 1350
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/liminal-02.webp",
-          "thumb": "/media/uni/nostalgia/liminal-02-thumb.webp",
-          "width": 1800,
-          "height": 1890
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/liminal-03.webp",
-          "thumb": "/media/uni/nostalgia/liminal-03-thumb.webp",
-          "width": 1800,
-          "height": 1350
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/brainstorm.webp",
-          "thumb": "/media/uni/nostalgia/brainstorm-thumb.webp",
-          "width": 1800,
-          "height": 903
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/archiv.webp",
-          "thumb": "/media/uni/nostalgia/archiv-thumb.webp",
-          "width": 1800,
-          "height": 1232
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/marketing-01.webp",
-          "thumb": "/media/uni/nostalgia/marketing-01-thumb.webp",
-          "width": 1295,
-          "height": 726
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/skizze-01.webp",
-          "thumb": "/media/uni/nostalgia/skizze-01-thumb.webp",
-          "width": 1600,
-          "height": 1118
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/skizze-02.webp",
-          "thumb": "/media/uni/nostalgia/skizze-02-thumb.webp",
-          "width": 1600,
-          "height": 1118
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/skizze-03.webp",
-          "thumb": "/media/uni/nostalgia/skizze-03-thumb.webp",
-          "width": 1600,
-          "height": 1118
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/touchdesigner-01.webp",
-          "thumb": "/media/uni/nostalgia/touchdesigner-01-thumb.webp",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/touchdesigner-02.webp",
-          "thumb": "/media/uni/nostalgia/touchdesigner-02-thumb.webp",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/touchdesigner-03.webp",
-          "thumb": "/media/uni/nostalgia/touchdesigner-03-thumb.webp",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/touchdesigner-04.webp",
-          "thumb": "/media/uni/nostalgia/touchdesigner-04-thumb.webp",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/touchdesigner-05.webp",
-          "thumb": "/media/uni/nostalgia/touchdesigner-05-thumb.webp",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/touchdesigner-06.webp",
-          "thumb": "/media/uni/nostalgia/touchdesigner-06-thumb.webp",
-          "width": 1800,
-          "height": 1200
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/td-screenshot-01.webp",
-          "thumb": "/media/uni/nostalgia/td-screenshot-01-thumb.webp",
-          "width": 1800,
-          "height": 958
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/td-screenshot-02.webp",
-          "thumb": "/media/uni/nostalgia/td-screenshot-02-thumb.webp",
-          "width": 1800,
-          "height": 965
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/td-screenshot-03.webp",
-          "thumb": "/media/uni/nostalgia/td-screenshot-03-thumb.webp",
-          "width": 1800,
-          "height": 970
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/final-01.webp",
-          "thumb": "/media/uni/nostalgia/final-01-thumb.webp",
-          "width": 1800,
-          "height": 2546
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/final-02.webp",
-          "thumb": "/media/uni/nostalgia/final-02-thumb.webp",
-          "width": 1414,
-          "height": 2000
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/nostalgia/final-03.webp",
-          "thumb": "/media/uni/nostalgia/final-03-thumb.webp",
-          "width": 1414,
-          "height": 2000
-        }
-      ],
-      "videos": [
-        {
-          "type": "video",
-          "src": "/media/uni/nostalgia/liminalitaet2.mov",
-          "bytes": 23143616
-        }
-      ],
-      "docs": []
-    },
-    "umakeitgram": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/uni/umakeitgram/header.webp",
-          "thumb": "/media/uni/umakeitgram/header-thumb.webp",
-          "width": 1800,
-          "height": 1013
-        }
-      ],
-      "videos": [],
-      "docs": []
-    }
-  },
   "arbeit": {
     "chiro-med": {
       "images": [
@@ -2700,6 +818,2211 @@
       ],
       "videos": [],
       "docs": []
+    }
+  },
+  "uni": {
+    "rreth": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s01.webp",
+          "thumb": "/media/uni/rreth/rreth02-s01-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 1,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s02.webp",
+          "thumb": "/media/uni/rreth/rreth02-s02-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 2,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s03.webp",
+          "thumb": "/media/uni/rreth/rreth02-s03-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 3,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s04.webp",
+          "thumb": "/media/uni/rreth/rreth02-s04-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 4,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s05.webp",
+          "thumb": "/media/uni/rreth/rreth02-s05-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 5,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s06.webp",
+          "thumb": "/media/uni/rreth/rreth02-s06-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 6,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s07.webp",
+          "thumb": "/media/uni/rreth/rreth02-s07-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 7,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s08.webp",
+          "thumb": "/media/uni/rreth/rreth02-s08-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 8,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s09.webp",
+          "thumb": "/media/uni/rreth/rreth02-s09-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 9,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s10.webp",
+          "thumb": "/media/uni/rreth/rreth02-s10-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 10,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s11.webp",
+          "thumb": "/media/uni/rreth/rreth02-s11-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 11,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s12.webp",
+          "thumb": "/media/uni/rreth/rreth02-s12-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 12,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s13.webp",
+          "thumb": "/media/uni/rreth/rreth02-s13-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 13,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s14.webp",
+          "thumb": "/media/uni/rreth/rreth02-s14-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 14,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s15.webp",
+          "thumb": "/media/uni/rreth/rreth02-s15-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 15,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s16.webp",
+          "thumb": "/media/uni/rreth/rreth02-s16-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 16,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s17.webp",
+          "thumb": "/media/uni/rreth/rreth02-s17-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 17,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s18.webp",
+          "thumb": "/media/uni/rreth/rreth02-s18-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 18,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s19.webp",
+          "thumb": "/media/uni/rreth/rreth02-s19-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 19,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s20.webp",
+          "thumb": "/media/uni/rreth/rreth02-s20-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 20,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s21.webp",
+          "thumb": "/media/uni/rreth/rreth02-s21-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 21,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s22.webp",
+          "thumb": "/media/uni/rreth/rreth02-s22-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 22,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s23.webp",
+          "thumb": "/media/uni/rreth/rreth02-s23-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 23,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s24.webp",
+          "thumb": "/media/uni/rreth/rreth02-s24-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 24,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s25.webp",
+          "thumb": "/media/uni/rreth/rreth02-s25-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 25,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s26.webp",
+          "thumb": "/media/uni/rreth/rreth02-s26-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 26,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s27.webp",
+          "thumb": "/media/uni/rreth/rreth02-s27-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 27,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s28.webp",
+          "thumb": "/media/uni/rreth/rreth02-s28-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 28,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s29.webp",
+          "thumb": "/media/uni/rreth/rreth02-s29-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 29,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth02-s30.webp",
+          "thumb": "/media/uni/rreth/rreth02-s30-thumb.webp",
+          "fromPdf": "rreth02",
+          "page": 30,
+          "width": 1683,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth-kampagne-s01.webp",
+          "thumb": "/media/uni/rreth/rreth-kampagne-s01-thumb.webp",
+          "fromPdf": "rreth-kampagne",
+          "page": 1,
+          "width": 1684,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth-kampagne-s02.webp",
+          "thumb": "/media/uni/rreth/rreth-kampagne-s02-thumb.webp",
+          "fromPdf": "rreth-kampagne",
+          "page": 2,
+          "width": 1684,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth-kampagne-s03.webp",
+          "thumb": "/media/uni/rreth/rreth-kampagne-s03-thumb.webp",
+          "fromPdf": "rreth-kampagne",
+          "page": 3,
+          "width": 1684,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/rreth-kampagne-s04.webp",
+          "thumb": "/media/uni/rreth/rreth-kampagne-s04-thumb.webp",
+          "fromPdf": "rreth-kampagne",
+          "page": 4,
+          "width": 1684,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-01.webp",
+          "thumb": "/media/uni/rreth/symbolik-01-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-02.webp",
+          "thumb": "/media/uni/rreth/symbolik-02-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-03.webp",
+          "thumb": "/media/uni/rreth/symbolik-03-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-04.webp",
+          "thumb": "/media/uni/rreth/symbolik-04-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-05.webp",
+          "thumb": "/media/uni/rreth/symbolik-05-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-06.webp",
+          "thumb": "/media/uni/rreth/symbolik-06-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-07.webp",
+          "thumb": "/media/uni/rreth/symbolik-07-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/symbolik-08.webp",
+          "thumb": "/media/uni/rreth/symbolik-08-thumb.webp",
+          "width": 1668,
+          "height": 2388
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/pitch-version-1-s01.webp",
+          "thumb": "/media/uni/rreth/pitch-version-1-s01-thumb.webp",
+          "fromPdf": "pitch-version-1",
+          "page": 1,
+          "width": 1190,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/pitch-version-1-s02.webp",
+          "thumb": "/media/uni/rreth/pitch-version-1-s02-thumb.webp",
+          "fromPdf": "pitch-version-1",
+          "page": 2,
+          "width": 1190,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/pitch-version-1-s03.webp",
+          "thumb": "/media/uni/rreth/pitch-version-1-s03-thumb.webp",
+          "fromPdf": "pitch-version-1",
+          "page": 3,
+          "width": 1190,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/pitch-version-1-s04.webp",
+          "thumb": "/media/uni/rreth/pitch-version-1-s04-thumb.webp",
+          "fromPdf": "pitch-version-1",
+          "page": 4,
+          "width": 1190,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/pitch-version-1-s05.webp",
+          "thumb": "/media/uni/rreth/pitch-version-1-s05-thumb.webp",
+          "fromPdf": "pitch-version-1",
+          "page": 5,
+          "width": 1190,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/pitch-version-1-s06.webp",
+          "thumb": "/media/uni/rreth/pitch-version-1-s06-thumb.webp",
+          "fromPdf": "pitch-version-1",
+          "page": 6,
+          "width": 1190,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/pitch-version-1-s07.webp",
+          "thumb": "/media/uni/rreth/pitch-version-1-s07-thumb.webp",
+          "fromPdf": "pitch-version-1",
+          "page": 7,
+          "width": 1190,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/wheel-of-shame-s01.webp",
+          "thumb": "/media/uni/rreth/wheel-of-shame-s01-thumb.webp",
+          "fromPdf": "wheel-of-shame",
+          "page": 1,
+          "width": 1800,
+          "height": 1012
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/wheel-of-shame-s02.webp",
+          "thumb": "/media/uni/rreth/wheel-of-shame-s02-thumb.webp",
+          "fromPdf": "wheel-of-shame",
+          "page": 2,
+          "width": 1800,
+          "height": 1012
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/wheel-of-shame-s03.webp",
+          "thumb": "/media/uni/rreth/wheel-of-shame-s03-thumb.webp",
+          "fromPdf": "wheel-of-shame",
+          "page": 3,
+          "width": 1800,
+          "height": 1012
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/wheel-of-shame-s04.webp",
+          "thumb": "/media/uni/rreth/wheel-of-shame-s04-thumb.webp",
+          "fromPdf": "wheel-of-shame",
+          "page": 4,
+          "width": 1800,
+          "height": 1012
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/wheel-of-shame-s05.webp",
+          "thumb": "/media/uni/rreth/wheel-of-shame-s05-thumb.webp",
+          "fromPdf": "wheel-of-shame",
+          "page": 5,
+          "width": 1800,
+          "height": 1012
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/wheel-of-shame-s06.webp",
+          "thumb": "/media/uni/rreth/wheel-of-shame-s06-thumb.webp",
+          "fromPdf": "wheel-of-shame",
+          "page": 6,
+          "width": 1800,
+          "height": 1012
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/have-s01.webp",
+          "thumb": "/media/uni/rreth/have-s01-thumb.webp",
+          "fromPdf": "have",
+          "page": 1,
+          "width": 1800,
+          "height": 2385
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/have-s02.webp",
+          "thumb": "/media/uni/rreth/have-s02-thumb.webp",
+          "fromPdf": "have",
+          "page": 2,
+          "width": 1800,
+          "height": 4458
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/have-s03.webp",
+          "thumb": "/media/uni/rreth/have-s03-thumb.webp",
+          "fromPdf": "have",
+          "page": 3,
+          "width": 1800,
+          "height": 3047
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/in-halt-s01.webp",
+          "thumb": "/media/uni/rreth/in-halt-s01-thumb.webp",
+          "fromPdf": "in-halt",
+          "page": 1,
+          "width": 1800,
+          "height": 2401
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/raumskizze-laura-01.webp",
+          "thumb": "/media/uni/rreth/raumskizze-laura-01-thumb.webp",
+          "width": 1747,
+          "height": 988
+        }
+      ],
+      "videos": [],
+      "docs": [
+        {
+          "type": "doc",
+          "src": "/media/uni/rreth/rreth02.pdf",
+          "label": "RRETH02.pdf",
+          "bytes": 8662424
+        },
+        {
+          "type": "doc",
+          "src": "/media/uni/rreth/rreth-kampagne.pdf",
+          "label": "RRETH_KAMPAGNE.pdf",
+          "bytes": 2116709
+        },
+        {
+          "type": "doc",
+          "src": "/media/uni/rreth/pitch-version-1.pdf",
+          "label": "PITCH VERSION 1.pdf",
+          "bytes": 993293
+        },
+        {
+          "type": "doc",
+          "src": "/media/uni/rreth/wheel-of-shame.pdf",
+          "label": "wheel of shame.pdf",
+          "bytes": 9493507
+        }
+      ]
+    },
+    "botlnick-gamejam": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/header.webp",
+          "thumb": "/media/uni/botlnick-gamejam/header-thumb.webp",
+          "width": 1800,
+          "height": 1013
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/photogrammetrie-01.webp",
+          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-01-thumb.webp",
+          "width": 1800,
+          "height": 1560
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/photogrammetrie-02.webp",
+          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-02-thumb.webp",
+          "width": 1800,
+          "height": 942
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/photogrammetrie-03.webp",
+          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-03-thumb.webp",
+          "width": 1800,
+          "height": 1553
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/photogrammetrie-04.webp",
+          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-04-thumb.webp",
+          "width": 1800,
+          "height": 1488
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/photogrammetrie-05.webp",
+          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-05-thumb.webp",
+          "width": 1800,
+          "height": 1772
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/photogrammetrie-06.webp",
+          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-06-thumb.webp",
+          "width": 1800,
+          "height": 1613
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/photogrammetrie-07.webp",
+          "thumb": "/media/uni/botlnick-gamejam/photogrammetrie-07-thumb.webp",
+          "width": 1800,
+          "height": 1124
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/character-ref-01.webp",
+          "thumb": "/media/uni/botlnick-gamejam/character-ref-01-thumb.webp",
+          "width": 1206,
+          "height": 2622
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/character-ref-02.webp",
+          "thumb": "/media/uni/botlnick-gamejam/character-ref-02-thumb.webp",
+          "width": 1206,
+          "height": 2622
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/character-ref-03.webp",
+          "thumb": "/media/uni/botlnick-gamejam/character-ref-03-thumb.webp",
+          "width": 1206,
+          "height": 2622
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/character-ref-04.webp",
+          "thumb": "/media/uni/botlnick-gamejam/character-ref-04-thumb.webp",
+          "width": 1206,
+          "height": 2622
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/comedic-relief.webp",
+          "thumb": "/media/uni/botlnick-gamejam/comedic-relief-thumb.webp",
+          "width": 1479,
+          "height": 1021
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/cutscenes.webp",
+          "thumb": "/media/uni/botlnick-gamejam/cutscenes-thumb.webp",
+          "width": 765,
+          "height": 996
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/key-objects.webp",
+          "thumb": "/media/uni/botlnick-gamejam/key-objects-thumb.webp",
+          "width": 1082,
+          "height": 751
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/sidecharacter.webp",
+          "thumb": "/media/uni/botlnick-gamejam/sidecharacter-thumb.webp",
+          "width": 1086,
+          "height": 514
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/stagedesign.webp",
+          "thumb": "/media/uni/botlnick-gamejam/stagedesign-thumb.webp",
+          "width": 1722,
+          "height": 1073
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/stagedesignphotogrammetry.webp",
+          "thumb": "/media/uni/botlnick-gamejam/stagedesignphotogrammetry-thumb.webp",
+          "width": 1486,
+          "height": 793
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/style.webp",
+          "thumb": "/media/uni/botlnick-gamejam/style-thumb.webp",
+          "width": 1800,
+          "height": 803
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/hauptcharacter.webp",
+          "thumb": "/media/uni/botlnick-gamejam/hauptcharacter-thumb.webp",
+          "width": 962,
+          "height": 1112
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/nebencharacter.webp",
+          "thumb": "/media/uni/botlnick-gamejam/nebencharacter-thumb.webp",
+          "width": 1562,
+          "height": 1308
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/erste-szene-ergebnis.webp",
+          "thumb": "/media/uni/botlnick-gamejam/erste-szene-ergebnis-thumb.webp",
+          "width": 793,
+          "height": 194
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/liminal-space.webp",
+          "thumb": "/media/uni/botlnick-gamejam/liminal-space-thumb.webp",
+          "width": 1800,
+          "height": 787
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/scenerie.webp",
+          "thumb": "/media/uni/botlnick-gamejam/scenerie-thumb.webp",
+          "width": 1447,
+          "height": 809
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/screenshot.webp",
+          "thumb": "/media/uni/botlnick-gamejam/screenshot-thumb.webp",
+          "width": 1800,
+          "height": 822
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s01.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s01-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 1,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s02.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s02-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 2,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s03.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s03-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 3,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s04.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s04-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 4,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s05.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s05-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 5,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s06.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s06-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 6,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s07.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s07-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 7,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s08.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s08-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 8,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s09.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s09-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 9,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s10.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s10-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 10,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s11.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s11-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 11,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s12.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s12-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 12,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s13.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s13-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 13,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s14.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s14-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 14,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s15.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s15-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 15,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s16.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s16-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 16,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s17.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s17-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 17,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s18.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s18-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 18,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s19.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s19-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 19,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s20.webp",
+          "thumb": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2-s20-thumb.webp",
+          "fromPdf": "botlnick-dokumentation-2",
+          "page": 20,
+          "width": 1191,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s01.webp",
+          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s01-thumb.webp",
+          "fromPdf": "game-studies-gdd",
+          "page": 1,
+          "width": 1191,
+          "height": 1685
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s02.webp",
+          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s02-thumb.webp",
+          "fromPdf": "game-studies-gdd",
+          "page": 2,
+          "width": 1191,
+          "height": 1685
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s03.webp",
+          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s03-thumb.webp",
+          "fromPdf": "game-studies-gdd",
+          "page": 3,
+          "width": 1191,
+          "height": 1685
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "src": "/media/uni/botlnick-gamejam/beginning.mp4",
+          "bytes": 11032143
+        },
+        {
+          "type": "video",
+          "src": "/media/uni/botlnick-gamejam/gamejamstartscreen.mp4",
+          "bytes": 26177330
+        },
+        {
+          "type": "video",
+          "src": "/media/uni/botlnick-gamejam/revolution.mp4",
+          "bytes": 17907280
+        }
+      ],
+      "docs": [
+        {
+          "type": "doc",
+          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2.pdf",
+          "label": "BOTLNICK.Dokumentation-2.pdf",
+          "bytes": 12627464
+        },
+        {
+          "type": "doc",
+          "src": "/media/uni/botlnick-gamejam/game-studies-gdd.pdf",
+          "label": "Game Studies (GDD).pdf",
+          "bytes": 121571
+        }
+      ]
+    },
+    "zodizine": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/zodizine/zodizine-01.webp",
+          "thumb": "/media/uni/zodizine/zodizine-01-thumb.webp",
+          "width": 1800,
+          "height": 995
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/zodizine/zodizine-02.webp",
+          "thumb": "/media/uni/zodizine/zodizine-02-thumb.webp",
+          "width": 1072,
+          "height": 975
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/zodizine/zodizine-03.webp",
+          "thumb": "/media/uni/zodizine/zodizine-03-thumb.webp",
+          "width": 1077,
+          "height": 1284
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "src": "/media/uni/zodizine/dji-20260209183201-0009-d.mp4",
+          "bytes": 39277073
+        }
+      ],
+      "docs": [
+        {
+          "type": "doc",
+          "src": "/media/uni/zodizine/zineprojektbericht.pdf",
+          "label": "ZineProjektbericht.pdf",
+          "bytes": 1163188
+        }
+      ]
+    },
+    "art-of-peace": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/art-of-peace/header.webp",
+          "thumb": "/media/uni/art-of-peace/header-thumb.webp",
+          "width": 1800,
+          "height": 1013
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/art-of-peace/medienpreis-scan-pdf.webp",
+          "thumb": "/media/uni/art-of-peace/medienpreis-scan-pdf-thumb.webp",
+          "width": 794,
+          "height": 1123
+        }
+      ],
+      "videos": [],
+      "docs": []
+    },
+    "interaktionsdesign": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/header.webp",
+          "thumb": "/media/uni/interaktionsdesign/header-thumb.webp",
+          "width": 1800,
+          "height": 1013
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s01.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s01-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 1,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s02.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s02-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 2,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s03.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s03-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 3,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s04.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s04-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 4,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s05.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s05-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 5,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s06.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s06-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 6,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s07.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s07-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 7,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s08.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s08-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 8,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s09.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s09-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 9,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s10.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s10-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 10,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s11.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s11-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 11,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s12.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s12-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 12,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s13.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s13-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 13,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s14.webp",
+          "thumb": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht-s14-thumb.webp",
+          "fromPdf": "interaktionsdesign-projektbericht",
+          "page": 14,
+          "width": 1192,
+          "height": 1684
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/interaktionsdesign/bano.webp",
+          "thumb": "/media/uni/interaktionsdesign/bano-thumb.webp",
+          "width": 1600,
+          "height": 1200
+        }
+      ],
+      "videos": [],
+      "docs": [
+        {
+          "type": "doc",
+          "src": "/media/uni/interaktionsdesign/interaktionsdesign-projektbericht.pdf",
+          "label": "Interaktionsdesign-Projektbericht.pdf",
+          "bytes": 2088984
+        }
+      ]
+    },
+    "shepard-tone": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku-s01.webp",
+          "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s01-thumb.webp",
+          "fromPdf": "shephard-tone-doku",
+          "page": 1,
+          "width": 1620,
+          "height": 2024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku-s02.webp",
+          "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s02-thumb.webp",
+          "fromPdf": "shephard-tone-doku",
+          "page": 2,
+          "width": 1620,
+          "height": 2024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku-s03.webp",
+          "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s03-thumb.webp",
+          "fromPdf": "shephard-tone-doku",
+          "page": 3,
+          "width": 1620,
+          "height": 2024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku-s04.webp",
+          "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s04-thumb.webp",
+          "fromPdf": "shephard-tone-doku",
+          "page": 4,
+          "width": 1620,
+          "height": 2024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku-s05.webp",
+          "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s05-thumb.webp",
+          "fromPdf": "shephard-tone-doku",
+          "page": 5,
+          "width": 1620,
+          "height": 2024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku-s06.webp",
+          "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s06-thumb.webp",
+          "fromPdf": "shephard-tone-doku",
+          "page": 6,
+          "width": 1620,
+          "height": 2024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku-s07.webp",
+          "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s07-thumb.webp",
+          "fromPdf": "shephard-tone-doku",
+          "page": 7,
+          "width": 1620,
+          "height": 2024
+        }
+      ],
+      "videos": [],
+      "docs": [
+        {
+          "type": "doc",
+          "src": "/media/uni/shepard-tone/shephard-tone-doku.pdf",
+          "label": "SHEPHARD_TONE_DOKU.pdf",
+          "bytes": 5056281
+        }
+      ]
+    },
+    "nostalgia": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/liminal-01.webp",
+          "thumb": "/media/uni/nostalgia/liminal-01-thumb.webp",
+          "width": 1800,
+          "height": 1350
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/liminal-02.webp",
+          "thumb": "/media/uni/nostalgia/liminal-02-thumb.webp",
+          "width": 1800,
+          "height": 1890
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/liminal-03.webp",
+          "thumb": "/media/uni/nostalgia/liminal-03-thumb.webp",
+          "width": 1800,
+          "height": 1350
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/brainstorm.webp",
+          "thumb": "/media/uni/nostalgia/brainstorm-thumb.webp",
+          "width": 1800,
+          "height": 903
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/archiv.webp",
+          "thumb": "/media/uni/nostalgia/archiv-thumb.webp",
+          "width": 1800,
+          "height": 1232
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/skizze-01.webp",
+          "thumb": "/media/uni/nostalgia/skizze-01-thumb.webp",
+          "width": 1600,
+          "height": 1118
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/skizze-02.webp",
+          "thumb": "/media/uni/nostalgia/skizze-02-thumb.webp",
+          "width": 1600,
+          "height": 1118
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/skizze-03.webp",
+          "thumb": "/media/uni/nostalgia/skizze-03-thumb.webp",
+          "width": 1600,
+          "height": 1118
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/touchdesigner-01.webp",
+          "thumb": "/media/uni/nostalgia/touchdesigner-01-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/touchdesigner-02.webp",
+          "thumb": "/media/uni/nostalgia/touchdesigner-02-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/touchdesigner-03.webp",
+          "thumb": "/media/uni/nostalgia/touchdesigner-03-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/touchdesigner-04.webp",
+          "thumb": "/media/uni/nostalgia/touchdesigner-04-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/touchdesigner-05.webp",
+          "thumb": "/media/uni/nostalgia/touchdesigner-05-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/touchdesigner-06.webp",
+          "thumb": "/media/uni/nostalgia/touchdesigner-06-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/td-screenshot-01.webp",
+          "thumb": "/media/uni/nostalgia/td-screenshot-01-thumb.webp",
+          "width": 1800,
+          "height": 958
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/td-screenshot-02.webp",
+          "thumb": "/media/uni/nostalgia/td-screenshot-02-thumb.webp",
+          "width": 1800,
+          "height": 965
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/td-screenshot-03.webp",
+          "thumb": "/media/uni/nostalgia/td-screenshot-03-thumb.webp",
+          "width": 1800,
+          "height": 970
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/final-01.webp",
+          "thumb": "/media/uni/nostalgia/final-01-thumb.webp",
+          "width": 1800,
+          "height": 2546
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/final-02.webp",
+          "thumb": "/media/uni/nostalgia/final-02-thumb.webp",
+          "width": 1414,
+          "height": 2000
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/final-03.webp",
+          "thumb": "/media/uni/nostalgia/final-03-thumb.webp",
+          "width": 1414,
+          "height": 2000
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "src": "/media/uni/nostalgia/liminalitaet2.mov",
+          "bytes": 23143616
+        }
+      ],
+      "docs": []
+    },
+    "umakeitgram": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/umakeitgram/header.webp",
+          "thumb": "/media/uni/umakeitgram/header-thumb.webp",
+          "width": 1800,
+          "height": 1013
+        }
+      ],
+      "videos": [],
+      "docs": []
+    },
+    "in-lakech": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-01.webp",
+          "thumb": "/media/uni/in-lakech/visions-01-thumb.webp",
+          "width": 376,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-02.webp",
+          "thumb": "/media/uni/in-lakech/visions-02-thumb.webp",
+          "width": 387,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-03.webp",
+          "thumb": "/media/uni/in-lakech/visions-03-thumb.webp",
+          "width": 457,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-04.webp",
+          "thumb": "/media/uni/in-lakech/visions-04-thumb.webp",
+          "width": 382,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-05.webp",
+          "thumb": "/media/uni/in-lakech/visions-05-thumb.webp",
+          "width": 397,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-06.webp",
+          "thumb": "/media/uni/in-lakech/visions-06-thumb.webp",
+          "width": 399,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-07.webp",
+          "thumb": "/media/uni/in-lakech/visions-07-thumb.webp",
+          "width": 409,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-08.webp",
+          "thumb": "/media/uni/in-lakech/visions-08-thumb.webp",
+          "width": 395,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/visions-09.webp",
+          "thumb": "/media/uni/in-lakech/visions-09-thumb.webp",
+          "width": 742,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/arcade-01.webp",
+          "thumb": "/media/uni/in-lakech/arcade-01-thumb.webp",
+          "width": 774,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/arcade-02.webp",
+          "thumb": "/media/uni/in-lakech/arcade-02-thumb.webp",
+          "width": 1024,
+          "height": 704
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/arcade-03.webp",
+          "thumb": "/media/uni/in-lakech/arcade-03-thumb.webp",
+          "width": 714,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/arcade-04.webp",
+          "thumb": "/media/uni/in-lakech/arcade-04-thumb.webp",
+          "width": 734,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/arcade-05.webp",
+          "thumb": "/media/uni/in-lakech/arcade-05-thumb.webp",
+          "width": 720,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/arcade-06.webp",
+          "thumb": "/media/uni/in-lakech/arcade-06-thumb.webp",
+          "width": 765,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/arcade-07.webp",
+          "thumb": "/media/uni/in-lakech/arcade-07-thumb.webp",
+          "width": 729,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/hand-01.webp",
+          "thumb": "/media/uni/in-lakech/hand-01-thumb.webp",
+          "width": 714,
+          "height": 403
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/hand-02.webp",
+          "thumb": "/media/uni/in-lakech/hand-02-thumb.webp",
+          "width": 746,
+          "height": 466
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/animation-01.gif",
+          "thumb": "/media/uni/in-lakech/animation-01.gif"
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/animation-02.gif",
+          "thumb": "/media/uni/in-lakech/animation-02.gif"
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-01.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-01-thumb.webp",
+          "width": 921,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-02.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-02-thumb.webp",
+          "width": 902,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-03.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-03-thumb.webp",
+          "width": 888,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-04.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-04-thumb.webp",
+          "width": 894,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-05.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-05-thumb.webp",
+          "width": 888,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-06.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-06-thumb.webp",
+          "width": 879,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-07.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-07-thumb.webp",
+          "width": 897,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-08.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-08-thumb.webp",
+          "width": 878,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-09.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-09-thumb.webp",
+          "width": 934,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-10.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-10-thumb.webp",
+          "width": 858,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-11.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-11-thumb.webp",
+          "width": 857,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-12.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-12-thumb.webp",
+          "width": 892,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-13.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-13-thumb.webp",
+          "width": 899,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-14.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-14-thumb.webp",
+          "width": 879,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-15.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-15-thumb.webp",
+          "width": 881,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-16.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-16-thumb.webp",
+          "width": 879,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-17.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-17-thumb.webp",
+          "width": 937,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-18.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-18-thumb.webp",
+          "width": 811,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-19.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-19-thumb.webp",
+          "width": 888,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-20.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-20-thumb.webp",
+          "width": 864,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-21.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-21-thumb.webp",
+          "width": 909,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-22.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-22-thumb.webp",
+          "width": 825,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-23.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-23-thumb.webp",
+          "width": 889,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-24.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-24-thumb.webp",
+          "width": 883,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-01.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-01-thumb.webp",
+          "width": 892,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-02.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-02-thumb.webp",
+          "width": 820,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-03.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-03-thumb.webp",
+          "width": 879,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-04.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-04-thumb.webp",
+          "width": 888,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-05.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-05-thumb.webp",
+          "width": 917,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-06.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-06-thumb.webp",
+          "width": 893,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-07.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-07-thumb.webp",
+          "width": 909,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-08.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-08-thumb.webp",
+          "width": 890,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-09.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-09-thumb.webp",
+          "width": 910,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/begegnung-2-10.webp",
+          "thumb": "/media/uni/in-lakech/begegnung-2-10-thumb.webp",
+          "width": 918,
+          "height": 1024
+        }
+      ],
+      "videos": [],
+      "docs": []
+    }
+  },
+  "freizeit": {
+    "love": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/freizeit/love/header.webp",
+          "thumb": "/media/freizeit/love/header-thumb.webp",
+          "width": 1800,
+          "height": 1013
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/love/love.webp",
+          "thumb": "/media/freizeit/love/love-thumb.webp",
+          "width": 1800,
+          "height": 1013
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/love/love-01.webp",
+          "thumb": "/media/freizeit/love/love-01-thumb.webp",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/love/love-02.webp",
+          "thumb": "/media/freizeit/love/love-02-thumb.webp",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/love/love-03.webp",
+          "thumb": "/media/freizeit/love/love-03-thumb.webp",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/love/love-04.webp",
+          "thumb": "/media/freizeit/love/love-04-thumb.webp",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "videos": [],
+      "docs": []
+    },
+    "musikvideos": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/freizeit/musikvideos/header.webp",
+          "thumb": "/media/freizeit/musikvideos/header-thumb.webp",
+          "width": 1800,
+          "height": 1013
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "src": "/media/freizeit/musikvideos/ereza-a-kishe-guxu-official-video.mp4",
+          "bytes": 5794196
+        }
+      ],
+      "docs": []
+    },
+    "kamamuta": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/first-ideas-01.webp",
+          "thumb": "/media/freizeit/kamamuta/first-ideas-01-thumb.webp",
+          "width": 661,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/first-ideas-02.webp",
+          "thumb": "/media/freizeit/kamamuta/first-ideas-02-thumb.webp",
+          "width": 688,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/first-ideas-03.webp",
+          "thumb": "/media/freizeit/kamamuta/first-ideas-03-thumb.webp",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/first-ideas-04.webp",
+          "thumb": "/media/freizeit/kamamuta/first-ideas-04-thumb.webp",
+          "width": 757,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/first-ideas-05.webp",
+          "thumb": "/media/freizeit/kamamuta/first-ideas-05-thumb.webp",
+          "width": 1024,
+          "height": 826
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/first-ideas-06.webp",
+          "thumb": "/media/freizeit/kamamuta/first-ideas-06-thumb.webp",
+          "width": 1016,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/first-ideas-07.webp",
+          "thumb": "/media/freizeit/kamamuta/first-ideas-07-thumb.webp",
+          "width": 774,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/archive-01.webp",
+          "thumb": "/media/freizeit/kamamuta/archive-01-thumb.webp",
+          "width": 669,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/archive-02.webp",
+          "thumb": "/media/freizeit/kamamuta/archive-02-thumb.webp",
+          "width": 670,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/archive-03.webp",
+          "thumb": "/media/freizeit/kamamuta/archive-03-thumb.webp",
+          "width": 633,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/archive-04.webp",
+          "thumb": "/media/freizeit/kamamuta/archive-04-thumb.webp",
+          "width": 669,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/archive-05.webp",
+          "thumb": "/media/freizeit/kamamuta/archive-05-thumb.webp",
+          "width": 669,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/archive-06.webp",
+          "thumb": "/media/freizeit/kamamuta/archive-06-thumb.webp",
+          "width": 1024,
+          "height": 1021
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/archive-07.webp",
+          "thumb": "/media/freizeit/kamamuta/archive-07-thumb.webp",
+          "width": 757,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-01.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-01-thumb.webp",
+          "width": 342,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-02.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-02-thumb.webp",
+          "width": 337,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-03.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-03-thumb.webp",
+          "width": 329,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-04.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-04-thumb.webp",
+          "width": 330,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-05.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-05-thumb.webp",
+          "width": 686,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-06.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-06-thumb.webp",
+          "width": 696,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-07.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-07-thumb.webp",
+          "width": 665,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-08.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-08-thumb.webp",
+          "width": 658,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-09.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-09-thumb.webp",
+          "width": 662,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-10.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-10-thumb.webp",
+          "width": 668,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-11.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-11-thumb.webp",
+          "width": 654,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-12.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-12-thumb.webp",
+          "width": 664,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/spaziergang-13.webp",
+          "thumb": "/media/freizeit/kamamuta/spaziergang-13-thumb.webp",
+          "width": 743,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-01.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-01-thumb.webp",
+          "width": 1024,
+          "height": 683
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-02.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-02-thumb.webp",
+          "width": 744,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-03.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-03-thumb.webp",
+          "width": 659,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-04.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-04-thumb.webp",
+          "width": 1024,
+          "height": 737
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-05.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-05-thumb.webp",
+          "width": 672,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-06.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-06-thumb.webp",
+          "width": 1024,
+          "height": 753
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-07.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-07-thumb.webp",
+          "width": 1024,
+          "height": 748
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-08.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-08-thumb.webp",
+          "width": 699,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-09.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-09-thumb.webp",
+          "width": 609,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/black-swan-10.webp",
+          "thumb": "/media/freizeit/kamamuta/black-swan-10-thumb.webp",
+          "width": 682,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/veites-kapitee-01.webp",
+          "thumb": "/media/freizeit/kamamuta/veites-kapitee-01-thumb.webp",
+          "width": 392,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/veites-kapitee-02.webp",
+          "thumb": "/media/freizeit/kamamuta/veites-kapitee-02-thumb.webp",
+          "width": 392,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/veites-kapitee-03.webp",
+          "thumb": "/media/freizeit/kamamuta/veites-kapitee-03-thumb.webp",
+          "width": 378,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/prototyp-01.webp",
+          "thumb": "/media/freizeit/kamamuta/prototyp-01-thumb.webp",
+          "width": 353,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/prototyp-02.webp",
+          "thumb": "/media/freizeit/kamamuta/prototyp-02-thumb.webp",
+          "width": 343,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/prototyp-03.webp",
+          "thumb": "/media/freizeit/kamamuta/prototyp-03-thumb.webp",
+          "width": 675,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/prototyp-04.webp",
+          "thumb": "/media/freizeit/kamamuta/prototyp-04-thumb.webp",
+          "width": 703,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/kama-muta-magazine-prototype-s01.webp",
+          "thumb": "/media/freizeit/kamamuta/kama-muta-magazine-prototype-s01-thumb.webp",
+          "fromPdf": "kama-muta-magazine-prototype",
+          "page": 1,
+          "width": 1738,
+          "height": 5044
+        }
+      ],
+      "videos": [],
+      "docs": [
+        {
+          "type": "doc",
+          "src": "/media/freizeit/kamamuta/kama-muta-magazine-prototype.pdf",
+          "label": "KAMA MUTA MAGAZINE PROTOTYPE.pdf",
+          "bytes": 7845601
+        }
+      ]
     }
   }
 }

@@ -12,7 +12,8 @@
  *   prefix   benennt die Treffer natuerlich sortiert in prefix-01, prefix-02 ... um
  *   kind     'image' | 'video' | 'pdf'  (default wird aus der Endung geraten)
  *   pages    nur fuer PDFs: 'cover' = nur Seite 1 als Bild,
- *            Zahl = so viele Seiten als Bildergalerie rendern
+ *            Zahl = so viele Seiten als Bildergalerie rendern,
+ *            0 = gar keine Seitenbilder (nur Download, braucht keepFile)
  *   keepFile nur fuer PDFs: Original zusaetzlich zum Download kopieren
  */
 
@@ -128,6 +129,24 @@ export const projects = [
   },
   {
     category: 'freizeit',
+    slug: 'kamamuta',
+    sources: [
+      { dir: 'UNI/KAMAMUTA/Bilder/FIRST IDEAS', include: IMG, prefix: 'first-ideas' },
+      { dir: 'UNI/KAMAMUTA/Bilder/ARCHIVE', include: IMG, prefix: 'archive' },
+      { dir: 'UNI/KAMAMUTA/Bilder/SPAZIERGANG', include: IMG, prefix: 'spaziergang' },
+      { dir: 'UNI/KAMAMUTA/Bilder/BLACK SWAN', include: IMG, prefix: 'black-swan' },
+      { dir: 'UNI/KAMAMUTA/Bilder/VEITES KAPITEE', include: IMG, prefix: 'veites-kapitee' },
+      { dir: 'UNI/KAMAMUTA/Bilder/KAMA MUTA MAGAZINE PROTOTYPE', include: IMG, prefix: 'prototyp' },
+      {
+        dir: 'UNI/KAMAMUTA',
+        include: /^KAMA MUTA MAGAZINE PROTOTYPE\.pdf$/i,
+        pages: 'cover',
+        keepFile: true,
+      },
+    ],
+  },
+  {
+    category: 'freizeit',
     slug: 'musikvideos',
     sources: [
       // Nur das veroeffentlichte EREZA-Video — das anonyme Rohmaterial ist raus.
@@ -140,13 +159,18 @@ export const projects = [
     category: 'uni',
     slug: 'rreth',
     sources: [
+      // Das Magazin RRETH 02 — 30 Seiten, steht als erstes Kapitel auf der
+      // Projektseite und erklaert, worum es inhaltlich geht.
+      { dir: 'UNI/RRETH', include: /^RRETH02\.pdf$/i, pages: 30, keepFile: true },
+      // Geplante Instagram-Kampagne — steht als Zukunftsausblick am Ende.
+      { dir: 'UNI/RRETH', include: /^RRETH_KAMPAGNE\.pdf$/i, pages: 4, keepFile: true },
       { dir: 'UNI/RRETH/Symbolism', include: /\.jpe?g$/i, prefix: 'symbolik' },
       { dir: 'UNI/RRETH', include: /^PITCH VERSION 1\.pdf$/i, pages: 14, keepFile: true },
       { dir: 'UNI/RRETH', include: /^wheel of shame\.pdf$/i, pages: 6, keepFile: true },
       // Dokumentation-2 auf Wunsch raus — die Reflexion steht jetzt nur noch in Worten da.
       {
         dir: 'UNI/RRETH/DOKUMENTATION RRETH',
-        include: /^(IN HALT|HAVE|Skam koh per depressiona)\.pdf$/i,
+        include: /^(IN HALT|HAVE)\.pdf$/i,
         pages: 8,
       },
       // Neue Raumskizze von Laura Zahn, in Kooperation mit der Roessle-Gastronomie.
@@ -156,25 +180,18 @@ export const projects = [
   },
   {
     category: 'uni',
-    slug: 'kamamuta',
+    slug: 'in-lakech',
     sources: [
-      { dir: "UNI/KAMAMUTA/Bilder/IN LAK'ECH", include: IMG, prefix: 'in-lakech' },
-      { dir: "UNI/KAMAMUTA/Bilder/in lak'ech 2 (1)", include: IMG, prefix: 'in-lakech-2' },
-      { dir: 'UNI/KAMAMUTA/Bilder/SPAZIERGANG', include: IMG, prefix: 'spaziergang' },
-      { dir: 'UNI/KAMAMUTA/Bilder/BLACK SWAN', include: IMG, prefix: 'black-swan' },
+      // Inspirationsquelle und grobe Spielskizze
       { dir: 'UNI/KAMAMUTA/Bilder/VISIONS', include: IMG, prefix: 'visions' },
       { dir: 'UNI/KAMAMUTA/Bilder/ARCADE', include: IMG, prefix: 'arcade' },
-      { dir: 'UNI/KAMAMUTA/Bilder/ARCHIVE', include: IMG, prefix: 'archive' },
-      { dir: 'UNI/KAMAMUTA/Bilder/FIRST IDEAS', include: IMG, prefix: 'first-ideas' },
-      { dir: 'UNI/KAMAMUTA/Bilder/VEITES KAPITEE', include: IMG, prefix: 'veites-kapitee' },
-      { dir: 'UNI/KAMAMUTA/Bilder/KAMA MUTA MAGAZINE PROTOTYPE', include: IMG, prefix: 'prototyp' },
-      { dir: 'UNI/KAMAMUTA/Animation_NOKIA_3310', include: /\.gif$/i, prefix: 'nokia' },
-      {
-        dir: 'UNI/KAMAMUTA',
-        include: /^KAMA MUTA MAGAZINE PROTOTYPE\.pdf$/i,
-        pages: 'cover',
-        keepFile: true,
-      },
+      // Die beiden Spielfiguren als Nokia-Grafik, aus dem Spielordner kopiert
+      { dir: 'UNI/IN LAKECH', include: /^HAND_(TAIYO|TSUKI)\.png$/i, prefix: 'hand' },
+      // Die Angriffs-Animationen — erstellt von Julien Truebiger
+      { dir: 'UNI/KAMAMUTA/Animation_NOKIA_3310', include: /\.gif$/i, prefix: 'animation' },
+      // Die gedruckten Begegnungen, die der Automat ausgibt
+      { dir: "UNI/KAMAMUTA/Bilder/IN LAK'ECH", include: IMG, prefix: 'begegnung' },
+      { dir: "UNI/KAMAMUTA/Bilder/in lak'ech 2 (1)", include: IMG, prefix: 'begegnung-2' },
     ],
   },
   {
@@ -223,7 +240,8 @@ export const projects = [
     slug: 'zodizine',
     sources: [
       { dir: 'UNI/Zodizine', include: /^Bildschirmfoto.*\.png$/i, prefix: 'zodizine' },
-      { dir: 'UNI/Zodizine', include: /^ZineProjektbericht\.pdf$/i, pages: 14, keepFile: true },
+      // Der Inhalt steht als Text auf der Seite — das Seitenbild braucht es nicht.
+      { dir: 'UNI/Zodizine', include: /^ZineProjektbericht\.pdf$/i, pages: 0, keepFile: true },
       { dir: 'UNI/Zodizine', include: /^DJI_.*0009_D\.MP4$/i },
       { dir: 'UNI/Zodizine', include: /^ZodiZine_Doku\.mp4$/i },
     ],
@@ -260,7 +278,6 @@ export const projects = [
       },
       { dir: 'UNI/Nostalgia', include: /^BRAINSTORM\.png$/i },
       { dir: 'UNI/Nostalgia', include: /^Archiv\.png$/i },
-      { dir: 'UNI/Nostalgia', include: /^MARKETING2\.jpe?g$/i, prefix: 'marketing' },
       // sonic-01/02.jpg sind trotz Endung HEIC-Dateien und lassen sich nicht
       // konvertieren. Es sind ohnehin fremde Referenzbilder — bewusst raus.
       { dir: 'UNI/Nostalgia', include: /^skizze-\d+\.jpe?g$/i, prefix: 'skizze' },
@@ -273,7 +290,11 @@ export const projects = [
   {
     category: 'uni',
     slug: 'shepard-tone',
-    sources: [{ dir: 'UNI', include: /^Shepard tone\.pdf$/i, pages: 10, keepFile: true }],
+    sources: [
+      // Die richtige Dokumentation (7 Seiten) — die alte "Shepard tone.pdf"
+      // gehoerte nicht zu diesem Projekt.
+      { dir: 'UNI', include: /^SHEPHARD_TONE_DOKU\.pdf$/i, pages: 7, keepFile: true },
+    ],
   },
 ];
 

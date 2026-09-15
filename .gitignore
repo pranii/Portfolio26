@@ -3,13 +3,16 @@ dist/
 .DS_Store
 *.local
 
-# Die Mediendateien werden aus Desktop/Portofolio erzeugt (npm run import).
-# Willst du sie mit ins Repository nehmen, diese Zeile loeschen — Achtung,
-# der Ordner ist knapp 300 MB gross.
-public/media/
-
-# Der Godot-Web-Export ist ~91 MB und wird mit `npm run export:spiel` erzeugt.
-public/spiel/
+# Medien und Spiel-Export gehoeren mit ins Repository.
+#
+# GitHub Pages baut die Seite aus diesem Repo — ohne die Dateien unter
+# public/ waeren auf der fertigen Seite alle Bilder leer. Zusammen rund
+# 420 MB; das ist fuer GitHub in Ordnung (Grenze pro Datei: 100 MB), macht
+# das Repo aber schwer. Nach einem `npm run import` entstehen entsprechend
+# grosse Aenderungen.
+#
+#   public/media/   aus Desktop/Portofolio, via npm run import
+#   public/spiel/   Godot-Web-Export, via npm run export:spiel
 
 # Rohvideo fuer den Launcher (~70 MB) — nur opener.gif wird ausgeliefert.
 public/launcher/OPENER.mp4

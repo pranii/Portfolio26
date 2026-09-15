@@ -3,43 +3,40 @@
  */
 
 export const site = {
-  name: 'DEIN NAME', // TODO — steht gross auf der Startseite
-  role: 'Kommunikationsdesign · Film · Game',
+  name: 'PREJNI', // TODO — steht gross auf der Startseite
+  role: 'Kommunikationsdesign · Creative Technology · Game Design',
   intro:
-    'Ich gestalte zwischen Print, bewegtem Bild und Raum. Jedes Projekt hier zeigt nicht nur das Ergebnis, sondern den Weg dorthin — Schritt fuer Schritt.', // TODO
-  email: 'prejysion@gmail.com',
+    'Ich gestalte PRINT, DIGITALES und RAUM. Im folgenden sind verschiedene Projekte dokumentiert.', // TODO
+  email: 'pranverapelaj@outlook.de',
   links: [
-    { label: 'E-Mail', href: 'mailto:prejysion@gmail.com' },
-    { label: 'Instagram', href: '#' }, // TODO
-    { label: 'Vimeo', href: '#' }, // TODO
+    { label: 'E-Mail', href: 'mailto:pranverapelaj@outlook.de' },
+    { label: 'Instagram', href: 'https://www.instagram.com/prejniii/' }, // TODO
     { label: 'Lebenslauf', href: '#' }, // TODO
   ],
 
-  /* Diese drei Angaben stehen klein in der Fusszeile. */
-  version: 'ausg. hs26', // TODO — wie eine Ausgabennummer
   ort: 'Furtwangen, Schwarzwald',
-  koordinaten: "N 48° 3' 5\" E 8° 12' 33\"",
+  koordinaten: 'N 48° 3\' 5" E 8° 12\' 33"',
+  version: 'v1.0',
 };
 
 export const categories = [
   {
     slug: 'arbeit',
     href: 'arbeit.html',
-    title: 'Arbeit',
-    description:
-      'Arbeiten fuer Auftraggeber — Marken, Kampagnen, Geschaeftsausstattung und Imagefilme.',
+    title: 'in arbeit geschafft',
+    description: 'Arbeiten fuer Auftraggeber',
   },
   {
     slug: 'freizeit',
     href: 'freizeit.html',
-    title: 'Freizeit',
-    description: 'Eigene Arbeiten ohne Briefing — Kurzfilm, Musikvideo und Filmkonzepte.',
+    title: 'in freizeit gemacht',
+    description: 'Arbeit ohne Briefing',
   },
   {
     slug: 'uni',
     href: 'uni.html',
-    title: 'Uni',
-    description: 'Studienprojekte — Rauminstallation, Magazin, Game Design und Interaktion.',
+    title: 'in uni gelernt',
+    description: 'Rauminstallation, Magazin, Game Design und Interaktion.',
   },
 ];
 
@@ -52,8 +49,7 @@ export const spiel = {
   title: 'BOTLNICK',
   untertitel: 'Ein Spiel aus eingescannten Orten',
   href: 'spiel.html',
-  beschreibung:
-    'Im Game Jam entstanden: reale Tiefgaragen und Keller wurden abgescannt und zu begehbaren Raeumen zusammengesetzt. Laeuft direkt im Browser, kein Download noetig.',
+  beschreibung: 'Im Game Jam entstanden: Kein Download noetig.',
   steuerung: [
     ['W A S D', 'Bewegen'],
     ['Maus', 'Umsehen'],

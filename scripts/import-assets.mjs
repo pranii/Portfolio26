@@ -158,6 +158,15 @@ async function handlePdf(src, outDir, publicDir, baseName, entries, source) {
   const bytes = fs.statSync(src).size;
   const pageLimit = source.pages === 'cover' ? 1 : (source.pages ?? 1);
 
+  // pages: 0 bedeutet "nur zum Download, keine Seitenbilder".
+  if (pageLimit <= 0) {
+    if (source.keepFile && bytes <= LIMITS.pdfCopyBytes) {
+      fs.copyFileSync(src, path.join(outDir, baseName + '.pdf'));
+      entries.push({ type: 'doc', src: `${publicDir}/${baseName}.pdf`, label: path.basename(src), bytes });
+    }
+    return;
+  }
+
   let rendered = 0;
   try {
     const doc = await pdf(src, { scale: 2 });
@@ -201,11 +210,59 @@ async function handlePdf(src, outDir, publicDir, baseName, entries, source) {
   }
 }
 
+/**
+ * Von Hand abgelegte Titelbilder.
+ *
+ * Wer `cover: 'header'` benutzt, legt eine Datei `header.webp` direkt in
+ * public/media/<bereich>/<projekt>/ — sie steht in keinem Manifest. Ohne
+ * diese Sicherung waere sie nach jedem Import weg, weil der Projektordner
+ * vorher geleert wird.
+ */
+const ISTTITELBILD = (name) => /^header(-(thumb|crop))?\.(webp|png|jpe?g)$/i.test(name);
+
+function sichereTitelbild(outDir) {
+  if (!fs.existsSync(outDir)) return new Map();
+  const gesichert = new Map();
+  for (const name of fs.readdirSync(outDir)) {
+    if (ISTTITELBILD(name)) gesichert.set(name, fs.readFileSync(path.join(outDir, name)));
+  }
+  return gesichert;
+}
+
+/** Titelbild zurueckschreiben und als erstes Bild registrieren. */
+async function stelleTitelbildHer(gesichert, outDir, publicDir, entries) {
+  const original = [...gesichert].find(([name]) => /^header\.(webp|png|jpe?g)$/i.test(name));
+  if (!original) return;
+
+  const [name, buffer] = original;
+  // Das Original unveraendert zurueckschreiben — kein erneutes Kodieren.
+  fs.writeFileSync(path.join(outDir, name), buffer);
+
+  const meta = await sharp(buffer).metadata();
+  await sharp(buffer)
+    .resize({ width: LIMITS.thumbWidth, withoutEnlargement: true })
+    .webp({ quality: 70 })
+    .toFile(path.join(outDir, 'header-thumb.webp'));
+  await sharp(buffer)
+    .resize(CROP.width, CROP.height, { fit: 'cover', position: sharp.strategy.attention })
+    .webp({ quality: CROP.quality })
+    .toFile(path.join(outDir, 'header-crop.webp'));
+
+  entries.unshift({
+    type: 'image',
+    src: `${publicDir}/${name}`,
+    thumb: `${publicDir}/header-thumb.webp`,
+    width: meta.width ?? null,
+    height: meta.height ?? null,
+  });
+}
+
 // ──────────────────────────────────────────────────────────── Ablauf ──
 
 async function importProject(project) {
   const publicDir = `/media/${project.category}/${project.slug}`;
   const outDir = path.join(OUT_DIR, project.category, project.slug);
+  const titelbild = sichereTitelbild(outDir);
   fs.rmSync(outDir, { recursive: true, force: true });
   fs.mkdirSync(outDir, { recursive: true });
 
@@ -239,6 +296,8 @@ async function importProject(project) {
       }
     }
   }
+
+  await stelleTitelbildHer(titelbild, outDir, publicDir, entries);
 
   media[project.category] ??= {};
   media[project.category][project.slug] = {

@@ -9,7 +9,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { groupIntoChapters } from '../src/scripts/lib/chapters.js';
+import { groupIntoChapters, findeNichtZugeordnet } from '../src/scripts/lib/chapters.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const media = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/media.json'), 'utf8'));
@@ -45,13 +45,20 @@ for (const categorySlug of ['arbeit', 'freizeit', 'uni']) {
       problems.push(`${categorySlug}/${project.slug}: keine Kapitel definiert`);
     } else {
       const chapters = groupIntoChapters(project, entry);
+
+      // Nicht zugeordnete Dateien erscheinen nicht auf der Seite. Damit sie
+      // nicht unbemerkt verschwinden, werden sie hier aufgelistet.
+      const uebrig = findeNichtZugeordnet(project, entry);
+      if (uebrig.length > 0) {
+        const namen = uebrig.map((i) => i.src.split('/').pop()).join(', ');
+        notes.push(
+          `${categorySlug}/${project.slug}: ${uebrig.length} Dateien werden nicht gezeigt ` +
+            `(in keinem Kapitel) — ${namen}`,
+        );
+      }
+
       for (const chapter of chapters) {
-        if (chapter.isLeftover) {
-          const names = chapter.items.map((i) => i.src.split('/').pop()).join(', ');
-          notes.push(
-            `${categorySlug}/${project.slug}: ${chapter.items.length} Dateien in keinem Kapitel — ${names}`,
-          );
-        } else if (chapter.platzhalter) {
+        if (chapter.platzhalter) {
           // Kapitel haelt bewusst Platz fuer eine oder mehrere Dateien frei, die noch fehlen.
           const dateien = Array.isArray(chapter.platzhalter)
             ? chapter.platzhalter
@@ -69,14 +76,14 @@ for (const categorySlug of ['arbeit', 'freizeit', 'uni']) {
               );
             }
           }
-        } else if (chapter.textOnly) {
+        } else if (chapter.textOnly || chapter.embed) {
           // Kapitel bewusst ohne Medien — nur Text.
         } else if (chapter.items.length === 0 && chapter.docs.length === 0) {
           problems.push(
             `${categorySlug}/${project.slug}: Kapitel "${chapter.title}" bleibt leer, kein Treffer fuer ${JSON.stringify(chapter.files ?? [])}`,
           );
         }
-        if (!chapter.isLeftover && !chapter.text?.trim()) {
+        if (!chapter.text?.trim()) {
           problems.push(
             `${categorySlug}/${project.slug}: Kapitel "${chapter.title}" hat keinen Text`,
           );

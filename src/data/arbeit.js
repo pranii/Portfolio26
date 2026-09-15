@@ -16,7 +16,7 @@
 export const category = {
   slug: 'arbeit',
   title: 'Arbeit',
-  lead: 'Auftragsarbeiten fuer Praxen, Gastronomie, Handwerk und Bildungseinrichtungen — jeweils von der ersten Marke bis zum fertigen Druckbogen.', // TODO
+  lead: 'Ausgewählte Auftragsarbeiten von für Gastronomie, Handwerk, Praxen und Bildungseinrichtungen.', // TODO
 };
 
 export const projects = [

@@ -2,8 +2,19 @@ import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
 
 export default defineConfig({
-  // Fuer GitHub Pages hier auf '/<repo-name>/' setzen.
-  base: './',
+  /**
+   * Unterverzeichnis, unter dem die Seite laeuft.
+   *
+   * GitHub Pages veroeffentlicht ein Repo namens "portfolio" unter
+   * https://<benutzername>.github.io/portfolio/ — deshalb muss der Name hier
+   * stehen, sonst suchen Skripte, Stylesheet und Bilder an der falschen Stelle.
+   *
+   * Benennst du das Repository um, musst du diese Zeile mitaendern.
+   * Fuer lokales Arbeiten (npm run dev) wird sie ignoriert.
+   */
+  // configure-pages liefert "/portfolio" ohne Schraegstrich am Ende,
+  // Vite braucht ihn aber — deshalb hier ergaenzen.
+  base: (process.env.BASE_PATH ?? '/portfolio').replace(/\/?$/, '/'),
   server: {
     open: true,
     host: true,
@@ -12,15 +23,22 @@ export default defineConfig({
        * Medien und Spiel-Build von der Dateiueberwachung ausnehmen.
        *
        * In public/ liegen rund 400 MB: ueber tausend Bilder, dazu Videos und
-       * der 91 MB grosse Godot-Export. Vite versucht sonst, jede dieser
-       * Dateien einzeln zu ueberwachen. Unter Windows bricht der Server
-       * dabei mit EBUSY ab, sobald eine Videodatei gerade von einem anderen
-       * Programm gehalten wird (Virenscanner, Vorschau, Kopiervorgang).
+       * der 91 MB grosse Godot-Export.
        *
-       * Es sind ohnehin statische Dateien — sie brauchen kein Neuladen.
-       * Neue Bilder erscheinen nach einem normalen Seiten-Refresh.
+       * Ausgenommen werden nur Videos und der Spiel-Export. Bilder bleiben
+       * bewusst unter Beobachtung: Vite liefert Dateien aus public/ nur aus,
+       * wenn es sie kennt — nimmt man den ganzen Ordner aus der Ueberwachung,
+       * erscheinen neu importierte Bilder erst nach einem Serverneustart.
        */
-      ignored: ['**/public/media/**', '**/public/spiel/**', '**/dist/**'],
+      ignored: [
+        // Nur die Videos ausnehmen: Unter Windows bricht der Server mit EBUSY
+        // ab, sobald eine Videodatei gerade von einem anderen Programm
+        // gehalten wird (Virenscanner, Vorschau, Kopiervorgang).
+        '**/public/media/**/*.{mov,mp4,m4v,webm}',
+        // Der Godot-Export ist 91 MB und aendert sich nur beim Neubauen.
+        '**/public/spiel/**',
+        '**/dist/**',
+      ],
     },
   },
   build: {

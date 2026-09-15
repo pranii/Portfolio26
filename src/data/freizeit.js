@@ -12,6 +12,58 @@ export const category = {
 
 export const projects = [
   {
+    slug: 'kamamuta',
+    title: 'Kama Muta',
+    subtitle: 'Ein Magazin ueber das Ergriffensein',
+    cover: 'prototyp-03',
+    description:
+      'Kama Muta ist das ploetzliche Gefuehl, das entsteht, wenn Naehe unerwartet spuerbar wird — Gaensehaut bei einer Umarmung, Traenen bei einem fremden Lied. Das Magazin versucht, dieses Gefuehl nicht zu erklaeren, sondern herzustellen: Leser werden aufgefordert, selbst Begegnungen zu machen.', // TODO
+    year: '2026',
+    role: 'Konzept, Gestaltung, Fotografie, Illustration',
+    tools: ['InDesign', 'Photoshop', 'After Effects'],
+    tags: ['Editorial', 'Magazin', 'Fotografie', 'Partizipation'],
+    pull: 'In Lak’ech — ich bin ein anderes Du.',
+    chapters: [
+      {
+        title: 'Erste Ideen',
+        text: 'Am Anfang standen Handlungsanweisungen statt Artikel: "Mache ein Foto mit der dir gegenueber sitzenden Person. Tausche Adresse und Namen aus." Das Magazin sollte etwas verlangen, nicht nur etwas zeigen.', // TODO
+        files: ['first-ideas'],
+        layout: 'track',
+      },
+      {
+        title: 'Archiv und Notizen',
+        text: 'Parallel lief ein Notizarchiv mit Saetzen, die spaeter Kapitelnamen wurden — darunter der Gedanke, Verbindung als Spiegel zur Aussenwelt zu begreifen.', // TODO
+        files: ['archive'],
+        layout: 'track',
+      },
+      {
+        title: 'Spaziergang',
+        text: 'Ein ganzes Kapitel entstand beim Gehen: Bleistiftskizzen von Dingen am Weg, die zufaellig etwas ausloesen — eine Lampe, ein Stuhl, eine Treppe.', // TODO
+        files: ['spaziergang'],
+        layout: 'track',
+      },
+      {
+        title: 'Black Swan',
+        text: 'Fuer das Kapitel Black Swan habe ich mit Klebezetteln gearbeitet, um die Reihenfolge der Doppelseiten so lange zu verschieben, bis der Rhythmus stimmte.', // TODO
+        files: ['black-swan'],
+        layout: 'track',
+      },
+      {
+        title: 'Veites Kapitee',
+        text: 'Ein weiteres Kapitel als Collage: gedruckte Doppelseiten, abfotografiert und wieder ueberklebt.', // TODO
+        files: ['veites-kapitee'],
+        layout: 'grid',
+      },
+      {
+        title: 'Prototyp',
+        text: 'Am Ende steht das gedruckte Heft — drei Essays, ein Umschlag, und der Beweis, dass die Anweisungen auf Papier funktionieren.', // TODO
+        files: ['prototyp', 'kama-muta-magazine-prototype'],
+        layout: 'track',
+      },
+    ],
+  },
+
+  {
     slug: 'love',
     title: 'Love',
     subtitle: 'LOVE - what love prompts us to do',

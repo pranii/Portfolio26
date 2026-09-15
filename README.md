@@ -86,8 +86,10 @@ Ein paar Regeln, die dir Arbeit sparen:
 - **Dateien zuordnen**: `files` sind Dateinamen-**Anfaenge**. `['visitenkarte']`
   holt alle Dateien, die so beginnen. Welche es gibt, siehst du in
   `public/media/<bereich>/<projekt>/`.
-- **Nichts geht verloren**: Was in keinen Schritt passt, landet sichtbar in
-  einem Schritt „Weiteres Material". `npm run check` sagt dir, wenn das passiert.
+- **Was keinem Schritt zugeordnet ist, wird nicht gezeigt.** Die Seite zeigt
+  nur, was du bewusst einsortiert hast — nicht alles, was zufaellig im Ordner
+  liegt. Verschwiegen wird trotzdem nichts: `npm run check` listet jede nicht
+  zugeordnete Datei mit Namen auf.
 - **Nicht alles wird gezeigt**: Pro Schritt erscheinen zunaechst sechs Bilder,
   der Rest kommt ueber „Alle Dateien zeigen". Die Zahl steht in
   `src/scripts/lib/render.js` als `VORSCHAU_BILDER`.

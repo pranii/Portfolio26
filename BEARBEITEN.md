@@ -38,7 +38,7 @@ Damit findest du hier die Quelle:
 | `card__title`, `project-head__title` | Bereichsdatei | `title` des Projekts                     |
 | `card__sub`, `project-head__sub`     | Bereichsdatei | `subtitle`                               |
 | `project-head__text`                 | Bereichsdatei | `description`                            |
-| `facts` (Jahr, Rolle, Auftraggeber)  | Bereichsdatei | `year`, `role`, `client`, `tools`        |
+| `facts` (Jahr, Rolle, Mitwirkende)  | Bereichsdatei | `year`, `role`, `client`, `tools`        |
 | `tags`                               | Bereichsdatei | `tags`                                   |
 | `pull` (großer Zwischenruf)          | Bereichsdatei | `pull`                                   |
 | `step__title`                        | Bereichsdatei | `chapters[].title`                       |

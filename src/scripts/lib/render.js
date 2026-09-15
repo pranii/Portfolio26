@@ -23,6 +23,20 @@ const esc = (value = '') =>
     (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c],
   );
 
+/**
+ * Macht aus einem absoluten Medienpfad einen, der auch in einem
+ * Unterverzeichnis funktioniert.
+ *
+ * Auf GitHub Pages liegt die Seite unter /<repo-name>/ — ein Pfad wie
+ * "/media/..." zeigt dort an der Seite vorbei. `import.meta.env.BASE_URL`
+ * kennt dieses Praefix; Vite setzt es beim Bauen ein. Lokal ist es "/",
+ * dann aendert sich nichts.
+ */
+export function asset(pfad = '') {
+  if (!pfad.startsWith('/')) return pfad;
+  return import.meta.env.BASE_URL.replace(/\/$/, '') + pfad;
+}
+
 export function mediaFor(category, slug) {
   return mediaIndex?.[category]?.[slug] ?? { images: [], videos: [], docs: [] };
 }
@@ -56,12 +70,12 @@ function cropSrc(image) {
 }
 
 function imageTag(image, sizes, { lazy = true, modus = passung(image) } = {}) {
-  const full = esc(image.src);
-  const thumb = esc(image.thumb ?? image.src);
+  const full = esc(asset(image.src));
+  const thumb = esc(asset(image.thumb ?? image.src));
 
   // Gefuellte Kacheln zeigen den vorbereiteten Ausschnitt, eingepasste
   // das ganze Bild. Die Lightbox oeffnet in beiden Faellen das Original.
-  const quelle = modus === 'fill' ? esc(cropSrc(image)) : thumb;
+  const quelle = modus === 'fill' ? esc(asset(cropSrc(image))) : thumb;
   const srcset =
     modus === 'fill'
       ? `${quelle} 1200w, ${full} ${image.width ?? 1800}w`
@@ -121,7 +135,7 @@ function videoBlock(video, poster) {
   return `
     <div class="figure figure--wide">
       <video controls playsinline preload="metadata"${poster ? ` poster="${esc(poster)}"` : ''}>
-        <source src="${esc(video.src)}" type="${type}">
+        <source src="${esc(asset(video.src))}" type="${type}">
         Dein Browser kann dieses Video nicht abspielen.
       </video>
     </div>`;
@@ -147,7 +161,7 @@ function gallery(items, poster, weit) {
     const modus = passung(item);
     return `
       <figure class="figure figure--${modus}${versteckt}">
-        <button class="figure__button" type="button" data-full="${esc(item.src)}" data-cursor="Vergrössern"
+        <button class="figure__button" type="button" data-full="${esc(asset(item.src))}" data-cursor="Vergrössern"
                 aria-label="Bild ${i + 1} von ${items.length} vergrössern">
           ${imageTag(item, sizes, { modus })}
         </button>
@@ -166,7 +180,7 @@ function downloadLinks(docs) {
   return `<p class="step__downloads">${docs
     .map(
       (doc) =>
-        `<a href="${esc(doc.src)}" target="_blank" rel="noopener" data-cursor="PDF">${esc(doc.label)} ↗</a>`,
+        `<a href="${esc(asset(doc.src))}" target="_blank" rel="noopener" data-cursor="PDF">${esc(doc.label)} ↗</a>`,
     )
     .join('')}</p>`;
 }
@@ -182,7 +196,8 @@ const WEITE_LAYOUTS = new Set(['stack', 'wide']);
  * so muss nichts umgebaut werden, wenn das Video spaeter dazukommt.
  */
 function platzhalter(datei, poster) {
-  const src = esc(datei);
+  const src = esc(asset(datei));
+  const pfad = esc(datei);
   const name = esc(datei.split('/').pop());
   return `
     <div class="figure figure--wide slot" data-slot-video>
@@ -193,17 +208,37 @@ function platzhalter(datei, poster) {
         <p class="slot__name">${name}</p>
         <p class="slot__text">
           Platz reserviert. Leg die Datei unter
-          <code>public${src.replace(/\/[^/]+$/, '/')}</code> ab, dann erscheint
+          <code>public${pfad.replace(/\/[^/]+$/, '/')}</code> ab, dann erscheint
           sie hier von selbst.
         </p>
       </div>
     </div>`;
 }
 
+/**
+ * Eingebettetes Video von einer fremden Plattform (Vimeo, YouTube).
+ *
+ * Sinnvoll, wenn die Datei zu gross fuer die eigene Seite waere: Das
+ * Storyboard von Art of Peace liegt als 58-MB-Datei vor — eingebettet
+ * kostet es die Besucher nichts, solange sie nicht auf Play druecken.
+ */
+function embedBlock(url, titel) {
+  if (!url) return '';
+  return `
+    <div class="figure figure--wide embed">
+      <iframe
+        src="${esc(url)}"
+        title="${esc(titel)}"
+        loading="lazy"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>`;
+}
+
 function renderStep(chapter, index, total, poster) {
   const weit = WEITE_LAYOUTS.has(chapter.layout);
   return `
-    <section class="step${chapter.isLeftover ? ' step--leftover' : ''}">
+    <section class="step">
       <div class="step__head">
         <p class="step__num">Schritt ${index + 1} von ${total}</p>
         <h2 class="step__title">${esc(chapter.title)}</h2>
@@ -212,6 +247,7 @@ function renderStep(chapter, index, total, poster) {
       </div>
       ${gallery(chapter.items, poster, weit)}
       ${platzhalterBlock(chapter.platzhalter, poster)}
+      ${embedBlock(chapter.embed, chapter.title)}
     </section>`;
 }
 
@@ -226,7 +262,7 @@ function factList(project) {
   const rows = [
     ['Jahr', project.year],
     ['Meine Rolle', project.role],
-    ['Auftraggeber', project.client],
+    ['Mitwirkende', project.client],
     ['Werkzeuge', project.tools?.join(', ')],
   ].filter(([, value]) => value);
 

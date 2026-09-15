@@ -52,16 +52,25 @@ export function groupIntoChapters(project, media) {
     if (coverItem) used.add(coverItem.src);
   }
 
-  const leftovers = pool.filter((item) => !used.has(item.src));
-  if (leftovers.length > 0) {
-    chapters.push({
-      title: 'Weiteres Material',
-      text: 'Diese Dateien sind noch keinem Kapitel zugeordnet. Trag sie in src/data/ beim passenden Kapitel unter `files` ein.',
-      items: leftovers,
-      docs: [],
-      isLeftover: true,
-    });
-  }
-
+  // Was in keinem Kapitel landet, wird nicht gezeigt.
+  //
+  // Frueher gab es dafuer ein Sammelkapitel "Weiteres Material". Das hat die
+  // Projektseiten zugemuellt: unsortierte Reste standen gleichberechtigt neben
+  // den kuratierten Schritten. Eine Portfolioseite soll zeigen, was gezeigt
+  // werden soll — nicht alles, was zufaellig im Ordner liegt.
+  //
+  // Verschwiegen wird trotzdem nichts: `npm run check` listet jede nicht
+  // zugeordnete Datei auf, damit nichts unbemerkt untergeht.
   return chapters;
+}
+
+/** Dateien, die in keinem Kapitel vorkommen — nur fuer die Pruefung. */
+export function findeNichtZugeordnet(project, media) {
+  const chapters = groupIntoChapters(project, media);
+  const verwendet = new Set(chapters.flatMap((c) => c.items.map((i) => i.src)));
+  if (project.cover) {
+    const treffer = media.images.find((i) => basename(i.src).startsWith(project.cover));
+    if (treffer) verwendet.add(treffer.src);
+  }
+  return [...media.images, ...media.videos].filter((i) => !verwendet.has(i.src));
 }

@@ -46,6 +46,13 @@
   --accent: var(--primary);
   --accent-ink: var(--secondary);
 
+  /* Leichter Gruenstich, wie ein altes LCD — Fotos bleiben erkennbar,
+     wirken aber nicht wie ein modernes Farbdisplay. */
+  --image-filter: grayscale(0.45) sepia(0.25) hue-rotate(60deg) saturate(1.6) brightness(0.97)
+    contrast(1.05);
+  --image-filter-hover: grayscale(0.35) sepia(0.3) hue-rotate(60deg) saturate(1.7) brightness(1.03)
+    contrast(1.1);
+
   --font-display: 'Press Start 2P', var(--font-mono);
   --font: 'VT323', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --font-mono: 'VT323', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
@@ -93,6 +100,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* Grid- und Flex-Kinder duerfen unter ihre Inhaltsbreite schrumpfen —
+     sonst reisst z.B. ein Bild oder ein langes Wort das ganze Raster
+     auf schmalen Bildschirmen breiter als der Bildschirm selbst. */
+  min-width: 0;
 }
 
 html {
@@ -109,6 +120,9 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Lange deutsche Komposita (z.B. Projektnamen) sollen auf schmalen
+     Bildschirmen brechen koennen statt den Rahmen zu sprengen. */
+  overflow-wrap: break-word;
 }
 
 img,
@@ -609,8 +623,12 @@ html.launcher-active body {
 
 .card {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s-3);
   align-content: start;
+  /* Ohne das wuerde die Karte nie schmaler als der Titeltext werden koennen
+     und die Kachel auf kleinen Bildschirmen aus dem Raster schieben. */
+  min-width: 0;
 }
 
 .card__body {
@@ -628,13 +646,14 @@ html.launcher-active body {
 .card__media img {
   width: 100%;
   height: 100%;
+  filter: var(--image-filter);
   transition:
     transform 0.8s var(--ease),
     filter 0.5s var(--ease);
 }
 
 .card:hover .card__media img {
-  filter: brightness(1.1);
+  filter: var(--image-filter-hover);
 }
 
 /* Fotos fuellen die Karte, Plakate und Logos werden eingepasst —
@@ -716,8 +735,12 @@ html.launcher-active body {
    etwa 3:2, damit die Spalten nicht konkurrieren. */
 .project-head__grid {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: var(--s-6) var(--s-8);
+  /* Die Textspalte darf nie breiter werden als ihre Lesebreite (--measure) —
+     sonst bleibt zwischen Absatz und Fakten-Tabelle ein unmotivierter
+     Leerraum stehen, statt dass der Zwischenraum bewusst als Luft wirkt.
+     ("fr" ist in min()/max() ungueltig, darum minmax(0, Laenge) statt min()). */
+  grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
+  gap: var(--s-6) var(--s-9);
   align-items: start;
   margin-top: var(--s-5);
   padding-top: var(--s-6);
@@ -823,6 +846,7 @@ html.launcher-active body {
 .project-head__cover img {
   width: 100%;
   height: 100%;
+  filter: var(--image-filter);
 }
 .project-head__cover--fill img {
   object-fit: cover;
@@ -940,10 +964,6 @@ html.launcher-active body {
   filter: brightness(1.4);
 }
 
-.step--leftover .step__title,
-.step--leftover .step__num {
-  color: var(--ink-dim);
-}
 
 /* ── 9 Bilder ─────────────────────────────────────────────────────── */
 
@@ -971,6 +991,14 @@ html.launcher-active body {
   aspect-ratio: 16 / 9;
   background: var(--secondary);
 }
+/* Eingebettetes Video einer fremden Plattform. */
+.embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 .figure.is-hidden {
   display: none;
 }
@@ -985,9 +1013,15 @@ html.launcher-active body {
 .figure__button img {
   width: 100%;
   height: 100%;
+  filter: var(--image-filter);
   transition:
     transform 0.7s var(--ease),
-    opacity 0.3s var(--ease);
+    opacity 0.3s var(--ease),
+    filter 0.3s var(--ease);
+}
+
+.figure__button:hover img {
+  filter: var(--image-filter-hover);
 }
 
 /* Fotos und Screenshots fuellen die Kachel. */
@@ -1353,6 +1387,7 @@ kbd {
   max-width: min(100%, 72rem);
   max-height: 80svh;
   object-fit: contain;
+  filter: var(--image-filter);
 }
 
 .lightbox__close,
@@ -1404,6 +1439,7 @@ kbd {
   max-width: var(--shell);
   margin-inline: auto;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--s-5);
 }
 
@@ -1513,6 +1549,12 @@ kbd {
   }
   .site-header {
     position: static;
+    flex-wrap: wrap;
+  }
+  .site-nav {
+    justify-content: flex-start;
+    width: 100%;
+    gap: var(--s-3) var(--s-5);
   }
 }
 

@@ -1,13 +1,7 @@
-/**
- * UNI — Studienprojekte.
- * Aufbau wie in arbeit.js: jedes Projekt hat Kapitel mit Text und `files`.
- * Texte sind Entwuerfe, bei TODO bitte ueberschreiben.
- */
-
 export const category = {
   slug: 'uni',
   title: 'Uni',
-  lead: 'Studienprojekte zwischen Rauminstallation, Magazin, Game Design und Interaktion — die Arbeiten, in denen am meisten ausprobiert wurde und am meisten schiefgehen durfte.', // TODO
+  lead: 'Studienprojekte — die Arbeiten, in denen am meisten ausprobiert wurde und am meisten schiefgehen durfte. Im Anhang ist eine Auswahl.', // TODO
 };
 
 export const projects = [
@@ -18,9 +12,9 @@ export const projects = [
     cover: 'header',
     description:
       'Rreth ist ein Herzensprojekt, das 2020 mit einem kleinen Magazin und einem Schluesselanhaenger begann. Daraus hat sich ein Magazin entwickelt, das als Wegweiser durch verschiedene psychologische Modelle dient, und schliesslich eine zwanzigminuetige Rauminstallation zum Thema Scham: Sie fuehrt Besucher durch fuenf Phasen, von absoluter Dunkelheit ueber konfrontierende Video-Akte bis in einen hellen Raum, in dem anonyme Telefonzellen stehen und Menschen ihre eigene Geschichte erzaehlen koennen. Magazin und Rauminstallation sollen sich gegenseitig ergaenzen — die Rauminstallation als emotionale Reise, das Magazin als Wegweiser durch die Modelle dahinter. Rreth ist albanisch fuer Kreis.', // TODO
-    year: '2026',
-    role: 'Konzept, Regie, Rauminstallation, Gestaltung',
-    tools: ['Premiere Pro', 'InDesign', 'Photoshop'],
+    year: '2023 - 2026',
+    role: 'Konzeption, Recherche, Regie, Rauminstallation, Gestaltung',
+    tools: ['Premiere Pro', 'EbSynth', 'Ableton', 'InDesign', 'Photoshop'],
     tags: ['Rauminstallation', 'Film', 'Partizipation', 'Editorial'],
     pull: 'Die ploetzliche Stille ist fast lauter als der Laerm.',
     chapters: [
@@ -29,46 +23,125 @@ export const projects = [
       // Kapitel im Karussell-Layout einfuegen, z.B.:
       //   { title: '2020 — Magazin und Schluesselanhaenger', files: ['rreth1'], layout: 'track' }
       {
+        title: 'Worum es geht',
+        text:
+          'Mir geht es darum, Verhaltensweisen zu erkennen, die einmal als Schutzmechanismus ' +
+          'gedient haben — und dann bewusst gegen den eigenen Impuls zu handeln, fuer ein ' +
+          'schoeneres Miteinander. Das Magazin legt die Grundlage dafuer: Es fuehrt vom ' +
+          'Instanzenmodell nach Freud ueber Melanie Kleins Objektbeziehungstheorie zu Pete ' +
+          'Walkers vier Ueberlebensstrategien — Kampf, Flucht, Erstarrung, Unterwerfung — und ' +
+          'endet bei konkreten Gedankenkorrekturen. Jede dieser Strategien hat einmal ' +
+          'funktioniert. Das ist der Punkt: Sie war nie ein Charakterfehler, sondern eine ' +
+          'Loesung fuer eine Situation, die so heute nicht mehr herrscht.',
+        files: ['rreth02'],
+        layout: 'track',
+      },
+      {
         title: 'Erste Skizzen',
-        text: 'Angefangen hat es an einer Wand voller Zettel: Paranoia, Dissoziation, Dissonanz. Aus diesen Wortfeldern hat sich herausgeschaelt, dass es nicht um Depression gehen sollte, sondern um Scham.', // TODO
+        text: 'RAUMINSTALLTION: Angefangen hat es mit vielen Tagebucheinträgen und Brainstorms. Geendet hat es in folgendes Konzept: Paranoia, Dissoziation, Dissonanz. Aus diesen Wortfeldern hat sich herausgeschaelt, dass es nicht um Depression gehen sollte, sondern um Scham.', // TODO
         files: ['have'],
         layout: 'grid',
       },
       {
+        title: 'Erste Präsentation',
+        text: '"Take It All Off - Break the Silence" in Schwarz und Rot. Die Aufforderung und ihr Preis nebeneinander. Mit dieser ersten Praesentation und dem ersten Projektpitch sind Cara und Laura mit in das Projekt eingestiegen.', // TODO
+
+        files: ['wheel-of-shame'],
+        layout: 'track',
+      },
+      //   Hier möchte ich bitte auch nochmal ein Karussell einfügen als PDF. Bitte erinnere mich daran Claude
+
+      {
         title: 'Symbolik der Akte',
-        text: 'Fuer jeden Akt habe ich ein eigenes Bildmotiv gesucht — Karussell, Maske, Wasser, Zug. Jedes steht fuer eine Form von Kreislauf, aus dem man nicht von allein herauskommt. Auf die Symbole haben Cara und ich uns gemeinsam geeinigt.', // TODO
+        text: 'Fuer jeden Akt wurde ein eigenes Symbol gewählt. Jedes steht fuer eine Form von Kreislauf, aus dem man alleine schwer herauskommt. Auf die Symbole haben Cara und ich uns gemeinsam geeinigt.', // TODO
         files: ['symbolik'],
         layout: 'grid',
       },
       {
         title: 'Raumkonzept',
-        text: 'Die Handskizzen legen fest, wie der Besucher durch den Raum gefuehrt wird: Video- und Audioinstallation, Warteraum, Telefonzelle. Die Architektur ist Teil der Dramaturgie, nicht nur ihr Behaelter. Ausgestellt werden sollte die Installation in Kooperation mit der Halle93 in Stuttgart, was aus Zeitgruenden verschoben werden musste. Die neue Raumskizze hat Laura Zahn entwickelt, in Kooperation mit der Gastronomie "Roessle".', // TODO
-        files: ['in-halt', 'skam-koh-per-depressiona', 'raumskizze-laura'],
-        layout: 'track',
-      },
-      {
-        title: 'Key Visual',
-        text: 'Das Schluesselbild bringt maskierte Koerper und den Titel zusammen: "Take It All Off" in Schwarz, "Break the Silence" in Rot — die Aufforderung und ihr Preis nebeneinander. Mit dieser ersten Praesentation und dem ersten Projektpitch sind Cara und Laura mit in das Projekt eingestiegen.', // TODO
-        files: ['wheel-of-shame'],
+        text: 'Die Handskizzen legen fest, wie der Besucher durch den Raum gefuehrt wird: Video- und Audioinstallation, Warteraum, Telefonzelle. Die Architektur ist Teil der Dramaturgie, nicht nur ihr Behaelter. Ausgestellt werden sollte die Installation in Kooperation mit der Halle93 in Stuttgart, was aus Zeitgruenden verschoben werden musste. Die neue Raumskizze hat Laura Zahn im Rahmen einer Ausstellung an der School of Design an Media entwickelt.', // TODO
+        files: ['in-halt', 'raumskizze-laura'],
         layout: 'track',
       },
       {
         title: 'Projektpitch',
-        text: 'Der finale Pitch beschreibt alle fuenf Phasen einzeln: Farbe, Ton, Gefuehl, Zeitdauer und Referenz. Phase eins ist absolute Dunkelheit mit Theta-Wellen, Phase drei eine einzige Minute Stille — ohne Pause keine Katharsis.', // TODO
+        text: 'Der finale Pitch beschreibt alle fuenf Phasen einzeln: Farbe, Ton, Gefuehl, Zeitdauer und Referenz.', // TODO
         files: ['pitch-version-1'],
         layout: 'track',
       },
+
+      // Hier möchte ich auch noch Platz für ein Video welches ich mit einbette im Nachhinein.
       {
-        title: 'Reflexion',
-        text: 'Im Rueckblick: Manches hat im Raum funktioniert und die Besucher tatsaechlich erreicht, manches war am Ende nur mir wichtig.', // TODO
-        files: [],
-        textOnly: true,
+        title: 'Zukunftsausblick',
+        text:
+          'Fuer die Ausstellung war eine Instagram-Kampagne geplant: kurze Videos, selbst ' +
+          'aufgenommen und mit KI weiterbearbeitet, dazu Captions in der ersten Person — ' +
+          '"We eat shame for breakfast", "I have no mouth but I need to scream". Jeder Post ' +
+          'traegt den Namen eines Musters statt eines Titels: Suppressing, Self Sabotage, ' +
+          'Self Destruction. Aus Zeitgruenden ist die Kampagne verschoben. Die Installation ' +
+          'soll in zwei Jahren erneut aufgefuehrt werden — bis dahin entsteht eine neue ' +
+          'Auflage des Magazins, und an den Videos wird weitergearbeitet.',
+        files: ['rreth-kampagne'],
+        layout: 'track',
       },
-      // Die fuenf Videoarbeiten (Karussell, Maske, Void, Water, Zug) sind
-      // zwischen 278 und 753 MB gross und noch nicht komprimiert.
-      // Nach dem Komprimieren oben im Projekt ergaenzen:
-      //   extraVideos: ['/media/uni/rreth/karussell.mp4', ...],
-      // und hier ein Kapitel mit files: ['karussell', 'maske', ...] anlegen.
+    ],
+  },
+
+  {
+    slug: 'in-lakech',
+    title: 'In Lak’ech',
+    subtitle: 'Ein Begegnungsautomat fuer den oeffentlichen Raum',
+    cover: 'begegnung-02',
+    description:
+      'Entstanden in einem fuenfwoechigen Workshop mit der Aufgabe, eine Begegnung im ' +
+      'oeffentlichen Raum zu schaffen. Herausgekommen ist ein Automat fuer zwei Fremde: ' +
+      'ein Videospiel im Nokia-3310-Look, programmiert in Python auf einem Raspberry Pi, ' +
+      'bedient ueber zwei Arcade-Knoepfe. Zwei Figuren streiten sich im Pokemon-Stil ' +
+      'durch ein Duell — bis am Ende die Frage steht: to die or to live together? Nur ' +
+      'wenn beide gleichzeitig druecken, loest die Kamera aus und der Kassenbon-Drucker ' +
+      'gibt ein Foto der Begegnung aus, durchnummeriert.', // TODO
+    year: '2026',
+    role: 'Konzept, Gestaltung, Programmierung',
+    tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
+    tags: ['Installation', 'Game', 'Partizipation', 'Raspberry Pi', 'Public Space'],
+    pull: 'Ich werde an dir zu mir.',
+    chapters: [
+      {
+        title: 'Visions',
+        text:
+          'Ausgangspunkt und Inspirationsquelle: Collagen aus Fundstuecken, Farbe und ' +
+          'Handschrift. Aus dieser Bildwelt kam die Entscheidung, nicht mit Hochglanz zu ' +
+          'arbeiten, sondern mit etwas Gebrauchtem und Lautem.', // TODO
+        files: ['visions'],
+        layout: 'grid',
+      },
+      {
+        title: 'Arcade',
+        text:
+          'Auf Rasterpapier wurde das Spiel grob aufgezeichnet: Bildschirmaufbau, ' +
+          'Dialogbox, wo die Figuren stehen, wo der Timing-Balken sitzt. Das Raster ' +
+          'entsprach dabei schon dem spaeteren Pixelbild.', // TODO
+        files: ['arcade'],
+        layout: 'track',
+      },
+      {
+        title: 'Taiyo und Tsuki',
+        text:
+          'Die beiden Figuren heissen Sonne und Mond. Jede sitzt auf einer Seite des ' +
+          'Bildschirms und gehoert zu einem Arcade-Knopf, der nur leuchtet, wenn sie ' +
+          'spricht. Die Angriffs-Animationen hat Julien Truebiger erstellt.', // TODO
+        files: ['hand', 'animation'],
+        layout: 'grid',
+      },
+      {
+        title: 'In Lak’ech — Begegnungen',
+        text:
+          'Das Ergebnis: jede gelungene Begegnung wird fotografiert und auf einem ' +
+          'Kassenbon ausgedruckt, mit fortlaufender Nummer. Zwei Menschen, die sich ' +
+          'vorher nicht kannten, halten danach denselben Zettel in der Hand.', // TODO
+        files: ['begegnung'],
+        layout: 'grid',
+      },
     ],
   },
 
@@ -78,21 +151,17 @@ export const projects = [
     subtitle: 'Interaktive Videoinstallation',
     cover: 'header',
     description:
-      'Eine Videoinstallation ueber Nostalgie als Abwehrmechanismus: Wir verdraengen, was gerade passiert, und romantisieren es spaeter durch den Filter von Social Media, statt es zu verarbeiten. Zwei alte Roehrenmonitore stehen an den Ausgaengen des Aufzugs — gesteuert wird nur mit Koerperhaltung und Handbewegung, ohne Controller.', // TODO
+      'Eine Videoinstallation ueber Nostalgie als Abwehrmechanismus: THESE: Wir verdraengen, was gerade passiert, und romantisieren es spaeter durch den Filter von Social Media, statt es zu verarbeiten. Zwei alte Roehrenmonitore stehen an den Ausgaengen des Aufzugs — gesteuert wird nur mit Koerperhaltung und Handbewegung, ohne Controller.', // TODO
     year: '2026',
     role: 'Konzept, Gestaltung, Interaktion',
     client: 'Staedtische Galerie Villingen-Schwenningen, Maerz–April 2026',
     tools: ['TouchDesigner', 'Photoshop', 'CRT-Monitore'],
     tags: ['Installation', 'Interaktionsdesign', 'TouchDesigner', 'Liminalitaet'],
     pull: 'Was bleibt, wenn der Schein trügt?',
-    extern: {
-      href: 'https://pranii.github.io/Nostalgia_IsAPortal/',
-      label: 'Prozess-Journal ansehen',
-      note: 'Die vollstaendige Dokumentation als eigene Webseite.',
-    },
+
     chapters: [
       {
-        title: 'Recherche',
+        title: 'Brainstorm',
         text: 'Der Ausgangspunkt war der Begriff Liminalitaet — der Schwellenzustand zwischen zwei Zustaenden. Aus Brainstorming und Materialarchiv haben wir drei Straenge verfolgt: Sprache, nationale Identitaet und Spiritualitaet.', // TODO
         files: ['brainstorm', 'archiv'],
         layout: 'wide',
@@ -112,8 +181,8 @@ export const projects = [
       {
         title: 'Bildwelt',
         text: 'Die Aesthetik kommt vom Signalfehler: RGB-Versatz, Bildrauschen, verrissene Zeilen. Was auf einem modernen Bildschirm wie ein Defekt aussieht, ist auf der Roehre das natuerliche Verhalten.', // TODO
-        files: ['marketing'],
-        layout: 'wide',
+        // Bewusst ohne Bild — der Absatz steht fuer sich.
+        textOnly: true,
       },
       {
         title: 'Plakate',
@@ -122,86 +191,16 @@ export const projects = [
         layout: 'grid',
       },
       {
-        title: 'Aufbau in der Galerie',
-        text: 'In der Staedtischen Galerie stand die Roehre auf einem verhuellten Tisch, daneben die Plakate. Der Aufbau sollte provisorisch wirken, als haette jemand das Geraet dort vergessen.', // TODO
+        title: 'Erster provisorischer Aufbau',
+        text: 'Die Fernseher standen auf einem verhuellten Tisch, daneben die Plakate.', // TODO
         files: ['liminal'],
         layout: 'grid',
       },
       {
-        title: 'Die Installation im Betrieb',
-        text: 'So sah es aus, wenn jemand davorstand: Textfragmente erscheinen und zerfallen wieder — "where does one begin and the other end?", "Light, Future, Past".', // TODO
+        title: 'Snippets',
+        text: 'Textfragmente erscheinen und zerfallen wieder. "where does one begin and the other end?", "Light, Future, Past".', // TODO
         files: ['touchdesigner', 'liminalitaet2'],
         layout: 'grid',
-      },
-    ],
-  },
-
-  {
-    slug: 'kamamuta',
-    title: 'Kama Muta',
-    subtitle: 'Ein Magazin ueber das Ergriffensein',
-    cover: 'header',
-    description:
-      'Kama Muta ist das ploetzliche Gefuehl, das entsteht, wenn Naehe unerwartet spuerbar wird — Gaensehaut bei einer Umarmung, Traenen bei einem fremden Lied. Das Magazin versucht, dieses Gefuehl nicht zu erklaeren, sondern herzustellen: Leser werden aufgefordert, selbst Begegnungen zu machen.', // TODO
-    year: '2026',
-    role: 'Konzept, Gestaltung, Fotografie, Illustration',
-    tools: ['InDesign', 'Photoshop', 'After Effects'],
-    tags: ['Editorial', 'Magazin', 'Fotografie', 'Partizipation'],
-    pull: 'In Lak’ech — ich bin ein anderes Du.',
-    chapters: [
-      {
-        title: 'Erste Ideen',
-        text: 'Am Anfang standen Handlungsanweisungen statt Artikel: "Mache ein Foto mit der dir gegenueber sitzenden Person. Tausche Adresse und Namen aus." Das Magazin sollte etwas verlangen, nicht nur etwas zeigen.', // TODO
-        files: ['first-ideas'],
-        layout: 'track',
-      },
-      {
-        title: 'Archiv und Notizen',
-        text: 'Parallel lief ein Notizarchiv mit Saetzen, die spaeter Kapitelnamen wurden — darunter der Gedanke, Verbindung als Spiegel zur Aussenwelt zu begreifen.', // TODO
-        files: ['archive'],
-        layout: 'track',
-      },
-      {
-        title: 'Spaziergang',
-        text: 'Ein ganzes Kapitel entstand beim Gehen: Bleistiftskizzen von Dingen am Weg, die zufaellig etwas ausloesen — eine Lampe, ein Stuhl, eine Treppe.', // TODO
-        files: ['spaziergang'],
-        layout: 'track',
-      },
-      {
-        title: 'Black Swan',
-        text: 'Fuer das Kapitel Black Swan habe ich mit Klebezetteln gearbeitet, um die Reihenfolge der Doppelseiten so lange zu verschieben, bis der Rhythmus stimmte.', // TODO
-        files: ['black-swan'],
-        layout: 'track',
-      },
-      {
-        title: 'Arcade',
-        text: 'Auf Rasterpapier wurden die Layouts konkret: wo Text steht, wo Bild, wo bewusst nichts.', // TODO
-        files: ['arcade'],
-        layout: 'track',
-      },
-      {
-        title: 'Visions',
-        text: 'Visions ist der lauteste Teil — Collagen aus Fundstuecken, Farbe und Handschrift, als Gegengewicht zu den ruhigen Kapiteln.', // TODO
-        files: ['visions', 'veites-kapitee'],
-        layout: 'grid',
-      },
-      {
-        title: 'In Lak’ech — Begegnungen',
-        text: 'Das Herzstueck: vierundzwanzig Begegnungen, jede als Schwarzweissfoto mit fortlaufender Nummer. Zwei Menschen fotografieren sich gegenseitig und tauschen ihre Namen — genau das, wozu das Magazin auffordert.', // TODO
-        files: ['in-lakech'],
-        layout: 'grid',
-      },
-      {
-        title: 'Nokia-Animation',
-        text: 'Fuer den digitalen Teil habe ich zwei Animationen im Nokia-3310-Raster gebaut: Taiyo und Tsuki, Sonne und Mond.', // TODO
-        files: ['nokia'],
-        layout: 'track',
-      },
-      {
-        title: 'Prototyp',
-        text: 'Am Ende steht das gedruckte Heft — drei Essays, ein Umschlag, und der Beweis, dass die Anweisungen auf Papier funktionieren.', // TODO
-        files: ['prototyp', 'kama-muta-magazine-prototype'],
-        layout: 'track',
       },
     ],
   },
@@ -211,8 +210,7 @@ export const projects = [
     title: 'Botlnick',
     subtitle: 'Game Jam — Godot, Blender, Photogrammetrie',
     cover: 'header',
-    description:
-      'Ein Spiel, das aus echten Orten gebaut ist: Tiefgarage, Keller und Hinterhof wurden per Photogrammetrie eingescannt, in Blender aufbereitet und in Godot zu begehbaren Liminal Spaces zusammengesetzt. Entstanden im Game Jam bei Prof. Christoph Mueller und Julien Truebger.', // TODO
+    description: 'Entstanden im Game Jam bei Prof. Christoph Mueller und Julien Truebinger.', // TODO
     year: '2026',
     role: 'Game Design, 3D, Level Design, Dokumentation',
     tools: ['Godot', 'Blender', 'Polycam', 'Photoshop'],
@@ -227,36 +225,7 @@ export const projects = [
         files: ['style', 'comedic-relief', 'cutscenes', 'key-objects'],
         layout: 'track',
       },
-      {
-        title: 'Game Design Dokument',
-        text: 'Aus den Ideen wurde ein Dokument mit Core Loop, Kurzzeit- und Langzeitziel. Erst als das stand, durfte gebaut werden.', // TODO
-        files: ['game-studies-gdd'],
-        layout: 'track',
-      },
-      {
-        title: 'Photogrammetrie',
-        text: 'Die Orte habe ich mit Polycam eingescannt: Tiefgarage, Halle, Keller, Hauseingang. Die Rohscans sind loechrig und schief — genau das macht sie fuer Liminal Spaces brauchbar.', // TODO
-        files: ['photogrammetrie', 'stagedesignphotogrammetry'],
-        layout: 'grid',
-      },
-      {
-        title: 'Charaktere',
-        text: 'Die Figuren entstanden als glaenzende Plastikkoerper, die bewusst nicht in die schmutzigen Scans passen — Hauptcharakter, Nebenfigur und ein Automat als stummer Gegenspieler.', // TODO
-        files: ['character-ref', 'hauptcharacter', 'nebencharacter', 'sidecharacter'],
-        layout: 'track',
-      },
-      {
-        title: 'Level und Look',
-        text: 'In Godot wurden die Scans zusammengesetzt und beleuchtet. Der PSX-Look mit niedriger Aufloesung und Vertex-Wobble kaschiert die Scanfehler und setzt sie zugleich in Szene.', // TODO
-        files: ['stagedesign', 'liminal-space', 'scenerie', 'screenshot', 'erste-szene-ergebnis'],
-        layout: 'grid',
-      },
-      {
-        title: 'Im Spiel',
-        text: 'Aufnahmen aus dem laufenden Spiel: Startbildschirm, erste Szene und der Uebergang, an dem der Ton kippt.', // TODO
-        files: ['gamejamstartscreen', 'beginning', 'revolution'],
-        layout: 'stack',
-      },
+
       {
         title: 'Dokumentation',
         text: 'Die Abgabedokumentation haelt den ganzen Weg fest — von der Ideenfindung ueber Setting und Mechanik bis zur Nachbearbeitung der Scans.', // TODO
@@ -268,22 +237,74 @@ export const projects = [
 
   {
     slug: 'shepard-tone',
-    title: 'Shepard Tone',
-    subtitle: 'Interaktive Klanginstallation',
-    cover: 'header',
+    title: 'Multi Shepard',
+    subtitle: 'Audiovisuelle Rauminstallation',
+    cover: 'shephard-tone-doku-s01',
     description:
-      'Der Shepard-Ton ist eine Hoertaeuschung: eine Tonhoehe, die endlos zu steigen scheint, ohne je hoeher zu werden. Die Installation uebersetzt diese Endlosschleife in einen begehbaren Raum mit mehrkanaliger Lautsprecheranordnung.', // TODO
-    year: '2025', // TODO
+      'Der Shepard-Ton ist eine Hoertaeuschung: eine Tonhoehe, die endlos zu steigen oder ' +
+      'zu fallen scheint, ohne je irgendwo anzukommen. Multi Shepard bringt ihn in einen ' +
+      'Vorlesungssaal und stellt ihm eine projizierte optische Illusion zur Seite. Wer den ' +
+      'Raum betritt, laeuft mitten hindurch — der Ton laeuft bereits, und der Weg nach ' +
+      'unten ist das Erlebnis.', // TODO
+    year: 'Januar 2026',
     role: 'Konzept, Raumgestaltung, Sound',
-    tools: ['Ableton Live', 'InDesign', 'Polycam'],
-    tags: ['Klanginstallation', 'Raum', 'Interaktion'],
-    pull: 'Ein Ton, der ewig steigt und nie ankommt.',
+    client:
+      'Mit Cara Brueggendieck und Kathrin Krell. Betreut von Prof. Norbert Schnell und Peter Kirschenbauer',
+    tools: ['Web Audio API', 'JavaScript', 'Polycam', 'InDesign'],
+    tags: ['Klanginstallation', 'Raum', 'Wahrnehmung', 'Interaktion'],
+    pull: 'Kann ich meinen Sinnen ueberhaupt trauen?',
     chapters: [
       {
-        title: 'Konzept und Dokumentation',
-        text: 'Die Dokumentation fuehrt von der Definition des Shepard-Tons ueber das Raumkonzept und den technischen Aufbau bis zu den Evaluationsergebnissen. Der Raum selbst wurde eingescannt, um die Lautsprecherpositionen planen zu koennen.', // TODO
-        files: ['shepard-tone'],
-        layout: 'track',
+        title: 'Konzeptfindung',
+        text:
+          'Zuerst die Frage, welche Emotion der Ton tragen soll. Nach einer Diskussion ueber ' +
+          'Horror fiel die Entscheidung auf Action. Die urspruengliche Idee sah eine ' +
+          'Installation mit Positionstracking vor — auf Rat von Prof. Norbert Schnell haben ' +
+          'wir radikal vereinfacht und uns auf drei Parameter beschraenkt: Geschwindigkeit, ' +
+          'Richtung und Lautstaerke.', // TODO
+        files: ['shephard-tone-doku-s01', 'shephard-tone-doku-s02'],
+        layout: 'wide',
+      },
+      {
+        title: 'Erlebnisgestaltung',
+        text:
+          'Das Erlebnis sollte sich anfuehlen wie der Moment kurz vor dem Hoehepunkt einer ' +
+          'Filmszene: dauernde Eskalation, die nie aufgeloest wird. Deshalb laeuft der Ton ' +
+          'schon, bevor jemand den Raum betritt. Stehenbleiben und zuschauen geht nicht — ' +
+          'der Weg durch den Raum ist die Arbeit.', // TODO
+        files: ['shephard-tone-doku-s03'],
+        layout: 'wide',
+      },
+      {
+        title: 'Referenzen',
+        text:
+          'Der Shepard-Ton ist laengst kein Kuriosum mehr: Hans Zimmer baut den gesamten ' +
+          'Dunkirk-Score darauf auf, der Batpod in The Dark Knight beschleunigt scheinbar ' +
+          'endlos, und die Endlostreppe in Super Mario 64 nutzt denselben Trick. Dazu kamen ' +
+          'optische Illusionen als visuelles Gegenstueck.', // TODO
+        files: ['shephard-tone-doku-s04', 'shephard-tone-doku-s05'],
+        layout: 'wide',
+      },
+      {
+        title: 'Technischer Aufbau',
+        text:
+          'Elf Oszillatoren decken das Frequenzspektrum von 20 Hz bis 20.480 Hz in Oktaven ab, ' +
+          'eine Amplituden-Huellkurve macht die Uebergaenge an den Raendern unhoerbar. Der ' +
+          'Grundriss zeigt, warum der Vorlesungssaal passt: Nur ein Weg fuehrt links durch ' +
+          'den Raum, alles andere versperren die Sitzreihen — jeder Besucher geht dieselbe ' +
+          'Strecke.', // TODO
+        files: ['shephard-tone-doku-s06'],
+        layout: 'wide',
+      },
+      {
+        title: 'User Testing',
+        text:
+          'Weil alle denselben Weg nehmen, lassen sich die Durchgaenge vergleichen. Geplant ' +
+          'sind Fragebogen und Kurzinterviews, dazu die Beobachtung von Koerpersprache und ' +
+          'Gehgeschwindigkeit: Ab wann setzt die Illusion ein? Bricht sie, wenn man ' +
+          'stehenbleibt? Fuehlt sich der Abstieg laenger an, als er ist?', // TODO
+        files: ['shephard-tone-doku-s07'],
+        layout: 'wide',
       },
     ],
   },
@@ -294,7 +315,7 @@ export const projects = [
     subtitle: 'Multimodale Visualisierung emotionaler Zustaende',
     cover: 'header',
     description:
-      'Eine Studienarbeit im Interaktionsdesign: Wie lassen sich emotionale Zustaende so darstellen, dass sie therapeutische Prozesse unterstuetzen statt sie zu vereinfachen? Entwickelt im Human-Centered-Design-Prozess mit Interviews, Personas und Prototypen.', // TODO
+      'Eine Studienarbeit im Interaktionsdesign: Wie lassen sich emotionale Zustaende so darstellen, dass sie therapeutische Prozesse unterstuetzen? Entwickelt im Human-Centered-Design-Prozess mit Interviews, Personas und Prototypen.', // TODO
     year: '2026',
     role: 'Konzept, Recherche, Prototyp',
     client: 'Hochschule Furtwangen, Prof. Dr.-Ing. Thomas Schlegel',
@@ -307,71 +328,145 @@ export const projects = [
         files: ['interaktionsdesign-projektbericht'],
         layout: 'track',
       },
-      {
-        title: 'Bano',
-        text: 'Aus demselben Semester stammt Bano, ein Sprachassistent-Interface. Bitte pruefen, ob das hierher gehoert oder ein eigenes Projekt werden soll.', // TODO
-        files: ['bano'],
-        layout: 'stack',
-      },
     ],
   },
 
   {
     slug: 'zodizine',
     title: 'ZodiZine',
-    subtitle: 'Zine-Automat auf dem Raspberry Pi',
+    subtitle: 'Banales Ding — ein Zine-Automat',
     cover: 'header',
     description:
-      'Eine Station, an der Besucher ihr Geburtsdatum auf einem Touchscreen eingeben und daraufhin ein persoenliches Zine gedruckt bekommen — berechnet aus chinesischem, indischem und keltischem Tierkreis. Alles laeuft offline auf einem Raspberry Pi.', // TODO
+      'Eine Station, an der Besucher ihr Geburtsdatum auf einem Touchscreen eingeben und ' +
+      'daraufhin ein persoenliches Zine gedruckt bekommen — berechnet aus chinesischem, ' +
+      'indischem und keltischem Tierkreis. Ein simples Druckerzeugnis, das durch ' +
+      'Personalisierung vom fluechtigen Wegwerfprodukt zum greifbaren Erlebnis wird. ' +
+      'Alles laeuft offline auf einem Raspberry Pi.', // TODO
     year: '2026',
-    role: 'Konzept, Gestaltung, Umsetzung',
-    tools: ['React', 'Flask', 'Raspberry Pi', 'InDesign'],
+    role: 'Konzept, technische Umsetzung',
+    client:
+      'Mit Cara Brueggendieck. Modul "Inszenierung Interaktiver Medien", Master Design Interaktiver Medien',
+    tools: ['React', 'Flask', 'Raspberry Pi', 'ReportLab', 'InDesign'],
     tags: ['Interaktion', 'Zine', 'Prototyp', 'Generative Gestaltung'],
-    pull: 'Geburtsdatum eingeben, Zine mitnehmen.',
+    pull: 'Banalitaet als Input, Interaktion als Verstaerker, Emotion als Ziel.',
     chapters: [
       {
-        title: 'Die Eingabe',
-        text: 'Die ganze Interaktion besteht aus einem Schritt: Tag, Monat, Jahr. Das Interface ist bewusst im Pixel-Look gehalten, damit die Station wie ein Automat wirkt und nicht wie eine Website.', // TODO
+        title: 'Ursprung',
+        text:
+          'Die Idee entsprang einem banalen Gespraech: Cara plante, ihrer Familie zu ' +
+          'Weihnachten ein personalisiertes Zine zu schenken. Darin steckte das passende ' +
+          'Alltagsobjekt fuer das Modul. Im selben Gespraech stand fest, dass der Prototyp ' +
+          'im oeffentlichen Raum inszeniert werden sollte — erst in einer Telefonzelle, die ' +
+          'sich nicht anmieten liess, dann in einer halboffenen Bushaltestelle, die an ' +
+          'Wetter und Zeit scheiterte.', // TODO
+        files: ['zineprojektbericht'],
+        textOnly: true,
+      },
+      {
+        title: 'Das Interface',
+        text:
+          'Die ganze Interaktion besteht aus einem Schritt: Tag, Monat, Jahr. Das Interface ' +
+          'durchlief zwei Fassungen — zuerst eng an der Aesthetik des Nokia 3310, dann ' +
+          'zugunsten einer stimmigeren Gestaltung ueberarbeitet.', // TODO
         files: ['zodizine-01'],
-        layout: 'stack',
+        layout: 'wide',
       },
       {
         title: 'Technischer Aufbau',
-        text: 'Vorne React mit TypeScript, hinten Flask, das die Tierkreiszeichen berechnet und mit ReportLab ein PDF baut. Gedruckt wird ueber CUPS direkt vom Pi.', // TODO
+        text:
+          'Die Arbeit lief parallel: Cara entwickelte die visuelle Identitaet und ein ' +
+          'Datenset mit den Charakteristika der Sternzeichen aus drei astrologischen ' +
+          'Systemen. Ich habe die Infrastruktur gebaut — Raspberry Pi im Kiosk-Modus, die ' +
+          'Oberflaeche und die Logik, die Geburtsdaten in personalisierte Layouts uebersetzt ' +
+          'und daraus ein PDF erzeugt.', // TODO
         files: ['zodizine-02', 'zodizine-03'],
         layout: 'track',
       },
       {
-        title: 'Projektbericht und Doku',
-        text: 'Bericht und Videodokumentation halten fest, wie die Station im Betrieb funktioniert hat.', // TODO
-        files: ['zineprojektbericht', 'dji'],
-        layout: 'track',
+        title: 'ZodiZine in Anwendung',
+        text:
+          'Der Automat im Betrieb am Tag der Medien. Fuer die raeumliche Inszenierung haben ' +
+          'wir uns an Wahrsagersalons bedient: Tuecher verdeckten die Umgebung und erzeugten ' +
+          'eine mystische Atmosphaere. So wird der nuechterne Automat zum rituellen Ort.', // TODO
+        files: ['dji'],
+        layout: 'wide',
+      },
+      {
+        title: 'Das Zine als Artefakt',
+        text:
+          'Der Automat inszeniert den Uebergang vom Digitalen zum Analogen als koerperliches ' +
+          'Ritual: die Beruehrung des Touchscreens, das gespannte Warten, waehrend Drucker ' +
+          'und Mechanik arbeiten, schliesslich die Uebergabe des noch warmen Papiers. Die ' +
+          'Faltung macht den Nutzer zum Mitproduzenten. Aus flachen Boegen entsteht ein ' +
+          'dreidimensionales Objekt. Jedes Zine traegt individuelle Spuren und existiert als ' +
+          'Unikat in einer Serie von Unikaten.', // TODO
+        textOnly: true,
       },
     ],
   },
 
   {
     slug: 'art-of-peace',
-    title: 'Art of Peace',
-    subtitle: 'Animiertes Storyboard, ausgezeichnet mit dem Medienpreis',
+    title: 'The Art of Peace',
+    subtitle: 'Anime-Pilotfolge ueber Aikido',
     cover: 'header',
     description:
-      'Ein animiertes Storyboard zum Thema Frieden, das mit einem Medienpreis ausgezeichnet wurde.', // TODO
-    year: '2025', // TODO
+      'Ein Teamprojekt mit dem Ziel, das Interesse an Aikido wiederzubeleben — der ' +
+      'Kampfkunst, die Morihei Ueshiba Mitte des 20. Jahrhunderts in Japan entwickelt hat ' +
+      'und die Konflikte durch Harmonie statt durch Gewalt loest. Entstanden sind zwei ' +
+      'Dinge: ein VR-Spiel und die Pilotfolge einer Anime-Serie. Mein Teil war das ' +
+      'Storyboard und dessen Animation.', // TODO
+    year: '2022',
     role: 'Storyboard, Animation',
-    tools: ['After Effects', 'Procreate'],
-    tags: ['Animation', 'Storyboard', 'Auszeichnung'],
+    client: 'Teamprojekt an der Hochschule Furtwangen',
+    tools: ['Storyboarder', 'Photoshop', 'Blender', 'Celtx'],
+    tags: ['Animation', 'Storyboard', 'Anime', 'Aikido', 'Auszeichnung'],
+    pull: 'Konflikte loesen sich durch Harmonie, nicht durch Gewalt.',
+    extern: {
+      href: 'https://hs-furtwangen.github.io/TheArtOfPeace/',
+      label: 'Projektdokumentation ansehen',
+      note: 'Die vollstaendige Doku des Teams mit Research, Assets und Trailer.',
+    },
     chapters: [
+      {
+        title: 'Recherche und Erzaehlbogen',
+        text:
+          'Aus der Recherche entstand eine Erzaehlung, die Ueshibas Leben chronologisch ' +
+          'folgt. Wichtig war uns, dass die Geschichte das Wesen der Kampfkunst selbst ' +
+          'widerspiegelt und nicht nur von ihr handelt. Geplant war eine Serie mit mehreren ' +
+          'Episoden — aus Zeitgruenden blieb es bei einer Pilotfolge.', // TODO
+        textOnly: true,
+      },
+      {
+        title: 'Drehbuch',
+        text:
+          'Geschrieben in Celtx, mehrfach ueberarbeitet. Die Folge erzaehlt von einem jungen ' +
+          'Schueler Ueshibas, der das wahre Wesen des Aikido durch eine ungewoehnliche ' +
+          'Begegnung mit einem Betrunkenen im Zug begreift.', // TODO
+        textOnly: true,
+      },
+      {
+        title: 'Storyboard',
+        text:
+          'Alle 23 Szenen wurden mit Storyboarder und Photoshop gezeichnet. Daraus entstand ' +
+          'eine animierte Fassung mit Musik und Toneffekten — das Storyboard nicht als ' +
+          'Planungswerkzeug, sondern als eigenstaendige Fassung des Films.', // TODO
+        embed: 'https://player.vimeo.com/video/669799645',
+      },
+      {
+        title: 'Animation',
+        text:
+          'Fuer die eigentliche Animation fiel die Wahl auf Blender — frei verfuegbar und im ' +
+          'Studium bereits gelernt. Die Figuren entstanden in VRoid Studio und wurden in ' +
+          'Blender geriggt. Animiert wurde Szene 13, die Schluesselszene im Zugwagen.', // TODO
+        textOnly: true,
+      },
       {
         title: 'Auszeichnung',
         text: 'Der Scan der Preisverleihung — der Medienpreis fuer das animierte Storyboard.', // TODO
         files: ['medienpreis-scan'],
-        layout: 'stack',
+        layout: 'wide',
       },
-      // Das animierte Storyboard (58 MB) ist noch nicht komprimiert.
-      // Nach dem Komprimieren oben ergaenzen:
-      //   extraVideos: ['/media/uni/art-of-peace/animated-storyboard.mp4'],
-      // und hier ein Kapitel mit files: ['animated-storyboard'] anlegen.
     ],
   },
 
