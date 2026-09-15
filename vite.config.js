@@ -5,8 +5,8 @@ export default defineConfig({
   /**
    * Unterverzeichnis, unter dem die Seite laeuft.
    *
-   * GitHub Pages veroeffentlicht ein Repo namens "portfolio" unter
-   * https://<benutzername>.github.io/portfolio/ — deshalb muss der Name hier
+   * GitHub Pages veroeffentlicht ein Repo namens "Portfolio26" unter
+   * https://pranii.github.io/Portfolio26/ — deshalb muss der Name hier
    * stehen, sonst suchen Skripte, Stylesheet und Bilder an der falschen Stelle.
    *
    * Benennst du das Repository um, musst du diese Zeile mitaendern.
@@ -14,7 +14,7 @@ export default defineConfig({
    */
   // configure-pages liefert "/portfolio" ohne Schraegstrich am Ende,
   // Vite braucht ihn aber — deshalb hier ergaenzen.
-  base: (process.env.BASE_PATH ?? '/portfolio').replace(/\/?$/, '/'),
+  base: (process.env.BASE_PATH ?? '/Portfolio26').replace(/\/?$/, '/'),
   server: {
     open: true,
     host: true,
