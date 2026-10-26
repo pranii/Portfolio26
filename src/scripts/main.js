@@ -1,16 +1,17 @@
 /**
  * Einstiegspunkt fuer die Startseite.
- * Oben der Startbildschirm des Telefons (Name, Rolle, Softkey "Menue"),
- * darunter das Menue wie beim Nokia 3310: ein Eintrag nach dem anderen.
+ *
+ * Ein einziger Bildschirm ohne Scrollen: Name, Begriffe, darunter ein
+ * Telefon. Ein Klick aufs Telefon schaltet die Seite ins Negativ und
+ * oeffnet das Menue in einem Fenster — ein Eintrag zur Zeit, wie beim
+ * Nokia 3310.
  */
 
 import '../styles/main.css';
 import { site, categories, spiel } from '../data/site.js';
-import { initScroll, initProgressBar, gsap, prefersReducedMotion } from './lib/scroll.js';
 import { revealFade } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
-import { initReadout } from './lib/readout.js';
 import { initLauncher } from './lib/launcher.js';
 import { initPhoneMenu } from './lib/phonemenu.js';
 
@@ -93,6 +94,36 @@ const ICON_GRIDS = {
     '1100000000000110',
     '0000000000000110',
   ],
+  // Briefumschlag
+  kontakt: [
+    '1111111111111111',
+    '1100000000000011',
+    '1010000000000101',
+    '1001000000001001',
+    '1000100000010001',
+    '1000010000100001',
+    '1000001111000001',
+    '1000000000000001',
+    '1000000000000001',
+    '1111111111111111',
+  ],
+  // Tischtelefon — der Knopf auf dem Startbildschirm
+  telefon: [
+    '0011111111111100',
+    '0111111111111110',
+    '1111000000001111',
+    '1111000000001111',
+    '0110000000000110',
+    '0000011111100000',
+    '0000111111110000',
+    '0001100110011000',
+    '0011111111111100',
+    '0111100110011110',
+    '0111111111111110',
+    '0111100110011110',
+    '0111111111111110',
+    '0111111111111110',
+  ],
 };
 
 function pixelIcon(slug) {
@@ -117,11 +148,17 @@ function renderRole(role) {
     .join('');
 }
 
-/** Die Eintraege des Menues: alle Bereiche, dazu das spielbare Spiel. */
+/** Die Eintraege des Menues: alle Bereiche, das spielbare Spiel und Kontakt. */
 function renderMenu() {
   const eintraege = [
     ...categories,
     { slug: 'spiele', href: spiel.href, title: 'Spiele', description: spiel.untertitel },
+    {
+      slug: 'kontakt',
+      href: `mailto:${site.email}`,
+      title: 'Kontakt',
+      description: 'Interesse oder Fragen zu einer Kollaboration?',
+    },
   ];
   return eintraege
     .map(
@@ -137,34 +174,49 @@ function renderMenu() {
     .join('');
 }
 
+/**
+ * Telefon oeffnet das Menuefenster. Solange es offen ist, steht die ganze
+ * Seite im Negativ (.is-dark auf <html> tauscht die Farb-Tokens).
+ * Schliessen: Kreuz, Esc (macht <dialog> von selbst) oder Klick daneben.
+ */
+function initMenuWindow(call, fenster) {
+  const screen = fenster.querySelector('.phone__screen');
+
+  call.addEventListener('click', () => {
+    document.documentElement.classList.add('is-dark');
+    fenster.showModal();
+    screen.focus();
+  });
+
+  fenster.addEventListener('close', () => {
+    document.documentElement.classList.remove('is-dark');
+  });
+
+  fenster.querySelector('[data-menu="close"]').addEventListener('click', () => fenster.close());
+
+  // Das Fenster selbst hat keinen Innenabstand — ein Klick, der direkt auf
+  // dem <dialog> landet, war also daneben.
+  fenster.addEventListener('click', (event) => {
+    if (event.target === fenster) fenster.close();
+  });
+}
+
 function main() {
-  document.querySelector('[data-slot="name"]').textContent = site.name;
   document.querySelector('[data-slot="launcher-title"]').textContent = site.name;
   document.querySelector('[data-slot="hero"]').textContent = site.name;
   document.querySelector('[data-slot="role"]').innerHTML = renderRole(site.role);
-  document.querySelector('[data-slot="intro"]').textContent = site.intro;
+  document.querySelector('[data-slot="call"]').innerHTML = pixelIcon('telefon');
   document.querySelector('[data-slot="menu"]').innerHTML = renderMenu();
-  document.querySelector('[data-slot="footer-links"]').innerHTML = site.links
-    .map((link) => `<a href="${link.href}">${link.label}</a>`)
-    .join('');
-  document.querySelector('[data-slot="footer-name"]').textContent = site.name;
 
   initLauncher();
-  initScroll();
   initPageTransitions();
   initCursor();
-  initProgressBar();
-  initReadout();
   initPhoneMenu(document.querySelector('.phone'));
+  initMenuWindow(
+    document.querySelector('[data-slot="call"]'),
+    document.querySelector('[data-slot="menu-window"]'),
+  );
   revealFade();
-
-  if (!prefersReducedMotion) {
-    gsap.fromTo(
-      '.phone__screen',
-      { opacity: 0, y: 28 },
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.3, clearProps: 'transform' },
-    );
-  }
 }
 
 main();

@@ -1,6 +1,6 @@
 /**
- * Menue wie beim Nokia 3310: immer nur ein Eintrag sichtbar, oben die
- * Nummer, rechts die Scrollleiste, unten der Softkey "Auswaehlen".
+ * Menue wie beim Nokia 3310: immer nur ein Eintrag sichtbar — Symbol,
+ * Name, Unterzeile —, links und rechts die Pfeile zum Blaettern.
  *
  * Ohne JavaScript bleibt es eine normale Liste aus Links. Erst wenn dieses
  * Skript laeuft, bekommt das Menue die Klasse .is-ready und zeigt nur noch
@@ -16,20 +16,11 @@ export function initPhoneMenu(root) {
 
   const screen = root.querySelector('.phone__screen');
   const list = root.querySelector('.phone__list');
-  const index = root.querySelector('[data-slot="menu-index"]');
-  const select = root.querySelector('[data-slot="menu-select"]');
-  const thumb = root.querySelector('.phone__thumb');
   let aktuell = 0;
-
-  thumb.style.height = `${100 / items.length}%`;
 
   function zeige(i) {
     aktuell = (i + items.length) % items.length;
     items.forEach((item, k) => item.classList.toggle('is-active', k === aktuell));
-    const link = items[aktuell].querySelector('.phone__link');
-    index.textContent = aktuell + 1;
-    select.href = link.getAttribute('href');
-    thumb.style.transform = `translateY(${aktuell * 100}%)`;
   }
 
   root.querySelector('[data-menu="prev"]').addEventListener('click', () => zeige(aktuell - 1));
@@ -38,7 +29,8 @@ export function initPhoneMenu(root) {
   screen.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') zeige(aktuell - 1);
     else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') zeige(aktuell + 1);
-    else if (event.key === 'Enter' && event.target === screen) select.click();
+    else if (event.key === 'Enter' && event.target === screen)
+      items[aktuell].querySelector('.phone__link').click();
     else return;
     event.preventDefault();
   });

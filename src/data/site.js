@@ -4,7 +4,7 @@
 
 export const site = {
   name: 'PREJNI', // TODO — steht gross auf der Startseite
-  role: 'Kommunikationsdesign · Creative Technology · Game Design',
+  role: 'Film · Kommunikationsdesign · Creative Technology · Game', // steht unter dem Namen
   intro:
     'Ich gestalte PRINT, DIGITALES und RAUM. Im folgenden sind verschiedene Projekte dokumentiert.', // TODO
   email: 'pranverapelaj@outlook.de',

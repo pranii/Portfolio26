@@ -6,7 +6,7 @@
     <title>Portfolio</title>
     <meta
       name="description"
-      content="Portfolio — Creative Technology, Film, Game und Grafikdesign."
+      content="Portfolio — Film, Kommunikationsdesign, Creative Technology und Game."
     />
     <link rel="icon" href="data:," />
   </head>
@@ -20,43 +20,43 @@
       </div>
     </div>
 
-    <div class="progress" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <a class="site-header__mark" href="index.html" data-slot="name">Portfolio</a>
-      <nav class="site-nav" aria-label="Bereiche">
-        <a href="creative-technology.html">Creative Technology</a>
-        <a href="film.html">Film</a>
-        <a href="game.html">Game</a>
-        <a href="grafikdesign.html">Grafikdesign</a>
-        <a href="spiel.html">Spiel</a>
-      </nav>
-    </header>
+    <!-- Startbildschirm: fuellt genau das Fenster, scrollt nicht. -->
+    <main class="home">
+      <div class="home__status" aria-hidden="true">
+        <span class="home__signal"></span>
+        <span class="home__battery"></span>
+      </div>
 
-    <main class="shell">
-      <section class="hero">
-        <h1 class="hero__title" data-fade data-slot="hero">Portfolio</h1>
-        <p class="hero__role" data-fade="0.1" data-slot="role"></p>
-        <p class="hero__intro" data-fade="0.15" data-slot="intro"></p>
-        <!-- Softkey wie auf dem Startbildschirm des Telefons -->
-        <a class="softkey" href="#menu" data-fade="0.25">
-          Menü
-          <svg viewBox="0 0 7 4" fill="currentColor" aria-hidden="true">
-            <rect x="0" y="0" width="7" height="1" />
-            <rect x="1" y="1" width="5" height="1" />
-            <rect x="2" y="2" width="3" height="1" />
-            <rect x="3" y="3" width="1" height="1" />
-          </svg>
-        </a>
-      </section>
+      <div class="home__center">
+        <h1 class="home__title" data-fade data-slot="hero">Portfolio</h1>
+        <p class="home__tags" data-fade="0.1" data-slot="role"></p>
+      </div>
 
-      <!-- Menue wie beim Nokia 3310. Ohne JavaScript eine normale Liste. -->
-      <section class="phone" id="menu" aria-label="Menü">
+      <button
+        class="home__call"
+        type="button"
+        data-slot="call"
+        data-fade="0.2"
+        data-cursor="Anrufen"
+        aria-label="Menü öffnen"
+        aria-haspopup="dialog"
+      ></button>
+    </main>
+
+    <!-- Menue im Fenster. Beim Oeffnen wird die ganze Seite negativ. -->
+    <dialog class="menu-window" data-slot="menu-window" aria-label="Menü">
+      <button
+        class="menu-window__close"
+        type="button"
+        data-menu="close"
+        aria-label="Menü schließen"
+      >
+        ✕
+      </button>
+      <section class="phone">
         <div class="phone__screen" tabindex="0">
-          <div class="phone__bar">
-            <p class="phone__index" data-slot="menu-index" aria-hidden="true"></p>
-          </div>
           <ul class="phone__list" data-slot="menu" aria-live="polite"></ul>
           <button
             class="phone__nav phone__nav--prev"
@@ -90,24 +90,10 @@
               <rect x="3" y="6" width="1" height="1" />
             </svg>
           </button>
-          <div class="phone__scroll" aria-hidden="true"><span class="phone__thumb"></span></div>
-          <a class="phone__soft" data-slot="menu-select" href="#" data-cursor="Öffnen">Auswählen</a>
         </div>
       </section>
-    </main>
+    </dialog>
 
-    <footer class="site-footer">
-      <p class="site-footer__note">Fragen oder Interesse an einer Zusammenarbeit?</p>
-      <div class="site-footer__links" data-slot="footer-links"></div>
-      <div class="readout" data-slot="readout"></div>
-      <p class="site-footer__copy">
-        © <span data-slot="footer-name"></span> — <span id="year"></span>
-      </p>
-    </footer>
-
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
     <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>
