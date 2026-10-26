@@ -8,6 +8,10 @@
  *   - Arcade-Knoepfe              ->  Tasten A / K oder die Knoepfe unter dem Bild
  *   - Screensaver-Video           ->  der Fallback-Attract aus dem Original
  *
+ * Die zwei Figuren sind Taiyo (links, Taste A) und Tsuki (rechts, Taste K).
+ * Ihre Angriffe sind die GIFs aus der Raspberry-Fassung, als Spritesheets
+ * aufbereitet von scripts/make-inlakech-figuren.mjs.
+ *
  * Gezeichnet wird intern immer in 1280 x 720; CSS skaliert das Canvas.
  */
 
@@ -23,7 +27,6 @@ const PX_TXT = 4;
 const IDLE_TIMEOUT = 60;
 const ABANDON_TIMEOUT = 30;
 const MIN_INPUT_DELAY = 0.6;
-const BULLET_TIME = 0.45;
 const T9_STEP = 0.05;
 const T9_SETTLE = 0.12;
 const SMILE_TEXT_TIME = 1.6;
@@ -35,16 +38,17 @@ const FADE = 0.3;
 const HEADER = 'IT TAKES TWO TO TANGO.';
 
 // Dialog-Sequenz ("Kampf"). who: A (links), B (rechts, Taste K) oder BOTH.
+// left/right: 'figur' (Taiyo bzw. Tsuki) oder 'hand'. shoot: wer angreift.
 const BATTLE = [
-  { who: 'A', text: 'Kann ich dir vertrauen?', left: 'pistol', right: 'pistol', shoot: 'A2B' },
+  { who: 'A', text: 'Kann ich dir vertrauen?', left: 'figur', right: 'figur', shoot: 'A2B' },
   {
     who: 'B',
     text: 'Das hat weh getan. Aber du kannst mir vertrauen.',
-    left: 'pistol',
-    right: 'pistol',
+    left: 'figur',
+    right: 'figur',
     shoot: 'B2A',
   },
-  { who: 'A', text: 'Du tust weh.', left: 'hand', right: 'pistol', shoot: null },
+  { who: 'A', text: 'Du tust weh.', left: 'hand', right: 'figur', shoot: null },
   { who: 'B', text: 'Ich bin verletzt.', left: 'hand', right: 'hand', shoot: null },
   { who: 'BOTH', text: 'Wir sind verletzt.', left: 'hand', right: 'hand', shoot: null },
   { who: 'A', text: 'Ich hab dich trotzdem lieb.', left: 'hand', right: 'hand', shoot: null },
@@ -67,6 +71,8 @@ const BILDER = {
   endeRechts: 'ende-rechts.webp',
   titel: 'titel.webp',
   satz: 'satz.webp',
+  taiyo: 'taiyo.png',
+  tsuki: 'tsuki.png',
 };
 
 // ─────────────────────────────────────────────── 5x7-Pixelschrift ──
@@ -283,40 +289,14 @@ function einfaerben(img, farbe, w = img.naturalWidth, h = img.naturalHeight) {
   return c;
 }
 
-function spiegeln(quelle) {
-  const c = leinwand(quelle.width, quelle.height);
-  const g = c.getContext('2d');
-  g.translate(quelle.width, 0);
-  g.scale(-1, 1);
-  g.drawImage(quelle, 0, 0);
-  return c;
-}
-
-// 8-Bit-Pistole, zeigt nach rechts. Fuer die rechte Figur gespiegelt.
-const PISTOLE = [
-  '0111111111111111',
-  '1111111111111111',
-  '1111111111111111',
-  '1111111111000000',
-  '1111111110000000',
-  '1111101010000000',
-  '1111100010000000',
-  '1111111110000000',
-  '1111100000000000',
-  '1111100000000000',
-  '1111100000000000',
-  '0111100000000000',
-];
-
-function pistole(hoehe) {
-  const px = Math.round(hoehe / PISTOLE.length);
-  const c = leinwand(PISTOLE[0].length * px, PISTOLE.length * px);
-  const g = c.getContext('2d');
-  g.fillStyle = LCD_DARK;
-  PISTOLE.forEach((row, y) =>
-    [...row].forEach((bit, x) => bit === '1' && g.fillRect(x * px, y * px, px, px)),
-  );
-  return c;
+/** Welches Bild einer Animation nach t Sekunden dran ist. */
+function bildNach(figur, t) {
+  let rest = t * 1000;
+  for (let i = 0; i < figur.bilder; i++) {
+    rest -= figur.zeiten[i];
+    if (rest < 0) return i;
+  }
+  return 0;
 }
 
 function ladeBilder(basis) {
@@ -382,21 +362,34 @@ export async function startInLakech(canvas, basis, status = () => {}) {
   g.fillRect(0, 0, SW, SH);
   drawCentered(g, 'LADE ...', SH / 2 - 14, PX_TXT, LCD_DARK, 2);
 
-  const bild = await ladeBilder(basis);
+  const [bild, figurDaten] = await Promise.all([
+    ladeBilder(basis),
+    fetch(basis + 'figuren.json').then((antwort) => antwort.json()),
+  ]);
   const ton = new Ton();
 
-  // ----- Figuren -----
-  const charH = Math.round(SH * 0.3);
-  const skaliert = (img) =>
-    einfaerben(img, LCD_DARK, Math.round((img.naturalWidth * charH) / img.naturalHeight), charH);
-  const pistoleRechts = pistole(charH);
-  const spr = {
-    left: { hand: skaliert(bild.handLinks), pistol: pistoleRechts },
-    right: { hand: skaliert(bild.handRechts), pistol: spiegeln(pistoleRechts) },
-  };
-  const charY = Math.round(SH * 0.3);
+  // ----- Figuren: Taiyo (links) und Tsuki (rechts) -----
+  // Ganzzahlig vergroessert, damit die Nokia-Pixel scharf bleiben.
+  const FIGUR_S = Math.floor((SH * 0.44) / Math.max(figurDaten.taiyo.h, figurDaten.tsuki.h));
+  const figur = (img, daten) => ({
+    ...daten,
+    sheet: einfaerben(img, LCD_DARK),
+    dauer: daten.zeiten.reduce((summe, ms) => summe + ms, 0) / 1000,
+  });
+  const taiyo = figur(bild.taiyo, figurDaten.taiyo);
+  const tsuki = figur(bild.tsuki, figurDaten.tsuki);
+
+  // Spaeter werden die Figuren zu Haenden (Versoehnung).
+  const handH = Math.round(SH * 0.3);
+  const hand = (img) =>
+    einfaerben(img, LCD_DARK, Math.round((img.naturalWidth * handH) / img.naturalHeight), handH);
+  const handSprite = { links: hand(bild.handLinks), rechts: hand(bild.handRechts) };
+
+  // Figuren und Haende stehen auf derselben Grundlinie.
+  const boxUnten = Math.round(SH * 0.6);
+  const boxMitte = boxUnten - Math.round((taiyo.h * FIGUR_S) / 2);
   const leftX = Math.round(SW * 0.1);
-  const rightX = (s) => SW - Math.round(SW * 0.1) - s.width;
+  const rechtsBuendig = (breite) => SW - leftX - breite;
 
   // ----- Schlussbild: quadratisch, mittig, so hoch wie das Bild -----
   const Q = SH;
@@ -490,39 +483,38 @@ export async function startInLakech(canvas, basis, status = () => {}) {
     drawCentered(g, HEADER, Math.round(SH * 0.06), PX_HEAD, LCD_DARK, 2);
   }
 
-  function figuren(step) {
-    const ls = spr.left[step.left];
-    const rs = spr.right[step.right];
-    g.drawImage(ls, leftX, charY + (charH - ls.height) / 2);
-    g.drawImage(rs, rightX(rs), charY + (charH - rs.height) / 2);
+  function zeigeFigur(f, i, x) {
+    const w = f.w * FIGUR_S;
+    const h = f.h * FIGUR_S;
+    g.drawImage(f.sheet, i * f.w, 0, f.w, f.h, x, boxUnten - h, w, h);
+  }
+
+  /** Beide Seiten zeichnen. `angriffT`: Sekunden seit Beginn des Angriffs,
+      oder null, wenn gerade niemand angreift (dann stehen beide still). */
+  function figuren(step, angriffT = null) {
+    if (step.left === 'figur') {
+      const i = step.shoot === 'A2B' && angriffT !== null ? bildNach(taiyo, angriffT) : 0;
+      zeigeFigur(taiyo, i, leftX);
+    } else {
+      g.drawImage(handSprite.links, leftX, boxMitte - handH / 2);
+    }
+    if (step.right === 'figur') {
+      const i = step.shoot === 'B2A' && angriffT !== null ? bildNach(tsuki, angriffT) : 0;
+      zeigeFigur(tsuki, i, rechtsBuendig(tsuki.w * FIGUR_S));
+    } else {
+      g.drawImage(handSprite.rechts, rechtsBuendig(handSprite.rechts.width), boxMitte - handH / 2);
+    }
   }
 
   function zugAnzeige(who) {
-    const y = charY + charH + PX_TXT * 3;
+    const y = boxUnten + PX_TXT * 3;
     if (who === 'BOTH') drawCentered(g, 'BEIDE DRÜCKEN', Math.round(SH * 0.8), PX_TXT, LCD_INK2, 2);
     else if (who === 'A') drawText(g, '> A', leftX, y, PX_TXT, LCD_DARK, 2);
-    else {
-      const w = textWidth('K <', PX_TXT, 2);
-      drawText(g, 'K <', SW - Math.round(SW * 0.1) - w, y, PX_TXT, LCD_DARK, 2);
-    }
+    else drawText(g, 'K <', rechtsBuendig(textWidth('K <', PX_TXT, 2)), y, PX_TXT, LCD_DARK, 2);
   }
 
   function dialog(text) {
     if (text) drawWrapped(g, text, Math.round(SH * 0.69), PX_TXT, LCD_DARK, SW * 0.8, 2);
-  }
-
-  function kugel(step, t) {
-    if (!step.shoot) return;
-    const y = charY + charH / 2 - charH * 0.33;
-    const ls = spr.left[step.left];
-    const rs = spr.right[step.right];
-    let x0 = leftX + ls.width;
-    let x1 = rightX(rs);
-    if (step.shoot === 'B2A') [x0, x1] = [x1, x0];
-    const x = x0 + (x1 - x0) * ease(t);
-    const sz = PX_TXT * 3;
-    g.fillStyle = LCD_DARK;
-    g.fillRect(Math.round(x - sz / 2), Math.round(y - sz / 2), sz, sz);
   }
 
   function haende(p) {
@@ -630,13 +622,14 @@ export async function startInLakech(canvas, basis, status = () => {}) {
       }
     } else if (zustand === ENTHUELLEN) {
       const step = BATTLE[idx];
-      grund();
-      figuren(step);
       const tRev = now - enthuellStart;
-      const schuss = step.shoot ? BULLET_TIME : 0;
+      // Erst laeuft der Angriff (das GIF der Figur), dann wird getippt.
+      const angreifer = { A2B: taiyo, B2A: tsuki }[step.shoot];
+      const schuss = angreifer ? angreifer.dauer : 0;
+      grund();
+      figuren(step, tRev < schuss ? tRev : null);
       if (tRev < schuss) {
         dialog(aktuelleZeile);
-        kugel(step, tRev / schuss);
       } else {
         const tippen = tRev - schuss;
         const [gezeigt, fertig] = t9Render(step.text, tippen);
