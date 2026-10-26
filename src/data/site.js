@@ -21,22 +21,28 @@ export const site = {
 
 export const categories = [
   {
-    slug: 'arbeit',
-    href: 'arbeit.html',
-    title: 'in arbeit geschafft',
-    description: 'Arbeiten fuer Auftraggeber',
+    slug: 'creative-technology',
+    href: 'creative-technology.html',
+    title: 'Creative Technology',
+    description: 'Installationen, Interaktion und Prototypen.',
   },
   {
-    slug: 'freizeit',
-    href: 'freizeit.html',
-    title: 'in freizeit gemacht',
-    description: 'Arbeit ohne Briefing',
+    slug: 'film',
+    href: 'film.html',
+    title: 'Film',
+    description: 'Kurzfilm, Musikvideo, Animation und Imagefilm.',
   },
   {
-    slug: 'uni',
-    href: 'uni.html',
-    title: 'in uni gelernt',
-    description: 'Rauminstallation, Magazin, Game Design und Interaktion.',
+    slug: 'game',
+    href: 'game.html',
+    title: 'Game',
+    description: 'Spiele und Game Design.',
+  },
+  {
+    slug: 'grafikdesign',
+    href: 'grafikdesign.html',
+    title: 'Grafikdesign',
+    description: 'Corporate Design, Kampagnen und Editorial.',
   },
 ];
 

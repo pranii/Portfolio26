@@ -1,6 +1,6 @@
 /**
  * Einstiegspunkt fuer die Startseite.
- * Zeigt Titel und Rolle, dann die drei Bereiche als Menuekacheln.
+ * Zeigt Titel und Rolle, dann die Bereiche als Menuekacheln.
  */
 
 import '../styles/main.css';
@@ -15,35 +15,49 @@ import { initLauncher } from './lib/launcher.js';
 // Platzhalter-Icons im 8-Bit-Raster (8×8) — je 1 ein gesetztes Pixel.
 // Werden spaeter durch die endgueltigen Bereichssymbole ersetzt.
 const ICON_GRIDS = {
-  arbeit: [
-    '00111100',
-    '00100100',
+  // Platine mit Leiterbahnen
+  'creative-technology': [
+    '01011010',
     '11111111',
-    '10000001',
-    '10000001',
-    '10000001',
-    '10000001',
+    '01000010',
+    '11011011',
+    '11011011',
+    '01000010',
     '11111111',
+    '01011010',
   ],
-  freizeit: [
-    '10000000',
-    '11100000',
-    '11111000',
-    '11111110',
-    '11111110',
-    '11111000',
-    '11100000',
-    '10000000',
+  // Filmkamera mit zwei Spulen
+  film: [
+    '01100110',
+    '11111111',
+    '01100110',
+    '00000000',
+    '11111101',
+    '11111111',
+    '11111101',
+    '11111100',
   ],
-  uni: [
+  // Controller
+  game: [
+    '00000000',
+    '01111110',
+    '11111111',
+    '10111101',
+    '00110100',
+    '11111111',
+    '11100111',
+    '01000010',
+  ],
+  // Zeichenfeder
+  grafikdesign: [
     '00011000',
     '00111100',
     '01111110',
-    '11111111',
+    '01100110',
+    '01111110',
     '00111100',
-    '00100100',
-    '00100100',
-    '00000000',
+    '00011000',
+    '00011000',
   ],
 };
 

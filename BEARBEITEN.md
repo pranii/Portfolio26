@@ -5,12 +5,13 @@
 | Ich will ändern …                          | Datei                                        |
 | ------------------------------------------ | -------------------------------------------- |
 | Meinen Namen, Kontakt, Links, Ort          | `src/data/site.js`                           |
-| Die drei Bereichstexte auf der Startseite  | `src/data/site.js` (unten, `categories`)     |
+| Die vier Bereichstexte auf der Startseite  | `src/data/site.js` (unten, `categories`)     |
 | Steuerung und Text der Spielseite          | `src/data/site.js` (ganz unten, `spiel`)     |
-| Projekte im Bereich **Arbeit**             | `src/data/arbeit.js`                         |
-| Projekte im Bereich **Freizeit**           | `src/data/freizeit.js`                       |
-| Projekte im Bereich **Uni**                | `src/data/uni.js`                            |
-| Bilder und Videos austauschen              | `public/media/<bereich>/<projekt>/`          |
+| Projekte im Bereich **Creative Technology** | `src/data/creative-technology.js`          |
+| Projekte im Bereich **Film**               | `src/data/film.js`                           |
+| Projekte im Bereich **Game**               | `src/data/game.js`                           |
+| Projekte im Bereich **Grafikdesign**       | `src/data/grafikdesign.js`                   |
+| Bilder und Videos austauschen              | `public/media/<ordner>/<projekt>/`           |
 | Welche Dateien überhaupt importiert werden | `scripts/media-manifest.mjs`                 |
 | Farben, Schriftgrößen, Abstände            | `src/styles/main.css`, ganz oben bei `:root` |
 
@@ -47,14 +48,22 @@ Damit findest du hier die Quelle:
 | `figure` (ein Bild)                  | Bereichsdatei | `chapters[].files`                       |
 | `boot__*`, `keys`                    | `site.js`     | `spiel`                                  |
 
-„Bereichsdatei" heißt: `arbeit.js`, `freizeit.js` oder `uni.js` — je nachdem,
-in welchem Bereich du gerade bist. Steht auch oben im Pfad der Seite.
+„Bereichsdatei" heißt: `creative-technology.js`, `film.js`, `game.js` oder
+`grafikdesign.js` — je nachdem, in welchem Bereich du gerade bist. Steht auch
+oben im Pfad der Seite.
+
+**Projekt in einen anderen Bereich verschieben:** Den ganzen Block des Projekts
+(von `{` bis `},`) aus der einen Bereichsdatei ausschneiden und in die andere
+einfügen. An den Bildern musst du nichts ändern.
 
 ---
 
 ## Bilder austauschen
 
-Die Bilder auf der Seite liegen in `public/media/<bereich>/<projekt>/`. Zu
+Die Bilder auf der Seite liegen in `public/media/<ordner>/<projekt>/`. Die
+Ordner heißen noch wie früher — `arbeit`, `freizeit` und `uni` —, weil sie
+den Quellordnern auf dem Desktop entsprechen. Mit den Bereichen der Seite haben
+sie nichts mehr zu tun: Die Seite findet die Bilder über den Projektnamen. Zu
 jedem Bild gibt es drei Dateien:
 
 ```
@@ -86,7 +95,7 @@ Und alles über 50 MB wird beim Import übersprungen.
 
 **Video hinzufügen:**
 
-1. Die `.mp4` direkt nach `public/media/<bereich>/<projekt>/` legen
+1. Die `.mp4` direkt nach `public/media/<ordner>/<projekt>/` legen
 2. In der Bereichsdatei beim passenden Kapitel den Dateinamen-Anfang unter
    `files` ergänzen
 

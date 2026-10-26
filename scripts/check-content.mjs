@@ -18,7 +18,12 @@ const problems = [];
 const notes = [];
 let fileCount = 0;
 
-for (const categorySlug of ['arbeit', 'freizeit', 'uni']) {
+// media.json ist nach den Medienordnern (arbeit, freizeit, uni) sortiert,
+// die Bereiche der Seite sind andere. Gesucht wird deshalb ueber den Slug.
+const mediaBySlug = Object.assign({}, ...Object.values(media));
+const known = new Set();
+
+for (const categorySlug of ['creative-technology', 'film', 'game', 'grafikdesign']) {
   const { projects, category } = await import(`../src/data/${categorySlug}.js`);
 
   if (category.slug !== categorySlug) {
@@ -27,11 +32,13 @@ for (const categorySlug of ['arbeit', 'freizeit', 'uni']) {
     );
   }
 
-  const known = new Set(projects.map((p) => p.slug));
-  const imported = new Set(Object.keys(media[categorySlug] ?? {}));
-
   for (const project of projects) {
-    const entry = media[categorySlug]?.[project.slug];
+    if (known.has(project.slug)) {
+      problems.push(`${categorySlug}/${project.slug}: Slug kommt in mehreren Bereichen vor`);
+    }
+    known.add(project.slug);
+
+    const entry = mediaBySlug[project.slug];
     if (!entry) {
       problems.push(`${categorySlug}/${project.slug}: keine Medien importiert`);
       continue;
@@ -102,10 +109,12 @@ for (const categorySlug of ['arbeit', 'freizeit', 'uni']) {
       }
     }
   }
+}
 
-  for (const slug of imported) {
+for (const [ordner, projekte] of Object.entries(media)) {
+  for (const slug of Object.keys(projekte)) {
     if (!known.has(slug)) {
-      problems.push(`${categorySlug}: "${slug}" wurde importiert, steht aber in keiner Datendatei`);
+      problems.push(`${ordner}: "${slug}" wurde importiert, steht aber in keiner Datendatei`);
     }
   }
 }
@@ -114,9 +123,10 @@ for (const categorySlug of ['arbeit', 'freizeit', 'uni']) {
 // sonst laeuft die Seite auf einen null-Zugriff.
 const PAGE_SCRIPTS = {
   'index.html': ['src/scripts/main.js'],
-  'arbeit.html': ['src/scripts/category.js'],
-  'freizeit.html': ['src/scripts/category.js'],
-  'uni.html': ['src/scripts/category.js'],
+  'creative-technology.html': ['src/scripts/category.js'],
+  'film.html': ['src/scripts/category.js'],
+  'game.html': ['src/scripts/category.js'],
+  'grafikdesign.html': ['src/scripts/category.js'],
 };
 
 for (const [page, scripts] of Object.entries(PAGE_SCRIPTS)) {

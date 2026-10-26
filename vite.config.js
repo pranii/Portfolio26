@@ -47,9 +47,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(import.meta.dirname, 'index.html'),
-        arbeit: resolve(import.meta.dirname, 'arbeit.html'),
-        freizeit: resolve(import.meta.dirname, 'freizeit.html'),
-        uni: resolve(import.meta.dirname, 'uni.html'),
+        'creative-technology': resolve(import.meta.dirname, 'creative-technology.html'),
+        film: resolve(import.meta.dirname, 'film.html'),
+        game: resolve(import.meta.dirname, 'game.html'),
+        grafikdesign: resolve(import.meta.dirname, 'grafikdesign.html'),
         projekt: resolve(import.meta.dirname, 'projekt.html'),
         spiel: resolve(import.meta.dirname, 'spiel.html'),
       },

@@ -1,5 +1,6 @@
 /**
- * Einstiegspunkt fuer arbeit.html, freizeit.html und uni.html.
+ * Einstiegspunkt fuer die Bereichsseiten (creative-technology.html, film.html,
+ * game.html, grafikdesign.html).
  * Diese Seiten zeigen nur die Uebersicht: alle Projekte als Karten.
  * Das einzelne Projekt liegt auf projekt.html.
  */
@@ -12,12 +13,7 @@ import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
 import { initReadout } from './lib/readout.js';
 import { renderCards, countMedia } from './lib/render.js';
-
-const LOADERS = {
-  arbeit: () => import('../data/arbeit.js'),
-  freizeit: () => import('../data/freizeit.js'),
-  uni: () => import('../data/uni.js'),
-};
+import { LOADERS } from './lib/bereiche.js';
 
 async function main() {
   const page = document.body.dataset.page;
@@ -26,7 +22,7 @@ async function main() {
   document.documentElement.dataset.accent = page;
   document.querySelector('[data-slot="name"]').textContent = site.name;
 
-  const counts = countMedia(projects, page);
+  const counts = countMedia(projects);
 
   // Der Titel steht zweimal auf der Seite: im Pfad und als Ueberschrift.
   document.querySelectorAll('[data-slot="title"]').forEach((el) => {

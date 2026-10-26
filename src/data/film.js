@@ -1,0 +1,245 @@
+/**
+ * FILM — Kurzfilm, Musikvideo, Animation und Imagefilm.
+ *
+ * Jedes Projekt hat `chapters`: einzelne Schritte, die nacheinander erscheinen.
+ * Pro Kapitel:
+ *   title   Ueberschrift des Schritts
+ *   text    1-2 Saetze darueber, warum oder wie du den Schritt gemacht hast
+ *   files   Dateinamen-Anfaenge, die in dieses Kapitel gehoeren
+ *   layout  'track' (waagerecht) | 'grid' (Raster) | 'stack' (grosse Bloecke)
+ *
+ * Die Bilder bleiben in ihren alten Ordnern unter public/media/arbeit|freizeit|uni/.
+ * Die Seite findet sie ueber den `slug` — verschiebt man ein Projekt in einen
+ * anderen Bereich, muss man an den Medien nichts aendern.
+ * Ueberall dort, wo TODO steht, bitte deine eigene Formulierung einsetzen.
+ */
+export const category = {
+  slug: 'film',
+  title: 'Film',
+  lead: 'Kurzfilme, Musikvideos, Animation und Imagefilme — von Storyboard bis Schnitt.', // TODO
+};
+
+export const projects = [
+  {
+    slug: 'love',
+    title: 'Love',
+    subtitle: 'LOVE - what love prompts us to do',
+    cover: 'header',
+    description:
+      'Ein Kurzfilm über die verschiedenen Facetten der Liebe, entstanden mit einem offenen Casting über Instagram. Gedreht in Frankfurt, Februar 2025. Konzipiert, gefilmt und bearbeitet gemeinsam mit Dardan Shala.', // TODO
+    year: '2025',
+    role: 'Konzept, Regie, Gestaltung, Sounddesign',
+    tools: ['Photoshop', 'Premiere Pro'],
+    tags: ['Kurzfilm', 'Artwork', 'Casting'],
+    pull: 'a story of perspective on love',
+    chapters: [
+      {
+        title: 'Titel und Bildwelt',
+        text: '"LOVE" in schwarzer und roter Tusche. Das V als einziges rotes Zeichen. Als Geste der gewählten restlichen Bildsprache.', // TODO
+        files: ['love-03'],
+        layout: 'stack',
+      },
+      {
+        title: 'Casting Call',
+        text: 'Talente haben wir über Soziale Medien gesucht. Drehort, Drehtag und Altersgruppen stehen direkt auf dem Dokument.', // TODO
+        files: ['love-01', 'love-02', 'love-04'],
+        layout: 'track',
+      },
+      {
+        title: 'Verbreitung',
+        text: 'Verbreitet wurde der Aufruf über Instagram und TikTok, wo auch die Rückmeldungen zusammenliefen.', // TODO
+        files: ['love'],
+        layout: 'stack',
+      },
+      {
+        title: 'Der fertige Film',
+        text: 'Und so sieht der fertige Kurzfilm aus.', // TODO
+        files: [],
+        // Platz reserviert: sobald Love.mp4 im Ordner liegt, spielt sie hier.
+        platzhalter: '/media/freizeit/love/Love.mp4',
+      },
+    ],
+  },
+  {
+    slug: 'musikvideos',
+    title: 'Musikvideos',
+    subtitle: 'EREZA — a kishe guxu',
+    cover: 'header',
+    description:
+      'Ereza ist mittlerweile eine Freundin, mit der ich gerne Ideen fuer Musikvideos bespreche und auch schon oefter eng zusammengearbeitet habe — etwa fuer den Dreh von "A kishe guxu?".', // TODO
+    year: '2025', // TODO
+    role: 'Regie, Kamera, Schnitt',
+    tools: ['Premiere Pro', 'DaVinci Resolve'],
+    tags: ['Musikvideo', 'Regie', 'Schnitt'],
+    extern: {
+      href: 'https://www.youtube.com/watch?v=GhhHAptcLss',
+      label: 'Video auf YouTube ansehen',
+      note: 'EREZA — a kishe guxu, offiziell veroeffentlicht.',
+    },
+    chapters: [
+      {
+        title: 'EREZA — a kishe guxu',
+        text: 'Das fertige Video, offiziell veroeffentlicht.', // TODO
+        files: ['ereza'],
+        layout: 'stack',
+      },
+    ],
+  },
+  {
+    slug: 'huginn',
+    title: 'Huginn',
+    subtitle: 'Raumvermietung, Website und Imagefilm',
+    cover: 'header',
+    description:
+      'Huginn ist Cafe, Bar, Eventlocation und Co-Working-Space in einem Haus. Die Aufgabe war, diese Vielseitigkeit zu zeigen, ohne beliebig zu werden — die Rabe als Markenzeichen haelt alles zusammen.', // TODO
+    year: '2025', // TODO
+    role: 'Gestaltung, Storyboard, Fotografie',
+    client: 'Huginn',
+    tools: ['InDesign', 'Photoshop', 'Premiere Pro'],
+    tags: ['Editorial', 'Storyboard', 'Bewegtbild', 'Fotografie'],
+    pull: 'Sechzehn Bilder, die den Film erzaehlen, bevor die Kamera laeuft.', // TODO
+    chapters: [
+      {
+        title: 'Wortmarke',
+        text: 'Huginn ist einer der beiden Raben Odins — der Gedanke. Die Wortmarke bleibt entsprechend still: Kleinschreibung, weiche Rundungen, der Zusatz Café & Bar als schmaler Block darunter.', // TODO
+        files: ['logo-huginn'],
+        layout: 'wide',
+      },
+      {
+        title: 'Bildmarke und Web-Header',
+        text: 'Aus dem Namen wurde das Bild: zwei gespiegelte Raben, die als Header der Website den Ton setzen — dunkel, etwas nordisch, mit Rot als einzigem Akzent.', // TODO
+        files: ['header-webseite'],
+        layout: 'wide',
+      },
+      {
+        title: 'Flyer',
+        text: 'Der Flyer bringt beide Seiten des Hauses zusammen: vorne dunkel das Tagesgeschäft von Brunch bis DJ, hinten hell die Eventlocation im ersten Stock. Die Raben tauchen als gesprühte Schablonen wieder auf und halten beide Seiten zusammen.', // TODO
+        files: ['flyer-vorne', 'flyer-hinten'],
+        layout: 'wide',
+      },
+      {
+        title: 'Broschuere Raumvermietung',
+        text: 'Die Broschuere fuehrt durch das Haus: Etage fuer Etage, vom Cafe im Erdgeschoss bis zum Eventraum im Obergeschoss. Jede Doppelseite steht fuer einen Raum und einen Anlass.', // TODO
+        files: ['huginn-raumvermietung'],
+        layout: 'track',
+      },
+      {
+        title: 'Foodfotografie',
+        text: 'Fuer die Speisekarte und Social Media habe ich die Gerichte selbst fotografiert — vor Rot, damit sie sich in die Bildwelt einfuegen statt als Fremdkoerper zu wirken.', // TODO
+        files: ['mangobowl'],
+        layout: 'stack',
+      },
+      {
+        title: 'Storyboard Imagefilm',
+        text: 'Der Imagefilm zitiert "Breakfast at Tiffany\'s": eine Frau steigt aus dem Taxi, geht auf die Bar zu, dreht sich um. Das Storyboard haelt jeden Schnitt, jede Kameraeinstellung und die Shotlist fest, damit am Drehtag nichts diskutiert werden muss.', // TODO
+        files: ['storyboard'],
+        layout: 'track',
+      },
+      {
+        title: 'Der fertige Film',
+        text: 'Der Imagefilm selbst ist noch nicht fertig geschnitten. Bis es so weit ist, gibt es schon ein Reel zu sehen, das einen ersten Eindruck von Bildern und Tempo gibt.', // TODO
+        files: [],
+        // Platz reserviert: sobald huginn.mp4 im Ordner liegt, spielt sie hier.
+        platzhalter: '/media/arbeit/huginn/huginn.mp4',
+      },
+    ],
+  },
+  {
+    slug: 'citydep',
+    title: 'Citydep',
+    subtitle: 'Storyboards und Trailer im VHS-Look',
+    cover: 'header',
+    description:
+      'Fuer Citydep entstanden Trailer, die aussehen sollen, als waeren sie von einer Kassette gerettet worden. Die Storyboards sind entsprechend als Archivbloecke aufgebaut — mit Kassettennummer, Ort und Equipment pro Einstellung.', // TODO
+    year: '2025', // TODO
+    role: 'Storyboard, Schnitt, Gestaltung',
+    tools: ['Premiere Pro', 'After Effects', 'InDesign'],
+    tags: ['Bewegtbild', 'Storyboard', 'VHS'],
+    pull: 'and then we unite — we become the stars',
+    chapters: [
+      {
+        title: 'Storyboard als Archiv',
+        text: 'Jede Seite ist wie ein Fundstueck aufgebaut: "Kassette #4", "Lost Fire #7", dazu Frame, Beschreibung, Ton und Equipment. Das Raster gehoert schon zur Erzaehlung, nicht nur zur Planung.', // TODO
+        files: ['storyboard-storyboard-in-black'],
+        layout: 'track',
+      },
+      {
+        title: 'Trailer',
+        text: 'Aus den Boards wurde der Trailer geschnitten — Bildstoerung, Zeitcode und Bandrauschen sind bewusst stehen geblieben.', // TODO
+        // Der grosse Teaser (63 MB) fehlt noch — siehe ASSETS-REPORT.md.
+        files: ['citydep-part2-remake'],
+        layout: 'stack',
+        // Platz reserviert: sobald citydep.1.mp4 / .2 / .3 im Ordner liegen, spielen sie hier.
+        platzhalter: [
+          '/media/arbeit/citydep/citydep.1.mp4',
+          '/media/arbeit/citydep/citydep.2.mp4',
+          '/media/arbeit/citydep/citydep.3.mp4',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'art-of-peace',
+    title: 'The Art of Peace',
+    subtitle: 'Anime-Pilotfolge ueber Aikido',
+    cover: 'header',
+    description:
+      'Ein Teamprojekt mit dem Ziel, das Interesse an Aikido wiederzubeleben — der ' +
+      'Kampfkunst, die Morihei Ueshiba Mitte des 20. Jahrhunderts in Japan entwickelt hat ' +
+      'und die Konflikte durch Harmonie statt durch Gewalt loest. Entstanden sind zwei ' +
+      'Dinge: ein VR-Spiel und die Pilotfolge einer Anime-Serie. Mein Teil war das ' +
+      'Storyboard und dessen Animation.', // TODO
+    year: '2022',
+    role: 'Storyboard, Animation',
+    client: 'Teamprojekt an der Hochschule Furtwangen',
+    tools: ['Storyboarder', 'Photoshop', 'Blender', 'Celtx'],
+    tags: ['Animation', 'Storyboard', 'Anime', 'Aikido', 'Auszeichnung'],
+    pull: 'Konflikte loesen sich durch Harmonie, nicht durch Gewalt.',
+    extern: {
+      href: 'https://hs-furtwangen.github.io/TheArtOfPeace/',
+      label: 'Projektdokumentation ansehen',
+      note: 'Die vollstaendige Doku des Teams mit Research, Assets und Trailer.',
+    },
+    chapters: [
+      {
+        title: 'Recherche und Erzaehlbogen',
+        text:
+          'Aus der Recherche entstand eine Erzaehlung, die Ueshibas Leben chronologisch ' +
+          'folgt. Wichtig war uns, dass die Geschichte das Wesen der Kampfkunst selbst ' +
+          'widerspiegelt und nicht nur von ihr handelt. Geplant war eine Serie mit mehreren ' +
+          'Episoden — aus Zeitgruenden blieb es bei einer Pilotfolge.', // TODO
+        textOnly: true,
+      },
+      {
+        title: 'Drehbuch',
+        text:
+          'Geschrieben in Celtx, mehrfach ueberarbeitet. Die Folge erzaehlt von einem jungen ' +
+          'Schueler Ueshibas, der das wahre Wesen des Aikido durch eine ungewoehnliche ' +
+          'Begegnung mit einem Betrunkenen im Zug begreift.', // TODO
+        textOnly: true,
+      },
+      {
+        title: 'Storyboard',
+        text:
+          'Alle 23 Szenen wurden mit Storyboarder und Photoshop gezeichnet. Daraus entstand ' +
+          'eine animierte Fassung mit Musik und Toneffekten — das Storyboard nicht als ' +
+          'Planungswerkzeug, sondern als eigenstaendige Fassung des Films.', // TODO
+        embed: 'https://player.vimeo.com/video/669799645',
+      },
+      {
+        title: 'Animation',
+        text:
+          'Fuer die eigentliche Animation fiel die Wahl auf Blender — frei verfuegbar und im ' +
+          'Studium bereits gelernt. Die Figuren entstanden in VRoid Studio und wurden in ' +
+          'Blender geriggt. Animiert wurde Szene 13, die Schluesselszene im Zugwagen.', // TODO
+        textOnly: true,
+      },
+      {
+        title: 'Auszeichnung',
+        text: 'Der Scan der Preisverleihung — der Medienpreis fuer das animierte Storyboard.', // TODO
+        files: ['medienpreis-scan'],
+        layout: 'wide',
+      },
+    ],
+  },
+];

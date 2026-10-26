@@ -19,52 +19,53 @@ const TMP = path.join(ROOT, 'node_modules', '.smoke');
 
 const PAGES = [
   { html: 'index.html', entry: 'src/scripts/main.js', erwartet: '.area' },
-  { html: 'arbeit.html', entry: 'src/scripts/category.js', erwartet: '.card' },
-  { html: 'freizeit.html', entry: 'src/scripts/category.js', erwartet: '.card' },
-  { html: 'uni.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  { html: 'creative-technology.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  { html: 'film.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  { html: 'game.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  { html: 'grafikdesign.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   // Die Projektseite liest ihr Projekt aus der Adresse.
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=arbeit/handwerkerexperten',
+    query: '?id=grafikdesign/handwerkerexperten',
   },
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=uni/rreth',
+    query: '?id=creative-technology/rreth',
   },
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=freizeit/kamamuta',
+    query: '?id=grafikdesign/kamamuta',
   },
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=uni/in-lakech',
+    query: '?id=creative-technology/in-lakech',
   },
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=arbeit/huginn',
+    query: '?id=film/huginn',
   },
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=uni/nostalgia',
+    query: '?id=creative-technology/nostalgia',
   },
   // Falsche Adresse muss sauber abgefangen werden.
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.empty',
-    query: '?id=uni/gibtsnicht',
+    query: '?id=film/gibtsnicht',
   },
   { html: 'spiel.html', entry: 'src/scripts/spiel.js', erwartet: '.boot__start' },
 ];

@@ -3,7 +3,7 @@
 Die Seite hat drei Ebenen. Man kann sich an keiner Stelle verlaufen:
 
 ```
-Startseite            Drei Bereiche mit Titelbild
+Startseite            Vier Bereiche als Kacheln
    ↓
 Übersicht             Alle Projekte eines Bereichs als Karten
    ↓
@@ -41,9 +41,10 @@ In VS Code: Ordner oeffnen, Terminal mit `Strg + ö`, dann `npm run dev`.
 | Was                              | Datei                                          |
 | -------------------------------- | ---------------------------------------------- |
 | Name, Kontakt, Bereichstexte     | `src/data/site.js`                             |
-| Projekte Arbeit                  | `src/data/arbeit.js`                           |
-| Projekte Freizeit                | `src/data/freizeit.js`                         |
-| Projekte Uni                     | `src/data/uni.js`                              |
+| Projekte Creative Technology     | `src/data/creative-technology.js`              |
+| Projekte Film                    | `src/data/film.js`                             |
+| Projekte Game                    | `src/data/game.js`                             |
+| Projekte Grafikdesign            | `src/data/grafikdesign.js`                     |
 | Welche Dateien importiert werden | `scripts/media-manifest.mjs`                   |
 | Farben, Schrift, Abstaende       | `src/styles/main.css`, ganz oben unter `:root` |
 
@@ -85,7 +86,7 @@ Ein paar Regeln, die dir Arbeit sparen:
   passt sich von allein an.
 - **Dateien zuordnen**: `files` sind Dateinamen-**Anfaenge**. `['visitenkarte']`
   holt alle Dateien, die so beginnen. Welche es gibt, siehst du in
-  `public/media/<bereich>/<projekt>/`.
+  `public/media/<ordner>/<projekt>/`.
 - **Was keinem Schritt zugeordnet ist, wird nicht gezeigt.** Die Seite zeigt
   nur, was du bewusst einsortiert hast — nicht alles, was zufaellig im Ordner
   liegt. Verschwiegen wird trotzdem nichts: `npm run check` listet jede nicht
@@ -100,7 +101,8 @@ Ein paar Regeln, die dir Arbeit sparen:
 ### Ein Projekt hinzufuegen
 
 1. In `scripts/media-manifest.mjs` einen Eintrag mit `category`, `slug` und
-   `sources` ergaenzen.
+   `sources` ergaenzen. `category` ist hier nur der Medienordner (`arbeit`,
+   `freizeit` oder `uni`), nicht der Bereich auf der Seite.
 2. `npm run import` laufen lassen.
 3. In `src/data/<bereich>.js` ein Objekt mit demselben `slug` ergaenzen —
    Titel, `cover`, Beschreibung und die `chapters`.

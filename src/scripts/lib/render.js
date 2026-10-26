@@ -2,7 +2,7 @@
  * Baut die HTML-Bausteine der Seite.
  *
  * Die Seite hat drei Ebenen:
- *   1. Startseite      — drei Bereiche mit Titelbild
+ *   1. Startseite      — die Bereiche als Kacheln
  *   2. Uebersicht      — alle Projekte eines Bereichs als Karten
  *   3. Projektseite    — ein Projekt, Schritt fuer Schritt
  *
@@ -37,8 +37,15 @@ export function asset(pfad = '') {
   return import.meta.env.BASE_URL.replace(/\/$/, '') + pfad;
 }
 
-export function mediaFor(category, slug) {
-  return mediaIndex?.[category]?.[slug] ?? { images: [], videos: [], docs: [] };
+/**
+ * media.json ist noch nach den alten Ordnern (arbeit, freizeit, uni) sortiert,
+ * die Bereiche der Seite sind andere. Deshalb wird ueber den Slug gesucht —
+ * der ist ueber alle Bereiche hinweg eindeutig.
+ */
+const mediaBySlug = Object.assign({}, ...Object.values(mediaIndex ?? {}));
+
+export function mediaFor(slug) {
+  return mediaBySlug[slug] ?? { images: [], videos: [], docs: [] };
 }
 
 /** Titelbild: das in `cover` genannte, sonst das erste Bild des Projekts. */
@@ -94,7 +101,7 @@ function imageTag(image, sizes, { lazy = true, modus = passung(image) } = {}) {
 
 /** Karte fuer ein Projekt in der Uebersicht. */
 export function renderCard(project, category) {
-  const media = mediaFor(category, project.slug);
+  const media = mediaFor(project.slug);
   const cover = coverFor(project, media);
   const steps = project.chapters?.length ?? 0;
   const bilder = media.images.length;
@@ -274,8 +281,8 @@ function factList(project) {
     .join('')}</dl>`;
 }
 
-export function renderProjectPage(project, category, categoryTitle) {
-  const media = mediaFor(category, project.slug);
+export function renderProjectPage(project, categoryTitle) {
+  const media = mediaFor(project.slug);
   const chapters = groupIntoChapters(project, media);
   const cover = coverFor(project, media);
   const poster = cover?.src;
@@ -335,10 +342,10 @@ export function renderProjectPage(project, category, categoryTitle) {
 }
 
 /** Zaehlt Bilder, Videos und Schritte fuer die Bereichskarten. */
-export function countMedia(projects, category) {
+export function countMedia(projects) {
   return projects.reduce(
     (sum, project) => {
-      const media = mediaFor(category, project.slug);
+      const media = mediaFor(project.slug);
       sum.images += media.images.length;
       sum.videos += media.videos.length;
       sum.chapters += project.chapters?.length ?? 0;

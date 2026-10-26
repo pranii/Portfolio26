@@ -1,5 +1,5 @@
 /**
- * ARBEIT — Auftragsarbeiten.
+ * GRAFIKDESIGN — Corporate Design, Kampagnen, Editorial.
  *
  * Jedes Projekt hat `chapters`: einzelne Schritte, die nacheinander erscheinen.
  * Pro Kapitel:
@@ -8,15 +8,15 @@
  *   files   Dateinamen-Anfaenge, die in dieses Kapitel gehoeren
  *   layout  'track' (waagerecht) | 'grid' (Raster) | 'stack' (grosse Bloecke)
  *
- * Die Texte sind Entwuerfe — ich habe sie aus den Dateien abgeleitet.
+ * Die Bilder bleiben in ihren alten Ordnern unter public/media/arbeit|freizeit|uni/.
+ * Die Seite findet sie ueber den `slug` — verschiebt man ein Projekt in einen
+ * anderen Bereich, muss man an den Medien nichts aendern.
  * Ueberall dort, wo TODO steht, bitte deine eigene Formulierung einsetzen.
- * Welche Dateien es gibt, siehst du in public/media/arbeit/<slug>/.
  */
-
 export const category = {
-  slug: 'arbeit',
-  title: 'Arbeit',
-  lead: 'Ausgewählte Auftragsarbeiten von für Gastronomie, Handwerk, Praxen und Bildungseinrichtungen.', // TODO
+  slug: 'grafikdesign',
+  title: 'Grafikdesign',
+  lead: 'Corporate Design, Kampagnen und Editorial fuer Gastronomie, Handwerk, Praxen und Bildungseinrichtungen.', // TODO
 };
 
 export const projects = [
@@ -66,7 +66,6 @@ export const projects = [
       },
     ],
   },
-
   {
     slug: 'chiro-med',
     title: 'Chiro Med',
@@ -100,67 +99,6 @@ export const projects = [
       },
     ],
   },
-
-  {
-    slug: 'huginn',
-    title: 'Huginn',
-    subtitle: 'Raumvermietung, Website und Imagefilm',
-    cover: 'header',
-    description:
-      'Huginn ist Cafe, Bar, Eventlocation und Co-Working-Space in einem Haus. Die Aufgabe war, diese Vielseitigkeit zu zeigen, ohne beliebig zu werden — die Rabe als Markenzeichen haelt alles zusammen.', // TODO
-    year: '2025', // TODO
-    role: 'Gestaltung, Storyboard, Fotografie',
-    client: 'Huginn',
-    tools: ['InDesign', 'Photoshop', 'Premiere Pro'],
-    tags: ['Editorial', 'Storyboard', 'Bewegtbild', 'Fotografie'],
-    pull: 'Sechzehn Bilder, die den Film erzaehlen, bevor die Kamera laeuft.', // TODO
-    chapters: [
-      {
-        title: 'Wortmarke',
-        text: 'Huginn ist einer der beiden Raben Odins — der Gedanke. Die Wortmarke bleibt entsprechend still: Kleinschreibung, weiche Rundungen, der Zusatz Café & Bar als schmaler Block darunter.', // TODO
-        files: ['logo-huginn'],
-        layout: 'wide',
-      },
-      {
-        title: 'Bildmarke und Web-Header',
-        text: 'Aus dem Namen wurde das Bild: zwei gespiegelte Raben, die als Header der Website den Ton setzen — dunkel, etwas nordisch, mit Rot als einzigem Akzent.', // TODO
-        files: ['header-webseite'],
-        layout: 'wide',
-      },
-      {
-        title: 'Flyer',
-        text: 'Der Flyer bringt beide Seiten des Hauses zusammen: vorne dunkel das Tagesgeschäft von Brunch bis DJ, hinten hell die Eventlocation im ersten Stock. Die Raben tauchen als gesprühte Schablonen wieder auf und halten beide Seiten zusammen.', // TODO
-        files: ['flyer-vorne', 'flyer-hinten'],
-        layout: 'wide',
-      },
-      {
-        title: 'Broschuere Raumvermietung',
-        text: 'Die Broschuere fuehrt durch das Haus: Etage fuer Etage, vom Cafe im Erdgeschoss bis zum Eventraum im Obergeschoss. Jede Doppelseite steht fuer einen Raum und einen Anlass.', // TODO
-        files: ['huginn-raumvermietung'],
-        layout: 'track',
-      },
-      {
-        title: 'Foodfotografie',
-        text: 'Fuer die Speisekarte und Social Media habe ich die Gerichte selbst fotografiert — vor Rot, damit sie sich in die Bildwelt einfuegen statt als Fremdkoerper zu wirken.', // TODO
-        files: ['mangobowl'],
-        layout: 'stack',
-      },
-      {
-        title: 'Storyboard Imagefilm',
-        text: 'Der Imagefilm zitiert "Breakfast at Tiffany\'s": eine Frau steigt aus dem Taxi, geht auf die Bar zu, dreht sich um. Das Storyboard haelt jeden Schnitt, jede Kameraeinstellung und die Shotlist fest, damit am Drehtag nichts diskutiert werden muss.', // TODO
-        files: ['storyboard'],
-        layout: 'track',
-      },
-      {
-        title: 'Der fertige Film',
-        text: 'Der Imagefilm selbst ist noch nicht fertig geschnitten. Bis es so weit ist, gibt es schon ein Reel zu sehen, das einen ersten Eindruck von Bildern und Tempo gibt.', // TODO
-        files: [],
-        // Platz reserviert: sobald huginn.mp4 im Ordner liegt, spielt sie hier.
-        platzhalter: '/media/arbeit/huginn/huginn.mp4',
-      },
-    ],
-  },
-
   {
     slug: 'sodam',
     title: 'SoDaM',
@@ -191,7 +129,6 @@ export const projects = [
       },
     ],
   },
-
   {
     slug: 'fischerhuette',
     title: 'Fischerhuette',
@@ -221,42 +158,6 @@ export const projects = [
       },
     ],
   },
-
-  {
-    slug: 'citydep',
-    title: 'Citydep',
-    subtitle: 'Storyboards und Trailer im VHS-Look',
-    cover: 'header',
-    description:
-      'Fuer Citydep entstanden Trailer, die aussehen sollen, als waeren sie von einer Kassette gerettet worden. Die Storyboards sind entsprechend als Archivbloecke aufgebaut — mit Kassettennummer, Ort und Equipment pro Einstellung.', // TODO
-    year: '2025', // TODO
-    role: 'Storyboard, Schnitt, Gestaltung',
-    tools: ['Premiere Pro', 'After Effects', 'InDesign'],
-    tags: ['Bewegtbild', 'Storyboard', 'VHS'],
-    pull: 'and then we unite — we become the stars',
-    chapters: [
-      {
-        title: 'Storyboard als Archiv',
-        text: 'Jede Seite ist wie ein Fundstueck aufgebaut: "Kassette #4", "Lost Fire #7", dazu Frame, Beschreibung, Ton und Equipment. Das Raster gehoert schon zur Erzaehlung, nicht nur zur Planung.', // TODO
-        files: ['storyboard-storyboard-in-black'],
-        layout: 'track',
-      },
-      {
-        title: 'Trailer',
-        text: 'Aus den Boards wurde der Trailer geschnitten — Bildstoerung, Zeitcode und Bandrauschen sind bewusst stehen geblieben.', // TODO
-        // Der grosse Teaser (63 MB) fehlt noch — siehe ASSETS-REPORT.md.
-        files: ['citydep-part2-remake'],
-        layout: 'stack',
-        // Platz reserviert: sobald citydep.1.mp4 / .2 / .3 im Ordner liegen, spielen sie hier.
-        platzhalter: [
-          '/media/arbeit/citydep/citydep.1.mp4',
-          '/media/arbeit/citydep/citydep.2.mp4',
-          '/media/arbeit/citydep/citydep.3.mp4',
-        ],
-      },
-    ],
-  },
-
   {
     slug: 'step-v',
     title: 'Step V',
@@ -281,6 +182,57 @@ export const projects = [
         text: 'Parallel entstand der Produktfilm. Das Board zeigt die Einstellungen und die Farbstimmung, mit der die Aufnahmen spaeter zusammengehalten werden.', // TODO
         files: ['step-v-01'],
         layout: 'stack',
+      },
+    ],
+  },
+  {
+    slug: 'kamamuta',
+    title: 'Kama Muta',
+    subtitle: 'Ein Magazin ueber das Ergriffensein',
+    cover: 'prototyp-03',
+    description:
+      'Kama Muta ist das ploetzliche Gefuehl, das entsteht, wenn Naehe unerwartet spuerbar wird — Gaensehaut bei einer Umarmung, Traenen bei einem fremden Lied. Das Magazin versucht, dieses Gefuehl nicht zu erklaeren, sondern herzustellen: Leser werden aufgefordert, selbst Begegnungen zu machen.', // TODO
+    year: '2026',
+    role: 'Konzept, Gestaltung, Fotografie, Illustration',
+    tools: ['InDesign', 'Photoshop', 'After Effects'],
+    tags: ['Editorial', 'Magazin', 'Fotografie', 'Partizipation'],
+    pull: 'In Lak’ech — ich bin ein anderes Du.',
+    chapters: [
+      {
+        title: 'Erste Ideen',
+        text: 'Am Anfang standen Handlungsanweisungen statt Artikel: "Mache ein Foto mit der dir gegenueber sitzenden Person. Tausche Adresse und Namen aus." Das Magazin sollte etwas verlangen, nicht nur etwas zeigen.', // TODO
+        files: ['first-ideas'],
+        layout: 'track',
+      },
+      {
+        title: 'Archiv und Notizen',
+        text: 'Parallel lief ein Notizarchiv mit Saetzen, die spaeter Kapitelnamen wurden — darunter der Gedanke, Verbindung als Spiegel zur Aussenwelt zu begreifen.', // TODO
+        files: ['archive'],
+        layout: 'track',
+      },
+      {
+        title: 'Spaziergang',
+        text: 'Ein ganzes Kapitel entstand beim Gehen: Bleistiftskizzen von Dingen am Weg, die zufaellig etwas ausloesen — eine Lampe, ein Stuhl, eine Treppe.', // TODO
+        files: ['spaziergang'],
+        layout: 'track',
+      },
+      {
+        title: 'Black Swan',
+        text: 'Fuer das Kapitel Black Swan habe ich mit Klebezetteln gearbeitet, um die Reihenfolge der Doppelseiten so lange zu verschieben, bis der Rhythmus stimmte.', // TODO
+        files: ['black-swan'],
+        layout: 'track',
+      },
+      {
+        title: 'Veites Kapitee',
+        text: 'Ein weiteres Kapitel als Collage: gedruckte Doppelseiten, abfotografiert und wieder ueberklebt.', // TODO
+        files: ['veites-kapitee'],
+        layout: 'grid',
+      },
+      {
+        title: 'Prototyp',
+        text: 'Am Ende steht das gedruckte Heft — drei Essays, ein Umschlag, und der Beweis, dass die Anweisungen auf Papier funktionieren.', // TODO
+        files: ['prototyp', 'kama-muta-magazine-prototype'],
+        layout: 'track',
       },
     ],
   },

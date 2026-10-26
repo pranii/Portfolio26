@@ -1,6 +1,6 @@
 /**
  * Einstiegspunkt fuer projekt.html.
- * Welches Projekt gezeigt wird, steht in der Adresse: projekt.html?id=uni/rreth
+ * Welches Projekt gezeigt wird, steht in der Adresse: projekt.html?id=film/love
  */
 
 import '../styles/main.css';
@@ -14,12 +14,7 @@ import { initReadout } from './lib/readout.js';
 import { initShowMore } from './lib/showmore.js';
 import { initVideoSlots } from './lib/videoslot.js';
 import { renderProjectPage } from './lib/render.js';
-
-const LOADERS = {
-  arbeit: () => import('../data/arbeit.js'),
-  freizeit: () => import('../data/freizeit.js'),
-  uni: () => import('../data/uni.js'),
-};
+import { LOADERS } from './lib/bereiche.js';
 
 function parseId() {
   const raw = new URLSearchParams(location.search).get('id') ?? '';
@@ -51,7 +46,7 @@ async function main() {
 
   if (!load) {
     notFound(
-      'Die Adresse enthaelt keinen gueltigen Bereich. Erwartet wird zum Beispiel projekt.html?id=uni/rreth.',
+      'Die Adresse enthaelt keinen gueltigen Bereich. Erwartet wird zum Beispiel projekt.html?id=film/love.',
     );
     return;
   }
@@ -76,7 +71,6 @@ async function main() {
 
   document.querySelector('[data-slot="projekt"]').innerHTML = renderProjectPage(
     project,
-    category,
     data.category.title,
   );
 
