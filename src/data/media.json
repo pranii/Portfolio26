@@ -756,13 +756,6 @@
         },
         {
           "type": "image",
-          "src": "/media/arbeit/step-v/step-v-01.webp",
-          "thumb": "/media/arbeit/step-v/step-v-01-thumb.webp",
-          "width": 1800,
-          "height": 1136
-        },
-        {
-          "type": "image",
           "src": "/media/arbeit/step-v/copy-of-step-v-s01.webp",
           "thumb": "/media/arbeit/step-v/copy-of-step-v-s01-thumb.webp",
           "fromPdf": "copy-of-step-v",
@@ -814,6 +807,19 @@
           "page": 6,
           "width": 1800,
           "height": 1012
+        }
+      ],
+      "videos": [],
+      "docs": []
+    },
+    "animationen": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/arbeit/animationen/animation-01.webp",
+          "thumb": "/media/arbeit/animationen/animation-01-thumb.webp",
+          "width": 1800,
+          "height": 1136
         }
       ],
       "videos": [],

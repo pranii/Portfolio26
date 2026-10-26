@@ -279,4 +279,25 @@ export const projects = [
       },
     ],
   },
+  {
+    // Bild stammt aus dem Step-V-Ordner (siehe scripts/media-manifest.mjs).
+    slug: 'animationen',
+    title: 'Animationen',
+    subtitle: 'Bewegtbild und Animation', // TODO
+    cover: 'animation-01',
+    description:
+      'Animierte Arbeiten und Bewegtbild-Studien. Das Board zeigt die Einstellungen und die Farbstimmung, mit der die Aufnahmen zusammengehalten werden.', // TODO
+    year: '2025', // TODO
+    role: 'Animation, Bewegtbild', // TODO
+    tools: ['After Effects'], // TODO
+    tags: ['Animation', 'Bewegtbild'],
+    chapters: [
+      {
+        title: 'Board',
+        text: 'Das Board zeigt die Einstellungen und die Farbstimmung, mit der die Aufnahmen spaeter zusammengehalten werden.', // TODO
+        files: ['animation-01'],
+        layout: 'stack',
+      },
+    ],
+  },
 ];

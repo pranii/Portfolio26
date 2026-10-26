@@ -205,12 +205,6 @@ export const projects = [
         files: ['copy-of-step-v'],
         layout: 'track',
       },
-      {
-        title: 'Produktfilm',
-        text: 'Parallel entstand der Produktfilm. Das Board zeigt die Einstellungen und die Farbstimmung, mit der die Aufnahmen spaeter zusammengehalten werden.', // TODO
-        files: ['step-v-01'],
-        layout: 'stack',
-      },
     ],
   },
   {
