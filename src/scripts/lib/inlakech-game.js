@@ -23,17 +23,26 @@ const PX_HEAD = 5;
 const PX_BIG = 16;
 const PX_TXT = 4;
 
-// ----- Timing (Sekunden), wie in aphotobooth.py -----
+// ----- Timing (Sekunden) -----
+// Deutlich knapper als in aphotobooth.py: Am Bildschirm soll eine Runde in
+// rund 20 Sekunden durch sein statt in fast einer Minute.
 const IDLE_TIMEOUT = 60;
 const ABANDON_TIMEOUT = 30;
-const MIN_INPUT_DELAY = 0.6;
-const T9_STEP = 0.05;
-const T9_SETTLE = 0.12;
-const SMILE_TEXT_TIME = 1.6;
-const HAND_TRAVEL_TIME = 3.0;
-const FLASH_TIME = 0.35;
-const END_HOLD_TIME = 6.0;
-const FADE = 0.3;
+const MIN_INPUT_DELAY = 0.25; // Pause nach jeder Zeile bis zur naechsten Eingabe
+const T9_STEP = 0.012;
+const T9_SETTLE = 0.025;
+const ANGRIFF_TEMPO = 2; // Angriffs-GIFs laufen doppelt so schnell wie im Original
+const TREFFER_ZEIT = 0.45; // so lange blinkt die getroffene Figur
+const SMILE_TEXT_TIME = 1.1;
+const HAND_TRAVEL_TIME = 1.6;
+const FLASH_TIME = 0.3;
+const BON_ZEIT = 1.3; // so lange faehrt der Kassenbon heraus
+const END_HOLD_TIME = 4.5;
+const FADE = 0.2;
+
+// In welchem Bild der Angriffs-GIFs der Schuss faellt und wann er trifft.
+const SCHUSS_BILD = 3;
+const TREFFER_BILD = 7;
 
 const HEADER = 'IT TAKES TWO TO TANGO.';
 
@@ -222,45 +231,121 @@ const t9Total = (text) =>
 
 // ─────────────────────────────────────────────────────────── Ton ──
 
-/** Kurze Rechteck-Toene wie aus dem Telefon. Erst nach der ersten Eingabe
-    moeglich — Browser erlauben vorher keinen Ton. */
+/**
+ * Soundeffekte im Stil der Game-Boy-Pokemon-Spiele: Rechteck-Toene und
+ * Rauschen, alles im Browser erzeugt — keine Audiodateien.
+ * Erst nach der ersten Eingabe moeglich; Browser erlauben vorher keinen Ton.
+ */
 class Ton {
   constructor() {
     this.ctx = null;
+    this.rauschen = null;
   }
 
   wecken() {
-    if (this.ctx) return;
+    if (this.ctx) {
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+      return;
+    }
     try {
       this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      // Eine Sekunde weisses Rauschen fuer Knall, Aufprall und Drucker
+      const n = this.ctx.sampleRate;
+      this.rauschen = this.ctx.createBuffer(1, n, n);
+      const daten = this.rauschen.getChannelData(0);
+      for (let i = 0; i < n; i++) daten[i] = Math.random() * 2 - 1;
     } catch {
       this.ctx = null;
     }
   }
 
-  piep(freq, dauer, lautstaerke = 0.08, freq2 = null) {
+  /** Ein Ton ab `start` Sekunden. `bis`: Zielfrequenz fuer ein Glissando. */
+  note(freq, start, dauer, { typ = 'square', vol = 0.06, bis = null } = {}) {
     if (!this.ctx) return;
-    const t = this.ctx.currentTime;
+    const t = this.ctx.currentTime + start;
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
-    osc.type = 'square';
+    osc.type = typ;
     osc.frequency.setValueAtTime(freq, t);
-    if (freq2) osc.frequency.setValueAtTime(freq2, t + dauer / 2);
-    gain.gain.setValueAtTime(lautstaerke, t);
+    if (bis) osc.frequency.exponentialRampToValueAtTime(bis, t + dauer);
+    gain.gain.setValueAtTime(vol, t);
     gain.gain.exponentialRampToValueAtTime(0.0001, t + dauer);
     osc.connect(gain).connect(this.ctx.destination);
     osc.start(t);
-    osc.stop(t + dauer);
+    osc.stop(t + dauer + 0.02);
   }
 
+  /** Gefiltertes Rauschen ab `start` Sekunden. */
+  knall(start, dauer, { vol = 0.15, filter = 'lowpass', freq = 2000 } = {}) {
+    if (!this.ctx || !this.rauschen) return;
+    const t = this.ctx.currentTime + start;
+    const quelle = this.ctx.createBufferSource();
+    quelle.buffer = this.rauschen;
+    const f = this.ctx.createBiquadFilter();
+    f.type = filter;
+    f.frequency.value = freq;
+    const gain = this.ctx.createGain();
+    gain.gain.setValueAtTime(vol, t);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + dauer);
+    quelle.connect(f).connect(gain).connect(this.ctx.destination);
+    quelle.start(t, Math.random() * 0.5, dauer + 0.02);
+  }
+
+  /** Melodie: Frequenzen im festen Abstand, 0 ist eine Pause. */
+  folge(noten, schritt, start = 0, opts = {}) {
+    noten.forEach((f, i) => f && this.note(f, start + i * schritt, schritt * 0.9, opts));
+  }
+
+  // Text-Ticken, wie wenn bei Pokemon ein Satz erscheint
   blip() {
-    this.piep(1000, 0.02, 0.05);
+    this.note(1320, 0, 0.016, { vol: 0.025 });
+  }
+  // Knopf gedrueckt — der Zwei-Ton-Blip aus dem Menue
+  bestaetigen() {
+    this.note(988, 0, 0.045, { vol: 0.05 });
+    this.note(1319, 0.045, 0.07, { vol: 0.05 });
+  }
+  // Ein wilder Kampf beginnt
+  kampfStart() {
+    this.folge([523, 659, 784, 1047, 784, 1047, 1319], 0.055, 0, { vol: 0.05 });
+  }
+  // Taiyo: Schuss — Knall mit absackendem Ton
+  schuss() {
+    this.knall(0, 0.2, { vol: 0.3, freq: 3500 });
+    this.note(320, 0, 0.16, { typ: 'triangle', vol: 0.14, bis: 55 });
+  }
+  // Tsuki: Welle — fallender Laser
+  welle() {
+    this.note(1700, 0, 0.34, { vol: 0.04, bis: 190 });
+    this.note(2550, 0.02, 0.3, { vol: 0.02, bis: 280 });
+  }
+  // Treffer: zwei dumpfe Schlaege, die Figur blinkt dazu
+  treffer() {
+    this.knall(0, 0.12, { vol: 0.32, freq: 900 });
+    this.note(150, 0, 0.12, { vol: 0.08, bis: 60 });
+    this.knall(0.15, 0.09, { vol: 0.22, freq: 700 });
   }
   fehler() {
-    this.piep(160, 0.45, 0.08, 240);
+    this.note(160, 0, 0.2, { vol: 0.07 });
+    this.note(240, 0.2, 0.26, { vol: 0.07 });
+  }
+  // Versoehnung — wie die Heilmelodie im Pokemon-Center
+  heilung() {
+    this.folge([784, 988, 1175, 1568, 0, 1175, 1568, 0, 2093], 0.085, 0, { vol: 0.045 });
   }
   ausloeser() {
-    this.piep(1200, 0.12, 0.06);
+    this.knall(0, 0.05, { vol: 0.25, filter: 'highpass', freq: 3000 });
+    this.knall(0.07, 0.06, { vol: 0.2, filter: 'highpass', freq: 2000 });
+  }
+  // Kassenbon-Drucker: schnelles Rattern
+  drucker(start, dauer) {
+    for (let t = 0; t < dauer; t += 0.035) {
+      this.knall(start + t, 0.018, { vol: 0.07, filter: 'bandpass', freq: 2600 });
+    }
+  }
+  // Kampf gewonnen — kurze Fanfare
+  sieg(start = 0) {
+    this.folge([784, 784, 784, 1047, 0, 988, 1047, 1047], 0.09, start, { vol: 0.05 });
   }
 }
 
@@ -371,11 +456,15 @@ export async function startInLakech(canvas, basis, status = () => {}) {
   // ----- Figuren: Taiyo (links) und Tsuki (rechts) -----
   // Ganzzahlig vergroessert, damit die Nokia-Pixel scharf bleiben.
   const FIGUR_S = Math.floor((SH * 0.44) / Math.max(figurDaten.taiyo.h, figurDaten.tsuki.h));
-  const figur = (img, daten) => ({
-    ...daten,
-    sheet: einfaerben(img, LCD_DARK),
-    dauer: daten.zeiten.reduce((summe, ms) => summe + ms, 0) / 1000,
-  });
+  const figur = (img, daten) => {
+    const zeiten = daten.zeiten.map((ms) => ms / ANGRIFF_TEMPO);
+    return {
+      ...daten,
+      zeiten,
+      sheet: einfaerben(img, LCD_DARK),
+      dauer: zeiten.reduce((summe, ms) => summe + ms, 0) / 1000,
+    };
+  };
   const taiyo = figur(bild.taiyo, figurDaten.taiyo);
   const tsuki = figur(bild.tsuki, figurDaten.tsuki);
 
@@ -435,6 +524,11 @@ export async function startInLakech(canvas, basis, status = () => {}) {
   let aktuelleZeile = '';
   let bon = null;
   let gedrueckt = new Set();
+  let jetzt = 0;
+  // Angriff: welches GIF-Bild zuletzt gezeigt wurde, und wer gerade blinkt
+  let letztesAngriffsBild = -1;
+  let trefferSeite = null;
+  let trefferBis = 0;
 
   const melde = {
     [READY]: 'Bereit — Spieler A drückt zuerst',
@@ -489,21 +583,39 @@ export async function startInLakech(canvas, basis, status = () => {}) {
     g.drawImage(f.sheet, i * f.w, 0, f.w, f.h, x, boxUnten - h, w, h);
   }
 
+  /** Getroffen: die Figur flackert kurz, wie ein Pokemon, das Schaden nimmt. */
+  const blinkt = (seite) =>
+    seite === trefferSeite && jetzt < trefferBis && Math.floor(jetzt * 20) % 2 === 0;
+
   /** Beide Seiten zeichnen. `angriffT`: Sekunden seit Beginn des Angriffs,
       oder null, wenn gerade niemand angreift (dann stehen beide still). */
   function figuren(step, angriffT = null) {
-    if (step.left === 'figur') {
+    if (blinkt('links')) {
+      // ausgelassen
+    } else if (step.left === 'figur') {
       const i = step.shoot === 'A2B' && angriffT !== null ? bildNach(taiyo, angriffT) : 0;
       zeigeFigur(taiyo, i, leftX);
     } else {
       g.drawImage(handSprite.links, leftX, boxMitte - handH / 2);
     }
-    if (step.right === 'figur') {
+    if (blinkt('rechts')) {
+      // ausgelassen
+    } else if (step.right === 'figur') {
       const i = step.shoot === 'B2A' && angriffT !== null ? bildNach(tsuki, angriffT) : 0;
       zeigeFigur(tsuki, i, rechtsBuendig(tsuki.w * FIGUR_S));
     } else {
       g.drawImage(handSprite.rechts, rechtsBuendig(handSprite.rechts.width), boxMitte - handH / 2);
     }
+  }
+
+  /** Blinkendes ▼ unter dem Text: jemand ist am Zug. */
+  function weiterPfeil() {
+    if (Math.floor(jetzt * 3) % 2) return;
+    const px = PX_TXT;
+    const x = Math.round(SW * 0.88);
+    const y = Math.round(SH * 0.86);
+    g.fillStyle = LCD_DARK;
+    for (let r = 0; r < 4; r++) g.fillRect(x + r * px, y + r * px, (7 - 2 * r) * px, px);
   }
 
   function zugAnzeige(who) {
@@ -558,6 +670,7 @@ export async function startInLakech(canvas, basis, status = () => {}) {
   // ----- Schleife -----
   function bild_(nowMs) {
     const now = nowMs / 1000;
+    jetzt = now;
     const el = now - tZustand;
     const pressed = gedrueckt;
     gedrueckt = new Set();
@@ -571,8 +684,10 @@ export async function startInLakech(canvas, basis, status = () => {}) {
       }
       if (pressed.has(BATTLE[0].who)) {
         neueRunde();
+        ton.kampfStart();
         enthuellStart = now;
         letzteBlipLaenge = 0;
+        letztesAngriffsBild = -1;
         geh(ENTHUELLEN);
       } else if (now - letzteAktivitaet > IDLE_TIMEOUT) {
         geh(SCHONER);
@@ -593,6 +708,7 @@ export async function startInLakech(canvas, basis, status = () => {}) {
       );
       g.restore();
       if (pressed.size) {
+        ton.bestaetigen();
         neueRunde();
         letzteAktivitaet = now;
         geh(READY);
@@ -603,6 +719,7 @@ export async function startInLakech(canvas, basis, status = () => {}) {
       figuren(step);
       dialog(aktuelleZeile);
       zugAnzeige(step.who);
+      weiterPfeil();
       const erlaubt = el >= MIN_INPUT_DELAY;
       let weiter;
       if (step.who === 'BOTH') {
@@ -612,8 +729,10 @@ export async function startInLakech(canvas, basis, status = () => {}) {
         weiter = erlaubt && pressed.has(step.who);
       }
       if (weiter) {
+        ton.bestaetigen();
         enthuellStart = now;
         letzteBlipLaenge = 0;
+        letztesAngriffsBild = -1;
         beideBereit = { A: false, B: false };
         geh(ENTHUELLEN);
       } else if (now - letzteAktivitaet > ABANDON_TIMEOUT) {
@@ -626,12 +745,33 @@ export async function startInLakech(canvas, basis, status = () => {}) {
       // Erst laeuft der Angriff (das GIF der Figur), dann wird getippt.
       const angreifer = { A2B: taiyo, B2A: tsuki }[step.shoot];
       const schuss = angreifer ? angreifer.dauer : 0;
+
+      // Schuss und Treffer im Takt der GIF-Bilder
+      if (tRev < schuss) {
+        const i = bildNach(angreifer, tRev);
+        if (i !== letztesAngriffsBild) {
+          if (i === SCHUSS_BILD) angreifer === taiyo ? ton.schuss() : ton.welle();
+          if (i === TREFFER_BILD) {
+            ton.treffer();
+            trefferSeite = angreifer === taiyo ? 'rechts' : 'links';
+            trefferBis = now + TREFFER_ZEIT;
+          }
+          letztesAngriffsBild = i;
+        }
+      }
+
       grund();
       figuren(step, tRev < schuss ? tRev : null);
       if (tRev < schuss) {
         dialog(aktuelleZeile);
       } else {
-        const tippen = tRev - schuss;
+        let tippen = tRev - schuss;
+        // Wie bei Pokemon: Druecken waehrend des Tippens zeigt die Zeile sofort ganz.
+        if (pressed.size && tippen < t9Total(step.text)) {
+          ton.bestaetigen();
+          enthuellStart = now - schuss - t9Total(step.text);
+          tippen = t9Total(step.text);
+        }
         const [gezeigt, fertig] = t9Render(step.text, tippen);
         if (gezeigt.length !== letzteBlipLaenge) {
           ton.blip();
@@ -643,6 +783,7 @@ export async function startInLakech(canvas, basis, status = () => {}) {
           aktuelleZeile = step.text;
           idx += 1;
           if (idx >= BATTLE.length) {
+            ton.heilung();
             geh(HAENDE);
           } else {
             geh(WARTEN);
@@ -678,7 +819,7 @@ export async function startInLakech(canvas, basis, status = () => {}) {
       g.restore();
       // Kassenbon faehrt unten rechts aus dem "Drucker"
       if (zustand === ENDE && bon) {
-        const p = ease((tEnde - 0.4) / 2.2);
+        const p = ease((tEnde - 0.2) / BON_ZEIT);
         const ziel = SH - bon.height - 24;
         const by = SH + (ziel - SH) * p;
         g.drawImage(bon, SW - BON_W - 56, Math.round(by));
@@ -688,7 +829,11 @@ export async function startInLakech(canvas, basis, status = () => {}) {
         g.globalAlpha = 1 - ease(el / FLASH_TIME);
         g.fillRect(0, 0, SW, SH);
         g.globalAlpha = 1;
-        if (el > FLASH_TIME) geh(ENDE);
+        if (el > FLASH_TIME) {
+          ton.drucker(0.2, BON_ZEIT);
+          ton.sieg(BON_ZEIT + 0.4);
+          geh(ENDE);
+        }
       } else if (el > END_HOLD_TIME) {
         geh(AUSKLANG);
       }
