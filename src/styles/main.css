@@ -1,27 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&family=VT323&display=swap');
 
 /* ═══════════════════════════════════════════════════════════════════
    PORTFOLIO — Stylesheet
 
    Haltung
    ───────
-   8-Bit-Handheld, angelehnt an das monochrome Display eines Nokia 3310:
-   zwei Graustufen, Pixelraster, blockige Schrift. Keine Farbflaechen,
-   keine Verlaeufe, keine Schatten — nur An und Aus.
+   Das Display eines Nokia 3310 mit eingeschalteter Hintergrund-
+   beleuchtung: gelbgruenes Licht, dunkle Pixel, die einen leichten
+   Schatten auf das Licht werfen. Wo es dunkel wird (Fuss, Lightbox,
+   Spiel, Ladebildschirm), sieht man das Gehaeuse — dort leuchtet die
+   Schrift selbst.
 
    Prinzipien
    ──────────
-   1  Ein Massstab.  Alle Groessen kommen aus einer Skala (Faktor 1.25),
-      alle Abstaende aus einer zweiten. Nichts wird frei geschaetzt.
-   2  Luft als Gliederung.  Abschnitte werden durch Abstand getrennt,
-      nicht durch Linien oder Kaesten. Je wichtiger der Schnitt, desto
-      groesser der Abstand.
-   3  Feste Satzbreite.  Fliesstext laeuft nie breiter als 62 Zeichen,
-      Einleitungen nie breiter als 34 — unabhaengig vom Bildschirm.
-   4  Ruhiges Raster.  Alle Bildkacheln haben dasselbe Seitenformat.
-      Was nicht hineinpasst, wird eingepasst statt beschnitten.
-   5  Zwei Farben, kein Bereich in Farbe — Bilder werden fuer den
-      Bildschirm entsaettigt statt bunt zu bleiben.
+   1  Zwei Welten, ein Satz Tokens.  Helle Flaechen sind das Display,
+      dunkle das Gehaeuse. Dunkle Bereiche tauschen nur die Tokens
+      (.is-dark), jede Regel funktioniert in beiden.
+   2  Gewichtung ueber Groesse.  Tiny5 — eckig, auf ein 5-Pixel-Raster
+      gebaut wie die Menueschrift des 3310 — fuer Titel, VT323 fuer Text
+      und Labels. Beide kennen nur eine Staerke; ein vom Browser
+      gefaelschtes Fett wuerde die Pixel verschmieren.
+   3  Ein Massstab.  Groessen aus einer Skala, Abstaende aus einer
+      zweiten. Auf kleinen Bildschirmen schrumpfen beide mit.
+   4  Auswahl = invertiert.  Wie im Nokia-Menue: Was aktiv oder unter
+      der Maus ist, wird dunkel hinterlegt und leuchtet.
+   5  Bilder sind Displayinhalt.  Jedes Bild wird zweifarbig auf das
+      Hintergrundlicht gerechnet — dunkle Pixel auf gruenem Licht.
 
    Aufbau:  1 Tokens · 2 Reset · 3 Typografie · 4 Layout · 5 Kopf
             6 Startseite · 7 Uebersicht · 8 Projektseite · 9 Bilder
@@ -31,45 +35,52 @@
 /* ── 1 Tokens ─────────────────────────────────────────────────────── */
 
 :root {
-  /* Die zwei Farben des Displays. */
-  --primary: #7d7d7d;
-  --secondary: #1c1c1e;
+  /* Hintergrundbeleuchtung: Mitte heller, Raender fallen ab. */
+  --lcd-hi: #dcf28f;
+  --lcd: #c6e173;
+  --lcd-lo: #a3c552;
 
-  --paper: var(--secondary);
-  --paper-sunk: color-mix(in oklab, var(--secondary) 82%, var(--primary) 18%);
-  --ink: var(--primary);
-  --ink-soft: color-mix(in oklab, var(--primary) 80%, var(--secondary) 20%);
-  --ink-dim: color-mix(in oklab, var(--primary) 52%, var(--secondary) 48%);
-  --rule: color-mix(in oklab, var(--secondary) 65%, var(--primary) 35%);
+  /* Die Pixel. Nie ganz schwarz — LCD-Pixel sind olivgruen. */
+  --pixel: #1b260d;
 
-  /* Kein Bereich bekommt mehr eine eigene Farbe — nur An und Aus. */
-  --accent: var(--primary);
-  --accent-ink: var(--secondary);
+  /* Das Gehaeuse */
+  --bezel: #0e140a;
+  --bezel-hi: #18220f;
 
-  /* Leichter Gruenstich, wie ein altes LCD — Fotos bleiben erkennbar,
-     wirken aber nicht wie ein modernes Farbdisplay. */
-  --image-filter: grayscale(0.45) sepia(0.25) hue-rotate(60deg) saturate(1.6) brightness(0.97)
-    contrast(1.05);
-  --image-filter-hover: grayscale(0.35) sepia(0.3) hue-rotate(60deg) saturate(1.7) brightness(1.03)
-    contrast(1.1);
+  /* Arbeits-Tokens. Dunkle Bereiche ueberschreiben nur diese. */
+  --paper: var(--lcd);
+  --paper-sunk: color-mix(in oklab, var(--lcd) 82%, var(--pixel) 18%);
+  --ink: var(--pixel);
+  --ink-soft: color-mix(in oklab, var(--pixel) 82%, var(--lcd) 18%);
+  --ink-dim: color-mix(in oklab, var(--pixel) 58%, var(--lcd) 42%);
+  --rule: color-mix(in oklab, var(--pixel) 40%, var(--lcd) 60%);
 
-  --font-display: 'Press Start 2P', var(--font-mono);
+  /* Invertiert: Auswahlbalken, Knoepfe, Hover. */
+  --accent: var(--pixel);
+  --accent-ink: var(--lcd-hi);
+
+  /* Jedes Pixel wirft einen kleinen Schatten auf das Licht dahinter. */
+  --ghost: 0.07em 0.07em 0 color-mix(in oklab, var(--pixel) 16%, transparent);
+  /* In dunklen Bereichen leuchtet die Schrift stattdessen. */
+  --glow: 0 0 0.4em color-mix(in oklab, var(--lcd-hi) 45%, transparent);
+
+  --font-display: 'Tiny5', 'VT323', ui-monospace, monospace;
   --font: 'VT323', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-  --font-mono: 'VT323', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-mono: var(--font);
 
-  /* Groessenskala, Faktor 1.25 — jede Stufe leitet sich aus der vorigen ab */
-  --t--2: 0.64rem;
-  --t--1: 0.8rem;
-  --t-0: 1rem;
-  --t-1: 1.25rem;
-  --t-2: 1.5625rem;
-  --t-3: 1.953rem;
-  --t-4: 2.441rem;
-  --t-5: 3.052rem;
-  --t-6: 3.815rem;
+  /* Groessenskala, Faktor 1.25. VT323 zeichnet sehr klein, deshalb
+     beginnt die Skala hoeher als bei einer normalen Schrift. */
+  --t--2: 0.95rem;
+  --t--1: 1.075rem;
+  --t-0: 1.3rem;
+  --t-1: 1.625rem;
+  --t-2: 2.03rem;
+  --t-3: 2.54rem;
+  --t-4: 3.17rem;
+  --t-5: 3.97rem;
+  --t-6: 4.96rem;
 
-  /* Abstandsskala — bewusst grob, damit Zwischenwerte gar nicht erst
-     in Versuchung fuehren */
+  /* Abstandsskala */
   --s-1: 0.25rem;
   --s-2: 0.5rem;
   --s-3: 0.75rem;
@@ -80,18 +91,41 @@
   --s-8: 4.5rem;
   --s-9: 7rem;
   --s-10: 10rem;
-  --s-11: 14rem;
 
   /* Satzbreiten */
-  --measure: 62ch;
-  --measure-short: 34ch;
+  --measure: 60ch;
+  --measure-short: 36ch;
 
   /* Raster */
-  --shell: 78rem;
-  --gutter: clamp(1.25rem, 5vw, 5rem);
+  /* Breit genug, dass auf grossen Bildschirmen kein leerer Streifen
+     links und rechts bleibt. Fliesstext bleibt trotzdem bei --measure. */
+  --shell: 120rem;
+  --gutter: clamp(1rem, 3vw, 2.5rem);
   --tile-ratio: 3 / 2;
 
+  /* Pixel-Schlagschatten fuer Karten und Knoepfe */
+  --lift: 4px;
+
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Dunkle Bereiche: dieselben Tokens, nur vertauscht. Die Schrift
+   leuchtet statt Schatten zu werfen. */
+.is-dark,
+.site-footer,
+.lightbox,
+.launcher,
+.window {
+  --paper: var(--bezel);
+  --paper-sunk: var(--bezel-hi);
+  --ink: var(--lcd-hi);
+  --ink-soft: color-mix(in oklab, var(--lcd-hi) 80%, var(--bezel) 20%);
+  --ink-dim: color-mix(in oklab, var(--lcd) 55%, var(--bezel) 45%);
+  --rule: color-mix(in oklab, var(--lcd) 30%, var(--bezel) 70%);
+  --accent: var(--lcd-hi);
+  --accent-ink: var(--bezel);
+  --ghost: var(--glow);
+  color: var(--ink);
 }
 
 /* ── 2 Reset ──────────────────────────────────────────────────────── */
@@ -100,28 +134,33 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* Grid- und Flex-Kinder duerfen unter ihre Inhaltsbreite schrumpfen —
-     sonst reisst z.B. ein Bild oder ein langes Wort das ganze Raster
-     auf schmalen Bildschirmen breiter als der Bildschirm selbst. */
+  /* Grid- und Flex-Kinder duerfen unter ihre Inhaltsbreite schrumpfen. */
   min-width: 0;
 }
 
 html {
   -webkit-text-size-adjust: 100%;
+  background: var(--lcd-lo);
+  /* Kein kuenstliches Fett und Kursiv — die Pixelschriften haben nur
+     einen Schnitt, alles andere waere verschmiert. */
+  font-synthesis: none;
 }
 
 body {
   margin: 0;
-  background: var(--paper);
+  min-height: 100svh;
   color: var(--ink);
+  /* Hintergrundbeleuchtung: hell in der Mitte, zu den Raendern dunkler.
+     Fest am Fenster, damit sie beim Scrollen nicht mitwandert. */
+  background:
+    radial-gradient(120% 90% at 50% 35%, var(--lcd-hi) 0%, var(--lcd) 55%, var(--lcd-lo) 100%) fixed,
+    var(--lcd);
   font-family: var(--font);
-  font-size: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
-  line-height: 1.6;
+  font-size: var(--t-0);
+  line-height: 1.3;
+  text-shadow: var(--ghost);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  /* Lange deutsche Komposita (z.B. Projektnamen) sollen auf schmalen
-     Bildschirmen brechen koennen statt den Rahmen zu sprengen. */
   overflow-wrap: break-word;
 }
 
@@ -139,6 +178,7 @@ a {
 button {
   font: inherit;
   color: inherit;
+  text-shadow: inherit;
   background: none;
   border: 0;
   cursor: pointer;
@@ -146,7 +186,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px dashed var(--ink);
   outline-offset: 4px;
 }
 
@@ -159,37 +199,45 @@ html.lenis body {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--pixel);
+  color: var(--lcd-hi);
+  text-shadow: none;
 }
 
 /* ── 3 Typografie ─────────────────────────────────────────────────── */
 
-/* Auszeichnung: klein, weit gesperrt, Versalien. Traegt alle Labels. */
-.label {
+/* Labels: klein, gesperrt, Versalien, mit Eingabe-Prompt davor. */
+.label,
+.section-title {
+  margin: 0;
   font-family: var(--font-mono);
   font-size: var(--t--1);
-  letter-spacing: 0.14em;
+  font-weight: 400;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
+.label::before,
+.section-title::before {
+  content: '> ';
+}
 
-/* Grosse Titel sitzen eng — bei dieser Groesse wirken normale Abstaende
-   auseinandergefallen. */
 .h-display {
-  font-size: clamp(var(--t-4), 8vw, var(--t-6));
-  line-height: 0.98;
-  letter-spacing: -0.035em;
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-4), 9vw, var(--t-6));
   font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
   margin: 0;
   text-wrap: balance;
 }
 
 .h-section {
-  font-size: clamp(var(--t-2), 3.5vw, var(--t-3));
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-2), 4.2vw, var(--t-4));
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.005em;
   margin: 0;
   text-wrap: balance;
 }
@@ -200,13 +248,10 @@ html.lenis body {
   text-wrap: pretty;
 }
 
-/* Einleitungen laufen schmaler als Fliesstext — sie sollen als Block
-   gelesen werden, nicht als Absatz. */
 .lead {
   max-width: var(--measure-short);
-  font-size: clamp(var(--t-1), 2vw, var(--t-2));
-  line-height: 1.35;
-  letter-spacing: -0.012em;
+  font-size: clamp(var(--t-0), 2.2vw, var(--t-1));
+  line-height: 1.25;
   color: var(--ink);
   text-wrap: pretty;
   margin: 0;
@@ -221,7 +266,6 @@ html.lenis body {
   padding-inline: var(--gutter);
 }
 
-/* Abschnitte werden durch Luft getrennt, nicht durch Linien. */
 .section {
   padding-block: var(--s-9);
 }
@@ -232,20 +276,20 @@ html.lenis body {
   padding-block: var(--s-10);
 }
 
-/* Die einzige Linie, die vorkommt. */
+/* Gestrichelt wie auf einem Display, das keine durchgehenden Linien kann. */
 .rule {
   border: 0;
-  border-top: 1px solid var(--rule);
+  border-top: 1px dashed var(--rule);
   margin: 0;
 }
 
-/* Kopfzeile eines Abschnitts: Label, Titel, Erklaerung. */
 .section-head {
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
 }
-.section-head__hint {
+.section-head__hint,
+.section-hint {
   margin: 0;
   max-width: var(--measure);
   color: var(--ink-soft);
@@ -253,30 +297,50 @@ html.lenis body {
 
 /* ── 5 Kopf und Pfad ──────────────────────────────────────────────── */
 
+/* Die Statuszeile des Telefons: Empfang links, Akku rechts. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: var(--s-5);
-  padding: var(--s-4) var(--gutter);
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
+  gap: var(--s-3) var(--s-5);
+  padding: var(--s-3) var(--gutter);
+  background: color-mix(in oklab, var(--lcd) 88%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px dashed var(--rule);
 }
 
 .site-header__mark {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: var(--s-2);
+  font-family: var(--font-display);
   font-size: var(--t-0);
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  flex: none;
+}
+
+/* Empfangsbalken, aus vier Pixelstreifen gezeichnet */
+.site-header__mark::before {
+  content: '';
+  width: 15px;
+  height: 13px;
+  background:
+    linear-gradient(currentColor, currentColor) 0 100% / 3px 4px no-repeat,
+    linear-gradient(currentColor, currentColor) 4px 100% / 3px 7px no-repeat,
+    linear-gradient(currentColor, currentColor) 8px 100% / 3px 10px no-repeat,
+    linear-gradient(currentColor, currentColor) 12px 100% / 3px 13px no-repeat;
 }
 
 .site-nav {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
-  gap: var(--s-2) var(--s-5);
+  gap: var(--s-1);
 }
 
 .site-nav a {
@@ -284,41 +348,66 @@ html.lenis body {
   font-size: var(--t--1);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-dim);
-  padding: var(--s-1) var(--s-2);
+  white-space: nowrap;
+  /* Nie schmaler als der Text — auf dem Handy wird die Zeile gewischt. */
+  flex: none;
+  color: var(--ink-soft);
+  padding: var(--s-1) var(--s-3);
   transition:
-    color 0.15s steps(2),
-    background-color 0.15s steps(2);
+    color 0.12s steps(2),
+    background-color 0.12s steps(2);
 }
 
 .site-nav a:hover,
 .site-nav a[aria-current='page'] {
-  background: var(--primary);
-  color: var(--secondary);
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
+}
+
+/* Akkuanzeige hinter dem Menue */
+.site-nav::after {
+  content: '';
+  flex: none;
+  width: 20px;
+  height: 11px;
+  margin-left: var(--s-3);
+  border: 2px solid var(--ink);
+  background: linear-gradient(90deg, var(--ink) 70%, transparent 70%) 2px 50% / calc(100% - 4px)
+    calc(100% - 4px) no-repeat;
+  box-shadow: 3px 0 0 -1px var(--ink);
 }
 
 .progress {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 2px;
+  height: 3px;
   z-index: 70;
-  background: var(--accent);
+  background: var(--pixel);
   transform: scaleX(0);
   transform-origin: left;
 }
 
-/* Feines Pixelraster ueber der ganzen Seite — die Anleihe beim
-   LCD-Raster eines Nokia 3310. */
+/* Pixelraster und Lichtabfall am Rand — das eigentliche Display-Gefuehl.
+   Liegt ueber allem, faengt aber keine Klicks ab. */
 .grain {
   display: block;
   position: fixed;
   inset: 0;
   z-index: 80;
   pointer-events: none;
-  opacity: 0.05;
   background-image:
-    repeating-linear-gradient(0deg, var(--primary) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, var(--primary) 0 1px, transparent 1px 3px);
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--pixel) 7%, transparent) 0 1px,
+      transparent 1px 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--pixel) 7%, transparent) 0 1px,
+      transparent 1px 3px
+    );
+  box-shadow: inset 0 0 18vmin color-mix(in oklab, var(--pixel) 22%, transparent);
 }
 
 .cursor {
@@ -326,22 +415,21 @@ html.lenis body {
   top: 0;
   left: 0;
   z-index: 90;
-  width: 9px;
-  height: 9px;
-  margin: -4.5px 0 0 -4.5px;
-  border-radius: 0;
-  background: var(--accent);
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  background: var(--pixel);
   pointer-events: none;
   transition:
-    width 0.3s var(--ease),
-    height 0.3s var(--ease),
-    margin 0.3s var(--ease);
+    width 0.25s steps(4),
+    height 0.25s steps(4),
+    margin 0.25s steps(4);
 }
 
 .cursor[data-state='link'] {
-  width: 60px;
-  height: 60px;
-  margin: -30px 0 0 -30px;
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
 }
 
 .cursor__label {
@@ -351,11 +439,12 @@ html.lenis body {
   place-items: center;
   font-family: var(--font-mono);
   font-size: var(--t--2);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent-ink);
+  color: var(--lcd-hi);
+  text-shadow: var(--glow);
   opacity: 0;
-  transition: opacity 0.2s var(--ease);
+  transition: opacity 0.2s steps(2);
 }
 
 .cursor[data-state='link'] .cursor__label {
@@ -366,7 +455,7 @@ html.lenis body {
   position: fixed;
   inset: 0;
   z-index: 95;
-  background: var(--paper);
+  background: var(--pixel);
   transform: scaleY(0);
   transform-origin: bottom;
   pointer-events: none;
@@ -376,7 +465,7 @@ html.lenis body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--s-2);
+  gap: var(--s-1) var(--s-2);
   padding-top: var(--s-6);
   font-family: var(--font-mono);
   font-size: var(--t--1);
@@ -385,10 +474,12 @@ html.lenis body {
 }
 
 .breadcrumb a {
-  transition: color 0.3s var(--ease);
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.12s steps(2);
 }
 .breadcrumb a:hover {
   color: var(--ink);
+  border-color: var(--ink);
 }
 .breadcrumb [aria-current] {
   color: var(--ink);
@@ -396,15 +487,14 @@ html.lenis body {
 
 /* ── 5b Launcher ──────────────────────────────────────────────────── */
 
-/* Boot-Screen vor der Startseite: Opener-GIF im Hintergrund, Titel, blinkende
-   Unterzeile. Liegt ueber allem, auch der Lightbox. */
+/* Ladebildschirm: das Telefon schaltet sich ein. */
 .launcher {
   position: fixed;
   inset: 0;
   z-index: 120;
   display: grid;
   place-items: center;
-  background: var(--secondary);
+  background: var(--bezel);
   transition: opacity 0.4s steps(4);
 }
 
@@ -419,7 +509,7 @@ html.lenis body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
 .launcher__text {
@@ -433,8 +523,11 @@ html.lenis body {
 
 .launcher__title {
   font-family: var(--font-display);
-  font-size: clamp(var(--t-3), 8vw, var(--t-5));
-  color: var(--primary);
+  font-size: clamp(var(--t-3), 10vw, var(--t-6));
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  text-shadow: var(--glow);
   margin: 0;
   opacity: 0;
   transition: opacity 0.3s steps(3);
@@ -445,10 +538,10 @@ html.lenis body {
 
 .launcher__subtitle {
   font-family: var(--font-mono);
-  font-size: var(--t-1);
-  letter-spacing: 0.2em;
+  font-size: var(--t-0);
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--ink-soft);
   margin: 0;
   opacity: 0;
 }
@@ -463,20 +556,19 @@ html.launcher-active body {
 
 /* ── 6 Startseite ─────────────────────────────────────────────────── */
 
-/* Der Einstieg besteht fast nur aus Luft: Titel, Rolle, ein Pfeil zum
-   Runterscrollen. Darunter das Menue mit den drei Bereichen. */
 .hero {
-  padding-block: var(--s-10) var(--s-9);
+  padding-block: clamp(var(--s-8), 14vh, var(--s-10)) var(--s-8);
   display: grid;
   gap: var(--s-5);
   justify-items: start;
 }
 
 .hero__title {
-  font-size: clamp(var(--t-4), 9vw, 4.75rem);
-  line-height: 0.94;
-  letter-spacing: -0.045em;
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 15vw, 9rem);
   font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
@@ -484,95 +576,246 @@ html.launcher-active body {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-2);
-  margin: 0;
+  margin: var(--s-2) 0 0;
 }
 
 .tagbox {
   font-family: var(--font-mono);
   font-size: var(--t--1);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink);
   border: 1px solid var(--ink);
-  padding: var(--s-1) var(--s-3);
+  padding: 0 var(--s-3);
 }
 
-/* Kurzer Vorstellungstext — bewusst schmal, damit er als Block gelesen
-   wird und nicht mit dem Titel konkurriert. */
 .hero__intro {
   max-width: var(--measure-short);
-  font-size: clamp(var(--t-0), 1.6vw, var(--t-1));
-  line-height: 1.5;
+  font-size: clamp(var(--t-0), 2.4vw, var(--t-1));
+  line-height: 1.25;
   color: var(--ink-soft);
   margin: var(--s-2) 0 0;
+  text-wrap: pretty;
 }
 
-/* Pfeil als Scroll-Hinweis, im selben Pixelraster wie die Icons. */
-.hero__scroll {
-  display: block;
-  width: 28px;
-  height: 16px;
-  margin-top: var(--s-4);
-  color: var(--ink-dim);
-  animation: hero-scroll-bounce 1.6s steps(4) infinite;
+/* Softkey unter dem Startbildschirm: fuehrt ins Menue, wie die
+   mittlere Taste unter dem Display. */
+.softkey {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-5);
+  padding: var(--s-1) var(--s-5);
+  font-family: var(--font-mono);
+  font-size: var(--t-1);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
 }
-.hero__scroll svg {
-  width: 100%;
-  height: 100%;
+.softkey svg {
+  width: 14px;
+  height: 8px;
   shape-rendering: crispEdges;
+  animation: softkey-bounce 1.6s steps(4) infinite;
+}
+.softkey:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
 }
 
-@keyframes hero-scroll-bounce {
+@keyframes softkey-bounce {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(5px);
+    transform: translateY(3px);
   }
 }
 
-/* Die drei Bereiche als Menuekacheln: Icon, Titel, sonst nichts —
-   der Rest steht auf der jeweiligen Bereichsseite. */
-.areas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
-  gap: var(--s-5);
-  margin-top: var(--s-8);
+/* Das Menue des Nokia 3310: ein Eintrag zur Zeit. Oben Name und Nummer,
+   in der Mitte das Icon, rechts die Scrollleiste, unten "Auswaehlen". */
+.phone {
+  padding-block: var(--s-6) var(--s-9);
 }
 
-.area {
+.phone__screen {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: clamp(26rem, 72svh, 44rem);
+  /* Kein Rahmen — das Menue steht direkt auf dem Display. Rechts bleibt
+     Platz fuer die Scrollleiste. */
+  padding: var(--s-4) calc(var(--s-4) + 18px) var(--s-4) 0;
+}
+.phone__screen:focus-visible {
+  outline-offset: 6px;
+}
+
+.phone__bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: var(--s-4);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px dashed var(--rule);
+}
+
+.phone__index {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-1), 4vw, var(--t-3));
+  line-height: 1;
+}
+
+.phone__list {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  touch-action: pan-y;
+}
+
+.phone__link {
   display: grid;
   justify-items: center;
-  gap: var(--s-4);
-  padding: var(--s-7) var(--s-4);
-  border: 1px solid var(--ink);
+  gap: var(--s-5);
+  padding: var(--s-6) var(--s-4);
   text-align: center;
-  transition:
-    background-color 0.15s steps(2),
-    color 0.15s steps(2);
+  user-select: none;
 }
 
-.area:hover {
-  background: var(--primary);
-  color: var(--secondary);
-}
-
-.area__icon {
+.phone__icon {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: clamp(7rem, 18vw, 15rem);
 }
-.area__icon svg {
+.phone__icon svg {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  shape-rendering: crispEdges;
+  filter: drop-shadow(0.06em 0.06em 0 color-mix(in oklab, var(--pixel) 16%, transparent));
+}
+
+/* Name direkt unter dem Icon — die eigentliche Ueberschrift des Eintrags. */
+.phone__name {
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-1), 4vw, var(--t-3));
+  line-height: 1;
+}
+
+.phone__desc {
+  max-width: 32ch;
+  color: var(--ink-soft);
+  text-wrap: balance;
+}
+
+.phone__link:hover .phone__icon {
+  animation: phone-blink 0.5s steps(2) 2;
+}
+
+/* Pfeiltasten links und rechts vom Icon */
+.phone__nav {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  transform: translateY(-50%);
+  border: 2px solid var(--ink);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
+}
+.phone__nav svg {
+  width: 14px;
+  height: 14px;
   shape-rendering: crispEdges;
 }
+.phone__nav--prev {
+  left: 0;
+}
+.phone__nav--next {
+  right: calc(var(--s-4) + 18px);
+}
+.phone__nav--next svg {
+  transform: scaleX(-1);
+}
+.phone__nav:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
 
-.area__title {
+/* Scrollleiste am rechten Rand: gepunktete Schiene, Block an der Stelle
+   des aktuellen Eintrags. */
+.phone__scroll {
+  position: absolute;
+  top: 4.5rem;
+  bottom: 4rem;
+  right: 0;
+  width: 8px;
+  background: repeating-linear-gradient(to bottom, var(--rule) 0 2px, transparent 2px 6px) 50% 0 /
+    2px 100% no-repeat;
+}
+.phone__thumb {
+  display: block;
+  width: 100%;
+  background: var(--ink);
+  transition: transform 0.15s steps(3);
+}
+
+.phone__soft {
+  justify-self: center;
+  padding: var(--s-1) var(--s-6);
+  font-family: var(--font-mono);
   font-size: var(--t-1);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  border-top: 1px dashed var(--rule);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
+}
+.phone__soft:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
+}
+
+/* Erst mit JavaScript wird daraus das Ein-Eintrag-Menue. Vorher (und
+   ohne Skript) bleibt es eine Liste aller Bereiche. */
+.phone:not(.is-ready) .phone__list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+}
+.phone:not(.is-ready) .phone__nav,
+.phone:not(.is-ready) .phone__scroll,
+.phone:not(.is-ready) .phone__soft {
+  display: none;
+}
+
+.phone.is-ready .phone__item:not(.is-active) {
+  display: none;
+}
+.phone.is-ready .phone__item.is-active {
+  animation: phone-in 0.18s steps(3);
+}
+
+@keyframes phone-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes phone-blink {
+  50% {
+    opacity: 0.35;
+  }
 }
 
 /* ── 7 Uebersicht ─────────────────────────────────────────────────── */
@@ -588,118 +831,413 @@ html.launcher-active body {
 }
 
 .intro__title {
-  font-size: clamp(var(--t-4), 9vw, var(--t-6));
-  line-height: 0.96;
-  letter-spacing: -0.04em;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8.5vw, 4.75rem);
   font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
   margin: 0;
 }
 
 .intro__lead {
   max-width: var(--measure-short);
-  font-size: clamp(var(--t-1), 2vw, var(--t-2));
-  line-height: 1.35;
+  font-size: clamp(var(--t-0), 2.4vw, var(--t-1));
+  line-height: 1.25;
   color: var(--ink-soft);
   margin: 0;
+  text-wrap: pretty;
 }
 
 .intro__count {
+  justify-self: start;
   margin: 0;
+  padding: 0 var(--s-2);
   font-family: var(--font-mono);
   font-size: var(--t--1);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
 }
 
-/* Karten ohne Kasten: Bild, darunter Text. Der Abstand haelt sie
-   zusammen, kein Rahmen noetig. */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
-  gap: var(--s-8) var(--s-6);
-  margin-top: var(--s-7);
+/* Projekte als Karussell: eine Spur ueber die ganze Fensterbreite, die an
+   den Karten einrastet. Links buendig mit dem Raster, rechts laeuft sie
+   aus dem Bild — so sieht man, dass es weitergeht. */
+.carousel {
+  --edge: max(var(--gutter), calc((100vw - var(--shell)) / 2 + var(--gutter)));
+  margin-top: var(--s-6);
 }
 
-.card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--s-3);
-  align-content: start;
-  /* Ohne das wuerde die Karte nie schmaler als der Titeltext werden koennen
-     und die Kachel auf kleinen Bildschirmen aus dem Raster schieben. */
-  min-width: 0;
+.carousel__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--s-4) var(--s-6);
 }
 
-.card__body {
-  display: grid;
+.carousel__controls {
+  display: flex;
+  align-items: center;
   gap: var(--s-2);
+}
+
+.carousel__count {
+  margin: 0 var(--s-3) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--t-1);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.carousel__btn {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--ink);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2),
+    opacity 0.2s steps(2);
+}
+.carousel__btn svg {
+  width: 14px;
+  height: 14px;
+  shape-rendering: crispEdges;
+}
+.carousel__btn svg.is-flipped {
+  transform: scaleX(-1);
+}
+.carousel__btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.carousel__btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.carousel__viewport {
+  margin-top: var(--s-5);
+  margin-inline: calc(50% - 50vw);
+  /* Unten Platz fuer den Pixelschatten der Karten. */
+  padding: var(--s-2) var(--edge) calc(var(--lift) * 3);
+  scroll-padding-inline: var(--edge);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+.carousel__viewport:focus-visible {
+  outline-offset: -4px;
+}
+
+/* Beim Ziehen darf nichts einrasten, sonst springt die Spur unter der Maus. */
+.carousel.is-dragging .carousel__viewport {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
+}
+
+.carousel__track {
+  display: flex;
+  gap: var(--s-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel__slide {
+  flex: 0 0 clamp(18rem, 30vw, 26rem);
+  scroll-snap-align: start;
+}
+
+/* Fortschritt wie die Scrollleiste am Rand des Nokia-Displays:
+   gepunktete Schiene, massiver Schieber. */
+.carousel__bar {
+  position: relative;
+  height: 6px;
+  margin-top: var(--s-4);
+  background: repeating-linear-gradient(90deg, var(--rule) 0 2px, transparent 2px 6px);
+  overflow: hidden;
+}
+.carousel__thumb {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+}
+
+.carousel.is-static .carousel__controls,
+.carousel.is-static .carousel__bar {
+  display: none;
+}
+
+/* Die Karte: Bild, Kurzinfo, Fusszeile. Kraeftiger Rahmen und Pixel-
+   schatten heben sie vom Display ab; unter der Maus hebt sie sich an. */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid var(--ink);
+  background: color-mix(in oklab, var(--lcd-hi) 40%, transparent);
+  box-shadow: var(--lift) var(--lift) 0 var(--ink);
+  transition:
+    transform 0.12s steps(2),
+    box-shadow 0.12s steps(2);
+}
+.card:hover {
+  transform: translate(calc(var(--lift) * -1), calc(var(--lift) * -1));
+  box-shadow: calc(var(--lift) * 2) calc(var(--lift) * 2) 0 var(--ink);
+}
+.card img {
+  -webkit-user-drag: none;
 }
 
 .card__media {
   display: block;
   aspect-ratio: var(--tile-ratio);
-  background: var(--paper-sunk);
+  border-bottom: 2px solid var(--ink);
   overflow: hidden;
 }
 
-.card__media img {
+.card__media--fill img {
   width: 100%;
   height: 100%;
-  filter: var(--image-filter);
-  transition:
-    transform 0.8s var(--ease),
-    filter 0.5s var(--ease);
-}
-
-.card:hover .card__media img {
-  filter: var(--image-filter-hover);
-}
-
-/* Fotos fuellen die Karte, Plakate und Logos werden eingepasst —
-   dieselbe Regel wie in den Galerien. */
-.card__media--fill img {
   object-fit: cover;
 }
 .card__media--fit img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   padding: var(--s-5);
-}
-
-.card:hover .card__media--fill img {
-  transform: scale(1.03);
-}
-.card:hover .card__media--fit img {
-  transform: scale(1.015);
 }
 
 .card__placeholder {
   display: grid;
   place-items: center;
   height: 100%;
+  font-family: var(--font-display);
   font-size: var(--t-2);
   font-weight: 700;
   color: var(--ink-dim);
-  letter-spacing: -0.02em;
+}
+
+.card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4) 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.12em;
+  color: var(--ink-dim);
+}
+.card__num {
+  color: var(--ink);
+}
+.card__year {
+  text-align: right;
+}
+
+.card__body {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-4) var(--s-5);
 }
 
 .card__title {
+  font-family: var(--font-display);
   font-size: var(--t-1);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.05;
 }
 
 .card__sub {
   color: var(--ink-soft);
-  max-width: 34ch;
+  line-height: 1.2;
+}
+
+.card__role {
+  font-size: var(--t--1);
+  color: var(--ink-soft);
+  line-height: 1.2;
+}
+
+.card__label {
+  margin-right: var(--s-1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+  margin: var(--s-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.card__tags li {
+  border: 1px solid var(--ink);
+  padding: 0 var(--s-2);
+  font-size: var(--t--2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* Fusszeile wie die Softkey-Leiste: unter der Maus invertiert. */
+.card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-4);
+  border-top: 1px dashed var(--rule);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
+}
+.card:hover .card__foot {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
+  border-color: var(--accent);
 }
 
 .card__meta {
   font-family: var(--font-mono);
   font-size: var(--t--2);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+}
+.card:hover .card__meta {
+  color: inherit;
+}
+
+.card__go {
+  flex: none;
+  font-size: var(--t--1);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* "So gehe ich vor": nummerierte Schritte, durch eine gepunktete Spur
+   verbunden — liest sich wie ein Ablauf, nicht wie vier Kaesten. */
+.method {
+  padding-top: var(--s-9);
+}
+
+.method__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--s-6) var(--s-5);
+  margin: var(--s-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.method__step {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--s-2);
+  padding-top: var(--s-5);
+  border-top: 3px dotted var(--ink);
+}
+
+.method__num {
+  justify-self: start;
+  padding: 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--t-0);
+  letter-spacing: 0.1em;
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
+}
+
+.method__title {
+  margin: var(--s-1) 0 0;
+  font-family: var(--font-display);
+  font-size: var(--t-1);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.method__text {
+  margin: 0;
+  max-width: var(--measure-short);
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+/* Software als Menueliste: Name links, Beleg rechts, gepunktete Fuehrung
+   dazwischen — wie ein Eintrag im Telefonbuch. */
+.skills {
+  padding-block: var(--s-9);
+}
+
+.skills__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 0 var(--s-6);
+  margin: var(--s-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-2);
+  border-bottom: 1px dashed var(--rule);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
+}
+.skill::after {
+  content: '';
+  order: 1;
+  flex: 1;
+  border-bottom: 2px dotted var(--rule);
+  transform: translateY(-0.25em);
+}
+.skill:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
+}
+.skill:hover::after {
+  border-color: transparent;
+}
+
+.skill__name {
+  font-size: var(--t-1);
+  line-height: 1.1;
+}
+
+.skill__count {
+  order: 2;
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
   letter-spacing: 0.08em;
   color: var(--ink-dim);
+}
+.skill:hover .skill__count {
+  color: inherit;
 }
 
 /* ── 8 Projektseite ───────────────────────────────────────────────── */
@@ -707,7 +1245,7 @@ html.launcher-active body {
 .project-head {
   padding-block: var(--s-7) 0;
   display: grid;
-  gap: var(--s-5);
+  gap: var(--s-4);
 }
 
 .project-head__kicker {
@@ -715,48 +1253,45 @@ html.launcher-active body {
 }
 
 .project-head__title {
-  font-size: clamp(var(--t-4), 7vw, var(--t-6));
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 4.75rem);
   font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
   margin: 0;
-  max-width: 18ch;
+  max-width: 16ch;
 }
 
 .project-head__sub {
   margin: 0;
-  font-size: clamp(var(--t-1), 2.2vw, var(--t-2));
+  font-size: clamp(var(--t-0), 2.6vw, var(--t-2));
   color: var(--ink-soft);
-  line-height: 1.3;
-  max-width: var(--measure-short);
+  line-height: 1.15;
+  max-width: 30ch;
 }
 
-/* Text links breit, Eckdaten rechts schmal — klassisches Verhaeltnis
-   etwa 3:2, damit die Spalten nicht konkurrieren. */
+/* Text links breit, Eckdaten rechts schmal. */
 .project-head__grid {
   display: grid;
-  /* Die Textspalte darf nie breiter werden als ihre Lesebreite (--measure) —
-     sonst bleibt zwischen Absatz und Fakten-Tabelle ein unmotivierter
-     Leerraum stehen, statt dass der Zwischenraum bewusst als Luft wirkt.
-     ("fr" ist in min()/max() ungueltig, darum minmax(0, Laenge) statt min()). */
   grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
-  gap: var(--s-6) var(--s-9);
+  gap: var(--s-6) var(--s-8);
   align-items: start;
   margin-top: var(--s-5);
   padding-top: var(--s-6);
-  border-top: 1px solid var(--rule);
+  border-top: 1px dashed var(--rule);
 }
 
 .project-head__text {
   margin: 0;
   max-width: var(--measure);
-  color: var(--ink-soft);
+  color: var(--ink);
+  text-wrap: pretty;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-2);
+  gap: var(--s-1);
   list-style: none;
   margin: var(--s-5) 0 0;
   padding: 0;
@@ -764,21 +1299,18 @@ html.launcher-active body {
 
 .tags li {
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   letter-spacing: 0.06em;
-  color: var(--ink-dim);
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  padding: 0 var(--s-2);
 }
 
-/* Trennzeichen statt Rahmen — spart Kontur und wirkt ruhiger. */
-.tags li + li::before {
-  content: '· ';
-  color: var(--rule);
-}
-
+/* Eckdaten als kleines Datenblatt */
 .facts {
   margin: 0;
   display: grid;
-  gap: var(--s-3);
+  border: 2px solid var(--ink);
 }
 
 .facts__row {
@@ -786,14 +1318,16 @@ html.launcher-active body {
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: var(--s-3);
   align-items: baseline;
-  padding-bottom: var(--s-3);
-  border-bottom: 1px solid var(--rule);
+  padding: var(--s-2) var(--s-3);
+}
+.facts__row + .facts__row {
+  border-top: 1px dashed var(--rule);
 }
 
 .facts dt {
   font-family: var(--font-mono);
   font-size: var(--t--2);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
@@ -801,6 +1335,7 @@ html.launcher-active body {
 .facts dd {
   margin: 0;
   font-size: var(--t--1);
+  line-height: 1.2;
 }
 
 /* Knopf zu Spiel oder externer Seite */
@@ -812,51 +1347,63 @@ html.launcher-active body {
   margin: var(--s-6) 0 0;
 }
 
-.play__button {
+.play__button,
+.button,
+.boot__start {
+  display: inline-block;
+  justify-self: start;
   font-family: var(--font-mono);
-  font-size: var(--t--1);
+  font-size: var(--t-0);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  background: var(--ink);
-  color: var(--paper);
-  padding: var(--s-3) var(--s-5);
-  transition: background 0.3s var(--ease);
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
+  border: 2px solid var(--accent);
+  padding: var(--s-2) var(--s-5);
+  box-shadow: var(--lift) var(--lift) 0 var(--rule);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2),
+    transform 0.12s steps(2),
+    box-shadow 0.12s steps(2);
 }
 
-.play__button:hover {
-  background: var(--paper);
+.play__button:hover,
+.button:hover,
+.boot__start:hover {
+  background: transparent;
   color: var(--ink);
-  outline: 1px solid var(--ink);
+  text-shadow: var(--ghost);
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--rule);
 }
 
 .play__note {
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   color: var(--ink-dim);
 }
 
-/* Titelbild ueber die volle Breite, mit Luft darum */
+/* Titelbild ueber die volle Breite */
 .project-head__cover {
-  margin: var(--s-8) 0 0;
-  background: var(--paper-sunk);
+  margin: var(--s-7) 0 0;
   aspect-ratio: 2 / 1;
   overflow: hidden;
+  border: 2px solid var(--ink);
 }
 
 .project-head__cover img {
   width: 100%;
   height: 100%;
-  filter: var(--image-filter);
 }
 .project-head__cover--fill img {
   object-fit: cover;
 }
 
-/* Ein Plakat als Titelbild wird nicht auf 2:1 zurechtgestutzt — es steht
-   mittig auf der Flaeche, mit reichlich Luft. */
+/* Ein Plakat als Titelbild wird nicht auf 2:1 zurechtgestutzt. */
 .project-head__cover--fit {
   aspect-ratio: auto;
-  background: var(--paper-sunk);
 }
 .project-head__cover--fit img {
   object-fit: contain;
@@ -864,11 +1411,11 @@ html.launcher-active body {
   padding: var(--s-7) var(--s-6);
 }
 
-/* Kurzer Ablauf — nummerierte Liste, keine Kaesten */
+/* Kurzer Ablauf wie ein Menue: nummerierte Zeilen */
 .ablauf {
   margin-top: var(--s-8);
   display: grid;
-  gap: var(--s-5);
+  gap: var(--s-4);
 }
 
 .ablauf__label {
@@ -877,60 +1424,61 @@ html.launcher-active body {
 
 .ablauf__list {
   margin: 0;
-  padding: 0;
+  padding: var(--s-4) 0 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
-  gap: var(--s-3) var(--s-6);
-  border-top: 1px solid var(--rule);
-  padding-top: var(--s-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--s-2) var(--s-6);
+  border-top: 1px dashed var(--rule);
 }
 
 .ablauf__list li {
   display: flex;
   align-items: baseline;
   gap: var(--s-3);
-  font-size: var(--t--1);
-  color: var(--ink-soft);
+  line-height: 1.2;
 }
 
 .ablauf__num {
+  flex: none;
+  min-width: 1.75rem;
+  padding: 0 var(--s-1);
+  text-align: center;
   font-family: var(--font-mono);
-  font-size: var(--t--2);
-  color: var(--accent);
-  min-width: 1.5rem;
+  font-size: var(--t--1);
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
 }
 
 /* Schritte — der grosse Abstand zwischen ihnen ist die Gliederung */
 .steps {
   padding-block: var(--s-9) 0;
   display: grid;
-  gap: var(--s-10);
+  gap: var(--s-9);
 }
 
 .step {
   display: grid;
-  gap: var(--s-6);
+  gap: var(--s-5);
 }
 
-/* Der Kopf eines Schritts sitzt in der linken Haelfte und laesst rechts
-   bewusst Platz — das Auge bekommt eine Pause vor den Bildern. */
 .step__head {
   display: grid;
-  gap: var(--s-3);
+  gap: var(--s-2);
   max-width: var(--measure);
 }
 
 .step__num {
   margin: 0;
-  color: var(--accent);
+  color: var(--ink-dim);
 }
 
 .step__title {
-  font-size: clamp(var(--t-2), 3.5vw, var(--t-3));
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-1), 4vw, var(--t-3));
+  font-weight: 600;
+  line-height: 1;
   margin: 0;
   max-width: 22ch;
 }
@@ -939,40 +1487,43 @@ html.launcher-active body {
   margin: 0;
   color: var(--ink-soft);
   max-width: var(--measure);
+  text-wrap: pretty;
 }
 
 .step__downloads {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-4);
+  gap: var(--s-2) var(--s-4);
   margin: var(--s-2) 0 0;
 }
 
-.step__downloads a {
+.step__downloads a,
+.more {
+  justify-self: start;
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   letter-spacing: 0.08em;
   color: var(--ink);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 2px;
+  border: 1px solid var(--ink);
+  padding: 0 var(--s-2);
   transition:
-    border-color 0.3s var(--ease),
-    color 0.3s var(--ease);
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
 }
 
-.step__downloads a:hover {
-  filter: brightness(1.4);
+.step__downloads a:hover,
+.more:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
 }
-
 
 /* ── 9 Bilder ─────────────────────────────────────────────────────── */
 
-/* Alle Kacheln teilen ein Seitenformat. Das ist der Unterschied
-   zwischen einem Raster und einem Haufen. */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
-  gap: var(--s-5);
+  gap: var(--s-4);
 }
 
 .gallery--wide {
@@ -981,17 +1532,16 @@ html.launcher-active body {
 
 .figure {
   margin: 0;
-  background: var(--paper-sunk);
   aspect-ratio: var(--tile-ratio);
   overflow: hidden;
+  border: 2px solid var(--ink);
 }
 
 .figure--wide {
   grid-column: 1 / -1;
   aspect-ratio: 16 / 9;
-  background: var(--secondary);
 }
-/* Eingebettetes Video einer fremden Plattform. */
+
 .embed iframe {
   width: 100%;
   height: 100%;
@@ -1013,57 +1563,87 @@ html.launcher-active body {
 .figure__button img {
   width: 100%;
   height: 100%;
-  filter: var(--image-filter);
-  transition:
-    transform 0.7s var(--ease),
-    opacity 0.3s var(--ease),
-    filter 0.3s var(--ease);
+  transition: transform 0.6s var(--ease);
 }
 
-.figure__button:hover img {
-  filter: var(--image-filter-hover);
-}
-
-/* Fotos und Screenshots fuellen die Kachel. */
 .figure--fill img {
   object-fit: cover;
 }
 
-/* Plakate, Logos und Seiten werden eingepasst statt beschnitten —
-   ein angeschnittenes Plakat waere eine Falschaussage ueber die Arbeit.
-   Die Luft ringsum ist Absicht. */
-.figure--fit {
-  background: var(--paper-sunk);
-}
+/* Plakate, Logos und Seiten werden eingepasst statt beschnitten. */
 .figure--fit img {
   object-fit: contain;
   padding: var(--s-5);
 }
 
-.figure__button:hover img {
-  transform: scale(1.02);
-  opacity: 0.92;
-}
-.figure--fit .figure__button:hover img {
-  transform: none;
-  opacity: 0.85;
+.figure--fill .figure__button:hover img {
+  transform: scale(1.03);
 }
 
-.more {
-  justify-self: start;
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.08em;
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 3px;
-  transition:
-    color 0.3s var(--ease),
-    border-color 0.3s var(--ease);
+/*
+ * Das LCD-Bild. Jedes Bild wird zweifarbig auf das Hintergrundlicht
+ * gerechnet, ganz ohne Bildbearbeitung:
+ *   1. Bild in Graustufen, per "multiply" auf das gruene Licht gelegt —
+ *      Weiss wird zu Licht, Schwarz bleibt schwarz.
+ *   2. Darueber die Pixelfarbe per "lighten" — Schwarz wird zum
+ *      olivgruenen Pixel, das Licht bleibt unberuehrt.
+ *   3. Ganz oben das Pixelraster, damit es wie ein Display aussieht.
+ */
+.card__media,
+.figure:not(.embed),
+.project-head__cover {
+  position: relative;
+  isolation: isolate;
+  background: radial-gradient(130% 120% at 50% 40%, var(--lcd-hi), var(--lcd) 70%, var(--lcd-lo));
 }
 
-.more:hover {
-  filter: brightness(1.4);
+.card__media img,
+.figure:not(.embed) img,
+.figure:not(.embed) video,
+.project-head__cover img {
+  filter: grayscale(1) contrast(1.2) brightness(1.08);
+  mix-blend-mode: multiply;
+}
+
+.card__media::before,
+.figure:not(.embed)::before,
+.project-head__cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--pixel);
+  mix-blend-mode: lighten;
+}
+
+.card__media::after,
+.figure:not(.embed)::after,
+.project-head__cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--lcd) 45%, transparent) 0 1px,
+      transparent 1px 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--lcd) 45%, transparent) 0 1px,
+      transparent 1px 3px
+    );
+  transition: opacity 0.2s steps(2);
+}
+
+/* Unter der Maus wird das Raster schwaecher — man sieht genauer hin. */
+.card:hover .card__media::after,
+.figure__button:hover::after,
+.figure:hover::after {
+  opacity: 0.35;
 }
 
 /* Reservierter Platz fuer ein Video, das noch fehlt */
@@ -1071,8 +1651,11 @@ html.launcher-active body {
   display: grid;
   place-items: center;
   aspect-ratio: 16 / 9;
-  background: var(--paper-sunk);
-  border: 1px dashed var(--rule);
+  border: 2px dashed var(--rule);
+}
+.slot.is-empty::before,
+.slot.is-empty::after {
+  display: none;
 }
 
 .slot__note {
@@ -1084,16 +1667,16 @@ html.launcher-active body {
 .slot__name {
   margin: 0 0 var(--s-2);
   font-family: var(--font-mono);
-  font-size: var(--t-0);
+  font-size: var(--t-1);
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .slot__text {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: var(--t--2);
-  line-height: 1.7;
+  font-size: var(--t--1);
+  line-height: 1.4;
   color: var(--ink-dim);
 }
 
@@ -1102,64 +1685,75 @@ html.launcher-active body {
   word-break: break-all;
 }
 
-/* Grosser Zwischenruf — steht allein auf der Seite */
+/* Grosser Zwischenruf — wie eine eingegangene Nachricht */
 .pull {
   margin: 0;
   padding-block: var(--s-9);
-  font-size: clamp(var(--t-2), 4.5vw, var(--t-4));
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  font-weight: 400;
-  max-width: 24ch;
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-1), 5vw, var(--t-4));
+  font-weight: 500;
+  line-height: 1.05;
+  max-width: 22ch;
   text-wrap: balance;
 }
 
 .pull::before {
-  content: '';
+  content: '> NACHRICHT';
   display: block;
-  width: var(--s-7);
-  border-top: 2px solid var(--accent);
-  margin-bottom: var(--s-5);
+  margin-bottom: var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  color: var(--ink-dim);
 }
 
 /* Vor und zurueck */
 .pager {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-5);
-  justify-content: space-between;
-  padding-block: var(--s-8);
-  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--s-4);
+  padding-block: var(--s-7);
+  border-top: 1px dashed var(--rule);
   margin-top: var(--s-9);
 }
 
 .pager__link {
   display: grid;
   gap: var(--s-1);
-  max-width: 20rem;
+  padding: var(--s-4);
+  border: 2px solid var(--ink);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
 }
 .pager__link--next {
   text-align: right;
-  margin-left: auto;
+  grid-column: -2;
+}
+
+.pager__link:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: var(--glow);
 }
 
 .pager__dir {
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
-
-.pager__title {
-  font-size: var(--t-1);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  transition: color 0.3s var(--ease);
+.pager__link:hover .pager__dir {
+  color: inherit;
 }
 
-.pager__link:hover .pager__title {
-  filter: brightness(1.4);
+.pager__title {
+  font-family: var(--font-display);
+  font-size: var(--t-1);
+  font-weight: 600;
+  line-height: 1.05;
 }
 
 .empty {
@@ -1169,41 +1763,26 @@ html.launcher-active body {
   gap: var(--s-5);
 }
 .empty__title {
+  font-family: var(--font-display);
   font-size: var(--t-4);
+  font-weight: 700;
+  line-height: 0.95;
   margin: 0;
-  letter-spacing: -0.03em;
 }
 .empty__text {
   color: var(--ink-soft);
   margin: 0;
 }
 
-.button {
-  justify-self: start;
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: var(--ink);
-  color: var(--paper);
-  padding: var(--s-3) var(--s-5);
-  transition: background 0.3s var(--ease);
-}
-
-.button:hover {
-  background: var(--paper);
-  color: var(--ink);
-  outline: 1px solid var(--ink);
-}
-
 /* ── 10 Spielfenster ──────────────────────────────────────────────── */
 
-/* Das Spiel bekommt als einziges Element einen Rahmen: es ist ein
-   Programm, kein Bild. Der Fensterbezug ist die Anleihe bei krazam.tv. */
+/* Das Spiel laeuft im dunklen Gehaeuse, mit Titelleiste wie ein
+   Programmfenster. */
 .window {
   margin-block: var(--s-7);
-  border: 1px solid var(--ink);
-  background: var(--paper);
+  border: 2px solid var(--pixel);
+  background: var(--bezel);
+  box-shadow: var(--lift) var(--lift) 0 var(--pixel);
 }
 
 .window__bar {
@@ -1211,9 +1790,10 @@ html.launcher-active body {
   align-items: center;
   justify-content: space-between;
   gap: var(--s-4);
-  padding: var(--s-2) var(--s-3);
-  background: var(--ink);
-  color: var(--paper);
+  padding: var(--s-1) var(--s-3);
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: none;
 }
 
 .window__title {
@@ -1221,13 +1801,10 @@ html.launcher-active body {
   align-items: center;
   gap: var(--s-2);
   font-family: var(--font-mono);
-  font-size: var(--t--2);
-  letter-spacing: 0.1em;
+  font-size: var(--t--1);
+  letter-spacing: 0.12em;
 }
 
-.window__icon {
-  color: var(--accent);
-}
 .window__buttons {
   display: flex;
   gap: var(--s-1);
@@ -1236,9 +1813,9 @@ html.launcher-active body {
 .window__btn {
   display: grid;
   place-items: center;
-  width: 1.4rem;
-  height: 1.1rem;
-  border: 1px solid color-mix(in oklab, var(--paper) 40%, transparent);
+  width: 1.5rem;
+  height: 1.25rem;
+  border: 1px solid currentColor;
   font-family: var(--font-mono);
   font-size: var(--t--2);
 }
@@ -1246,7 +1823,7 @@ html.launcher-active body {
 .window__body {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: #000;
+  background: var(--bezel);
   display: grid;
   place-items: center;
 }
@@ -1261,10 +1838,10 @@ html.launcher-active body {
 .window__status {
   display: flex;
   gap: var(--s-3);
-  padding: var(--s-2) var(--s-3);
-  border-top: 1px solid var(--rule);
+  padding: var(--s-1) var(--s-3);
+  border-top: 1px dashed var(--rule);
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   color: var(--ink-dim);
 }
 
@@ -1282,70 +1859,57 @@ html.launcher-active body {
   justify-items: center;
   gap: var(--s-4);
   text-align: center;
-  padding: var(--s-7);
+  padding: var(--s-6);
   max-width: 44ch;
-  color: var(--ink);
 }
 
 .boot__logo {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: var(--t-2);
+  font-size: var(--t-1);
   letter-spacing: 0.4em;
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .boot__title {
   margin: 0;
-  font-size: var(--t-3);
-  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-2), 5vw, var(--t-3));
   font-weight: 700;
+  line-height: 1;
 }
 .boot__text {
   margin: 0;
-  color: color-mix(in oklab, var(--ink) 70%, transparent);
-}
-
-.boot__start {
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: var(--ink);
-  color: var(--paper);
-  padding: var(--s-3) var(--s-6);
-  transition:
-    background 0.3s var(--ease),
-    color 0.3s var(--ease);
-}
-
-.boot__start:hover {
-  background: var(--paper);
-  color: var(--ink);
-  outline: 1px solid var(--ink);
+  color: var(--ink-soft);
 }
 
 .boot__note {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: var(--t--2);
-  line-height: 1.7;
-  color: color-mix(in oklab, var(--ink) 55%, transparent);
+  font-size: var(--t--1);
+  line-height: 1.4;
+  color: var(--ink-dim);
+}
+
+.steuerung {
+  display: grid;
+  gap: var(--s-4);
+  padding-block: var(--s-6);
 }
 
 .keys {
-  margin: var(--s-6) 0 var(--s-5);
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-  gap: var(--s-3) var(--s-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0 var(--s-6);
 }
 
 .keys__row {
   display: flex;
   align-items: baseline;
   gap: var(--s-4);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: var(--s-2);
+  border-bottom: 1px dashed var(--rule);
+  padding-block: var(--s-2);
 }
 
 .keys dt {
@@ -1354,29 +1918,29 @@ html.launcher-active body {
 .keys dd {
   margin: 0;
   color: var(--ink-soft);
-  font-size: var(--t--1);
 }
 
 kbd {
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   letter-spacing: 0.06em;
-  border: 1px solid var(--rule);
-  border-bottom-width: 2px;
-  padding: 0.2rem 0.45rem;
-  background: var(--paper-sunk);
+  border: 1px solid var(--ink);
+  border-bottom-width: 3px;
+  padding: 0 0.45rem;
   white-space: nowrap;
 }
 
 /* ── 11 Lightbox ──────────────────────────────────────────────────── */
 
+/* Die Grossansicht zeigt das Original in Farbe — hier soll man die
+   Arbeit selbst sehen, nicht das Display. */
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 100;
   display: none;
   place-items: center;
-  background: color-mix(in oklab, var(--paper) 97%, var(--ink));
+  background: color-mix(in oklab, var(--bezel) 96%, transparent);
   padding: var(--s-8) var(--gutter);
 }
 
@@ -1385,25 +1949,36 @@ kbd {
 }
 .lightbox img {
   max-width: min(100%, 72rem);
-  max-height: 80svh;
+  max-height: 78svh;
   object-fit: contain;
-  filter: var(--image-filter);
+  image-rendering: auto;
+  border: 2px solid var(--rule);
 }
 
 .lightbox__close,
 .lightbox__nav {
   position: absolute;
+  display: grid;
+  place-items: center;
+  min-width: 3rem;
+  min-height: 3rem;
   font-family: var(--font-mono);
-  font-size: var(--t--1);
+  font-size: var(--t-0);
   letter-spacing: 0.08em;
-  color: var(--ink-soft);
-  padding: var(--s-3) var(--s-4);
-  transition: color 0.3s var(--ease);
+  color: var(--ink);
+  padding: var(--s-2) var(--s-3);
+  border: 2px solid var(--rule);
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
 }
 
 .lightbox__close:hover,
 .lightbox__nav:hover {
-  color: var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  text-shadow: none;
 }
 .lightbox__close {
   top: var(--s-4);
@@ -1427,96 +2002,89 @@ kbd {
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
+  letter-spacing: 0.1em;
   color: var(--ink-dim);
 }
 
 /* ── 12 Fuss ──────────────────────────────────────────────────────── */
 
+/* Der Fuss ist das Gehaeuse unter dem Display: dunkel, ueber die volle
+   Breite, die Schrift leuchtet. */
 .site-footer {
-  border-top: 1px solid var(--rule);
-  padding: var(--s-8) var(--gutter) var(--s-7);
+  position: relative;
   max-width: var(--shell);
   margin-inline: auto;
+  margin-top: var(--s-8);
+  padding: var(--s-8) var(--gutter) var(--s-7);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--s-5);
+  background: var(--bezel);
+  /* Hintergrund ueber die volle Fensterbreite, Inhalt bleibt im Raster. */
+  box-shadow: 0 0 0 100vmax var(--bezel);
+  clip-path: inset(0 -100vmax);
 }
 
 .site-footer__note {
   margin: 0;
-  font-size: clamp(var(--t-2), 3vw, var(--t-3));
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  max-width: 20ch;
+  font-family: var(--font-display);
+  font-size: clamp(var(--t-2), 5vw, var(--t-4));
+  font-weight: 600;
+  line-height: 1;
+  max-width: 18ch;
+  text-wrap: balance;
 }
 
 .site-footer__links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-5);
+  gap: var(--s-2);
 }
 
+/* Links wie Softkeys: Kaestchen, unter der Maus invertiert. */
 .site-footer__links a {
   font-family: var(--font-mono);
   font-size: var(--t--1);
   letter-spacing: 0.08em;
-  color: var(--ink-soft);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  padding: var(--s-1) var(--s-3);
   transition:
-    color 0.3s var(--ease),
-    border-color 0.3s var(--ease);
+    background-color 0.12s steps(2),
+    color 0.12s steps(2),
+    border-color 0.12s steps(2);
 }
 
 .site-footer__links a:hover {
-  color: var(--ink);
-  border-color: var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  text-shadow: none;
 }
 
 .readout {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-2) var(--s-5);
+  gap: var(--s-1) var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px dashed var(--rule);
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   letter-spacing: 0.06em;
   color: var(--ink-dim);
 }
 
 .readout__cell--version {
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .site-footer__copy {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: var(--t--2);
+  font-size: var(--t--1);
   color: var(--ink-dim);
-}
-
-/* Alle grossen/fetten Titel bekommen die blockige 8-Bit-Schrift statt
-   Fett — Press Start 2P kennt kein "bold", also wird der Schriftschnitt
-   mit zurueckgesetzt, sonst faelscht der Browser ein Fett dazu. Steht
-   bewusst ganz unten, damit es die einzelnen Regeln oben ueberschreibt. */
-.h-display,
-.h-section,
-.hero__title,
-.intro__title,
-.project-head__title,
-.step__title,
-.site-footer__note,
-.site-header__mark,
-.area__title,
-.card__title,
-.pager__title,
-.empty__title,
-.boot__title,
-.card__placeholder {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.25;
 }
 
 /* ── 13 Responsive & Barrierefreiheit ─────────────────────────────── */
@@ -1525,36 +2093,108 @@ kbd {
   .project-head__grid {
     grid-template-columns: 1fr;
   }
-  .hero__intro {
-    justify-self: start;
-  }
 }
 
 @media (max-width: 48rem) {
   :root {
+    --t--2: 0.9rem;
+    --t--1: 1rem;
+    --t-0: 1.2rem;
+    --t-1: 1.45rem;
+    --t-2: 1.75rem;
+    --t-3: 2.1rem;
+    --t-4: 2.5rem;
+    --s-7: 2.5rem;
+    --s-8: 3.5rem;
     --s-9: 4.5rem;
     --s-10: 6rem;
-    --s-11: 8rem;
+    --lift: 3px;
   }
 
-  .facts__row {
-    grid-template-columns: 7rem 1fr;
-  }
   .cursor {
     display: none;
   }
-  .pager__link--next {
-    text-align: left;
-    margin-left: 0;
-  }
+
+  /* Kopf: Name und Akku oben, das Menue darunter als eine Zeile, die
+     man seitlich wischen kann — statt umzubrechen. */
   .site-header {
-    position: static;
     flex-wrap: wrap;
+    padding-block: var(--s-2);
   }
   .site-nav {
+    order: 1;
+    width: calc(100% + 2 * var(--gutter));
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
     justify-content: flex-start;
-    width: 100%;
-    gap: var(--s-3) var(--s-5);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .site-nav a {
+    padding-inline: var(--s-2);
+  }
+  /* Der Akku wandert neben den Namen, damit die Menuezeile frei bleibt. */
+  .site-nav::after {
+    display: none;
+  }
+  .site-header::after {
+    content: '';
+    width: 20px;
+    height: 11px;
+    border: 2px solid var(--ink);
+    background: linear-gradient(90deg, var(--ink) 70%, transparent 70%) 2px 50% / calc(100% - 4px)
+      calc(100% - 4px) no-repeat;
+    box-shadow: 3px 0 0 -1px var(--ink);
+  }
+
+  .phone__screen {
+    padding-inline: 0 calc(var(--s-3) + 14px);
+  }
+  .phone__nav {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .phone__nav--next {
+    right: calc(var(--s-3) + 14px);
+  }
+
+  .carousel__slide {
+    flex-basis: 84vw;
+  }
+  .carousel__head {
+    align-items: start;
+  }
+
+  .facts__row {
+    grid-template-columns: 6.5rem 1fr;
+  }
+
+  .pager__link--next {
+    grid-column: auto;
+  }
+
+  .figure--fit img,
+  .card__media--fit img {
+    padding: var(--s-3);
+  }
+
+  .lightbox {
+    padding-inline: var(--s-3);
+  }
+  .lightbox__nav {
+    top: auto;
+    bottom: var(--s-4);
+    transform: none;
+  }
+}
+
+@media (max-width: 26rem) {
+  .facts__row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 
@@ -1563,5 +2203,6 @@ kbd {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+    animation: none !important;
   }
 }

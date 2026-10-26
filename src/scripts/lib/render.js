@@ -99,8 +99,19 @@ function imageTag(image, sizes, { lazy = true, modus = passung(image) } = {}) {
 
 // ─────────────────────────────────────────────── Ebene 1 + 2: Karten ──
 
-/** Karte fuer ein Projekt in der Uebersicht. */
-export function renderCard(project, category) {
+/** Die ersten paar Eintraege einer Komma-Liste — fuer die Kurzinfo auf der Karte. */
+function kurz(text = '', anzahl = 3) {
+  const teile = text
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return teile.slice(0, anzahl).join(', ') + (teile.length > anzahl ? ' …' : '');
+}
+
+const nummer = (i) => String(i + 1).padStart(2, '0');
+
+/** Karte fuer ein Projekt im Karussell. */
+export function renderCard(project, category, index = 0) {
   const media = mediaFor(project.slug);
   const cover = coverFor(project, media);
   const steps = project.chapters?.length ?? 0;
@@ -117,22 +128,70 @@ export function renderCard(project, category) {
 
   const modus = cover ? passung(cover) : 'fill';
   const bild = cover
-    ? imageTag(cover, '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw', { modus })
+    ? imageTag(cover, '(max-width: 700px) 85vw, 26rem', { modus })
     : `<span class="card__placeholder">${esc(project.title)}</span>`;
 
+  const tags = (project.tags ?? [])
+    .slice(0, 3)
+    .map((tag) => `<li>${esc(tag)}</li>`)
+    .join('');
+
   return `
-    <a class="card" href="projekt.html?id=${esc(category)}/${esc(project.slug)}" data-cursor="Ansehen">
-      <span class="card__media card__media--${modus}">${bild}</span>
-      <span class="card__body">
-        <span class="card__title">${esc(project.title)}</span>
-        <span class="card__sub">${esc(project.subtitle ?? '')}</span>
-        <span class="card__meta">${zahlen}</span>
-      </span>
-    </a>`;
+    <li class="carousel__slide">
+      <a class="card" href="projekt.html?id=${esc(category)}/${esc(project.slug)}" data-cursor="Ansehen" draggable="false">
+        <span class="card__media card__media--${modus}">${bild}</span>
+        <span class="card__top">
+          <span class="card__num">${nummer(index)}</span>
+          ${project.year ? `<span class="card__year">${esc(project.year)}</span>` : ''}
+        </span>
+        <span class="card__body">
+          <span class="card__title">${esc(project.title)}</span>
+          <span class="card__sub">${esc(project.subtitle ?? '')}</span>
+          ${project.role ? `<span class="card__role"><span class="card__label">Rolle</span> ${esc(kurz(project.role))}</span>` : ''}
+          ${tags ? `<ul class="card__tags">${tags}</ul>` : ''}
+        </span>
+        <span class="card__foot">
+          <span class="card__meta">${zahlen}</span>
+          <span class="card__go" aria-hidden="true">Ansehen →</span>
+        </span>
+      </a>
+    </li>`;
 }
 
 export function renderCards(projects, category) {
-  return projects.map((project) => renderCard(project, category)).join('');
+  return projects.map((project, i) => renderCard(project, category, i)).join('');
+}
+
+/** "So gehe ich vor": nummerierte Schritte eines Bereichs. */
+export function renderVorgehen(schritte = []) {
+  return schritte
+    .map(
+      (schritt, i) => `
+      <li class="method__step">
+        <span class="method__num">${nummer(i)}</span>
+        <h3 class="method__title">${esc(schritt.title)}</h3>
+        <p class="method__text">${esc(schritt.text)}</p>
+      </li>`,
+    )
+    .join('');
+}
+
+/**
+ * Software eines Bereichs. Die Zahl dahinter zaehlt, in wie vielen Projekten
+ * des Bereichs das Programm unter `tools` steht — so belegt die Seite selbst,
+ * wo es zum Einsatz kam.
+ */
+export function renderSoftware(software = [], projects = []) {
+  return software
+    .map((name) => {
+      const n = projects.filter((p) =>
+        (p.tools ?? []).some((tool) => tool.toLowerCase() === name.toLowerCase()),
+      ).length;
+      const beleg =
+        n > 0 ? `<span class="skill__count">${n} ${n === 1 ? 'Projekt' : 'Projekte'}</span>` : '';
+      return `<li class="skill"><span class="skill__name">${esc(name)}</span>${beleg}</li>`;
+    })
+    .join('');
 }
 
 // ──────────────────────────────────────────── Ebene 3: Projektseite ──

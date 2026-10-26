@@ -1,18 +1,20 @@
 /**
  * Einstiegspunkt fuer die Bereichsseiten (creative-technology.html, film.html,
  * game.html, grafikdesign.html).
- * Diese Seiten zeigen nur die Uebersicht: alle Projekte als Karten.
+ * Diese Seiten zeigen die Uebersicht: alle Projekte als Karten im Karussell,
+ * darunter das Vorgehen und die Software des Bereichs.
  * Das einzelne Projekt liegt auf projekt.html.
  */
 
 import '../styles/main.css';
 import { site } from '../data/site.js';
 import { initScroll, initProgressBar, gsap, prefersReducedMotion } from './lib/scroll.js';
-import { revealFade } from './lib/reveal.js';
+import { revealFade, revealOnScroll } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
 import { initReadout } from './lib/readout.js';
-import { renderCards, countMedia } from './lib/render.js';
+import { renderCards, renderVorgehen, renderSoftware, countMedia } from './lib/render.js';
+import { initCarousel } from './lib/carousel.js';
 import { LOADERS } from './lib/bereiche.js';
 
 async function main() {
@@ -33,6 +35,17 @@ async function main() {
     `${projects.length} Projekte · ${counts.chapters} Arbeitsschritte`;
   document.querySelector('[data-slot="cards"]').innerHTML = renderCards(projects, page);
 
+  // Abschnitte ohne Inhalt ganz weglassen statt eine leere Ueberschrift zu zeigen.
+  const fuelle = (slot, html) => {
+    if (html) slot.innerHTML = html;
+    else slot.closest('section').remove();
+  };
+  fuelle(document.querySelector('[data-slot="vorgehen"]'), renderVorgehen(category.vorgehen));
+  fuelle(
+    document.querySelector('[data-slot="software"]'),
+    renderSoftware(category.software, projects),
+  );
+
   document.querySelector('[data-slot="footer-links"]').innerHTML = site.links
     .map((link) => `<a href="${link.href}">${link.label}</a>`)
     .join('');
@@ -43,13 +56,25 @@ async function main() {
   initCursor();
   initProgressBar();
   initReadout();
+  initCarousel(document.querySelector('.carousel'));
   revealFade();
+  revealOnScroll('.method__step', { y: 20 });
+  revealOnScroll('.skill', { y: 12 });
 
   if (!prefersReducedMotion) {
     gsap.fromTo(
       '.card',
-      { opacity: 0, y: 24 },
-      { opacity: 1, y: 0, duration: 0.7, stagger: 0.06, ease: 'power3.out', delay: 0.15 },
+      { opacity: 0, x: 48 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.07,
+        ease: 'power3.out',
+        delay: 0.15,
+        // Sonst bliebe ein Inline-transform stehen und der Hover-Effekt griffe nicht.
+        clearProps: 'transform',
+      },
     );
   }
 }

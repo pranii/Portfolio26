@@ -17,6 +17,43 @@ export const category = {
   slug: 'film',
   title: 'Film',
   lead: 'Kurzfilme, Musikvideos, Animation und Imagefilme — von Storyboard bis Schnitt.', // TODO
+  /**
+   * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
+   * sind ideal, mehr oder weniger geht auch.
+   */
+  vorgehen: [
+    // TODO: eigene Formulierung
+    {
+      title: 'Idee und Recherche',
+      text: 'Worum geht es wirklich? Ich sammle Bilder, Musik und Referenzen, bis die Stimmung des Films klar ist.',
+    },
+    {
+      title: 'Storyboard',
+      text: 'Jede Einstellung wird vorher gezeichnet. So wissen alle am Set, was gebraucht wird, und der Drehtag bleibt planbar.',
+    },
+    {
+      title: 'Dreh',
+      text: 'Kamera, Licht und Regie — mit Raum für das, was am Set ungeplant passiert.',
+    },
+    {
+      title: 'Schnitt und Ton',
+      text: 'Im Schnitt entsteht der Rhythmus. Farbe und Sounddesign geben dem Film zum Schluss seinen Charakter.',
+    },
+  ],
+  /**
+   * Software, die du in diesem Bereich beherrschst. Zu jedem Eintrag zeigt
+   * die Seite, in wie vielen Projekten er unter `tools` vorkommt.
+   */
+  software: [
+    'Premiere Pro',
+    'DaVinci Resolve',
+    'After Effects',
+    'Photoshop',
+    'Blender',
+    'Storyboarder',
+    'Celtx',
+    'EbSynth',
+  ], // TODO: pruefen
 };
 
 export const projects = [

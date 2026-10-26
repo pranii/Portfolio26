@@ -39,18 +39,60 @@
         <h1 class="hero__title" data-fade data-slot="hero">Portfolio</h1>
         <p class="hero__role" data-fade="0.1" data-slot="role"></p>
         <p class="hero__intro" data-fade="0.15" data-slot="intro"></p>
-        <span class="hero__scroll" data-fade="0.25" aria-hidden="true">
-          <svg viewBox="0 0 7 4" preserveAspectRatio="xMidYMid meet" fill="currentColor">
+        <!-- Softkey wie auf dem Startbildschirm des Telefons -->
+        <a class="softkey" href="#menu" data-fade="0.25">
+          Menü
+          <svg viewBox="0 0 7 4" fill="currentColor" aria-hidden="true">
             <rect x="0" y="0" width="7" height="1" />
             <rect x="1" y="1" width="5" height="1" />
             <rect x="2" y="2" width="3" height="1" />
             <rect x="3" y="3" width="1" height="1" />
           </svg>
-        </span>
+        </a>
       </section>
 
-      <section class="areas-section">
-        <nav class="areas" data-slot="areas" aria-label="Bereiche"></nav>
+      <!-- Menue wie beim Nokia 3310. Ohne JavaScript eine normale Liste. -->
+      <section class="phone" id="menu" aria-label="Menü">
+        <div class="phone__screen" tabindex="0">
+          <div class="phone__bar">
+            <p class="phone__index" data-slot="menu-index" aria-hidden="true"></p>
+          </div>
+          <ul class="phone__list" data-slot="menu" aria-live="polite"></ul>
+          <button
+            class="phone__nav phone__nav--prev"
+            type="button"
+            data-menu="prev"
+            aria-label="Vorheriger Eintrag"
+          >
+            <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
+              <rect x="3" y="0" width="1" height="1" />
+              <rect x="2" y="1" width="2" height="1" />
+              <rect x="1" y="2" width="6" height="1" />
+              <rect x="0" y="3" width="7" height="1" />
+              <rect x="1" y="4" width="6" height="1" />
+              <rect x="2" y="5" width="2" height="1" />
+              <rect x="3" y="6" width="1" height="1" />
+            </svg>
+          </button>
+          <button
+            class="phone__nav phone__nav--next"
+            type="button"
+            data-menu="next"
+            aria-label="Nächster Eintrag"
+          >
+            <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
+              <rect x="3" y="0" width="1" height="1" />
+              <rect x="2" y="1" width="2" height="1" />
+              <rect x="1" y="2" width="6" height="1" />
+              <rect x="0" y="3" width="7" height="1" />
+              <rect x="1" y="4" width="6" height="1" />
+              <rect x="2" y="5" width="2" height="1" />
+              <rect x="3" y="6" width="1" height="1" />
+            </svg>
+          </button>
+          <div class="phone__scroll" aria-hidden="true"><span class="phone__thumb"></span></div>
+          <a class="phone__soft" data-slot="menu-select" href="#" data-cursor="Öffnen">Auswählen</a>
+        </div>
       </section>
     </main>
 

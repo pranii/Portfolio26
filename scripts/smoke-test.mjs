@@ -18,7 +18,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const TMP = path.join(ROOT, 'node_modules', '.smoke');
 
 const PAGES = [
-  { html: 'index.html', entry: 'src/scripts/main.js', erwartet: '.area' },
+  { html: 'index.html', entry: 'src/scripts/main.js', erwartet: '.phone__item' },
   { html: 'creative-technology.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   { html: 'film.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   { html: 'game.html', entry: 'src/scripts/category.js', erwartet: '.card' },

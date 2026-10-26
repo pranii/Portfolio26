@@ -17,6 +17,45 @@ export const category = {
   slug: 'creative-technology',
   title: 'Creative Technology',
   lead: 'Installationen, Interaktion und Prototypen — Arbeiten, in denen Technik zum Material wird.', // TODO
+  /**
+   * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
+   * sind ideal, mehr oder weniger geht auch.
+   */
+  vorgehen: [
+    // TODO: eigene Formulierung
+    {
+      title: 'Eine Frage finden',
+      text: 'Am Anfang steht ein Gefühl oder eine Beobachtung, nicht die Technik. Erst wenn klar ist, was jemand erleben soll, suche ich das Werkzeug dafür.',
+    },
+    {
+      title: 'Schnell bauen',
+      text: 'Billige Prototypen aus Raspberry Pi, TouchDesigner oder Pappe — lieber zehn grobe Versuche als ein perfekter.',
+    },
+    {
+      title: 'Mit Menschen testen',
+      text: 'Ich lasse andere ausprobieren und schaue zu. Was sie tun, sagt mehr als das, was sie darüber sagen.',
+    },
+    {
+      title: 'Den Raum gestalten',
+      text: 'Licht, Ton, Wege und Ablauf entscheiden, ob die Technik verschwindet und nur das Erlebnis bleibt.',
+    },
+  ],
+  /**
+   * Software, die du in diesem Bereich beherrschst. Zu jedem Eintrag zeigt
+   * die Seite, in wie vielen Projekten er unter `tools` vorkommt.
+   */
+  software: [
+    'TouchDesigner',
+    'Python',
+    'JavaScript',
+    'React',
+    'Flask',
+    'Raspberry Pi',
+    'Web Audio API',
+    'Ableton',
+    'Figma',
+    'Polycam',
+  ], // TODO: pruefen
 };
 
 export const projects = [

@@ -17,6 +17,34 @@ export const category = {
   slug: 'grafikdesign',
   title: 'Grafikdesign',
   lead: 'Corporate Design, Kampagnen und Editorial fuer Gastronomie, Handwerk, Praxen und Bildungseinrichtungen.', // TODO
+  /**
+   * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
+   * sind ideal, mehr oder weniger geht auch.
+   */
+  vorgehen: [
+    // TODO: eigene Formulierung
+    {
+      title: 'Zuhören und analysieren',
+      text: 'Was macht den Auftraggeber aus, wer soll erreicht werden, was gibt es schon? Daraus entsteht das Briefing.',
+    },
+    {
+      title: 'Konzept',
+      text: 'Eine klare Idee, die sich in einem Satz erklären lässt — sie trägt alle späteren Entscheidungen.',
+    },
+    {
+      title: 'Gestaltung und System',
+      text: 'Logo, Farben, Schrift und Raster werden zu einem System, das auf Papier und Bildschirm funktioniert.',
+    },
+    {
+      title: 'Reinzeichnung und Übergabe',
+      text: 'Druckfertige Daten, Styleguide und Vorlagen, damit das Design auch ohne mich weiterlebt.',
+    },
+  ],
+  /**
+   * Software, die du in diesem Bereich beherrschst. Zu jedem Eintrag zeigt
+   * die Seite, in wie vielen Projekten er unter `tools` vorkommt.
+   */
+  software: ['InDesign', 'Illustrator', 'Photoshop', 'After Effects', 'Figma', 'WordPress'], // TODO: pruefen
 };
 
 export const projects = [

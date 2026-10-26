@@ -36,10 +36,74 @@
         <p class="intro__count" data-fade data-slot="count"></p>
       </section>
 
-      <section class="cards-section">
-        <h2 class="section-title">Projekte</h2>
-        <p class="section-hint">Klick auf ein Projekt, um den Ablauf zu sehen.</p>
-        <div class="cards" data-slot="cards"></div>
+      <section class="carousel" aria-roledescription="Karussell" aria-label="Projekte">
+        <div class="carousel__head">
+          <div class="section-head">
+            <p class="label">Projekte</p>
+            <p class="section-head__hint">Klick auf ein Projekt, um den Ablauf zu sehen.</p>
+          </div>
+          <div class="carousel__controls">
+            <p class="carousel__count" aria-live="polite">
+              <span data-carousel="current">01</span> / <span data-carousel="total">00</span>
+            </p>
+            <button
+              class="carousel__btn"
+              type="button"
+              data-carousel="prev"
+              aria-label="Vorheriges Projekt"
+            >
+              <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
+                <rect x="3" y="0" width="1" height="1" />
+                <rect x="2" y="1" width="2" height="1" />
+                <rect x="1" y="2" width="6" height="1" />
+                <rect x="0" y="3" width="7" height="1" />
+                <rect x="1" y="4" width="6" height="1" />
+                <rect x="2" y="5" width="2" height="1" />
+                <rect x="3" y="6" width="1" height="1" />
+              </svg>
+            </button>
+            <button
+              class="carousel__btn"
+              type="button"
+              data-carousel="next"
+              aria-label="Nächstes Projekt"
+            >
+              <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true" class="is-flipped">
+                <rect x="3" y="0" width="1" height="1" />
+                <rect x="2" y="1" width="2" height="1" />
+                <rect x="1" y="2" width="6" height="1" />
+                <rect x="0" y="3" width="7" height="1" />
+                <rect x="1" y="4" width="6" height="1" />
+                <rect x="2" y="5" width="2" height="1" />
+                <rect x="3" y="6" width="1" height="1" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="carousel__viewport" tabindex="0" aria-label="Projekte, seitlich scrollbar">
+          <ul class="carousel__track" data-slot="cards"></ul>
+        </div>
+        <div class="carousel__bar" aria-hidden="true"><span class="carousel__thumb"></span></div>
+      </section>
+
+      <section class="method">
+        <div class="section-head">
+          <p class="label">Vorgehen</p>
+          <h2 class="h-section">So gehe ich vor</h2>
+        </div>
+        <ol class="method__list" data-slot="vorgehen"></ol>
+      </section>
+
+      <section class="skills">
+        <div class="section-head">
+          <p class="label">Werkzeuge</p>
+          <h2 class="h-section">Software</h2>
+          <p class="section-head__hint">
+            Die Zahl dahinter zeigt, in wie vielen Projekten dieses Bereichs das Programm im Einsatz
+            war.
+          </p>
+        </div>
+        <ul class="skills__list" data-slot="software"></ul>
       </section>
     </main>
 

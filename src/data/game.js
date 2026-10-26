@@ -17,6 +17,34 @@ export const category = {
   slug: 'game',
   title: 'Game',
   lead: 'Spiele aus Game Jams und Seminaren — Botlnick laeuft direkt im Browser.', // TODO
+  /**
+   * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
+   * sind ideal, mehr oder weniger geht auch.
+   */
+  vorgehen: [
+    // TODO: eigene Formulierung
+    {
+      title: 'Spielgefühl festlegen',
+      text: 'Bevor gebaut wird, steht fest, wie sich das Spiel anfühlen soll — unheimlich, verspielt, ruhig.',
+    },
+    {
+      title: 'Welt bauen',
+      text: 'Echte Orte werden per Photogrammetrie eingescannt und in Blender zu spielbaren Räumen aufbereitet.',
+    },
+    {
+      title: 'Spielbar machen',
+      text: 'In Godot kommen Steuerung, Logik und Interaktion dazu. Ein grauer Prototyp muss schon Spaß machen.',
+    },
+    {
+      title: 'Testen und feilen',
+      text: 'Andere spielen lassen, beobachten, nachbessern — bis Schwierigkeit und Tempo stimmen.',
+    },
+  ],
+  /**
+   * Software, die du in diesem Bereich beherrschst. Zu jedem Eintrag zeigt
+   * die Seite, in wie vielen Projekten er unter `tools` vorkommt.
+   */
+  software: ['Godot', 'Blender', 'Polycam', 'Photoshop'], // TODO: pruefen
 };
 
 export const projects = [
