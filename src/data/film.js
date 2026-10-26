@@ -182,40 +182,6 @@ export const projects = [
     ],
   },
   {
-    slug: 'citydep',
-    title: 'Citydep',
-    subtitle: 'Storyboards und Trailer im VHS-Look',
-    cover: 'header',
-    description:
-      'Fuer Citydep entstanden Trailer, die aussehen sollen, als waeren sie von einer Kassette gerettet worden. Die Storyboards sind entsprechend als Archivbloecke aufgebaut — mit Kassettennummer, Ort und Equipment pro Einstellung.', // TODO
-    year: '2025', // TODO
-    role: 'Storyboard, Schnitt, Gestaltung',
-    tools: ['Premiere Pro', 'After Effects', 'InDesign'],
-    tags: ['Bewegtbild', 'Storyboard', 'VHS'],
-    pull: 'and then we unite — we become the stars',
-    chapters: [
-      {
-        title: 'Storyboard als Archiv',
-        text: 'Jede Seite ist wie ein Fundstueck aufgebaut: "Kassette #4", "Lost Fire #7", dazu Frame, Beschreibung, Ton und Equipment. Das Raster gehoert schon zur Erzaehlung, nicht nur zur Planung.', // TODO
-        files: ['storyboard-storyboard-in-black'],
-        layout: 'track',
-      },
-      {
-        title: 'Trailer',
-        text: 'Aus den Boards wurde der Trailer geschnitten — Bildstoerung, Zeitcode und Bandrauschen sind bewusst stehen geblieben.', // TODO
-        // Der grosse Teaser (63 MB) fehlt noch — siehe ASSETS-REPORT.md.
-        files: ['citydep-part2-remake'],
-        layout: 'stack',
-        // Platz reserviert: sobald citydep.1.mp4 / .2 / .3 im Ordner liegen, spielen sie hier.
-        platzhalter: [
-          '/media/arbeit/citydep/citydep.1.mp4',
-          '/media/arbeit/citydep/citydep.2.mp4',
-          '/media/arbeit/citydep/citydep.3.mp4',
-        ],
-      },
-    ],
-  },
-  {
     slug: 'art-of-peace',
     title: 'The Art of Peace',
     subtitle: 'Anime-Pilotfolge ueber Aikido',

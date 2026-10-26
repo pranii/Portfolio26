@@ -1,5 +1,5 @@
 /**
- * GRAFIKDESIGN — Corporate Design, Kampagnen, Editorial.
+ * KOMMUNIKATIONSDESIGN — Corporate Design, Kampagnen, Editorial.
  *
  * Jedes Projekt hat `chapters`: einzelne Schritte, die nacheinander erscheinen.
  * Pro Kapitel:
@@ -14,8 +14,8 @@
  * Ueberall dort, wo TODO steht, bitte deine eigene Formulierung einsetzen.
  */
 export const category = {
-  slug: 'grafikdesign',
-  title: 'Grafikdesign',
+  slug: 'kommunikationsdesign',
+  title: 'Kommunikations­design', // ­: unsichtbare Trennstelle fuer schmale Bildschirme
   lead: 'Corporate Design, Kampagnen und Editorial fuer Gastronomie, Handwerk, Praxen und Bildungseinrichtungen.', // TODO
   /**
    * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
@@ -173,7 +173,7 @@ export const projects = [
       {
         title: 'Tischaufsteller',
         text: 'Auf den Tischen steht das, was die Gaeste direkt betrifft: Mittagstisch, Hinweise, QR-Code zur Karte. Handschriftliche Logotype und viel Weissraum halten es freundlich statt betrieblich.', // TODO
-        files: ['tischaufsteller-01', 'tischaufsteller-02', 'tischaufsteller-03'],
+        files: ['tischaufsteller-01', 'tischaufsteller-03'],
         layout: 'track',
       },
       {
@@ -255,6 +255,40 @@ export const projects = [
         text: 'Am Ende steht das gedruckte Heft — drei Essays, ein Umschlag, und der Beweis, dass die Anweisungen auf Papier funktionieren.', // TODO
         files: ['prototyp', 'kama-muta-magazine-prototype'],
         layout: 'track',
+      },
+    ],
+  },
+  {
+    slug: 'citydep',
+    title: 'Citydep',
+    subtitle: 'Storyboards und Trailer im VHS-Look',
+    cover: 'header',
+    description:
+      'Fuer Citydep entstanden Trailer, die aussehen sollen, als waeren sie von einer Kassette gerettet worden. Die Storyboards sind entsprechend als Archivbloecke aufgebaut — mit Kassettennummer, Ort und Equipment pro Einstellung.', // TODO
+    year: '2025', // TODO
+    role: 'Storyboard, Schnitt, Gestaltung',
+    tools: ['Premiere Pro', 'After Effects', 'InDesign'],
+    tags: ['Bewegtbild', 'Storyboard', 'VHS'],
+    pull: 'and then we unite — we become the stars',
+    chapters: [
+      {
+        title: 'Storyboard als Archiv',
+        text: 'Jede Seite ist wie ein Fundstueck aufgebaut: "Kassette #4", "Lost Fire #7", dazu Frame, Beschreibung, Ton und Equipment. Das Raster gehoert schon zur Erzaehlung, nicht nur zur Planung.', // TODO
+        files: ['storyboard-storyboard-in-black'],
+        layout: 'track',
+      },
+      {
+        title: 'Trailer',
+        text: 'Aus den Boards wurde der Trailer geschnitten — Bildstoerung, Zeitcode und Bandrauschen sind bewusst stehen geblieben.', // TODO
+        // Der grosse Teaser (63 MB) fehlt noch — siehe ASSETS-REPORT.md.
+        files: ['citydep-part2-remake'],
+        layout: 'stack',
+        // Platz reserviert: sobald citydep.1.mp4 / .2 / .3 im Ordner liegen, spielen sie hier.
+        platzhalter: [
+          '/media/arbeit/citydep/citydep.1.mp4',
+          '/media/arbeit/citydep/citydep.2.mp4',
+          '/media/arbeit/citydep/citydep.3.mp4',
+        ],
       },
     ],
   },

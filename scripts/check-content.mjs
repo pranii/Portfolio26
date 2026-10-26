@@ -23,7 +23,7 @@ let fileCount = 0;
 const mediaBySlug = Object.assign({}, ...Object.values(media));
 const known = new Set();
 
-for (const categorySlug of ['creative-technology', 'film', 'game', 'grafikdesign']) {
+for (const categorySlug of ['creative-technology', 'film', 'game', 'kommunikationsdesign']) {
   const { projects, category } = await import(`../src/data/${categorySlug}.js`);
 
   if (category.slug !== categorySlug) {
@@ -126,7 +126,8 @@ const PAGE_SCRIPTS = {
   'creative-technology.html': ['src/scripts/category.js'],
   'film.html': ['src/scripts/category.js'],
   'game.html': ['src/scripts/category.js'],
-  'grafikdesign.html': ['src/scripts/category.js'],
+  'kommunikationsdesign.html': ['src/scripts/category.js'],
+  'inlakech.html': ['src/scripts/inlakech.js'],
 };
 
 for (const [page, scripts] of Object.entries(PAGE_SCRIPTS)) {

@@ -9,5 +9,5 @@ export const LOADERS = {
   'creative-technology': () => import('../../data/creative-technology.js'),
   film: () => import('../../data/film.js'),
   game: () => import('../../data/game.js'),
-  grafikdesign: () => import('../../data/grafikdesign.js'),
+  kommunikationsdesign: () => import('../../data/kommunikationsdesign.js'),
 };

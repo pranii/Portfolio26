@@ -66,7 +66,7 @@ const ICON_GRIDS = {
     '0111100000011110',
   ],
   // Zeichenfeder
-  grafikdesign: [
+  kommunikationsdesign: [
     '0000000110000000',
     '0000001001000000',
     '0000010000100000',

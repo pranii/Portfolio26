@@ -157,6 +157,7 @@ export const projects = [
     role: 'Konzept, Gestaltung, Programmierung',
     tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
     tags: ['Installation', 'Game', 'Partizipation', 'Raspberry Pi', 'Public Space'],
+    spielbar: { href: 'inlakech.html', label: 'Prototyp spielen' },
     pull: 'Ich werde an dir zu mir.',
     chapters: [
       {

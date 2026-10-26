@@ -1925,6 +1925,46 @@ html.is-dark .home__call {
   flex: 1;
 }
 
+/* In Lak'ech: das Spiel zeichnet in 1280 x 720 und wird skaliert —
+   ohne Glaetten, damit die Pixel scharf bleiben. */
+.duell__canvas {
+  image-rendering: pixelated;
+}
+
+/* Die zwei Arcade-Knoepfe unter dem Bild. Reagieren schon beim
+   Herunterdruecken, damit zwei Finger gleichzeitig druecken koennen. */
+.duell__keys {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-5);
+  margin: calc(var(--s-7) * -0.5) 0 var(--s-6);
+}
+
+.duell__key {
+  display: grid;
+  place-items: center;
+  width: clamp(4.5rem, 14vw, 6rem);
+  aspect-ratio: 1;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: var(--t-2);
+  box-shadow: 0 var(--lift) 0 var(--ink);
+  touch-action: manipulation;
+  user-select: none;
+  transition:
+    transform 0.08s steps(2),
+    box-shadow 0.08s steps(2),
+    background-color 0.08s steps(2),
+    color 0.08s steps(2);
+}
+.duell__key:active {
+  transform: translateY(var(--lift));
+  box-shadow: 0 0 0 var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
 .boot {
   display: grid;
   justify-items: center;

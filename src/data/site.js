@@ -39,9 +39,9 @@ export const categories = [
     description: 'Spiele und Game Design.',
   },
   {
-    slug: 'grafikdesign',
-    href: 'grafikdesign.html',
-    title: 'Grafikdesign',
+    slug: 'kommunikationsdesign',
+    href: 'kommunikationsdesign.html',
+    title: 'Kommunikations­design', // ­: unsichtbare Trennstelle fuer schmale Bildschirme
     description: 'Corporate Design, Kampagnen und Editorial.',
   },
 ];

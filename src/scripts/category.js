@@ -1,6 +1,6 @@
 /**
  * Einstiegspunkt fuer die Bereichsseiten (creative-technology.html, film.html,
- * game.html, grafikdesign.html).
+ * game.html, kommunikationsdesign.html).
  * Diese Seiten zeigen die Uebersicht: alle Projekte als Karten im Karussell,
  * darunter das Vorgehen und die Software des Bereichs.
  * Das einzelne Projekt liegt auf projekt.html.

@@ -22,13 +22,13 @@ const PAGES = [
   { html: 'creative-technology.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   { html: 'film.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   { html: 'game.html', entry: 'src/scripts/category.js', erwartet: '.card' },
-  { html: 'grafikdesign.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  { html: 'kommunikationsdesign.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   // Die Projektseite liest ihr Projekt aus der Adresse.
   {
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=grafikdesign/handwerkerexperten',
+    query: '?id=kommunikationsdesign/handwerkerexperten',
   },
   {
     html: 'projekt.html',
@@ -40,7 +40,7 @@ const PAGES = [
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=grafikdesign/kamamuta',
+    query: '?id=kommunikationsdesign/kamamuta',
   },
   {
     html: 'projekt.html',
@@ -68,6 +68,7 @@ const PAGES = [
     query: '?id=film/gibtsnicht',
   },
   { html: 'spiel.html', entry: 'src/scripts/spiel.js', erwartet: '.boot__start' },
+  { html: 'inlakech.html', entry: 'src/scripts/inlakech.js', erwartet: '.duell__key' },
 ];
 
 fs.mkdirSync(TMP, { recursive: true });
@@ -111,6 +112,9 @@ function addShims(window) {
   window.scrollBy = () => {};
   window.requestAnimationFrame ??= (cb) => setTimeout(() => cb(Date.now()), 16);
   window.cancelAnimationFrame ??= (id) => clearTimeout(id);
+  // jsdom kann nicht zeichnen. Ohne diese Zeile meldet es "Not implemented";
+  // das Spiel (inlakech.html) kommt mit `null` zurecht und zeichnet dann nichts.
+  window.HTMLCanvasElement.prototype.getContext = () => null;
 }
 
 let failed = 0;

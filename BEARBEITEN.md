@@ -2,18 +2,18 @@
 
 ## Die kurze Antwort
 
-| Ich will ändern …                          | Datei                                        |
-| ------------------------------------------ | -------------------------------------------- |
-| Meinen Namen, Kontakt, Links, Ort          | `src/data/site.js`                           |
-| Die vier Bereichstexte auf der Startseite  | `src/data/site.js` (unten, `categories`)     |
-| Steuerung und Text der Spielseite          | `src/data/site.js` (ganz unten, `spiel`)     |
-| Projekte im Bereich **Creative Technology** | `src/data/creative-technology.js`          |
-| Projekte im Bereich **Film**               | `src/data/film.js`                           |
-| Projekte im Bereich **Game**               | `src/data/game.js`                           |
-| Projekte im Bereich **Grafikdesign**       | `src/data/grafikdesign.js`                   |
-| Bilder und Videos austauschen              | `public/media/<ordner>/<projekt>/`           |
-| Welche Dateien überhaupt importiert werden | `scripts/media-manifest.mjs`                 |
-| Farben, Schriftgrößen, Abstände            | `src/styles/main.css`, ganz oben bei `:root` |
+| Ich will ändern …                            | Datei                                        |
+| -------------------------------------------- | -------------------------------------------- |
+| Meinen Namen, Kontakt, Links, Ort            | `src/data/site.js`                           |
+| Die vier Bereichstexte auf der Startseite    | `src/data/site.js` (unten, `categories`)     |
+| Steuerung und Text der Spielseite            | `src/data/site.js` (ganz unten, `spiel`)     |
+| Projekte im Bereich **Creative Technology**  | `src/data/creative-technology.js`            |
+| Projekte im Bereich **Film**                 | `src/data/film.js`                           |
+| Projekte im Bereich **Game**                 | `src/data/game.js`                           |
+| Projekte im Bereich **Kommunikationsdesign** | `src/data/kommunikationsdesign.js`           |
+| Bilder und Videos austauschen                | `public/media/<ordner>/<projekt>/`           |
+| Welche Dateien überhaupt importiert werden   | `scripts/media-manifest.mjs`                 |
+| Farben, Schriftgrößen, Abstände              | `src/styles/main.css`, ganz oben bei `:root` |
 
 **Finger weg von** `src/data/media.json` — die Datei wird von `npm run import`
 erzeugt und bei jedem Lauf überschrieben.
@@ -39,7 +39,7 @@ Damit findest du hier die Quelle:
 | `card__title`, `project-head__title` | Bereichsdatei | `title` des Projekts                     |
 | `card__sub`, `project-head__sub`     | Bereichsdatei | `subtitle`                               |
 | `project-head__text`                 | Bereichsdatei | `description`                            |
-| `facts` (Jahr, Rolle, Mitwirkende)  | Bereichsdatei | `year`, `role`, `client`, `tools`        |
+| `facts` (Jahr, Rolle, Mitwirkende)   | Bereichsdatei | `year`, `role`, `client`, `tools`        |
 | `tags`                               | Bereichsdatei | `tags`                                   |
 | `pull` (großer Zwischenruf)          | Bereichsdatei | `pull`                                   |
 | `step__title`                        | Bereichsdatei | `chapters[].title`                       |
@@ -49,7 +49,7 @@ Damit findest du hier die Quelle:
 | `boot__*`, `keys`                    | `site.js`     | `spiel`                                  |
 
 „Bereichsdatei" heißt: `creative-technology.js`, `film.js`, `game.js` oder
-`grafikdesign.js` — je nachdem, in welchem Bereich du gerade bist. Steht auch
+`kommunikationsdesign.js` — je nachdem, in welchem Bereich du gerade bist. Steht auch
 oben im Pfad der Seite.
 
 **Projekt in einen anderen Bereich verschieben:** Den ganzen Block des Projekts

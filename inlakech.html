@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="de" data-accent="creative-technology">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IN LAK'ECH — Prototyp spielen</title>
+    <meta
+      name="description"
+      content="IN LAK'ECH, ein Begegnungsautomat für zwei — als spielbarer Prototyp im Browser."
+    />
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body data-page="inlakech">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="site-header__mark" href="index.html" data-slot="name">Portfolio</a>
+      <nav class="site-nav" aria-label="Bereiche">
+        <a href="creative-technology.html">Creative Technology</a>
+        <a href="film.html">Film</a>
+        <a href="game.html">Game</a>
+        <a href="kommunikationsdesign.html">Kommunikationsdesign</a>
+        <a href="spiel.html">Spiel</a>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <nav class="breadcrumb" aria-label="Pfad">
+        <a href="index.html">Start</a>
+        <span aria-hidden="true">/</span>
+        <a href="creative-technology.html">Creative Technology</a>
+        <span aria-hidden="true">/</span>
+        <a href="projekt.html?id=creative-technology/in-lakech">In Lak’ech</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Spielen</span>
+      </nav>
+
+      <section class="intro">
+        <p class="intro__kicker">Prototyp im Browser</p>
+        <h1 class="intro__title">IN LAK'ECH</h1>
+        <p class="intro__lead">
+          Ein Spiel für zwei: Wer links steht, drückt A, wer rechts steht, drückt K. Am besten zu
+          zweit an einer Tastatur oder einem Handy.
+        </p>
+      </section>
+
+      <!-- Im Original ein Raspberry Pi mit zwei Arcade-Knoepfen, Kamera und
+           Kassenbon-Drucker. Hier dieselbe Logik auf einem Canvas. -->
+      <section class="window" aria-labelledby="fenster-titel">
+        <div class="window__bar">
+          <span class="window__title" id="fenster-titel">
+            <span class="window__icon" aria-hidden="true">▣</span>
+            INLAKECH.PY
+          </span>
+          <span class="window__buttons" aria-hidden="true">
+            <span class="window__btn">_</span>
+            <span class="window__btn">□</span>
+            <span class="window__btn window__btn--close">✕</span>
+          </span>
+        </div>
+
+        <div class="window__body">
+          <canvas
+            class="window__frame duell__canvas"
+            data-slot="duell"
+            width="1280"
+            height="720"
+            role="img"
+            aria-label="IN LAK'ECH — zwei Figuren im Duell"
+          ></canvas>
+        </div>
+
+        <div class="window__status">
+          <span class="window__status-cell window__status-cell--grow" data-slot="duell-status"
+            >Lädt …</span
+          >
+          <span class="window__status-cell">A links · K rechts</span>
+        </div>
+      </section>
+
+      <!-- Die zwei Arcade-Knoepfe — vor allem fuers Handy. -->
+      <div class="duell__keys">
+        <button class="duell__key" type="button" data-knopf="A" aria-label="Knopf A, links">
+          A
+        </button>
+        <button class="duell__key" type="button" data-knopf="B" aria-label="Knopf K, rechts">
+          K
+        </button>
+      </div>
+
+      <section class="steuerung">
+        <h2 class="section-title">Steuerung</h2>
+        <dl class="keys">
+          <div class="keys__row">
+            <dt><kbd>A</kbd></dt>
+            <dd>Spieler links</dd>
+          </div>
+          <div class="keys__row">
+            <dt><kbd>K</kbd></dt>
+            <dd>Spieler rechts</dd>
+          </div>
+          <div class="keys__row">
+            <dt><kbd>A</kbd> + <kbd>K</kbd></dt>
+            <dd>Wenn beide gefragt sind</dd>
+          </div>
+        </dl>
+        <p class="section-hint">
+          In der Installation lösen am Ende Kamera und Kassenbon-Drucker aus. Im Browser bleibt es
+          beim Blitz und einem Bon auf dem Bildschirm.
+        </p>
+      </section>
+
+      <nav class="pager" aria-label="Weiter">
+        <a class="pager__link" href="projekt.html?id=creative-technology/in-lakech">
+          <span class="pager__dir">← Zurück zum Projekt</span>
+          <span class="pager__title">Wie In Lak’ech entstanden ist</span>
+        </a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__note">Fragen oder Interesse an einer Zusammenarbeit?</p>
+      <div class="site-footer__links" data-slot="footer-links"></div>
+      <div class="readout" data-slot="readout"></div>
+      <p class="site-footer__copy">© <span data-slot="footer-name"></span></p>
+    </footer>
+
+    <script type="module" src="/src/scripts/inlakech.js"></script>
+  </body>
+</html>

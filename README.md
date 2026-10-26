@@ -44,7 +44,7 @@ In VS Code: Ordner oeffnen, Terminal mit `Strg + ö`, dann `npm run dev`.
 | Projekte Creative Technology     | `src/data/creative-technology.js`              |
 | Projekte Film                    | `src/data/film.js`                             |
 | Projekte Game                    | `src/data/game.js`                             |
-| Projekte Grafikdesign            | `src/data/grafikdesign.js`                     |
+| Projekte Kommunikationsdesign    | `src/data/kommunikationsdesign.js`             |
 | Welche Dateien importiert werden | `scripts/media-manifest.mjs`                   |
 | Farben, Schrift, Abstaende       | `src/styles/main.css`, ganz oben unter `:root` |
 

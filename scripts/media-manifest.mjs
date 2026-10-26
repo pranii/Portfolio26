@@ -53,6 +53,9 @@ export const projects = [
         exclude: /^(3|4)\.png$/i,
         prefix: 'fischerhuette',
       },
+      // tischaufsteller-02 wurde auf Wunsch geloescht. Beim naechsten Import
+      // kaeme es wieder — dann hier per `exclude` den Originalnamen des
+      // zweiten Bilds im Ordner ausschliessen.
       {
         dir: 'Arbeit/FISCHERHÜTTE/TISCHAUFSTELLER FISCHERHÜTTE',
         include: IMG,
