@@ -185,7 +185,8 @@ function initMenuWindow(call, fenster) {
   call.addEventListener('click', () => {
     document.documentElement.classList.add('is-dark');
     fenster.showModal();
-    screen.focus();
+    // Fokus fuer die Pfeiltasten, aber ohne sichtbare Markierung.
+    screen.focus({ focusVisible: false });
   });
 
   fenster.addEventListener('close', () => {

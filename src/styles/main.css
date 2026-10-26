@@ -171,6 +171,12 @@ video {
   height: auto;
   image-rendering: pixelated;
 }
+/* Kein grauer Kasten beim Antippen auf dem Handy — Links und Knoepfe
+   zeigen ihren Zustand selbst (invertiert beim Hover). */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -769,8 +775,11 @@ html.is-dark .home__call {
   place-items: center;
   padding: var(--s-6) calc(var(--s-5) + 3.5rem);
 }
-.phone__screen:focus-visible {
-  outline-offset: -8px;
+/* Das Menue bekommt beim Oeffnen den Fokus, damit die Pfeiltasten
+   sofort funktionieren — eine Umrandung soll man dabei nicht sehen. */
+.menu-window:focus,
+.phone__screen:focus {
+  outline: none;
 }
 
 .phone__list {
