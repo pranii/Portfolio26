@@ -687,6 +687,13 @@ html.is-dark body {
   animation: umschalten 0.24s steps(3);
 }
 
+/* Das Menue hat keine eigene Flaeche — der Startbildschirm darunter
+   verschwindet deshalb, solange es offen ist. Empfang und Akku bleiben. */
+html.is-dark .home__center,
+html.is-dark .home__call {
+  visibility: hidden;
+}
+
 @keyframes umschalten {
   0% {
     filter: invert(1);
@@ -696,8 +703,9 @@ html.is-dark body {
   }
 }
 
-/* Das Menuefenster. Ohne Innenabstand, damit ein Klick auf das <dialog>
-   selbst eindeutig "daneben" heisst (siehe main.js). */
+/* Das Menuefenster. Ohne Rahmen und eigene Flaeche — das Menue steht
+   direkt auf der dunklen Seite. Ohne Innenabstand, damit ein Klick auf
+   das <dialog> selbst eindeutig "daneben" heisst (siehe main.js). */
 .menu-window {
   width: min(60rem, 100vw - 2 * var(--gutter));
   height: min(36rem, 100svh - 2 * var(--gutter));
@@ -707,9 +715,8 @@ html.is-dark body {
   padding: 0;
   overflow: hidden;
   color: var(--ink);
-  background: var(--bezel);
-  border: 2px solid var(--ink);
-  box-shadow: 0 0 3rem color-mix(in oklab, var(--lcd-hi) 18%, transparent);
+  background: transparent;
+  border: 0;
 }
 .menu-window[open] {
   display: grid;
@@ -739,16 +746,13 @@ html.is-dark body {
   width: 2.75rem;
   height: 2.75rem;
   font-size: var(--t-1);
-  border: 2px solid var(--rule);
   transition:
     background-color 0.12s steps(2),
-    color 0.12s steps(2),
-    border-color 0.12s steps(2);
+    color 0.12s steps(2);
 }
 .menu-window__close:hover {
   background: var(--accent);
   color: var(--accent-ink);
-  border-color: var(--accent);
   text-shadow: none;
 }
 
