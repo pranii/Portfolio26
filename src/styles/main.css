@@ -371,6 +371,42 @@ html.lenis body {
   gap: var(--s-1);
 }
 
+/* Der Sprachschalter: drei Kuerzel, das gewaehlte invertiert — wie die
+   Auswahl im Nokia-Menue. */
+.sprachen {
+  display: flex;
+  gap: 1px;
+  margin-left: auto;
+  border: 1px solid var(--ink);
+}
+
+.sprachen__knopf {
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.1em;
+  padding: 0.15em 0.5em;
+  border: 0;
+  background: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.sprachen__knopf:hover {
+  color: var(--ink);
+}
+
+.sprachen__knopf.is-aktiv {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Auf der Startseite sitzt er in der Statusleiste des Telefons. */
+.home__status .sprachen {
+  margin-left: var(--s-3);
+  border-color: currentColor;
+}
+
 .site-nav a {
   font-family: var(--font-mono);
   font-size: var(--t--1);
