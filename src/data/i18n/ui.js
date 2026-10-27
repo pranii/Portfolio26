@@ -243,8 +243,7 @@ export const ui = {
       'The magazine as it is printed: two landscape pages side by side, the gutter in the ' +
       'middle, front and back cover on their own. {pdf}.',
     'prototyp.magazin.pdf': 'The whole magazine as a PDF',
-    'prototyp.magazin.ohnepdf':
-      'The magazine as it is printed: two landscape pages side by side.',
+    'prototyp.magazin.ohnepdf': 'The magazine as it is printed: two landscape pages side by side.',
 
     'heft.seite': 'Page',
     'heft.seitevon': 'Page {n} of {m}',
@@ -361,7 +360,8 @@ export const ui = {
       'Revista ashtu siç është shtypur: dy faqe horizontale krah për krah, kurrizi në mes, ' +
       'kopertina e parë dhe e fundit secila veç. {pdf}.',
     'prototyp.magazin.pdf': 'E gjithë revista si PDF',
-    'prototyp.magazin.ohnepdf': 'Revista ashtu siç është shtypur: dy faqe horizontale krah për krah.',
+    'prototyp.magazin.ohnepdf':
+      'Revista ashtu siç është shtypur: dy faqe horizontale krah për krah.',
 
     'heft.seite': 'Faqja',
     'heft.seitevon': 'Faqja {n} nga {m}',
