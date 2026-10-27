@@ -127,21 +127,25 @@ export function renderCard(project, category) {
 
   return `
     <li class="carousel__slide">
-      <a class="card" href="projekt.html?id=${esc(category)}/${esc(project.slug)}" data-cursor="${esc(t('karte.ansehen'))}" draggable="false">
+      <article class="card">
         <span class="card__media card__media--${modus}">${bild}</span>
-        <span class="card__top">
+        <div class="card__top">
           ${project.year ? `<span class="card__year">${esc(project.year)}</span>` : ''}
-        </span>
-        <span class="card__body">
-          <span class="card__title">${esc(project.title)}</span>
-          <span class="card__sub">${esc(project.subtitle ?? '')}</span>
-          ${project.role ? `<span class="card__role">${esc(kurz(project.role))}</span>` : ''}
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">${esc(project.title)}</h3>
+          <p class="card__sub">${esc(project.subtitle ?? '')}</p>
+          ${project.role ? `<p class="card__role">${esc(kurz(project.role))}</p>` : ''}
           ${tags ? `<ul class="card__tags">${tags}</ul>` : ''}
-        </span>
-        <span class="card__foot">
-          <span class="card__go" aria-hidden="true">${esc(t('karte.ansehen'))} →</span>
-        </span>
-      </a>
+        </div>
+        <div class="card__foot">
+          <a
+            class="card__waehlen"
+            href="projekt.html?id=${esc(category)}/${esc(project.slug)}"
+            data-cursor="${esc(t('karte.ansehen'))}"
+          >${esc(t('karte.ansehen'))}</a>
+        </div>
+      </article>
     </li>`;
 }
 

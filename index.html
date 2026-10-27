@@ -59,38 +59,6 @@
 
         <div class="phone__screen" tabindex="0">
           <ul class="phone__list" data-slot="menu" aria-live="polite"></ul>
-          <button
-            class="phone__nav phone__nav--prev"
-            type="button"
-            data-menu="prev"
-            data-t-label="menu.voriger"
-          >
-            <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
-              <rect x="3" y="0" width="1" height="1" />
-              <rect x="2" y="1" width="2" height="1" />
-              <rect x="1" y="2" width="6" height="1" />
-              <rect x="0" y="3" width="7" height="1" />
-              <rect x="1" y="4" width="6" height="1" />
-              <rect x="2" y="5" width="2" height="1" />
-              <rect x="3" y="6" width="1" height="1" />
-            </svg>
-          </button>
-          <button
-            class="phone__nav phone__nav--next"
-            type="button"
-            data-menu="next"
-            data-t-label="menu.naechster"
-          >
-            <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
-              <rect x="3" y="0" width="1" height="1" />
-              <rect x="2" y="1" width="2" height="1" />
-              <rect x="1" y="2" width="6" height="1" />
-              <rect x="0" y="3" width="7" height="1" />
-              <rect x="1" y="4" width="6" height="1" />
-              <rect x="2" y="5" width="2" height="1" />
-              <rect x="3" y="6" width="1" height="1" />
-            </svg>
-          </button>
         </div>
 
         <!-- Die beiden Softkeys, wie sie unter dem Display eines 3310
@@ -99,6 +67,40 @@
           <button class="phone__softkey" type="button" data-menu="select" data-t="menu.waehlen">
             Wählen
           </button>
+          <div class="phone__steuerkreuz">
+            <button
+              class="phone__nav phone__nav--prev"
+              type="button"
+              data-menu="prev"
+              data-t-label="menu.voriger"
+            >
+              <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
+                <rect x="3" y="0" width="1" height="1" />
+                <rect x="2" y="1" width="2" height="1" />
+                <rect x="1" y="2" width="6" height="1" />
+                <rect x="0" y="3" width="7" height="1" />
+                <rect x="1" y="4" width="6" height="1" />
+                <rect x="2" y="5" width="2" height="1" />
+                <rect x="3" y="6" width="1" height="1" />
+              </svg>
+            </button>
+            <button
+              class="phone__nav phone__nav--next"
+              type="button"
+              data-menu="next"
+              data-t-label="menu.naechster"
+            >
+              <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
+                <rect x="3" y="0" width="1" height="1" />
+                <rect x="2" y="1" width="2" height="1" />
+                <rect x="1" y="2" width="6" height="1" />
+                <rect x="0" y="3" width="7" height="1" />
+                <rect x="1" y="4" width="6" height="1" />
+                <rect x="2" y="5" width="2" height="1" />
+                <rect x="3" y="6" width="1" height="1" />
+              </svg>
+            </button>
+          </div>
           <button class="phone__softkey" type="button" data-menu="close" data-t="menu.zurueck">
             Zurück
           </button>

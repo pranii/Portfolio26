@@ -837,9 +837,8 @@ body[data-page='index'] {
   border: 2px solid var(--pixel);
 }
 
-/* Schmal: oben und unten die Pfeile, dafuer mehr Luft. */
 .phone.is-einzeln .phone__screen {
-  padding: calc(var(--s-5) + 3.5rem) var(--s-5);
+  padding: var(--s-6) var(--s-5);
 }
 /* Das Menue bekommt beim Oeffnen den Fokus, damit die Pfeiltasten
    sofort funktionieren — eine Umrandung soll man dabei nicht sehen. */
@@ -911,7 +910,7 @@ body[data-page='index'] {
 /* Im Raster steht nur, wie der Eintrag heisst — der Satz darunter wuerde
    die Kaesten ungleich hoch machen. */
 .phone.is-raster .phone__desc,
-.phone.is-raster .phone__nav {
+.phone.is-raster .phone__steuerkreuz {
   display: none;
 }
 
@@ -953,41 +952,45 @@ body[data-page='index'] {
   animation: phone-blink 0.5s steps(2) 2;
 }
 
-/* Pfeile ueber und unter dem Symbol — geblaettert wird von unten nach
-   oben, wie im Telefonmenue. */
+/* Das Steuerkreuz: zwei Tasten in der Leiste unter dem Display, mittig
+   zwischen den Softkeys — dort, wo am Telefon die Navigationstaste sitzt. */
+.phone__steuerkreuz {
+  display: flex;
+  gap: var(--s-1);
+}
+
 .phone__nav {
-  position: absolute;
-  left: 50%;
   display: grid;
   place-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  transform: translateX(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--lcd);
+  border: 1px solid currentColor;
+  background: none;
+  cursor: pointer;
   transition:
-    background-color 0.12s steps(2),
-    color 0.12s steps(2);
+    background-color 0.1s steps(2),
+    color 0.1s steps(2);
 }
+
 .phone__nav svg {
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
   shape-rendering: crispEdges;
 }
-.phone__nav--prev {
-  top: var(--s-4);
-}
-.phone__nav--next {
-  bottom: var(--s-4);
-}
+
 /* Der Pfeil im Bild zeigt nach links; gedreht wird daraus oben und unten. */
 .phone__nav--prev svg {
   transform: rotate(90deg);
 }
+
 .phone__nav--next svg {
   transform: rotate(-90deg);
 }
+
 .phone__nav:hover {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--lcd);
+  color: var(--bezel);
 }
 
 /* Erst mit JavaScript wird daraus das Ein-Eintrag-Menue. Vorher (und
@@ -1218,10 +1221,6 @@ body[data-page='index'] {
     transform 0.12s steps(2),
     box-shadow 0.12s steps(2);
 }
-.card:hover {
-  transform: translate(calc(var(--lift) * -1), calc(var(--lift) * -1));
-  box-shadow: calc(var(--lift) * 2) calc(var(--lift) * 2) 0 var(--ink);
-}
 .card img {
   -webkit-user-drag: none;
 }
@@ -1318,27 +1317,34 @@ body[data-page='index'] {
 /* Fusszeile wie die Softkey-Leiste: unter der Maus invertiert. */
 .card__foot {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-3);
-  padding: var(--s-2) var(--s-4);
-  border-top: 1px dashed var(--rule);
-  transition:
-    background-color 0.12s steps(2),
-    color 0.12s steps(2);
-}
-.card:hover .card__foot {
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-shadow: var(--glow);
-  border-color: var(--accent);
+  justify-content: flex-end;
+  padding: var(--s-3) var(--s-4) var(--s-4);
 }
 
-.card__go {
-  flex: none;
+/* Die Auswahltaste: ein Kaestchen wie ein Softkey, unter dem Zeiger
+   invertiert. Nur sie oeffnet das Projekt — die Karte selbst ist kein
+   Link mehr, damit klar ist, wo man drueckt. */
+.card__waehlen {
+  display: inline-grid;
+  place-items: center;
+  min-height: 2.5rem;
+  padding: 0 var(--s-4);
+  border: 2px solid var(--ink);
+  font-family: var(--font-mono);
   font-size: var(--t--1);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--ink);
+  transition:
+    background-color 0.1s steps(2),
+    color 0.1s steps(2);
+}
+
+.card__waehlen:hover,
+.card__waehlen:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: none;
 }
 
 /* "So gehe ich vor": nummerierte Schritte, durch eine gepunktete Spur
