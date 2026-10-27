@@ -2542,114 +2542,128 @@
       "images": [
         {
           "type": "image",
-          "src": "/media/uni/in-lakech/visions-01.webp",
-          "thumb": "/media/uni/in-lakech/visions-01-thumb.webp",
-          "width": 376,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-02.webp",
-          "thumb": "/media/uni/in-lakech/visions-02-thumb.webp",
-          "width": 387,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-03.webp",
-          "thumb": "/media/uni/in-lakech/visions-03-thumb.webp",
-          "width": 457,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-04.webp",
-          "thumb": "/media/uni/in-lakech/visions-04-thumb.webp",
-          "width": 382,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-05.webp",
-          "thumb": "/media/uni/in-lakech/visions-05-thumb.webp",
-          "width": 397,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-06.webp",
-          "thumb": "/media/uni/in-lakech/visions-06-thumb.webp",
-          "width": 399,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-07.webp",
-          "thumb": "/media/uni/in-lakech/visions-07-thumb.webp",
-          "width": 409,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-08.webp",
-          "thumb": "/media/uni/in-lakech/visions-08-thumb.webp",
-          "width": 395,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/visions-09.webp",
-          "thumb": "/media/uni/in-lakech/visions-09-thumb.webp",
-          "width": 742,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/arcade-01.webp",
-          "thumb": "/media/uni/in-lakech/arcade-01-thumb.webp",
-          "width": 774,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/arcade-02.webp",
-          "thumb": "/media/uni/in-lakech/arcade-02-thumb.webp",
-          "width": 1024,
-          "height": 704
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/arcade-03.webp",
-          "thumb": "/media/uni/in-lakech/arcade-03-thumb.webp",
-          "width": 714,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/arcade-04.webp",
-          "thumb": "/media/uni/in-lakech/arcade-04-thumb.webp",
-          "width": 734,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/arcade-05.webp",
-          "thumb": "/media/uni/in-lakech/arcade-05-thumb.webp",
+          "src": "/media/uni/in-lakech/spielfeld-01.webp",
+          "thumb": "/media/uni/in-lakech/spielfeld-01-thumb.webp",
           "width": 720,
           "height": 1024
         },
         {
           "type": "image",
-          "src": "/media/uni/in-lakech/arcade-06.webp",
-          "thumb": "/media/uni/in-lakech/arcade-06-thumb.webp",
+          "src": "/media/uni/in-lakech/spielfeld-02.webp",
+          "thumb": "/media/uni/in-lakech/spielfeld-02-thumb.webp",
           "width": 765,
           "height": 1024
         },
         {
           "type": "image",
-          "src": "/media/uni/in-lakech/arcade-07.webp",
-          "thumb": "/media/uni/in-lakech/arcade-07-thumb.webp",
-          "width": 729,
+          "src": "/media/uni/in-lakech/spielfeld-03.webp",
+          "thumb": "/media/uni/in-lakech/spielfeld-03-thumb.webp",
+          "width": 714,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/spielfeld-04.webp",
+          "thumb": "/media/uni/in-lakech/spielfeld-04-thumb.webp",
+          "width": 734,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/test-01.webp",
+          "thumb": "/media/uni/in-lakech/test-01-thumb.webp",
+          "width": 757,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/test-02.webp",
+          "thumb": "/media/uni/in-lakech/test-02-thumb.webp",
+          "width": 774,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/test-03.webp",
+          "thumb": "/media/uni/in-lakech/test-03-thumb.webp",
+          "width": 661,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/test-04.webp",
+          "thumb": "/media/uni/in-lakech/test-04-thumb.webp",
+          "width": 688,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/test-05.webp",
+          "thumb": "/media/uni/in-lakech/test-05-thumb.webp",
+          "width": 1024,
+          "height": 681
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-01.webp",
+          "thumb": "/media/uni/in-lakech/collage-01-thumb.webp",
+          "width": 382,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-02.webp",
+          "thumb": "/media/uni/in-lakech/collage-02-thumb.webp",
+          "width": 397,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-03.webp",
+          "thumb": "/media/uni/in-lakech/collage-03-thumb.webp",
+          "width": 399,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-04.webp",
+          "thumb": "/media/uni/in-lakech/collage-04-thumb.webp",
+          "width": 409,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-05.webp",
+          "thumb": "/media/uni/in-lakech/collage-05-thumb.webp",
+          "width": 395,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-06.webp",
+          "thumb": "/media/uni/in-lakech/collage-06-thumb.webp",
+          "width": 742,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-07.webp",
+          "thumb": "/media/uni/in-lakech/collage-07-thumb.webp",
+          "width": 376,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-08.webp",
+          "thumb": "/media/uni/in-lakech/collage-08-thumb.webp",
+          "width": 387,
+          "height": 1024
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/collage-09.webp",
+          "thumb": "/media/uni/in-lakech/collage-09-thumb.webp",
+          "width": 457,
           "height": 1024
         },
         {
@@ -2842,20 +2856,6 @@
           "src": "/media/uni/in-lakech/begegnung-24.webp",
           "thumb": "/media/uni/in-lakech/begegnung-24-thumb.webp",
           "width": 883,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/begegnung-2-01.webp",
-          "thumb": "/media/uni/in-lakech/begegnung-2-01-thumb.webp",
-          "width": 892,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/in-lakech/begegnung-2-02.webp",
-          "thumb": "/media/uni/in-lakech/begegnung-2-02-thumb.webp",
-          "width": 820,
           "height": 1024
         },
         {
