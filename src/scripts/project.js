@@ -82,7 +82,7 @@ async function main() {
   document.querySelector('[data-slot="crumb-project"]').textContent = project.title;
 
   const wurzel = document.querySelector('[data-slot="projekt"]');
-  wurzel.innerHTML = renderProjectPage(project, bereich.title);
+  wurzel.innerHTML = renderProjectPage(project);
 
   // Der Prototyp sitzt zwischen Projektkopf und Kapiteln — auf derselben
   // Seite, nicht auf einer eigenen.

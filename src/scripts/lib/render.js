@@ -112,21 +112,9 @@ function kurz(text = '', anzahl = 3) {
 const nummer = (i) => String(i + 1).padStart(2, '0');
 
 /** Karte fuer ein Projekt im Karussell. */
-export function renderCard(project, category, index = 0) {
+export function renderCard(project, category) {
   const media = mediaFor(project.slug);
   const cover = coverFor(project, media);
-  const steps = project.chapters?.length ?? 0;
-  const bilder = media.images.length;
-  const videos = media.videos.length;
-
-  const zahlen = [
-    `${steps} ${steps === 1 ? t('karte.schritt') : t('karte.schritte')}`,
-    bilder > 0 ? `${bilder} ${t('karte.bilder')}` : null,
-    videos > 0 ? `${videos} ${videos === 1 ? t('karte.video') : t('karte.videos')}` : null,
-  ]
-    .filter(Boolean)
-    .join(' · ');
-
   const modus = cover ? passung(cover) : 'fill';
   const bild = cover
     ? imageTag(cover, '(max-width: 700px) 85vw, 26rem', { modus })
@@ -142,17 +130,15 @@ export function renderCard(project, category, index = 0) {
       <a class="card" href="projekt.html?id=${esc(category)}/${esc(project.slug)}" data-cursor="${esc(t('karte.ansehen'))}" draggable="false">
         <span class="card__media card__media--${modus}">${bild}</span>
         <span class="card__top">
-          <span class="card__num">${nummer(index)}</span>
           ${project.year ? `<span class="card__year">${esc(project.year)}</span>` : ''}
         </span>
         <span class="card__body">
           <span class="card__title">${esc(project.title)}</span>
           <span class="card__sub">${esc(project.subtitle ?? '')}</span>
-          ${project.role ? `<span class="card__role"><span class="card__label">${esc(t('karte.rolle'))}</span> ${esc(kurz(project.role))}</span>` : ''}
+          ${project.role ? `<span class="card__role">${esc(kurz(project.role))}</span>` : ''}
           ${tags ? `<ul class="card__tags">${tags}</ul>` : ''}
         </span>
         <span class="card__foot">
-          <span class="card__meta">${zahlen}</span>
           <span class="card__go" aria-hidden="true">${esc(t('karte.ansehen'))} →</span>
         </span>
       </a>
@@ -160,7 +146,7 @@ export function renderCard(project, category, index = 0) {
 }
 
 export function renderCards(projects, category) {
-  return projects.map((project, i) => renderCard(project, category, i)).join('');
+  return projects.map((project) => renderCard(project, category)).join('');
 }
 
 /** "So gehe ich vor": nummerierte Schritte eines Bereichs. */
@@ -379,12 +365,11 @@ function embedPlatzhalter() {
   return '<div class="figure figure--wide slot is-empty"></div>';
 }
 
-function renderStep(chapter, index, total, poster) {
+function renderStep(chapter, poster) {
   const weit = WEITE_LAYOUTS.has(chapter.layout);
   return `
     <section class="step">
       <div class="step__head">
-        <p class="step__num">${esc(t('projekt.schrittvon', { n: index + 1, m: total }))}</p>
         <h2 class="step__title">${esc(chapter.title)}</h2>
         <p class="step__text">${esc(chapter.text)}</p>
         ${downloadLinks(chapter.docs)}
@@ -471,7 +456,7 @@ function factList(project) {
     .join('')}</dl>`;
 }
 
-export function renderProjectPage(project, categoryTitle) {
+export function renderProjectPage(project) {
   const media = mediaFor(project.slug);
   const chapters = groupIntoChapters(project, media);
   const cover = coverFor(project, media);
@@ -481,18 +466,10 @@ export function renderProjectPage(project, categoryTitle) {
     ? `<ul class="tags">${project.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`
     : '';
 
-  const steps = chapters
-    .map((chapter, i) => renderStep(chapter, i, chapters.length, poster))
-    .join('');
-
-  // Kurzes Inhaltsverzeichnis, damit man den Aufbau sofort sieht.
-  const ablauf = chapters
-    .map((chapter, i) => `<li><span class="ablauf__num">${i + 1}</span> ${esc(chapter.title)}</li>`)
-    .join('');
+  const steps = chapters.map((chapter) => renderStep(chapter, poster)).join('');
 
   return `
     <header class="project-head">
-      <p class="project-head__kicker">${esc(categoryTitle)}</p>
       <h1 class="project-head__title">${esc(project.title)}</h1>
       <p class="project-head__sub">${esc(project.subtitle ?? '')}</p>
       <div class="project-head__grid">
@@ -504,11 +481,6 @@ export function renderProjectPage(project, categoryTitle) {
           ${tags}
         </div>
       </div>
-      ${
-        project.prototyp
-          ? `<p class="play"><a class="play__button" href="#prototyp" data-cursor="${esc(t('karte.ansehen'))}">▶ ${esc(project.prototyp.label)}</a></p>`
-          : ''
-      }
       ${
         project.spielbar
           ? `<p class="play"><a class="play__button" href="${esc(project.spielbar.href)}" data-cursor="${esc(t('karte.spielen'))}">▶ ${esc(project.spielbar.label)}</a>
@@ -522,24 +494,6 @@ export function renderProjectPage(project, categoryTitle) {
           : ''
       }
       ${project.kopfvideo ? embedBlock(project.kopfvideo, project.title) : ''}
-      <nav class="ablauf" aria-label="${esc(t('projekt.aufbau'))}">
-        <p class="ablauf__label">${esc(t('projekt.ablauf'))}</p>
-        <ol class="ablauf__list">${ablauf}</ol>
-      </nav>
     </header>
     <div class="steps">${steps}</div>`;
-}
-
-/** Zaehlt Bilder, Videos und Schritte fuer die Bereichskarten. */
-export function countMedia(projects) {
-  return projects.reduce(
-    (sum, project) => {
-      const media = mediaFor(project.slug);
-      sum.images += media.images.length;
-      sum.videos += media.videos.length;
-      sum.chapters += project.chapters?.length ?? 0;
-      return sum;
-    },
-    { images: 0, videos: 0, chapters: 0 },
-  );
 }

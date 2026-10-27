@@ -12,7 +12,7 @@ import { initScroll, initProgressBar, gsap, prefersReducedMotion } from './lib/s
 import { revealFade, revealOnScroll } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
-import { renderCards, renderSoftware, countMedia } from './lib/render.js';
+import { renderCards, renderSoftware } from './lib/render.js';
 import { initCarousel } from './lib/carousel.js';
 import { LOADERS } from './lib/bereiche.js';
 import {
@@ -38,15 +38,11 @@ async function main() {
   document.documentElement.dataset.accent = page;
   document.querySelector('[data-slot="name"]').textContent = site.name;
 
-  const counts = countMedia(projects);
-
   // Der Titel steht zweimal auf der Seite: im Pfad und als Ueberschrift.
   document.querySelectorAll('[data-slot="title"]').forEach((el) => {
     el.textContent = category.title;
   });
   document.querySelector('[data-slot="lead"]').textContent = category.lead;
-  document.querySelector('[data-slot="count"]').textContent =
-    `${projects.length} ${t('karte.projekte')} · ${counts.chapters} ${t('karte.schritte')}`;
   document.querySelector('[data-slot="cards"]').innerHTML = renderCards(projects, page);
 
   // Abschnitte ohne Inhalt ganz weglassen statt eine leere Ueberschrift zu zeigen.

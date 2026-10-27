@@ -23,7 +23,9 @@ export function initCarousel(root) {
   const thumb = root.querySelector('.carousel__thumb');
   const behavior = prefersReducedMotion ? 'auto' : 'smooth';
 
-  total.textContent = pad(slides.length);
+  // Zaehler und Schiene sind beide freiwillig — fehlt einer, laeuft der
+  // Rest weiter.
+  if (total) total.textContent = pad(slides.length);
 
   // Abstand von einer Karte zur naechsten, Luecke eingerechnet.
   const step = () =>
@@ -38,19 +40,23 @@ export function initCarousel(root) {
     // Passt alles auf einmal auf den Bildschirm, braucht es keine Steuerung.
     root.classList.toggle('is-static', m <= 2);
 
-    const index = amEnde ? slides.length - 1 : Math.round(y / step());
-    current.textContent = pad(index + 1);
-    prev.disabled = y <= 2;
-    next.disabled = amEnde;
+    if (current) {
+      const index = amEnde ? slides.length - 1 : Math.round(y / step());
+      current.textContent = pad(index + 1);
+    }
+    if (prev) prev.disabled = y <= 2;
+    if (next) next.disabled = amEnde;
 
-    const sichtbar = viewport.clientHeight / viewport.scrollHeight;
-    const anteil = m > 0 ? y / m : 0;
-    thumb.style.height = `${sichtbar * 100}%`;
-    thumb.style.transform = `translateY(${anteil * (1 / sichtbar - 1) * 100}%)`;
+    if (thumb) {
+      const sichtbar = viewport.clientHeight / viewport.scrollHeight;
+      const anteil = m > 0 ? y / m : 0;
+      thumb.style.height = `${sichtbar * 100}%`;
+      thumb.style.transform = `translateY(${anteil * (1 / sichtbar - 1) * 100}%)`;
+    }
   }
 
-  prev.addEventListener('click', () => viewport.scrollBy({ top: -step(), behavior }));
-  next.addEventListener('click', () => viewport.scrollBy({ top: step(), behavior }));
+  prev?.addEventListener('click', () => viewport.scrollBy({ top: -step(), behavior }));
+  next?.addEventListener('click', () => viewport.scrollBy({ top: step(), behavior }));
   viewport.addEventListener('scroll', update, { passive: true });
   new ResizeObserver(update).observe(viewport);
 

@@ -133,7 +133,6 @@ export function prototypHtml(project) {
 
   return `
     <section class="prototyp" id="prototyp" data-prototyp="${esc(art)}">
-      <p class="prototyp__kicker">${esc(project.prototyp.kicker ?? t('prototyp.kicker'))}</p>
       <h2 class="section-title">${esc(project.prototyp.titel ?? 'Prototyp')}</h2>
       ${bauen(quellen(project))}
     </section>`;

@@ -58,12 +58,6 @@ export const ui = {
     'karte.ansehen': 'Ansehen',
     'karte.oeffnen': 'Öffnen',
     'karte.spielen': 'Spielen',
-    'karte.rolle': 'Rolle',
-    'karte.schritt': 'Schritt',
-    'karte.schritte': 'Schritte',
-    'karte.bilder': 'Bilder',
-    'karte.video': 'Video',
-    'karte.videos': 'Videos',
     'karte.projekt': 'Projekt',
     'karte.projekte': 'Projekte',
 
@@ -72,9 +66,6 @@ export const ui = {
     'fakten.mitwirkende': 'Mitwirkende',
     'fakten.werkzeuge': 'Werkzeuge',
 
-    'projekt.ablauf': 'So ist das Projekt entstanden',
-    'projekt.aufbau': 'Aufbau des Projekts',
-    'projekt.schrittvon': 'Schritt {n} von {m}',
     'projekt.weiteres': 'Weiteres Material',
     'projekt.nichtgefunden': 'Projekt nicht gefunden',
     'projekt.zurstartseite': 'Zur Startseite',
@@ -84,7 +75,7 @@ export const ui = {
     'projekt.vorheriges': '← Vorheriges Projekt',
     'projekt.naechstes': 'Nächstes Projekt →',
 
-    'galerie.alle': 'Alle {n} Dateien zeigen',
+    'galerie.alle': 'Alle {n} Bilder zeigen',
     'galerie.vergroessern': 'Vergrössern',
     'galerie.bildvon': 'Bild {n} von {m} vergrössern',
     'galerie.grossansicht': 'Grossansicht',
@@ -119,7 +110,6 @@ export const ui = {
     'spiel.maushinweis2': 'bekommst du ihn zurück.',
     'spiel.zumprojekt': '← Zurück zum Projekt',
 
-    'prototyp.kicker': 'Zum Ausprobieren',
     'prototyp.inlakech':
       'Ein Automat für zwei Fremde: Erst wenn beide gleichzeitig drücken, geht es weiter — am ' +
       'besten zu zweit an einer Tastatur oder einem Handy. In der Installation lösen am Ende ' +
@@ -188,12 +178,6 @@ export const ui = {
     'karte.ansehen': 'View',
     'karte.oeffnen': 'Open',
     'karte.spielen': 'Play',
-    'karte.rolle': 'Role',
-    'karte.schritt': 'step',
-    'karte.schritte': 'steps',
-    'karte.bilder': 'images',
-    'karte.video': 'video',
-    'karte.videos': 'videos',
     'karte.projekt': 'project',
     'karte.projekte': 'projects',
 
@@ -202,9 +186,6 @@ export const ui = {
     'fakten.mitwirkende': 'Collaborators',
     'fakten.werkzeuge': 'Tools',
 
-    'projekt.ablauf': 'How this project came about',
-    'projekt.aufbau': 'Structure of the project',
-    'projekt.schrittvon': 'Step {n} of {m}',
     'projekt.weiteres': 'More material',
     'projekt.nichtgefunden': 'Project not found',
     'projekt.zurstartseite': 'To the home page',
@@ -214,7 +195,7 @@ export const ui = {
     'projekt.vorheriges': '← Previous project',
     'projekt.naechstes': 'Next project →',
 
-    'galerie.alle': 'Show all {n} files',
+    'galerie.alle': 'Show all {n} images',
     'galerie.vergroessern': 'Enlarge',
     'galerie.bildvon': 'Enlarge image {n} of {m}',
     'galerie.grossansicht': 'Large view',
@@ -249,7 +230,6 @@ export const ui = {
     'spiel.maushinweis2': 'you get it back.',
     'spiel.zumprojekt': '← Back to the project',
 
-    'prototyp.kicker': 'Try it out',
     'prototyp.inlakech':
       'A machine for two strangers: only when both press at the same time does it go on — ' +
       'best played by two people at one keyboard or phone. In the installation a camera and a ' +
@@ -317,12 +297,6 @@ export const ui = {
     'karte.ansehen': 'Shiko',
     'karte.oeffnen': 'Hap',
     'karte.spielen': 'Luaj',
-    'karte.rolle': 'Roli',
-    'karte.schritt': 'hap',
-    'karte.schritte': 'hapa',
-    'karte.bilder': 'fotografi',
-    'karte.video': 'video',
-    'karte.videos': 'video',
     'karte.projekt': 'projekt',
     'karte.projekte': 'projekte',
 
@@ -331,9 +305,6 @@ export const ui = {
     'fakten.mitwirkende': 'Bashkëpunëtorët',
     'fakten.werkzeuge': 'Mjetet',
 
-    'projekt.ablauf': 'Si lindi ky projekt',
-    'projekt.aufbau': 'Struktura e projektit',
-    'projekt.schrittvon': 'Hapi {n} nga {m}',
     'projekt.weiteres': 'Material tjetër',
     'projekt.nichtgefunden': 'Projekti nuk u gjet',
     'projekt.zurstartseite': 'Te faqja kryesore',
@@ -343,7 +314,7 @@ export const ui = {
     'projekt.vorheriges': '← Projekti i mëparshëm',
     'projekt.naechstes': 'Projekti tjetër →',
 
-    'galerie.alle': 'Shfaq të {n} skedarët',
+    'galerie.alle': 'Shfaq të {n} fotografitë',
     'galerie.vergroessern': 'Zmadho',
     'galerie.bildvon': 'Zmadho fotografinë {n} nga {m}',
     'galerie.grossansicht': 'Pamje e madhe',
@@ -378,7 +349,6 @@ export const ui = {
     'spiel.maushinweis2': 'e merr sërish.',
     'spiel.zumprojekt': '← Kthehu te projekti',
 
-    'prototyp.kicker': 'Për ta provuar',
     'prototyp.inlakech':
       'Një automat për dy të panjohur: vetëm kur shtypin të dy njëkohësisht vazhdon — më mirë ' +
       'dy veta në një tastierë ose në një telefon. Në instalim në fund ndizen kamera dhe ' +

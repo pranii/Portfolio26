@@ -1024,19 +1024,6 @@ html.is-dark .home__call {
   text-wrap: pretty;
 }
 
-.intro__count {
-  justify-self: start;
-  margin: 0;
-  padding: 0 var(--s-2);
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-shadow: var(--glow);
-}
-
 /* Projekte als Menue: eine Spalte, die von oben nach unten laeuft und an
    den Karten einrastet — wie die Liste im Nokia-Menue. Rechts daneben die
    gepunktete Schiene mit dem Schieber. */
@@ -1287,13 +1274,6 @@ html.is-dark .home__call {
   line-height: 1.2;
 }
 
-.card__label {
-  margin-right: var(--s-1);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
 .card__tags {
   display: flex;
   flex-wrap: wrap;
@@ -1328,16 +1308,6 @@ html.is-dark .home__call {
   color: var(--accent-ink);
   text-shadow: var(--glow);
   border-color: var(--accent);
-}
-
-.card__meta {
-  font-family: var(--font-mono);
-  font-size: var(--t--2);
-  letter-spacing: 0.06em;
-  color: var(--ink-dim);
-}
-.card:hover .card__meta {
-  color: inherit;
 }
 
 .card__go {
@@ -1625,46 +1595,6 @@ html.is-dark .home__call {
   padding: var(--s-7) var(--s-6);
 }
 
-/* Kurzer Ablauf wie ein Menue: nummerierte Zeilen */
-.ablauf {
-  margin-top: var(--s-8);
-  display: grid;
-  gap: var(--s-4);
-}
-
-.ablauf__label {
-  margin: 0;
-}
-
-.ablauf__list {
-  margin: 0;
-  padding: var(--s-4) 0 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  gap: var(--s-2) var(--s-6);
-  border-top: 1px dashed var(--rule);
-}
-
-.ablauf__list li {
-  display: flex;
-  align-items: baseline;
-  gap: var(--s-3);
-  line-height: 1.2;
-}
-
-.ablauf__num {
-  flex: none;
-  min-width: 1.75rem;
-  padding: 0 var(--s-1);
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-shadow: var(--glow);
-}
-
 /* Schritte — der grosse Abstand zwischen ihnen ist die Gliederung */
 .steps {
   padding-block: var(--s-9) 0;
@@ -1680,11 +1610,6 @@ html.is-dark .home__call {
 .step__head {
   display: grid;
   gap: var(--s-2);
-}
-
-.step__num {
-  margin: 0;
-  color: var(--ink-dim);
 }
 
 .step__title {
@@ -2181,15 +2106,6 @@ kbd {
   gap: var(--s-3);
   padding-block: var(--s-6);
   scroll-margin-top: var(--s-6);
-}
-
-.prototyp__kicker {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: var(--t--1);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
 }
 
 .prototyp .window {
