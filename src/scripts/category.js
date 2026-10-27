@@ -12,7 +12,7 @@ import { initScroll, initProgressBar, gsap, prefersReducedMotion } from './lib/s
 import { revealFade, revealOnScroll } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
-import { renderCards, renderVorgehen, renderSoftware, countMedia } from './lib/render.js';
+import { renderCards, renderSoftware, countMedia } from './lib/render.js';
 import { initCarousel } from './lib/carousel.js';
 import { LOADERS } from './lib/bereiche.js';
 import {
@@ -54,7 +54,6 @@ async function main() {
     if (html) slot.innerHTML = html;
     else slot.closest('section').remove();
   };
-  fuelle(document.querySelector('[data-slot="vorgehen"]'), renderVorgehen(category.vorgehen));
   fuelle(
     document.querySelector('[data-slot="software"]'),
     renderSoftware(category.software, projects),

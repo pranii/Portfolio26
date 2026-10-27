@@ -287,7 +287,9 @@ function platzhalter(datei, poster) {
  */
 function embedBlock(embed, titel) {
   if (embed === undefined) return '';
-  const adressen = (Array.isArray(embed) ? embed : [embed]).filter(Boolean);
+  const adressen = (Array.isArray(embed) ? embed : [embed]).filter(
+    (eintrag) => eintrag && (typeof eintrag === 'string' || eintrag.url),
+  );
   if (adressen.length === 0) return embedPlatzhalter();
 
   // Hochformatige Videos (Shorts, Reels) stehen nebeneinander statt
@@ -348,8 +350,10 @@ function einbettung(url) {
 
   const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/);
   if (vimeo) {
-    const schluessel = vimeo[2] ? `?h=${vimeo[2]}` : '';
-    return { src: `https://player.vimeo.com/video/${vimeo[1]}${schluessel}`, hoch: false };
+    const teile = [vimeo[2] ? `h=${vimeo[2]}` : null, 'title=0', 'byline=0', 'portrait=0']
+      .concat(stumm ? ['muted=1'] : [])
+      .filter(Boolean);
+    return { src: `https://player.vimeo.com/video/${vimeo[1]}?${teile.join('&')}`, hoch: false };
   }
 
   const insta = url.match(/instagram\.com\/(reel|p|tv)\/([\w-]+)/);
@@ -507,13 +511,7 @@ export function renderProjectPage(project, categoryTitle) {
              <span class="play__note">${esc(project.extern.note ?? '')}</span></p>`
           : ''
       }
-      ${
-        cover
-          ? `<figure class="project-head__cover project-head__cover--${passung(cover)}">
-               ${imageTag(cover, '100vw', { lazy: false })}
-             </figure>`
-          : ''
-      }
+      ${project.kopfvideo ? embedBlock(project.kopfvideo, project.title) : ''}
       <nav class="ablauf" aria-label="${esc(t('projekt.aufbau'))}">
         <p class="ablauf__label">${esc(t('projekt.ablauf'))}</p>
         <ol class="ablauf__list">${ablauf}</ol>

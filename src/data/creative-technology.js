@@ -355,6 +355,8 @@ export const projects = [
     tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
     tags: ['Installation', 'Game', 'Partizipation', 'Raspberry Pi', 'Public Space'],
     prototyp: { art: 'in-lakech', titel: 'Das Duell im Browser', label: 'Prototyp spielen' },
+    // Der Automat in Benutzung — ohne Ton, der Ton kommt aus dem Prototypen.
+    kopfvideo: { url: 'https://youtube.com/shorts/W-grDBfjafc', stumm: true },
     pull: 'Ich werde an dir zu mir.',
     chapters: [
       {
@@ -418,6 +420,14 @@ export const projects = [
         layout: 'grid',
       },
       {
+        title: 'Der Automat in Benutzung',
+        text:
+          'Zwei Fremde vor dem Automaten, beide Hände auf den Knöpfen. Genau dieser Moment ' +
+          'ist der Punkt der ganzen Arbeit: Es geht nicht weiter, solange einer allein drückt.',
+        files: ['in-benutzung'],
+        layout: 'stack',
+      },
+      {
         title: 'In Lak’ech — Begegnungen',
         text:
           'Das Ergebnis: jede gelungene Begegnung wird fotografiert und auf einem ' +
@@ -449,7 +459,8 @@ export const projects = [
     tools: ['TouchDesigner', 'Photoshop', 'CRT-Monitore'],
     tags: ['Installation', 'Interaktionsdesign', 'TouchDesigner', 'Liminalitaet'],
     pull: 'Was bleibt, wenn der Schein trügt?',
-
+    // Video statt Titelbild oben auf der Seite.
+    kopfvideo: 'https://youtu.be/RwLj7i3BUq4',
     chapters: [
       {
         title: 'Brainstorm',

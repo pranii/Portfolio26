@@ -2913,6 +2913,13 @@
           "thumb": "/media/uni/in-lakech/hand-02-thumb.webp",
           "width": 746,
           "height": 466
+        },
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/in-benutzung.webp",
+          "thumb": "/media/uni/in-lakech/in-benutzung-thumb.webp",
+          "width": 1600,
+          "height": 1200
         }
       ],
       "videos": [],
