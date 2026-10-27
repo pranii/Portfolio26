@@ -741,53 +741,28 @@ body[data-page='index'] {
   }
 }
 
-/* Negativ: Solange das Menue offen ist, steht die ganze Seite im
-   Gehaeuse-Dunkel (.is-dark auf <html> tauscht die Tokens). Der kurze
-   Flacker beim Umschalten ist das Licht, das umspringt. */
-html.is-dark body {
-  background:
-    radial-gradient(120% 90% at 50% 35%, var(--bezel-hi) 0%, var(--bezel) 70%) fixed,
-    var(--bezel);
-  animation: umschalten 0.24s steps(3);
-}
-
-/* Das Menue hat keine eigene Flaeche — der Startbildschirm darunter
-   verschwindet deshalb, solange es offen ist. Empfang und Akku bleiben. */
-html.is-dark .home__center,
-html.is-dark .home__call {
-  visibility: hidden;
-}
-
-@keyframes umschalten {
-  0% {
-    filter: invert(1);
-  }
-  50% {
-    filter: brightness(2);
-  }
-}
-
-/* Das Menuefenster. Ohne Rahmen und eigene Flaeche — das Menue steht
-   direkt auf der dunklen Seite. Ohne Innenabstand, damit ein Klick auf
-   das <dialog> selbst eindeutig "daneben" heisst (siehe main.js). */
+/* Das Menuefenster — ein Display im Gehaeuse: Statuszeile oben, Raster
+   in der Mitte, zwei Softkeys unten. Der Rahmen fasst alles zu einer
+   Flaeche zusammen, statt die Eintraege frei im Raum stehen zu lassen.
+   (Gestaltgesetz der gemeinsamen Region.) */
 .menu-window {
-  width: min(60rem, 100vw - 2 * var(--gutter));
-  height: min(36rem, 100svh - 2 * var(--gutter));
+  width: min(52rem, 100vw - 2 * var(--gutter));
   max-width: none;
   max-height: none;
   margin: auto;
-  padding: 0;
+  padding: var(--s-3);
   overflow: hidden;
   color: var(--ink);
-  background: transparent;
+  background: var(--bezel);
   border: 0;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.5);
 }
 .menu-window[open] {
   display: grid;
   animation: fenster-auf 0.24s steps(4);
 }
 .menu-window::backdrop {
-  background: transparent;
+  background: color-mix(in oklab, var(--bezel) 72%, transparent);
 }
 
 /* Geht auf wie ein Roehrenbildschirm: erst eine Linie, dann die Flaeche. */
@@ -800,30 +775,56 @@ html.is-dark .home__call {
   }
 }
 
-.menu-window__close {
-  position: absolute;
-  top: var(--s-3);
-  right: var(--s-3);
-  z-index: 1;
+/* Das Menue im Fenster: oben die Statuszeile, in der Mitte das Display,
+   unten die beiden Softkeys — der Aufbau eines Telefonbildschirms. */
+.phone {
   display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  font-size: var(--t-1);
-  transition:
-    background-color 0.12s steps(2),
-    color 0.12s steps(2);
-}
-.menu-window__close:hover {
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-shadow: none;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--s-2);
+  height: 100%;
 }
 
-/* Das Menue im Fenster: links und rechts die Pfeile, dazwischen ein
-   Eintrag — Symbol, Name, Unterzeile. */
-.phone {
-  height: 100%;
+/* Statuszeile: Empfang links, Menuename in der Mitte, Akku rechts. */
+.phone__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: 0 var(--s-2);
+  color: var(--lcd);
+}
+
+.phone__titel {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Die Softkeys sitzen unter dem Display, am Rand des Fensters: zwei
+   Ziele, die man blind trifft. */
+.phone__softkeys {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: 0 var(--s-1);
+}
+
+.phone__softkey {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lcd);
+  padding: var(--s-2) var(--s-3);
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: color 0.12s steps(2);
+}
+
+.phone__softkey:hover {
+  color: var(--lcd-hi);
 }
 
 .phone__screen {
@@ -831,7 +832,14 @@ html.is-dark .home__call {
   height: 100%;
   display: grid;
   place-items: center;
-  padding: var(--s-6) calc(var(--s-5) + 3.5rem);
+  padding: var(--s-5);
+  background: radial-gradient(130% 120% at 50% 40%, var(--lcd-hi), var(--lcd) 70%, var(--lcd-lo));
+  border: 2px solid var(--pixel);
+}
+
+/* Schmal: oben und unten die Pfeile, dafuer mehr Luft. */
+.phone.is-einzeln .phone__screen {
+  padding: calc(var(--s-5) + 3.5rem) var(--s-5);
 }
 /* Das Menue bekommt beim Oeffnen den Fokus, damit die Pfeiltasten
    sofort funktionieren — eine Umrandung soll man dabei nicht sehen. */
@@ -851,37 +859,53 @@ html.is-dark .home__call {
 
 /* Breit: alle Eintraege als Symbole in Kaesten nebeneinander, wie die
    Programmsymbole auf einem Bildschirm. */
+/* Drei Spalten, quadratische Kacheln: ein ruhiges Raster, in dem jedes
+   Feld gleich viel wiegt. Innen sitzen Symbol und Name eng beieinander,
+   zwischen den Kacheln ist mehr Luft — so liest sich jede Kachel als
+   eine Einheit (Gestaltgesetz der Naehe). */
 .phone.is-raster .phone__list {
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-  gap: var(--s-5);
-  width: min(100%, 60rem);
-  padding: var(--s-5);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-4);
+  width: 100%;
+}
+
+.phone.is-raster .phone__item {
+  display: grid;
 }
 
 .phone.is-raster .phone__link {
-  gap: var(--s-3);
-  padding: var(--s-4) var(--s-2);
+  align-content: center;
+  gap: var(--s-2);
+  padding: var(--s-3);
+  aspect-ratio: 1;
   border: 2px solid var(--ink);
-  box-shadow: var(--lift) var(--lift) 0 var(--ink);
   transition:
-    transform 0.12s steps(2),
-    box-shadow 0.12s steps(2),
-    background-color 0.12s steps(2);
+    background-color 0.1s steps(2),
+    color 0.1s steps(2);
 }
 
+/* Auswahl heisst invertiert — so markiert das Telefon seit jeher, was
+   gerade dran ist. Das Symbol erbt die Farbe und bleibt lesbar. */
 .phone.is-raster .phone__link:hover,
 .phone.is-raster .phone__item.is-active .phone__link {
-  transform: translate(calc(var(--lift) * -1), calc(var(--lift) * -1));
-  box-shadow: calc(var(--lift) * 2) calc(var(--lift) * 2) 0 var(--ink);
+  background: var(--accent);
+  color: var(--accent-ink);
+  text-shadow: none;
 }
 
 .phone.is-raster .phone__icon {
-  width: clamp(3.5rem, 7vw, 5rem);
+  width: clamp(2.75rem, 6vw, 4rem);
   margin-bottom: 0;
 }
 
+.phone.is-raster .phone__icon svg {
+  filter: none;
+}
+
 .phone.is-raster .phone__name {
-  font-size: var(--t-1);
+  font-size: var(--t-0);
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 /* Im Raster steht nur, wie der Eintrag heisst — der Satz darunter wuerde

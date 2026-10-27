@@ -44,9 +44,19 @@ export function initPhoneMenu(root) {
   root.querySelector('[data-menu="prev"]').addEventListener('click', () => zeige(aktuell - 1));
   root.querySelector('[data-menu="next"]').addEventListener('click', () => zeige(aktuell + 1));
 
+  /** Wie viele Kacheln in einer Zeile stehen — im Einzelmodus immer eine. */
+  function spalten() {
+    if (einzeln) return 1;
+    const stil = getComputedStyle(list).gridTemplateColumns;
+    return Math.max(1, stil.split(' ').filter(Boolean).length);
+  }
+
   screen.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') zeige(aktuell - 1);
-    else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') zeige(aktuell + 1);
+    const zeile = spalten();
+    if (event.key === 'ArrowLeft') zeige(aktuell - 1);
+    else if (event.key === 'ArrowRight') zeige(aktuell + 1);
+    else if (event.key === 'ArrowUp') zeige(aktuell - zeile);
+    else if (event.key === 'ArrowDown') zeige(aktuell + zeile);
     else if (event.key === 'Enter' && event.target === screen)
       items[aktuell].querySelector('.phone__link').click();
     else return;

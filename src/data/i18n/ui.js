@@ -87,6 +87,8 @@ export const ui = {
     'liste.vorheriges': 'Vorheriges Projekt',
     'liste.naechstes': 'Nächstes Projekt',
 
+    'menu.waehlen': 'Wählen',
+    'menu.zurueck': 'Zurück',
     'menu.titel': 'Menü',
     'menu.oeffnen': 'Menü öffnen',
     'menu.schliessen': 'Menü schließen',
@@ -207,6 +209,8 @@ export const ui = {
     'liste.vorheriges': 'Previous project',
     'liste.naechstes': 'Next project',
 
+    'menu.waehlen': 'Select',
+    'menu.zurueck': 'Back',
     'menu.titel': 'Menu',
     'menu.oeffnen': 'Open menu',
     'menu.schliessen': 'Close menu',
@@ -326,6 +330,8 @@ export const ui = {
     'liste.vorheriges': 'Projekti i mëparshëm',
     'liste.naechstes': 'Projekti tjetër',
 
+    'menu.waehlen': 'Zgjidh',
+    'menu.zurueck': 'Prapa',
     'menu.titel': 'Menyja',
     'menu.oeffnen': 'Hap menynë',
     'menu.schliessen': 'Mbyll menynë',

@@ -48,15 +48,15 @@
 
     <!-- Menue im Fenster. Beim Oeffnen wird die ganze Seite negativ. -->
     <dialog class="menu-window" data-slot="menu-window" aria-label="Menü">
-      <button
-        class="menu-window__close"
-        type="button"
-        data-menu="close"
-        data-t-label="menu.schliessen"
-      >
-        ✕
-      </button>
       <section class="phone">
+        <!-- Oben die Statuszeile, darunter der Name des Menues: derselbe
+             Aufbau wie auf dem Telefon selbst. -->
+        <div class="phone__status" aria-hidden="true">
+          <span class="home__signal"></span>
+          <span class="phone__titel" data-t="menu.titel">Menü</span>
+          <span class="home__battery"></span>
+        </div>
+
         <div class="phone__screen" tabindex="0">
           <ul class="phone__list" data-slot="menu" aria-live="polite"></ul>
           <button
@@ -90,6 +90,17 @@
               <rect x="2" y="5" width="2" height="1" />
               <rect x="3" y="6" width="1" height="1" />
             </svg>
+          </button>
+        </div>
+
+        <!-- Die beiden Softkeys, wie sie unter dem Display eines 3310
+             sitzen: links auswaehlen, rechts zurueck. -->
+        <div class="phone__softkeys">
+          <button class="phone__softkey" type="button" data-menu="select" data-t="menu.waehlen">
+            Wählen
+          </button>
+          <button class="phone__softkey" type="button" data-menu="close" data-t="menu.zurueck">
+            Zurück
           </button>
         </div>
       </section>

@@ -1,10 +1,5 @@
 /**
- * Einstiegspunkt fuer die Startseite.
- *
- * Ein einziger Bildschirm ohne Scrollen: Name, Begriffe, darunter ein
- * Telefon. Ein Klick aufs Telefon schaltet die Seite ins Negativ und
- * oeffnet das Menue in einem Fenster — ein Eintrag zur Zeit, wie beim
- * Nokia 3310.
+ * Das Menue als Fenster ueber der Startseite.
  */
 
 import '../styles/main.css';
@@ -184,17 +179,18 @@ function initMenuWindow(call, fenster) {
   const screen = fenster.querySelector('.phone__screen');
 
   call.addEventListener('click', () => {
-    document.documentElement.classList.add('is-dark');
     fenster.showModal();
     // Fokus fuer die Pfeiltasten, aber ohne sichtbare Markierung.
     screen.focus({ focusVisible: false });
   });
 
-  fenster.addEventListener('close', () => {
-    document.documentElement.classList.remove('is-dark');
-  });
-
   fenster.querySelector('[data-menu="close"]').addEventListener('click', () => fenster.close());
+
+  // Der linke Softkey oeffnet, was gerade ausgewaehlt ist — wie die
+  // Auswahltaste unter dem Display.
+  fenster.querySelector('[data-menu="select"]').addEventListener('click', () => {
+    fenster.querySelector('.phone__item.is-active .phone__link')?.click();
+  });
 
   // Das Fenster selbst hat keinen Innenabstand — ein Klick, der direkt auf
   // dem <dialog> landet, war also daneben.
