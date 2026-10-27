@@ -172,6 +172,8 @@ export const projects = [
       // Geplante Instagram-Kampagne — steht als Zukunftsausblick am Ende.
       { dir: 'UNI/RRETH', include: /^RRETH_KAMPAGNE\.pdf$/i, pages: 4, keepFile: true },
       { dir: 'UNI/RRETH/Symbolism', include: /\.jpe?g$/i, prefix: 'symbolik' },
+      // Vision Board von 2023 — die erste Praesentation der Bachelorarbeit.
+      { dir: 'UNI/RRETH', include: /^VISION BOARD\.pdf$/i, pages: 32, keepFile: true },
       { dir: 'UNI/RRETH', include: /^PITCH VERSION 1\.pdf$/i, pages: 14, keepFile: true },
       { dir: 'UNI/RRETH', include: /^wheel of shame\.pdf$/i, pages: 6, keepFile: true },
       // Dokumentation-2 auf Wunsch raus — die Reflexion steht jetzt nur noch in Worten da.

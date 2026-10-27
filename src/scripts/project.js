@@ -14,6 +14,8 @@ import { initReadout } from './lib/readout.js';
 import { initShowMore } from './lib/showmore.js';
 import { initVideoSlots } from './lib/videoslot.js';
 import { renderProjectPage } from './lib/render.js';
+import { prototypHtml, startPrototyp } from './lib/prototyp.js';
+import { initBuecher } from './lib/buecher.js';
 import { LOADERS } from './lib/bereiche.js';
 
 function parseId() {
@@ -69,10 +71,14 @@ async function main() {
   crumb.href = meta?.href ?? `${category}.html`;
   document.querySelector('[data-slot="crumb-project"]').textContent = project.title;
 
-  document.querySelector('[data-slot="projekt"]').innerHTML = renderProjectPage(
-    project,
-    data.category.title,
-  );
+  const wurzel = document.querySelector('[data-slot="projekt"]');
+  wurzel.innerHTML = renderProjectPage(project, data.category.title);
+
+  // Der Prototyp sitzt zwischen Projektkopf und Kapiteln — auf derselben
+  // Seite, nicht auf einer eigenen.
+  if (project.prototyp) {
+    wurzel.querySelector('.project-head').insertAdjacentHTML('afterend', prototypHtml(project));
+  }
 
   // Voriges und naechstes Projekt desselben Bereichs.
   const setPager = (slotName, target, richtung) => {
@@ -98,6 +104,9 @@ async function main() {
   initShowMore();
   initVideoSlots();
   initLightbox();
+
+  await initBuecher(wurzel, project.slug);
+  if (project.prototyp) await startPrototyp(project, wurzel);
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
 }

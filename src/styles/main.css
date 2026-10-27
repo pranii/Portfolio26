@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tiny5&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tiny5&family=VT323&display=swap');
 
 /* ═══════════════════════════════════════════════════════════════════
    PORTFOLIO — Stylesheet
@@ -95,6 +95,12 @@
   /* Satzbreiten */
   --measure: 60ch;
   --measure-short: 36ch;
+  /* Fliesstext laeuft ueber die ganze Seitenbreite und teilt sich dabei
+     in bis zu vier Spalten. --column-min ist die Breite, die eine Spalte
+     mindestens braucht: Es werden so viele Spalten, wie nebeneinander
+     passen — vier auf einem breiten Monitor, drei auf einem Laptop, zwei
+     auf dem Tablet, eine auf dem Handy. Nach aussen begrenzt nur --shell. */
+  --column-min: 30ch;
 
   /* Raster */
   /* Breit genug, dass auf grossen Bildschirmen kein leerer Streifen
@@ -299,6 +305,18 @@ html.lenis body {
   margin: 0;
   max-width: var(--measure);
   color: var(--ink-soft);
+}
+
+/* Fliesstext in Spalten.
+   Es gibt keinen Umbruchpunkt dafuer: Die Spaltenbreite entscheidet. Der
+   Browser macht so viele Spalten, wie mit --column-min nebeneinander
+   passen, hoechstens aber vier — auf dem Handy also eine. Verteilt wird
+   der Text gleichmaessig auf alle Spalten. */
+.step__text,
+.project-head__text,
+.prototyp__fuss .section-hint {
+  columns: var(--column-min) 4;
+  column-gap: var(--s-6);
 }
 
 /* ── 5 Kopf und Pfad ──────────────────────────────────────────────── */
@@ -1344,7 +1362,7 @@ html.is-dark .home__call {
 /* Text links breit, Eckdaten rechts schmal. */
 .project-head__grid {
   display: grid;
-  grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
   gap: var(--s-6) var(--s-8);
   align-items: start;
   margin-top: var(--s-5);
@@ -1354,7 +1372,6 @@ html.is-dark .home__call {
 
 .project-head__text {
   margin: 0;
-  max-width: var(--measure);
   color: var(--ink);
   text-wrap: pretty;
 }
@@ -1537,7 +1554,6 @@ html.is-dark .home__call {
 .step__head {
   display: grid;
   gap: var(--s-2);
-  max-width: var(--measure);
 }
 
 .step__num {
@@ -1557,7 +1573,6 @@ html.is-dark .home__call {
 .step__text {
   margin: 0;
   color: var(--ink-soft);
-  max-width: var(--measure);
   text-wrap: pretty;
 }
 
@@ -1618,6 +1633,22 @@ html.is-dark .home__call {
   height: 100%;
   border: 0;
   display: block;
+}
+
+/* Hochformat: Shorts und Reels stehen nebeneinander statt jeweils ueber
+   die ganze Breite — drei Handyvideos fuellen sonst eine halbe Seite. */
+.embeds-hoch {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-4);
+}
+
+.embed--hoch {
+  aspect-ratio: 9 / 16;
+  width: min(100%, 20rem);
+  margin: 0;
 }
 
 .figure.is-hidden {
@@ -2039,6 +2070,637 @@ kbd {
   border-bottom-width: 3px;
   padding: 0 0.45rem;
   white-space: nowrap;
+}
+
+/* ── 10a Prototypen in der Projektseite ───────────────────────────── */
+
+/* Jedes Projekt mit `prototyp` zeigt die Arbeit direkt zwischen Kopf und
+   Kapiteln — keine eigene Seite, kein Wegklicken. */
+.prototyp {
+  display: grid;
+  gap: var(--s-3);
+  padding-block: var(--s-6);
+  scroll-margin-top: var(--s-6);
+}
+
+.prototyp__kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.prototyp .window {
+  margin-block: var(--s-3) 0;
+}
+
+.prototyp__fuss {
+  display: grid;
+  gap: var(--s-4);
+  padding-top: var(--s-4);
+}
+
+/* ── 10b ZodiZine ─────────────────────────────────────────────────── */
+
+/* Der Automat hat seine eigene Welt: cremefarbenes Papier, dunkelbraune
+   Pixel, Press Start 2P — so sah der Touchscreen am Raspberry Pi aus.
+   Deshalb bringt .zodi eigene Tokens mit, statt die des Displays zu
+   erben. Alle Groessen darin stehen in em und haengen an einer einzigen
+   Schriftgroesse, die mit der Fensterbreite waechst: Der Kiosk soll wie
+   ein Bildschirm mit fester Aufloesung wirken, egal wie gross er ist. */
+
+.window__body--kiosk {
+  aspect-ratio: 16 / 10;
+  container-type: inline-size;
+}
+
+.zodi {
+  --kiosk-papier: #e9e0cb;
+  --kiosk-tinte: #2e2419;
+  --kiosk-wahl: #d2c5a4;
+  --kiosk-hell: #f3ecda;
+
+  font-family: 'Press Start 2P', var(--font-display), monospace;
+  font-size: clamp(0.5rem, 1.5cqw, 0.9rem);
+  line-height: 1.7;
+  background: var(--kiosk-papier);
+  color: var(--kiosk-tinte);
+  text-shadow: none;
+  overflow: hidden;
+  user-select: none;
+}
+
+.zodi:focus-visible {
+  outline: 0.25em solid var(--kiosk-tinte);
+  outline-offset: -0.5em;
+}
+
+.zodi__screen {
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 2em;
+  padding: 2.5em;
+  text-align: center;
+}
+
+.zodi__marke {
+  margin: 0;
+  font-size: 3em;
+  letter-spacing: 0.1em;
+}
+
+.zodi__claim,
+.zodi__hinweis {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1.5em;
+  line-height: 1.2;
+  color: color-mix(in oklab, var(--kiosk-tinte) 65%, var(--kiosk-papier));
+}
+
+.zodi__titel {
+  margin: 0;
+  font-size: 1.7em;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+}
+
+/* Die Knoepfe des Automaten: dunkler Balken, helle Schrift. */
+.zodi__start,
+.zodi__ok,
+.zodi__knopf,
+.zodi__pfeil {
+  font: inherit;
+  border: 0;
+  background: var(--kiosk-tinte);
+  color: var(--kiosk-hell);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.zodi__start {
+  padding: 1.2em 2.4em;
+  letter-spacing: 0.2em;
+  animation: zodi-blinken 1.6s steps(1, end) infinite;
+}
+
+.zodi__ok {
+  width: 100%;
+  padding: 1.1em;
+  letter-spacing: 0.3em;
+}
+
+.zodi__start:hover,
+.zodi__ok:hover,
+.zodi__knopf:hover,
+.zodi__pfeil:hover {
+  background: color-mix(in oklab, var(--kiosk-tinte) 80%, var(--kiosk-papier));
+}
+
+@keyframes zodi-blinken {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0.45;
+  }
+}
+
+/* Tag, Monat, Jahr nebeneinander — drei Walzen wie an einem Automaten. */
+.zodi__waehler {
+  width: 100%;
+  max-width: 54em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6em;
+}
+
+.zodi__spalte {
+  display: grid;
+  gap: 0.6em;
+}
+
+.zodi__kopf {
+  margin: 0;
+  font-size: 0.9em;
+  letter-spacing: 0.2em;
+}
+
+.zodi__pfeil {
+  padding: 0.5em;
+  font-size: 0.9em;
+}
+
+/* Die aktive Spalte zeigt ihren Pfeil hell — wie der Cursor im Original. */
+.zodi__spalte.is-aktiv .zodi__pfeil {
+  color: #d9a7a7;
+}
+
+.zodi__rollen {
+  display: grid;
+  border: 0.15em solid var(--kiosk-tinte);
+}
+
+.zodi__wert {
+  font: inherit;
+  border: 0;
+  border-bottom: 0.15em solid var(--kiosk-tinte);
+  background: none;
+  color: inherit;
+  padding: 0.7em 0;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.zodi__wert--vor {
+  color: color-mix(in oklab, var(--kiosk-tinte) 40%, var(--kiosk-papier));
+}
+
+.zodi__wert--jetzt {
+  background: var(--kiosk-wahl);
+  padding: 0.7em 0;
+  border-bottom: 0.15em solid var(--kiosk-tinte);
+}
+
+.zodi__wert--nach {
+  border-bottom: 0;
+}
+
+/* Der Druckvorgang: dieselben Schritte wie im Flask-Backend, nur sichtbar. */
+.zodi__datum {
+  margin: 0;
+  font-size: 1.6em;
+  letter-spacing: 0.15em;
+}
+
+.zodi__log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5em;
+  font-family: var(--font-mono);
+  font-size: 1.3em;
+  line-height: 1.2;
+  text-align: left;
+  min-height: 7em;
+}
+
+.zodi__log li {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.zodi__balken {
+  width: min(28em, 100%);
+  height: 1em;
+  border: 0.15em solid var(--kiosk-tinte);
+}
+
+.zodi__balken-fuell {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--kiosk-tinte);
+  transition: width 0.3s steps(8);
+}
+
+/* Das fertige Heft, Seite fuer Seite durchblaetterbar.
+   Zwei Zeilen statt zentriertem Inhalt: Nur so hat das Blatt eine feste
+   Hoehe, an der seine Seitenproportion haengen kann. */
+.zodi__screen--zine {
+  align-content: stretch;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: 1.2em;
+  padding: 1.5em;
+}
+
+.zodi__blatt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  min-height: 0;
+}
+
+.zodi__blaettern {
+  font: inherit;
+  border: 0;
+  background: none;
+  color: var(--kiosk-tinte);
+  font-size: 1.4em;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.zodi__blaettern:hover {
+  color: color-mix(in oklab, var(--kiosk-tinte) 55%, var(--kiosk-papier));
+}
+
+.zodi__leiste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+.zodi__zaehler {
+  font-size: 0.9em;
+  letter-spacing: 0.15em;
+}
+
+.zodi__knopf {
+  padding: 0.8em 1.4em;
+  font-size: 0.9em;
+  letter-spacing: 0.15em;
+}
+
+/* Eine Seite des Hefts — ein Achtel A4, also stehendes A7. Die Seiten
+   sind Caras Zeichnungen mit durchsichtigem Grund; das Papier darunter
+   kommt von hier, im Fenster cremefarben, im Druck weiss. */
+.zine-seite {
+  aspect-ratio: 1 / 1.414;
+  margin: 0;
+  background: var(--zine-papier, #efe7d3);
+  overflow: hidden;
+}
+
+.zine-seite__bild {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.zodi__blatt .zine-seite {
+  height: 100%;
+  max-height: 30em;
+  box-shadow: 0.3em 0.3em 0 color-mix(in oklab, var(--kiosk-tinte) 25%, transparent);
+}
+
+/* Auf den Seiten steht Caras englische Fassung — darunter im Fenster die
+   deutsche Entsprechung, damit beides zusammenfindet. */
+.zodi__unterschrift {
+  margin: 0;
+  display: grid;
+  gap: 0.3em;
+  font-size: 0.9em;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+.zodi__unterzeile {
+  font-family: var(--font-mono);
+  font-size: 1.4em;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  color: color-mix(in oklab, var(--kiosk-tinte) 65%, var(--kiosk-papier));
+}
+
+/* Der Druckbogen liegt immer in der Seite, ist aber nur im Druck zu sehen.
+   Aufteilung wie in ZodiZine_FoldingGuide.pdf: ein Blatt A4 hochkant,
+   zwei Spalten zu vier Feldern, die Seiten quer gelegt — links gegen den
+   Uhrzeigersinn, rechts mit ihm. So passt der Ausdruck zur Anleitung. */
+.zine-bogen {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm;
+  }
+
+  body {
+    visibility: hidden;
+    background: #fff;
+  }
+
+  .zine-bogen,
+  .zine-bogen * {
+    visibility: visible;
+  }
+
+  .zine-bogen {
+    /* A4 hochkant (210 x 297 mm) abzueglich 6 mm Rand, geteilt durch 2 x 4. */
+    --feld-breite: 99mm;
+    --feld-hoehe: 71.25mm;
+
+    position: absolute;
+    inset: 0 auto auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, var(--feld-breite));
+    grid-auto-rows: var(--feld-hoehe);
+  }
+
+  .zine-bogen__feld {
+    position: relative;
+    overflow: hidden;
+    break-inside: avoid;
+  }
+
+  /* Das Bild steht hochkant und wird ins quer liegende Feld gedreht,
+     deshalb sind Breite und Hoehe hier vertauscht. */
+  .zine-bogen__feld img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--feld-hoehe);
+    height: var(--feld-breite);
+    object-fit: contain;
+  }
+
+  .zine-bogen__feld--links img {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  .zine-bogen__feld--rechts img {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+/* Auf schmalen Bildschirmen passt kein 16:10-Kiosk mehr — dann darf das
+   Fenster hoeher werden, damit die Schrift lesbar bleibt. */
+@media (max-width: 48rem) {
+  .window__body--kiosk {
+    aspect-ratio: auto;
+    min-height: 32rem;
+  }
+
+  .zodi {
+    font-size: clamp(0.5rem, 2.6cqw, 0.85rem);
+  }
+
+  .zodi__blatt .zine-seite {
+    max-height: 26em;
+  }
+}
+
+/* ── 10c Magazin zum Durchblaettern ───────────────────────────────── */
+
+/* Rreth 02 ist ein Magazin im Querformat A5: dreissig einzelne Seiten,
+   aufgeschlagen liegen zwei davon nebeneinander. Vorder- und Rueckseite
+   liegen allein — dann rueckt das Heft in die Mitte, statt halb leer zu
+   stehen.
+
+   Umgeblaettert wird in 3D: Das rechte Blatt dreht sich um den Bund, auf
+   seiner Rueckseite steht die naechste linke Seite. Auf schmalen
+   Bildschirmen liegt nur eine Seite da; das Blatt dreht sich dann ueber
+   die ganze Breite und ist ab neunzig Grad weg. */
+
+.window__body--buch {
+  aspect-ratio: 2.9 / 1;
+  padding: var(--s-4);
+}
+
+.buch {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  perspective: 3000px;
+}
+
+/* Zwei Querformat-Seiten nebeneinander. */
+.buch__paar {
+  position: relative;
+  display: flex;
+  height: 100%;
+  max-width: 100%;
+  /* Zwei Seiten nebeneinander. --blatt-ratio setzt das Skript aus den
+     Massen der ersten Seite; der Vorgabewert ist A4 quer. */
+  aspect-ratio: calc(var(--blatt-ratio, 1.4142) * 2);
+  transform-style: preserve-3d;
+  transition: transform 620ms cubic-bezier(0.35, 0, 0.2, 1);
+}
+
+/* Nur eine Seite da: das Heft rueckt um eine halbe Seite zur Mitte. */
+.buch__paar--nach-links {
+  transform: translateX(-25%);
+}
+
+.buch__paar--nach-rechts {
+  transform: translateX(25%);
+}
+
+/* Schmaler Bildschirm: eine Seite statt zwei. */
+.buch__paar--einzeln {
+  aspect-ratio: var(--blatt-ratio, 1.4142);
+  transform: none;
+}
+
+.buch__paar--einzeln .buch__seite--links {
+  display: none;
+}
+
+.buch__seite {
+  position: relative;
+  flex: 1 1 50%;
+  overflow: hidden;
+  background: #efe7d3;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+
+/* Wo keine Seite liegt, liegt auch kein Papier. */
+.buch__seite--leer {
+  background: none;
+  box-shadow: none;
+}
+
+.buch__bild {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Der Bund in der Mitte, nur wenn das Heft wirklich offen liegt. */
+.buch__bund {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.26) 45%,
+    rgba(0, 0, 0, 0.26) 55%,
+    transparent
+  );
+}
+
+.buch__bund[hidden] {
+  display: none;
+}
+
+/* Das drehende Blatt liegt ueber der rechten Seite — einzeln ueber der
+   einen, die da ist. */
+.buch__blatt {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.buch__paar--einzeln .buch__blatt {
+  left: 0;
+  width: 100%;
+}
+
+.buch__blatt[hidden] {
+  display: none;
+}
+
+.buch__flaeche {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #efe7d3;
+  backface-visibility: hidden;
+}
+
+.buch__flaeche--hinten {
+  transform: rotateY(180deg);
+}
+
+/* Ohne Rueckseite ist das Blatt ab neunzig Grad einfach weg. */
+.buch__blatt--ohne-rueckseite .buch__flaeche--hinten {
+  display: none;
+}
+
+/* Liegt ueber dem drehenden Blatt und ist in der Mitte der Bewegung am
+   staerksten — das gibt der Drehung Tiefe. */
+.buch__schatten {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 65%);
+}
+
+/* Ein Heft mitten im Kapitel — jedes PDF eines Projekts wird so gezeigt.
+   Die Breite kommt aus dem Seitenverhaeltnis, nach oben begrenzt die
+   Bildschirmhoehe: Ein Bericht im Hochformat soll nicht die ganze Seite
+   einnehmen. */
+.buch-slot {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-3);
+  margin-block: var(--s-2);
+}
+
+.buch-slot .buch {
+  height: auto;
+}
+
+.buch-slot .buch__paar {
+  width: 100%;
+  max-width: calc(min(68vh, 34rem) * var(--blatt-ratio, 1.4142));
+  height: auto;
+  aspect-ratio: var(--blatt-ratio, 1.4142);
+}
+
+.buch__leiste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-4);
+  padding-top: var(--s-3);
+}
+
+.buch__knopf {
+  font-family: var(--font-mono);
+  font-size: var(--t-0);
+  border: 2px solid var(--ink);
+  background: none;
+  color: var(--ink);
+  padding: 0.1em 0.9em;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.buch__knopf:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.buch__zaehler {
+  font-family: var(--font-mono);
+  color: var(--ink-dim);
+  min-width: 14ch;
+  text-align: center;
+}
+
+.buch__leer {
+  margin: 0;
+  color: var(--ink-dim);
+}
+
+/* Auf schmalen Bildschirmen zeigt das Fenster nur eine Seite — sonst
+   waere von zwei Querformat-Seiten nebeneinander nichts zu erkennen. */
+@media (max-width: 48rem) {
+  .window__body--buch {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 /* ── 11 Lightbox ──────────────────────────────────────────────────── */

@@ -13,6 +13,10 @@
  * aufbereitet von scripts/make-inlakech-figuren.mjs.
  *
  * Gezeichnet wird intern immer in 1280 x 720; CSS skaliert das Canvas.
+ *
+ * Zurueck kommt { druecke, pause }: `druecke('A' | 'B')` loest einen Knopf
+ * aus, `pause(true|false)` haelt die Schleife an, wenn das Fenster in der
+ * Projektseite nicht im Bild ist.
  */
 
 const SW = 1280;
@@ -517,6 +521,7 @@ export async function startInLakech(canvas, basis, status = () => {}) {
   let zustand = READY;
   let tZustand = performance.now() / 1000;
   let letzteAktivitaet = tZustand;
+  let pausiert = false;
   let idx = 0;
   let beideBereit = { A: false, B: false };
   let enthuellStart = 0;
@@ -669,6 +674,7 @@ export async function startInLakech(canvas, basis, status = () => {}) {
 
   // ----- Schleife -----
   function bild_(nowMs) {
+    if (pausiert) return;
     const now = nowMs / 1000;
     jetzt = now;
     const el = now - tZustand;
@@ -855,7 +861,23 @@ export async function startInLakech(canvas, basis, status = () => {}) {
     requestAnimationFrame(bild_);
   }
 
+  /**
+   * Haelt die Schleife an, solange das Fenster nicht im Bild ist — sonst
+   * liefe das Spiel die ganze Projektseite lang im Hintergrund weiter.
+   * Beim Fortsetzen faengt eine neue Runde an: Was waehrend der Pause
+   * passiert waere, hat ohnehin niemand gesehen.
+   */
+  function pause(an) {
+    if (an === pausiert) return;
+    pausiert = an;
+    if (an) return;
+    neueRunde();
+    letzteAktivitaet = performance.now() / 1000;
+    geh(READY);
+    requestAnimationFrame(bild_);
+  }
+
   geh(READY);
   requestAnimationFrame(bild_);
-  return druecke;
+  return { druecke, pause };
 }

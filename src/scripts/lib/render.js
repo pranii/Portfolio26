@@ -263,21 +263,11 @@ const WEITE_LAYOUTS = new Set(['stack', 'wide']);
  */
 function platzhalter(datei, poster) {
   const src = esc(asset(datei));
-  const pfad = esc(datei);
-  const name = esc(datei.split('/').pop());
   return `
     <div class="figure figure--wide slot" data-slot-video>
       <video controls playsinline preload="metadata"${poster ? ` poster="${esc(poster)}"` : ''}>
         <source src="${src}" type="video/mp4">
       </video>
-      <div class="slot__note" hidden>
-        <p class="slot__name">${name}</p>
-        <p class="slot__text">
-          Platz reserviert. Leg die Datei unter
-          <code>public${pfad.replace(/\/[^/]+$/, '/')}</code> ab, dann erscheint
-          sie hier von selbst.
-        </p>
-      </div>
     </div>`;
 }
 
@@ -287,18 +277,89 @@ function platzhalter(datei, poster) {
  * Sinnvoll, wenn die Datei zu gross fuer die eigene Seite waere: Das
  * Storyboard von Art of Peace liegt als 58-MB-Datei vor — eingebettet
  * kostet es die Besucher nichts, solange sie nicht auf Play druecken.
+ *
+ * `embed: ''` reserviert den Platz: Solange kein Link eingetragen ist,
+ * steht dort ein beschrifteter Rahmen. Fehlt das Feld ganz, erscheint
+ * gar nichts.
  */
-function embedBlock(url, titel) {
-  if (!url) return '';
-  return `
-    <div class="figure figure--wide embed">
-      <iframe
-        src="${esc(url)}"
-        title="${esc(titel)}"
-        loading="lazy"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>`;
+function embedBlock(embed, titel) {
+  if (embed === undefined) return '';
+  const adressen = (Array.isArray(embed) ? embed : [embed]).filter(Boolean);
+  if (adressen.length === 0) return embedPlatzhalter();
+
+  // Hochformatige Videos (Shorts, Reels) stehen nebeneinander statt
+  // untereinander — sonst fuellt ein einziges Handyvideo die halbe Seite.
+  const bloecke = [];
+  let hochformat = [];
+
+  const hochRaus = () => {
+    if (hochformat.length === 0) return;
+    bloecke.push(`<div class="embeds-hoch">${hochformat.join('')}</div>`);
+    hochformat = [];
+  };
+
+  adressen.forEach((adresse, i) => {
+    const quelle = einbettung(adresse);
+    const rahmen = `
+      <div class="figure embed${quelle.hoch ? ' embed--hoch' : ' figure--wide'}">
+        <iframe
+          src="${esc(quelle.src)}"
+          title="${esc(titel)}${adressen.length > 1 ? ` (${i + 1} von ${adressen.length})` : ''}"
+          loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>`;
+    if (quelle.hoch) hochformat.push(rahmen);
+    else {
+      hochRaus();
+      bloecke.push(rahmen);
+    }
+  });
+
+  hochRaus();
+  return bloecke.join('');
+}
+
+/**
+ * Macht aus einem geteilten Link die Adresse, die sich einbetten laesst —
+ * damit der Link aus der Adresszeile genuegt und nicht erst umgeschrieben
+ * werden muss. Erkannt werden YouTube (auch Shorts und youtu.be), Vimeo
+ * (auch die Links mit Freigabe-Schluessel) und Instagram. Alles andere
+ * bleibt, wie es ist.
+ *
+ * YouTube laeuft ueber youtube-nocookie: Das setzt keine Cookies, bevor
+ * jemand auf Play drueckt.
+ *
+ * `hoch` sagt, ob das Video im Hochformat ist.
+ */
+function einbettung(url) {
+  const yt = url.match(
+    /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?v=|embed\/|shorts\/|live\/))([\w-]{6,})/,
+  );
+  if (yt) {
+    return {
+      src: `https://www.youtube-nocookie.com/embed/${yt[1]}`,
+      hoch: url.includes('/shorts/'),
+    };
+  }
+
+  const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/);
+  if (vimeo) {
+    const schluessel = vimeo[2] ? `?h=${vimeo[2]}` : '';
+    return { src: `https://player.vimeo.com/video/${vimeo[1]}${schluessel}`, hoch: false };
+  }
+
+  const insta = url.match(/instagram\.com\/(reel|p|tv)\/([\w-]+)/);
+  if (insta) {
+    return { src: `https://www.instagram.com/${insta[1]}/${insta[2]}/embed`, hoch: true };
+  }
+
+  return { src: url, hoch: false };
+}
+
+/** Reservierter Platz fuer ein Video, das noch nicht eingebettet ist. */
+function embedPlatzhalter() {
+  return '<div class="figure figure--wide slot is-empty"></div>';
 }
 
 function renderStep(chapter, index, total, poster) {
@@ -311,10 +372,63 @@ function renderStep(chapter, index, total, poster) {
         <p class="step__text">${esc(chapter.text)}</p>
         ${downloadLinks(chapter.docs)}
       </div>
-      ${gallery(chapter.items, poster, weit)}
+      ${medienBloecke(chapter.items, poster, weit)}
       ${platzhalterBlock(chapter.platzhalter, poster)}
       ${embedBlock(chapter.embed, chapter.title)}
     </section>`;
+}
+
+/**
+ * Die Medien eines Kapitels, in der Reihenfolge, in der sie zugeordnet sind.
+ *
+ * Was aus einem PDF gerendert wurde, erkennt man an `fromPdf`. Mehrere
+ * Seiten desselben PDFs werden nicht als Bilderreihe gezeigt, sondern als
+ * Heft zum Durchblaettern — sonst stuenden dieselben Seiten zweimal da,
+ * einmal als Kacheln und einmal im Heft. Hier entsteht nur der Platz
+ * dafuer; gefuellt wird er von lib/buecher.js, sobald die Seite steht.
+ */
+function medienBloecke(items, poster, weit) {
+  const bloecke = [];
+  let bilder = [];
+
+  const bilderRaus = () => {
+    if (bilder.length === 0) return;
+    bloecke.push(gallery(bilder, poster, weit));
+    bilder = [];
+  };
+
+  for (let i = 0; i < items.length; i += 1) {
+    const pdf = items[i].fromPdf;
+    if (!pdf) {
+      bilder.push(items[i]);
+      continue;
+    }
+
+    // Alle direkt folgenden Seiten desselben PDFs einsammeln.
+    let ende = i;
+    while (ende + 1 < items.length && items[ende + 1].fromPdf === pdf) ende += 1;
+    const seiten = ende - i + 1;
+
+    if (seiten < 2) {
+      bilder.push(items[i]);
+    } else {
+      bilderRaus();
+      bloecke.push(buchBlock(items[i], pdf, seiten));
+    }
+    i = ende;
+  }
+
+  bilderRaus();
+  return bloecke.join('');
+}
+
+/** Der reservierte Platz fuer ein Heft; die Seiten traegt das Skript nach. */
+function buchBlock(erste, pdf, seiten) {
+  const ratio = erste.width && erste.height ? (erste.width / erste.height).toFixed(4) : '1.4142';
+  return `
+    <div class="buch-slot" data-buch="${esc(pdf)}" style="--blatt-ratio: ${ratio}">
+      <p class="buch__leer">${seiten} Seiten</p>
+    </div>`;
 }
 
 /** `platzhalter` darf eine einzelne Datei oder mehrere sein (z.B. mehrere angekuendigte Videos). */
@@ -373,6 +487,11 @@ export function renderProjectPage(project, categoryTitle) {
           ${factList(project)}
         </div>
       </div>
+      ${
+        project.prototyp
+          ? `<p class="play"><a class="play__button" href="#prototyp" data-cursor="Ansehen">▶ ${esc(project.prototyp.label)}</a></p>`
+          : ''
+      }
       ${
         project.spielbar
           ? `<p class="play"><a class="play__button" href="${esc(project.spielbar.href)}" data-cursor="Spielen">▶ ${esc(project.spielbar.label)}</a>

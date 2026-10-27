@@ -90,10 +90,9 @@ export const projects = [
       },
       {
         title: 'Der fertige Film',
-        text: 'Und so sieht der fertige Kurzfilm aus.', // TODO
+        text: 'Und so sieht der fertige Kurzfilm aus.',
         files: [],
-        // Platz reserviert: sobald Love.mp4 im Ordner liegt, spielt sie hier.
-        platzhalter: '/media/freizeit/love/Love.mp4',
+        embed: 'https://youtu.be/kmN_JAU1OH8',
       },
     ],
   },
@@ -116,9 +115,15 @@ export const projects = [
     chapters: [
       {
         title: 'EREZA — a kishe guxu',
-        text: 'Das fertige Video, offiziell veroeffentlicht.', // TODO
+        text: 'Das fertige Video, offiziell veröffentlicht.',
+        embed: 'https://www.youtube.com/watch?v=GhhHAptcLss',
         files: ['ereza'],
         layout: 'stack',
+      },
+      {
+        title: 'Jeriko',
+        text: 'Ein weiteres Musikvideo, erschienen als Reel.',
+        embed: 'https://www.instagram.com/reel/DEfoY2eo6Km/',
       },
     ],
   },

@@ -11,9 +11,11 @@
 | Projekte im Bereich **Film**                 | `src/data/film.js`                           |
 | Projekte im Bereich **Game**                 | `src/data/game.js`                           |
 | Projekte im Bereich **Kommunikationsdesign** | `src/data/kommunikationsdesign.js`           |
+| Bildunterschriften im ZodiZine-Automaten     | `src/data/zodizine.js`                       |
 | Bilder und Videos austauschen                | `public/media/<ordner>/<projekt>/`           |
 | Welche Dateien überhaupt importiert werden   | `scripts/media-manifest.mjs`                 |
 | Farben, Schriftgrößen, Abstände              | `src/styles/main.css`, ganz oben bei `:root` |
+| Spaltensatz der Fließtexte                   | `src/styles/main.css`, `--column-min`        |
 
 **Finger weg von** `src/data/media.json` — die Datei wird von `npm run import`
 erzeugt und bei jedem Lauf überschrieben.
@@ -58,6 +60,26 @@ einfügen. An den Bildern musst du nichts ändern.
 
 ---
 
+## Fließtext in zwei Spalten
+
+Die Projekttexte — Beschreibung oben und die Kapiteltexte — laufen über die
+ganze Seitenbreite und teilen sich dabei in bis zu vier Spalten. Dahinter
+steckt kein Umbruchpunkt, sondern die Spaltenbreite: Es werden so viele
+Spalten, wie mit `--column-min` nebeneinander passen — vier auf einem breiten
+Monitor, drei auf einem Laptop, zwei auf dem Tablet, eine auf dem Handy.
+
+| Token          | Bedeutung                                                 |
+| -------------- | --------------------------------------------------------- |
+| `--column-min` | Wie schmal eine Spalte höchstens wird, bevor es eine wird |
+| `--shell`      | Wie breit die Seite insgesamt werden darf                 |
+
+Größeres `--column-min` heißt: breitere Spalten, dafür weniger davon.
+Beide stehen oben in `src/styles/main.css` bei `:root`. Die Obergrenze von
+vier Spalten ist die `4` in der Regel darunter (`columns: var(--column-min)
+4`) — eine andere Zahl dort ändert sie.
+
+---
+
 ## Bilder austauschen
 
 Die Bilder auf der Seite liegen in `public/media/<ordner>/<projekt>/`. Die
@@ -84,6 +106,67 @@ stimmt:
 4. In der Bereichsdatei den Dateinamen-Anfang bei `chapters[].files` eintragen
 
 Welche Dateinamen es gibt, siehst du im Ordner unter `public/media/`.
+
+---
+
+## Prototypen in den Projektseiten
+
+Drei Projekte zeigen ihre Arbeit direkt auf der Projektseite, zwischen Kopf
+und Kapiteln — ohne weitere Unterseite:
+
+| Projekt    | Was läuft dort                | Code                                  |
+| ---------- | ----------------------------- | ------------------------------------- |
+| In Lak'ech | Das Duell für zwei Knöpfe     | `src/scripts/lib/inlakech-game.js`    |
+| ZodiZine   | Der Zine-Automat              | `src/scripts/lib/zodizine-automat.js` |
+| Rreth      | Das Magazin zum Durchblättern | `src/scripts/lib/magazin.js`          |
+
+Eingeschaltet wird das über das Feld `prototyp` im Projekt:
+
+```js
+prototyp: { art: 'magazin', titel: 'Das Magazin durchblättern', label: 'Magazin blättern', quelle: 'rreth02' },
+```
+
+`art` entscheidet, welcher Prototyp geladen wird (`in-lakech`, `zodizine`
+oder `magazin`), `label` steht auf dem Knopf oben im Projektkopf, `titel`
+über dem Fenster. `quelle` braucht nur das Magazin: der Dateiname-Anfang der
+PDF-Seiten, so wie er in `chapters[].files` stehen würde.
+
+Den Rahmen — Fenster, Knöpfe, Bedienungsanleitung — baut
+`src/scripts/lib/prototyp.js`. Der schwere Teil wird erst geladen, wenn eine
+Projektseite ihn wirklich zeigt. Das Duell hält an, sobald sein Fenster aus
+dem Bild scrollt.
+
+---
+
+## ZodiZine: die Seiten des Hefts
+
+Der Automat auf der ZodiZine-Projektseite gibt Caras gezeichnete Zine-Seiten aus. Sie
+liegen in `public/zodizine/` — Umschlag vorne und hinten, zu jedem Zeichen
+eine Illustration und eine Affirmation, dazu die Faltanleitung als PDF.
+
+**Seiten neu einlesen** (etwa nach einer überarbeiteten Fassung von Cara):
+Den Ordner mit `ChineseSigns_Transparent`, `IndianSigns_Transparent`,
+`CelticSigns_Transparent`, `ZodiZine_front.png`, `ZodiZine_back.png` und
+`ZodiZine_FoldingGuide.pdf` nach `Desktop\ZodiZine` legen, dann:
+
+```bash
+npm run zodizine
+```
+
+Liegt er woanders, den Pfad mitgeben:
+
+```bash
+ZODIZINE_QUELLE="D:/woauchimmer/ZodiZine" npm run zodizine
+```
+
+Das Skript rechnet die PNGs in verlustfreies WebP um und vereinheitlicht die
+Dateinamen. Welche Datei zu welchem Zeichen gehört, steht in
+`src/data/zodizine.js` unter `datei`. `npm run check` meldet, wenn eine Seite
+fehlt.
+
+Die deutschen Worte und Sätze in derselben Datei stehen **nicht** im Heft —
+auf den Seiten steht Caras englische Fassung. Sie erscheinen als
+Bildunterschrift im Fenster und als Bildbeschreibung für Vorleseprogramme.
 
 ---
 
@@ -116,6 +199,23 @@ ablegst, spielt sie von selbst — du musst nichts umbauen.
 
 **Video ist zu groß?** In `ASSETS-REPORT.md` stehen alle übersprungenen
 Dateien mit dem fertigen ffmpeg-Befehl zum Verkleinern.
+
+**Video von YouTube oder Vimeo einbetten** — kostet nichts, solange niemand
+auf Play drückt, und eignet sich für alles, was zu groß fürs Repository ist:
+
+```js
+{
+  title: 'Der Film',
+  text: 'Das Hauptvideo der Rauminstallation.',
+  embed: 'https://www.youtube.com/watch?v=XYZ',
+}
+```
+
+Der Link aus der Adresszeile genügt, auch `youtu.be/...` oder ein Shorts-Link;
+die Seite macht daraus selbst die Einbettung (über youtube-nocookie, damit
+vorher keine Cookies gesetzt werden). **Platz reservieren**, solange das Video
+noch fehlt: `embed: ''` schreiben — dann steht dort ein beschrifteter Rahmen,
+und sobald der Link drinsteht, läuft das Video.
 
 ---
 

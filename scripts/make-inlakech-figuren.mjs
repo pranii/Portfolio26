@@ -1,6 +1,6 @@
 /**
  * Macht aus den Angriffs-GIFs von Taiyo und Tsuki Spritesheets fuer das
- * Browser-Spiel In Lak'ech (inlakech.html).
+ * Browser-Spiel In Lak'ech in der Projektseite.
  *
  * Die GIFs sind Nokia-Grafik: 84 x 48 Pixel, 20-fach vergroessert. Das
  * Skript rechnet sie auf die echten Pixel zurueck, wirft den gruenen

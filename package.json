@@ -11,6 +11,7 @@
     "check": "node scripts/check-content.mjs && node scripts/smoke-test.mjs",
     "export:spiel": "node scripts/export-game.mjs",
     "crops": "node scripts/make-crops.mjs",
+    "zodizine": "node scripts/make-zodizine-seiten.mjs",
     "launcher-gif": "node scripts/make-launcher-gif.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

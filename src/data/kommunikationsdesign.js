@@ -283,11 +283,11 @@ export const projects = [
         // Der grosse Teaser (63 MB) fehlt noch — siehe ASSETS-REPORT.md.
         files: ['citydep-part2-remake'],
         layout: 'stack',
-        // Platz reserviert: sobald citydep.1.mp4 / .2 / .3 im Ordner liegen, spielen sie hier.
-        platzhalter: [
-          '/media/arbeit/citydep/citydep.1.mp4',
-          '/media/arbeit/citydep/citydep.2.mp4',
-          '/media/arbeit/citydep/citydep.3.mp4',
+        embed: [
+          'https://youtu.be/rBo8fTXw3qI',
+          'https://youtube.com/shorts/teJY1-D-86c',
+          'https://youtube.com/shorts/3Ykcj1OcYmc',
+          'https://youtube.com/shorts/s-tykl7BaPE',
         ],
       },
     ],

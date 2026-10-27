@@ -65,79 +65,271 @@ export const projects = [
     subtitle: 'Take It All Off // Break the Silence',
     cover: 'header',
     description:
-      'Rreth ist ein Herzensprojekt, das 2020 mit einem kleinen Magazin und einem Schluesselanhaenger begann. Daraus hat sich ein Magazin entwickelt, das als Wegweiser durch verschiedene psychologische Modelle dient, und schliesslich eine zwanzigminuetige Rauminstallation zum Thema Scham: Sie fuehrt Besucher durch fuenf Phasen, von absoluter Dunkelheit ueber konfrontierende Video-Akte bis in einen hellen Raum, in dem anonyme Telefonzellen stehen und Menschen ihre eigene Geschichte erzaehlen koennen. Magazin und Rauminstallation sollen sich gegenseitig ergaenzen — die Rauminstallation als emotionale Reise, das Magazin als Wegweiser durch die Modelle dahinter. Rreth ist albanisch fuer Kreis.', // TODO
-    year: '2023 - 2026',
-    role: 'Konzeption, Recherche, Regie, Rauminstallation, Gestaltung',
-    tools: ['Premiere Pro', 'EbSynth', 'Ableton', 'InDesign', 'Photoshop'],
+      'Rreth — albanisch für Kreis — begann 2020 mit einem kleinen Magazin und einem ' +
+      'Schlüsselanhänger und läuft seither in drei Etappen. Von 2021 bis 2023 entstand als ' +
+      'Bachelorarbeit eine immersive Rauminstallation über die komplexe posttraumatische ' +
+      'Belastungsstörung: ein vierteiliges Video, ein eigener Soundtrack und ein Magazin, ' +
+      'das durch die psychologischen Modelle dahinter führt. Als eigenständige Diagnose ' +
+      'steht die Erkrankung erst in der ICD-11, 2018 veröffentlicht und seit 2022 in ' +
+      'Kraft — entsprechend wenig bekannt ist sie, dabei erfüllt ein erheblicher Teil ' +
+      'derer, die über depressive Symptome berichten, zugleich ihre Kriterien. 2025 kam ' +
+      'das Projekt im ' +
+      'Master noch einmal auf den Tisch, diesmal zu dritt mit Cara Brüggendieck und Laura ' +
+      'Zahn: ein Pitch über fünf Phasen, Symbole für jeden Akt und die Planung einer ' +
+      'begehbaren Videoinstallation. 2028 soll daraus das werden, was im Pitch steht — eine ' +
+      'Ausstellung in der Halle 93 in Stuttgart, mit überarbeitetem Magazin und einer App, ' +
+      'die den Besucher über die Installation hinaus begleitet.',
+    year: '2020 - 2025',
+    role: 'Konzeption, Recherche, Regie, Videoschnitt, Sounddesign, Rauminstallation',
+    client:
+      'Bachelorthesis "Rreth — Dokumentation einer immersiven Rauminstallation", vorgelegt ' +
+      '2023 im Studiengang Online Medien, Fakultät Digitale Medien der Hochschule Furtwangen. ' +
+      'Betreuung: Prof. Thomas Krach und Prof. Matthias Reusch. Fortführung 2025 im Master ' +
+      'Design Interaktiver Medien mit Cara Brüggendieck und Laura Zahn',
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'EbSynth',
+      'RunwayML',
+      'Logic Pro',
+      'Photoshop',
+      'InDesign',
+    ],
     tags: ['Rauminstallation', 'Film', 'Partizipation', 'Editorial'],
-    pull: 'Die ploetzliche Stille ist fast lauter als der Laerm.',
+    prototyp: {
+      art: 'magazin',
+      titel: 'Das Magazin durchblättern',
+      label: 'Magazin blättern',
+      quelle: 'rreth02',
+    },
+    pull: 'Die plötzliche Stille ist fast lauter als der Lärm.',
     chapters: [
       // TODO: RRETH1.pdf (das 2020er Magazin + der Schluesselanhaenger, mit dem
       // alles begann) fehlt noch als Datei. Sobald es vorliegt, hier als erstes
       // Kapitel im Karussell-Layout einfuegen, z.B.:
       //   { title: '2020 — Magazin und Schluesselanhaenger', files: ['rreth1'], layout: 'track' }
+
+      // ── 2021 bis 2023: die Bachelorarbeit ──
+      {
+        title: 'Der Film',
+        text:
+          'Das Hauptvideo der Rauminstallation: vier Segmente, dazu ein eigens komponierter ' +
+          'Soundtrack. In der Ausstellung lief es an einer Wand, während nebenan das ' +
+          'Schattenspiel stand — hier ist es am Stück zu sehen.',
+        embed: 'https://youtu.be/i9AlftZ5PIk',
+      },
       {
         title: 'Worum es geht',
         text:
           'Mir geht es darum, Verhaltensweisen zu erkennen, die einmal als Schutzmechanismus ' +
-          'gedient haben — und dann bewusst gegen den eigenen Impuls zu handeln, fuer ein ' +
-          'schoeneres Miteinander. Das Magazin legt die Grundlage dafuer: Es fuehrt vom ' +
-          'Instanzenmodell nach Freud ueber Melanie Kleins Objektbeziehungstheorie zu Pete ' +
-          'Walkers vier Ueberlebensstrategien — Kampf, Flucht, Erstarrung, Unterwerfung — und ' +
+          'gedient haben — und dann bewusst gegen den eigenen Impuls zu handeln, für ein ' +
+          'schöneres Miteinander. Das Magazin legt die Grundlage dafür: Es führt vom ' +
+          'Instanzenmodell nach Freud über Melanie Kleins Objektbeziehungstheorie zu Pete ' +
+          'Walkers vier Überlebensstrategien — Kampf, Flucht, Erstarrung, Unterwerfung — und ' +
           'endet bei konkreten Gedankenkorrekturen. Jede dieser Strategien hat einmal ' +
           'funktioniert. Das ist der Punkt: Sie war nie ein Charakterfehler, sondern eine ' +
-          'Loesung fuer eine Situation, die so heute nicht mehr herrscht.',
-        files: ['rreth02'],
-        layout: 'track',
+          'Lösung für eine Situation, die so heute nicht mehr herrscht.',
+        // Die Seiten stehen oben im Heft zum Durchblaettern — als Bilderreihe
+        // waeren sie doppelt.
+        textOnly: true,
       },
       {
         title: 'Erste Skizzen',
-        text: 'RAUMINSTALLTION: Angefangen hat es mit vielen Tagebucheinträgen und Brainstorms. Geendet hat es in folgendes Konzept: Paranoia, Dissoziation, Dissonanz. Aus diesen Wortfeldern hat sich herausgeschaelt, dass es nicht um Depression gehen sollte, sondern um Scham.', // TODO
+        text:
+          'Angefangen hat es 2021 mit vielen Tagebucheinträgen und Brainstorms. Drei ' +
+          'Wortfelder blieben übrig: Paranoia, Dissoziation, Dissonanz. Daraus hat sich ' +
+          'herausgeschält, dass es nicht um Depression gehen sollte, sondern um Scham — um ' +
+          'das Gefühl, das man nicht erzählt und das genau deshalb bleibt.',
         files: ['have'],
         layout: 'grid',
       },
       {
-        title: 'Erste Präsentation',
-        text: '"Take It All Off - Break the Silence" in Schwarz und Rot. Die Aufforderung und ihr Preis nebeneinander. Mit dieser ersten Praesentation und dem ersten Projektpitch sind Cara und Laura mit in das Projekt eingestiegen.', // TODO
+        title: 'Vision Board — die erste Präsentation',
+        text:
+          'Mit diesem Vision Board habe ich Rreth 2023 zum ersten Mal bei Professor Krach ' +
+          'vorgestellt. Darin steht alles, was danach gedreht wurde: vier ' +
+          'Projektionsebenen, ein Vorspann, in dem ein Ball viermal aufspringt und sich dann ' +
+          'in ein zwinkerndes Auge verwandelt, und ein Storyboard, das für jede der vier ' +
+          'Überlebensstrategien dieselbe Szene durchspielt — eine Person auf einem Bett, ' +
+          'eine zweite kommt dazu, und je nach Strategie schlägt die erste um sich, macht ' +
+          'sich klein, erstarrt und dissoziiert oder umarmt die, die gerade schimpft. ' +
+          'Dazu die Referenzen: die verwischten Figuren von John Batho, Hirnscans, ' +
+          'monochromes Korn, die Gummischlauch-Figuren von Max Fleischer. Und eine Regel, ' +
+          'die über allem steht: Das Material wird mit KI so weit abstrahiert, dass man ' +
+          'sich darin wiedererkennen kann, ohne sich bloßgestellt zu fühlen — ähnlich ' +
+          'genug, um gemeint zu sein, fremd genug, um es auszuhalten.',
+        files: ['vision-board'],
+        layout: 'track',
+      },
+      {
+        title: 'Vier Akte, vier albanische Worte',
+        text:
+          'Das Hauptvideo läuft in vier Segmenten, jedes nach dem benannt, was es zeigt. ' +
+          '"Themeli", Grundstein: die Reaktionsmuster, die in der Kindheit entstehen und im ' +
+          'Erwachsenenalter zum Konfliktherd werden — Kampf, Flucht, Erstarrung, ' +
+          'Unterwerfung. "Shprehje Emocionale", emotionaler Ausdruck: eine Tänzerin ' +
+          'übersetzt in Bewegung, was passiert, wenn ein Trigger auf ein altes Muster ' +
+          'trifft. "Metamorfoza", Metamorphose: die Hauptfigur in Embryohaltung, der ' +
+          'Rückzug zum inneren Kind und der Wendepunkt, an dem jemand sich eingesteht, dass ' +
+          'ein Verhalten nicht mehr dient. "Çlirim", Befreiung: die Katharsis, in der zum ' +
+          'ersten Mal Farbe ins Bild kommt und drei Sätze den Takt geben — "Atme ein.", ' +
+          '"Halte es fest.", "Lass es los."',
+        textOnly: true,
+      },
+      {
+        title: 'Dreharbeiten',
+        text:
+          'Gedreht wurde im Aufnahmestudio Photo Universal Kleiber. Für die Hauptrolle habe ' +
+          'ich Carina Borgards ausgewählt, weil sie aus dem Tanztheater kommt und die ' +
+          'Emotion körperlich tragen kann; dazu Mathis Harrer vor der Kamera, hinter der ' +
+          'Kamera Redou Ainouz und Johannes Kleiber. Gefilmt wurde auf einer Sony Alpha ' +
+          '6600, der Ton separat über ein Rode NT1-A. Die Kamera bleibt durchgehend an der ' +
+          'Protagonistin — das soll sich wie Verfolgung anfühlen, nicht wie Beobachtung.',
+        textOnly: true,
+      },
+      {
+        title: 'Bildsprache',
+        text:
+          'Die drei ersten Segmente sind streng schwarzweiß, als Bild für das ' +
+          'Schwarz-Weiß-Denken, das mit der Erkrankung einhergeht; erst im vierten kommt ein ' +
+          'tiefes Blau dazu. Jede Figur wurde per Rotoskopie vom Hintergrund gelöst, das ' +
+          'Material in Einzelbilder zerlegt und ausgewählte Schlüsselbilder in Photoshop ' +
+          'bearbeitet: Gradationskurven, eine invertierte Kopie im Differenzmodus, ' +
+          'Weichzeichner, Verflüssigen. EbSynth hat diesen Look dann über die ganze Sequenz ' +
+          'gezogen, im dritten Segment hat RunwayML Einzelbilder entfernt und neu berechnet, ' +
+          'damit die Bewegung kippt. Über allem liegen die Plug-ins TV-Pixel und Signal — ' +
+          'das Bild soll aussehen wie eine Aufnahme, die schon lange im Schrank lag. ' +
+          'Zwischendurch stehen schwarze Sequenzen: Trigger werden mit der Zeit leiser, ' +
+          'aber sie verschwinden nicht.',
+        textOnly: true,
+      },
+      {
+        title: 'Die auditive Ebene',
+        text:
+          'Der Ton ist in Logic entstanden, 42 Spuren, die meisten als MIDI eingespielt. ' +
+          'Melodien und ein verzerrter Bass aus Alchemy, Jungle-Drums für die Höhepunkte, ' +
+          'dazwischen eine tickende Uhr. Alles läuft über einen harten Kompressor, damit ' +
+          'der Track drückt statt nur zu klingen; Panorama-Automationen verteilen ihn im ' +
+          'Raum. Eine Stimmaufnahme wurde mit Hall, Delay und Distortion so weit ' +
+          'bearbeitet, dass man sie gerade noch als Stimme erkennt. Im letzten Segment ' +
+          'bleibt nur noch Atmen übrig, ein- und ausatmen, als Anleitung zum Mitmachen.',
+        textOnly: true,
+      },
+      {
+        title: 'Die Ausstellung in der Stadtgalerie Villingen',
+        text:
+          'Den Abschluss der Bachelorarbeit bildete die Ausstellung. Über den City-Manager ' +
+          'von Villingen-Schwenningen kam der Kontakt zur Stadtgalerie, dort haben wir den ' +
+          'Raum ausgesucht. Beamer an der Decke waren nicht erlaubt, also standen sie auf ' +
+          'Bänken, die Lautsprecher in den Ecken, die Kabel durch die Raummitte. Bei der ' +
+          'Schlüsselübergabe kam heraus, dass eine Wand auf 3,66 Metern offen blieb. Statt ' +
+          'den Raum zu verkleinern, habe ich den angrenzenden Platz dazugenommen und neu ' +
+          'geplant: Der ursprüngliche Raum wurde zum Schattenspiel, zwei Beamer standen ' +
+          'dafür direkt auf dem Boden in den Ecken, und eine drei Sekunden lange Sequenz ' +
+          'lief dort in Endlosschleife als Lichtquelle. Die Besucher standen in diesem Raum ' +
+          'und sahen das Hauptvideo an der Wand des Flurs daneben — der Beamer dafür stand ' +
+          'in einem eigenen Raum auf einem Tisch, mit Lens-Shift und Trapezkorrektur so ' +
+          'eingestellt, dass das Bild über die fehlende Wand hinweg läuft. Die geplante ' +
+          '4.1-Anlage war nicht verfügbar, also kamen zwei Canton AM5 links und rechts der ' +
+          'Projektion auf den Boden. Die Vernissage lief in sechs Schritten: empfangen, ' +
+          'Schattenspiel, Anrede, Hauptvideo, kurze Pause, umsehen — und am Ende Postkarten ' +
+          'mit einem QR-Code, der zum Magazin führt.',
+        textOnly: true,
+      },
 
+      // ── 2025: Fortsetzung im Master, zu dritt ──
+      {
+        title: '2025 — Rreth wird ein Dreierprojekt',
+        text:
+          'Zwei Jahre später kam Rreth im Master noch einmal auf den Tisch, diesmal größer ' +
+          'gedacht: nicht mehr ein Video in einem Raum, sondern eine Installation, die den ' +
+          'Besucher zwanzig Minuten lang durch fünf Phasen führt. "Take It All Off — Break ' +
+          'the Silence" in Schwarz und Rot, die Aufforderung und ihr Preis nebeneinander — ' +
+          'die erste Präsentation für genau die Installation, die im Pitch steht. Mit ihr ' +
+          'sind Cara Brüggendieck und Laura Zahn mit in das Projekt eingestiegen.',
         files: ['wheel-of-shame'],
         layout: 'track',
       },
-      //   Hier möchte ich bitte auch nochmal ein Karussell einfügen als PDF. Bitte erinnere mich daran Claude
-
       {
         title: 'Symbolik der Akte',
-        text: 'Fuer jeden Akt wurde ein eigenes Symbol gewählt. Jedes steht fuer eine Form von Kreislauf, aus dem man alleine schwer herauskommt. Auf die Symbole haben Cara und ich uns gemeinsam geeinigt.', // TODO
+        text:
+          'Für jeden Akt wurde ein eigenes Symbol gewählt. Jedes steht für eine Form von ' +
+          'Kreislauf, aus dem man alleine schwer herauskommt. Beim Aussuchen hat Cara mir ' +
+          'geholfen, entschieden haben wir gemeinsam.',
         files: ['symbolik'],
         layout: 'grid',
       },
       {
         title: 'Raumkonzept',
-        text: 'Die Handskizzen legen fest, wie der Besucher durch den Raum gefuehrt wird: Video- und Audioinstallation, Warteraum, Telefonzelle. Die Architektur ist Teil der Dramaturgie, nicht nur ihr Behaelter. Ausgestellt werden sollte die Installation in Kooperation mit der Halle93 in Stuttgart, was aus Zeitgruenden verschoben werden musste. Die neue Raumskizze hat Laura Zahn im Rahmen einer Ausstellung an der School of Design an Media entwickelt.', // TODO
-        files: ['in-halt', 'raumskizze-laura'],
+        text:
+          'Die Handskizzen legen fest, wie der Besucher durch den Raum geführt wird: Video- ' +
+          'und Audioinstallation, Warteraum, Telefonzelle. Die Architektur ist Teil der ' +
+          'Dramaturgie, nicht nur ihr Behälter. In den Telefonzellen soll erzählt werden, ' +
+          'was sonst niemand hört — anonym, aufgezeichnet, als Archiv für die, die nach ' +
+          'einem kommen.',
+        files: ['in-halt'],
         layout: 'track',
       },
       {
-        title: 'Projektpitch',
-        text: 'Der finale Pitch beschreibt alle fuenf Phasen einzeln: Farbe, Ton, Gefuehl, Zeitdauer und Referenz.', // TODO
+        title: 'Der Projektpitch',
+        text:
+          'Der Pitch beschreibt alle fünf Phasen einzeln: Farbe, Ton, Gefühl, Zeitdauer und ' +
+          'Referenz. Aufgebaut habe ich ihn als Bauplan für die Ausstellung, die noch ' +
+          'kommen soll — 2028 soll genau danach gebaut werden.',
         files: ['pitch-version-1'],
         layout: 'track',
       },
-
-      // Hier möchte ich auch noch Platz für ein Video welches ich mit einbette im Nachhinein.
       {
-        title: 'Zukunftsausblick',
+        title: 'Neu gedreht — Kamera, Licht, Ton',
         text:
-          'Fuer die Ausstellung war eine Instagram-Kampagne geplant: kurze Videos, selbst ' +
-          'aufgenommen und mit KI weiterbearbeitet, dazu Captions in der ersten Person — ' +
-          '"We eat shame for breakfast", "I have no mouth but I need to scream". Jeder Post ' +
-          'traegt den Namen eines Musters statt eines Titels: Suppressing, Self Sabotage, ' +
-          'Self Destruction. Aus Zeitgruenden ist die Kampagne verschoben. Die Installation ' +
-          'soll in zwei Jahren erneut aufgefuehrt werden — bis dahin entsteht eine neue ' +
-          'Auflage des Magazins, und an den Videos wird weitergearbeitet.',
+          'Für die neue Fassung wurde noch einmal gedreht, und zwar im Team: Gefilmt hat ' +
+          'Joscha Reuther, das Licht hat Jan Borghart gesetzt. Die Soundkulisse stammt von ' +
+          'Denzel, der sie eigens gebaut und Schnitt für Schnitt an das Video angepasst ' +
+          'hat. Gearbeitet haben wir dabei eng zusammen — Bild, Licht und Ton sind nicht ' +
+          'nacheinander entstanden, sondern miteinander.',
+        textOnly: true,
+      },
+      {
+        title: 'Die Videoinstallation im Rössle',
+        text:
+          'Als Zwischenschritt war eine begehbare Videoinstallation geplant: Leinwände von ' +
+          'fünf Metern Breite, die den Besucher vollständig umstellen, die Beamer um eine ' +
+          'Säule herum aufgestellt, Lautsprecher in allen Ecken. Erst fünf Minuten Stille, dann sieben ' +
+          'Minuten Video, dann noch eine Minute Stille. Die Wände sollten das ' +
+          'Unausweichliche spürbar machen, das Hinausgehen zwischen ihnen hindurch das ' +
+          'Ausbrechen aus dem Kreislauf. Den Raum im Eventkeller des Rössle in Furtwangen ' +
+          'hat Laura skizziert, 5,60 mal 8,90 Meter. Aus Zeitgründen ist daraus nichts ' +
+          'geworden — gezeigt wurden die Videos am Ende an der Hochschule, am Tag der ' +
+          'Medien.',
+        files: ['raumskizze-laura'],
+        layout: 'track',
+      },
+
+      {
+        title: 'Die neuen Videos',
+        text:
+          'Was aus den Dreharbeiten von 2025 geworden ist — gezeigt am Tag der Medien an ' +
+          'der Hochschule, bis die Installation den Raum bekommt, für den sie gedacht ist.',
+        embed: 'https://youtu.be/Krdg6cM746g',
+      },
+
+      // ── Ausblick ──
+      {
+        title: '2028 — Halle 93, App und Kampagne',
+        text:
+          'Aufgegeben ist die Installation nicht: 2028 soll sie wieder aufgenommen und ' +
+          'genau nach dem Pitch in der Halle 93 in Stuttgart ausgestellt werden. Dazu ' +
+          'gehören ein überarbeitetes Magazin und eine App, die den Besucher weiter trägt ' +
+          'als bis zum Ausgang — die Installation dauert zwanzig Minuten, die Muster, um ' +
+          'die es geht, ein Leben lang. Die Instagram-Kampagne läuft im Vorfeld und bewirbt ' +
+          'beides, App und Rauminstallation: kurze Videos, selbst aufgenommen und mit KI ' +
+          'weiterbearbeitet, dazu Captions in der ersten Person — "We eat shame for ' +
+          'breakfast", "I have no mouth but I need to scream". Jeder Post trägt den Namen ' +
+          'eines Musters statt eines Titels: Suppressing, Self Sabotage, Self Destruction.',
         files: ['rreth-kampagne'],
         layout: 'track',
       },
+      //   Hier möchte ich bitte auch nochmal ein Karussell einfügen als PDF. Bitte erinnere mich daran Claude
     ],
   },
   {
@@ -157,7 +349,7 @@ export const projects = [
     role: 'Konzept, Gestaltung, Programmierung',
     tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
     tags: ['Installation', 'Game', 'Partizipation', 'Raspberry Pi', 'Public Space'],
-    spielbar: { href: 'inlakech.html', label: 'Prototyp spielen' },
+    prototyp: { art: 'in-lakech', titel: 'Das Duell im Browser', label: 'Prototyp spielen' },
     pull: 'Ich werde an dir zu mir.',
     chapters: [
       {
@@ -368,6 +560,7 @@ export const projects = [
       'Mit Cara Brueggendieck. Modul "Inszenierung Interaktiver Medien", Master Design Interaktiver Medien',
     tools: ['React', 'Flask', 'Raspberry Pi', 'ReportLab', 'InDesign'],
     tags: ['Interaktion', 'Zine', 'Prototyp', 'Generative Gestaltung'],
+    prototyp: { art: 'zodizine', titel: 'Der Automat im Browser', label: 'Automat ausprobieren' },
     pull: 'Banalitaet als Input, Interaktion als Verstaerker, Emotion als Ziel.',
     chapters: [
       {
@@ -405,9 +598,10 @@ export const projects = [
       {
         title: 'ZodiZine in Anwendung',
         text:
-          'Der Automat im Betrieb am Tag der Medien. Fuer die raeumliche Inszenierung haben ' +
-          'wir uns an Wahrsagersalons bedient: Tuecher verdeckten die Umgebung und erzeugten ' +
-          'eine mystische Atmosphaere. So wird der nuechterne Automat zum rituellen Ort.', // TODO
+          'Der Automat im Betrieb am Tag der Medien. Für die räumliche Inszenierung haben ' +
+          'wir uns an Wahrsagersalons bedient: Tücher verdeckten die Umgebung und erzeugten ' +
+          'eine mystische Atmosphäre. So wird der nüchterne Automat zum rituellen Ort.',
+        embed: 'https://youtu.be/Ivilxs3Gcxg',
         files: ['dji'],
         layout: 'wide',
       },

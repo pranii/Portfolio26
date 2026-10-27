@@ -83,8 +83,9 @@ for (const categorySlug of ['creative-technology', 'film', 'game', 'kommunikatio
               );
             }
           }
-        } else if (chapter.textOnly || chapter.embed) {
-          // Kapitel bewusst ohne Medien — nur Text.
+        } else if (chapter.textOnly || chapter.embed !== undefined) {
+          // Kapitel bewusst ohne Medien: nur Text, eingebettetes Video oder
+          // reservierter Platz dafuer (embed: '').
         } else if (chapter.items.length === 0 && chapter.docs.length === 0) {
           problems.push(
             `${categorySlug}/${project.slug}: Kapitel "${chapter.title}" bleibt leer, kein Treffer fuer ${JSON.stringify(chapter.files ?? [])}`,
@@ -119,6 +120,33 @@ for (const [ordner, projekte] of Object.entries(media)) {
   }
 }
 
+// Die Zine-Seiten des ZodiZine-Automaten liegen nicht in media.json, sondern
+// kommen aus scripts/make-zodizine-seiten.mjs. Fehlt eine, bleibt im
+// Prototypen ein Blatt leer — deshalb hier mitpruefen.
+{
+  const { chinesisch, indisch, keltisch } = await import('../src/data/zodizine.js');
+  const seiten = ['front.webp', 'back.webp'];
+  for (const [system, zeichen] of Object.entries({
+    chinesisch,
+    indisch,
+    keltisch,
+  })) {
+    for (const eintrag of zeichen) {
+      seiten.push(
+        `${system}/${eintrag.datei}-illustration.webp`,
+        `${system}/${eintrag.datei}-affirmation.webp`,
+      );
+    }
+  }
+
+  for (const seite of seiten) {
+    fileCount += 1;
+    if (!fs.existsSync(path.join(ROOT, 'public', 'zodizine', seite))) {
+      problems.push(`zodizine: Zine-Seite fehlt — public/zodizine/${seite}`);
+    }
+  }
+}
+
 // Jedes [data-slot="x"], das ein Skript befuellen will, muss im HTML stehen —
 // sonst laeuft die Seite auf einen null-Zugriff.
 const PAGE_SCRIPTS = {
@@ -127,7 +155,6 @@ const PAGE_SCRIPTS = {
   'film.html': ['src/scripts/category.js'],
   'game.html': ['src/scripts/category.js'],
   'kommunikationsdesign.html': ['src/scripts/category.js'],
-  'inlakech.html': ['src/scripts/inlakech.js'],
 };
 
 for (const [page, scripts] of Object.entries(PAGE_SCRIPTS)) {

@@ -68,7 +68,25 @@ const PAGES = [
     query: '?id=film/gibtsnicht',
   },
   { html: 'spiel.html', entry: 'src/scripts/spiel.js', erwartet: '.boot__start' },
-  { html: 'inlakech.html', entry: 'src/scripts/inlakech.js', erwartet: '.duell__key' },
+  // Die Prototypen liegen in den Projektseiten, nicht auf eigenen Seiten.
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.duell__key',
+    query: '?id=creative-technology/in-lakech',
+  },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.zodi__start',
+    query: '?id=creative-technology/zodizine',
+  },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.buch__seite',
+    query: '?id=creative-technology/rreth',
+  },
 ];
 
 fs.mkdirSync(TMP, { recursive: true });
@@ -113,7 +131,7 @@ function addShims(window) {
   window.requestAnimationFrame ??= (cb) => setTimeout(() => cb(Date.now()), 16);
   window.cancelAnimationFrame ??= (id) => clearTimeout(id);
   // jsdom kann nicht zeichnen. Ohne diese Zeile meldet es "Not implemented";
-  // das Spiel (inlakech.html) kommt mit `null` zurecht und zeichnet dann nichts.
+  // das Duell kommt mit `null` zurecht und zeichnet dann nichts.
   window.HTMLCanvasElement.prototype.getContext = () => null;
 }
 
