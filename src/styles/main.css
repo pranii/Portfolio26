@@ -849,6 +849,48 @@ html.is-dark .home__call {
   touch-action: pan-y;
 }
 
+/* Breit: alle Eintraege als Symbole in Kaesten nebeneinander, wie die
+   Programmsymbole auf einem Bildschirm. */
+.phone.is-raster .phone__list {
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--s-5);
+  width: min(100%, 60rem);
+  padding: var(--s-5);
+}
+
+.phone.is-raster .phone__link {
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-2);
+  border: 2px solid var(--ink);
+  box-shadow: var(--lift) var(--lift) 0 var(--ink);
+  transition:
+    transform 0.12s steps(2),
+    box-shadow 0.12s steps(2),
+    background-color 0.12s steps(2);
+}
+
+.phone.is-raster .phone__link:hover,
+.phone.is-raster .phone__item.is-active .phone__link {
+  transform: translate(calc(var(--lift) * -1), calc(var(--lift) * -1));
+  box-shadow: calc(var(--lift) * 2) calc(var(--lift) * 2) 0 var(--ink);
+}
+
+.phone.is-raster .phone__icon {
+  width: clamp(3.5rem, 7vw, 5rem);
+  margin-bottom: 0;
+}
+
+.phone.is-raster .phone__name {
+  font-size: var(--t-1);
+}
+
+/* Im Raster steht nur, wie der Eintrag heisst — der Satz darunter wuerde
+   die Kaesten ungleich hoch machen. */
+.phone.is-raster .phone__desc,
+.phone.is-raster .phone__nav {
+  display: none;
+}
+
 .phone__link {
   display: grid;
   justify-items: center;
@@ -887,15 +929,16 @@ html.is-dark .home__call {
   animation: phone-blink 0.5s steps(2) 2;
 }
 
-/* Pfeile links und rechts, ohne Kasten — wie in der Skizze */
+/* Pfeile ueber und unter dem Symbol — geblaettert wird von unten nach
+   oben, wie im Telefonmenue. */
 .phone__nav {
   position: absolute;
-  top: 50%;
+  left: 50%;
   display: grid;
   place-items: center;
   width: 3.5rem;
   height: 3.5rem;
-  transform: translateY(-50%);
+  transform: translateX(-50%);
   transition:
     background-color 0.12s steps(2),
     color 0.12s steps(2);
@@ -906,13 +949,17 @@ html.is-dark .home__call {
   shape-rendering: crispEdges;
 }
 .phone__nav--prev {
-  left: var(--s-4);
+  top: var(--s-4);
 }
 .phone__nav--next {
-  right: var(--s-4);
+  bottom: var(--s-4);
+}
+/* Der Pfeil im Bild zeigt nach links; gedreht wird daraus oben und unten. */
+.phone__nav--prev svg {
+  transform: rotate(90deg);
 }
 .phone__nav--next svg {
-  transform: scaleX(-1);
+  transform: rotate(-90deg);
 }
 .phone__nav:hover {
   background: var(--accent);
@@ -928,10 +975,10 @@ html.is-dark .home__call {
   display: none;
 }
 
-.phone.is-ready .phone__item:not(.is-active) {
+.phone.is-einzeln .phone__item:not(.is-active) {
   display: none;
 }
-.phone.is-ready .phone__item.is-active {
+.phone.is-einzeln .phone__item.is-active {
   animation: phone-in 0.18s steps(3);
 }
 
