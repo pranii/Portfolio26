@@ -71,12 +71,7 @@ const BAUPLAN = {
       <button class="duell__key" type="button" data-knopf="A" aria-label="Knopf A, links">A</button>
       <button class="duell__key" type="button" data-knopf="B" aria-label="Knopf K, rechts">K</button>
     </div>` +
-    fuss(
-      'Ein Automat für zwei Fremde: Erst wenn beide gleichzeitig drücken, geht es weiter — am ' +
-        'besten zu zweit an einer Tastatur oder einem Handy. In der Installation lösen am Ende ' +
-        'Kamera und Kassenbon-Drucker aus; im Browser bleibt es beim Blitz und einem Bon auf ' +
-        'dem Bildschirm.',
-    ),
+    fuss(t('prototyp.inlakech')),
 
   zodizine: () =>
     fenster({
@@ -93,11 +88,11 @@ const BAUPLAN = {
         ></div>`,
     }) +
     fuss(
-      'Aus einem Geburtsdatum werden drei Zeichen: eines aus dem chinesischen Mondkalender, ' +
-        'eines aus der indischen Rashi, eines aus dem keltischen Baumkalender. Daraus entsteht ' +
-        'das Heft — acht Seiten auf einem Blatt A4, aus dem es gefaltet wird. Dazu passt die ' +
-        '<a href="zodizine/faltanleitung.pdf" target="_blank" rel="noopener">Faltanleitung aus ' +
-        'dem Projekt</a>. Die Zeichnungen auf den Seiten sind von Cara Brüggendieck.',
+      t('prototyp.zodizine', {
+        anleitung: `<a href="zodizine/faltanleitung.pdf" target="_blank" rel="noopener">${t(
+          'prototyp.zodizine.anleitung',
+        )}</a>`,
+      }),
     ),
 
   magazin: ({ pdf }) =>
@@ -109,20 +104,20 @@ const BAUPLAN = {
     }) +
     `
     <div class="buch__leiste">
-      <button class="buch__knopf" type="button" data-rolle="zurueck" aria-label="Zurückblättern">
-        ◀ Zurück
+      <button class="buch__knopf" type="button" data-rolle="zurueck" aria-label="${t('heft.zurueck')}">
+        ◀
       </button>
       <span class="buch__zaehler" data-rolle="zaehler" aria-live="polite"></span>
-      <button class="buch__knopf" type="button" data-rolle="vor" aria-label="Weiterblättern">
-        Weiter ▶
+      <button class="buch__knopf" type="button" data-rolle="vor" aria-label="${t('heft.vor')}">
+        ▶
       </button>
     </div>` +
     fuss(
       pdf
-        ? `Das Heft so, wie es gedruckt ist: zwei Querformat-Seiten nebeneinander, in der Mitte
-           der Bund, Vorder- und Rückseite für sich allein.
-           <a href="${esc(pdf)}" target="_blank" rel="noopener">Das ganze Magazin als PDF</a>.`
-        : 'Das Heft so, wie es gedruckt ist: zwei Querformat-Seiten nebeneinander.',
+        ? t('prototyp.magazin', {
+            pdf: `<a href="${esc(pdf)}" target="_blank" rel="noopener">${t('prototyp.magazin.pdf')}</a>`,
+          })
+        : t('prototyp.magazin.ohnepdf'),
     ),
 };
 
@@ -137,7 +132,7 @@ export function prototypHtml(project) {
 
   return `
     <section class="prototyp" id="prototyp" data-prototyp="${esc(art)}">
-      <p class="prototyp__kicker">${esc(project.prototyp.kicker ?? 'Zum Ausprobieren')}</p>
+      <p class="prototyp__kicker">${esc(project.prototyp.kicker ?? t('prototyp.kicker'))}</p>
       <h2 class="section-title">${esc(project.prototyp.titel ?? 'Prototyp')}</h2>
       ${bauen(quellen(project))}
     </section>`;

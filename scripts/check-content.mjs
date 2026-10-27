@@ -38,14 +38,26 @@ for (const categorySlug of ['creative-technology', 'film', 'game', 'kommunikatio
     }
     known.add(project.slug);
 
+    // Ein Projekt, das nur aus Text und eingebetteten Videos besteht, braucht
+    // keine eigenen Medien — etwa wenn der Film bei Vimeo oder YouTube liegt.
+    const nurEingebettet = (project.chapters ?? []).every(
+      (chapter) => chapter.textOnly || chapter.embed !== undefined,
+    );
+
     const entry = mediaBySlug[project.slug];
     if (!entry) {
-      problems.push(`${categorySlug}/${project.slug}: keine Medien importiert`);
+      if (!nurEingebettet) {
+        problems.push(`${categorySlug}/${project.slug}: keine Medien importiert`);
+      } else {
+        notes.push(`${categorySlug}/${project.slug}: ohne eigene Medien, zeigt nur Eingebettetes`);
+      }
       continue;
     }
 
     const total = entry.images.length + entry.videos.length;
-    if (total === 0) problems.push(`${categorySlug}/${project.slug}: weder Bilder noch Videos`);
+    if (total === 0 && !nurEingebettet) {
+      problems.push(`${categorySlug}/${project.slug}: weder Bilder noch Videos`);
+    }
 
     // Kapitel pruefen: leere Kapitel und nicht zugeordnete Dateien.
     if (!project.chapters?.length) {

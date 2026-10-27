@@ -43,6 +43,10 @@
   /* Die Pixel. Nie ganz schwarz — LCD-Pixel sind olivgruen. */
   --pixel: #1b260d;
 
+  /* Hinter den Bildern liegt kein Displaylicht, sondern ein neutraler
+     Grund — sonst faerbt der Rand jede Aufnahme gruen ein. */
+  --bild-grund: #dcdad2;
+
   /* Das Gehaeuse */
   --bezel: #0e140a;
   --bezel-hi: #18220f;
@@ -950,12 +954,29 @@ html.is-dark .home__call {
   text-shadow: var(--glow);
 }
 
-/* Projekte als Karussell: eine Spur ueber die ganze Fensterbreite, die an
-   den Karten einrastet. Links buendig mit dem Raster, rechts laeuft sie
-   aus dem Bild — so sieht man, dass es weitergeht. */
+/* Projekte als Menue: eine Spalte, die von oben nach unten laeuft und an
+   den Karten einrastet — wie die Liste im Nokia-Menue. Rechts daneben die
+   gepunktete Schiene mit dem Schieber. */
 .carousel {
-  --edge: max(var(--gutter), calc((100vw - var(--shell)) / 2 + var(--gutter)));
   margin-top: var(--s-6);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6px;
+  grid-template-areas:
+    'head head'
+    'liste schiene';
+  column-gap: var(--s-4);
+}
+
+.carousel__head {
+  grid-area: head;
+}
+
+.carousel__viewport {
+  grid-area: liste;
+}
+
+.carousel__bar {
+  grid-area: schiene;
 }
 
 .carousel__head {
@@ -997,8 +1018,12 @@ html.is-dark .home__call {
   height: 14px;
   shape-rendering: crispEdges;
 }
+/* Der Pfeil zeigt im Bild nach links — gedreht wird daraus oben und unten. */
+.carousel__btn svg {
+  transform: rotate(90deg);
+}
 .carousel__btn svg.is-flipped {
-  transform: scaleX(-1);
+  transform: rotate(-90deg);
 }
 .carousel__btn:hover:not(:disabled) {
   background: var(--accent);
@@ -1011,13 +1036,13 @@ html.is-dark .home__call {
 
 .carousel__viewport {
   margin-top: var(--s-5);
-  margin-inline: calc(50% - 50vw);
-  /* Unten Platz fuer den Pixelschatten der Karten. */
-  padding: var(--s-2) var(--edge) calc(var(--lift) * 3);
-  scroll-padding-inline: var(--edge);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
+  /* Rechts Platz fuer den Pixelschatten der Karten. */
+  padding: var(--s-1) calc(var(--lift) * 2) var(--s-1) 0;
+  max-height: min(78vh, 52rem);
+  scroll-padding-block: var(--s-1);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
   scrollbar-width: none;
   cursor: grab;
 }
@@ -1037,6 +1062,7 @@ html.is-dark .home__call {
 
 .carousel__track {
   display: flex;
+  flex-direction: column;
   gap: var(--s-5);
   margin: 0;
   padding: 0;
@@ -1044,22 +1070,39 @@ html.is-dark .home__call {
 }
 
 .carousel__slide {
-  flex: 0 0 clamp(18rem, 30vw, 26rem);
+  flex: 0 0 auto;
   scroll-snap-align: start;
 }
 
-/* Fortschritt wie die Scrollleiste am Rand des Nokia-Displays:
-   gepunktete Schiene, massiver Schieber. */
+/* In der Spalte wird aus jeder Karte eine Zeile: Bild links, Text rechts.
+   Auf schmalen Bildschirmen bleibt die Karte gestapelt. */
+@media (min-width: 48rem) {
+  .carousel__slide .card {
+    display: grid;
+    grid-template-columns: clamp(14rem, 24vw, 20rem) minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .carousel__slide .card__media {
+    grid-row: 1 / -1;
+    height: 100%;
+    border-bottom: 0;
+    border-right: 2px solid var(--ink);
+  }
+}
+
+/* Die Scrollleiste am rechten Rand des Nokia-Displays: gepunktete
+   Schiene, massiver Schieber. */
 .carousel__bar {
   position: relative;
-  height: 6px;
-  margin-top: var(--s-4);
-  background: repeating-linear-gradient(90deg, var(--rule) 0 2px, transparent 2px 6px);
+  width: 6px;
+  margin-top: calc(var(--s-5) + var(--s-1));
+  background: repeating-linear-gradient(0deg, var(--rule) 0 2px, transparent 2px 6px);
   overflow: hidden;
 }
 .carousel__thumb {
   display: block;
-  height: 100%;
+  width: 100%;
   background: var(--ink);
 }
 
@@ -1683,40 +1726,20 @@ html.is-dark .home__call {
 }
 
 /*
- * Das LCD-Bild. Jedes Bild wird zweifarbig auf das Hintergrundlicht
- * gerechnet, ganz ohne Bildbearbeitung:
- *   1. Bild in Graustufen, per "multiply" auf das gruene Licht gelegt —
- *      Weiss wird zu Licht, Schwarz bleibt schwarz.
- *   2. Darueber die Pixelfarbe per "lighten" — Schwarz wird zum
- *      olivgruenen Pixel, das Licht bleibt unberuehrt.
- *   3. Ganz oben das Pixelraster, damit es wie ein Display aussieht.
+ * Das Bild im Display.
+ *
+ * Frueher lag jedes Bild zweifarbig auf dem gruenen Hintergrundlicht —
+ * Graustufen per "multiply" auf das Licht, darueber die Pixelfarbe per
+ * "lighten". Das sah nach Nokia aus, faerbte aber jede Arbeit gruen ein.
+ * Geblieben ist nur das Pixelraster darueber: Die Bilder zeigen ihre
+ * eigenen Farben, der Rahmen bleibt ein Display.
  */
 .card__media,
 .figure:not(.embed),
 .project-head__cover {
   position: relative;
   isolation: isolate;
-  background: radial-gradient(130% 120% at 50% 40%, var(--lcd-hi), var(--lcd) 70%, var(--lcd-lo));
-}
-
-.card__media img,
-.figure:not(.embed) img,
-.figure:not(.embed) video,
-.project-head__cover img {
-  filter: grayscale(1) contrast(1.2) brightness(1.08);
-  mix-blend-mode: multiply;
-}
-
-.card__media::before,
-.figure:not(.embed)::before,
-.project-head__cover::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: var(--pixel);
-  mix-blend-mode: lighten;
+  background: var(--bild-grund);
 }
 
 .card__media::after,
@@ -1727,17 +1750,11 @@ html.is-dark .home__call {
   inset: 0;
   z-index: 2;
   pointer-events: none;
+  /* Helle statt gruene Rasterlinien: Das Raster bleibt sichtbar, faerbt
+     die Bilder aber nicht mehr ein. */
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      color-mix(in oklab, var(--lcd) 45%, transparent) 0 1px,
-      transparent 1px 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      color-mix(in oklab, var(--lcd) 45%, transparent) 0 1px,
-      transparent 1px 3px
-    );
+    repeating-linear-gradient(0deg, rgb(255 255 255 / 0.22) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.22) 0 1px, transparent 1px 3px);
   transition: opacity 0.2s steps(2);
 }
 
@@ -2946,8 +2963,8 @@ kbd {
     padding-inline: var(--s-3);
   }
 
-  .carousel__slide {
-    flex-basis: 84vw;
+  .carousel__viewport {
+    max-height: min(70vh, 40rem);
   }
   .carousel__head {
     align-items: start;

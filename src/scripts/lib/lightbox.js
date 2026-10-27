@@ -5,18 +5,19 @@
  */
 
 import { gsap, stopScroll, startScroll } from './scroll.js';
+import { t } from './i18n.js';
 
 export function initLightbox(selector = '[data-full]') {
   const box = document.createElement('div');
   box.className = 'lightbox';
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-modal', 'true');
-  box.setAttribute('aria-label', 'Grossansicht');
+  box.setAttribute('aria-label', t('galerie.grossansicht'));
   box.innerHTML = `
     <img alt="">
-    <button class="lightbox__close" type="button">Schliessen ✕</button>
-    <button class="lightbox__nav" data-dir="prev" type="button" aria-label="Vorheriges Bild">←</button>
-    <button class="lightbox__nav" data-dir="next" type="button" aria-label="Nächstes Bild">→</button>
+    <button class="lightbox__close" type="button">${t('galerie.schliessen')}</button>
+    <button class="lightbox__nav" data-dir="prev" type="button" aria-label="${t('galerie.vorheriges')}">←</button>
+    <button class="lightbox__nav" data-dir="next" type="button" aria-label="${t('galerie.naechstes')}">→</button>
     <p class="lightbox__counter"></p>
   `;
   document.body.appendChild(box);

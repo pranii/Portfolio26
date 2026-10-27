@@ -13,6 +13,7 @@
 
 import mediaIndex from '../../data/media.json';
 import { groupIntoChapters, basename } from './chapters.js';
+import { t } from './i18n.js';
 
 const THUMB_WIDTH = 720;
 const VORSCHAU_BILDER = 6;
@@ -119,9 +120,9 @@ export function renderCard(project, category, index = 0) {
   const videos = media.videos.length;
 
   const zahlen = [
-    `${steps} ${steps === 1 ? 'Schritt' : 'Schritte'}`,
-    bilder > 0 ? `${bilder} Bilder` : null,
-    videos > 0 ? `${videos} ${videos === 1 ? 'Video' : 'Videos'}` : null,
+    `${steps} ${steps === 1 ? t('karte.schritt') : t('karte.schritte')}`,
+    bilder > 0 ? `${bilder} ${t('karte.bilder')}` : null,
+    videos > 0 ? `${videos} ${videos === 1 ? t('karte.video') : t('karte.videos')}` : null,
   ]
     .filter(Boolean)
     .join(' · ');
@@ -138,7 +139,7 @@ export function renderCard(project, category, index = 0) {
 
   return `
     <li class="carousel__slide">
-      <a class="card" href="projekt.html?id=${esc(category)}/${esc(project.slug)}" data-cursor="Ansehen" draggable="false">
+      <a class="card" href="projekt.html?id=${esc(category)}/${esc(project.slug)}" data-cursor="${esc(t('karte.ansehen'))}" draggable="false">
         <span class="card__media card__media--${modus}">${bild}</span>
         <span class="card__top">
           <span class="card__num">${nummer(index)}</span>
@@ -147,12 +148,12 @@ export function renderCard(project, category, index = 0) {
         <span class="card__body">
           <span class="card__title">${esc(project.title)}</span>
           <span class="card__sub">${esc(project.subtitle ?? '')}</span>
-          ${project.role ? `<span class="card__role"><span class="card__label">Rolle</span> ${esc(kurz(project.role))}</span>` : ''}
+          ${project.role ? `<span class="card__role"><span class="card__label">${esc(t('karte.rolle'))}</span> ${esc(kurz(project.role))}</span>` : ''}
           ${tags ? `<ul class="card__tags">${tags}</ul>` : ''}
         </span>
         <span class="card__foot">
           <span class="card__meta">${zahlen}</span>
-          <span class="card__go" aria-hidden="true">Ansehen →</span>
+          <span class="card__go" aria-hidden="true">${esc(t('karte.ansehen'))} →</span>
         </span>
       </a>
     </li>`;
@@ -188,7 +189,9 @@ export function renderSoftware(software = [], projects = []) {
         (p.tools ?? []).some((tool) => tool.toLowerCase() === name.toLowerCase()),
       ).length;
       const beleg =
-        n > 0 ? `<span class="skill__count">${n} ${n === 1 ? 'Projekt' : 'Projekte'}</span>` : '';
+        n > 0
+          ? `<span class="skill__count">${n} ${n === 1 ? t('karte.projekt') : t('karte.projekte')}</span>`
+          : '';
       return `<li class="skill"><span class="skill__name">${esc(name)}</span>${beleg}</li>`;
     })
     .join('');
@@ -227,15 +230,15 @@ function gallery(items, poster, weit) {
     const modus = passung(item);
     return `
       <figure class="figure figure--${modus}${versteckt}">
-        <button class="figure__button" type="button" data-full="${esc(asset(item.src))}" data-cursor="Vergrössern"
-                aria-label="Bild ${i + 1} von ${items.length} vergrössern">
+        <button class="figure__button" type="button" data-full="${esc(asset(item.src))}" data-cursor="${esc(t('galerie.vergroessern'))}"
+                aria-label="${esc(t('galerie.bildvon', { n: i + 1, m: items.length }))}">
           ${imageTag(item, sizes, { modus })}
         </button>
       </figure>`;
   });
 
   const knopf = kuerzen
-    ? `<button class="more" type="button" data-more>Alle ${items.length} Dateien zeigen <span aria-hidden="true">↓</span></button>`
+    ? `<button class="more" type="button" data-more>${esc(t('galerie.alle', { n: items.length }))} <span aria-hidden="true">↓</span></button>`
     : '';
 
   return `<div class="gallery${weit ? ' gallery--wide' : ''}">${cells.join('')}</div>${knopf}`;
@@ -367,7 +370,7 @@ function renderStep(chapter, index, total, poster) {
   return `
     <section class="step">
       <div class="step__head">
-        <p class="step__num">Schritt ${index + 1} von ${total}</p>
+        <p class="step__num">${esc(t('projekt.schrittvon', { n: index + 1, m: total }))}</p>
         <h2 class="step__title">${esc(chapter.title)}</h2>
         <p class="step__text">${esc(chapter.text)}</p>
         ${downloadLinks(chapter.docs)}
@@ -440,10 +443,10 @@ function platzhalterBlock(datei, poster) {
 
 function factList(project) {
   const rows = [
-    ['Jahr', project.year],
-    ['Meine Rolle', project.role],
-    ['Mitwirkende', project.client],
-    ['Werkzeuge', project.tools?.join(', ')],
+    [t('fakten.jahr'), project.year],
+    [t('fakten.rolle'), project.role],
+    [t('fakten.mitwirkende'), project.client],
+    [t('fakten.werkzeuge'), project.tools?.join(', ')],
   ].filter(([, value]) => value);
 
   if (rows.length === 0) return '';
@@ -489,18 +492,18 @@ export function renderProjectPage(project, categoryTitle) {
       </div>
       ${
         project.prototyp
-          ? `<p class="play"><a class="play__button" href="#prototyp" data-cursor="Ansehen">▶ ${esc(project.prototyp.label)}</a></p>`
+          ? `<p class="play"><a class="play__button" href="#prototyp" data-cursor="${esc(t('karte.ansehen'))}">▶ ${esc(project.prototyp.label)}</a></p>`
           : ''
       }
       ${
         project.spielbar
-          ? `<p class="play"><a class="play__button" href="${esc(project.spielbar.href)}" data-cursor="Spielen">▶ ${esc(project.spielbar.label)}</a>
+          ? `<p class="play"><a class="play__button" href="${esc(project.spielbar.href)}" data-cursor="${esc(t('karte.spielen'))}">▶ ${esc(project.spielbar.label)}</a>
              <span class="play__note">Läuft direkt im Browser, kein Download nötig.</span></p>`
           : ''
       }
       ${
         project.extern
-          ? `<p class="play"><a class="play__button" href="${esc(project.extern.href)}" target="_blank" rel="noopener" data-cursor="Öffnen">${esc(project.extern.label)} ↗</a>
+          ? `<p class="play"><a class="play__button" href="${esc(project.extern.href)}" target="_blank" rel="noopener" data-cursor="${esc(t('karte.oeffnen'))}">${esc(project.extern.label)} ↗</a>
              <span class="play__note">${esc(project.extern.note ?? '')}</span></p>`
           : ''
       }
@@ -511,8 +514,8 @@ export function renderProjectPage(project, categoryTitle) {
              </figure>`
           : ''
       }
-      <nav class="ablauf" aria-label="Aufbau des Projekts">
-        <p class="ablauf__label">So ist das Projekt entstanden</p>
+      <nav class="ablauf" aria-label="${esc(t('projekt.aufbau'))}">
+        <p class="ablauf__label">${esc(t('projekt.ablauf'))}</p>
         <ol class="ablauf__list">${ablauf}</ol>
       </nav>
     </header>

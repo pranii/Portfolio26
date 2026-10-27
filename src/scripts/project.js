@@ -10,12 +10,19 @@ import { revealFade, revealOnScroll } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initLightbox } from './lib/lightbox.js';
 import { initPageTransitions } from './lib/transitions.js';
-import { initReadout } from './lib/readout.js';
 import { initShowMore } from './lib/showmore.js';
 import { initVideoSlots } from './lib/videoslot.js';
 import { renderProjectPage } from './lib/render.js';
 import { prototypHtml, startPrototyp } from './lib/prototyp.js';
 import { initBuecher } from './lib/buecher.js';
+import {
+  ladeSprache,
+  t,
+  uebersetzeProjekt,
+  uebersetzeKategorie,
+  uebersetzeSeite,
+  initSprachschalter,
+} from './lib/i18n.js';
 import { LOADERS } from './lib/bereiche.js';
 
 function parseId() {
@@ -27,29 +34,31 @@ function parseId() {
 function notFound(message) {
   document.querySelector('[data-slot="projekt"]').innerHTML = `
     <div class="empty">
-      <h1 class="empty__title">Projekt nicht gefunden</h1>
+      <h1 class="empty__title">${t('projekt.nichtgefunden')}</h1>
       <p class="empty__text">${message}</p>
-      <p><a class="button" href="index.html">Zur Startseite</a></p>
+      <p><a class="button" href="index.html">${t('projekt.zurstartseite')}</a></p>
     </div>`;
   document.querySelector('.breadcrumb')?.remove();
   document.querySelector('.pager')?.remove();
 }
 
+/** Das Projekt davor oder danach — mit uebersetztem Titel. */
+function uebersetztesNachbarprojekt(data, index) {
+  const nachbar = data.projects[index];
+  return nachbar ? uebersetzeProjekt(nachbar) : null;
+}
+
 async function main() {
+  await ladeSprache();
+  uebersetzeSeite();
+  initSprachschalter();
   document.querySelector('[data-slot="name"]').textContent = site.name;
-  document.querySelector('[data-slot="footer-name"]').textContent = site.name;
-  document.querySelector('[data-slot="footer-links"]').innerHTML = site.links
-    .map((link) => `<a href="${link.href}">${link.label}</a>`)
-    .join('');
-  initReadout();
 
   const { category, slug } = parseId();
   const load = LOADERS[category];
 
   if (!load) {
-    notFound(
-      'Die Adresse enthaelt keinen gueltigen Bereich. Erwartet wird zum Beispiel projekt.html?id=film/love.',
-    );
+    notFound(t('projekt.kein-bereich'));
     return;
   }
 
@@ -57,22 +66,23 @@ async function main() {
   const index = data.projects.findIndex((p) => p.slug === slug);
 
   if (index === -1) {
-    notFound(`Im Bereich ${data.category.title} gibt es kein Projekt mit dem Kuerzel "${slug}".`);
+    notFound(t('projekt.kein-projekt', { bereich: data.category.title, slug }));
     return;
   }
 
-  const project = data.projects[index];
+  const project = uebersetzeProjekt(data.projects[index]);
+  const bereich = uebersetzeKategorie(data.category);
   document.documentElement.dataset.accent = category;
-  document.title = `${project.title} — ${data.category.title} — Portfolio`;
+  document.title = `${project.title} — ${bereich.title} — Portfolio`;
 
   const meta = categories.find((c) => c.slug === category);
   const crumb = document.querySelector('[data-slot="crumb-category"]');
-  crumb.textContent = data.category.title;
+  crumb.textContent = bereich.title;
   crumb.href = meta?.href ?? `${category}.html`;
   document.querySelector('[data-slot="crumb-project"]').textContent = project.title;
 
   const wurzel = document.querySelector('[data-slot="projekt"]');
-  wurzel.innerHTML = renderProjectPage(project, data.category.title);
+  wurzel.innerHTML = renderProjectPage(project, bereich.title);
 
   // Der Prototyp sitzt zwischen Projektkopf und Kapiteln — auf derselben
   // Seite, nicht auf einer eigenen.
@@ -91,8 +101,8 @@ async function main() {
     link.innerHTML = `<span class="pager__dir">${richtung}</span><span class="pager__title">${target.title}</span>`;
   };
 
-  setPager('prev', data.projects[index - 1], '← Vorheriges Projekt');
-  setPager('next', data.projects[index + 1], 'Nächstes Projekt →');
+  setPager('prev', uebersetztesNachbarprojekt(data, index - 1), t('projekt.vorheriges'));
+  setPager('next', uebersetztesNachbarprojekt(data, index + 1), t('projekt.naechstes'));
 
   initScroll();
   initPageTransitions();

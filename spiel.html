@@ -17,20 +17,20 @@
 
     <header class="site-header">
       <a class="site-header__mark" href="index.html" data-slot="name">Portfolio</a>
-      <nav class="site-nav" aria-label="Bereiche">
-        <a href="creative-technology.html">Creative Technology</a>
-        <a href="film.html">Film</a>
-        <a href="game.html">Game</a>
-        <a href="kommunikationsdesign.html">Kommunikationsdesign</a>
-        <a href="spiel.html" aria-current="page">Spiel</a>
+      <nav class="site-nav" data-t-label="nav.bereiche">
+        <a href="creative-technology.html" data-t="kat.creative-technology">Creative Technology</a>
+        <a href="film.html" data-t="kat.film">Film</a>
+        <a href="game.html" data-t="kat.game">Game</a>
+        <a href="kommunikationsdesign.html" data-t="kat.kommunikationsdesign">Kommunikationsdesign</a>
+        <a href="spiel.html" aria-current="page" data-t="kat.spiel">Spiel</a>
       </nav>
     </header>
 
     <main class="shell">
-      <nav class="breadcrumb" aria-label="Pfad">
-        <a href="index.html">Start</a>
+      <nav class="breadcrumb" data-t-label="nav.pfad">
+        <a href="index.html" data-t="nav.start">Start</a>
         <span aria-hidden="true">/</span>
-        <a href="game.html">Game</a>
+        <a href="game.html" data-t="kat.game">Game</a>
         <span aria-hidden="true">/</span>
         <a href="projekt.html?id=game/botlnick-gamejam">Botlnick</a>
         <span aria-hidden="true">/</span>
@@ -72,7 +72,7 @@
       </section>
 
       <section class="steuerung">
-        <h2 class="section-title">Steuerung</h2>
+        <h2 class="section-title" data-t="spiel.steuerung">Steuerung</h2>
         <dl class="keys" data-slot="steuerung"></dl>
         <p class="section-hint">
           Das Spiel übernimmt den Mauszeiger, sobald du hineinklickst. Mit
@@ -80,20 +80,13 @@
         </p>
       </section>
 
-      <nav class="pager" aria-label="Weiter">
+      <nav class="pager" data-t-label="nav.weiter">
         <a class="pager__link" href="projekt.html?id=game/botlnick-gamejam">
           <span class="pager__dir">← Zurück zum Projekt</span>
           <span class="pager__title">Wie Botlnick entstanden ist</span>
         </a>
       </nav>
     </main>
-
-    <footer class="site-footer">
-      <p class="site-footer__note">Fragen oder Interesse an einer Zusammenarbeit?</p>
-      <div class="site-footer__links" data-slot="footer-links"></div>
-      <div class="readout" data-slot="readout"></div>
-      <p class="site-footer__copy">© <span data-slot="footer-name"></span></p>
-    </footer>
 
     <script type="module" src="/src/scripts/spiel.js"></script>
   </body>

@@ -8,11 +8,11 @@
 
 import '../styles/main.css';
 import { site, spiel } from '../data/site.js';
+import { ladeSprache, uebersetzeSeite, initSprachschalter } from './lib/i18n.js';
 import { initScroll, initProgressBar } from './lib/scroll.js';
 import { revealFade } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
-import { initReadout } from './lib/readout.js';
 
 const fenster = () => document.querySelector('[data-slot="spiel-fenster"]');
 const status = (text) => {
@@ -74,12 +74,11 @@ function uhr() {
   setInterval(tick, 30_000);
 }
 
-function main() {
+async function main() {
+  await ladeSprache();
+  uebersetzeSeite();
+  initSprachschalter();
   document.querySelector('[data-slot="name"]').textContent = site.name;
-  document.querySelector('[data-slot="footer-name"]').textContent = site.name;
-  document.querySelector('[data-slot="footer-links"]').innerHTML = site.links
-    .map((link) => `<a href="${link.href}">${link.label}</a>`)
-    .join('');
 
   document.querySelector('[data-slot="spiel-titel"]').textContent = spiel.title;
   document.querySelector('[data-slot="spiel-text"]').textContent = spiel.beschreibung;
@@ -105,7 +104,6 @@ function main() {
   initPageTransitions();
   initCursor();
   initProgressBar();
-  initReadout();
   revealFade();
 }
 

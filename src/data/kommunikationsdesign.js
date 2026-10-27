@@ -213,7 +213,12 @@ export const projects = [
     subtitle: 'Ein Magazin ueber das Ergriffensein',
     cover: 'prototyp-03',
     description:
-      'Kama Muta ist das ploetzliche Gefuehl, das entsteht, wenn Naehe unerwartet spuerbar wird — Gaensehaut bei einer Umarmung, Traenen bei einem fremden Lied. Das Magazin versucht, dieses Gefuehl nicht zu erklaeren, sondern herzustellen: Leser werden aufgefordert, selbst Begegnungen zu machen.', // TODO
+      'Kama Muta ist das plötzliche Gefühl, das entsteht, wenn Nähe unerwartet spürbar ' +
+      'wird — Gänsehaut bei einer Umarmung, Tränen bei einem fremden Lied. Das Magazin ' +
+      'versucht, dieses Gefühl nicht zu erklären, sondern herzustellen: Leser werden ' +
+      'aufgefordert, selbst Begegnungen zu machen. Aus dem Heft ist inzwischen eine ' +
+      'Installation geworden, die genau das im Raum einlöst — zwei Fremde, die sich ' +
+      'gegenübersitzen und ins Gespräch kommen.',
     year: '2026',
     role: 'Konzept, Gestaltung, Fotografie, Illustration',
     tools: ['InDesign', 'Photoshop', 'After Effects'],
@@ -252,9 +257,34 @@ export const projects = [
       },
       {
         title: 'Prototyp',
-        text: 'Am Ende steht das gedruckte Heft — drei Essays, ein Umschlag, und der Beweis, dass die Anweisungen auf Papier funktionieren.', // TODO
+        text:
+          'Am Ende steht das gedruckte Heft — drei Essays, ein Umschlag, und der Beweis, ' +
+          'dass die Anweisungen auf Papier funktionieren.',
         files: ['prototyp', 'kama-muta-magazine-prototype'],
         layout: 'track',
+      },
+      {
+        title: 'Die Installation am Schlossplatz',
+        text:
+          'Für den Pavillon am Schlossplatz in Stuttgart ist aus dem Heft ein Aufbau ' +
+          'geworden: zwei Fremde sitzen sich gegenüber, zwischen ihnen nichts als ein ' +
+          'Buch. Das Gespräch führt der Fragebogen, nicht der Mut der beiden — niemand ' +
+          'muss sich etwas ausdenken, es steht ja da. Grundlage ist der bekannte ' +
+          'Fragenkatalog, mit dem sich zwei Menschen in 36 Fragen näherkommen; ich habe ' +
+          'ihn auseinandergenommen und auf drei Stufen zu je zwei Fragen verteilt. Erst ' +
+          'das Leichte, dann das, was man sonst nicht erzählt. Die Regeln stehen auf dem ' +
+          'Buch selbst, damit kein Erklärer daneben stehen muss.',
+        textOnly: true,
+      },
+      {
+        title: 'Ablauf der Begegnung',
+        // TODO: Die Skizze aus Milanote fehlt noch als Datei. Sobald sie
+        // vorliegt, hier als files eintragen und den Text daneben kuerzen.
+        text:
+          'Skizziert ist der Ablauf als Weg durch drei Stufen: Platz nehmen, Karte ' +
+          'ziehen, antworten, weiterrücken. Das erste Design steht; für den nächsten ' +
+          'Einsatz wird es noch einmal überarbeitet.',
+        textOnly: true,
       },
     ],
   },

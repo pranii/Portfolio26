@@ -335,16 +335,21 @@ export const projects = [
   {
     slug: 'in-lakech',
     title: 'In Lak’ech',
-    subtitle: 'Ein Begegnungsautomat fuer den oeffentlichen Raum',
+    subtitle: 'Ein Begegnungsautomat für den öffentlichen Raum',
     cover: 'begegnung-02',
     description:
-      'Entstanden in einem fuenfwoechigen Workshop mit der Aufgabe, eine Begegnung im ' +
-      'oeffentlichen Raum zu schaffen. Herausgekommen ist ein Automat fuer zwei Fremde: ' +
-      'ein Videospiel im Nokia-3310-Look, programmiert in Python auf einem Raspberry Pi, ' +
-      'bedient ueber zwei Arcade-Knoepfe. Zwei Figuren streiten sich im Pokemon-Stil ' +
-      'durch ein Duell — bis am Ende die Frage steht: to die or to live together? Nur ' +
-      'wenn beide gleichzeitig druecken, loest die Kamera aus und der Kassenbon-Drucker ' +
-      'gibt ein Foto der Begegnung aus, durchnummeriert.', // TODO
+      '„In Lak’ech" ist ein Gruß der Maya und heißt: Ich bin ein anderes Du. Wer ' +
+      'gegenübersteht, ist nicht das Fremde, sondern dasselbe in einer anderen Gestalt — ' +
+      'und was ich dir antue, tue ich mir an. Dieser Satz nach außen zu tragen ist mir ' +
+      'wichtig, und zwar nicht als Spruch, sondern als Erfahrung, die man gemacht haben ' +
+      'muss. Also ein Automat, der zwei Fremde zusammenbringt, die sonst aneinander ' +
+      'vorbeigelaufen wären: ein Videospiel im Nokia-3310-Look, programmiert in Python ' +
+      'auf einem Raspberry Pi, bedient über zwei Arcade-Knöpfe. Zwei Figuren streiten ' +
+      'sich im Pokémon-Stil durch ein Duell, bis am Ende die Frage steht: to die or to ' +
+      'live together? Nur wenn beide gleichzeitig drücken, löst die Kamera aus und der ' +
+      'Kassenbon-Drucker gibt ein Foto der Begegnung aus, durchnummeriert. Entstanden in ' +
+      'einem fünfwöchigen Workshop mit der Aufgabe, eine Begegnung im öffentlichen Raum ' +
+      'zu schaffen.',
     year: '2026',
     role: 'Konzept, Gestaltung, Programmierung',
     tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
@@ -353,29 +358,62 @@ export const projects = [
     pull: 'Ich werde an dir zu mir.',
     chapters: [
       {
-        title: 'Visions',
+        title: 'Spielerische Zusammenführung',
         text:
-          'Ausgangspunkt und Inspirationsquelle: Collagen aus Fundstuecken, Farbe und ' +
-          'Handschrift. Aus dieser Bildwelt kam die Entscheidung, nicht mit Hochglanz zu ' +
-          'arbeiten, sondern mit etwas Gebrauchtem und Lautem.', // TODO
-        files: ['visions'],
+          'Zuerst habe ich nach einem Spiel gesucht, das zwei Fremde zueinander bringt, ' +
+          'ohne dass einer den Anfang machen muss. „Himmel und Hölle" war der ' +
+          'Ausgangspunkt — das Kinderspiel, bei dem man auf einem Bein über ein Feld auf ' +
+          'dem Boden hüpft. Die Idee: zwei Spielfelder, einander gegenüber. Jede ' +
+          'beantwortete Frage bringt einen Schritt, bis sich beide in der Mitte treffen ' +
+          'und sich die Hand geben. Daneben liefen andere Versuche mit derselben Mechanik ' +
+          '— „Floor is Lava", ein Eisbrecher, bei dem man nur weiterkommt, wenn man dem ' +
+          'anderen hilft.',
+        files: ['spielidee'],
+        layout: 'track',
+      },
+      {
+        title: 'Tests in Furtwangen',
+        text:
+          'Dann bin ich nach draußen gegangen, um zu sehen, wie Menschen auf so etwas ' +
+          'reagieren. Die Fragen landeten auf kleinen Notizzetteln, die Zettel auf den ' +
+          'Stufen einer Unterführung: Von beiden Seiten sollte je eine Stufe weiter ' +
+          'gehen, wer eine Frage beantwortet, bis man sich in der Mitte trifft. An dem ' +
+          'Tag war das Wetter so schlecht, dass kaum jemand kam — am Ende hatte ich ' +
+          'wenige Anhaltspunkte und vor allem die Erkenntnis, dass der öffentliche Raum ' +
+          'mitspielen muss, wenn man ihn bespielen will.',
+        files: ['test'],
+        layout: 'track',
+      },
+      {
+        title: 'Ein gefundenes Buch',
+        text:
+          'Ein paar Tage später, auf dem Weg zu einer Freundin, lag „Feuerwaffen" von ' +
+          'Howard Ricketts auf dem Boden. Ich habe es mitgenommen und angefangen, es zu ' +
+          'zerschneiden: Pistolen und Gewehre aus dem einen Buch, Landschaften und Tiere ' +
+          'aus einem Naturmagazin, daraus ein Collagenbuch. Irgendwann stand die Idee, ' +
+          'genau das in einen Automaten zu übersetzen — und mit dem zu spielen, was ' +
+          'zwischen zwei Fremden immer zuerst da ist: Unsicherheit und Misstrauen.',
+        files: ['collage'],
         layout: 'grid',
       },
       {
-        title: 'Arcade',
+        title: 'Vom Handschlag zum Vertrauenstest',
         text:
-          'Auf Rasterpapier wurde das Spiel grob aufgezeichnet: Bildschirmaufbau, ' +
-          'Dialogbox, wo die Figuren stehen, wo der Timing-Balken sitzt. Das Raster ' +
-          'entsprach dabei schon dem spaeteren Pixelbild.', // TODO
-        files: ['arcade'],
+          'Auf Rasterpapier wurde das Spiel aufgezeichnet: Bildschirmaufbau, Dialogbox, ' +
+          'wo die Figuren stehen, wo der Timing-Balken sitzt. Das Raster entsprach dabei ' +
+          'schon dem späteren Pixelbild. Zuerst stand am Ende nur der Handschlag, weil ' +
+          'der Vertrauenstest noch nicht ausgearbeitet war — inzwischen ist er im Spiel: ' +
+          '„Kann ich dir vertrauen?", „Das hat weh getan", „Wir sind verletzt", „Ich hab ' +
+          'dich trotzdem lieb."',
+        files: ['wireframe'],
         layout: 'track',
       },
       {
         title: 'Taiyo und Tsuki',
         text:
-          'Die beiden Figuren heissen Sonne und Mond. Jede sitzt auf einer Seite des ' +
-          'Bildschirms und gehoert zu einem Arcade-Knopf, der nur leuchtet, wenn sie ' +
-          'spricht. Die Angriffs-Animationen hat Julien Truebiger erstellt.', // TODO
+          'Die beiden Figuren heißen Sonne und Mond. Jede sitzt auf einer Seite des ' +
+          'Bildschirms und gehört zu einem Arcade-Knopf, der nur leuchtet, wenn sie ' +
+          'spricht. Die Angriffs-Animationen hat Julien Trübiger erstellt.',
         files: ['hand', 'animation'],
         layout: 'grid',
       },
@@ -384,9 +422,17 @@ export const projects = [
         text:
           'Das Ergebnis: jede gelungene Begegnung wird fotografiert und auf einem ' +
           'Kassenbon ausgedruckt, mit fortlaufender Nummer. Zwei Menschen, die sich ' +
-          'vorher nicht kannten, halten danach denselben Zettel in der Hand.', // TODO
+          'vorher nicht kannten, halten danach denselben Zettel in der Hand.',
         files: ['begegnung'],
         layout: 'grid',
+      },
+      {
+        title: 'Regensburg 2027',
+        text:
+          'Der Automat soll wieder aufgenommen werden: im Sommer 2027 in der Innenstadt ' +
+          'von Regensburg, diesmal nicht als Prüfungsaufbau, sondern dort, wo die Leute ' +
+          'ohnehin vorbeikommen.',
+        textOnly: true,
       },
     ],
   },

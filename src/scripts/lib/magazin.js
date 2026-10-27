@@ -30,6 +30,8 @@
  * wird Seite fuer Seite geblaettert statt Blatt fuer Blatt.
  */
 
+import { t } from './i18n.js';
+
 const DAUER = 620; // Millisekunden fuer eine Drehung
 const KURVE = 'cubic-bezier(0.35, 0, 0.2, 1)';
 const SCHMAL = '(max-width: 48rem)';
@@ -43,13 +45,13 @@ const SCHMAL = '(max-width: 48rem)';
  */
 export function startMagazin(wurzel, seiten, melde = () => {}, optionen = {}) {
   if (seiten.length === 0) {
-    wurzel.innerHTML = '<p class="buch__leer">Keine Seiten gefunden.</p>';
+    wurzel.innerHTML = `<p class="buch__leer">${t('heft.leer')}</p>`;
     return {};
   }
 
   const heftModus = optionen.modus === 'heft';
   const eigeneLeiste = optionen.leiste !== false;
-  const titel = optionen.titel ?? 'Seite';
+  const titel = optionen.titel ?? t('heft.seite');
 
   // Bei ungerader Seitenzahl bleibt die Rueckseite des letzten Blattes leer.
   const blaetter = Math.ceil(seiten.length / 2);
@@ -92,9 +94,9 @@ export function startMagazin(wurzel, seiten, melde = () => {}, optionen = {}) {
     ${
       eigeneLeiste
         ? `<div class="buch__leiste">
-            <button class="buch__knopf" type="button" data-rolle="zurueck" aria-label="Zurückblättern">◀</button>
+            <button class="buch__knopf" type="button" data-rolle="zurueck" aria-label="${t('heft.zurueck')}">◀</button>
             <span class="buch__zaehler" data-rolle="zaehler" aria-live="polite"></span>
-            <button class="buch__knopf" type="button" data-rolle="vor" aria-label="Weiterblättern">▶</button>
+            <button class="buch__knopf" type="button" data-rolle="vor" aria-label="${t('heft.vor')}">▶</button>
           </div>`
         : ''
     }`;
@@ -119,13 +121,13 @@ export function startMagazin(wurzel, seiten, melde = () => {}, optionen = {}) {
 
   function benennung() {
     if (einzeln) {
-      if (heftModus && seitenNr === 1) return 'Vorderseite';
-      if (heftModus && seitenNr === seiten.length) return 'Rückseite';
-      return `${titel} ${seitenNr} von ${seiten.length}`;
+      if (heftModus && seitenNr === 1) return t('heft.vorderseite');
+      if (heftModus && seitenNr === seiten.length) return t('heft.rueckseite');
+      return t('heft.seitevon', { n: seitenNr, m: seiten.length });
     }
-    if (blatt === 0) return 'Vorderseite';
-    if (blatt >= blaetter) return 'Rückseite';
-    return `${titel} ${linkeSeite(blatt)} und ${rechteSeite(blatt)}`;
+    if (blatt === 0) return t('heft.vorderseite');
+    if (blatt >= blaetter) return t('heft.rueckseite');
+    return t('heft.seitenpaar', { a: linkeSeite(blatt), b: rechteSeite(blatt) });
   }
 
   /** Setzt ein Seitenfeld auf eine Seitenzahl — oder leert es. */
@@ -137,7 +139,7 @@ export function startMagazin(wurzel, seiten, melde = () => {}, optionen = {}) {
       return;
     }
     img.src = bild(nummer);
-    img.alt = `Rreth 02, ${was} ${nummer} von ${seiten.length}`;
+    img.alt = `${was} ${nummer}/${seiten.length}`;
   }
 
   function zeige() {

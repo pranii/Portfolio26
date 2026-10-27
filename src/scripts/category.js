@@ -12,14 +12,28 @@ import { initScroll, initProgressBar, gsap, prefersReducedMotion } from './lib/s
 import { revealFade, revealOnScroll } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
-import { initReadout } from './lib/readout.js';
 import { renderCards, renderVorgehen, renderSoftware, countMedia } from './lib/render.js';
 import { initCarousel } from './lib/carousel.js';
 import { LOADERS } from './lib/bereiche.js';
+import {
+  ladeSprache,
+  t,
+  uebersetzeKategorie,
+  uebersetzeProjekt,
+  uebersetzeSeite,
+  initSprachschalter,
+} from './lib/i18n.js';
 
 async function main() {
   const page = document.body.dataset.page;
-  const { category, projects } = await LOADERS[page]();
+  await ladeSprache();
+  uebersetzeSeite();
+  initSprachschalter();
+
+  const geladen = await LOADERS[page]();
+  const category = uebersetzeKategorie(geladen.category);
+  const projects = geladen.projects.map(uebersetzeProjekt);
+  document.title = `${category.title} — Portfolio`;
 
   document.documentElement.dataset.accent = page;
   document.querySelector('[data-slot="name"]').textContent = site.name;
@@ -32,7 +46,7 @@ async function main() {
   });
   document.querySelector('[data-slot="lead"]').textContent = category.lead;
   document.querySelector('[data-slot="count"]').textContent =
-    `${projects.length} Projekte · ${counts.chapters} Arbeitsschritte`;
+    `${projects.length} ${t('karte.projekte')} · ${counts.chapters} ${t('karte.schritte')}`;
   document.querySelector('[data-slot="cards"]').innerHTML = renderCards(projects, page);
 
   // Abschnitte ohne Inhalt ganz weglassen statt eine leere Ueberschrift zu zeigen.
@@ -46,16 +60,10 @@ async function main() {
     renderSoftware(category.software, projects),
   );
 
-  document.querySelector('[data-slot="footer-links"]').innerHTML = site.links
-    .map((link) => `<a href="${link.href}">${link.label}</a>`)
-    .join('');
-  document.querySelector('[data-slot="footer-name"]').textContent = site.name;
-
   initScroll();
   initPageTransitions();
   initCursor();
   initProgressBar();
-  initReadout();
   initCarousel(document.querySelector('.carousel'));
   revealFade();
   revealOnScroll('.method__step', { y: 20 });

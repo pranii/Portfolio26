@@ -14,6 +14,7 @@ import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
 import { initLauncher } from './lib/launcher.js';
 import { initPhoneMenu } from './lib/phonemenu.js';
+import { ladeSprache, t, uebersetzeSite, uebersetzeSeite, initSprachschalter } from './lib/i18n.js';
 
 // Menue-Icons im 16er-Pixelraster, 1 = gesetztes Pixel.
 const ICON_GRIDS = {
@@ -152,12 +153,12 @@ function renderRole(role) {
 function renderMenu() {
   const eintraege = [
     ...categories,
-    { slug: 'spiele', href: spiel.href, title: 'Spiele', description: spiel.untertitel },
+    { slug: 'spiele', href: spiel.href, title: t('menu.spiele'), description: spiel.untertitel },
     {
       slug: 'kontakt',
       href: `mailto:${site.email}`,
-      title: 'Kontakt',
-      description: 'Interesse oder Fragen zu einer Kollaboration?',
+      title: t('menu.kontakt'),
+      description: t('menu.kontakttext'),
     },
   ];
   return eintraege
@@ -202,7 +203,15 @@ function initMenuWindow(call, fenster) {
   });
 }
 
-function main() {
+async function main() {
+  await ladeSprache();
+  uebersetzeSeite();
+  initSprachschalter();
+
+  const uebersetzt = uebersetzeSite(site, categories);
+  Object.assign(site, uebersetzt.site);
+  categories.splice(0, categories.length, ...uebersetzt.categories);
+
   document.querySelector('[data-slot="launcher-title"]').textContent = site.name;
   document.querySelector('[data-slot="hero"]').textContent = site.name;
   document.querySelector('[data-slot="role"]').innerHTML = renderRole(site.role);

@@ -97,6 +97,30 @@ export const projects = [
     ],
   },
   {
+    slug: 'improtheater',
+    title: 'Improtheater',
+    subtitle: 'Staatstheater Tübingen',
+    description:
+      'Ein Improvisationstheaterstück am Staatstheater in Tübingen — gefilmt, geschnitten ' +
+      'und auf einen Trailer gebracht. Improvisation heißt für die Kamera: Niemand weiß ' +
+      'vorher, wo die Szene hingeht, es gibt keinen zweiten Take und keinen Plan, an den ' +
+      'man sich halten könnte. Gedreht habe ich gemeinsam mit Joscha Reuther und Jan ' +
+      'Bangert.',
+    year: '2026',
+    role: 'Kamera, Schnitt',
+    tools: ['Premiere Pro'],
+    tags: ['Theater', 'Dokumentation', 'Kamera'],
+    chapters: [
+      {
+        title: 'Der Trailer',
+        text:
+          'Der Zusammenschnitt des Abends: Szenen, die es so nur einmal gegeben hat, weil ' +
+          'sie im Moment entstanden sind.',
+        embed: 'https://vimeo.com/1227665449/8897decc48',
+      },
+    ],
+  },
+  {
     slug: 'musikvideos',
     title: 'Musikvideos',
     subtitle: 'EREZA — a kishe guxu',

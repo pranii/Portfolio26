@@ -14,18 +14,18 @@
 
     <header class="site-header">
       <a class="site-header__mark" href="index.html" data-slot="name">Portfolio</a>
-      <nav class="site-nav" aria-label="Bereiche">
-        <a href="creative-technology.html">Creative Technology</a>
-        <a href="film.html">Film</a>
-        <a href="game.html">Game</a>
-        <a href="kommunikationsdesign.html" aria-current="page">Kommunikationsdesign</a>
-        <a href="spiel.html">Spiel</a>
+      <nav class="site-nav" data-t-label="nav.bereiche">
+        <a href="creative-technology.html" data-t="kat.creative-technology">Creative Technology</a>
+        <a href="film.html" data-t="kat.film">Film</a>
+        <a href="game.html" data-t="kat.game">Game</a>
+        <a href="kommunikationsdesign.html" aria-current="page" data-t="kat.kommunikationsdesign">Kommunikationsdesign</a>
+        <a href="spiel.html" data-t="kat.spiel">Spiel</a>
       </nav>
     </header>
 
     <main class="shell">
-      <nav class="breadcrumb" aria-label="Pfad">
-        <a href="index.html">Start</a>
+      <nav class="breadcrumb" data-t-label="nav.pfad">
+        <a href="index.html" data-t="nav.start">Start</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page" data-slot="title">Kommunikationsdesign</span>
       </nav>
@@ -39,7 +39,7 @@
       <section class="carousel" aria-roledescription="Karussell" aria-label="Projekte">
         <div class="carousel__head">
           <div class="section-head">
-            <p class="label">Projekte</p>
+            <p class="label" data-t="abschnitt.projekte">Projekte</p>
           </div>
           <div class="carousel__controls">
             <p class="carousel__count" aria-live="polite">
@@ -49,7 +49,7 @@
               class="carousel__btn"
               type="button"
               data-carousel="prev"
-              aria-label="Vorheriges Projekt"
+              data-t-label="liste.vorheriges"
             >
               <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
                 <rect x="3" y="0" width="1" height="1" />
@@ -65,7 +65,7 @@
               class="carousel__btn"
               type="button"
               data-carousel="next"
-              aria-label="Nächstes Projekt"
+              data-t-label="liste.naechstes"
             >
               <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true" class="is-flipped">
                 <rect x="3" y="0" width="1" height="1" />
@@ -79,7 +79,7 @@
             </button>
           </div>
         </div>
-        <div class="carousel__viewport" tabindex="0" aria-label="Projekte, seitlich scrollbar">
+        <div class="carousel__viewport" tabindex="0" data-t-label="liste.projekte">
           <ul class="carousel__track" data-slot="cards"></ul>
         </div>
         <div class="carousel__bar" aria-hidden="true"><span class="carousel__thumb"></span></div>
@@ -87,16 +87,16 @@
 
       <section class="method">
         <div class="section-head">
-          <p class="label">Vorgehen</p>
-          <h2 class="h-section">So gehe ich vor</h2>
+          <p class="label" data-t="abschnitt.vorgehen">Vorgehen</p>
+          <h2 class="h-section" data-t="abschnitt.sogeheichvor">So gehe ich vor</h2>
         </div>
         <ol class="method__list" data-slot="vorgehen"></ol>
       </section>
 
       <section class="skills">
         <div class="section-head">
-          <p class="label">Werkzeuge</p>
-          <h2 class="h-section">Software</h2>
+          <p class="label" data-t="abschnitt.werkzeuge">Werkzeuge</p>
+          <h2 class="h-section" data-t="abschnitt.software">Software</h2>
           <p class="section-head__hint">
             Die Zahl dahinter zeigt, in wie vielen Projekten dieses Bereichs das Programm im Einsatz
             war.
@@ -105,19 +105,6 @@
         <ul class="skills__list" data-slot="software"></ul>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <p class="site-footer__note">Weiter zu einem anderen Bereich</p>
-      <div class="site-footer__links">
-        <a href="creative-technology.html">Creative Technology →</a>
-        <a href="film.html">Film →</a>
-        <a href="game.html">Game →</a>
-        <a href="index.html">Startseite</a>
-      </div>
-      <div class="site-footer__links" data-slot="footer-links"></div>
-      <div class="readout" data-slot="readout"></div>
-      <p class="site-footer__copy">© <span data-slot="footer-name"></span></p>
-    </footer>
 
     <script type="module" src="/src/scripts/category.js"></script>
   </body>
