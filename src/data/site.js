@@ -14,6 +14,54 @@ export const site = {
     { label: 'Lebenslauf', href: '#' }, // TODO
   ],
 
+  /**
+   * Die Seite ueber mich — aufgebaut wie ein Kontakteintrag im Telefon.
+   * `felder` erscheinen als Liste, `vorgehen` darunter als Schritte.
+   */
+  ueber: {
+    name: 'Pranvera Pelaj',
+    kuerzel: 'PREJNI',
+    rolle: 'Designerin für Interaktive Medien',
+    ort: 'Regensburg',
+    abschluesse: ['B.Sc. Marketing', 'M.A. Design Interaktiver Medien'],
+    sprachen: ['Deutsch', 'Englisch', 'Albanisch'],
+    instagram: { label: '@prejni.design', href: 'https://www.instagram.com/prejni.design/' },
+    gruppe: 'Design',
+    klingelton: 'Nokia Tune',
+    text:
+      'Ich gestalte an der Stelle, an der Print, Digitales und Raum aufhören, getrennte ' +
+      'Disziplinen zu sein: Installationen, die man betritt, Hefte, die man faltet, Automaten, ' +
+      'die zwei Fremde ins Gespräch bringen. Was dabei entsteht, soll nicht erklären, sondern ' +
+      'erfahrbar machen.',
+    vorgehen: [
+      {
+        title: 'Rahmen setzen',
+        text:
+          'Am Anfang steht ein grober Styleguide und ein klares Ziel, gemeinsam mit Kundschaft ' +
+          'oder Team festgelegt. Wer weiß, worauf er zuarbeitet, diskutiert später über ' +
+          'Entscheidungen statt über Geschmack.',
+      },
+      {
+        title: 'Brainstorm',
+        text:
+          'Dann wird das Projekt konkret: offene Runde, viele Richtungen, am Ende eine Idee, ' +
+          'die sich in einem Satz erklären lässt — und die den Rahmen von vorhin trägt.',
+      },
+      {
+        title: 'Aufgaben verteilen',
+        text:
+          'Wer macht was bis wann? Jede Aufgabe bekommt einen Namen und ein Datum. Das hält ' +
+          'die Verantwortung sichtbar und die Abstimmung kurz.',
+      },
+      {
+        title: 'Distribution',
+        text:
+          'Zum Schluss steht die Frage, wo die Arbeit landet: Druckdaten, Kanäle, Formate, ' +
+          'Ausspielung. Ein Entwurf ist erst fertig, wenn er dort funktioniert, wo er hinsoll.',
+      },
+    ],
+  },
+
   ort: 'Furtwangen, Schwarzwald',
   koordinaten: 'N 48° 3\' 5" E 8° 12\' 33"',
   version: 'v1.0',

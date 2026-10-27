@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Über mich — Portfolio</title>
+    <meta
+      name="description"
+      content="Pranvera Pelaj — Designerin für Interaktive Medien. Kontakt, Werdegang und Arbeitsweise."
+    />
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body data-page="ueber">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="site-header__mark" href="index.html" data-slot="name">Portfolio</a>
+      <nav class="site-nav" data-t-label="nav.bereiche">
+        <a href="creative-technology.html" data-t="kat.creative-technology">Creative Technology</a>
+        <a href="film.html" data-t="kat.film">Film</a>
+        <a href="game.html" data-t="kat.game">Game</a>
+        <a href="kommunikationsdesign.html" data-t="kat.kommunikationsdesign">
+          Kommunikationsdesign
+        </a>
+        <a href="spiel.html" data-t="kat.spiel">Spiel</a>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <nav class="breadcrumb" data-t-label="nav.pfad">
+        <a href="index.html" data-t="nav.start">Start</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page" data-t="ueber.titel">Über mich</span>
+      </nav>
+
+      <!-- Der Eintrag im Telefonbuch: Name oben, darunter die Felder. -->
+      <section class="kontakt" aria-labelledby="kontakt-titel">
+        <div class="window__bar">
+          <span class="window__title" id="kontakt-titel">
+            <span class="window__icon" aria-hidden="true">▣</span>
+            <span data-t="ueber.kontakte">Kontakte</span>
+          </span>
+          <span class="window__buttons" aria-hidden="true">
+            <span class="window__btn">_</span>
+            <span class="window__btn">□</span>
+            <span class="window__btn window__btn--close">✕</span>
+          </span>
+        </div>
+
+        <div class="kontakt__karte">
+          <div class="kontakt__kopf">
+            <span class="kontakt__avatar" data-slot="avatar" aria-hidden="true"></span>
+            <p class="kontakt__name" data-slot="kontakt-name">Pranvera Pelaj</p>
+            <p class="kontakt__rolle" data-slot="kontakt-rolle"></p>
+          </div>
+          <dl class="kontakt__felder" data-slot="kontakt-felder"></dl>
+        </div>
+
+        <div class="window__status">
+          <span class="window__status-cell window__status-cell--grow" data-slot="kontakt-status"
+            >1 / 1</span
+          >
+          <span class="window__status-cell" data-t="ueber.gespeichert">Gespeichert</span>
+        </div>
+      </section>
+
+      <section class="ueber__text">
+        <p class="pull" data-slot="ueber-text"></p>
+      </section>
+
+      <section class="method">
+        <div class="section-head">
+          <p class="label" data-t="abschnitt.vorgehen">Vorgehen</p>
+          <h2 class="h-section" data-t="abschnitt.sogeheichvor">So gehe ich vor</h2>
+        </div>
+        <ol class="method__list" data-slot="vorgehen"></ol>
+      </section>
+    </main>
+
+    <script type="module" src="/src/scripts/ueber.js"></script>
+  </body>
+</html>

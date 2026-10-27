@@ -162,7 +162,12 @@ async function handlePdf(src, outDir, publicDir, baseName, entries, source) {
   if (pageLimit <= 0) {
     if (source.keepFile && bytes <= LIMITS.pdfCopyBytes) {
       fs.copyFileSync(src, path.join(outDir, baseName + '.pdf'));
-      entries.push({ type: 'doc', src: `${publicDir}/${baseName}.pdf`, label: path.basename(src), bytes });
+      entries.push({
+        type: 'doc',
+        src: `${publicDir}/${baseName}.pdf`,
+        label: path.basename(src),
+        bytes,
+      });
     }
     return;
   }

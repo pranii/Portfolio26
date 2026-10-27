@@ -53,6 +53,7 @@ export default defineConfig({
         kommunikationsdesign: resolve(import.meta.dirname, 'kommunikationsdesign.html'),
         projekt: resolve(import.meta.dirname, 'projekt.html'),
         spiel: resolve(import.meta.dirname, 'spiel.html'),
+        ueber: resolve(import.meta.dirname, 'ueber.html'),
       },
     },
   },

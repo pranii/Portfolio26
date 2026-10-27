@@ -167,6 +167,7 @@ const PAGE_SCRIPTS = {
   'film.html': ['src/scripts/category.js'],
   'game.html': ['src/scripts/category.js'],
   'kommunikationsdesign.html': ['src/scripts/category.js'],
+  'ueber.html': ['src/scripts/ueber.js'],
 };
 
 for (const [page, scripts] of Object.entries(PAGE_SCRIPTS)) {

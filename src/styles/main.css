@@ -1438,10 +1438,10 @@ html.is-dark .home__call {
   max-width: 30ch;
 }
 
-/* Text links breit, Eckdaten rechts schmal. */
+/* Eckdaten links schmal, Text rechts breit. */
 .project-head__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
   gap: var(--s-6) var(--s-8);
   align-items: start;
   margin-top: var(--s-5);
@@ -2754,6 +2754,104 @@ kbd {
   .window__body--buch {
     aspect-ratio: 16 / 10;
   }
+}
+
+/* ── 10d Seite ueber mich ─────────────────────────────────────────── */
+
+/* Ein Eintrag im Telefonbuch: Kasten mit Titelleiste, Name gross, darunter
+   die Felder mit gepunkteter Fuehrung — wie im Menue des 3310. */
+.kontakt {
+  margin-block: var(--s-7);
+  border: 2px solid var(--pixel);
+  background: var(--paper);
+  box-shadow: var(--lift) var(--lift) 0 var(--pixel);
+  max-width: 44rem;
+}
+
+.kontakt__karte {
+  display: grid;
+  gap: var(--s-5);
+  padding: var(--s-6) var(--s-5);
+}
+
+.kontakt__kopf {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-2);
+  text-align: center;
+}
+
+.kontakt__avatar {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 2px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: var(--t-2);
+  letter-spacing: 0.08em;
+}
+
+.kontakt__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--t-3);
+  line-height: 1;
+}
+
+.kontakt__rolle {
+  margin: 0;
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+}
+
+.kontakt__felder {
+  margin: 0;
+  display: grid;
+  gap: var(--s-2);
+}
+
+.kontakt__zeile {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+}
+
+.kontakt__zeile dt {
+  margin: 0;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+/* Die Punkte zwischen Feldname und Wert. */
+.kontakt__zeile dt::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+}
+
+.kontakt__zeile dd {
+  margin: 0 0 0 auto;
+  text-align: right;
+}
+
+.kontakt__zeile::before {
+  content: '';
+  flex: 1;
+  order: 1;
+  height: 0;
+  border-bottom: 1px dotted var(--rule);
+  transform: translateY(-0.3em);
+}
+
+.kontakt__zeile dd {
+  order: 2;
+  margin-left: 0;
+}
+
+.ueber__text {
+  padding-block: var(--s-5);
 }
 
 /* ── 11 Lightbox ──────────────────────────────────────────────────── */

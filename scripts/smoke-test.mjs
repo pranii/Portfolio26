@@ -68,6 +68,7 @@ const PAGES = [
     query: '?id=film/gibtsnicht',
   },
   { html: 'spiel.html', entry: 'src/scripts/spiel.js', erwartet: '.boot__start' },
+  { html: 'ueber.html', entry: 'src/scripts/ueber.js', erwartet: '.kontakt__zeile' },
   // Die Prototypen liegen in den Projektseiten, nicht auf eigenen Seiten.
   {
     html: 'projekt.html',

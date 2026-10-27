@@ -104,232 +104,59 @@ export const projects = [
     },
     pull: 'Die plötzliche Stille ist fast lauter als der Lärm.',
     chapters: [
-      // TODO: RRETH1.pdf (das 2020er Magazin + der Schluesselanhaenger, mit dem
-      // alles begann) fehlt noch als Datei. Sobald es vorliegt, hier als erstes
-      // Kapitel im Karussell-Layout einfuegen, z.B.:
-      //   { title: '2020 — Magazin und Schluesselanhaenger', files: ['rreth1'], layout: 'track' }
-
-      // ── 2021 bis 2023: die Bachelorarbeit ──
       {
-        title: 'Der Film',
+        title: 'Projektpitch',
         text:
-          'Das Hauptvideo der Rauminstallation: vier Segmente, dazu ein eigens komponierter ' +
-          'Soundtrack. In der Ausstellung lief es an einer Wand, während nebenan das ' +
-          'Schattenspiel stand — hier ist es am Stück zu sehen.',
-        embed: 'https://youtu.be/i9AlftZ5PIk',
+          'Der Pitch beschreibt die Installation in fünf Phasen, jede mit Farbe, Ton, Gefühl, ' +
+          'Zeitdauer und Referenz: von absoluter Dunkelheit über konfrontierende Video-Akte bis ' +
+          'in einen hellen Raum mit anonymen Telefonzellen, in denen Besucher ihre eigene ' +
+          'Geschichte erzählen können. „Take It All Off — Break the Silence" in Schwarz und Rot ' +
+          'war die erste Präsentation dazu; mit ihr sind Cara Brüggendieck und Laura Zahn 2025 ' +
+          'eingestiegen. Für jeden Akt steht ein eigenes Symbol, jedes für eine Form von ' +
+          'Kreislauf, aus dem man alleine schwer herauskommt.',
+        files: ['wheel-of-shame', 'pitch-version-1', 'symbolik', 'in-halt', 'raumskizze-laura'],
+        layout: 'track',
       },
       {
-        title: 'Worum es geht',
+        title: 'Videoextrakte',
         text:
-          'Mir geht es darum, Verhaltensweisen zu erkennen, die einmal als Schutzmechanismus ' +
-          'gedient haben — und dann bewusst gegen den eigenen Impuls zu handeln, für ein ' +
-          'schöneres Miteinander. Das Magazin legt die Grundlage dafür: Es führt vom ' +
-          'Instanzenmodell nach Freud über Melanie Kleins Objektbeziehungstheorie zu Pete ' +
-          'Walkers vier Überlebensstrategien — Kampf, Flucht, Erstarrung, Unterwerfung — und ' +
-          'endet bei konkreten Gedankenkorrekturen. Jede dieser Strategien hat einmal ' +
-          'funktioniert. Das ist der Punkt: Sie war nie ein Charakterfehler, sondern eine ' +
-          'Lösung für eine Situation, die so heute nicht mehr herrscht.',
-        // Die Seiten stehen oben im Heft zum Durchblaettern — als Bilderreihe
-        // waeren sie doppelt.
-        textOnly: true,
-      },
-      {
-        title: 'Erste Skizzen',
-        text:
-          'Angefangen hat es 2021 mit vielen Tagebucheinträgen und Brainstorms. Drei ' +
-          'Wortfelder blieben übrig: Paranoia, Dissoziation, Dissonanz. Daraus hat sich ' +
-          'herausgeschält, dass es nicht um Depression gehen sollte, sondern um Scham — um ' +
-          'das Gefühl, das man nicht erzählt und das genau deshalb bleibt.',
-        files: ['have'],
-        layout: 'grid',
-      },
-      {
-        title: 'Vision Board — die erste Präsentation',
-        text:
-          'Mit diesem Vision Board habe ich Rreth 2023 zum ersten Mal bei Professor Krach ' +
-          'vorgestellt. Darin steht alles, was danach gedreht wurde: vier ' +
-          'Projektionsebenen, ein Vorspann, in dem ein Ball viermal aufspringt und sich dann ' +
-          'in ein zwinkerndes Auge verwandelt, und ein Storyboard, das für jede der vier ' +
-          'Überlebensstrategien dieselbe Szene durchspielt — eine Person auf einem Bett, ' +
-          'eine zweite kommt dazu, und je nach Strategie schlägt die erste um sich, macht ' +
-          'sich klein, erstarrt und dissoziiert oder umarmt die, die gerade schimpft. ' +
-          'Dazu die Referenzen: die verwischten Figuren von John Batho, Hirnscans, ' +
-          'monochromes Korn, die Gummischlauch-Figuren von Max Fleischer. Und eine Regel, ' +
-          'die über allem steht: Das Material wird mit KI so weit abstrahiert, dass man ' +
-          'sich darin wiedererkennen kann, ohne sich bloßgestellt zu fühlen — ähnlich ' +
-          'genug, um gemeint zu sein, fremd genug, um es auszuhalten.',
+          'Das Hauptvideo läuft in vier Akten mit albanischen Namen: „Themeli" (Grundstein) ' +
+          'zeigt die Reaktionsmuster aus der Kindheit — Kampf, Flucht, Erstarrung, Unterwerfung. ' +
+          '„Shprehje Emocionale" übersetzt in Tanz, was passiert, wenn ein Trigger auf ein altes ' +
+          'Muster trifft. „Metamorfoza" ist der Wendepunkt in Embryohaltung, „Çlirim" die ' +
+          'Katharsis, in der zum ersten Mal Farbe ins Bild kommt. Die ersten drei Akte sind ' +
+          'streng schwarzweiß, als Bild für das Schwarz-Weiß-Denken; gedreht wurde mit Carina ' +
+          'Borgards aus dem Tanztheater, gebaut aus Rotoskopie, EbSynth und einem Soundtrack aus ' +
+          '42 Spuren. 2025 ist neu gedreht worden: Kamera Joscha Reuther, Licht Jan Borghart, ' +
+          'Soundkulisse Denzel — Bild, Licht und Ton miteinander statt nacheinander.',
+        embed: ['https://youtu.be/i9AlftZ5PIk', 'https://youtu.be/Krdg6cM746g'],
         files: ['vision-board'],
         layout: 'track',
       },
       {
-        title: 'Vier Akte, vier albanische Worte',
+        title: 'Magazin',
         text:
-          'Das Hauptvideo läuft in vier Segmenten, jedes nach dem benannt, was es zeigt. ' +
-          '"Themeli", Grundstein: die Reaktionsmuster, die in der Kindheit entstehen und im ' +
-          'Erwachsenenalter zum Konfliktherd werden — Kampf, Flucht, Erstarrung, ' +
-          'Unterwerfung. "Shprehje Emocionale", emotionaler Ausdruck: eine Tänzerin ' +
-          'übersetzt in Bewegung, was passiert, wenn ein Trigger auf ein altes Muster ' +
-          'trifft. "Metamorfoza", Metamorphose: die Hauptfigur in Embryohaltung, der ' +
-          'Rückzug zum inneren Kind und der Wendepunkt, an dem jemand sich eingesteht, dass ' +
-          'ein Verhalten nicht mehr dient. "Çlirim", Befreiung: die Katharsis, in der zum ' +
-          'ersten Mal Farbe ins Bild kommt und drei Sätze den Takt geben — "Atme ein.", ' +
-          '"Halte es fest.", "Lass es los."',
-        textOnly: true,
-      },
-      {
-        title: 'Dreharbeiten',
-        text:
-          'Gedreht wurde im Aufnahmestudio Photo Universal Kleiber. Für die Hauptrolle habe ' +
-          'ich Carina Borgards ausgewählt, weil sie aus dem Tanztheater kommt und die ' +
-          'Emotion körperlich tragen kann; dazu Mathis Harrer vor der Kamera, hinter der ' +
-          'Kamera Redou Ainouz und Johannes Kleiber. Gefilmt wurde auf einer Sony Alpha ' +
-          '6600, der Ton separat über ein Rode NT1-A. Die Kamera bleibt durchgehend an der ' +
-          'Protagonistin — das soll sich wie Verfolgung anfühlen, nicht wie Beobachtung.',
-        textOnly: true,
-      },
-      {
-        title: 'Bildsprache',
-        text:
-          'Die drei ersten Segmente sind streng schwarzweiß, als Bild für das ' +
-          'Schwarz-Weiß-Denken, das mit der Erkrankung einhergeht; erst im vierten kommt ein ' +
-          'tiefes Blau dazu. Jede Figur wurde per Rotoskopie vom Hintergrund gelöst, das ' +
-          'Material in Einzelbilder zerlegt und ausgewählte Schlüsselbilder in Photoshop ' +
-          'bearbeitet: Gradationskurven, eine invertierte Kopie im Differenzmodus, ' +
-          'Weichzeichner, Verflüssigen. EbSynth hat diesen Look dann über die ganze Sequenz ' +
-          'gezogen, im dritten Segment hat RunwayML Einzelbilder entfernt und neu berechnet, ' +
-          'damit die Bewegung kippt. Über allem liegen die Plug-ins TV-Pixel und Signal — ' +
-          'das Bild soll aussehen wie eine Aufnahme, die schon lange im Schrank lag. ' +
-          'Zwischendurch stehen schwarze Sequenzen: Trigger werden mit der Zeit leiser, ' +
-          'aber sie verschwinden nicht.',
-        textOnly: true,
-      },
-      {
-        title: 'Die auditive Ebene',
-        text:
-          'Der Ton ist in Logic entstanden, 42 Spuren, die meisten als MIDI eingespielt. ' +
-          'Melodien und ein verzerrter Bass aus Alchemy, Jungle-Drums für die Höhepunkte, ' +
-          'dazwischen eine tickende Uhr. Alles läuft über einen harten Kompressor, damit ' +
-          'der Track drückt statt nur zu klingen; Panorama-Automationen verteilen ihn im ' +
-          'Raum. Eine Stimmaufnahme wurde mit Hall, Delay und Distortion so weit ' +
-          'bearbeitet, dass man sie gerade noch als Stimme erkennt. Im letzten Segment ' +
-          'bleibt nur noch Atmen übrig, ein- und ausatmen, als Anleitung zum Mitmachen.',
-        textOnly: true,
-      },
-      {
-        title: 'Die Ausstellung in der Stadtgalerie Villingen',
-        text:
-          'Den Abschluss der Bachelorarbeit bildete die Ausstellung. Über den City-Manager ' +
-          'von Villingen-Schwenningen kam der Kontakt zur Stadtgalerie, dort haben wir den ' +
-          'Raum ausgesucht. Beamer an der Decke waren nicht erlaubt, also standen sie auf ' +
-          'Bänken, die Lautsprecher in den Ecken, die Kabel durch die Raummitte. Bei der ' +
-          'Schlüsselübergabe kam heraus, dass eine Wand auf 3,66 Metern offen blieb. Statt ' +
-          'den Raum zu verkleinern, habe ich den angrenzenden Platz dazugenommen und neu ' +
-          'geplant: Der ursprüngliche Raum wurde zum Schattenspiel, zwei Beamer standen ' +
-          'dafür direkt auf dem Boden in den Ecken, und eine drei Sekunden lange Sequenz ' +
-          'lief dort in Endlosschleife als Lichtquelle. Die Besucher standen in diesem Raum ' +
-          'und sahen das Hauptvideo an der Wand des Flurs daneben — der Beamer dafür stand ' +
-          'in einem eigenen Raum auf einem Tisch, mit Lens-Shift und Trapezkorrektur so ' +
-          'eingestellt, dass das Bild über die fehlende Wand hinweg läuft. Die geplante ' +
-          '4.1-Anlage war nicht verfügbar, also kamen zwei Canton AM5 links und rechts der ' +
-          'Projektion auf den Boden. Die Vernissage lief in sechs Schritten: empfangen, ' +
-          'Schattenspiel, Anrede, Hauptvideo, kurze Pause, umsehen — und am Ende Postkarten ' +
-          'mit einem QR-Code, der zum Magazin führt.',
-        textOnly: true,
-      },
-
-      // ── 2025: Fortsetzung im Master, zu dritt ──
-      {
-        title: '2025 — Rreth wird ein Dreierprojekt',
-        text:
-          'Zwei Jahre später kam Rreth im Master noch einmal auf den Tisch, diesmal größer ' +
-          'gedacht: nicht mehr ein Video in einem Raum, sondern eine Installation, die den ' +
-          'Besucher zwanzig Minuten lang durch fünf Phasen führt. "Take It All Off — Break ' +
-          'the Silence" in Schwarz und Rot, die Aufforderung und ihr Preis nebeneinander — ' +
-          'die erste Präsentation für genau die Installation, die im Pitch steht. Mit ihr ' +
-          'sind Cara Brüggendieck und Laura Zahn mit in das Projekt eingestiegen.',
-        files: ['wheel-of-shame'],
-        layout: 'track',
-      },
-      {
-        title: 'Symbolik der Akte',
-        text:
-          'Für jeden Akt wurde ein eigenes Symbol gewählt. Jedes steht für eine Form von ' +
-          'Kreislauf, aus dem man alleine schwer herauskommt. Beim Aussuchen hat Cara mir ' +
-          'geholfen, entschieden haben wir gemeinsam.',
-        files: ['symbolik'],
+          'Das Magazin ist der Wegweiser durch die Modelle hinter der Installation: vom ' +
+          'Instanzenmodell nach Freud über Melanie Kleins Objektbeziehungstheorie zu Pete ' +
+          'Walkers vier Überlebensstrategien, und am Ende konkrete Gedankenkorrekturen. Jede ' +
+          'dieser Strategien hat einmal funktioniert — sie war nie ein Charakterfehler, sondern ' +
+          'eine Lösung für eine Situation, die so heute nicht mehr herrscht. Oben auf dieser ' +
+          'Seite lässt es sich durchblättern.',
+        files: ['have'],
         layout: 'grid',
       },
       {
-        title: 'Raumkonzept',
+        title: 'Zukunft',
         text:
-          'Die Handskizzen legen fest, wie der Besucher durch den Raum geführt wird: Video- ' +
-          'und Audioinstallation, Warteraum, Telefonzelle. Die Architektur ist Teil der ' +
-          'Dramaturgie, nicht nur ihr Behälter. In den Telefonzellen soll erzählt werden, ' +
-          'was sonst niemand hört — anonym, aufgezeichnet, als Archiv für die, die nach ' +
-          'einem kommen.',
-        files: ['in-halt'],
-        layout: 'track',
-      },
-      {
-        title: 'Der Projektpitch',
-        text:
-          'Der Pitch beschreibt alle fünf Phasen einzeln: Farbe, Ton, Gefühl, Zeitdauer und ' +
-          'Referenz. Aufgebaut habe ich ihn als Bauplan für die Ausstellung, die noch ' +
-          'kommen soll — 2028 soll genau danach gebaut werden.',
-        files: ['pitch-version-1'],
-        layout: 'track',
-      },
-      {
-        title: 'Neu gedreht — Kamera, Licht, Ton',
-        text:
-          'Für die neue Fassung wurde noch einmal gedreht, und zwar im Team: Gefilmt hat ' +
-          'Joscha Reuther, das Licht hat Jan Borghart gesetzt. Die Soundkulisse stammt von ' +
-          'Denzel, der sie eigens gebaut und Schnitt für Schnitt an das Video angepasst ' +
-          'hat. Gearbeitet haben wir dabei eng zusammen — Bild, Licht und Ton sind nicht ' +
-          'nacheinander entstanden, sondern miteinander.',
-        textOnly: true,
-      },
-      {
-        title: 'Die Videoinstallation im Rössle',
-        text:
-          'Als Zwischenschritt war eine begehbare Videoinstallation geplant: Leinwände von ' +
-          'fünf Metern Breite, die den Besucher vollständig umstellen, die Beamer um eine ' +
-          'Säule herum aufgestellt, Lautsprecher in allen Ecken. Erst fünf Minuten Stille, dann sieben ' +
-          'Minuten Video, dann noch eine Minute Stille. Die Wände sollten das ' +
-          'Unausweichliche spürbar machen, das Hinausgehen zwischen ihnen hindurch das ' +
-          'Ausbrechen aus dem Kreislauf. Den Raum im Eventkeller des Rössle in Furtwangen ' +
-          'hat Laura skizziert, 5,60 mal 8,90 Meter. Aus Zeitgründen ist daraus nichts ' +
-          'geworden — gezeigt wurden die Videos am Ende an der Hochschule, am Tag der ' +
-          'Medien.',
-        files: ['raumskizze-laura'],
-        layout: 'track',
-      },
-
-      {
-        title: 'Die neuen Videos',
-        text:
-          'Was aus den Dreharbeiten von 2025 geworden ist — gezeigt am Tag der Medien an ' +
-          'der Hochschule, bis die Installation den Raum bekommt, für den sie gedacht ist.',
-        embed: 'https://youtu.be/Krdg6cM746g',
-      },
-
-      // ── Ausblick ──
-      {
-        title: '2028 — Halle 93, App und Kampagne',
-        text:
-          'Aufgegeben ist die Installation nicht: 2028 soll sie wieder aufgenommen und ' +
-          'genau nach dem Pitch in der Halle 93 in Stuttgart ausgestellt werden. Dazu ' +
-          'gehören ein überarbeitetes Magazin und eine App, die den Besucher weiter trägt ' +
-          'als bis zum Ausgang — die Installation dauert zwanzig Minuten, die Muster, um ' +
-          'die es geht, ein Leben lang. Die Instagram-Kampagne läuft im Vorfeld und bewirbt ' +
-          'beides, App und Rauminstallation: kurze Videos, selbst aufgenommen und mit KI ' +
-          'weiterbearbeitet, dazu Captions in der ersten Person — "We eat shame for ' +
-          'breakfast", "I have no mouth but I need to scream". Jeder Post trägt den Namen ' +
-          'eines Musters statt eines Titels: Suppressing, Self Sabotage, Self Destruction.',
+          '2028 soll die Installation wieder aufgenommen und genau nach dem Pitch in der Halle ' +
+          '93 in Stuttgart ausgestellt werden, mit überarbeitetem Magazin und einer App, die den ' +
+          'Besucher weiter trägt als bis zum Ausgang. Die Instagram-Kampagne läuft im Vorfeld ' +
+          'und bewirbt beides: kurze Videos, selbst aufgenommen und mit KI weiterbearbeitet, ' +
+          'dazu Captions in der ersten Person. Jeder Post trägt den Namen eines Musters statt ' +
+          'eines Titels: Suppressing, Self Sabotage, Self Destruction.',
         files: ['rreth-kampagne'],
         layout: 'track',
       },
-      //   Hier möchte ich bitte auch nochmal ein Karussell einfügen als PDF. Bitte erinnere mich daran Claude
     ],
   },
   {
@@ -360,89 +187,45 @@ export const projects = [
     pull: 'Ich werde an dir zu mir.',
     chapters: [
       {
-        title: 'Spielerische Zusammenführung',
+        title: 'Ideenentwicklung',
         text:
-          'Zuerst habe ich nach einem Spiel gesucht, das zwei Fremde zueinander bringt, ' +
-          'ohne dass einer den Anfang machen muss. „Himmel und Hölle" war der ' +
-          'Ausgangspunkt — das Kinderspiel, bei dem man auf einem Bein über ein Feld auf ' +
-          'dem Boden hüpft. Die Idee: zwei Spielfelder, einander gegenüber. Jede ' +
-          'beantwortete Frage bringt einen Schritt, bis sich beide in der Mitte treffen ' +
-          'und sich die Hand geben. Daneben liefen andere Versuche mit derselben Mechanik ' +
-          '— „Floor is Lava", ein Eisbrecher, bei dem man nur weiterkommt, wenn man dem ' +
-          'anderen hilft.',
-        files: ['spielidee'],
+          'Zuerst habe ich nach einem Spiel gesucht, das zwei Fremde zueinander bringt, ohne ' +
+          'dass einer den Anfang machen muss: „Himmel und Hölle", zwei Spielfelder einander ' +
+          'gegenüber, jede beantwortete Frage bringt einen Schritt, bis sich beide in der Mitte ' +
+          'treffen und sich die Hand geben. Ein paar Tage später lag auf dem Weg zu einer ' +
+          'Freundin „Feuerwaffen" von Howard Ricketts auf dem Boden. Ich habe es mitgenommen und ' +
+          'zerschnitten — Pistolen aus dem einen Buch, Landschaften aus einem Naturmagazin, ' +
+          'daraus ein Collagenbuch. Daraus wurde die Idee, genau das in einen Automaten zu ' +
+          'übersetzen und mit dem zu spielen, was zwischen zwei Fremden immer zuerst da ist: ' +
+          'Misstrauen. Auf Rasterpapier entstand dann das Spiel selbst, im Raster des späteren ' +
+          'Pixelbildes.',
+        files: ['spielidee', 'collage', 'wireframe'],
         layout: 'track',
       },
       {
-        title: 'Tests in Furtwangen',
+        title: 'Test in Furtwangen',
         text:
-          'Dann bin ich nach draußen gegangen, um zu sehen, wie Menschen auf so etwas ' +
-          'reagieren. Die Fragen landeten auf kleinen Notizzetteln, die Zettel auf den ' +
-          'Stufen einer Unterführung: Von beiden Seiten sollte je eine Stufe weiter ' +
-          'gehen, wer eine Frage beantwortet, bis man sich in der Mitte trifft. An dem ' +
-          'Tag war das Wetter so schlecht, dass kaum jemand kam — am Ende hatte ich ' +
-          'wenige Anhaltspunkte und vor allem die Erkenntnis, dass der öffentliche Raum ' +
-          'mitspielen muss, wenn man ihn bespielen will.',
+          'Die Fragen landeten auf kleinen Notizzetteln, die Zettel auf den Stufen einer ' +
+          'Unterführung: Von beiden Seiten geht je eine Stufe weiter, wer eine Frage ' +
+          'beantwortet, bis man sich in der Mitte trifft. An dem Tag war das Wetter so schlecht, ' +
+          'dass kaum jemand kam — die Erkenntnis blieb trotzdem: Der öffentliche Raum muss ' +
+          'mitspielen, wenn man ihn bespielen will.',
         files: ['test'],
         layout: 'track',
       },
       {
-        title: 'Ein gefundenes Buch',
+        title: 'Der Automat',
         text:
-          'Ein paar Tage später, auf dem Weg zu einer Freundin, lag „Feuerwaffen" von ' +
-          'Howard Ricketts auf dem Boden. Ich habe es mitgenommen und angefangen, es zu ' +
-          'zerschneiden: Pistolen und Gewehre aus dem einen Buch, Landschaften und Tiere ' +
-          'aus einem Naturmagazin, daraus ein Collagenbuch. Irgendwann stand die Idee, ' +
-          'genau das in einen Automaten zu übersetzen — und mit dem zu spielen, was ' +
-          'zwischen zwei Fremden immer zuerst da ist: Unsicherheit und Misstrauen.',
-        files: ['collage'],
+          'Die beiden Figuren heißen Taiyo und Tsuki, Sonne und Mond; jede gehört zu einem ' +
+          'Arcade-Knopf, der nur leuchtet, wenn sie spricht. Zuerst stand am Ende nur der ' +
+          'Handschlag, inzwischen ist der Vertrauenstest im Spiel: „Kann ich dir vertrauen?", ' +
+          '„Das hat weh getan", „Wir sind verletzt", „Ich hab dich trotzdem lieb." Jede ' +
+          'gelungene Begegnung wird fotografiert und auf einem Kassenbon ausgedruckt, ' +
+          'durchnummeriert — zwei Menschen, die sich vorher nicht kannten, halten danach ' +
+          'denselben Zettel in der Hand. Im Sommer 2027 soll der Automat in der Innenstadt von ' +
+          'Regensburg stehen.',
+        files: ['in-benutzung', 'begegnung', 'hand', 'animation'],
         layout: 'grid',
-      },
-      {
-        title: 'Vom Handschlag zum Vertrauenstest',
-        text:
-          'Auf Rasterpapier wurde das Spiel aufgezeichnet: Bildschirmaufbau, Dialogbox, ' +
-          'wo die Figuren stehen, wo der Timing-Balken sitzt. Das Raster entsprach dabei ' +
-          'schon dem späteren Pixelbild. Zuerst stand am Ende nur der Handschlag, weil ' +
-          'der Vertrauenstest noch nicht ausgearbeitet war — inzwischen ist er im Spiel: ' +
-          '„Kann ich dir vertrauen?", „Das hat weh getan", „Wir sind verletzt", „Ich hab ' +
-          'dich trotzdem lieb."',
-        files: ['wireframe'],
-        layout: 'track',
-      },
-      {
-        title: 'Taiyo und Tsuki',
-        text:
-          'Die beiden Figuren heißen Sonne und Mond. Jede sitzt auf einer Seite des ' +
-          'Bildschirms und gehört zu einem Arcade-Knopf, der nur leuchtet, wenn sie ' +
-          'spricht. Die Angriffs-Animationen hat Julien Trübiger erstellt.',
-        files: ['hand', 'animation'],
-        layout: 'grid',
-      },
-      {
-        title: 'Der Automat in Benutzung',
-        text:
-          'Zwei Fremde vor dem Automaten, beide Hände auf den Knöpfen. Genau dieser Moment ' +
-          'ist der Punkt der ganzen Arbeit: Es geht nicht weiter, solange einer allein drückt.',
-        files: ['in-benutzung'],
-        layout: 'stack',
-      },
-      {
-        title: 'In Lak’ech — Begegnungen',
-        text:
-          'Das Ergebnis: jede gelungene Begegnung wird fotografiert und auf einem ' +
-          'Kassenbon ausgedruckt, mit fortlaufender Nummer. Zwei Menschen, die sich ' +
-          'vorher nicht kannten, halten danach denselben Zettel in der Hand.',
-        files: ['begegnung'],
-        layout: 'grid',
-      },
-      {
-        title: 'Regensburg 2027',
-        text:
-          'Der Automat soll wieder aufgenommen werden: im Sommer 2027 in der Innenstadt ' +
-          'von Regensburg, diesmal nicht als Prüfungsaufbau, sondern dort, wo die Leute ' +
-          'ohnehin vorbeikommen.',
-        textOnly: true,
       },
     ],
   },

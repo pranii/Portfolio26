@@ -20,6 +20,17 @@ export const SPRACHEN = [
 
 export const ui = {
   de: {
+    'ueber.titel': 'Über mich',
+    'ueber.kontakte': 'Kontakte',
+    'ueber.gespeichert': 'Gespeichert',
+    'ueber.feld.ort': 'Ort',
+    'ueber.feld.mail': 'E-Mail',
+    'ueber.feld.instagram': 'Instagram',
+    'ueber.feld.abschluss': 'Abschluss',
+    'ueber.feld.sprachen': 'Sprachen',
+    'ueber.feld.gruppe': 'Gruppe',
+    'ueber.feld.klingelton': 'Klingelton',
+
     'sprache.wechseln': 'Sprache wechseln',
 
     'nav.bereiche': 'Bereiche',
@@ -139,6 +150,17 @@ export const ui = {
   },
 
   en: {
+    'ueber.titel': 'About',
+    'ueber.kontakte': 'Contacts',
+    'ueber.gespeichert': 'Saved',
+    'ueber.feld.ort': 'Place',
+    'ueber.feld.mail': 'E-mail',
+    'ueber.feld.instagram': 'Instagram',
+    'ueber.feld.abschluss': 'Degrees',
+    'ueber.feld.sprachen': 'Languages',
+    'ueber.feld.gruppe': 'Group',
+    'ueber.feld.klingelton': 'Ringtone',
+
     'sprache.wechseln': 'Change language',
 
     'nav.bereiche': 'Sections',
@@ -257,6 +279,17 @@ export const ui = {
   },
 
   sq: {
+    'ueber.titel': 'Rreth meje',
+    'ueber.kontakte': 'Kontaktet',
+    'ueber.gespeichert': 'E ruajtur',
+    'ueber.feld.ort': 'Vendi',
+    'ueber.feld.mail': 'E-mail',
+    'ueber.feld.instagram': 'Instagram',
+    'ueber.feld.abschluss': 'Diplomat',
+    'ueber.feld.sprachen': 'Gjuhët',
+    'ueber.feld.gruppe': 'Grupi',
+    'ueber.feld.klingelton': 'Zilja',
+
     'sprache.wechseln': 'Ndërro gjuhën',
 
     'nav.bereiche': 'Fushat',

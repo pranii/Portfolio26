@@ -16,6 +16,7 @@
  */
 
 import { mediaFor } from './render.js';
+import { t } from './i18n.js';
 
 const esc = (text) =>
   String(text).replace(

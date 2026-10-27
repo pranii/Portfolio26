@@ -156,7 +156,7 @@ function renderMenu() {
     { slug: 'spiele', href: spiel.href, title: t('menu.spiele'), description: spiel.untertitel },
     {
       slug: 'kontakt',
-      href: `mailto:${site.email}`,
+      href: 'ueber.html',
       title: t('menu.kontakt'),
       description: t('menu.kontakttext'),
     },

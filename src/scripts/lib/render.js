@@ -337,13 +337,23 @@ function embedBlock(embed, titel) {
  *
  * `hoch` sagt, ob das Video im Hochformat ist.
  */
-function einbettung(url) {
+function einbettung(eintrag) {
+  // Ein Eintrag ist entweder der blanke Link oder { url, stumm: true }.
+  const url = typeof eintrag === 'string' ? eintrag : eintrag.url;
+  const stumm = typeof eintrag === 'object' && eintrag.stumm;
+
   const yt = url.match(
     /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:watch\?v=|embed\/|shorts\/|live\/))([\w-]{6,})/,
   );
   if (yt) {
+    // rel=0 haelt die Vorschlaege am Ende beim eigenen Kanal, modestbranding
+    // nimmt das Logo aus der Leiste. Ganz ohne Weg zu YouTube geht es nicht:
+    // Die Titelzeile des Players bleibt ein Link.
+    const schalter = ['rel=0', 'modestbranding=1', 'playsinline=1', stumm ? 'mute=1' : null]
+      .filter(Boolean)
+      .join('&');
     return {
-      src: `https://www.youtube-nocookie.com/embed/${yt[1]}`,
+      src: `https://www.youtube-nocookie.com/embed/${yt[1]}?${schalter}`,
       hoch: url.includes('/shorts/'),
     };
   }
@@ -487,11 +497,11 @@ export function renderProjectPage(project, categoryTitle) {
       <p class="project-head__sub">${esc(project.subtitle ?? '')}</p>
       <div class="project-head__grid">
         <div>
-          <p class="project-head__text">${esc(project.description)}</p>
-          ${tags}
+          ${factList(project)}
         </div>
         <div>
-          ${factList(project)}
+          <p class="project-head__text">${esc(project.description)}</p>
+          ${tags}
         </div>
       </div>
       ${
