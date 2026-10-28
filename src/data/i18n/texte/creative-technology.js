@@ -34,20 +34,19 @@ export const creativeTechnology = {
       rreth: {
         subtitle: 'Take It All Off // Break the Silence',
         description:
-          'Rreth — Albanian for circle — has run in three stages since 2020: it began with a ' +
-          'small magazine and a keyring, grew into a walk-through video installation about ' +
-          'complex post-traumatic stress disorder, and in 2028 becomes an exhibition that ' +
-          'brings both together. Anyone who walks in should get to speak by the end.',
+          'Rreth — Albanian for circle — has run since 2020: it began with a small magazine, ' +
+          'grew into a walk-through video installation about complex post-traumatic stress ' +
+          'disorder, and in 2028 becomes an exhibition that brings both together.',
         role: 'Concept, research, direction, editing, sound design, installation',
         pull: 'The sudden silence is almost louder than the noise.',
       },
       'in-lakech': {
         subtitle: 'An encounter machine for public space',
         description:
-          '“In Lak’ech” is a Mayan greeting and means: I am another you. A machine that ' +
-          'brings together two strangers who would otherwise have walked past each other — a ' +
-          'video game in the look of a Nokia 3310, running on a Raspberry Pi, operated with ' +
-          'two arcade buttons. It only continues when both press at the same time.',
+          '“In Lak’ech” is a Mayan greeting: I am another you. A machine that brings two ' +
+          'strangers together — a video game in the look of a Nokia 3310 running on a ' +
+          'Raspberry Pi, operated with two arcade buttons. It only continues when both press ' +
+          'at the same time.',
         role: 'Concept, design, programming',
         pull: 'Through you I become myself.',
       },
@@ -71,11 +70,9 @@ export const creativeTechnology = {
       zodizine: {
         subtitle: 'A banal thing — a zine machine',
         description:
-          'A station where visitors enter their date of birth and get a personal zine printed ' +
-          'in return — calculated from the Chinese, Indian and Celtic zodiacs. A plain piece ' +
-          'of print that personalisation turns from a throwaway into something worth ' +
-          'keeping. ' +
-          'Everything runs offline on a Raspberry Pi.',
+          'A station where visitors enter their date of birth and get a personal zine ' +
+          'printed — calculated from the Chinese, Indian and Celtic zodiacs. Everything runs ' +
+          'offline on a Raspberry Pi.',
         role: 'Concept, technical realisation',
         pull: 'Banality as input, interaction as amplifier, emotion as the goal.',
       },
@@ -110,20 +107,18 @@ export const creativeTechnology = {
       rreth: {
         subtitle: 'Take It All Off // Break the Silence',
         description:
-          'Rreth ka kaluar nëpër tri etapa që nga viti 2020: filloi me një revistë ' +
-          'të vogël dhe një varëse çelësash, u bë një instalim video ku hyn brenda, për ' +
-          'çrregullimin kompleks të stresit post-traumatik, dhe në vitin 2028 bëhet një ' +
-          'ekspozitë që i bashkon të dyja. Kush hyn, duhet të mund të flasë në fund.',
+          'Rreth ecën që nga viti 2020: filloi me një revistë të vogël, u bë një instalim ' +
+          'video ku hyn brenda, për çrregullimin kompleks të stresit post-traumatik, dhe në ' +
+          'vitin 2028 bëhet një ekspozitë që i bashkon të dyja.',
         role: 'Koncept, kërkim, regji, montazh, dizajn zëri, instalim hapësinor',
         pull: 'Heshtja e papritur është gati më e zhurmshme se zhurma.',
       },
       'in-lakech': {
         subtitle: 'Një automat takimesh për hapësirën publike',
         description:
-          '„In Lak’ech" është një përshëndetje e majave dhe do të thotë: unë jam një ti ' +
-          'tjetër. Një automat që bashkon dy të panjohur që përndryshe do të kishin kaluar ' +
-          'pranë njëri-tjetrit — një videolojë në pamjen e Nokia 3310, në një Raspberry Pi, ' +
-          'me dy butona arcade. Vazhdon vetëm kur shtypin të dy njëkohësisht.',
+          '„In Lak’ech" është një përshëndetje e majave: unë jam një ti tjetër. Një automat ' +
+          'që bashkon dy të panjohur — një videolojë në pamjen e Nokia 3310 në një Raspberry ' +
+          'Pi, me dy butona arcade. Vazhdon vetëm kur shtypin të dy njëkohësisht.',
         role: 'Koncept, dizajn, programim',
         pull: 'Përmes teje bëhem unë.',
       },
@@ -148,9 +143,8 @@ export const creativeTechnology = {
         subtitle: 'Një send banal — një automat fletushkash',
         description:
           'Një stacion ku vizitorët shkruajnë datëlindjen dhe marrin të shtypur një fletushkë ' +
-          'personale — e llogaritur nga zodiaku kinez, indian dhe keltik. Një shtyp i thjeshtë ' +
-          'që personalizimi e kthen nga mall për t’u hedhur në diçka që ruhet. Gjithçka ' +
-          'funksionon offline në një Raspberry Pi.',
+          'personale — e llogaritur nga zodiaku kinez, indian dhe keltik. Gjithçka funksionon ' +
+          'offline në një Raspberry Pi.',
         role: 'Koncept, realizim teknik',
         pull: 'Banaliteti si input, ndërveprimi si përforcues, emocioni si synim.',
       },

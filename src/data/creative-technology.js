@@ -65,10 +65,9 @@ export const projects = [
     subtitle: 'Take It All Off // Break the Silence',
     cover: 'header',
     description:
-      'Rreth — albanisch für Kreis — läuft seit 2020 in drei Etappen: angefangen mit einem ' +
-      'kleinen Magazin und einem Schlüsselanhänger, daraus eine begehbare Videoinstallation ' +
-      'über die komplexe posttraumatische Belastungsstörung, und 2028 eine Ausstellung, die ' +
-      'beides zusammenbringt. Wer hineingeht, soll am Ende selbst sprechen dürfen.',
+      'Rreth — albanisch für Kreis — läuft seit 2020: angefangen mit einem kleinen Magazin, ' +
+      'daraus eine begehbare Videoinstallation über die komplexe posttraumatische ' +
+      'Belastungsstörung, und 2028 eine Ausstellung, die beides zusammenbringt.',
     year: '2020–2025',
     role: 'Konzeption, Recherche, Regie, Videoschnitt, Sounddesign, Rauminstallation',
     client:
@@ -95,63 +94,78 @@ export const projects = [
     pull: 'Die plötzliche Stille ist fast lauter als der Lärm.',
     chapters: [
       {
-        title: 'Ein Wort, das fehlt',
+        title: 'Meine These',
         text:
-          'Als eigenständige Diagnose steht die komplexe posttraumatische Belastungsstörung ' +
-          'erst in der ICD-11 — 2018 veröffentlicht, seit 2022 in Kraft. Entsprechend wenig ' +
-          'bekannt ist sie, dabei erfüllt ein erheblicher Teil derer, die über depressive ' +
-          'Symptome berichten, zugleich ihre Kriterien. Wer davon betroffen ist, hat selten ' +
-          'ein Wort dafür. Die Frage war deshalb nicht, wie man darüber aufklärt, sondern wie ' +
-          'man es spürbar macht — so, dass jemand den Raum anders verlässt, als er ' +
-          'hineingegangen ist. Von 2021 bis 2023 entstand daraus die Bachelorarbeit: ein ' +
-          'vierteiliges Video, ein eigener Soundtrack und ein Magazin.',
-        files: ['vision-board'],
-        layout: 'track',
+          'Einen Raum schaffen, in dem Schweigen nicht mehr schützt, sondern offenlegt. ' +
+          '„Take It All Off // Break the Silence" verwandelt Verletzlichkeit in kollektive ' +
+          'Stärke — Verbindung entsteht erst, wenn wir aufhören, unsere Emotionen zu ' +
+          'verstecken. Den Anlass gibt eine Diagnose, die kaum jemand kennt: Die komplexe ' +
+          'posttraumatische Belastungsstörung steht erst seit der ICD-11 als eigenständige ' +
+          'Erkrankung da. Wer betroffen ist, hat selten ein Wort dafür. Die Frage war nie, ' +
+          'wie man darüber aufklärt, sondern wie man es spürbar macht.',
+        files: [],
+        textOnly: true,
       },
       {
         title: 'Vier Akte',
         text:
-          'Das Hauptvideo läuft in vier Akten mit albanischen Namen. „Themeli" (Grundstein) ' +
-          'zeigt die Reaktionsmuster aus der Kindheit — Kampf, Flucht, Erstarrung, ' +
-          'Unterwerfung. „Shprehje Emocionale" übersetzt in Tanz, was passiert, wenn ein ' +
-          'Trigger auf ein altes Muster trifft. „Metamorfoza" ist der Wendepunkt in ' +
-          'Embryohaltung, „Çlirim" die Katharsis, in der zum ersten Mal Farbe ins Bild kommt. ' +
-          'Die ersten drei Akte sind streng schwarzweiß, als Bild für das ' +
-          'Schwarz-Weiß-Denken; gedreht mit Carina Borgards aus dem Tanztheater, gebaut aus ' +
-          'Rotoskopie, EbSynth und einem Soundtrack aus 42 Spuren. 2025 kam das Projekt im ' +
-          'Master zu dritt mit Cara Brüggendieck und Laura Zahn noch einmal auf den Tisch und ' +
-          'wurde neu gedreht: Kamera Joscha Reuther, Licht Jan Borghart, Soundkulisse Denzel ' +
-          '— Bild, Licht und Ton miteinander statt nacheinander. Der Pitch dazu beschreibt ' +
-          'die Installation in fünf Phasen, jede mit Farbe, Ton, Gefühl, Dauer und Referenz, ' +
-          'und gibt jedem Akt ein eigenes Symbol: je eine Form von Kreislauf, aus dem man ' +
-          'alleine schwer herauskommt.',
-        files: ['wheel-of-shame', 'pitch-version-1', 'symbolik', 'in-halt', 'raumskizze-laura'],
+          'Die Bachelorarbeit von 2021 bis 2023: ein vierteiliges Video, ein eigener ' +
+          'Soundtrack, ein Magazin. Die Akte tragen albanische Namen — „Themeli" ' +
+          '(Grundstein) zeigt die Reaktionsmuster aus der Kindheit, „Shprehje Emocionale" ' +
+          'übersetzt in Tanz, was ein Trigger auslöst, „Metamorfoza" ist der Wendepunkt, ' +
+          '„Çlirim" die Katharsis, in der zum ersten Mal Farbe ins Bild kommt. Die ersten ' +
+          'drei Akte sind streng schwarzweiß. Getanzt von Carina Borgards, gebaut aus ' +
+          'Rotoskopie, EbSynth und 42 Tonspuren.',
+        files: ['vision-board'],
         layout: 'track',
-        embed: ['https://youtu.be/i9AlftZ5PIk', 'https://youtu.be/Krdg6cM746g'],
+        embed: 'https://youtu.be/i9AlftZ5PIk',
       },
       {
-        title: 'Der Weg hindurch',
+        title: 'Ausgestellt',
         text:
-          'Der Weg führt von absoluter Dunkelheit durch die vier Akte in einen hellen Raum ' +
-          'mit anonymen Telefonzellen — dort darf erzählen, wer will. Das Magazin ist der ' +
-          'Wegweiser durch die Modelle dahinter: vom Instanzenmodell nach Freud über Melanie ' +
-          'Kleins Objektbeziehungstheorie zu Pete Walkers vier Überlebensstrategien, am Ende ' +
-          'konkrete Gedankenkorrekturen. Der Satz, auf den alles hinausläuft: Jede dieser ' +
-          'Strategien hat einmal funktioniert. Sie war nie ein Charakterfehler, sondern eine ' +
-          'Lösung für eine Situation, die so heute nicht mehr herrscht. Oben auf dieser Seite ' +
-          'lässt sich das Heft durchblättern.',
+          'Im Juli 2023 war die Arbeit einen Tag lang in der Städtischen Galerie ' +
+          'Villingen-Schwenningen zu sehen.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Das Magazin',
+        text:
+          'Das Heft führt durch die Modelle hinter der Arbeit: Freuds Instanzenmodell, ' +
+          'Melanie Kleins Objektbeziehungstheorie, Pete Walkers vier Überlebensstrategien. ' +
+          'Der Satz, auf den alles hinausläuft: Jede dieser Strategien hat einmal ' +
+          'funktioniert. Sie war nie ein Charakterfehler.',
         files: ['have'],
         layout: 'grid',
       },
       {
-        title: 'Halle 93',
+        title: 'Projektpitch',
         text:
-          '2028 soll die Installation genau nach dem Pitch in der Halle 93 in Stuttgart ' +
-          'stehen, mit überarbeitetem Magazin und einer App, die den Besucher weiter trägt ' +
-          'als bis zum Ausgang. Die Instagram-Kampagne läuft im Vorfeld und bewirbt beides: ' +
-          'kurze Videos, selbst aufgenommen und mit KI weiterbearbeitet, dazu Captions in der ' +
-          'ersten Person. Jeder Post trägt den Namen eines Musters statt eines Titels — ' +
-          'Suppressing, Self Sabotage, Self Destruction.',
+          '2025 im Master noch einmal überarbeitet, zu dritt mit Cara Brüggendieck und Laura ' +
+          'Zahn. Daraus wurde ein Raum, der sich dreht: kaltes Licht, gedämpfte Klänge, ' +
+          'alles still und fast kontrolliert. Auf dem Karussell zeigen sich die gewohnten ' +
+          'Pausen und inneren Grenzen — und verwandeln sich in Offenheit, in Verbindung, in ' +
+          'ein geteiltes Bewusstsein. Vorgearbeitet wurde viel; die Umsetzung musste aus ' +
+          'Zeitgründen warten.',
+        files: [],
+        embed: 'https://youtu.be/Krdg6cM746g',
+      },
+      {
+        title: 'Erster Einblick',
+        text:
+          'Neu gedreht wurde trotzdem: Kamera Joscha Reuther, Licht Jan Borghart, ' +
+          'Soundkulisse Denzel — Bild, Licht und Ton miteinander statt nacheinander.',
+        files: [],
+        platzhalter: '/media/uni/rreth/erster-einblick.mp4',
+      },
+      {
+        title: 'Kampagne und Zukunftsausblick',
+        text:
+          'Die Instagram-Kampagne läuft im Vorfeld: kurze Videos, selbst aufgenommen und mit ' +
+          'KI weiterbearbeitet, Captions in der ersten Person. Jeder Post trägt den Namen ' +
+          'eines Musters statt eines Titels — Suppressing, Self Sabotage, Self Destruction. ' +
+          '2028 soll die Installation in der Halle 93 in Stuttgart stehen, mit überarbeitetem ' +
+          'Magazin und einer App.',
         files: ['rreth-kampagne'],
         layout: 'track',
       },
@@ -163,10 +177,9 @@ export const projects = [
     subtitle: 'Ein Begegnungsautomat für den öffentlichen Raum',
     cover: 'header',
     description:
-      '„In Lak’ech" ist ein Gruß der Maya und heißt: Ich bin ein anderes Du. Ein Automat, ' +
-      'der zwei Fremde zusammenbringt, die sonst aneinander vorbeigelaufen wären — ein ' +
-      'Videospiel im Nokia-3310-Look auf einem Raspberry Pi, bedient über zwei ' +
-      'Arcade-Knöpfe. Weitergehen kann es nur, wenn beide gleichzeitig drücken.',
+      '„In Lak’ech" ist ein Gruß der Maya: Ich bin ein anderes Du. Ein Automat, der zwei ' +
+      'Fremde zusammenbringt — ein Videospiel im Nokia-3310-Look auf einem Raspberry Pi, ' +
+      'bedient über zwei Arcade-Knöpfe. Weiter geht es nur, wenn beide gleichzeitig drücken.',
     year: '2026',
     role: 'Konzept, Gestaltung, Programmierung',
     tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
@@ -179,47 +192,37 @@ export const projects = [
       {
         title: 'Himmel und Hölle',
         text:
-          'Wer gegenübersteht, ist nicht das Fremde, sondern dasselbe in einer anderen ' +
-          'Gestalt — und was ich dir antue, tue ich mir an. Diesen Satz nach außen zu tragen ' +
-          'war mir wichtig, aber nicht als Spruch, sondern als Erfahrung, die man gemacht ' +
-          'haben muss. Also habe ich nach einem Spiel gesucht, das zwei Fremde zueinander ' +
-          'bringt, ohne dass einer den Anfang machen muss: „Himmel und Hölle", zwei ' +
-          'Spielfelder einander gegenüber, jede beantwortete Frage bringt einen Schritt, bis ' +
-          'sich beide in der Mitte treffen. Ein paar Tage später lag auf dem Weg zu einer ' +
-          'Freundin „Feuerwaffen" von Howard Ricketts auf dem Boden. Ich habe es mitgenommen ' +
-          'und zerschnitten — Pistolen aus dem einen Buch, Landschaften aus einem ' +
-          'Naturmagazin, daraus ein Collagenbuch. Daraus wurde die Idee, genau das in einen ' +
-          'Automaten zu übersetzen und mit dem zu spielen, was zwischen zwei Fremden immer ' +
-          'zuerst da ist: Misstrauen.',
+          'Wer gegenübersteht, ist nicht das Fremde, sondern dasselbe in anderer Gestalt. Diesen ' +
+          'Satz wollte ich nicht als Spruch weitergeben, sondern als Erfahrung. Also ein Spiel, ' +
+          'das zwei Fremde zueinander bringt, ohne dass einer anfangen muss — wie „Himmel und ' +
+          'Hölle": Jede beantwortete Frage bringt einen Schritt, bis man sich in der Mitte ' +
+          'trifft. Dazu ein Collagenbuch aus einem gefundenen Waffenbuch und einem Naturmagazin. ' +
+          'Daraus wurde die Idee, mit dem zu spielen, was zwischen Fremden immer zuerst da ist: ' +
+          'Misstrauen.',
         files: ['spielidee', 'collage', 'wireframe'],
         layout: 'track',
       },
       {
         title: 'Zettel auf den Stufen',
         text:
-          'Auf Rasterpapier entstand das Spiel im Raster des späteren Pixelbildes. Davor ' +
-          'stand ein Test ohne jede Technik: Die Fragen landeten auf kleinen Notizzetteln, ' +
-          'die Zettel auf den Stufen einer Unterführung. Von beiden Seiten geht je eine Stufe ' +
-          'weiter, wer eine Frage beantwortet, bis man sich in der Mitte trifft. An dem Tag ' +
-          'war das Wetter so schlecht, dass kaum jemand kam — die Erkenntnis blieb trotzdem: ' +
-          'Der öffentliche Raum muss mitspielen, wenn man ihn bespielen will. Also ein ' +
-          'Gehäuse, das für sich steht. Die beiden Figuren heißen Taiyo und Tsuki, Sonne und ' +
-          'Mond; jede gehört zu einem Arcade-Knopf, der nur leuchtet, wenn sie spricht. ' +
-          'Programmiert in Python mit Pygame, fünf Wochen Workshop.',
+          'Zuerst ein Test ganz ohne Technik: Fragen auf Notizzetteln, die Zettel auf den Stufen ' +
+          'einer Unterführung. Wer antwortet, geht eine Stufe weiter, bis man sich in der Mitte ' +
+          'trifft. Das Wetter war so schlecht, dass kaum jemand kam — die Erkenntnis blieb: Der ' +
+          'öffentliche Raum muss mitspielen. Also ein Gehäuse, das für sich steht. Programmiert ' +
+          'in Python mit Pygame, fünf Wochen Workshop.',
         files: ['test'],
         layout: 'track',
       },
       {
         title: 'Taiyo und Tsuki',
         text:
-          'Zwei Figuren streiten sich im Pokémon-Stil durch ein Duell, bis die Frage steht: ' +
-          'to die or to live together? Zuerst stand am Ende nur der Handschlag, inzwischen ' +
-          'ist der Vertrauenstest im Spiel: „Kann ich dir vertrauen?", „Das hat weh getan", ' +
-          '„Wir sind verletzt", „Ich hab dich trotzdem lieb." Nur wenn beide gleichzeitig ' +
-          'drücken, löst die Kamera aus. Der Kassenbon-Drucker gibt ein Foto der Begegnung ' +
-          'aus, durchnummeriert — zwei Menschen, die sich vorher nicht kannten, halten danach ' +
-          'denselben Zettel in der Hand. Oben auf dieser Seite lässt sich das Duell spielen; ' +
-          'am besten zu zweit.',
+          'Die beiden Figuren heißen Taiyo und Tsuki, Sonne und Mond; jede gehört zu einem ' +
+          'Arcade-Knopf, der nur leuchtet, wenn sie spricht. Sie streiten sich im Pokémon-Stil ' +
+          'durch ein Duell, bis die Frage steht: to die or to live together? Am Ende der ' +
+          'Vertrauenstest — „Kann ich dir vertrauen?", „Das hat weh getan", „Ich hab dich ' +
+          'trotzdem lieb." Nur wenn beide gleichzeitig drücken, löst die Kamera aus und der ' +
+          'Kassenbon-Drucker gibt ein durchnummeriertes Foto aus. Oben lässt sich das Duell ' +
+          'spielen, am besten zu zweit.',
         files: ['in-benutzung', 'begegnung', 'hand', 'animation'],
         layout: 'grid',
       },
@@ -239,11 +242,10 @@ export const projects = [
     subtitle: 'Interaktive Videoinstallation',
     cover: 'header',
     description:
-      'Eine Videoinstallation über Nostalgie als Abwehrmechanismus. Die These: Wir ' +
-      'verdrängen, was gerade passiert, und romantisieren es später durch den Filter von ' +
-      'Social Media, statt es zu verarbeiten. Zwei alte Röhrenmonitore stehen an den ' +
-      'Ausgängen des Aufzugs — gesteuert wird nur mit Körperhaltung und Handbewegung, ohne ' +
-      'Controller.',
+      'Eine Videoinstallation über Nostalgie als Abwehrmechanismus: Wir verdrängen, was ' +
+      'gerade passiert, und romantisieren es später durch den Filter von Social Media. Zwei ' +
+      'Röhrenmonitore an den Ausgängen des Aufzugs, gesteuert nur mit Körperhaltung und ' +
+      'Handbewegung.',
     year: '2026',
     role: 'Konzept, Gestaltung, Interaktion',
     client: 'Staedtische Galerie Villingen-Schwenningen, Maerz–April 2026',
@@ -259,37 +261,31 @@ export const projects = [
       {
         title: 'Die Schwelle',
         text:
-          'Der Ausgangspunkt war Liminalität — der Schwellenzustand zwischen zwei Zuständen. ' +
-          'Aus Brainstorming und Materialarchiv haben wir drei Stränge verfolgt: Sprache, ' +
-          'nationale Identität und Spiritualität. Daraus wurde die These, auf der alles ' +
-          'steht: Nostalgie ist kein Erinnern, sondern ein Ausweichen. Wir lassen das, was ' +
-          'gerade passiert, nicht an uns heran und holen es später als schöne Erinnerung ' +
-          'zurück, gefiltert und ungefährlich.',
+          'Ausgangspunkt war Liminalität — der Zustand zwischen zwei Zuständen. Aus Brainstorming ' +
+          'und Materialarchiv kamen drei Stränge: Sprache, nationale Identität, Spiritualität. ' +
+          'Daraus die These: Nostalgie ist kein Erinnern, sondern ein Ausweichen. Wir lassen das, ' +
+          'was gerade passiert, nicht an uns heran und holen es später gefiltert zurück.',
         files: ['brainstorm', 'archiv'],
         layout: 'wide',
       },
       {
         title: 'Zwei Monitore am Aufzug',
         text:
-          'Die entscheidende Frage war nicht, was auf den Monitoren läuft, sondern wo sie ' +
-          'stehen: Der Aufzug ist selbst schon eine Schwelle, und wer ihn verlässt, soll die ' +
-          'Bilder zwangsläufig sehen. Zwei TouchDesigner-Projekte lesen die Körperhaltung aus ' +
-          'und streamen live auf die Röhren; die Knotennetze zeigen, wie aus Kamerabild, ' +
-          'Schwellenwerten und Videospuren die Reaktion wird. Die Ästhetik kommt vom ' +
-          'Signalfehler: RGB-Versatz, Bildrauschen, verrissene Zeilen. Was auf einem modernen ' +
-          'Bildschirm wie ein Defekt aussieht, ist auf der Röhre das natürliche Verhalten.',
+          'Die entscheidende Frage war nicht, was auf den Monitoren läuft, sondern wo sie stehen: ' +
+          'Der Aufzug ist selbst schon eine Schwelle. Zwei TouchDesigner-Projekte lesen die ' +
+          'Körperhaltung aus und streamen live auf die Röhren. Die Ästhetik kommt vom ' +
+          'Signalfehler — RGB-Versatz, Rauschen, verrissene Zeilen. Was auf einem modernen ' +
+          'Bildschirm wie ein Defekt aussieht, ist auf der Röhre normal.',
         files: ['skizze', 'td-screenshot'],
         layout: 'wide',
       },
       {
         title: 'Niemand bedient etwas',
         text:
-          'Wer aus dem Aufzug tritt, steht im Bild, bevor er es merkt — und beide Ebenen ' +
-          'reagieren zugleich. Es gibt nichts zu bedienen: Die Position im Raum und die Hand ' +
-          'vor der Kamera sind die ganze Steuerung, und die beiden Plakate erklären das ' +
-          'wortlos. Textfragmente erscheinen und zerfallen wieder — „where does one begin and ' +
-          'the other end?", „Light, Future, Past". Das Titelplakat greift den Chromlook der ' +
-          'Nullerjahre auf. Oben auf dieser Seite läuft dieselbe Erkennung im Browser.',
+          'Wer aus dem Aufzug tritt, steht im Bild, bevor er es merkt. Es gibt nichts zu ' +
+          'bedienen: Die Position im Raum und die Hand vor der Kamera sind die ganze Steuerung, ' +
+          'die Plakate erklären das wortlos. Textfragmente erscheinen und zerfallen wieder — ' +
+          '„where does one begin and the other end?" Oben läuft dieselbe Erkennung im Browser.',
         files: ['final', 'liminal', 'touchdesigner', 'liminalitaet2'],
         layout: 'grid',
       },
@@ -302,9 +298,8 @@ export const projects = [
     cover: 'header',
     description:
       'Der Shepard-Ton ist eine Hörtäuschung: eine Tonhöhe, die endlos zu steigen scheint, ' +
-      'ohne je irgendwo anzukommen. Multi Shepard bringt ihn in einen Vorlesungssaal und ' +
-      'stellt ihm eine projizierte optische Illusion zur Seite. Der Ton läuft bereits, bevor ' +
-      'jemand da ist — der Weg nach unten ist das Erlebnis.',
+      'ohne je anzukommen. Multi Shepard bringt ihn in einen Vorlesungssaal. Der Ton läuft ' +
+      'bereits, bevor jemand da ist — der Weg nach unten ist das Erlebnis.',
     year: 'Januar 2026',
     role: 'Konzept, Raumgestaltung, Sound',
     client:
@@ -320,27 +315,21 @@ export const projects = [
         title: 'Drei Parameter',
         text:
           'Zuerst die Frage, welche Emotion der Ton tragen soll. Nach einer Diskussion über ' +
-          'Horror fiel die Entscheidung auf Action — auf das Gefühl kurz vor dem Höhepunkt ' +
-          'einer Filmszene: dauernde Eskalation, die nie aufgelöst wird. Die ursprüngliche ' +
-          'Idee sah eine Installation mit Positionstracking vor. Auf Rat von Prof. Norbert ' +
-          'Schnell haben wir radikal vereinfacht und uns auf drei Parameter beschränkt: ' +
-          'Geschwindigkeit, Richtung und Lautstärke. Weniger ging nicht, mehr brauchte es ' +
-          'nicht.',
+          'Horror fiel die Entscheidung auf Action — auf das Gefühl kurz vor dem Höhepunkt einer ' +
+          'Filmszene: Eskalation, die nie aufgelöst wird. Geplant war Positionstracking. Auf Rat ' +
+          'von Prof. Norbert Schnell haben wir radikal vereinfacht: Geschwindigkeit, Richtung, ' +
+          'Lautstärke. Weniger ging nicht, mehr brauchte es nicht.',
         files: ['shephard-tone-doku-s01', 'shephard-tone-doku-s02'],
         layout: 'wide',
       },
       {
         title: 'Elf Oszillatoren',
         text:
-          'Elf Oszillatoren decken das Spektrum von 20 Hz bis 20.480 Hz in Oktaven ab, eine ' +
-          'Amplituden-Hüllkurve macht die Übergänge an den Rändern unhörbar — deshalb hört ' +
-          'niemand, wann ein Ton verschwindet und am anderen Ende wieder auftaucht. Der ' +
-          'Grundriss zeigt, warum der Vorlesungssaal passt: Nur ein Weg führt links durch den ' +
-          'Raum, alles andere versperren die Sitzreihen. Jeder Besucher geht dieselbe ' +
-          'Strecke. Als visuelles Gegenstück kamen optische Illusionen dazu; der Ton selbst ' +
-          'ist längst kein Kuriosum mehr — Hans Zimmer baut den gesamten Dunkirk-Score ' +
-          'darauf auf, der Batpod in The Dark Knight beschleunigt scheinbar endlos, und die ' +
-          'Endlostreppe in Super Mario 64 nutzt denselben Trick.',
+          'Elf Oszillatoren decken 20 Hz bis 20.480 Hz in Oktaven ab, eine Hüllkurve macht die ' +
+          'Ränder unhörbar — deshalb hört niemand, wann ein Ton verschwindet und am anderen Ende ' +
+          'wieder auftaucht. Der Grundriss zeigt, warum der Vorlesungssaal passt: Nur ein Weg ' +
+          'führt links durch den Raum, alles andere versperren die Sitzreihen. Jeder geht ' +
+          'dieselbe Strecke. Dazu optische Illusionen als visuelles Gegenstück.',
         files: [
           'shephard-tone-doku-s03',
           'shephard-tone-doku-s04',
@@ -352,13 +341,10 @@ export const projects = [
       {
         title: 'Der Weg nach unten',
         text:
-          'Der Ton läuft schon, bevor jemand den Raum betritt. Stehenbleiben und zuschauen ' +
-          'geht nicht — der Weg durch den Raum ist die Arbeit. Weil alle denselben Weg ' +
-          'nehmen, lassen sich die Durchgänge vergleichen: Geplant sind Fragebogen und ' +
-          'Kurzinterviews, dazu die Beobachtung von Körpersprache und Gehgeschwindigkeit. Ab ' +
-          'wann setzt die Illusion ein? Bricht sie, wenn man stehenbleibt? Fühlt sich der ' +
-          'Abstieg länger an, als er ist? Oben auf dieser Seite lässt sich der Saal ' +
-          'durchlaufen, mit demselben Klang und denselben drei Parametern.',
+          'Stehenbleiben und zuschauen geht nicht — der Weg durch den Raum ist die Arbeit. Weil ' +
+          'alle denselben Weg nehmen, lassen sich die Durchgänge vergleichen: Ab wann setzt die ' +
+          'Illusion ein? Bricht sie, wenn man stehenbleibt? Fühlt sich der Abstieg länger an, ' +
+          'als er ist? Oben lässt sich der Saal durchlaufen, mit demselben Klang.',
         files: ['shephard-tone-doku-s07'],
         layout: 'wide',
       },
@@ -383,11 +369,10 @@ export const projects = [
       {
         title: 'Beschreiben reicht nicht',
         text:
-          'In der Therapie wird viel beschrieben und wenig gezeigt. Wer über Wochen von ' +
-          'seinem Befinden erzählt, verliert den Überblick über das eigene Muster — und die ' +
-          'Therapeutin sieht nur Ausschnitte. Die Frage war, ob sich emotionale Zustände so ' +
-          'darstellen lassen, dass beide dasselbe vor sich haben, ohne das Gefühl auf eine ' +
-          'Zahl zu reduzieren.',
+          'In der Therapie wird viel beschrieben und wenig gezeigt. Wer über Wochen von seinem ' +
+          'Befinden erzählt, verliert den Überblick über das eigene Muster — und die Therapeutin ' +
+          'sieht nur Ausschnitte. Die Frage war, ob sich emotionale Zustände so darstellen ' +
+          'lassen, dass beide dasselbe vor sich haben.',
         files: [],
         textOnly: true,
       },
@@ -395,8 +380,7 @@ export const projects = [
         title: 'Vom Interview zum Dashboard',
         text:
           'Erst Interviews — mit Therapeutinnen und mit Betroffenen. Daraus Personas und ' +
-          'Anwendungsfälle, daraus Wireframes, am Ende das Dashboard. Entworfen in Figma, ' +
-          'dokumentiert in InDesign.',
+          'Anwendungsfälle, daraus Wireframes, am Ende das Dashboard. Entworfen in Figma.',
         files: ['interaktionsdesign-projektbericht'],
         layout: 'track',
       },
@@ -408,11 +392,9 @@ export const projects = [
     subtitle: 'Banales Ding — ein Zine-Automat',
     cover: 'header',
     description:
-      'Eine Station, an der Besucher ihr Geburtsdatum eingeben und daraufhin ein ' +
-      'persönliches Zine gedruckt bekommen — berechnet aus chinesischem, indischem und ' +
-      'keltischem Tierkreis. Ein simples Druckerzeugnis, das durch Personalisierung vom ' +
-      'flüchtigen Wegwerfprodukt zum greifbaren Erlebnis wird. Alles läuft offline auf einem ' +
-      'Raspberry Pi.',
+      'Eine Station, an der Besucher ihr Geburtsdatum eingeben und ein persönliches Zine ' +
+      'gedruckt bekommen — berechnet aus chinesischem, indischem und keltischem Tierkreis. ' +
+      'Alles läuft offline auf einem Raspberry Pi.',
     year: '2026',
     role: 'Konzept, technische Umsetzung',
     client:
@@ -425,42 +407,34 @@ export const projects = [
       {
         title: 'Ein Weihnachtsgeschenk',
         text:
-          'Die Idee entsprang einem banalen Gespräch: Cara plante, ihrer Familie zu ' +
-          'Weihnachten ein personalisiertes Zine zu schenken. Darin steckte das passende ' +
-          'Alltagsobjekt für das Modul — und die Frage, ab wann ein Stück bedrucktes Papier ' +
-          'aufhört, Wegwerfware zu sein. Im selben Gespräch stand fest, dass der Prototyp im ' +
-          'öffentlichen Raum inszeniert werden sollte: erst in einer Telefonzelle, die sich ' +
-          'nicht anmieten ließ, dann in einer halboffenen Bushaltestelle, die an Wetter und ' +
-          'Zeit scheiterte.',
+          'Die Idee entsprang einem banalen Gespräch: Cara plante, ihrer Familie zu Weihnachten ' +
+          'ein personalisiertes Zine zu schenken. Darin steckte das Alltagsobjekt für das Modul ' +
+          '— und die Frage, ab wann ein Stück bedrucktes Papier aufhört, Wegwerfware zu sein. ' +
+          'Inszeniert werden sollte es im öffentlichen Raum: erst eine Telefonzelle, die sich ' +
+          'nicht anmieten ließ, dann eine Bushaltestelle, die an Wetter und Zeit scheiterte.',
         files: ['zineprojektbericht'],
         textOnly: true,
       },
       {
         title: 'Tag, Monat, Jahr',
         text:
-          'Die ganze Interaktion besteht aus einem Schritt: Tag, Monat, Jahr. Das Interface ' +
-          'durchlief zwei Fassungen — zuerst eng an der Ästhetik des Nokia 3310, dann ' +
-          'zugunsten einer stimmigeren Gestaltung überarbeitet. Die Arbeit lief parallel: ' +
-          'Cara entwickelte die visuelle Identität und ein Datenset mit den Charakteristika ' +
-          'der Sternzeichen aus drei astrologischen Systemen. Ich habe die Technik dahinter ' +
-          'gebaut: Raspberry Pi im Kiosk-Modus, die Oberfläche und die Logik, die ' +
-          'Geburtsdaten in personalisierte Layouts übersetzt und daraus ein druckfertiges PDF ' +
-          'erzeugt.',
+          'Die ganze Interaktion besteht aus einem Schritt. Das Interface durchlief zwei ' +
+          'Fassungen — zuerst eng am Nokia 3310, dann zugunsten einer stimmigeren Gestaltung ' +
+          'überarbeitet. Cara entwickelte die visuelle Identität und das Datenset der ' +
+          'Sternzeichen aus drei Systemen; ich die Technik dahinter: Raspberry Pi im ' +
+          'Kiosk-Modus, Oberfläche und die Logik, die aus einem Geburtsdatum ein druckfertiges ' +
+          'PDF macht.',
         files: ['zodizine-01', 'zodizine-02', 'zodizine-03'],
         layout: 'track',
       },
       {
         title: 'Das warme Papier',
         text:
-          'Für die räumliche Inszenierung haben wir uns an Wahrsagersalons bedient: Tücher ' +
-          'verdeckten die Umgebung und erzeugten eine mystische Atmosphäre, der nüchterne ' +
-          'Automat wurde zum rituellen Ort. Der Übergang vom Digitalen zum Analogen ist ' +
-          'körperlich inszeniert — die Berührung des Touchscreens, das gespannte Warten, ' +
-          'während Drucker und Mechanik arbeiten, schließlich die Übergabe des noch warmen ' +
-          'Papiers. Die Faltung macht den Nutzer zum Mitproduzenten: Aus flachen Bögen ' +
-          'entsteht ein dreidimensionales Objekt. Jedes Zine trägt individuelle Spuren und ' +
-          'existiert als Unikat in einer Serie von Unikaten. Oben auf dieser Seite lässt sich ' +
-          'der Automat bedienen.',
+          'Für die Inszenierung haben wir uns an Wahrsagersalons bedient: Tücher verdecken die ' +
+          'Umgebung, der nüchterne Automat wird zum rituellen Ort. Die Berührung des ' +
+          'Touchscreens, das Warten, während die Mechanik arbeitet, die Übergabe des noch ' +
+          'warmen Papiers. Die Faltung macht den Nutzer zum Mitproduzenten — jedes Zine ist ein ' +
+          'Unikat in einer Serie von Unikaten. Oben lässt sich der Automat bedienen.',
         files: ['dji'],
         layout: 'wide',
         embed: 'https://youtu.be/Ivilxs3Gcxg',

@@ -1717,6 +1717,37 @@ body[data-page='index'] {
 .step {
   display: grid;
   gap: var(--s-5);
+  align-items: start;
+}
+
+/* Kapitel mit Medien stehen nebeneinander: links der Text, rechts die
+   Karussells und Hefte. Der Text bekommt dadurch eine schmale Spalte,
+   in der er sich gut liest, und rechts steht nichts mehr leer.
+   Kapitel ohne Medien behalten die volle Breite — sie sollen allein
+   stehen duerfen. */
+.step:has(> :not(.step__head)) {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
+
+.step:has(> :not(.step__head)) .step__head {
+  max-width: none;
+  grid-column: 1;
+}
+
+.step:has(> :not(.step__head)) > :not(.step__head) {
+  grid-column: 2;
+}
+
+/* Schmaler Bildschirm: wieder untereinander, Text zuerst. */
+@media (max-width: 60rem) {
+  .step:has(> :not(.step__head)) {
+    grid-template-columns: 1fr;
+  }
+
+  .step:has(> :not(.step__head)) .step__head,
+  .step:has(> :not(.step__head)) > :not(.step__head) {
+    grid-column: 1;
+  }
 }
 
 /* Jedes Kapitel sitzt in einem Rahmen, sein Name in einer Leiste oben

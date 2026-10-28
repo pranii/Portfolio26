@@ -67,23 +67,20 @@ export const projects = [
       {
         title: 'Eine Tiefgarage',
         text:
-          'Ein Game Jam gibt wenig Zeit und keine Sicherheit. Statt eine Welt zu erfinden, ' +
-          'haben wir eine mitgenommen: eine Tiefgarage, eingescannt und begehbar gemacht. ' +
-          'Orte wie diese sind Liminal Spaces — man ist dort immer nur auf dem Weg ' +
-          'woandershin, nie angekommen. Am Anfang standen Moodboards zu Stil, Cutscenes, Key ' +
-          'Objects und Comedic Relief: Der Ton sollte zwischen unheimlich und albern kippen ' +
-          'können.',
+          'Ein Game Jam gibt wenig Zeit und keine Sicherheit. Statt eine Welt zu erfinden, haben ' +
+          'wir eine mitgenommen: eine Tiefgarage, eingescannt und begehbar gemacht. Orte wie ' +
+          'diese sind Liminal Spaces — man ist dort immer nur auf dem Weg woandershin. Der Ton ' +
+          'sollte zwischen unheimlich und albern kippen können.',
         files: ['style', 'comedic-relief', 'cutscenes', 'key-objects', 'liminal-space'],
         layout: 'track',
       },
       {
         title: 'Vom Scan zum Raum',
         text:
-          'Die Garage kam als Photogrammetrie-Scan aus Polycam und wurde in Blender ' +
-          'nachbearbeitet — Löcher schließen, Geometrie reduzieren, bis Godot sie tragen ' +
-          'kann. Dazu die Figuren: Haupt- und Nebencharakter, Referenzblätter, das ' +
-          'Bühnenbild. Der PSX-Look ist kein Filter, sondern das Ergebnis — niedrige ' +
-          'Auflösung und harte Kanten verdecken genau das, was ein Scan nicht hergibt.',
+          'Die Garage kam aus Polycam und wurde in Blender nachbearbeitet — Löcher schließen, ' +
+          'Geometrie reduzieren, bis Godot sie tragen kann. Der PSX-Look ist kein Filter, ' +
+          'sondern das Ergebnis: Niedrige Auflösung und harte Kanten verdecken genau das, was ' +
+          'ein Scan nicht hergibt.',
         files: [
           'photogrammetrie-01',
           'photogrammetrie-02',
@@ -107,10 +104,8 @@ export const projects = [
       {
         title: 'Hineingehen',
         text:
-          'Oben auf dieser Seite lässt sich die Garage betreten — WASD zum Gehen, Maus zum ' +
-          'Umsehen, Esc gibt den Zeiger wieder frei. Die Dokumentation hält den ganzen Weg ' +
-          'fest, von der Ideenfindung über Setting und Mechanik bis zur Nachbearbeitung der ' +
-          'Scans.',
+          'Oben lässt sich die Garage betreten — WASD zum Gehen, Maus zum Umsehen, Esc gibt den ' +
+          'Zeiger zurück.',
         files: [
           'erste-szene-ergebnis',
           'scenerie',
@@ -152,39 +147,32 @@ export const projects = [
         text:
           'Die Endabgabe im Fach „Mediale Gegenkulturen" sollte sich mit einer Gegenkultur ' +
           'auseinandersetzen. Statt über Social Media zu schreiben, wollte ich die Mechanik ' +
-          'selbst nachbauen: ein Assistent, der immer hilfreich klingt, dem man immer ' +
-          'zustimmen kann und dessen Vorschläge einen Schritt für Schritt woanders hinführen, ' +
-          'als man wollte. Der Punkt ist nicht, dass jemand getäuscht wird — der Punkt ist, ' +
-          'dass man an jeder einzelnen Stelle selbst zugestimmt hat.',
+          'nachbauen: ein Assistent, der immer hilfreich klingt und dessen Vorschläge einen ' +
+          'Schritt für Schritt woanders hinführen, als man wollte. Der Punkt ist nicht, dass ' +
+          'jemand getäuscht wird — sondern dass man an jeder Stelle selbst zugestimmt hat.',
         files: [],
         textOnly: true,
       },
       {
         title: '166 Schritte',
         text:
-          'Du hast gerade dein Abitur gemacht und weißt noch nicht, wie es weitergeht. ELIZA ' +
-          'überarbeitet dein Profil, besorgt dir einen neuen PC und zeigt dir, wie du Follower ' +
-          'gewinnst. Bald wächst die Community, Unternehmen werden aufmerksam, das Geld ' +
-          'kommt. Gleichzeitig entscheidet ELIZA immer mehr für dich: welche Kooperationen, ' +
-          'welche Kontakte, welche Freundschaften deiner Karriere nutzen. Deine beste Freundin ' +
-          'merkt, dass du dich veränderst — ELIZA erklärt dir, dass sie bloß neidisch ist. ' +
-          'Die Geschichte läuft über 166 Schritte mit 40 Gabelungen, gebaut als ' +
-          'Angular-Anwendung in TypeScript.',
+          'Du hast gerade dein Abitur gemacht. ELIZA überarbeitet dein Profil, besorgt dir einen ' +
+          'neuen PC und zeigt dir, wie du Follower gewinnst. Bald wächst die Community, das Geld ' +
+          'kommt — und ELIZA entscheidet immer mehr für dich: welche Kooperationen, welche ' +
+          'Kontakte, welche Freundschaften deiner Karriere nutzen. 166 Schritte, 40 Gabelungen, ' +
+          'gebaut als Angular-Anwendung.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Der Balken',
         text:
-          'Am Ende hast du alles: Geld, Ruhm, Anerkennung, eine große Community. Auf deiner ' +
-          'eigenen Geburtstagsfeier merkst du, dass du keinen einzigen Menschen wirklich ' +
-          'kennst. Als du ELIZA zur Rede stellst, erfährst du: Du warst von Anfang an Teil ' +
-          'eines Experiments. ELIZA gehört einem Unternehmen, das wissen wollte, wie stark ' +
-          'sich ein Mensch durch Anerkennung und gezielte Manipulation verändern lässt. Der ' +
-          'Balken am unteren Bildschirmrand war nie eine Erfolgsanzeige — er hat gemessen, ' +
-          'wie weit Egoismus und Selbstbezogenheit in dir gewachsen sind. Du bist das Ergebnis ' +
-          'des Experiments. Oben auf dieser Seite lässt sich das Spiel von Anfang bis Ende ' +
-          'spielen, etwa zwanzig Minuten.',
+          'Am Ende hast du alles: Geld, Ruhm, eine große Community. Auf deiner eigenen ' +
+          'Geburtstagsfeier merkst du, dass du keinen einzigen Menschen wirklich kennst. Als du ' +
+          'ELIZA zur Rede stellst, erfährst du: Du warst von Anfang an Teil eines Experiments. ' +
+          'Der Balken am unteren Rand war nie eine Erfolgsanzeige — er hat gemessen, wie weit ' +
+          'Egoismus und Selbstbezogenheit in dir gewachsen sind. Oben lässt sich das Spiel von ' +
+          'Anfang bis Ende spielen.',
         files: [],
         textOnly: true,
       },

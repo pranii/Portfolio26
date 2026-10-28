@@ -73,11 +73,9 @@ export const projects = [
       {
         title: 'Das rote V',
         text:
-          'Liebe hat nicht ein Gesicht, sondern viele — und die meisten Kurzfilme darüber ' +
-          'zeigen nur eines. Die Frage war, wie man mehrere Perspektiven in einen Film ' +
-          'bekommt, ohne sie zu erklären. Der Titel setzt den Ton: „LOVE" in schwarzer und ' +
-          'roter Tusche, das V als einziges rotes Zeichen. Die übrige Bildsprache folgt ' +
-          'dieser Geste.',
+          'Liebe hat viele Gesichter, die meisten Kurzfilme zeigen eines. Die Frage war, wie ' +
+          'mehrere Perspektiven in einen Film kommen, ohne sie zu erklären. Der Titel setzt den ' +
+          'Ton: „LOVE" in schwarzer und roter Tusche, das V als einziges rotes Zeichen.',
         files: ['love-03'],
         layout: 'stack',
       },
@@ -85,10 +83,9 @@ export const projects = [
         title: 'Offenes Casting',
         text:
           'Statt im Bekanntenkreis zu besetzen, lief ein offenes Casting über Instagram und ' +
-          'TikTok — Drehort, Drehtag und Altersgruppen stehen direkt auf dem Aufruf, die ' +
-          'Rückmeldungen liefen über dieselben Kanäle zusammen. So kamen Gesichter in den ' +
-          'Film, die niemand von uns vorher kannte. Gedreht in Frankfurt im Februar 2025, ' +
-          'konzipiert, gefilmt und bearbeitet gemeinsam mit Dardan Shala.',
+          'TikTok — Drehort, Drehtag und Altersgruppen direkt auf dem Aufruf. So kamen ' +
+          'Gesichter in den Film, die niemand von uns vorher kannte. Gedreht in Frankfurt im ' +
+          'Februar 2025, gemeinsam mit Dardan Shala.',
         files: ['love-01', 'love-02', 'love-04', 'love'],
         layout: 'track',
       },
@@ -120,19 +117,16 @@ export const projects = [
       {
         title: 'Kein zweiter Take',
         text:
-          'Improvisation heißt für die Kamera: Niemand weiß vorher, wo die Szene hingeht, es ' +
-          'gibt keinen zweiten Take und keinen Plan, an den man sich halten könnte. Die ' +
-          'Frage war, wie man einen Abend einfängt, der nur einmal stattfindet — und daraus ' +
-          'einen Trailer schneidet, der die Unsicherheit nicht wegglättet. Gedreht gemeinsam ' +
-          'mit Joscha Reuther und Jan Bangert.',
+          'Improvisation heißt für die Kamera: Niemand weiß, wo die Szene hingeht, es gibt ' +
+          'keinen zweiten Take und keinen Plan. Die Frage war, wie man einen Abend einfängt, ' +
+          'der nur einmal stattfindet — und daraus einen Trailer schneidet, der die ' +
+          'Unsicherheit nicht wegglättet. Gedreht mit Joscha Reuther und Jan Bangert.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Der Trailer',
-        text:
-          'Der Zusammenschnitt des Abends: Szenen, die es so nur einmal gegeben hat, weil sie ' +
-          'im Moment entstanden sind.',
+        text: 'Szenen, die es so nur einmal gegeben hat, weil sie im Moment entstanden sind.',
         files: [],
         embed: 'https://vimeo.com/1227665449/8897decc48',
       },
@@ -159,10 +153,8 @@ export const projects = [
       {
         title: 'Mit Ereza',
         text:
-          'Ereza ist mittlerweile eine Freundin. Das verändert die Arbeit: Wir besprechen ' +
-          'Ideen für Musikvideos lange, bevor eine Kamera im Raum steht, und ich kann sagen, ' +
-          'wenn etwas nicht trägt. Was dabei herauskommt, sieht anders aus als ein Dreh nach ' +
-          'Briefing.',
+          'Ereza ist mittlerweile eine Freundin. Das verändert die Arbeit: Wir besprechen Ideen ' +
+          'lange, bevor eine Kamera im Raum steht, und ich kann sagen, wenn etwas nicht trägt.',
         files: [],
         textOnly: true,
       },
@@ -199,26 +191,21 @@ export const projects = [
       {
         title: 'Der Rabe',
         text:
-          'Ein Haus, vier Nutzungen: Café, Bar, Eventlocation, Co-Working. Wer so etwas ' +
-          'bewirbt, landet schnell bei „für jeden etwas" — und damit bei niemandem. Die ' +
-          'Antwort steckte im Namen: Huginn ist einer der beiden Raben Odins, der Gedanke. ' +
-          'Die Wortmarke bleibt entsprechend still — Kleinschreibung, weiche Rundungen, der ' +
-          'Zusatz Café & Bar als schmaler Block darunter. Ein Zeichen, das alles überdacht, ' +
-          'statt jede Nutzung einzeln zu erklären.',
+          'Ein Haus, vier Nutzungen: Café, Bar, Eventlocation, Co-Working. Wer so etwas bewirbt, ' +
+          'landet schnell bei „für jeden etwas" — und damit bei niemandem. Die Antwort steckte ' +
+          'im Namen: Huginn ist einer der beiden Raben Odins, der Gedanke. Die Wortmarke bleibt ' +
+          'entsprechend still.',
         files: ['logo-huginn'],
         layout: 'wide',
       },
       {
         title: 'Vom Header bis zum Teller',
         text:
-          'Aus dem Namen wurde das Bild: zwei gespiegelte Raben, die als Header der Website ' +
-          'den Ton setzen — dunkel, etwas nordisch, mit Rot als einzigem Akzent. Der Flyer ' +
-          'bringt beide Seiten des Hauses zusammen: vorne dunkel das Tagesgeschäft von ' +
-          'Brunch bis DJ, hinten hell die Eventlocation im ersten Stock, die Raben als ' +
-          'gesprühte Schablonen über beiden. Die Broschüre führt Etage für Etage durch das ' +
-          'Haus, jede Doppelseite ein Raum und ein Anlass. Die Gerichte für Speisekarte und ' +
-          'Social Media habe ich selbst fotografiert, vor Rot, damit sie sich einfügen statt ' +
-          'als Fremdkörper zu wirken.',
+          'Aus dem Namen wurde das Bild: zwei gespiegelte Raben als Header — dunkel, nordisch, ' +
+          'Rot als einziger Akzent. Der Flyer bringt beide Seiten des Hauses zusammen: vorne ' +
+          'dunkel das Tagesgeschäft, hinten hell die Eventlocation. Die Broschüre führt Etage ' +
+          'für Etage durch das Haus. Die Gerichte habe ich selbst fotografiert, vor Rot, damit ' +
+          'sie sich einfügen.',
         files: [
           'header-webseite',
           'flyer-vorne',
@@ -231,11 +218,10 @@ export const projects = [
       {
         title: 'Sechzehn Bilder',
         text:
-          'Der Imagefilm zitiert „Breakfast at Tiffany\'s": eine Frau steigt aus dem Taxi, ' +
-          'geht auf die Bar zu, dreht sich um. Sechzehn gezeichnete Bilder erzählen den Film, ' +
-          'bevor die Kamera läuft — das Storyboard hält jeden Schnitt, jede Kameraeinstellung ' +
-          'und die Shotlist fest, damit am Drehtag nichts diskutiert werden muss. Der Schnitt ' +
-          'ist noch nicht fertig; bis dahin gibt es ein Reel, das Bilder und Tempo zeigt.',
+          'Der Imagefilm zitiert „Breakfast at Tiffany’s": eine Frau steigt aus dem Taxi, geht ' +
+          'auf die Bar zu, dreht sich um. Sechzehn gezeichnete Bilder erzählen den Film, bevor ' +
+          'die Kamera läuft — jeder Schnitt, jede Einstellung, die Shotlist. Der Schnitt ist ' +
+          'noch nicht fertig; bis dahin gibt es ein Reel.',
         files: ['storyboard'],
         layout: 'track',
         platzhalter: '/media/arbeit/huginn/huginn.mp4',
@@ -268,26 +254,22 @@ export const projects = [
       {
         title: 'Ueshiba',
         text:
-          'Aikido ist die Kampfkunst, die Morihei Ueshiba Mitte des 20. Jahrhunderts in Japan ' +
-          'entwickelt hat und die Konflikte durch Harmonie statt durch Gewalt löst. Das ' +
-          'Teamprojekt sollte das Interesse daran wiederbeleben. Wichtig war uns, dass die ' +
-          'Geschichte das Wesen der Kampfkunst selbst widerspiegelt und nicht nur von ihr ' +
-          'handelt — eine Erzählung, die Ueshibas Leben chronologisch folgt. Geplant war eine ' +
-          'Serie; aus Zeitgründen blieb es bei einer Pilotfolge.',
+          'Aikido löst Konflikte durch Harmonie statt durch Gewalt — entwickelt von Morihei ' +
+          'Ueshiba Mitte des 20. Jahrhunderts. Das Teamprojekt sollte das Interesse daran ' +
+          'wiederbeleben. Wichtig war uns, dass die Geschichte das Wesen der Kampfkunst ' +
+          'widerspiegelt und nicht nur von ihr handelt. Geplant war eine Serie; aus Zeitgründen ' +
+          'blieb es bei der Pilotfolge.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Dreiundzwanzig Szenen',
         text:
-          'Das Drehbuch entstand in Celtx und wurde mehrfach überarbeitet: Ein junger Schüler ' +
-          'Ueshibas begreift das wahre Wesen des Aikido durch eine ungewöhnliche Begegnung ' +
-          'mit einem Betrunkenen im Zug. Alle 23 Szenen wurden mit Storyboarder und Photoshop ' +
-          'gezeichnet und zu einer animierten Fassung mit Musik und Toneffekten gebracht — ' +
-          'das Storyboard nicht als Planungswerkzeug, sondern als eigenständige Fassung des ' +
-          'Films. Für die eigentliche Animation fiel die Wahl auf Blender, frei verfügbar und ' +
-          'im Studium bereits gelernt; die Figuren entstanden in VRoid Studio. Animiert wurde ' +
-          'Szene 13, die Schlüsselszene im Zugwagen.',
+          'Ein junger Schüler Ueshibas begreift das Wesen des Aikido durch eine Begegnung mit ' +
+          'einem Betrunkenen im Zug. Alle 23 Szenen wurden gezeichnet und zu einer animierten ' +
+          'Fassung mit Musik und Ton gebracht — das Storyboard nicht als Planung, sondern als ' +
+          'eigenständige Fassung des Films. Animiert wurde Szene 13 in Blender, die ' +
+          'Schlüsselszene im Zugwagen.',
         files: [],
         embed: 'https://player.vimeo.com/video/669799645',
       },
