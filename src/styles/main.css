@@ -1183,9 +1183,9 @@ body[data-page='index'] {
 
   .carousel__slide .card__media {
     grid-row: 1 / -1;
-    aspect-ratio: auto;
-    height: 100%;
-    min-height: 100%;
+    align-self: start;
+    aspect-ratio: var(--tile-ratio);
+    height: auto;
     border-bottom: 0;
     border-right: 2px solid var(--ink);
   }
