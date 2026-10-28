@@ -1,9 +1,23 @@
 /**
- * Boot-Screen beim ersten Laden der Startseite: Opener-GIF im
- * Hintergrund, Titel blendet nach 0,4s ein, Unterzeile nach 0,8s und
- * blinkt dazu mit einem kurzen Signalton. Nach 2s verschwindet der
- * Launcher und gibt die Startseite frei.
+ * Der Startbildschirm beim Einschalten: Opener-GIF im Hintergrund,
+ * Titel blendet nach 0,4s ein, Unterzeile nach 0,8s und blinkt dazu mit
+ * einem kurzen Signalton. Nach 2s gibt er die Seite frei.
+ *
+ * Ein Telefon bootet einmal, nicht bei jedem Blick aufs Display: Wer in
+ * dieser Sitzung schon da war, sieht ihn nicht wieder. Gemerkt wird das
+ * im sessionStorage — beim naechsten Besuch bootet es wieder.
  */
+
+const SPEICHER = 'portfolio-gebootet';
+
+/** War der Startbildschirm in dieser Sitzung schon zu sehen? */
+export function schonGebootet() {
+  try {
+    return sessionStorage.getItem(SPEICHER) === 'ja';
+  } catch {
+    return false;
+  }
+}
 
 function beep(freq = 1400, duration = 0.05) {
   try {
@@ -29,6 +43,18 @@ function beep(freq = 1400, duration = 0.05) {
 export function initLauncher(selector = '[data-slot="launcher"]') {
   const launcher = document.querySelector(selector);
   if (!launcher) return;
+
+  // Schon gebootet: den Bildschirm gar nicht erst zeigen.
+  if (schonGebootet()) {
+    launcher.remove();
+    return;
+  }
+
+  try {
+    sessionStorage.setItem(SPEICHER, 'ja');
+  } catch {
+    // Ohne Speicher bootet es eben jedes Mal.
+  }
 
   const title = launcher.querySelector('.launcher__title');
   const subtitle = launcher.querySelector('.launcher__subtitle');
