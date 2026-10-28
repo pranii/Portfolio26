@@ -109,33 +109,27 @@ export const projects = [
       {
         title: 'Das Magazin',
         text:
-          'Das Heft führt durch die Modelle hinter der Arbeit: Freuds Instanzenmodell, ' +
-          'Melanie Kleins Objektbeziehungstheorie, Pete Walkers vier Überlebensstrategien. ' +
-          'Der Satz, auf den alles hinausläuft: Jede dieser Strategien hat einmal ' +
-          'funktioniert. Sie war nie ein Charakterfehler.',
+          'Das Heft führt durch die Modelle hinter der Arbeit: Freuds Instanzenmodell, die ' +
+          'vier Reaktionstypen — Fight, Flight, Freeze, Fawn —, die Polyvagal-Theorie und ' +
+          'den Trauma-Response-Zyklus. Dazu Shadowwork zum Mitmachen und am Ende ' +
+          'Anlaufstellen. Der Satz, auf den alles hinausläuft: Jede dieser Strategien hat ' +
+          'einmal funktioniert. Sie war nie ein Charakterfehler.',
         files: [],
         prototypHier: true,
       },
       {
-        title: 'Technischer Aufbau',
-        text:
-          'Vier Videoakte und ein Soundtrack aus 42 Spuren laufen über Projektion und ' +
-          'Lautsprecher in den Raum. Fünf Phasen geben vor, was wann zu sehen und zu hören ' +
-          'ist; am Ende stehen Telefonzellen, in denen die Besucher selbst erzählen können.',
-        files: [],
-        aufbau: 'rreth',
-      },
-      {
         title: 'Vier Akte',
         text:
-          'Die Bachelorarbeit von 2021 bis 2023. Die Akte tragen albanische Namen — ' +
-          '„Themeli" (Grundstein) zeigt die Reaktionsmuster aus der Kindheit, „Shprehje ' +
-          'Emocionale" übersetzt in Tanz, was ein Trigger auslöst, „Metamorfoza" ist der ' +
-          'Wendepunkt, „Çlirim" die Katharsis, in der zum ersten Mal Farbe ins Bild kommt. ' +
-          'Die ersten drei Akte sind streng schwarzweiß. Getanzt von Carina Borgards, gebaut ' +
-          'aus Rotoskopie, EbSynth und 42 Tonspuren.',
+          'Die Bachelorarbeit von 2021 bis 2023. Vier Akte mit albanischen Namen, verteilt ' +
+          'auf vier Projektionsebenen: „Themeli" (Grundstein) zeigt die Reaktionsmuster aus ' +
+          'der Kindheit, „Shprehje Emocionale" übersetzt in Tanz, was ein Trigger auslöst, ' +
+          '„Metamorfoza" ist der Wendepunkt, „Çlirim" die Katharsis, in der zum ersten Mal ' +
+          'Farbe ins Bild kommt. Die ersten drei Akte sind streng schwarzweiß. Getanzt von ' +
+          'Carina Borgards, gebaut aus Rotoskopie, EbSynth und einem Soundtrack aus 42 ' +
+          'Spuren.',
         files: ['vision-board'],
         layout: 'track',
+        aufbau: 'rreth',
         embed: 'https://youtu.be/i9AlftZ5PIk',
       },
       {
@@ -149,14 +143,19 @@ export const projects = [
       {
         title: 'Projektpitch',
         text:
-          '2025 im Master noch einmal überarbeitet, zu dritt mit Cara Brüggendieck und Laura ' +
-          'Zahn. Daraus wurde ein Raum, der sich dreht: kaltes Licht, gedämpfte Klänge, ' +
-          'alles still und fast kontrolliert. Auf dem Karussell zeigen sich die gewohnten ' +
-          'Pausen und inneren Grenzen — und verwandeln sich in Offenheit, in Verbindung, in ' +
-          'ein geteiltes Bewusstsein. Vorgearbeitet wurde viel; die Umsetzung musste aus ' +
-          'Zeitgründen warten.',
+          '2025 im Master noch einmal angefasst, zu dritt mit Cara Brüggendieck und Laura ' +
+          'Zahn. Daraus wurde ein anderer Entwurf: nicht mehr ein Video im Raum, sondern ein ' +
+          'Weg durch fünf Phasen. Drei Minuten absolute Dunkelheit mit Theta-Wellen, dann ' +
+          'fünfzehn Minuten auf drei Flächen — Shadow, Pain, Ignite, Break, Light. Danach ' +
+          'eine einzige Minute Stille, in der man den eigenen Herzschlag hört; ohne diese ' +
+          'Pause keine Katharsis. Dann 10.000 Lux, fast schmerzhaft hell, und Glaskabinen ' +
+          'mit offenem Mikrofon: Wer will, erzählt anonym, wer nicht will, hört zu. Am Ende ' +
+          'gibt es die Magazine mit auf den Weg. Vorgearbeitet wurde viel; die Umsetzung ' +
+          'musste aus Zeitgründen warten.',
         files: ['pitch-version-1'],
         layout: 'track',
+        aufbau: 'rreth-pitch',
+        embed: 'https://youtu.be/Krdg6cM746g',
       },
       {
         title: 'Erster Einblick',
@@ -172,8 +171,7 @@ export const projects = [
           'Die Instagram-Kampagne läuft im Vorfeld: kurze Videos, selbst aufgenommen und mit ' +
           'KI weiterbearbeitet, Captions in der ersten Person. Jeder Post trägt den Namen ' +
           'eines Musters statt eines Titels — Suppressing, Self Sabotage, Self Destruction. ' +
-          '2028 soll die Installation in der Halle 93 in Stuttgart stehen, mit überarbeitetem ' +
-          'Magazin und einer App.',
+          '2028 soll die Installation in der Halle 93 in Stuttgart stehen.',
         files: ['rreth-kampagne'],
         layout: 'track',
       },

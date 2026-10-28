@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "import": "node scripts/import-assets.mjs",
     "check": "node scripts/check-content.mjs && node scripts/smoke-test.mjs",
+    "medien:aufraeumen": "node scripts/medien-aufraeumen.mjs",
     "export:spiel": "node scripts/export-game.mjs",
     "crops": "node scripts/make-crops.mjs",
     "zodizine": "node scripts/make-zodizine-seiten.mjs",

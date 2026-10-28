@@ -79,12 +79,28 @@ export const AUFBAUTEN = {
     ],
   },
 
+  // Die Bachelorarbeit von 2023: vier Akte auf vier Projektionsebenen.
   rreth: {
-    alt: 'Vier Videoakte und ein Soundtrack laufen über Projektion und Lautsprecher in den Raum',
+    alt: 'Vier Videoakte laufen auf vier Projektionsebenen, dazu ein Soundtrack aus 42 Spuren',
     spalten: [
-      { label: 'Material', kaesten: ['Vier Akte|Rotoskopie · EbSynth', 'Soundtrack|42 Spuren'] },
-      { label: 'Steuerung', kaesten: ['Fünf Phasen|Farbe · Ton · Dauer'] },
-      { label: 'Raum', kaesten: ['Projektion', 'Lautsprecher', 'Telefonzellen|für die Besucher'] },
+      {
+        label: 'Material',
+        kaesten: ['Vier Akte|Rotoskopie · EbSynth', 'Soundtrack|42 Spuren'],
+      },
+      { label: 'Technik', kaesten: ['Projektoren', 'Lautsprecher'] },
+      { label: 'Raum', kaesten: ['Vier|Projektionsebenen'] },
+    ],
+  },
+
+  // Der Pitch von 2025: fuenf Phasen, durch die man geht.
+  'rreth-pitch': {
+    alt: 'Fünf Phasen nacheinander: Dunkelheit, fünf Videoakte, Stille, helle Kabinen, Magazin',
+    reihe: [
+      'Entering the Void|3 Min · 0 Lux|Theta 4–8 Hz',
+      'The Eye of the Storm|15 Min · 3 Flächen|Fünf Akte',
+      'The Silence between|1 Min · 0 Lux|absolute Stille',
+      'Breaking the Silence|offen · 10.000 Lux|Glaskabinen, Mikrofon',
+      'From Feeling to|Understanding|zwei Magazine',
     ],
   },
 
@@ -126,9 +142,58 @@ function kasten(x, y, text) {
  * Baut die Skizze zu einem Namen. Gibt eine leere Zeichenkette zurueck,
  * wenn es dazu keine gibt.
  */
+/** Eine Abfolge: Kaesten nebeneinander, dazwischen Pfeile. */
+function reiheSvg(plan) {
+  const B = 150;
+  const H = 76;
+  const LUECKE = 34;
+  const teile = [];
+
+  plan.reihe.forEach((eintrag, i) => {
+    const x = RAND + i * (B + LUECKE);
+    const y = RAND;
+    const zeilen = String(eintrag).split('|');
+
+    teile.push(
+      `<rect x="${x}" y="${y}" width="${B}" height="${H}" fill="none" stroke="currentColor" stroke-width="2"/>`,
+    );
+
+    // Die Nummer der Phase sitzt oben links im Kasten.
+    teile.push(`<text x="${x + 8}" y="${y + 15}" font-size="11" opacity="0.6">${i + 1}</text>`);
+
+    zeilen.forEach((zeile, z) => {
+      teile.push(
+        `<text x="${x + B / 2}" y="${y + 32 + z * 15}" text-anchor="middle" font-size="${
+          z === 0 ? 13 : 11
+        }" opacity="${z === 0 ? 1 : 0.7}">${esc(zeile)}</text>`,
+      );
+    });
+
+    if (i === plan.reihe.length - 1) return;
+    const pfeilVon = x + B;
+    const pfeilBis = x + B + LUECKE;
+    const mitte = y + H / 2;
+    teile.push(
+      `<path d="M ${pfeilVon} ${mitte} H ${pfeilBis}" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>`,
+      `<path d="M ${pfeilBis - 7} ${mitte - 4} L ${pfeilBis} ${mitte} L ${pfeilBis - 7} ${mitte + 4}" fill="none" stroke="currentColor" stroke-width="1.5"/>`,
+    );
+  });
+
+  const breite = RAND * 2 + plan.reihe.length * B + (plan.reihe.length - 1) * LUECKE;
+  const hoehe = RAND * 2 + H;
+
+  return `
+    <figure class="aufbau">
+      <svg viewBox="0 0 ${breite} ${hoehe}" role="img" aria-label="${esc(plan.alt)}" font-family="var(--font-mono)">
+        ${teile.join('\n        ')}
+      </svg>
+    </figure>`;
+}
+
 export function aufbauSvg(name) {
   const plan = AUFBAUTEN[name];
   if (!plan) return '';
+  if (plan.reihe) return reiheSvg(plan);
 
   const spalten = plan.spalten;
   const hoechste = Math.max(...spalten.map((s) => s.kaesten.length));
