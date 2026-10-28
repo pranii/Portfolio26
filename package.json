@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@mediapipe/tasks-vision": "^1.1.1",
+    "docx": "^9.5.1",
     "gifenc": "^1.0.3",
     "jsdom": "^30.0.1",
     "pdf-to-img": "^7.0.0",

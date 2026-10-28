@@ -69,7 +69,7 @@ export const projects = [
       'kleinen Magazin und einem Schlüsselanhänger, daraus eine begehbare Videoinstallation ' +
       'über die komplexe posttraumatische Belastungsstörung, und 2028 eine Ausstellung, die ' +
       'beides zusammenbringt. Wer hineingeht, soll am Ende selbst sprechen dürfen.',
-    year: '2020 - 2025',
+    year: '2020–2025',
     role: 'Konzeption, Recherche, Regie, Videoschnitt, Sounddesign, Rauminstallation',
     client:
       'Bachelorthesis "Rreth — Dokumentation einer immersiven Rauminstallation", vorgelegt ' +

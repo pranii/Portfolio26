@@ -1511,14 +1511,26 @@ body[data-page='index'] {
 
 /* ── 8 Projektseite ───────────────────────────────────────────────── */
 
+/* Der Kopf liest sich von oben nach unten, nicht von links nach rechts.
+   Die Gewichtung macht die Groesse: Titel traegt, das Zitat ist der
+   Einstieg, der Text erklaert, die Eckdaten sind zum Nachschlagen da.
+   Fruehere Fassung hatte Daten und Text als zwei gleich breite Spalten —
+   beide haben um dieselbe Aufmerksamkeit gekaempft. */
 .project-head {
   padding-block: var(--s-7) 0;
   display: grid;
   gap: var(--s-4);
+  justify-items: start;
 }
 
+/* Das Jahr, bevor der Titel kommt — wie der Aufdruck auf einer Kassette. */
 .project-head__kicker {
   margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
 }
 
 .project-head__title {
@@ -1537,6 +1549,12 @@ body[data-page='index'] {
   color: var(--ink-soft);
   line-height: 1.15;
   max-width: 30ch;
+}
+
+/* Im Projektkopf steht das Zitat direkt unter dem Titel und braucht
+   deshalb weniger Luft als der freistehende Zwischenruf. */
+.project-head .pull {
+  padding-block: var(--s-6) var(--s-5);
 }
 
 /* Eckdaten links schmal, Text rechts breit. */
@@ -1574,22 +1592,23 @@ body[data-page='index'] {
   padding: 0 var(--s-2);
 }
 
-/* Eckdaten als kleines Datenblatt */
+/* Eckdaten als ruhige Zeile unter dem Text. Kein Rahmen: Ein Kasten
+   zieht mehr Blick auf sich, als Nachschlagedaten verdienen. */
 .facts {
-  margin: 0;
+  margin: var(--s-6) 0 0;
   display: grid;
-  border: 2px solid var(--ink);
+  gap: var(--s-3);
+  width: 100%;
+  max-width: var(--measure);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--rule);
 }
 
 .facts__row {
   display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
+  grid-template-columns: 9rem minmax(0, 1fr);
   gap: var(--s-3);
   align-items: baseline;
-  padding: var(--s-2) var(--s-3);
-}
-.facts__row + .facts__row {
-  border-top: 1px dashed var(--rule);
 }
 
 .facts dt {
@@ -1603,7 +1622,16 @@ body[data-page='index'] {
 .facts dd {
   margin: 0;
   font-size: var(--t--1);
-  line-height: 1.2;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+@media (max-width: 36rem) {
+  .facts__row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 /* Knopf zu Spiel oder externer Seite */
@@ -1681,7 +1709,7 @@ body[data-page='index'] {
 
 /* Schritte — der grosse Abstand zwischen ihnen ist die Gliederung */
 .steps {
-  padding-block: var(--s-9) 0;
+  padding-block: var(--s-8) 0;
   display: grid;
   gap: var(--s-9);
 }
@@ -1691,9 +1719,13 @@ body[data-page='index'] {
   gap: var(--s-5);
 }
 
+/* Eine Linie ueber jedem Kapitel. Sie gliedert, ohne etwas zu
+   beschriften — eine Nummer waere eine Angabe, die niemand braucht. */
 .step__head {
   display: grid;
-  gap: var(--s-2);
+  gap: var(--s-3);
+  padding-top: var(--s-5);
+  border-top: 2px solid var(--ink);
 }
 
 .step__title {
@@ -2185,10 +2217,14 @@ kbd {
 
 /* Jedes Projekt mit `prototyp` zeigt die Arbeit direkt zwischen Kopf und
    Kapiteln — keine eigene Seite, kein Wegklicken. */
+/* Der Prototyp gehoert zum Projekt, nicht zwischen die Kapitel: Eine
+   Linie oben und unten macht ihn zu einem eigenen Abschnitt. */
 .prototyp {
   display: grid;
   gap: var(--s-3);
+  margin-top: var(--s-8);
   padding-block: var(--s-6);
+  border-block: 2px solid var(--ink);
   scroll-margin-top: var(--s-6);
 }
 

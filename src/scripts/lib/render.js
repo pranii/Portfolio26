@@ -444,9 +444,12 @@ function platzhalterBlock(datei, poster) {
   return dateien.map((d) => platzhalter(d, poster)).join('');
 }
 
+/**
+ * Die Eckdaten. Das Jahr fehlt hier mit Absicht — es steht ueber dem
+ * Titel, wo man es zuerst sucht, und muesste sonst zweimal dastehen.
+ */
 function factList(project) {
   const rows = [
-    [t('fakten.jahr'), project.year],
     [t('fakten.rolle'), project.role],
     [t('fakten.mitwirkende'), project.client],
     [t('fakten.werkzeuge'), project.tools?.join(', ')],
@@ -472,19 +475,19 @@ export function renderProjectPage(project) {
 
   const steps = chapters.map((chapter) => renderStep(chapter, poster)).join('');
 
+  // Die Reihenfolge ist die Gewichtung: Titel, dann der eine Satz, der das
+  // Projekt traegt, dann worum es geht. Die Eckdaten stehen darunter als
+  // ruhige Zeile — sie sollen nachschlagbar sein, nicht um Aufmerksamkeit
+  // mit dem Text streiten.
   return `
     <header class="project-head">
+      ${project.year ? `<p class="project-head__kicker">${esc(project.year)}</p>` : ''}
       <h1 class="project-head__title">${esc(project.title)}</h1>
-      <p class="project-head__sub">${esc(project.subtitle ?? '')}</p>
-      <div class="project-head__grid">
-        <div>
-          ${factList(project)}
-        </div>
-        <div>
-          <p class="project-head__text">${esc(project.description)}</p>
-          ${tags}
-        </div>
-      </div>
+      ${project.subtitle ? `<p class="project-head__sub">${esc(project.subtitle)}</p>` : ''}
+      ${project.pull ? `<p class="pull">${esc(project.pull)}</p>` : ''}
+      <p class="project-head__text">${esc(project.description)}</p>
+      ${tags}
+      ${factList(project)}
       ${
         project.extern
           ? `<p class="play"><a class="play__button" href="${esc(project.extern.href)}" target="_blank" rel="noopener" data-cursor="${esc(t('karte.oeffnen'))}">${esc(project.extern.label)} ↗</a>
