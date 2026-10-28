@@ -280,6 +280,9 @@ html.lenis body {
   max-width: var(--shell);
   margin-inline: auto;
   padding-inline: var(--gutter);
+  /* Luft am Seitenende. Seit die Fusszeile weg ist, endete der Inhalt
+     sonst hart an der Kante — ein Text braucht unten Rand wie oben. */
+  padding-bottom: var(--s-10);
 }
 
 .section {
