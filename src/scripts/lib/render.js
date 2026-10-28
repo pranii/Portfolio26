@@ -77,15 +77,15 @@ function cropSrc(image) {
   return image.src.endsWith('.webp') ? image.src.replace(/\.webp$/, '-crop.webp') : image.src;
 }
 
-function imageTag(image, sizes, { lazy = true, modus = passung(image) } = {}) {
+function imageTag(image, sizes, { lazy = true, modus = passung(image), ganzesBild = false } = {}) {
   const full = esc(asset(image.src));
   const thumb = esc(asset(image.thumb ?? image.src));
 
   // Gefuellte Kacheln zeigen den vorbereiteten Ausschnitt, eingepasste
   // das ganze Bild. Die Lightbox oeffnet in beiden Faellen das Original.
-  const quelle = modus === 'fill' ? esc(asset(cropSrc(image))) : thumb;
+  const quelle = modus === 'fill' && !ganzesBild ? esc(asset(cropSrc(image))) : thumb;
   const srcset =
-    modus === 'fill'
+    modus === 'fill' && !ganzesBild
       ? `${quelle} 1200w, ${full} ${image.width ?? 1800}w`
       : `${thumb} ${THUMB_WIDTH}w, ${full} ${image.width ?? 1800}w`;
 
@@ -117,7 +117,7 @@ export function renderCard(project, category) {
   const cover = coverFor(project, media);
   const modus = cover ? passung(cover) : 'fill';
   const bild = cover
-    ? imageTag(cover, '(max-width: 700px) 85vw, 26rem', { modus })
+    ? imageTag(cover, '(max-width: 700px) 85vw, 26rem', { modus, ganzesBild: true })
     : `<span class="card__placeholder">${esc(project.title)}</span>`;
 
   const tags = (project.tags ?? [])

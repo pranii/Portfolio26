@@ -15,6 +15,7 @@
  */
 
 import { SPRACHEN, ui } from '../../data/i18n/ui.js';
+import { ton } from './ton.js';
 
 const SPEICHER = 'portfolio-sprache';
 const CODES = SPRACHEN.map((s) => s.code);
@@ -142,6 +143,7 @@ export function initSprachschalter() {
   liste.addEventListener('click', (ereignis) => {
     const code = ereignis.target.closest('[data-sprache]')?.dataset.sprache;
     if (!code || code === aktuell) return;
+    ton.wechsel();
     try {
       localStorage.setItem(SPEICHER, code);
     } catch {

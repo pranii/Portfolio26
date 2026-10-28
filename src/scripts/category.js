@@ -23,12 +23,14 @@ import {
   uebersetzeSeite,
   initSprachschalter,
 } from './lib/i18n.js';
+import { initTonschalter } from './lib/ton.js';
 
 async function main() {
   const page = document.body.dataset.page;
   await ladeSprache();
   uebersetzeSeite();
   initSprachschalter();
+  initTonschalter({ an: t('ton.an'), aus: t('ton.aus') });
 
   const geladen = await LOADERS[page]();
   const category = uebersetzeKategorie(geladen.category);

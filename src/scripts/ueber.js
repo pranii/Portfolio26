@@ -14,6 +14,7 @@ import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
 import { renderVorgehen } from './lib/render.js';
 import { ladeSprache, t, uebersetzeSeite, initSprachschalter } from './lib/i18n.js';
+import { initTonschalter } from './lib/ton.js';
 
 /** Ein Feld des Eintrags: Name links, Wert rechts, dazwischen Punkte. */
 function feld(bezeichnung, wert, href) {
@@ -39,6 +40,7 @@ async function main() {
   await ladeSprache();
   uebersetzeSeite();
   initSprachschalter();
+  initTonschalter({ an: t('ton.an'), aus: t('ton.aus') });
 
   const ueber = site.ueber;
   document.querySelector('[data-slot="name"]').textContent = site.name;

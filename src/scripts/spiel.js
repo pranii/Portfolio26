@@ -8,7 +8,8 @@
 
 import '../styles/main.css';
 import { site, spiel } from '../data/site.js';
-import { ladeSprache, uebersetzeSeite, initSprachschalter } from './lib/i18n.js';
+import { ladeSprache, t, uebersetzeSeite, initSprachschalter } from './lib/i18n.js';
+import { initTonschalter } from './lib/ton.js';
 import { initScroll, initProgressBar } from './lib/scroll.js';
 import { revealFade } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
@@ -78,6 +79,7 @@ async function main() {
   await ladeSprache();
   uebersetzeSeite();
   initSprachschalter();
+  initTonschalter({ an: t('ton.an'), aus: t('ton.aus') });
   document.querySelector('[data-slot="name"]').textContent = site.name;
 
   document.querySelector('[data-slot="spiel-titel"]').textContent = spiel.title;

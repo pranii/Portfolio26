@@ -31,6 +31,7 @@
  */
 
 import { t } from './i18n.js';
+import { ton } from './ton.js';
 
 const DAUER = 620; // Millisekunden fuer eine Drehung
 const KURVE = 'cubic-bezier(0.35, 0, 0.2, 1)';
@@ -225,6 +226,7 @@ export function startMagazin(wurzel, seiten, melde = () => {}, optionen = {}) {
   async function blaettern(richtung) {
     if (dreht) return;
     const vorwaerts = richtung === 1;
+    ton.blatt();
 
     if (einzeln) {
       const ziel = seitenNr + richtung;

@@ -14,6 +14,8 @@
  * dem letzten Eintrag geht es wieder von vorn los.
  */
 
+import { ton } from './ton.js';
+
 const SCHMAL = '(max-width: 48rem)';
 
 export function initPhoneMenu(root) {
@@ -27,7 +29,8 @@ export function initPhoneMenu(root) {
   let einzeln = schmal?.matches ?? false;
   let aktuell = 0;
 
-  function zeige(i) {
+  function zeige(i, mitTon = false) {
+    if (mitTon && i !== aktuell) ton.taste();
     aktuell = (i + items.length) % items.length;
     // Im Raster ist alles zu sehen; hervorgehoben wird trotzdem, damit
     // die Pfeiltasten eine sichtbare Spur hinterlassen.
@@ -41,8 +44,17 @@ export function initPhoneMenu(root) {
     zeige(aktuell);
   }
 
-  root.querySelector('[data-menu="prev"]').addEventListener('click', () => zeige(aktuell - 1));
-  root.querySelector('[data-menu="next"]').addEventListener('click', () => zeige(aktuell + 1));
+  root
+    .querySelector('[data-menu="prev"]')
+    .addEventListener('click', () => zeige(aktuell - 1, true));
+  root
+    .querySelector('[data-menu="next"]')
+    .addEventListener('click', () => zeige(aktuell + 1, true));
+
+  // Ein Eintrag wird geoeffnet.
+  list.addEventListener('click', (ereignis) => {
+    if (ereignis.target.closest('.phone__link')) ton.auswahl();
+  });
 
   /** Wie viele Kacheln in einer Zeile stehen — im Einzelmodus immer eine. */
   function spalten() {
@@ -53,10 +65,10 @@ export function initPhoneMenu(root) {
 
   screen.addEventListener('keydown', (event) => {
     const zeile = spalten();
-    if (event.key === 'ArrowLeft') zeige(aktuell - 1);
-    else if (event.key === 'ArrowRight') zeige(aktuell + 1);
-    else if (event.key === 'ArrowUp') zeige(aktuell - zeile);
-    else if (event.key === 'ArrowDown') zeige(aktuell + zeile);
+    if (event.key === 'ArrowLeft') zeige(aktuell - 1, true);
+    else if (event.key === 'ArrowRight') zeige(aktuell + 1, true);
+    else if (event.key === 'ArrowUp') zeige(aktuell - zeile, true);
+    else if (event.key === 'ArrowDown') zeige(aktuell + zeile, true);
     else if (event.key === 'Enter' && event.target === screen)
       items[aktuell].querySelector('.phone__link').click();
     else return;

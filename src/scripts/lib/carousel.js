@@ -8,6 +8,7 @@
  */
 
 import { prefersReducedMotion } from './scroll.js';
+import { ton } from './ton.js';
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -55,8 +56,14 @@ export function initCarousel(root) {
     }
   }
 
-  prev?.addEventListener('click', () => viewport.scrollBy({ top: -step(), behavior }));
-  next?.addEventListener('click', () => viewport.scrollBy({ top: step(), behavior }));
+  prev?.addEventListener('click', () => {
+    ton.taste();
+    viewport.scrollBy({ top: -step(), behavior });
+  });
+  next?.addEventListener('click', () => {
+    ton.taste();
+    viewport.scrollBy({ top: step(), behavior });
+  });
   viewport.addEventListener('scroll', update, { passive: true });
   new ResizeObserver(update).observe(viewport);
 

@@ -31,6 +31,8 @@ export const ui = {
     'ueber.feld.gruppe': 'Gruppe',
     'ueber.feld.klingelton': 'Klingelton',
 
+    'ton.an': 'Ton ausschalten',
+    'ton.aus': 'Ton einschalten',
     'sprache.wechseln': 'Sprache wechseln',
 
     'nav.bereiche': 'Bereiche',
@@ -153,6 +155,8 @@ export const ui = {
     'ueber.feld.gruppe': 'Group',
     'ueber.feld.klingelton': 'Ringtone',
 
+    'ton.an': 'Turn sound off',
+    'ton.aus': 'Turn sound on',
     'sprache.wechseln': 'Change language',
 
     'nav.bereiche': 'Sections',
@@ -274,6 +278,8 @@ export const ui = {
     'ueber.feld.gruppe': 'Grupi',
     'ueber.feld.klingelton': 'Zilja',
 
+    'ton.an': 'Fik zërin',
+    'ton.aus': 'Ndiz zërin',
     'sprache.wechseln': 'Ndërro gjuhën',
 
     'nav.bereiche': 'Fushat',

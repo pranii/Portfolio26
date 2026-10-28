@@ -401,6 +401,41 @@ html.lenis body {
   color: var(--accent-ink);
 }
 
+/* Der Lautsprecher daneben: gleiche Hoehe, gleiches Gewicht. */
+.tonschalter {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.55rem;
+  margin-left: var(--s-2);
+  border: 1px solid var(--ink);
+  background: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition:
+    background-color 0.12s steps(2),
+    color 0.12s steps(2);
+}
+
+.tonschalter svg {
+  width: 12px;
+  height: 12px;
+  shape-rendering: crispEdges;
+}
+
+.tonschalter:hover {
+  color: var(--ink);
+}
+
+.tonschalter.is-an {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.home__status .tonschalter {
+  border-color: currentColor;
+}
+
 /* Auf der Startseite sitzt er in der Statusleiste des Telefons. */
 .home__status .sprachen {
   margin-left: var(--s-3);
@@ -1175,19 +1210,30 @@ body[data-page='index'] {
 /* In der Spalte wird aus jeder Karte eine Zeile: Bild links, Text rechts.
    Auf schmalen Bildschirmen bleibt die Karte gestapelt. */
 @media (min-width: 48rem) {
+  /* Zwei zu drei: Das Bild traegt, der Text fuehrt. Ein festes
+     Verhaeltnis statt einer festen Breite haelt alle Karten gleich
+     gewichtet, egal wie breit das Fenster ist. */
   .carousel__slide .card {
     display: grid;
-    grid-template-columns: clamp(14rem, 24vw, 20rem) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
     grid-template-rows: auto 1fr auto;
+    min-height: 15rem;
   }
 
+  /* Das Feld fuellt die Hoehe der Karte, das Bild sitzt vollstaendig und
+     mittig darin — beschnitten wird nie. */
   .carousel__slide .card__media {
     grid-row: 1 / -1;
-    align-self: start;
-    aspect-ratio: var(--tile-ratio);
-    height: auto;
+    align-self: stretch;
+    aspect-ratio: auto;
+    height: 100%;
     border-bottom: 0;
     border-right: 2px solid var(--ink);
+  }
+
+  /* Der Text steht in der Mitte seiner Spalte, nicht oben angeklebt. */
+  .carousel__slide .card__body {
+    align-content: center;
   }
 }
 
@@ -1238,7 +1284,7 @@ body[data-page='index'] {
 .card__media--fill img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .card__media--fit img {
   width: 100%;

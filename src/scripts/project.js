@@ -23,6 +23,7 @@ import {
   uebersetzeSeite,
   initSprachschalter,
 } from './lib/i18n.js';
+import { initTonschalter } from './lib/ton.js';
 import { LOADERS } from './lib/bereiche.js';
 
 function parseId() {
@@ -52,6 +53,7 @@ async function main() {
   await ladeSprache();
   uebersetzeSeite();
   initSprachschalter();
+  initTonschalter({ an: t('ton.an'), aus: t('ton.aus') });
   document.querySelector('[data-slot="name"]').textContent = site.name;
 
   const { category, slug } = parseId();

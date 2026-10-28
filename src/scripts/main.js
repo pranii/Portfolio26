@@ -10,6 +10,7 @@ import { initPageTransitions } from './lib/transitions.js';
 import { initLauncher } from './lib/launcher.js';
 import { initPhoneMenu } from './lib/phonemenu.js';
 import { ladeSprache, t, uebersetzeSite, uebersetzeSeite, initSprachschalter } from './lib/i18n.js';
+import { initTonschalter } from './lib/ton.js';
 
 // Menue-Icons im 16er-Pixelraster, 1 = gesetztes Pixel.
 const ICON_GRIDS = {
@@ -203,6 +204,7 @@ async function main() {
   await ladeSprache();
   uebersetzeSeite();
   initSprachschalter();
+  initTonschalter({ an: t('ton.an'), aus: t('ton.aus') });
 
   const uebersetzt = uebersetzeSite(site, categories);
   Object.assign(site, uebersetzt.site);
