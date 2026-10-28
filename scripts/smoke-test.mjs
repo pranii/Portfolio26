@@ -68,6 +68,8 @@ const PAGES = [
     query: '?id=film/gibtsnicht',
   },
   { html: 'ueber.html', entry: 'src/scripts/ueber.js', erwartet: '.werkzeuge__feld' },
+  // Der Sprachschalter soll nicht mehr erscheinen, solange nur Deutsch laeuft.
+  { html: 'ueber.html', entry: 'src/scripts/ueber.js', erwartet: '.sprachen', erwarteNull: true },
   // Die Prototypen liegen in den Projektseiten, nicht auf eigenen Seiten.
   {
     html: 'projekt.html',
@@ -209,7 +211,10 @@ for (const page of PAGES) {
     .filter((el) => el.innerHTML.trim() === '')
     .map((el) => el.dataset.slot);
 
-  const status = errors.length === 0 && gefunden > 0 ? 'OK  ' : 'FEHL';
+  // `erwarteNull` dreht die Pruefung um: Dann soll der Wahlsatz gerade
+  // NICHT vorkommen — etwa der Sprachschalter, solange es ihn nicht gibt.
+  const erfuellt = page.erwarteNull ? gefunden === 0 : gefunden > 0;
+  const status = errors.length === 0 && erfuellt ? 'OK  ' : 'FEHL';
   if (status === 'FEHL') failed += 1;
 
   const name = (page.html + (page.query ?? '')).padEnd(38);

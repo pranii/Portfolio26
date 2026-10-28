@@ -1,5 +1,8 @@
 /**
- * Die Seite in drei Sprachen: Deutsch, Englisch, Albanisch.
+ * Die Sprachen der Seite.
+ *
+ * Zurzeit laeuft alles auf Deutsch — siehe MEHRSPRACHIG weiter unten.
+ * Der Rest dieser Datei beschreibt, wie es wieder angeht.
  *
  * Wie es funktioniert
  * ───────────────────
@@ -17,6 +20,16 @@
 import { SPRACHEN, ui } from '../../data/i18n/ui.js';
 import { ton } from './ton.js';
 
+/**
+ * Vorerst laeuft die Seite nur auf Deutsch.
+ *
+ * Die Uebersetzungen bleiben vollstaendig liegen — in src/data/i18n/ und
+ * in den ui-Tabellen. Auf `true` gestellt sind Sprachschalter und
+ * Overlays sofort wieder da; bis dahin baut die Seite alles aus den
+ * deutschen Datendateien, so wie ohne Uebersetzung auch.
+ */
+const MEHRSPRACHIG = false;
+
 const SPEICHER = 'portfolio-sprache';
 const CODES = SPRACHEN.map((s) => s.code);
 
@@ -24,6 +37,8 @@ let aktuell = ermitteln();
 let inhalte = null;
 
 function ermitteln() {
+  if (!MEHRSPRACHIG) return 'de';
+
   let gewaehlt = null;
   try {
     gewaehlt =
@@ -122,6 +137,8 @@ export function uebersetzeSeite(wurzel = document) {
  * Haengt sich in die Kopfzeile, auf der Startseite in die Statusleiste.
  */
 export function initSprachschalter() {
+  if (!MEHRSPRACHIG) return;
+
   const platz = document.querySelector('.site-header') ?? document.querySelector('.home__status');
   if (!platz || platz.querySelector('.sprachen')) return;
 

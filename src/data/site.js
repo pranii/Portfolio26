@@ -57,6 +57,10 @@ export const site = {
         ],
       },
       {
+        titel: 'Maschinelles Sehen und Hören',
+        werkzeuge: ['DeepFace', 'OpenCV', 'librosa', 'scikit-learn'],
+      },
+      {
         titel: 'Code und Interaktion',
         werkzeuge: [
           'TouchDesigner',
@@ -70,6 +74,9 @@ export const site = {
           'SCSS',
           'Web Audio API',
           'ReportLab',
+          'FastAPI',
+          'SQLite',
+          'Streamlit',
           'Wordpress',
         ],
       },
