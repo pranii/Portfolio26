@@ -2803,7 +2803,270 @@ kbd {
   }
 }
 
-/* ── 10d Seite ueber mich ─────────────────────────────────────────── */
+/* ── 10d uMakeItGram ──────────────────────────────────────────────── */
+
+/* Das Spiel ist eine Bildergeschichte: oben das Bild, darunter der Text,
+   der sich schreibt, an den Gabelungen eine Liste. Die Gewichtung folgt
+   dem Spiel selbst — das Bild traegt, der Text fuehrt, der Balken ist
+   nur ein Strich. Er bleibt absichtlich unbeschriftet. */
+
+.window__body--gram {
+  padding: 0;
+}
+
+.gram {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  min-height: 0;
+}
+
+/* Hinter dem Bild liegt neutraler Grund, nicht das gruene Displaylicht:
+   Die Bildschirmfotos aus dem Spiel haben eigene Farben. */
+.gram__buehne {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--bild-grund);
+  border-bottom: 2px solid var(--pixel);
+  cursor: pointer;
+}
+
+.gram__bild {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Im Original legt sich der Hinweis als Kasten ueber das Bild. */
+.gram__kasten {
+  position: absolute;
+  inset: auto var(--s-5) var(--s-5);
+  margin-inline: auto;
+  max-width: 34ch;
+  padding: var(--s-3) var(--s-4);
+  background: var(--paper);
+  border: 2px solid var(--pixel);
+  box-shadow: var(--s-1) var(--s-1) 0 var(--pixel);
+  font-size: var(--t-0);
+  line-height: 1.4;
+}
+
+.gram__unten {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  cursor: pointer;
+}
+
+/* Vier Zeilen Platz, damit die Liste nicht springt, waehrend der Text
+   noch laeuft. */
+.gram__text {
+  margin: 0;
+  min-height: calc(4 * 1.45em);
+  font-size: var(--t-0);
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.gram__text:empty::after {
+  content: '';
+}
+
+.gram__wahl {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Ein Eintrag im Menue: Pfeil links, Balken bei Auswahl — wie im 3310. */
+.gram__knopf {
+  display: block;
+  width: 100%;
+  padding: var(--s-2) var(--s-3);
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-0);
+  text-align: left;
+  cursor: pointer;
+}
+
+.gram__knopf::before {
+  content: '▸ ';
+  color: var(--ink-dim);
+}
+
+.gram__knopf:hover,
+.gram__knopf:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+  outline: none;
+}
+
+.gram__knopf:hover::before,
+.gram__knopf:focus-visible::before {
+  color: inherit;
+}
+
+/* Der Balken. Ohne Beschriftung — was er zaehlt, erfaehrt man am Ende. */
+.gram__balken {
+  height: var(--s-3);
+  border-top: 2px solid var(--pixel);
+  background: var(--paper-sunk);
+}
+
+.gram__fuellung {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--pixel);
+  transition: width 0.25s steps(12);
+}
+
+@media (max-width: 40rem) {
+  .gram__text {
+    min-height: calc(5 * 1.45em);
+    font-size: var(--t--1);
+  }
+}
+
+/* ── 10e Multi Shepard ────────────────────────────────────────────── */
+
+/* Der Hoersaal von oben, gezeichnet in 240 x 200 Pixeln und hart
+   hochskaliert. Daneben die drei Parameter, auf die die Installation
+   heruntergebrochen wurde — hier duerfen sie Namen tragen, denn sie
+   sind die Arbeit. */
+
+.window__body--saal {
+  padding: var(--s-4);
+}
+
+.saal {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--s-5);
+  align-items: start;
+}
+
+.saal__plan {
+  width: 100%;
+  aspect-ratio: 6 / 5;
+  display: block;
+  border: 2px solid var(--pixel);
+  background: var(--paper);
+  image-rendering: pixelated;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.saal__plan:focus-visible {
+  outline: 2px solid var(--pixel);
+  outline-offset: 3px;
+}
+
+.saal__regler {
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+
+.saal__schalter {
+  padding: var(--s-2) var(--s-4);
+  border: 2px solid var(--pixel);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-0);
+  cursor: pointer;
+}
+
+.saal__schalter[aria-pressed='true'],
+.saal__schalter:hover,
+.saal__schalter:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+  outline: none;
+}
+
+.saal__werte {
+  display: grid;
+  gap: var(--s-3);
+  margin: 0;
+}
+
+.saal__wert {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.saal__wert dt {
+  font-size: var(--t--1);
+  color: var(--ink-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.saal__wert dd {
+  margin: 0;
+}
+
+.saal__balken {
+  position: relative;
+  display: block;
+  height: var(--s-3);
+  border: 2px solid var(--pixel);
+  background: var(--paper-sunk);
+}
+
+.saal__balken::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--anteil, 0%);
+  background: var(--pixel);
+}
+
+/* Ein Pfeil statt einer Zahl: Richtung ist keine Menge. */
+.saal__pfeil {
+  display: block;
+  font-size: var(--t-1);
+  line-height: 1;
+}
+
+.saal__pfeil::after {
+  content: '—';
+  color: var(--ink-dim);
+}
+
+.saal__pfeil[data-richtung='ab']::after {
+  content: '▼';
+  color: var(--ink);
+}
+
+.saal__pfeil[data-richtung='auf']::after {
+  content: '▲';
+  color: var(--ink);
+}
+
+/* Schmaler Bildschirm: Der Grundriss steht oben, die Regler darunter. */
+@media (max-width: 44rem) {
+  .saal {
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+  }
+
+  .saal__werte {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+  }
+}
+
+/* ── 10f Seite ueber mich ─────────────────────────────────────────── */
 
 /* Ein Eintrag im Telefonbuch: Kasten mit Titelleiste, Name gross, darunter
    die Felder mit gepunkteter Fuehrung — wie im Menue des 3310. */

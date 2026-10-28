@@ -5,9 +5,11 @@
  * direkt auf der Projektseite ein Fenster, in dem die Arbeit laeuft — kein
  * Umweg ueber eine eigene Seite:
  *
- *   in-lakech  Das Duell, uebertragen vom Raspberry Pi (lib/inlakech-game.js)
- *   zodizine   Der Zine-Automat mit Caras Seiten (lib/zodizine-automat.js)
- *   magazin    Rreth 02 zum Durchblaettern (lib/magazin.js)
+ *   in-lakech    Das Duell, uebertragen vom Raspberry Pi (lib/inlakech-game.js)
+ *   zodizine     Der Zine-Automat mit Caras Seiten (lib/zodizine-automat.js)
+ *   magazin      Rreth 02 zum Durchblaettern (lib/magazin.js)
+ *   umakeitgram  Das Spiel ohne Angular (lib/umakeitgram.js)
+ *   shepard      Der Hoersaal zum Durchlaufen (lib/shepard.js)
  *
  * Hier steht nur der Rahmen: das Fenster, die Knoepfe darunter und die
  * kurze Bedienungsanleitung. Das eigentliche Stueck Software wird erst
@@ -120,6 +122,59 @@ const BAUPLAN = {
           })
         : t('prototyp.magazin.ohnepdf'),
     ),
+
+  umakeitgram: () =>
+    fenster({
+      titel: 'UMAKEITGRAM.EXE',
+      rechts: t('gram.rechts'),
+      koerperKlasse: 'window__body--gram',
+      koerper: `
+        <div
+          class="window__frame"
+          data-rolle="gram"
+          tabindex="0"
+          role="application"
+          aria-label="uMakeItGram"
+        ></div>`,
+    }) + fuss(t('prototyp.umakeitgram')),
+
+  shepard: () =>
+    fenster({
+      titel: 'MULTISHEPARD.JS',
+      rechts: t('shepard.rechts'),
+      koerperKlasse: 'window__body--saal',
+      koerper: `
+        <div class="window__frame saal" data-rolle="shepard">
+          <canvas
+            class="saal__plan"
+            data-rolle="saal"
+            width="240"
+            height="200"
+            tabindex="0"
+            role="application"
+            aria-label="${t('shepard.plan')}"
+          ></canvas>
+          <div class="saal__regler">
+            <button class="saal__schalter" type="button" data-rolle="shepard-ton" aria-pressed="false">
+              ${t('shepard.an')}
+            </button>
+            <dl class="saal__werte">
+              <div class="saal__wert">
+                <dt>${t('shepard.tempo')}</dt>
+                <dd><span class="saal__balken" data-wert="tempo"></span></dd>
+              </div>
+              <div class="saal__wert">
+                <dt>${t('shepard.richtung')}</dt>
+                <dd><span class="saal__pfeil" data-wert="richtung" data-richtung="halt"></span></dd>
+              </div>
+              <div class="saal__wert">
+                <dt>${t('shepard.laut')}</dt>
+                <dd><span class="saal__balken" data-wert="laut"></span></dd>
+              </div>
+            </dl>
+          </div>
+        </div>`,
+    }) + fuss(t('prototyp.shepard')),
 };
 
 /**
@@ -168,6 +223,8 @@ export async function startPrototyp(project, wurzel) {
     if (art === 'in-lakech') await startInLakechBlock(block, melde);
     if (art === 'zodizine') await startZodiZineBlock(block, melde);
     if (art === 'magazin') await startMagazinBlock(project, block, melde);
+    if (art === 'umakeitgram') await startGramBlock(block, melde);
+    if (art === 'shepard') await startShepardBlock(block, melde);
   } catch (fehler) {
     melde(`Fehler: ${fehler.message}`);
   }
@@ -219,6 +276,31 @@ async function startZodiZineBlock(block, melde) {
     basis() + 'zodizine/',
     melde,
   );
+}
+
+async function startGramBlock(block, melde) {
+  const { startUMakeItGram } = await import('./umakeitgram.js');
+  const spiel = await startUMakeItGram(
+    block.querySelector('[data-rolle="gram"]'),
+    basis() + 'umakeitgram/',
+    melde,
+  );
+
+  // Ausser Sicht haelt die Schreibmaschine an, damit man keinen Text verpasst.
+  beobachte(block, (sichtbar) => spiel.pause(!sichtbar));
+}
+
+async function startShepardBlock(block, melde) {
+  const { startShepard } = await import('./shepard.js');
+  const saal = startShepard(block.querySelector('[data-rolle="shepard"]'), melde, {
+    an: t('shepard.an'),
+    aus: t('shepard.aus'),
+    laeuft: t('shepard.laeuft'),
+    still: t('shepard.still'),
+    keinton: t('shepard.keinton'),
+  });
+
+  beobachte(block, (sichtbar) => saal.pause(!sichtbar));
 }
 
 async function startMagazinBlock(project, block, melde) {

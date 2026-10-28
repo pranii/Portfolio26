@@ -307,6 +307,9 @@ export const projects = [
     tools: ['Web Audio API', 'JavaScript', 'Polycam', 'InDesign'],
     tags: ['Klanginstallation', 'Raum', 'Wahrnehmung', 'Interaktion'],
     pull: 'Kann ich meinen Sinnen ueberhaupt trauen?',
+    // Der Hoersaal als Grundriss zum Durchlaufen — mit demselben Klang
+    // und denselben drei Parametern wie die Installation.
+    prototyp: { art: 'shepard', titel: 'Den Raum durchlaufen' },
     chapters: [
       {
         title: 'Konzeptfindung',

@@ -84,15 +84,16 @@ export const projects = [
     cover: 'header',
     description:
       'uMakeItGram ist ein Videospiel darueber, wie ein KI-Assistent einen frisch von der Schule kommenden Menschen beim Aufbau einer Social-Media-Karriere "unterstuetzt" — und dabei Schritt fuer Schritt die Kontrolle uebernimmt.', // TODO
-    year: '2026', // TODO
+    year: '2023',
     role: 'Konzept, Story, Game Design', // TODO
     client: 'Hochschule Furtwangen, Fach "Mediale Gegenkulturen"', // TODO
-    tools: [], // TODO: eingesetzte Werkzeuge ergaenzen
+    tools: ['Angular', 'TypeScript', 'SCSS'],
     tags: ['Videospiel', 'Narrative Design', 'Social-Media-Kritik', 'Interaktion'],
     pull: 'Du bist das Ergebnis des Experiments.',
-    // Noch keine Screenshots/Dokumentation vorhanden — die Kapitel erzaehlen
-    // bisher nur die Story. Sobald Bilder da sind, `files` je Kapitel fuellen
-    // und `textOnly` entfernen.
+    // Das Spiel laeuft direkt in der Seite: Story und Bilder kommen aus dem
+    // Angular-Projekt, der Ablauf aus lib/umakeitgram.js.
+    prototyp: { art: 'umakeitgram', titel: 'Spielen' },
+    // Die Kapitel erzaehlen die Story; die Bilder stecken im Spiel selbst.
     chapters: [
       {
         title: 'Der Ausgangspunkt',

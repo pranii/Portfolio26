@@ -88,6 +88,18 @@ const PAGES = [
     erwartet: '.buch__seite',
     query: '?id=creative-technology/rreth',
   },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.gram__knopf, .gram__text',
+    query: '?id=game/umakeitgram',
+  },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.saal__balken',
+    query: '?id=creative-technology/shepard-tone',
+  },
 ];
 
 fs.mkdirSync(TMP, { recursive: true });

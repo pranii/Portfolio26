@@ -131,6 +131,33 @@ export const ui = {
     'prototyp.magazin.pdf': 'Das ganze Magazin als PDF',
     'prototyp.magazin.ohnepdf':
       'Das Heft so, wie es gedruckt ist: zwei Querformat-Seiten nebeneinander.',
+    'prototyp.umakeitgram':
+      'Das Spiel von 2023, Bild für Bild wie in der Abgabe. An den Gabelungen entscheidest du ' +
+      'selbst — und der Balken am unteren Rand zählt mit. Was er zählt, sagt dir ELIZA erst am ' +
+      'Schluss.',
+    'prototyp.shepard':
+      'Der Hörsaal von oben: links der einzige Weg, vorne die Leinwand und die beiden Boxen. ' +
+      'Der Ton klingt wie in der Installation — elf Oszillatoren von 20 Hz bis 20.480 Hz — und ' +
+      'hängt an denselben drei Parametern: wie schnell du gehst, in welche Richtung und wie ' +
+      'nah du den Boxen kommst.',
+
+    'gram.rechts': 'Angular · 2023',
+    'gram.start': 'Drücken zum Starten.',
+    'gram.nochmal': 'Noch einmal?',
+    'gram.status.weiter': 'Weiter ▸',
+    'gram.status.waehlen': 'Wählen',
+    'gram.status.ende': 'Ende',
+
+    'shepard.rechts': '11 Oszillatoren · 20–20.480 Hz',
+    'shepard.plan': 'Grundriss des Hörsaals — mit Pfeiltasten oder Finger gehen',
+    'shepard.an': 'Ton an',
+    'shepard.aus': 'Ton aus',
+    'shepard.laeuft': 'Der Ton läuft',
+    'shepard.still': 'Still — Ton einschalten',
+    'shepard.keinton': 'Dieser Browser kann keinen Ton erzeugen',
+    'shepard.tempo': 'Geschwindigkeit',
+    'shepard.richtung': 'Richtung',
+    'shepard.laut': 'Lautstärke',
 
     'heft.seite': 'Seite',
     'heft.seitevon': 'Seite {n} von {m}',
@@ -254,6 +281,33 @@ export const ui = {
       'middle, front and back cover on their own. {pdf}.',
     'prototyp.magazin.pdf': 'The whole magazine as a PDF',
     'prototyp.magazin.ohnepdf': 'The magazine as it is printed: two landscape pages side by side.',
+    'prototyp.umakeitgram':
+      'The game from 2023, image for image as it was handed in. At the forks you decide ' +
+      'yourself — and the bar along the bottom keeps count. What it is counting, ELIZA only ' +
+      'tells you at the end.',
+    'prototyp.shepard':
+      'The lecture hall from above: the only way through on the left, the screen and the two ' +
+      'speakers at the front. The sound is the one from the installation — eleven oscillators ' +
+      'from 20 Hz to 20,480 Hz — and it hangs on the same three parameters: how fast you walk, ' +
+      'in which direction, and how close you get to the speakers.',
+
+    'gram.rechts': 'Angular · 2023',
+    'gram.start': 'Press to start.',
+    'gram.nochmal': 'Again?',
+    'gram.status.weiter': 'Next ▸',
+    'gram.status.waehlen': 'Choose',
+    'gram.status.ende': 'End',
+
+    'shepard.rechts': '11 oscillators · 20–20,480 Hz',
+    'shepard.plan': 'Floor plan of the lecture hall — walk with the arrow keys or your finger',
+    'shepard.an': 'Sound on',
+    'shepard.aus': 'Sound off',
+    'shepard.laeuft': 'The tone is running',
+    'shepard.still': 'Silent — switch the sound on',
+    'shepard.keinton': 'This browser cannot produce sound',
+    'shepard.tempo': 'Speed',
+    'shepard.richtung': 'Direction',
+    'shepard.laut': 'Volume',
 
     'heft.seite': 'Page',
     'heft.seitevon': 'Page {n} of {m}',
@@ -377,6 +431,32 @@ export const ui = {
     'prototyp.magazin.pdf': 'E gjithë revista si PDF',
     'prototyp.magazin.ohnepdf':
       'Revista ashtu siç është shtypur: dy faqe horizontale krah për krah.',
+    'prototyp.umakeitgram':
+      'Loja e vitit 2023, pamje pas pamjeje ashtu siç u dorëzua. Në udhëkryqe vendos vetë — ' +
+      'dhe shiriti poshtë numëron. Çfarë numëron, ELIZA ta thotë vetëm në fund.',
+    'prototyp.shepard':
+      'Salla e leksioneve parë nga lart: majtas rruga e vetme, përpara ekrani dhe dy ' +
+      'altoparlantët. Tingulli është ai i instalimit — njëmbëdhjetë oshilatorë nga 20 Hz deri ' +
+      'në 20.480 Hz — dhe varet nga të njëjtët tre parametra: sa shpejt ecën, në cilin drejtim ' +
+      'dhe sa afër u vjen altoparlantëve.',
+
+    'gram.rechts': 'Angular · 2023',
+    'gram.start': 'Shtyp për të filluar.',
+    'gram.nochmal': 'Edhe një herë?',
+    'gram.status.weiter': 'Vazhdo ▸',
+    'gram.status.waehlen': 'Zgjidh',
+    'gram.status.ende': 'Fund',
+
+    'shepard.rechts': '11 oshilatorë · 20–20.480 Hz',
+    'shepard.plan': 'Plani i sallës — ec me shigjetat ose me gisht',
+    'shepard.an': 'Ndiz zërin',
+    'shepard.aus': 'Fik zërin',
+    'shepard.laeuft': 'Tingulli po luan',
+    'shepard.still': 'Në heshtje — ndiz zërin',
+    'shepard.keinton': 'Ky shfletues nuk mund të prodhojë zë',
+    'shepard.tempo': 'Shpejtësia',
+    'shepard.richtung': 'Drejtimi',
+    'shepard.laut': 'Volumi',
 
     'heft.seite': 'Faqja',
     'heft.seitevon': 'Faqja {n} nga {m}',

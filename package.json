@@ -12,6 +12,7 @@
     "export:spiel": "node scripts/export-game.mjs",
     "crops": "node scripts/make-crops.mjs",
     "zodizine": "node scripts/make-zodizine-seiten.mjs",
+    "umakeitgram": "node scripts/import-umakeitgram.mjs",
     "launcher-gif": "node scripts/make-launcher-gif.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

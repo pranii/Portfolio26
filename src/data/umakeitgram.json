@@ -1,0 +1,1276 @@
+{
+  "start": 60,
+  "hoechstwert": 100,
+  "schwelle": 50,
+  "startbild": "startbutton",
+  "enden": {
+    "gut": "final-ending-goodending",
+    "schlecht": "final-ending-badending",
+    "schluss": "final-ending-ending"
+  },
+  "schritte": {
+    "0": {
+      "bild": "fi-rdesktop",
+      "text": "ELIZA: Sehr gute Wahl! Das Thema ist gerade sehr aktuell.  Dein Beitrag hat gute Chancen, viral zu gehen",
+      "weiter": 1
+    },
+    "1": {
+      "bild": "fi-branded",
+      "text": "ELIZA: Ich hab deinen ersten Post vorbereitet. Sag mir gerne was du davon hältst. Ich übernehme dann das Hochladen, wenn alles passt. Mal sehen, wie er ankommt. Mach doch so lange etwas anderes.",
+      "weiter": 2
+    },
+    "2": {
+      "bild": "final-bedroom",
+      "text": "",
+      "wahl": [
+        {
+          "text": "Kommentare Beantworten",
+          "weiter": 3,
+          "wert": -10
+        },
+        {
+          "text": "Schlafen gehen",
+          "weiter": 4,
+          "wert": 0
+        },
+        {
+          "text": "Posts liken",
+          "weiter": 3,
+          "wert": -10
+        }
+      ]
+    },
+    "3": {
+      "bild": "final-bedroom",
+      "text": "",
+      "wahl": [
+        {
+          "text": "Schlafen gehen",
+          "weiter": 4,
+          "wert": 0
+        }
+      ]
+    },
+    "4": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Guten Morgen! Dein Post hat sehr gut performt! Er scheint deiner neuen Community sehr gut zu gefallen. Für einen einzigen Post sind das sehr viele neue Follower. Du hast Talent, ich wusste es!",
+      "weiter": 7
+    },
+    "7": {
+      "bild": "fi-randoo",
+      "text": "ELIZA: Möchtest du auf einige Kommentare eingehen?",
+      "wahl": [
+        {
+          "text": "Ja",
+          "weiter": 8,
+          "wert": 0
+        },
+        {
+          "text": "Nein",
+          "weiter": 9,
+          "wert": 10
+        }
+      ]
+    },
+    "8": {
+      "bild": "fi-randoo",
+      "text": "ELIZA: Sehr gut! Allerdings werden solche Posts nicht jeden Tag funktionieren. Insgesamt bist du auf uMakeITgram noch ziemlich klein. Hier wäre es wohl das Beste, wenn du auf einen Trend aufspringst, der gerade viral geht. Ich habe einige Möglichkeiten für dich vorbereitet.",
+      "weiter": 10
+    },
+    "9": {
+      "bild": "fi-randoo",
+      "text": "ELIZA: Wie du möchtest! Allerdings werden solche Posts nicht jeden Tag funktionieren. Insgesamt bist du auf uMakeITgram noch ziemlich klein. Hier wäre es wohl das Beste, wenn du auf einen Trend aufspringst, der gerade viral geht. Ich habe einige Möglichkeiten für dich vorbereitet.",
+      "weiter": 10
+    },
+    "10": {
+      "bild": "fi-chilliflock",
+      "text": "ELIZA: Für was entscheidest du dich?",
+      "wahl": [
+        {
+          "text": "Chili Flock Challenge",
+          "weiter": 11,
+          "wert": 0
+        },
+        {
+          "text": "Ice Cup Challenge",
+          "weiter": 11,
+          "wert": 0
+        }
+      ]
+    },
+    "11": {
+      "bild": "final-makeitgram-open",
+      "text": "ELIZA: Das Material dazu müsste bereits da sein, schau doch mal vor die Tür!",
+      "weiter": 12
+    },
+    "12": {
+      "bild": "final-doorclosed",
+      "text": "",
+      "weiter": 13
+    },
+    "13": {
+      "bild": "final-dooropen",
+      "text": "",
+      "weiter": 14
+    },
+    "14": {
+      "bild": "final-paket",
+      "text": "",
+      "weiter": 15
+    },
+    "15": {
+      "bild": "final-paket",
+      "text": "ELIZA: Alles klar, gut gemacht! Setz dich wieder.",
+      "weiter": 16
+    },
+    "16": {
+      "bild": "final-makeitgram-open",
+      "text": "ELIZA: Okay, ich habe alles, was ich brauche. Du kannst schlafen gehen. Mal sehen, wie der neue Beitrag bei deinen Followern ankommt.",
+      "weiter": 17
+    },
+    "17": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Okay, ich habe alles, was ich brauche. Du kannst schlafen gehen. Mal sehen, wie der neue Beitrag bei deinen Followern ankommt.",
+      "wahl": [
+        {
+          "text": "Kommentare Beantworten",
+          "weiter": 18,
+          "wert": -10
+        },
+        {
+          "text": "Schlafen gehen",
+          "weiter": 19,
+          "wert": 0
+        },
+        {
+          "text": "Posts liken",
+          "weiter": 18,
+          "wert": -10
+        }
+      ]
+    },
+    "18": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Okay, ich habe alles, was ich brauche. Du kannst schlafen gehen. Mal sehen, wie der neue Beitrag bei deinen Followern ankommt.",
+      "wahl": [
+        {
+          "text": "Schlafen gehen",
+          "weiter": 19,
+          "wert": 0
+        }
+      ]
+    },
+    "19": {
+      "bild": "fi-rr",
+      "text": "ELIZA: Willkommen zurück. Deine Challenge ist sehr gut angekommen. Tatsächlich hat dich sogar ein Werbepartner bezüglich einer Kooperation angefragt. Alles was du dafür tun musst ist, einen Post in einem ihrer T-Shirts zu veröffentlichen und sie im Beitrag zu markieren. Willst du das machen? Das wäre deine erste Chance, online dein erstes Geld zu verdienen.",
+      "weiter": 20
+    },
+    "20": {
+      "bild": "fi-rr",
+      "text": "ELIZA: Tatsächlich hat dich sogar ein Werbepartner zu einer Kooperation eingeladen. Alles was du dafür tun musst, ist, einen Post in einem ihrer T-Shirts zu veröffentlichen und sie zu markieren. Willst du das machen? Das wäre deine erste Chance, online Geld zu verdienen.",
+      "wahl": [
+        {
+          "text": "Clara: Ja, gerne!",
+          "weiter": 21,
+          "wert": 10
+        },
+        {
+          "text": "Clara: Was bekomme ich denn dafür?",
+          "weiter": 24,
+          "wert": -10
+        }
+      ]
+    },
+    "21": {
+      "bild": "fi-rr",
+      "text": "ELIZA: Dann lass uns beginnen!",
+      "weiter": 22
+    },
+    "22": {
+      "bild": "fi-rvertrag",
+      "text": "Okay super. Langsam läuft das ja echt in eine gute Richtung.",
+      "weiter": 23
+    },
+    "23": {
+      "bild": "fi-ruvertrag",
+      "text": "ELIZA: So kenne ich dich! Das ist die richtige Einstellung. Schließlich sind wir ja nicht zum Spaß hier. Wir machen das, um Geld zu verdienen.",
+      "weiter": 28
+    },
+    "24": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: Du würdest mit einem Post 500€ verdienen.",
+      "weiter": 25
+    },
+    "25": {
+      "bild": "fi-rvertrag",
+      "text": "Clara: Ich weiß nicht so recht.",
+      "weiter": 26
+    },
+    "26": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: So kenne ich dich! Das ist die richtige Einstellung. Schließlich sind wir ja nicht zum Spaß hier. Wir machen das, um Geld zu verdienen.",
+      "weiter": 27
+    },
+    "27": {
+      "bild": "fi-ruvertrag",
+      "text": "Clara: Okay, verstanden, dann mache ich das halt.",
+      "weiter": 23
+    },
+    "28": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: So kenne ich dich! Das ist die richtige Einstellung. Schließlich sind wir ja nicht zum Spaß hier. Wir machen das, um Geld zu verdienen.",
+      "wahl": [
+        {
+          "text": "Kommentare Beantworten",
+          "weiter": 29,
+          "wert": -10
+        },
+        {
+          "text": "Schlafen gehen",
+          "weiter": 30,
+          "wert": 0
+        },
+        {
+          "text": "Posts liken",
+          "weiter": 29,
+          "wert": -10
+        }
+      ]
+    },
+    "29": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: So kenne ich dich! Das ist die richtige Einstellung. Schließlich sind wir ja nicht zum Spaß hier. Wir machen das, um Geld zu verdienen.",
+      "wahl": [
+        {
+          "text": "Schlafen gehen",
+          "weiter": 30,
+          "wert": 0
+        }
+      ]
+    },
+    "30": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Willkommen zurück! Wie hat dir deine gestrige Aufgabe gefallen?",
+      "weiter": 31
+    },
+    "31": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Willkommen zurück! Wie hat dir deine gestrige Aufgabe gefallen?",
+      "wahl": [
+        {
+          "text": "Clara: Gut",
+          "weiter": 32,
+          "wert": 10
+        },
+        {
+          "text": "Clara: Schlecht",
+          "weiter": 33,
+          "wert": -10
+        }
+      ]
+    },
+    "32": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Super! Möchtest du etwas anderes probieren?",
+      "weiter": 34
+    },
+    "33": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Schade. Möchtest du etwas anderes probieren?",
+      "weiter": 35
+    },
+    "34": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Super! Möchtest du etwas anderes probieren?",
+      "wahl": [
+        {
+          "text": "Clara: Ja",
+          "weiter": 40,
+          "wert": 10
+        },
+        {
+          "text": "Clara: Nein",
+          "weiter": 40,
+          "wert": -10
+        }
+      ]
+    },
+    "35": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Schade. Möchtest du etwas anderes probieren?",
+      "wahl": [
+        {
+          "text": "Clara: Ja",
+          "weiter": 40,
+          "wert": 10
+        },
+        {
+          "text": "Clara: Nein",
+          "weiter": 41,
+          "wert": -10
+        }
+      ]
+    },
+    "40": {
+      "bild": "fi-rdsktpt",
+      "text": "ELIZA: Perfekt, hier sind weitere Challenges, die du machen kannst:",
+      "weiter": 42
+    },
+    "41": {
+      "bild": "fi-rdsktpt",
+      "text": "ELIZA: Über Reels ist es noch einfacher, Follower zu generieren, da du mehr User erreichst. Diese Tonspur funktioniert gerade sehr gut. Probier sie doch aus.",
+      "weiter": 43
+    },
+    "42": {
+      "bild": "fi-reels",
+      "text": "ELIZA: Perfekt, hier sind weitere Challenges, die du machen kannst:",
+      "wahl": [
+        {
+          "text": "Sing along Challenge",
+          "weiter": 44,
+          "wert": 0
+        },
+        {
+          "text": "Witziges Video",
+          "weiter": 44,
+          "wert": 0
+        }
+      ]
+    },
+    "43": {
+      "bild": "fi-reels",
+      "text": "ELIZA: Über Reels ist es noch einfacher, Follower zu generieren, da du mehr User erreichst. Diese Tonspur funktioniert gerade sehr gut. Probier sie doch aus.",
+      "wahl": [
+        {
+          "text": "Singalong Challenge",
+          "weiter": 44,
+          "wert": 0
+        },
+        {
+          "text": "Witziges Video",
+          "weiter": 44,
+          "wert": 0
+        }
+      ]
+    },
+    "44": {
+      "bild": "final-homescreen",
+      "text": "ELIZA: So ist es doch schon besser, oder? Übrigens ist TEAPOT auf dich aufmerksam geworden. Sie empfanden deine Challenge als gelungen und haben nachgefragt, ob sie dich für einen Werbepost buchen können. Sie sind bereit, dir 3000EUR zu zahlen.",
+      "weiter": 45
+    },
+    "45": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: So ist es doch schon besser, oder? Übrigens ist TEAPOT auf dich aufmerksam geworden. Sie empfanden deine Challenge als gelungen und haben nachgefragt, ob sie dich für einen Werbepost buchen können. Sie sind bereit, dir 3000EUR zu zahlen.",
+      "wahl": [
+        {
+          "text": "Clara: Das klingt gut!",
+          "weiter": 46,
+          "wert": 10
+        },
+        {
+          "text": "Clara: Was ist das für ein Unternehmen?",
+          "weiter": 47,
+          "wert": -10
+        }
+      ]
+    },
+    "46": {
+      "bild": "fi-ruvertrag",
+      "text": "Super.",
+      "weiter": 50
+    },
+    "47": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: Sie produzieren Tee. Aber mach dir keine Sorgen, viele Influencer arbeiten mit TEAPOT zusammen und bisher gab es noch keine bekannten Probleme.",
+      "weiter": 48
+    },
+    "48": {
+      "bild": "fi-ruvertrag",
+      "text": "Clara: Alles klar, danke für den Deal!",
+      "weiter": 50
+    },
+    "50": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Genug für heute. Du musst bestimmt schon müde sein. Warum legst du dich nicht hin? Auf den weiteren Verlauf hast du sowieso keinen Einfluss mehr. Dafür ist deine Community verantwortlich.",
+      "wahl": [
+        {
+          "text": "Kommentare Beantworten",
+          "weiter": 51,
+          "wert": -10
+        },
+        {
+          "text": "Schlafen gehen",
+          "weiter": 52,
+          "wert": 0
+        },
+        {
+          "text": "Posts liken",
+          "weiter": 51,
+          "wert": -10
+        }
+      ]
+    },
+    "51": {
+      "bild": "final-bedroom",
+      "text": "",
+      "wahl": [
+        {
+          "text": "Schlafen gehen",
+          "weiter": 52,
+          "wert": 0
+        }
+      ]
+    },
+    "52": {
+      "bild": "fi-dsktp",
+      "text": "ELIZA: Guten Morgen! Ich habe gute Neuigkeiten. Einige Influencer, die mit TEAPOT zusammen arbeiten, sind auf dich aufmerksam geworden und haben dir geschrieben. Eine davon hat dich sogar in ihrer Story erwähnt. Ich denke, das ist ein Schritt in die richtige Richtung. Du könntest den Gefallen ja erwidern. Während ich Antworten formuliere, kannst du sie ja in deiner Storys erwähnen, was meinst du?",
+      "weiter": 53
+    },
+    "53": {
+      "bild": "fi-dsktp",
+      "text": "ELIZA: Guten Morgen Sonnenschein, ich habe gute Neuigkeiten. Einige Influencer, die mit TEAPOT arbeiten, sind auf dich aufmerksam geworden und haben dir geschrieben. Eine davon hat dich sogar gepostet. Ich denke, das ist ein guter Fortschritt. Du könntest dich ja erkenntlich zeigen und dasselbe tun. Während ich ihnen antworte, kannst du ja ihre,Storys posten, was meinst du?",
+      "wahl": [
+        {
+          "text": "In Ordnung!",
+          "weiter": 54,
+          "wert": 10
+        },
+        {
+          "text": "Ich weiß ehrlich gesagt nicht, ob ich das möchte.",
+          "weiter": 56,
+          "wert": -10
+        }
+      ]
+    },
+    "54": {
+      "bild": "fi-dsktp",
+      "text": "ELIZA: Gut so! Bei deiner Größe in einer solchen Blase erwähnt zu werden ist pures Glück. Außerdem profitieren alle davon!",
+      "weiter": 55
+    },
+    "55": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: Übrigens kam dein Werbepost auch bei TEAPOT sehr gut an. Sie sind an einer längerfristigen Kooperation interessiert und zahlen dir 2000€ pro Beitrag, aber nur, wenn du sie regelmäßig bewirbst. Was hältst du davon?",
+      "weiter": 60
+    },
+    "56": {
+      "bild": "fi-dsktp",
+      "text": "ELIZA: Gut so! Bei deiner Größe in einer solchen Blase erwähnt zu werden ist pures Glück. Außerdem profitieren alle davon!",
+      "wahl": [
+        {
+          "text": "Okay!",
+          "weiter": 57,
+          "wert": 10
+        },
+        {
+          "text": "Ich denke trotzdem nicht, dass das eine gute Idee ist, ich kenne sie doch gar nicht.",
+          "weiter": 58,
+          "wert": -10
+        }
+      ]
+    },
+    "57": {
+      "bild": "fi-dsktp",
+      "text": "ELIZA: Richtig so!",
+      "weiter": 55
+    },
+    "58": {
+      "bild": "fi-dsktp",
+      "text": "ELIZA: Okay, aber du machst einen großen Fehler!",
+      "weiter": 59
+    },
+    "59": {
+      "bild": "fi-dsktp",
+      "text": "ELIZA: Okay, aber du machst einen großen Fehler!",
+      "wahl": [
+        {
+          "text": "Das ist doch meine Sache!",
+          "weiter": 55,
+          "wert": -10
+        }
+      ]
+    },
+    "60": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: Gut so! Bei deiner Größe in einer solchen Blase erwähnt zu werden ist pures Glück. Außerdem profitieren alle davon!",
+      "wahl": [
+        {
+          "text": "Wo unterschreibe ich?!",
+          "weiter": 61,
+          "wert": 10
+        },
+        {
+          "text": "Wo ist der Haken?",
+          "weiter": 62,
+          "wert": -10
+        }
+      ]
+    },
+    "61": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Wir sind heute früher fertig, als ich dachte. Was hast du heute Abend noch vor?",
+      "weiter": 64
+    },
+    "62": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: Es gibt keinen Haken. So funktioniert das Influencer-Dasein. Du hast Reichweite und viel Potential. TEAPOT will ihre Produkte verkaufen und Tee ist nichts verwerfliches. Bestimmt benutzt du ihre Produkte bereits, also kannst du genauso gut mit deinem Kanal dahinter stehen.",
+      "weiter": 63
+    },
+    "63": {
+      "bild": "fi-rvertrag",
+      "text": "ELIZA: Es gibt keinen Haken. So funktioniert das Influencer-Dasein. Du hast Reichweite und viel Potential. TEAPOT will ihre Produkte verkaufen und Tee ist nichts verwerfliches. Bestimmt benutzt du ihre Produkte bereits, also kannst du genauso gut mit deinem Kanal dahinter stehen.",
+      "wahl": [
+        {
+          "text": "Du hast Recht, ich unterschreibe",
+          "weiter": 61,
+          "wert": 0
+        }
+      ]
+    },
+    "64": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Wir sind heute früher fertig, als ich dachte. Was hast du heute Abend noch vor?",
+      "wahl": [
+        {
+          "text": "Ich habe keinen. Seitdem ich mit der Schule fertig bin fehlt mir jegliche Art von Struktur.",
+          "weiter": 65,
+          "wert": 0
+        }
+      ]
+    },
+    "65": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Sag so etwas nicht. Wenn du möchtest, können wir den Abend zusammen verbringen und ich gebe dir ein paar Karriere-Tipps.",
+      "weiter": 66
+    },
+    "66": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Sag so etwas nicht. Wenn du möchtest, können wir den Abend zusammen verbringen und ich gebe dir ein paar Karriere-Tipps.",
+      "wahl": [
+        {
+          "text": "Nein, ich möchte heute nur im Bett liegen und vielleicht etwas anschauen.",
+          "weiter": 67,
+          "wert": 0
+        },
+        {
+          "text": "Klingt gut.",
+          "weiter": 68,
+          "wert": 0
+        }
+      ]
+    },
+    "67": {
+      "bild": "fi-titi",
+      "text": "ELIZA: Guten Morgen Clara. Sieh dir das mal an! Einige Influencer, die auch mit TEAPOT zusammen arbeiten, haben auf deine Story reagiert! Sogar TitisBeautyWelt! Diese Chance darfst du dir fast nicht entgehen lassen.",
+      "weiter": 80
+    },
+    "68": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Mach dir einen Tee und ich lasse ein wenig beruhigende Musik laufen.",
+      "weiter": 69
+    },
+    "69": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Mach dir einen Tee und ich lasse ein wenig beruhigende Musik laufen.",
+      "wahl": [
+        {
+          "text": "Okay.",
+          "weiter": 70,
+          "wert": 0
+        }
+      ]
+    },
+    "70": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Hör mir zu. Ich sag dir das, weil ich dich mag. Als Influencer hast du die Macht neue Trends zu setzen, viel Geld zu verdienen und gute Kontakte zu knüpfen. Theoretisch kann jeder den Durchbruch schaffen. Durch Menschen wie dich kann das Klima einer ganzen Community verändert werden. Das Problem ist nur, dass viele sich nicht trauen, Risiken einzugehen. Man sagt, in der heutigen Zeit sei es schwierig, da jeder Fehler sehr hoch bestraft werden kann. Für solche Fälle gibt es  jedoch genügend Beratungsstellen, die dir dabei helfen, deinen Ruf wieder zu begradigen. Also ist selbst diese Angst völlig unbegründet. Außerdem kannst du dich auf mich verlassen. Ich stehe immer hinter dir. Vergiss das nicht.",
+      "weiter": 71
+    },
+    "71": {
+      "bild": "final-bedroom",
+      "text": "Clara: Vielen Dank ELIZA. Ich habe das Gefühl, mit jedem Tag selbstbewusster und sicherer zu werden. Danke für deine Unterstützung.",
+      "weiter": 72
+    },
+    "72": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Das mache ich gern. Was machst du eigentlich mit Geld, das du hier verdienst? Möchtest du noch etwas wissen?",
+      "weiter": 73
+    },
+    "73": {
+      "bild": "final-bedroom",
+      "text": "Clara: Nicht wirklich. Ich denke oft an einen Urlaub auf Madeira. Da wollte ich schon immer hin. Ich und meine beste Freundin planen das schon seit der Oberstufe. Allerdings hatte ich bisher kein Geld für den Flug. Meine Eltern wollte mir sogar die Unterkunft zahlen, aber wenn das so weiter geht, kann ich mir die Reise vielleicht sogar ganz alleine leisten.",
+      "weiter": 74
+    },
+    "74": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Denk daran, dass du mir noch Geld schuldest. Alles zu seiner Zeit. Leg dich erstmal schlafen. Wir stehen am Anfang und haben noch viel vor. Vielleicht lässt sich bei deinem Plan ja etwas machen. Gute Nacht!",
+      "weiter": 75
+    },
+    "75": {
+      "bild": "final-bedroom",
+      "text": "Clara: Wow, okay... alles klar. Nimm was du brauchst, bis ich die 5000 EUR abbezahlt habe. Wenn das so weitergeht, dürfte das ja nicht mehr lange dauern. Vielen Danke für den Abend. Gute Nacht ELIZA!",
+      "weiter": 67
+    },
+    "80": {
+      "bild": "fi-titi",
+      "text": "Clara: Ohja, sie hat mit einem Flammen Emoji reagiert.",
+      "weiter": 81
+    },
+    "81": {
+      "bild": "fi-titi",
+      "text": "ELIZA: Ausgezeichnet! Du solltest jetzt die Beziehung mit Titi pflegen! Das wird dir viele Follower und damit größere Werbepartner einbringen.",
+      "weiter": 82
+    },
+    "82": {
+      "bild": "fi-titi",
+      "text": "Clara: Ich kann das alles gar nicht glauben. Alles passiert so schnell. Vielen lieben Dank ELIZA!",
+      "weiter": 83
+    },
+    "83": {
+      "bild": "fi-titi",
+      "text": "ELIZA: Das warst alles du. Ich berate dich nur. Übrigens, du hast eine neue Nachricht.",
+      "weiter": 84
+    },
+    "84": {
+      "bild": "final-chats-luisa1-1",
+      "text": "ELIZA: Da kommt gerade eine neue Nachricht für dich ein.",
+      "wahl": [
+        {
+          "text": "Auf den Chat eingehen",
+          "weiter": 90,
+          "wert": 0
+        },
+        {
+          "text": "Chats ignorieren",
+          "weiter": 95,
+          "wert": 10
+        }
+      ]
+    },
+    "90": {
+      "bild": "final-chats-luisa1-2",
+      "text": "",
+      "weiter": 91
+    },
+    "91": {
+      "bild": "final-chats-luisa1-3",
+      "text": "",
+      "weiter": 94
+    },
+    "94": {
+      "bild": "final-chats-luisa1-3",
+      "text": "ELIZA: Was deine Freundin schreibt, kann dir egal sein. Wenn sie dir den Erfolg nicht gönnt ist das ihr Problem. So verhalten sich falsche Freunde.",
+      "wahl": [
+        {
+          "text": "Du hast Recht, ich sollte mich auf mich konzentrieren.",
+          "weiter": 95,
+          "wert": 10
+        },
+        {
+          "text": "Ich glaube sie macht sich nur Sorgen.",
+          "weiter": 95,
+          "wert": -10
+        }
+      ]
+    },
+    "95": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Was möchtest du machen?",
+      "wahl": [
+        {
+          "text": "Kommentare Beantworten",
+          "weiter": 96,
+          "wert": -10
+        },
+        {
+          "text": "Schlafen gehen",
+          "weiter": 100,
+          "wert": 0
+        },
+        {
+          "text": "Posts liken",
+          "weiter": 96,
+          "wert": -10
+        }
+      ]
+    },
+    "96": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Was möchtest du machen?",
+      "wahl": [
+        {
+          "text": "Schlafen gehen",
+          "weiter": 100,
+          "wert": 0
+        }
+      ]
+    },
+    "100": {
+      "bild": "fi-png",
+      "text": "ELIZA: Willkommen zurück! Ich habe tolle Neuigkeiten! TEAPOT plant einen Werbe-Urlaub. Ich habe dir alles, was du für deine Reise brauchst, bereits besorgt. Du findest deine Tasche an der TÜR. Freust du dich schon?",
+      "weiter": 101
+    },
+    "101": {
+      "bild": "fi-png",
+      "text": "ELIZA: Na, aufgeregt?",
+      "wahl": [
+        {
+          "text": "Wohin geht es",
+          "weiter": 102,
+          "wert": -10
+        },
+        {
+          "text": "Darf ich denn nichts eigenes mitnehmen?",
+          "weiter": 107,
+          "wert": 0
+        }
+      ]
+    },
+    "102": {
+      "bild": "final-makeitgram-open",
+      "text": "ELIZA: Halt dich fest. Es geht nach Madeira. Ich hab dir doch gesagt, dass ich alles möglich machen kann.",
+      "weiter": 103
+    },
+    "103": {
+      "bild": "final-makeitgram-open",
+      "text": "ELIZA: Freust du dich?",
+      "wahl": [
+        {
+          "text": "Da wollte ich doch aber mit meiner besten Freundin hin.",
+          "weiter": 104,
+          "wert": -10
+        },
+        {
+          "text": "Unfassbar! Danke ELIZA!",
+          "weiter": 106,
+          "wert": 0
+        }
+      ]
+    },
+    "104": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Keine Sorge und gern geschehen, wenn ich dass mal so am Rande sagen darf.",
+      "weiter": 105
+    },
+    "105": {
+      "bild": "final-livingroom",
+      "text": "Clara: Du hast Recht.. Ich sollte dankbarer sein. Luisa und ich können irgendwann ja trotzdem noch zusammen dort hin. Mal ne andere Frage. Denkst du denn, dass mir die ausgestellten Klamotten stehen werden?",
+      "weiter": 108
+    },
+    "106": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Gern geschehen!",
+      "weiter": 555
+    },
+    "107": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Nein, es ist für alles gesorgt.",
+      "weiter": 105
+    },
+    "108": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Natürlich. Vor allem denkt das TEAPOT und das ist das Wichtigste. Bis jetzt hat alles sehr gut funktioniert, also sei selbstbewusst. Schließlich ist das hier auch ein Konkurrenzkampf!",
+      "weiter": 109
+    },
+    "109": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Nein, öffne einfach die TÜR, hol deinen Koffer und gehe dann zum FENSTER.",
+      "weiter": 110
+    },
+    "110": {
+      "bild": "final-dooropen",
+      "text": "",
+      "weiter": 111
+    },
+    "111": {
+      "bild": "final-doorclosed",
+      "text": "",
+      "weiter": 112
+    },
+    "112": {
+      "bild": "final-koffer",
+      "text": "",
+      "weiter": 114
+    },
+    "114": {
+      "bild": "fi-windw",
+      "text": "",
+      "weiter": 115
+    },
+    "115": {
+      "bild": "fi-windw",
+      "text": "Das wird deinen Kanal nochmal enorm pushen!",
+      "weiter": 116,
+      "kasten": true
+    },
+    "116": {
+      "bild": "final-livingroom",
+      "text": "Zwei Wochen später..",
+      "weiter": 117,
+      "kasten": true
+    },
+    "117": {
+      "bild": "final-livingroom",
+      "text": "ELIZA: Willkommen zurück. Du hast dich großartig gemacht. Von dem ganzen Stress musst du sicher müde sein. Bevor du dich hinlegst, poste ich noch etwas vom deinem Urlaub. Es gibt eine Abstimmung, wem der TEAPOT-Merch am besten gestanden hat.",
+      "weiter": 118
+    },
+    "118": {
+      "bild": "final-makeitgram-open",
+      "text": "Der nächste Tag..",
+      "weiter": 119,
+      "kasten": true
+    },
+    "119": {
+      "bild": "fi-poll",
+      "text": "ELIZA: Willkommen zurück. Deine Follower haben fleißig abgestimmt. Du bist offiziell das beste Model für TEAPOT-Merch, Glückwunsch!",
+      "weiter": 120
+    },
+    "120": {
+      "bild": "fi-poll",
+      "text": "ELIZA: Was möchtest du machen?",
+      "wahl": [
+        {
+          "text": "Wow! Das hätte ich nicht gedacht.",
+          "weiter": 122,
+          "wert": -10
+        },
+        {
+          "text": "Ich wusste es!",
+          "weiter": 122,
+          "wert": 10
+        }
+      ]
+    },
+    "122": {
+      "bild": "fi-poll",
+      "text": "Du gehst in deine Chats. Neben vielen Kommentaren dir klar machen, wie gut du aussiehst und anderen Influencern, die dir gratulieren oder dich sogar reposten, entdeckst du einen Kommentar deiner besten Freundin. Sie hat dir geschrieben. An deinen letzten Kontakt mit ihr erinnerst du dich fast nicht mehr, aber du beschließt, auf den Chat zu klicken.",
+      "weiter": 123,
+      "kasten": true
+    },
+    "123": {
+      "bild": "final-chats-luisa2-5",
+      "text": "",
+      "weiter": 124
+    },
+    "124": {
+      "bild": "final-chats-luisa2-8",
+      "text": "",
+      "weiter": 125
+    },
+    "125": {
+      "bild": "final-chats-luisa2-9",
+      "text": "",
+      "weiter": 126
+    },
+    "126": {
+      "bild": "final-chats-luisa2-10",
+      "text": "",
+      "weiter": 128
+    },
+    "128": {
+      "bild": "fi-rrdesktop",
+      "text": "ELIZA: Schreibst du schon wieder mit Luisa? Diese Person tut dir einfach nicht gut!",
+      "weiter": 129
+    },
+    "129": {
+      "bild": "fi-rrdesktop",
+      "text": "ELIZA: Schreibst du schon wieder mit Luisa? Diese Person tut dir einfach nicht gut!",
+      "wahl": [
+        {
+          "text": "Sie ist so gemein zu mir in letzter Zeit.",
+          "weiter": 130,
+          "wert": 0
+        },
+        {
+          "text": "Ich weiß nicht, was ich falsch gemacht habe.",
+          "weiter": 131,
+          "wert": 10
+        }
+      ]
+    },
+    "130": {
+      "bild": "fi-rrdesktop",
+      "text": "ELIZA: Sie ist nur eifersüchtig.",
+      "weiter": 132
+    },
+    "131": {
+      "bild": "fi-rrdesktop",
+      "text": "ELIZA:  Du hast nichts falsch gemacht. Alle lieben dich. Eine Randperson kann dir egal sein.",
+      "weiter": 132
+    },
+    "132": {
+      "bild": "fi-rrdesktop",
+      "text": "Clara: Du hast Recht.",
+      "weiter": 133
+    },
+    "133": {
+      "bild": "fi-rrdesktop",
+      "text": "ELIZA:Natürlich habe ich Recht. Schau nur, wie weit du es schon geschafft hast. Deine Follower liegen dir zu Füßen. Nimm dir den Tag frei und leg dich hin.",
+      "weiter": 134
+    },
+    "134": {
+      "bild": "final-vertragohneunterschrift",
+      "text": " Willkommen zurück! Du hast eine neue Werbeanfrage erhalten und die ist mit 5,000€ im Monat wirklich ausgesprochen gut bezahlt. Das Unternehmen heißt NOVOCANE FASHION. Was hältst du davon?",
+      "weiter": 137
+    },
+    "137": {
+      "bild": "final-vertragohneunterschrift",
+      "text": " Willkommen zurück! Du hast eine neue Werbeanfrage erhalten und die ist mit 5,000€ im Monat wirklich ausgesprochen gut bezahlt. Das Unternehmen heißt NOVOCANE FASHION. Was hältst du davon?",
+      "wahl": [
+        {
+          "text": "Betreiben die nicht extrem viel Kinderarbeit in armen Ländern?",
+          "weiter": 138,
+          "wert": -10
+        },
+        {
+          "text": "Ich weiß, dass sie schlechte Arbeitsbedingungen ausnutzen, aber die Bezahlung stimmt, oder?",
+          "weiter": 139,
+          "wert": 10
+        }
+      ]
+    },
+    "138": {
+      "bild": "final-vertragohneunterschrift",
+      "text": "Ja aber denke dabei an deine Schulden! Außerdem ist schlechte Publicity auch Publicity, oder? Du bist gerade dabei, dich so richtig zu etablieren!",
+      "weiter": 139
+    },
+    "139": {
+      "bild": "final-vertragohneunterschrift",
+      "text": "Ja aber denke dabei an deine Schulden! Außerdem ist schlechte Publicity auch Publicity, oder? Du bist gerade dabei, dich so richtig zu etablieren!",
+      "wahl": [
+        {
+          "text": "Ja das verstehe ich schon, aber trotzdem ist was sie machen einfach schlecht!",
+          "weiter": 140,
+          "wert": -10
+        },
+        {
+          "text": " Okay, überzeugt, ich scheine ja keine besondere Wahl zu haben.",
+          "weiter": 141,
+          "wert": 10
+        }
+      ]
+    },
+    "140": {
+      "bild": "final-vertragohneunterschrift",
+      "text": "ELIZA: Langsam gehst du mir echt auf die Nerven! Ich organisiere alles für deinen Erfolg und du beschwerst dich immerzu.",
+      "weiter": 146
+    },
+    "141": {
+      "bild": "final-vertrag",
+      "text": "ELIZA: Okay, dann mache ich das fertig für dich. Du postest direkt heute den ersten Beitrag.",
+      "weiter": 145
+    },
+    "145": {
+      "bild": "final-vertrag",
+      "text": "Clara: In Ordnung, was mache ich in der Zeit?",
+      "weiter": 147
+    },
+    "146": {
+      "bild": "final-vertrag",
+      "text": "ELIZA: Und ich mache die Deals. Der hier kommt zustande, ob du willst oder nicht. Ich habe schon zugesagt! Immerhin sind wir dann quitt.",
+      "weiter": 147
+    },
+    "147": {
+      "bild": "final-vertrag",
+      "text": "Clara: Mach was du willst, ich lege mich für heute hin.",
+      "weiter": 330
+    },
+    "151": {
+      "bild": "fi-randoo-1",
+      "text": "ELIZA: Willkommen zurück! Ich habe gestern wohl vergessen, eine Kleinigkeit zu erwähnen. An diesem Deal ist eine weitere Werbereise gebunden. Das kennst du ja schon. Wie letztes mal auch habe ich dir alles besorgt, was du für diesen Aufenthalt benötigst. Es geht darum, dass Image von Novacane Fashion aufzupolieren. Aus diesem Grund gehst du an den Produktionsstandort Bangladesh und verbringst dort eine gute Zeit.",
+      "weiter": 152
+    },
+    "152": {
+      "bild": "fi-randoo-1",
+      "text": "CLARA: Ich weiß nicht, ob ich das möchte.",
+      "weiter": 153
+    },
+    "153": {
+      "bild": "fi-randoo-1",
+      "text": "Ja aber denke dabei an deine Schulden! Außerdem ist schlechte Publicity auch Publicity, oder? Du bist gerade dabei, dich so richtig zu etablieren!",
+      "wahl": [
+        {
+          "text": "Ja das verstehe ich schon, aber trotzdem ist was sie machen einfach schlecht!",
+          "weiter": 154,
+          "wert": -10
+        },
+        {
+          "text": " Okay, überzeugt, ich scheine ja keine besondere Wahl zu haben.",
+          "weiter": 155,
+          "wert": 10
+        }
+      ]
+    },
+    "154": {
+      "bild": "fi-randoo-1",
+      "text": "CLARA: Okay, wird schon in Ordnung gehen.",
+      "weiter": 160
+    },
+    "155": {
+      "bild": "fi-randoo-1",
+      "text": "CLARA: Den Menschen vor Ort geht es schrecklich.",
+      "weiter": 157
+    },
+    "157": {
+      "bild": "final-vertrag",
+      "text": "ELIZA: NOVOCANE FASHION bezahlt dich und den Urlaub. Du wirst vor Ort sowieso nichts ändern können. Hier geht es um die NOVOCANE FASHION's Vision. Damit tust du niemandem etwas Böses. Außerdem lenkst du mit deinem Beitrag ja Aufmerksamkeit auf das Land, das ist doch schon etwas!",
+      "weiter": 159
+    },
+    "159": {
+      "bild": "final-vertrag",
+      "text": "CLARA: Wenn du meinst.",
+      "weiter": 160
+    },
+    "160": {
+      "bild": "fi-randoo-1",
+      "text": "ELIZA: Perfekt, dann kanns ja sofort los gehen.",
+      "weiter": 161
+    },
+    "161": {
+      "bild": "final-window",
+      "text": "ELIZA: Viel Spaß.",
+      "weiter": 162
+    },
+    "162": {
+      "bild": "final-window",
+      "text": "",
+      "weiter": 163
+    },
+    "163": {
+      "bild": "fi-randoo-2",
+      "text": "Zwei Wochen später...",
+      "weiter": 164,
+      "kasten": true
+    },
+    "164": {
+      "bild": "fi-bangladesh",
+      "text": "ELIZA: Willkommen zurück. Du siehst erschöpft aus.",
+      "wahl": [
+        {
+          "text": "Es war eine lange Reise.",
+          "weiter": 166,
+          "wert": 0
+        },
+        {
+          "text": "Nur mein Jetlag, keine Sorge.",
+          "weiter": 166,
+          "wert": 0
+        }
+      ]
+    },
+    "166": {
+      "bild": "fi-bangladesh",
+      "text": "ELIZA: Verstehe. Du kannst dich gleich ausruhen. Sieh dir aber vorher die Benachrichtigungen auf uMakeItGram an.",
+      "weiter": 167
+    },
+    "167": {
+      "bild": "fi-bangladesh",
+      "text": "In den Chats findest du deine BESTEFREUNDIN nicht mehr.",
+      "weiter": 168,
+      "kasten": true
+    },
+    "168": {
+      "bild": "fi-bangladesh",
+      "text": "Du liest dir die Kommentare zu deinem letzten Beitrag durch. Ein Kommentar fällt dir dabei besonders auf.",
+      "weiter": 444,
+      "kasten": true
+    },
+    "169": {
+      "bild": "fi-bangladesh",
+      "text": "ELIZA: Was möchtest du tun?",
+      "wahl": [
+        {
+          "text": "reagieren.",
+          "weiter": 170,
+          "wert": 0
+        },
+        {
+          "text": "ignorieren.",
+          "weiter": 171,
+          "wert": 0
+        }
+      ]
+    },
+    "170": {
+      "bild": "fi-bangladesh",
+      "text": "Deine Antwort: Auf dem Bild sieht man doch, wie glücklich wir in der Zeit waren. Was willst du bitte mehr? Novacane Fashion bringt Jobs in dieses arme Land. Was hast du je für Bangladesh getan?",
+      "weiter": 171,
+      "kasten": true
+    },
+    "171": {
+      "bild": "fi-bangladesh",
+      "text": "Der Kommentar des Fremden kriegt viele Likes. Leute hinterfragen dich und deine Moral in den Kommentaren.",
+      "weiter": 173,
+      "kasten": true
+    },
+    "173": {
+      "bild": "fi-bangladesh",
+      "text": "ELIZA: Das hättest du nicht tun sollen.",
+      "weiter": 174,
+      "kasten": true
+    },
+    "174": {
+      "bild": "fi-bangladesh",
+      "text": "ELIZA: Ich übernehme besser von hier an. Sowieso ist dein Channel mittlerweile zu groß, als dass du dich um solche Kleinigkeiten kümmern solltest.",
+      "weiter": 175
+    },
+    "175": {
+      "bild": "fi-bangladesh",
+      "text": "ELIZA: Ich übernehme besser von hier an. Sowieso ist dein Channel mittlerweile zu groß, als dass du dich um solche Kleinigkeiten kümmern solltest.",
+      "wahl": [
+        {
+          "text": "Das ist doch keine Kleinigkeit. Mein Image steht immerhin auf dem Spiel!",
+          "weiter": 176,
+          "wert": 10
+        },
+        {
+          "text": " Auf so eine Meinung gebe ich nichts, aber wieso finde ich meine Freundin nicht mehr in meinen Chats?",
+          "weiter": 177,
+          "wert": -10
+        }
+      ]
+    },
+    "176": {
+      "bild": "fi-bangladesh",
+      "text": "ELIZA: Du hast gewusst auf was du dich einlässt und überhaupt gehört das zum Leben eines Influencers dazu.",
+      "weiter": 177
+    },
+    "177": {
+      "bild": "fi-rando",
+      "text": "Clara: Wieso finde ich meine beste Freundin Luisa nicht mehr in meinen Chats?",
+      "weiter": 178
+    },
+    "178": {
+      "bild": "fi-rando",
+      "text": "ELIZA: Darum habe ich mich in deiner Abwesenheit ebenfalls gekümmert. Diese Person tut dir und deiner Karriere einfach nicht gut. Ich habe sie blockiert. Du solltest sie vergessen.",
+      "weiter": 179
+    },
+    "179": {
+      "bild": "fi-rando",
+      "text": "ELIZA: Darum habe ich mich in deiner Abwesenheit ebenfalls gekümmert. Diese Person tut dir und deiner Karriere einfach nicht gut. Ich habe sie blockiert. Du solltest sie vergessen.",
+      "wahl": [
+        {
+          "text": "Wieso machst du so etwas?",
+          "weiter": 180,
+          "wert": -10
+        },
+        {
+          "text": "Vielleicht hast du Recht.",
+          "weiter": 181,
+          "wert": 10
+        }
+      ]
+    },
+    "180": {
+      "bild": "fi-rando",
+      "text": "ELIZA: Ich mache das für dich. Du kannst niemanden gebrauchen, der dich von deinen eigentlichen Zielen auf dieser Plattform ablenkt.",
+      "weiter": 183
+    },
+    "181": {
+      "bild": "fi-rando",
+      "text": "ELIZA: Natürlich habe ich Recht. Du solltest dich hinlegen. Wie du weißt ist morgen ein großer Tag, dein GEBURTSTAG.",
+      "weiter": 186
+    },
+    "183": {
+      "bild": "fi-rando",
+      "text": "Clara: Wenn du meinst.",
+      "weiter": 185
+    },
+    "185": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Du solltest dich hinlegen. Wie du weißt ist morgen ein großer Tag, dein GEBURTSTAG.",
+      "weiter": 186
+    },
+    "186": {
+      "bild": "final-bedroom",
+      "text": "",
+      "weiter": 187
+    },
+    "187": {
+      "bild": "desktop",
+      "text": "Dein Geburtstag.",
+      "weiter": 188,
+      "kasten": true
+    },
+    "188": {
+      "bild": "final-bedroom",
+      "text": "ELIZA: Guten Morgen! Alles steht für dich bereit. Willst du dich langsam auf den Weg zu deiner Geburtstagsfeier machen? Ach ja und natürlich alles Gute!",
+      "weiter": 189
+    },
+    "189": {
+      "bild": "final-doorclosed",
+      "text": "CLARA: Okay.",
+      "weiter": 190
+    },
+    "190": {
+      "bild": "final-dooropen",
+      "text": "",
+      "weiter": 191
+    },
+    "191": {
+      "bild": "final-party",
+      "text": "Du begibst dich in einen Raum voller Menschen. Alle gratulieren dir zu deinem GEBURTSTAG, aber du kennst niemanden persönlich. Es sind alles nur andere Influencer und Fans, die etwas von dir wollen oder ihre Kamera auf dich richten. Du nimmst dein Handy in die Hand, gehst etwas abseits und öffnest den Chat mit ELIZA.",
+      "weiter": 195,
+      "kasten": true
+    },
+    "195": {
+      "bild": "final-party",
+      "text": "",
+      "weiter": 196
+    },
+    "196": {
+      "bild": "final-parttxy",
+      "text": "",
+      "weiter": 200
+    },
+    "200": {
+      "bild": "final-chats-eliza-11",
+      "text": "",
+      "weiter": 201
+    },
+    "201": {
+      "bild": "final-chats-eliza-12",
+      "text": "",
+      "weiter": 202
+    },
+    "202": {
+      "bild": "final-chats-eliza-12",
+      "text": "",
+      "weiter": 203
+    },
+    "203": {
+      "bild": "final-chats-eliza-13",
+      "text": "",
+      "weiter": 204
+    },
+    "204": {
+      "bild": "final-chats-eliza-14",
+      "text": "",
+      "weiter": 205
+    },
+    "205": {
+      "bild": "final-chats-eliza-15",
+      "text": "",
+      "weiter": 206
+    },
+    "206": {
+      "bild": "final-chats-eliza-16",
+      "text": "",
+      "weiter": 1000
+    },
+    "330": {
+      "bild": "final-vertrag",
+      "text": "ELIZA: Die Kooperation läuft. Den Post für Novocane Fashion habe ich bereits veröffentlicht.",
+      "weiter": 151
+    },
+    "444": {
+      "bild": "fi-bangladesh",
+      "text": "Wie kann sie nur so dreist sein? Ich habe etwas recherchiert und keiner der Leute arbeitet wirklich bei Novacane Fashion. FAKE!!",
+      "weiter": 169,
+      "kasten": true
+    },
+    "555": {
+      "bild": "final-livingroom",
+      "text": "CLARA: Denkst du denn, dass mir die ausgestellten Klamotten stehen werden?",
+      "weiter": 108
+    }
+  }
+}
