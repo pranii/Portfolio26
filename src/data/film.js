@@ -137,11 +137,14 @@ export const projects = [
       {
         title: 'A kishe guxu?',
         text:
-          'Musikvideo, offiziell veröffentlicht. Dazu ein Visualizer für Instagram und ein ' +
-          'Beispiel aus der Promophase.',
+          'Das Musikvideo, offiziell veröffentlicht — dazu der Visualizer, der auf Instagram ' +
+          'lief. Ein Beispiel aus der Promophase kommt noch dazu.',
         files: ['ereza'],
         layout: 'stack',
-        embed: 'https://www.youtube.com/watch?v=GhhHAptcLss',
+        embed: [
+          'https://www.youtube.com/watch?v=GhhHAptcLss',
+          'https://youtube.com/shorts/T42nvH19S1o',
+        ],
       },
       {
         title: 'Jeriko — Pay Me',
@@ -174,9 +177,9 @@ export const projects = [
         text:
           'Das erste Konzept kam von Guy Buffet und seiner Serie „The Perfect Martini": ' +
           'gemalte Szenen, in denen das Glas die Hauptrolle spielt. Der Plan war, darüber die ' +
-          'Cocktails zu vermarkten.',
+          'Cocktails zu vermarkten — so sieht das Ergebnis aus.',
         files: [],
-        textOnly: true,
+        embed: 'https://youtube.com/shorts/bi1_YXsKkaI',
       },
       {
         title: 'Tischaufsteller und WhatsApp Business',
