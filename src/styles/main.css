@@ -3766,3 +3766,41 @@ kbd {
 .step .prototyp .section-title {
   display: none;
 }
+
+/* Die Werkzeuge auf der Seite "Über mich": nach Feldern sortiert,
+   ohne Zählerei dahinter — es geht darum, womit gearbeitet wird,
+   nicht wie oft. */
+.werkzeuge {
+  margin-block: var(--s-8);
+}
+
+.werkzeuge__felder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--s-5);
+  margin-top: var(--s-5);
+}
+
+.werkzeuge__feld {
+  padding-top: var(--s-3);
+  border-top: 2px solid var(--ink);
+}
+
+.werkzeuge__titel {
+  margin: 0 0 var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.werkzeuge__liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--s-1);
+  font-size: var(--t-0);
+}

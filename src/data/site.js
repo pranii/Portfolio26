@@ -33,6 +33,56 @@ export const site = {
       'Disziplinen zu sein: Installationen, die man betritt, Hefte, die man faltet, Automaten, ' +
       'die zwei Fremde ins Gespräch bringen. Was dabei entsteht, soll nicht erklären, sondern ' +
       'erfahrbar machen.',
+    /**
+     * Wofuer ich welches Programm benutze. Die Uebersicht auf der Seite
+     * baut sich aus den Projekten selbst — hier steht nur, in welches
+     * Feld ein Programm gehoert. Was fehlt, erscheint unter "Weiteres".
+     */
+    werkzeuge: [
+      {
+        titel: 'Gestaltung',
+        werkzeuge: ['InDesign', 'Illustrator', 'Photoshop', 'Figma'],
+      },
+      {
+        titel: 'Bewegtbild und Ton',
+        werkzeuge: [
+          'Premiere Pro',
+          'After Effects',
+          'DaVinci Resolve',
+          'EbSynth',
+          'RunwayML',
+          'Storyboarder',
+          'Celtx',
+          'Logic Pro',
+        ],
+      },
+      {
+        titel: 'Code und Interaktion',
+        werkzeuge: [
+          'TouchDesigner',
+          'Python',
+          'Pygame',
+          'JavaScript',
+          'TypeScript',
+          'Angular',
+          'React',
+          'Flask',
+          'SCSS',
+          'Web Audio API',
+          'ReportLab',
+          'Wordpress',
+        ],
+      },
+      {
+        titel: '3D und Spiel',
+        werkzeuge: ['Blender', 'Godot', 'Polycam'],
+      },
+      {
+        titel: 'Hardware',
+        werkzeuge: ['Raspberry Pi', 'CRT-Monitore'],
+      },
+    ],
+
     vorgehen: [
       {
         title: 'Rahmen setzen',

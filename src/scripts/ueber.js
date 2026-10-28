@@ -12,7 +12,8 @@ import { initScroll, initProgressBar } from './lib/scroll.js';
 import { revealFade, revealOnScroll } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
 import { initPageTransitions } from './lib/transitions.js';
-import { renderVorgehen } from './lib/render.js';
+import { renderVorgehen, renderWerkzeuge } from './lib/render.js';
+import { LOADERS } from './lib/bereiche.js';
 import { ladeSprache, t, uebersetzeSeite, initSprachschalter } from './lib/i18n.js';
 import { initTonschalter } from './lib/ton.js';
 
@@ -61,6 +62,15 @@ async function main() {
   ].join('');
 
   document.querySelector('[data-slot="vorgehen"]').innerHTML = renderVorgehen(ueber.vorgehen);
+
+  // Die Werkzeuge kommen aus den Projekten selbst, nicht aus einer
+  // gepflegten Liste — so fehlt nie eines, das irgendwo benutzt wurde.
+  const bereiche = await Promise.all(Object.values(LOADERS).map((laden) => laden()));
+  const alleProjekte = bereiche.flatMap((bereich) => bereich.projects);
+  document.querySelector('[data-slot="werkzeuge"]').innerHTML = renderWerkzeuge(
+    ueber.werkzeuge,
+    alleProjekte,
+  );
 
   initScroll();
   initPageTransitions();

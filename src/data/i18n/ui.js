@@ -50,6 +50,8 @@ export const ui = {
     'kat.spiel': 'Spiel',
 
     'abschnitt.projekte': 'Projekte',
+    'abschnitt.werkzeuge': 'Werkzeuge',
+    'abschnitt.womiticharbeite': 'Womit ich arbeite',
     'abschnitt.vorgehen': 'Vorgehen',
     'abschnitt.sogeheichvor': 'So gehe ich vor',
     'abschnitt.werkzeuge': 'Werkzeuge',
@@ -245,6 +247,8 @@ export const ui = {
     'kat.spiel': 'Play',
 
     'abschnitt.projekte': 'Projects',
+    'abschnitt.werkzeuge': 'Tools',
+    'abschnitt.womiticharbeite': 'What I work with',
     'abschnitt.vorgehen': 'Method',
     'abschnitt.sogeheichvor': 'How I work',
     'abschnitt.werkzeuge': 'Tools',
@@ -439,6 +443,8 @@ export const ui = {
     'kat.spiel': 'Luaj',
 
     'abschnitt.projekte': 'Projektet',
+    'abschnitt.werkzeuge': 'Mjetet',
+    'abschnitt.womiticharbeite': 'Me çfarë punoj',
     'abschnitt.vorgehen': 'Mënyra e punës',
     'abschnitt.sogeheichvor': 'Si punoj',
     'abschnitt.werkzeuge': 'Mjetet',

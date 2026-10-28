@@ -3341,6 +3341,42 @@
           "page": 1,
           "width": 1738,
           "height": 5044
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/fragenkatalog-s01.webp",
+          "thumb": "/media/freizeit/kamamuta/fragenkatalog-s01-thumb.webp",
+          "fromPdf": "fragenkatalog",
+          "page": 1,
+          "width": 1684,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/fragenkatalog-s02.webp",
+          "thumb": "/media/freizeit/kamamuta/fragenkatalog-s02-thumb.webp",
+          "fromPdf": "fragenkatalog",
+          "page": 2,
+          "width": 1684,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/fragenkatalog-s03.webp",
+          "thumb": "/media/freizeit/kamamuta/fragenkatalog-s03-thumb.webp",
+          "fromPdf": "fragenkatalog",
+          "page": 3,
+          "width": 1684,
+          "height": 1190
+        },
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/fragenkatalog-s04.webp",
+          "thumb": "/media/freizeit/kamamuta/fragenkatalog-s04-thumb.webp",
+          "fromPdf": "fragenkatalog",
+          "page": 4,
+          "width": 1684,
+          "height": 1190
         }
       ],
       "videos": [],
@@ -3350,6 +3386,12 @@
           "src": "/media/freizeit/kamamuta/kama-muta-magazine-prototype.pdf",
           "label": "KAMA MUTA MAGAZINE PROTOTYPE.pdf",
           "bytes": 7845601
+        },
+        {
+          "type": "doc",
+          "src": "/media/freizeit/kamamuta/fragenkatalog.pdf",
+          "label": "Fragenkatalog.pdf",
+          "bytes": 475662
         }
       ]
     },

@@ -52,10 +52,7 @@ async function main() {
     if (html) slot.innerHTML = html;
     else slot.closest('section').remove();
   };
-  fuelle(
-    document.querySelector('[data-slot="software"]'),
-    renderSoftware(category.software, projects),
-  );
+  fuelle(document.querySelector('[data-slot="software"]'), renderSoftware(category.software));
 
   initScroll();
   initPageTransitions();

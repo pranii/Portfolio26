@@ -52,7 +52,7 @@ export const category = {
     'Flask',
     'Raspberry Pi',
     'Web Audio API',
-    'Ableton',
+    'Logic Pro',
     'Figma',
     'Polycam',
   ], // TODO: pruefen

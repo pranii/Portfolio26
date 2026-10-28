@@ -163,21 +163,20 @@ export const projects = [
         title: 'Nicht nach Hochschule aussehen',
         text:
           'Die School of Design and Media brauchte eine Kampagne, die Studieninteressierte ' +
-          'erreicht, ohne wie Hochschulwerbung auszusehen. Das ist die eigentliche ' +
-          'Schwierigkeit: Sobald eine Institution über sich selbst spricht, hört die Zielgruppe ' +
-          'weg.',
+          'erreicht, ohne wie Hochschulwerbung auszusehen. Sobald eine Institution über sich ' +
+          'selbst spricht, hört die Zielgruppe weg.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Victorious',
         text:
-          'Die erste Kampagne ist reine Social-Media-Strategie: Szenen der Serie „Victorious" ' +
-          'werden nachgestellt, weil die Hochschule inhaltlich parallel zur Serie liegt. Das ' +
-          'Papier dahinter klärt, wen man erreichen will, was gepostet wird und in welcher ' +
-          'Reihenfolge es läuft.',
+          'Szenen der Serie „Victorious" werden nachgestellt, weil die Hochschule inhaltlich ' +
+          'parallel zur Serie liegt. Die Videos habe ich konzipiert, gedreht und geschnitten, ' +
+          'dazu Bilder für Social Media gemacht und auf Messen gesprochen.',
         files: ['socialmediaauftritt'],
         layout: 'track',
+        embed: 'https://www.instagram.com/reel/DPoii6bAhuc/',
         platzhalter: ['/media/arbeit/sodam/Sodam1.mp4', '/media/arbeit/sodam/Sodam2.mp4'],
       },
       {
@@ -185,9 +184,8 @@ export const projects = [
         text:
           'Die zweite Kampagne setzt auf Live-Action: Die Plakate „attackieren" Schüler ' +
           'förmlich. Der Witz liegt im Widerspruch — ein Motiv, das angreift, und dahinter die ' +
-          'Einladung einer Hochschule. Dazu ein Stempel, mit dem man Gegenstände oder Mitschüler ' +
-          'kurzerhand „sodamisiert": Damit ist der Schüler nicht mehr Empfänger der Kampagne, ' +
-          'sondern führt sie weiter.',
+          'Einladung einer Hochschule. Dazu ein Stempel, mit dem man Gegenstände oder ' +
+          'Mitschüler kurzerhand „sodamisiert".',
         files: ['plakat-01', 'plakat-02', 'plakat-03', 'plakat-alt'],
         layout: 'grid',
       },
@@ -323,8 +321,8 @@ export const projects = [
           'mit dem sich zwei Menschen in 36 Fragen näherkommen — auseinandergenommen und auf ' +
           'drei Stufen verteilt. Erst das Leichte, dann das, was man sonst nicht erzählt. Die ' +
           'Regeln stehen auf dem Buch selbst.',
-        files: [],
-        textOnly: true,
+        files: ['fragenkatalog'],
+        layout: 'track',
       },
       {
         title: 'Danach',

@@ -71,22 +71,11 @@ export const projects = [
     pull: 'a story of perspective on love',
     chapters: [
       {
-        title: 'Das rote V',
-        text:
-          'Liebe hat viele Gesichter, die meisten Kurzfilme zeigen eines. Die Frage war, wie ' +
-          'mehrere Perspektiven in einen Film kommen, ohne sie zu erklären. Der Titel setzt den ' +
-          'Ton: „LOVE" in schwarzer und roter Tusche, das V als einziges rotes Zeichen.',
-        files: ['love-03'],
-        layout: 'stack',
-      },
-      {
         title: 'Offenes Casting',
         text:
-          'Statt im Bekanntenkreis zu besetzen, lief ein offenes Casting über Instagram und ' +
-          'TikTok — Drehort, Drehtag und Altersgruppen direkt auf dem Aufruf. So kamen ' +
-          'Gesichter in den Film, die niemand von uns vorher kannte. Gedreht in Frankfurt im ' +
-          'Februar 2025, gemeinsam mit Dardan Shala.',
-        files: ['love-01', 'love-02', 'love-04', 'love'],
+          'Gesucht wurde über Instagram und TikTok. Gedreht im Februar 2025, gemeinsam mit ' +
+          'Dardan Shala.',
+        files: ['love-03', 'love-01', 'love-02', 'love-04', 'love'],
         layout: 'track',
       },
       {
@@ -101,13 +90,10 @@ export const projects = [
     slug: 'improtheater',
     title: 'Improtheater',
     cover: 'header',
-    subtitle: 'Staatstheater Tübingen',
+    subtitle: 'Landestheater Tübingen',
     description:
-      'Ein Improvisationstheaterstück am Staatstheater in Tübingen — gefilmt, geschnitten ' +
-      'und auf einen Trailer gebracht. Improvisation heißt für die Kamera: Niemand weiß ' +
-      'vorher, wo die Szene hingeht, es gibt keinen zweiten Take und keinen Plan, an den ' +
-      'man sich halten könnte. Gedreht habe ich gemeinsam mit Joscha Reuther und Jan ' +
-      'Bangert.',
+      'Ein Improvisationstheaterstück, gefilmt und auf einen Trailer gebracht. Niemand weiß ' +
+      'vorher, wo die Szene hingeht — es gibt keinen zweiten Take.',
     year: '2026',
     role: 'Kamera, Schnitt',
     tools: ['Premiere Pro'],
@@ -115,18 +101,10 @@ export const projects = [
     pull: 'Keine zweite Aufnahme, kein Plan, an den man sich halten könnte.',
     chapters: [
       {
-        title: 'Kein zweiter Take',
-        text:
-          'Improvisation heißt für die Kamera: Niemand weiß, wo die Szene hingeht, es gibt ' +
-          'keinen zweiten Take und keinen Plan. Die Frage war, wie man einen Abend einfängt, ' +
-          'der nur einmal stattfindet — und daraus einen Trailer schneidet, der die ' +
-          'Unsicherheit nicht wegglättet. Gedreht mit Joscha Reuther und Jan Bangert.',
-        files: [],
-        textOnly: true,
-      },
-      {
         title: 'Der Trailer',
-        text: 'Szenen, die es so nur einmal gegeben hat, weil sie im Moment entstanden sind.',
+        text:
+          'Gedreht im Juli 2026 in Tübingen beim Landestheater, mit Joscha Reuther und Jan ' +
+          'Bangert.',
         files: [],
         embed: 'https://vimeo.com/1227665449/8897decc48',
       },
@@ -154,21 +132,26 @@ export const projects = [
         title: 'Mit Ereza',
         text:
           'Ereza ist mittlerweile eine Freundin. Das verändert die Arbeit: Wir besprechen Ideen ' +
-          'lange, bevor eine Kamera im Raum steht, und ich kann sagen, wenn etwas nicht trägt.',
+          'lange, bevor eine Kamera im Raum steht.',
         files: [],
         textOnly: true,
       },
       {
-        title: 'Zwei Videos',
+        title: 'A kishe guxu?',
         text:
-          '„A kishe guxu?" ist offiziell veröffentlicht, „Jeriko" als Reel erschienen — zwei ' +
-          'Tonlagen derselben Zusammenarbeit.',
+          'Musikvideo, offiziell veröffentlicht. Dazu ein Visualizer für Instagram und ein ' +
+          'Beispiel aus der Promophase.',
         files: ['ereza'],
         layout: 'stack',
-        embed: [
-          'https://www.youtube.com/watch?v=GhhHAptcLss',
-          'https://www.instagram.com/reel/DEfoY2eo6Km/',
-        ],
+        embed: 'https://www.youtube.com/watch?v=GhhHAptcLss',
+      },
+      {
+        title: 'Jeriko — Pay Me',
+        text:
+          'Jeriko ist Rapper aus Frankfurt. Beim Musikvideo zu „Pay Me" war ich für die VFX ' +
+          'zuständig.',
+        files: [],
+        embed: 'https://www.instagram.com/reel/DEfoY2eo6Km/',
       },
     ],
   },
@@ -178,9 +161,9 @@ export const projects = [
     subtitle: 'Raumvermietung, Website und Imagefilm',
     cover: 'header',
     description:
-      'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Die Aufgabe ' +
-      'war, diese Vielseitigkeit zu zeigen, ohne beliebig zu werden — der Rabe als ' +
-      'Markenzeichen hält alles zusammen.',
+      'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Über ein Jahr ' +
+      'habe ich die Kommunikation gemacht: Konzepte für Bewegtbild, die Drucksachen und die ' +
+      'Fotografie.',
     year: '2025', // TODO
     role: 'Gestaltung, Storyboard, Fotografie',
     client: 'Huginn',
@@ -189,42 +172,40 @@ export const projects = [
     pull: 'Sechzehn Bilder, die den Film erzählen, bevor die Kamera läuft.',
     chapters: [
       {
-        title: 'Der Rabe',
+        title: 'The Perfect Martini',
         text:
-          'Ein Haus, vier Nutzungen: Café, Bar, Eventlocation, Co-Working. Wer so etwas bewirbt, ' +
-          'landet schnell bei „für jeden etwas" — und damit bei niemandem. Die Antwort steckte ' +
-          'im Namen: Huginn ist einer der beiden Raben Odins, der Gedanke. Die Wortmarke bleibt ' +
-          'entsprechend still.',
-        files: ['logo-huginn'],
+          'Das erste Konzept kam von Guy Buffet und seiner Serie „The Perfect Martini": ' +
+          'gemalte Szenen, in denen das Glas die Hauptrolle spielt. Der Plan war, darüber die ' +
+          'Cocktails zu vermarkten.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Tischaufsteller und WhatsApp Business',
+        text:
+          'Auf den Tischen steht, was die Gäste direkt betrifft. Dazu habe ich das WhatsApp ' +
+          'Business aufgesetzt und die passenden Fotos selbst geschossen — die Gerichte vor ' +
+          'Rot, damit sie sich in die Bildwelt einfügen statt als Fremdkörper zu wirken.',
+        files: ['logo-huginn', 'header-webseite', 'flyer-vorne', 'flyer-hinten', 'mangobowl'],
         layout: 'wide',
       },
       {
-        title: 'Vom Header bis zum Teller',
+        title: 'Magazin für den Eventraum',
         text:
-          'Aus dem Namen wurde das Bild: zwei gespiegelte Raben als Header — dunkel, nordisch, ' +
-          'Rot als einziger Akzent. Der Flyer bringt beide Seiten des Hauses zusammen: vorne ' +
-          'dunkel das Tagesgeschäft, hinten hell die Eventlocation. Die Broschüre führt Etage ' +
-          'für Etage durch das Haus. Die Gerichte habe ich selbst fotografiert, vor Rot, damit ' +
-          'sie sich einfügen.',
-        files: [
-          'header-webseite',
-          'flyer-vorne',
-          'flyer-hinten',
-          'huginn-raumvermietung',
-          'mangobowl',
-        ],
-        layout: 'wide',
+          'Für die Vermietung des Eventraums im Obergeschoss habe ich ein Magazin entworfen: ' +
+          'Etage für Etage durch das Haus, jede Doppelseite ein Raum und ein Anlass.',
+        files: ['huginn-raumvermietung'],
+        layout: 'track',
       },
       {
-        title: 'Sechzehn Bilder',
+        title: 'Breakfast at Jule’s',
         text:
-          'Der Imagefilm zitiert „Breakfast at Tiffany’s": eine Frau steigt aus dem Taxi, geht ' +
-          'auf die Bar zu, dreht sich um. Sechzehn gezeichnete Bilder erzählen den Film, bevor ' +
-          'die Kamera läuft — jeder Schnitt, jede Einstellung, die Shotlist. Der Schnitt ist ' +
-          'noch nicht fertig; bis dahin gibt es ein Reel.',
+          'Für die Vermarktung des Frühstücks habe ich einen Videodreh geplant und gefilmt — ' +
+          'kurze Werbevideos und Reels unter der Kampagne „Breakfast at Jule’s". Sechzehn ' +
+          'gezeichnete Bilder erzählen den Film, bevor die Kamera läuft. Die Aufnahmen stehen, ' +
+          'fertig geschnitten sind sie leider nicht.',
         files: ['storyboard'],
         layout: 'track',
-        platzhalter: '/media/arbeit/huginn/huginn.mp4',
       },
     ],
   },
@@ -254,11 +235,14 @@ export const projects = [
       {
         title: 'Ueshiba',
         text:
-          'Aikido löst Konflikte durch Harmonie statt durch Gewalt — entwickelt von Morihei ' +
-          'Ueshiba Mitte des 20. Jahrhunderts. Das Teamprojekt sollte das Interesse daran ' +
-          'wiederbeleben. Wichtig war uns, dass die Geschichte das Wesen der Kampfkunst ' +
-          'widerspiegelt und nicht nur von ihr handelt. Geplant war eine Serie; aus Zeitgründen ' +
-          'blieb es bei der Pilotfolge.',
+          'Morihei Ueshiba hat Aikido Mitte des 20. Jahrhunderts aus mehreren Strömungen ' +
+          'zusammengeführt. Die Technik kommt aus dem Daitō-ryū Aiki-jūjutsu, der Umgang mit ' +
+          'dem Gegner aus dem Zen: nicht gewinnen, sondern auflösen. Dazu die Ōmoto-kyō, eine ' +
+          'shintoistische Bewegung, aus der Ueshiba den Gedanken nahm, dass Kampfkunst dem ' +
+          'Schutz allen Lebens dient. Und das Prinzip des Ki — die Kraft, die man nicht gegen ' +
+          'den anderen richtet, sondern mit ihm führt. Das Teamprojekt sollte das Interesse ' +
+          'daran wiederbeleben; wichtig war uns, dass die Geschichte das Wesen der Kampfkunst ' +
+          'widerspiegelt und nicht nur von ihr handelt.',
         files: [],
         textOnly: true,
       },
@@ -266,10 +250,10 @@ export const projects = [
         title: 'Dreiundzwanzig Szenen',
         text:
           'Ein junger Schüler Ueshibas begreift das Wesen des Aikido durch eine Begegnung mit ' +
-          'einem Betrunkenen im Zug. Alle 23 Szenen wurden gezeichnet und zu einer animierten ' +
-          'Fassung mit Musik und Ton gebracht — das Storyboard nicht als Planung, sondern als ' +
-          'eigenständige Fassung des Films. Animiert wurde Szene 13 in Blender, die ' +
-          'Schlüsselszene im Zugwagen.',
+          'einem Betrunkenen im Zug — ein Konflikt, der sich auflöst, ohne dass jemand ' +
+          'zuschlägt. Alle 23 Szenen wurden gezeichnet und zu einer animierten Fassung mit ' +
+          'Musik und Ton gebracht. Animiert wurde Szene 13 in Blender, die Schlüsselszene im ' +
+          'Zugwagen.',
         files: [],
         embed: 'https://player.vimeo.com/video/669799645',
       },

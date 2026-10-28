@@ -67,52 +67,15 @@ export const projects = [
       {
         title: 'Eine Tiefgarage',
         text:
-          'Ein Game Jam gibt wenig Zeit und keine Sicherheit. Statt eine Welt zu erfinden, haben ' +
-          'wir eine mitgenommen: eine Tiefgarage, eingescannt und begehbar gemacht. Orte wie ' +
-          'diese sind Liminal Spaces — man ist dort immer nur auf dem Weg woandershin. Der Ton ' +
-          'sollte zwischen unheimlich und albern kippen können.',
-        files: ['style', 'comedic-relief', 'cutscenes', 'key-objects', 'liminal-space'],
-        layout: 'track',
+          'Eine echte Tiefgarage, mit Photogrammetrie eingescannt und in Godot begehbar ' +
+          'gemacht. Oben lässt sie sich betreten — WASD zum Gehen, Maus zum Umsehen.',
+        files: [],
+        textOnly: true,
       },
       {
-        title: 'Vom Scan zum Raum',
-        text:
-          'Die Garage kam aus Polycam und wurde in Blender nachbearbeitet — Löcher schließen, ' +
-          'Geometrie reduzieren, bis Godot sie tragen kann. Der PSX-Look ist kein Filter, ' +
-          'sondern das Ergebnis: Niedrige Auflösung und harte Kanten verdecken genau das, was ' +
-          'ein Scan nicht hergibt.',
+        title: 'Dokumentation',
+        text: 'Der ganze Weg: Ideenfindung, Setting, Mechanik, Nachbearbeitung der Scans.',
         files: [
-          'photogrammetrie-01',
-          'photogrammetrie-02',
-          'photogrammetrie-03',
-          'photogrammetrie-04',
-          'photogrammetrie-05',
-          'photogrammetrie-06',
-          'photogrammetrie-07',
-          'stagedesignphotogrammetry',
-          'stagedesign',
-          'hauptcharacter',
-          'nebencharacter',
-          'sidecharacter',
-          'character-ref-01',
-          'character-ref-02',
-          'character-ref-03',
-          'character-ref-04',
-        ],
-        layout: 'track',
-      },
-      {
-        title: 'Hineingehen',
-        text:
-          'Oben lässt sich die Garage betreten — WASD zum Gehen, Maus zum Umsehen, Esc gibt den ' +
-          'Zeiger zurück.',
-        files: [
-          'erste-szene-ergebnis',
-          'scenerie',
-          'screenshot',
-          'beginning',
-          'gamejamstartscreen',
-          'revolution',
           'botlnick-dokumentation',
           'game-studies-gdd-s01',
           'game-studies-gdd-s02',

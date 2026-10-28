@@ -168,23 +168,59 @@ export function renderVorgehen(schritte = []) {
     .join('');
 }
 
-/**
- * Software eines Bereichs. Die Zahl dahinter zaehlt, in wie vielen Projekten
- * des Bereichs das Programm unter `tools` steht — so belegt die Seite selbst,
- * wo es zum Einsatz kam.
- */
-export function renderSoftware(software = [], projects = []) {
+/** Die Software eines Bereichs — nur die Namen, ohne Zaehlerei. */
+export function renderSoftware(software = []) {
   return software
-    .map((name) => {
-      const n = projects.filter((p) =>
-        (p.tools ?? []).some((tool) => tool.toLowerCase() === name.toLowerCase()),
-      ).length;
-      const beleg =
-        n > 0
-          ? `<span class="skill__count">${n} ${n === 1 ? t('karte.projekt') : t('karte.projekte')}</span>`
-          : '';
-      return `<li class="skill"><span class="skill__name">${esc(name)}</span>${beleg}</li>`;
-    })
+    .map((name) => `<li class="skill"><span class="skill__name">${esc(name)}</span></li>`)
+    .join('');
+}
+
+/**
+ * Alle Werkzeuge aus allen Projekten, nach Feldern sortiert.
+ *
+ * Die Zuordnung steht in site.js; was dort fehlt, landet unter "Weiteres"
+ * statt unter den Tisch zu fallen — so vergisst die Uebersicht nichts,
+ * auch wenn ein Projekt ein neues Programm mitbringt.
+ */
+export function renderWerkzeuge(felder, projekte) {
+  const gefunden = new Map();
+  for (const projekt of projekte) {
+    for (const name of projekt.tools ?? []) {
+      const schluessel = name.toLowerCase();
+      if (!gefunden.has(schluessel)) gefunden.set(schluessel, name);
+    }
+  }
+
+  const vergeben = new Set();
+  const gruppen = felder.map(({ titel, werkzeuge }) => {
+    const treffer = werkzeuge
+      .map((name) => {
+        const schluessel = name.toLowerCase();
+        if (!gefunden.has(schluessel)) return null;
+        vergeben.add(schluessel);
+        return gefunden.get(schluessel);
+      })
+      .filter(Boolean);
+    return { titel, treffer };
+  });
+
+  const rest = [...gefunden.entries()]
+    .filter(([schluessel]) => !vergeben.has(schluessel))
+    .map(([, name]) => name)
+    .sort((a, b) => a.localeCompare(b, 'de'));
+  if (rest.length) gruppen.push({ titel: 'Weiteres', treffer: rest });
+
+  return gruppen
+    .filter((gruppe) => gruppe.treffer.length)
+    .map(
+      (gruppe) => `
+      <div class="werkzeuge__feld">
+        <h3 class="werkzeuge__titel">${esc(gruppe.titel)}</h3>
+        <ul class="werkzeuge__liste">
+          ${gruppe.treffer.map((name) => `<li>${esc(name)}</li>`).join('')}
+        </ul>
+      </div>`,
+    )
     .join('');
 }
 
