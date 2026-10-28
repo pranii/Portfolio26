@@ -179,11 +179,20 @@ function renderMenu() {
 function initMenuWindow(call, fenster) {
   const screen = fenster.querySelector('.phone__screen');
 
-  call.addEventListener('click', () => {
+  const oeffne = () => {
+    if (fenster.open) return;
     fenster.showModal();
     // Fokus fuer die Pfeiltasten, aber ohne sichtbare Markierung.
     screen.focus({ focusVisible: false });
-  });
+  };
+
+  call.addEventListener('click', oeffne);
+
+  // Der Name oben ist derselbe Knopf: ein Klick darauf oeffnet das Menue.
+  document.querySelector('[data-slot="hero"]')?.addEventListener('click', oeffne);
+
+  // Wer ueber den Namen einer Unterseite zurueckkommt, landet im Menue.
+  if (window.location.hash === '#menu') oeffne();
 
   fenster.querySelector('[data-menu="close"]').addEventListener('click', () => fenster.close());
 
