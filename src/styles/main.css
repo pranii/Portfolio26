@@ -1711,7 +1711,7 @@ body[data-page='index'] {
 .steps {
   padding-block: var(--s-8) 0;
   display: grid;
-  gap: var(--s-9);
+  gap: var(--s-8);
 }
 
 .step {
@@ -1719,27 +1719,34 @@ body[data-page='index'] {
   gap: var(--s-5);
 }
 
-/* Eine Linie ueber jedem Kapitel. Sie gliedert, ohne etwas zu
-   beschriften — eine Nummer waere eine Angabe, die niemand braucht. */
+/* Jedes Kapitel sitzt in einem Rahmen, sein Name in einer Leiste oben
+   drin — wie die Masken in den Vorbildern. Der Name wird dadurch klein
+   und ruhig: Er muss nicht mehr mit der Ueberschrift konkurrieren, er
+   muss nur sagen, wo man ist. */
 .step__head {
   display: grid;
-  gap: var(--s-3);
-  padding-top: var(--s-5);
-  border-top: 2px solid var(--ink);
+  max-width: calc(var(--measure) + 2 * var(--s-4) + 4px);
+  border: 2px solid var(--ink);
 }
 
 .step__title {
-  font-family: var(--font-display);
-  font-size: clamp(var(--t-1), 4vw, var(--t-3));
-  font-weight: 600;
-  line-height: 1;
   margin: 0;
-  max-width: 22ch;
+  padding: var(--s-2) var(--s-4);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: var(--t-0);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .step__text {
   margin: 0;
-  color: var(--ink-soft);
+  max-width: none;
+  padding: var(--s-4);
+  color: var(--ink);
   text-wrap: pretty;
 }
 
@@ -1747,7 +1754,8 @@ body[data-page='index'] {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-2) var(--s-4);
-  margin: var(--s-2) 0 0;
+  margin: 0;
+  padding: 0 var(--s-4) var(--s-4);
 }
 
 .step__downloads a,

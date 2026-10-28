@@ -244,6 +244,7 @@ export const projects = [
       'Social Media, statt es zu verarbeiten. Zwei alte Röhrenmonitore stehen an den ' +
       'Ausgängen des Aufzugs — gesteuert wird nur mit Körperhaltung und Handbewegung, ohne ' +
       'Controller.',
+    year: '2026',
     role: 'Konzept, Gestaltung, Interaktion',
     client: 'Staedtische Galerie Villingen-Schwenningen, Maerz–April 2026',
     tools: ['TouchDesigner', 'Photoshop', 'CRT-Monitore'],
@@ -304,6 +305,7 @@ export const projects = [
       'ohne je irgendwo anzukommen. Multi Shepard bringt ihn in einen Vorlesungssaal und ' +
       'stellt ihm eine projizierte optische Illusion zur Seite. Der Ton läuft bereits, bevor ' +
       'jemand da ist — der Weg nach unten ist das Erlebnis.',
+    year: 'Januar 2026',
     role: 'Konzept, Raumgestaltung, Sound',
     client:
       'Mit Cara Brueggendieck und Kathrin Krell. Betreut von Prof. Norbert Schnell und Peter Kirschenbauer',
@@ -371,6 +373,7 @@ export const projects = [
       'Eine Studienarbeit im Interaktionsdesign: Wie lassen sich emotionale Zustände so ' +
       'darstellen, dass sie therapeutische Prozesse unterstützen? Entwickelt im ' +
       'Human-Centered-Design-Prozess mit Interviews, Personas und Prototypen.',
+    year: '2026',
     role: 'Konzept, Recherche, Prototyp',
     client: 'Hochschule Furtwangen, Prof. Dr.-Ing. Thomas Schlegel',
     tools: ['Figma', 'InDesign'],
@@ -410,6 +413,7 @@ export const projects = [
       'keltischem Tierkreis. Ein simples Druckerzeugnis, das durch Personalisierung vom ' +
       'flüchtigen Wegwerfprodukt zum greifbaren Erlebnis wird. Alles läuft offline auf einem ' +
       'Raspberry Pi.',
+    year: '2026',
     role: 'Konzept, technische Umsetzung',
     client:
       'Mit Cara Brueggendieck. Modul "Inszenierung Interaktiver Medien", Master Design Interaktiver Medien',
