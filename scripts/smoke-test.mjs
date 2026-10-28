@@ -100,6 +100,12 @@ const PAGES = [
     erwartet: '.saal__balken',
     query: '?id=creative-technology/shepard-tone',
   },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.portal__knopf',
+    query: '?id=creative-technology/nostalgia',
+  },
 ];
 
 fs.mkdirSync(TMP, { recursive: true });

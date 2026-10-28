@@ -141,6 +141,38 @@ export const ui = {
       'hängt an denselben drei Parametern: wie schnell du gehst, in welche Richtung und wie ' +
       'nah du den Boxen kommst.',
 
+    'prototyp.nostalgia':
+      'Dieselbe Erkennung wie in der Galerie, nur im Browser: Wer im Bild ist, sieht beide ' +
+      'Ebenen zugleich — und wohin man sich stellt, entscheidet, welche von beiden trägt. ' +
+      'Im zweiten Fenster liegt ein Satz unter Nebel; die Hand wischt ihn frei, und der Nebel ' +
+      'zieht wieder zu. Gezeichnet wird nur mit Farben, nie mit dem Kamerabild.',
+
+    'portal.kameraan': 'Kamera einschalten',
+    'portal.kameraaus': 'Kamera ausschalten',
+    'portal.demo': 'Ohne Kamera ansehen',
+    'portal.demoaus': 'Vorführung beenden',
+    'portal.hinweis':
+      'Das Bild bleibt auf deinem Gerät und wird nirgendwohin gesendet. Zu sehen sind nur ' +
+      'Farbfelder, kein Gesicht.',
+    'portal.aus': 'Aus',
+    'portal.laedt': 'Lädt …',
+    'portal.bereit': 'Bereit',
+    'portal.niemand': 'Niemand im Bild',
+    'portal.erkannt': 'Im Bild',
+    'portal.wischen.status': '{n}% frei',
+    'portal.fehler': 'Kamera nicht erreichbar',
+    'portal.verweigert': 'Kamera nicht freigegeben',
+    'portal.rechts.ebenen': 'MediaPipe · 2 Monitore',
+    'portal.rechts.wischen': 'Hand oder Finger',
+    'portal.ebenen.alt': 'Zwei Monitore, die auf die Position im Bild reagieren',
+    'portal.wischen.alt': 'Ein Satz unter Nebel, der sich wegwischen lässt',
+    'portal.imbild': 'Im Bild',
+    'portal.position': 'Position',
+    'portal.naehe': 'Nähe',
+    'portal.snippet1': 'where does one begin and the other end?',
+    'portal.snippet2': 'Light, Future, Past',
+    'portal.snippet3': 'nostalgia is a portal',
+
     'gram.rechts': 'Angular · 2023',
     'gram.start': 'Drücken zum Starten.',
     'gram.nochmal': 'Noch einmal?',
@@ -291,6 +323,38 @@ export const ui = {
       'from 20 Hz to 20,480 Hz — and it hangs on the same three parameters: how fast you walk, ' +
       'in which direction, and how close you get to the speakers.',
 
+    'prototyp.nostalgia':
+      'The same detection as in the gallery, only in the browser: whoever is in frame sees ' +
+      'both layers at once — and where you stand decides which of them carries. In the second ' +
+      'window a sentence lies under fog; your hand wipes it clear, and the fog closes again. ' +
+      'It is drawn with colours only, never with the camera image.',
+
+    'portal.kameraan': 'Turn the camera on',
+    'portal.kameraaus': 'Turn the camera off',
+    'portal.demo': 'Watch without a camera',
+    'portal.demoaus': 'Stop the demo',
+    'portal.hinweis':
+      'The image stays on your device and is sent nowhere. All you see are fields of colour, ' +
+      'no face.',
+    'portal.aus': 'Off',
+    'portal.laedt': 'Loading …',
+    'portal.bereit': 'Ready',
+    'portal.niemand': 'Nobody in frame',
+    'portal.erkannt': 'In frame',
+    'portal.wischen.status': '{n}% clear',
+    'portal.fehler': 'Camera unavailable',
+    'portal.verweigert': 'Camera not permitted',
+    'portal.rechts.ebenen': 'MediaPipe · 2 monitors',
+    'portal.rechts.wischen': 'Hand or finger',
+    'portal.ebenen.alt': 'Two monitors reacting to where you stand in frame',
+    'portal.wischen.alt': 'A sentence under fog that can be wiped away',
+    'portal.imbild': 'In frame',
+    'portal.position': 'Position',
+    'portal.naehe': 'Proximity',
+    'portal.snippet1': 'where does one begin and the other end?',
+    'portal.snippet2': 'Light, Future, Past',
+    'portal.snippet3': 'nostalgia is a portal',
+
     'gram.rechts': 'Angular · 2023',
     'gram.start': 'Press to start.',
     'gram.nochmal': 'Again?',
@@ -439,6 +503,38 @@ export const ui = {
       'altoparlantët. Tingulli është ai i instalimit — njëmbëdhjetë oshilatorë nga 20 Hz deri ' +
       'në 20.480 Hz — dhe varet nga të njëjtët tre parametra: sa shpejt ecën, në cilin drejtim ' +
       'dhe sa afër u vjen altoparlantëve.',
+
+    'prototyp.nostalgia':
+      'I njëjti njohje si në galeri, vetëm në shfletues: kush është në kuadër i sheh të dy ' +
+      'shtresat njëherësh — dhe vendi ku qëndron vendos cila prej tyre mban. Në dritaren e ' +
+      'dytë një fjali rri nën mjegull; dora e pastron, dhe mjegulla kthehet. Vizatohet vetëm ' +
+      'me ngjyra, kurrë me pamjen e kamerës.',
+
+    'portal.kameraan': 'Ndiz kamerën',
+    'portal.kameraaus': 'Fik kamerën',
+    'portal.demo': 'Shiko pa kamerë',
+    'portal.demoaus': 'Ndalo demonstrimin',
+    'portal.hinweis':
+      'Pamja mbetet në pajisjen tënde dhe nuk dërgohet askund. Shihen vetëm fusha ngjyrash, ' +
+      'asnjë fytyrë.',
+    'portal.aus': 'Fikur',
+    'portal.laedt': 'Po ngarkohet …',
+    'portal.bereit': 'Gati',
+    'portal.niemand': 'Askush në kuadër',
+    'portal.erkannt': 'Në kuadër',
+    'portal.wischen.status': '{n}% e pastruar',
+    'portal.fehler': 'Kamera e paarritshme',
+    'portal.verweigert': 'Kamera nuk u lejua',
+    'portal.rechts.ebenen': 'MediaPipe · 2 monitorë',
+    'portal.rechts.wischen': 'Dora ose gishti',
+    'portal.ebenen.alt': 'Dy monitorë që reagojnë ndaj vendit ku qëndron në kuadër',
+    'portal.wischen.alt': 'Një fjali nën mjegull që mund të fshihet',
+    'portal.imbild': 'Në kuadër',
+    'portal.position': 'Pozicioni',
+    'portal.naehe': 'Afërsia',
+    'portal.snippet1': 'where does one begin and the other end?',
+    'portal.snippet2': 'Light, Future, Past',
+    'portal.snippet3': 'nostalgia is a portal',
 
     'gram.rechts': 'Angular · 2023',
     'gram.start': 'Shtyp për të filluar.',

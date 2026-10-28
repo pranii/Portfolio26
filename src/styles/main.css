@@ -3066,7 +3066,182 @@ kbd {
   }
 }
 
-/* ── 10f Seite ueber mich ─────────────────────────────────────────── */
+/* ── 10f Nostalgia is a Portal ────────────────────────────────────── */
+
+/* Die Installation hat ihre eigene Welt: Roehrenmonitore im dunklen Raum,
+   RGB-Versatz, Bildrauschen. Deshalb bringt .portal eigene Farben mit,
+   statt die des Displays zu erben — wie der Kiosk beim ZodiZine. */
+
+.portal__start {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-4) 0 var(--s-5);
+}
+
+.portal__knoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.portal__knopf {
+  padding: var(--s-2) var(--s-4);
+  border: 2px solid var(--pixel);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-0);
+  cursor: pointer;
+}
+
+.portal__knopf[aria-pressed='true'],
+.portal__knopf:hover,
+.portal__knopf:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+  outline: none;
+}
+
+.portal__knopf[disabled] {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+/* Der wichtigste Satz auf der Seite steht direkt am Knopf, nicht im
+   Kleingedruckten: Wer die Kamera freigibt, soll vorher wissen, wohin
+   das Bild geht. */
+.portal__hinweis {
+  margin: 0;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+  font-size: var(--t--1);
+}
+
+/* Das Kamerabild selbst wird nie gezeigt — nur gerechnet. */
+.portal__video {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.window__body--portal {
+  padding: 0;
+  background: #0a0b0e;
+}
+
+.portal__schirm {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+
+[data-rolle='wischen'] {
+  cursor: crosshair;
+}
+
+/* Die Werte, die das Programm liest — dieselbe Zeile wie beim Hoersaal,
+   hier aber auf dunklem Grund. */
+.portal__werte {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s-4);
+  align-items: center;
+  margin: 0;
+  padding: var(--s-3) var(--s-4) var(--s-4);
+  border-top: 1px solid #2a2c33;
+}
+
+.portal__wert {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.portal__wert dt {
+  color: #6f737e;
+  font-size: var(--t--2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portal__wert dd {
+  margin: 0;
+}
+
+/* Eine Lampe, wie sie an einem Geraet sitzt: aus, oder an. */
+.portal__lampe {
+  display: block;
+  width: var(--s-3);
+  height: var(--s-3);
+  border: 2px solid #3a3d46;
+  background: #15171c;
+}
+
+.portal__lampe[data-an='ja'] {
+  border-color: #28d6ff;
+  background: #28d6ff;
+  box-shadow: 0 0 0.5em #28d6ff;
+}
+
+.portal__balken,
+.portal__schieber {
+  position: relative;
+  display: block;
+  height: var(--s-3);
+  border: 1px solid #3a3d46;
+  background: #15171c;
+}
+
+.portal__balken::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--anteil, 0%);
+  background: #ff3ea5;
+}
+
+/* Die Position ist kein Pegel, sondern ein Ort: ein Reiter, der wandert. */
+.portal__schieber::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: var(--anteil, 50%);
+  width: 3px;
+  margin-left: -1.5px;
+  background: #28d6ff;
+  box-shadow: 0 0 0.4em #28d6ff;
+}
+
+/* Zwei Fenster untereinander brauchen Luft dazwischen. */
+.prototyp[data-prototyp='nostalgia'] .window + .window {
+  margin-top: var(--s-5);
+}
+
+@media (min-width: 60rem) {
+  /* Nebeneinander, sobald Platz ist: die beiden Fenster gehoeren zusammen
+     wie die beiden Monitore am Aufzug. */
+  .prototyp[data-prototyp='nostalgia'] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .prototyp[data-prototyp='nostalgia'] > .section-title,
+  .prototyp[data-prototyp='nostalgia'] > .portal__start,
+  .prototyp[data-prototyp='nostalgia'] > .prototyp__fuss {
+    grid-column: 1 / -1;
+  }
+
+  .prototyp[data-prototyp='nostalgia'] .window + .window {
+    margin-top: 0;
+  }
+}
+
+/* ── 10g Seite ueber mich ─────────────────────────────────────────── */
 
 /* Ein Eintrag im Telefonbuch: Kasten mit Titelleiste, Name gross, darunter
    die Felder mit gepunkteter Fuehrung — wie im Menue des 3310. */

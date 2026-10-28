@@ -244,6 +244,9 @@ export const projects = [
     pull: 'Was bleibt, wenn der Schein trügt?',
     // Video statt Titelbild oben auf der Seite.
     kopfvideo: 'https://youtu.be/RwLj7i3BUq4',
+    // Dieselbe Erkennung wie in der Galerie, nur mit MediaPipe statt
+    // TouchDesigner: zwei Monitore und der Satz unter dem Nebel.
+    prototyp: { art: 'nostalgia', titel: 'Selbst ins Bild treten' },
     chapters: [
       {
         title: 'Brainstorm',

@@ -26,12 +26,16 @@ const esc = (text) =>
     (zeichen) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[zeichen],
   );
 
-/** Fenster mit Titelleiste und Statuszeile — der Rahmen aller Prototypen. */
-function fenster({ titel, rechts, koerper, koerperKlasse = '' }) {
+/**
+ * Fenster mit Titelleiste und Statuszeile — der Rahmen aller Prototypen.
+ * `kennung` macht Titel und Statuszeile eindeutig; das braucht nur, wer
+ * zwei Fenster nebeneinander stellt.
+ */
+function fenster({ titel, rechts, koerper, koerperKlasse = '', kennung = 'prototyp' }) {
   return `
-    <section class="window" aria-labelledby="prototyp-titel">
+    <section class="window" aria-labelledby="${esc(kennung)}-titel">
       <div class="window__bar">
-        <span class="window__title" id="prototyp-titel">
+        <span class="window__title" id="${esc(kennung)}-titel">
           <span class="window__icon" aria-hidden="true">▣</span>
           ${esc(titel)}
         </span>
@@ -43,7 +47,12 @@ function fenster({ titel, rechts, koerper, koerperKlasse = '' }) {
       </div>
       <div class="window__body ${koerperKlasse}">${koerper}</div>
       <div class="window__status">
-        <span class="window__status-cell window__status-cell--grow" data-rolle="status">Lädt …</span>
+        <span
+          class="window__status-cell window__status-cell--grow"
+          data-rolle="status"
+          data-status="${esc(kennung)}"
+          >Lädt …</span
+        >
         <span class="window__status-cell">${esc(rechts)}</span>
       </div>
     </section>`;
@@ -138,6 +147,68 @@ const BAUPLAN = {
         ></div>`,
     }) + fuss(t('prototyp.umakeitgram')),
 
+  // Zwei Fenster: links die beiden Monitore, rechts der Text unter dem
+  // Nebel. Beide haengen an derselben Kamera und derselben Erkennung.
+  nostalgia: () =>
+    `
+    <div class="portal__start">
+      <div class="portal__knoepfe">
+        <button class="portal__knopf" type="button" data-rolle="kamera">
+          ${t('portal.kameraan')}
+        </button>
+        <button class="portal__knopf" type="button" data-rolle="demo">
+          ${t('portal.demo')}
+        </button>
+      </div>
+      <p class="portal__hinweis">${t('portal.hinweis')}</p>
+      <video class="portal__video" data-rolle="video" playsinline muted></video>
+    </div>` +
+    fenster({
+      titel: 'EBENEN.TOE',
+      rechts: t('portal.rechts.ebenen'),
+      kennung: 'ebenen',
+      koerperKlasse: 'window__body--portal',
+      koerper: `
+        <canvas
+          class="portal__schirm"
+          data-rolle="ebenen"
+          width="320"
+          height="136"
+          role="img"
+          aria-label="${t('portal.ebenen.alt')}"
+        ></canvas>
+        <dl class="portal__werte">
+          <div class="portal__wert">
+            <dt>${t('portal.imbild')}</dt>
+            <dd><span class="portal__lampe" data-wert="imbild" data-an="nein"></span></dd>
+          </div>
+          <div class="portal__wert">
+            <dt>${t('portal.position')}</dt>
+            <dd><span class="portal__schieber" data-wert="position"></span></dd>
+          </div>
+          <div class="portal__wert">
+            <dt>${t('portal.naehe')}</dt>
+            <dd><span class="portal__balken" data-wert="naehe"></span></dd>
+          </div>
+        </dl>`,
+    }) +
+    fenster({
+      titel: 'WISCHEN.TOE',
+      rechts: t('portal.rechts.wischen'),
+      kennung: 'wischen',
+      koerperKlasse: 'window__body--portal',
+      koerper: `
+        <canvas
+          class="portal__schirm"
+          data-rolle="wischen"
+          width="320"
+          height="180"
+          role="img"
+          aria-label="${t('portal.wischen.alt')}"
+        ></canvas>`,
+    }) +
+    fuss(t('prototyp.nostalgia')),
+
   shepard: () =>
     fenster({
       titel: 'MULTISHEPARD.JS',
@@ -225,6 +296,7 @@ export async function startPrototyp(project, wurzel) {
     if (art === 'magazin') await startMagazinBlock(project, block, melde);
     if (art === 'umakeitgram') await startGramBlock(block, melde);
     if (art === 'shepard') await startShepardBlock(block, melde);
+    if (art === 'nostalgia') await startNostalgiaBlock(block);
   } catch (fehler) {
     melde(`Fehler: ${fehler.message}`);
   }
@@ -288,6 +360,35 @@ async function startGramBlock(block, melde) {
 
   // Ausser Sicht haelt die Schreibmaschine an, damit man keinen Text verpasst.
   beobachte(block, (sichtbar) => spiel.pause(!sichtbar));
+}
+
+async function startNostalgiaBlock(block) {
+  const { startNostalgia } = await import('./nostalgia.js');
+
+  // Zwei Fenster, zwei Statuszeilen — jede meldet fuer sich.
+  const melde = (welches, text) => {
+    const zeile = block.querySelector(`[data-status="${welches}"]`);
+    if (zeile) zeile.textContent = text;
+  };
+
+  const portal = await startNostalgia(block, melde, {
+    kameraan: t('portal.kameraan'),
+    kameraaus: t('portal.kameraaus'),
+    demo: t('portal.demo'),
+    demoaus: t('portal.demoaus'),
+    aus: t('portal.aus'),
+    laedt: t('portal.laedt'),
+    bereit: t('portal.bereit'),
+    niemand: t('portal.niemand'),
+    erkannt: t('portal.erkannt'),
+    wischen: t('portal.wischen.status'),
+    fehler: t('portal.fehler'),
+    verweigert: t('portal.verweigert'),
+    snippets: [t('portal.snippet1'), t('portal.snippet2'), t('portal.snippet3')],
+  });
+
+  // Ausser Sicht wird nicht gerechnet — und die Kamera laeuft nicht umsonst.
+  beobachte(block, (sichtbar) => portal.pause(!sichtbar));
 }
 
 async function startShepardBlock(block, melde) {
