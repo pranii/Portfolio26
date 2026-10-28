@@ -142,16 +142,25 @@ function kasten(x, y, text) {
  * Baut die Skizze zu einem Namen. Gibt eine leere Zeichenkette zurueck,
  * wenn es dazu keine gibt.
  */
-/** Eine Abfolge: Kaesten nebeneinander, dazwischen Pfeile. */
+/**
+ * Eine Abfolge: Kaesten nebeneinander, dazwischen Pfeile. Laengere
+ * Ablaeufe brechen nach vier Schritten um — sonst wird die Zeichnung so
+ * breit, dass auf dem Telefon niemand mehr etwas erkennt. Die Nummern
+ * halten die Reihenfolge ueber den Umbruch hinweg zusammen.
+ */
 function reiheSvg(plan) {
   const B = 150;
   const H = 76;
   const LUECKE = 34;
+  const PRO_ZEILE = 4;
+  const ZEILE_H = H + 28;
   const teile = [];
 
   plan.reihe.forEach((eintrag, i) => {
-    const x = RAND + i * (B + LUECKE);
-    const y = RAND;
+    const spalte = i % PRO_ZEILE;
+    const zeile = Math.floor(i / PRO_ZEILE);
+    const x = RAND + spalte * (B + LUECKE);
+    const y = RAND + zeile * ZEILE_H;
     const zeilen = String(eintrag).split('|');
 
     teile.push(
@@ -169,7 +178,8 @@ function reiheSvg(plan) {
       );
     });
 
-    if (i === plan.reihe.length - 1) return;
+    // Am Zeilenende kein Pfeil — dort fuehrt die Nummer weiter.
+    if (i === plan.reihe.length - 1 || spalte === PRO_ZEILE - 1) return;
     const pfeilVon = x + B;
     const pfeilBis = x + B + LUECKE;
     const mitte = y + H / 2;
@@ -179,8 +189,10 @@ function reiheSvg(plan) {
     );
   });
 
-  const breite = RAND * 2 + plan.reihe.length * B + (plan.reihe.length - 1) * LUECKE;
-  const hoehe = RAND * 2 + H;
+  const inZeile = Math.min(plan.reihe.length, PRO_ZEILE);
+  const zeilen = Math.ceil(plan.reihe.length / PRO_ZEILE);
+  const breite = RAND * 2 + inZeile * B + (inZeile - 1) * LUECKE;
+  const hoehe = RAND * 2 + zeilen * ZEILE_H - (ZEILE_H - H);
 
   return `
     <figure class="aufbau">
