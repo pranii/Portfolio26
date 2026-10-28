@@ -21,6 +21,36 @@ let fileCount = 0;
 // media.json ist nach den Medienordnern (arbeit, freizeit, uni) sortiert,
 // die Bereiche der Seite sind andere. Gesucht wird deshalb ueber den Slug.
 const mediaBySlug = Object.assign({}, ...Object.values(media));
+
+/**
+ * Gibt es die Datei — und zwar genau so geschrieben?
+ *
+ * Windows unterscheidet Gross- und Kleinschreibung nicht, der Server bei
+ * GitHub Pages schon. Ohne diese Pruefung faellt ein falsch geschriebener
+ * Name hier nicht auf und laesst spaeter den Deploy scheitern.
+ */
+const ordnerInhalt = new Map();
+function dateienIn(ordner) {
+  if (!ordnerInhalt.has(ordner)) {
+    ordnerInhalt.set(ordner, fs.existsSync(ordner) ? new Set(fs.readdirSync(ordner)) : new Set());
+  }
+  return ordnerInhalt.get(ordner);
+}
+
+function dateiDa(rel) {
+  const voll = path.join(ROOT, 'public', rel);
+  return dateienIn(path.dirname(voll)).has(path.basename(voll));
+}
+
+/** Dieselbe Datei mit anderer Schreibweise, falls es sie gibt. */
+function andereSchreibweise(rel) {
+  const voll = path.join(ROOT, 'public', rel);
+  const gesucht = path.basename(voll).toLowerCase();
+  for (const name of dateienIn(path.dirname(voll))) {
+    if (name.toLowerCase() === gesucht) return name;
+  }
+  return null;
+}
 const known = new Set();
 
 for (const categorySlug of ['creative-technology', 'film', 'game', 'kommunikationsdesign']) {
@@ -131,8 +161,13 @@ for (const categorySlug of ['creative-technology', 'film', 'game', 'kommunikatio
         const rel = item[key];
         if (!rel) continue;
         fileCount += 1;
-        if (!fs.existsSync(path.join(ROOT, 'public', rel))) {
-          problems.push(`${categorySlug}/${project.slug}: Datei fehlt — ${rel}`);
+        if (!dateiDa(rel)) {
+          const anders = andereSchreibweise(rel);
+          problems.push(
+            anders
+              ? `${categorySlug}/${project.slug}: Schreibweise — ${rel} heisst auf der Platte ${anders}`
+              : `${categorySlug}/${project.slug}: Datei fehlt — ${rel}`,
+          );
         }
       }
     }
