@@ -104,6 +104,30 @@ export const AUFBAUTEN = {
     ],
   },
 
+  // Kama Muta: die Photobooth, die Foto und Rechnung ausgibt.
+  kamamuta: {
+    alt: 'Kamera und Auslöser gehen an einen Raspberry Pi, der Foto und Kassenzettel druckt',
+    spalten: [
+      { label: 'Eingabe', kaesten: ['Kamera', 'Auslöser|am Tisch'] },
+      { label: 'Rechner', kaesten: ['Raspberry Pi|Photobooth'] },
+      { label: 'Ausgabe', kaesten: ['Foto|klebt im Zine', 'Kassenzettel|die Rechnung'] },
+    ],
+  },
+
+  // Der Ablauf eines Dinners, vom gedeckten Tisch bis zum Abschied.
+  'kamamuta-ablauf': {
+    alt: 'Sieben Schritte vom gedeckten Tisch über das Servieren bis zum Abschied',
+    reihe: [
+      'Bühne setzen|Tisch decken, warten|nicht eingreifen',
+      'Hinsetzen|zwei Fremde|unabhängig voneinander',
+      'Servieren|Gipsballon|auf Silbertablett',
+      'Entdeckung|Ballon aufbrechen|zwei Zines fallen heraus',
+      'Gespräch|die Fragen stellen|das Zine füllen',
+      'Foto|Photobooth auf den Tisch|klebt auf Seite 2',
+      'Abschied|Tisch neu decken|mit ausgefülltem Zine',
+    ],
+  },
+
   interaktionsdesign: {
     alt: 'Kamera und Mikrofon gehen an die Auswertung, die daraus ein Dashboard schreibt',
     spalten: [

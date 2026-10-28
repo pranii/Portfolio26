@@ -361,6 +361,102 @@ export const projects = [
     ],
   },
   {
+    slug: 'kamamuta',
+    title: 'Kama Muta',
+    subtitle: 'Table for two — eine Performance im öffentlichen Raum',
+    cover: 'header',
+    description:
+      'Zwei Fremde setzen sich an einen gedeckten Tisch mitten in der Stadt und lernen sich ' +
+      'über ein inszeniertes Dinner kennen. Anfangs soll es bedrohlich wirken — dafür sorgen ' +
+      'eine Soundkulisse, ein schweigender Kellner und ein Securityguard. Was dann passiert, ' +
+      'machen die beiden selbst.',
+    year: '2026',
+    role: 'Konzept, Inszenierung, Gestaltung, Fotografie',
+    client: 'Performance im öffentlichen Raum, Sommer 2026 — Furtwangen und Stuttgart',
+    tools: ['Raspberry Pi', 'InDesign', 'Photoshop', 'After Effects'],
+    tags: ['Performance', 'Öffentlicher Raum', 'Partizipation', 'Editorial'],
+    pull: 'Der Mensch wird am Du zum Ich.',
+    chapters: [
+      {
+        title: 'Table for two',
+        text:
+          'Kama muta heißt „von Liebe bewegt" — das plötzliche Gefühl, wenn Nähe unerwartet ' +
+          'spürbar wird. Mitten im öffentlichen Raum steht ein gedeckter Tisch, ohne ' +
+          'Erklärung. Wer sich setzt, trifft auf eine fremde Person, die sich unabhängig ' +
+          'davon gesetzt hat. Der Kellner serviert und schweigt, im Hintergrund steht ein ' +
+          'Securityguard, dazu eine Soundkulisse. Die Karte sagt: „please feel welcome. I can ' +
+          'not hear you. you are being watched. act accordingly." Der Abend beginnt ' +
+          'bedrohlich und endet, wenn es gut läuft, mit zwei Menschen, die sich vorher nicht ' +
+          'kannten.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Der Ablauf',
+        text:
+          'Dreißig Minuten in sieben Schritten. Der Host greift nie ein — er deckt, wartet, ' +
+          'serviert, tritt zurück. Serviert wird ein Gipsballon auf einem Silbertablett, ohne ' +
+          'ein Wort dazu. Nach dem Prinzip einer Piñata müssen die beiden ihn gemeinsam ' +
+          'aufbrechen; heraus fallen zwei Zines. Darin stehen die Fragen, die sie sich ' +
+          'gegenseitig stellen.',
+        files: [],
+        aufbau: 'kamamuta-ablauf',
+      },
+      {
+        title: 'Technischer Aufbau',
+        text:
+          'Am Ende stellt der Host eine Photobooth auf den Tisch — ein Raspberry Pi mit ' +
+          'Kamera und Bondrucker. Heraus kommt das gemeinsame Foto, das auf Seite zwei des ' +
+          'Zines geklebt wird, und die Rechnung: „A new connection. 2 Servings. Price: 30 ' +
+          'minutes. Bill has been covered. Invite the next person to this experience."',
+        files: [],
+        aufbau: 'kamamuta',
+      },
+      {
+        title: 'Mache ein Foto',
+        text:
+          'Angefangen hat es als Magazin über dasselbe Gefühl — mit Handlungsanweisungen ' +
+          'statt Artikeln: „Mache ein Foto mit der dir gegenüber sitzenden Person. Tausche ' +
+          'Adresse und Namen aus." Das Heft sollte etwas verlangen, nicht nur etwas zeigen. ' +
+          'Parallel lief ein Notizarchiv mit Sätzen, die später Kapitelnamen wurden.',
+        files: ['first-ideas', 'archive'],
+        layout: 'track',
+      },
+      {
+        title: 'Jedes Kapitel anders',
+        text:
+          'Für „Black Swan" habe ich die Reihenfolge der Doppelseiten mit Klebezetteln so ' +
+          'lange verschoben, bis der Rhythmus stimmte. Am Ende steht das gedruckte Heft — ' +
+          'drei Essays, ein Umschlag, und der Beweis, dass die Anweisungen auf Papier ' +
+          'funktionieren.',
+        files: ['black-swan', 'prototyp', 'kama-muta-magazine-prototype'],
+        layout: 'track',
+      },
+      {
+        title: 'Der Fragenkatalog',
+        text:
+          'Grundlage ist der bekannte Katalog, mit dem sich zwei Menschen in 36 Fragen ' +
+          'näherkommen — auseinandergenommen und auf drei Gänge verteilt. Erst das Leichte, ' +
+          'dann das, was man sonst nicht erzählt. Die Regeln stehen auf dem Zine selbst, ' +
+          'damit kein Erklärer daneben stehen muss.',
+        files: ['fragenkatalog'],
+        layout: 'track',
+      },
+      {
+        title: 'Zwei Orte',
+        text:
+          'Dasselbe Setup an zwei verschiedenen Orten, um zu sehen, was der Ort ändert: ' +
+          'Furtwangen und der Pavillon am Schlossplatz in Stuttgart, Sommer 2026. Zum ' +
+          'Vergleich lag Marina Abramović’ „The Artist Is Present" auf dem Tisch — nur ' +
+          'Präsenz, offen, Scheitern erlaubt. Hier ist es das Gegenteil: dreißig gerahmte ' +
+          'Minuten, drei Gänge, Wärme und ein Geschenk. Nicht „ich halte mich im Anderen ' +
+          'aus", sondern „ich werde am Du zum Ich".',
+        files: [],
+        textOnly: true,
+      },
+    ],
+  },
+  {
     slug: 'interaktionsdesign',
     title: 'Inner Flow',
     subtitle: 'Multimodale Visualisierung emotionaler Zustände',

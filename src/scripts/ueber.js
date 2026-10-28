@@ -58,7 +58,7 @@ async function main() {
     feld(t('ueber.feld.abschluss'), ueber.abschluesse.join(' · ')),
     feld(t('ueber.feld.sprachen'), ueber.sprachen.join(' · ')),
     feld(t('ueber.feld.gruppe'), ueber.gruppe),
-    feld(t('ueber.feld.klingelton'), ueber.klingelton),
+    feld(t('ueber.feld.kernkompetenz'), ueber.kernkompetenz),
   ].join('');
 
   document.querySelector('[data-slot="vorgehen"]').innerHTML = renderVorgehen(ueber.vorgehen);

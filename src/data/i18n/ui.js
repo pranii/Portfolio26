@@ -29,7 +29,7 @@ export const ui = {
     'ueber.feld.abschluss': 'Abschluss',
     'ueber.feld.sprachen': 'Sprachen',
     'ueber.feld.gruppe': 'Gruppe',
-    'ueber.feld.klingelton': 'Klingelton',
+    'ueber.feld.kernkompetenz': 'Kernkompetenz',
 
     'ton.an': 'Ton ausschalten',
     'ton.aus': 'Ton einschalten',
@@ -251,7 +251,7 @@ export const ui = {
     'ueber.feld.abschluss': 'Degrees',
     'ueber.feld.sprachen': 'Languages',
     'ueber.feld.gruppe': 'Group',
-    'ueber.feld.klingelton': 'Ringtone',
+    'ueber.feld.kernkompetenz': 'Core strength',
 
     'ton.an': 'Turn sound off',
     'ton.aus': 'Turn sound on',
@@ -472,7 +472,7 @@ export const ui = {
     'ueber.feld.abschluss': 'Diplomat',
     'ueber.feld.sprachen': 'Gjuhët',
     'ueber.feld.gruppe': 'Grupi',
-    'ueber.feld.klingelton': 'Zilja',
+    'ueber.feld.kernkompetenz': 'Fusha kryesore',
 
     'ton.an': 'Fik zërin',
     'ton.aus': 'Ndiz zërin',

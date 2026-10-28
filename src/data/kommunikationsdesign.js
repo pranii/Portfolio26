@@ -172,27 +172,21 @@ export const projects = [
         text:
           'Chiro Med in Prishtina behandelt chiropraktisch, physiotherapeutisch und mit Dry ' +
           'Needling. Das Erscheinungsbild musste medizinisch genug wirken, um Vertrauen zu ' +
-          'schaffen, und körperlich genug, um zu zeigen, worum es geht. Zu Beginn standen zwei ' +
-          'Ansätze nebeneinander.',
+          'schaffen, und körperlich genug, um zu zeigen, worum es geht. Zu Beginn standen ' +
+          'zwei Ansätze nebeneinander.',
         files: ['chiro-07', 'chiro-08', 'chiro-02'],
         layout: 'track',
       },
       {
         title: 'Die Wirbelsäule',
         text:
-          'Durchgesetzt hat sich die Wirbelsäule. Sie steht zwischen „chiro" und „med" und trägt ' +
-          'die beiden Wörter buchstäblich — Trennzeichen und Bild zugleich. Damit macht das Logo ' +
-          'das, was die Praxis macht, statt es zu behaupten.',
+          'Durchgesetzt hat sich die Wirbelsäule. Sie steht zwischen „chiro" und „med" und ' +
+          'trägt die beiden Wörter buchstäblich — Trennzeichen und Bild zugleich. Damit macht ' +
+          'das Logo das, was die Praxis macht, statt es zu behaupten. Den Abschluss bildet ' +
+          'ein Styleguide mit Farbwelt, Schutzraum und Anwendungen, damit die Praxis das ' +
+          'Erscheinungsbild selbst weiterführen kann.',
         files: ['chiro-01', 'chiro-03', 'chiro-04', 'chiro-05', 'chiro-06'],
         layout: 'track',
-      },
-      {
-        title: 'Der Styleguide',
-        text:
-          'Farbwelt, Schutzraum, Anwendungsbeispiele — damit die Praxis das Erscheinungsbild ' +
-          'selbst weiterführen kann.',
-        files: ['styleguide-chiro-med'],
-        layout: 'stack',
       },
     ],
   },
@@ -317,69 +311,6 @@ export const projects = [
           'geplant, geschnitten und bearbeitet.',
         files: ['copy-of-step-v'],
         layout: 'track',
-      },
-    ],
-  },
-  {
-    slug: 'kamamuta',
-    title: 'Kama Muta',
-    subtitle: 'Ein Magazin ueber das Ergriffensein',
-    cover: 'header',
-    description:
-      'Kama Muta ist das plötzliche Gefühl, das entsteht, wenn Nähe unerwartet spürbar wird ' +
-      '— Gänsehaut bei einer Umarmung, Tränen bei einem fremden Lied. Das Magazin versucht ' +
-      'nicht, das Gefühl zu erklären, sondern es herzustellen. Inzwischen ist daraus eine ' +
-      'Installation geworden, die genau das im Raum einlöst.',
-    year: '2026',
-    role: 'Konzept, Gestaltung, Fotografie, Illustration',
-    tools: ['InDesign', 'Photoshop', 'After Effects'],
-    tags: ['Editorial', 'Magazin', 'Fotografie', 'Partizipation'],
-    pull: 'In Lak’ech — ich bin ein anderes Du.',
-    chapters: [
-      {
-        title: 'Mache ein Foto',
-        text:
-          'Ein Magazin über ein Gefühl, das sich beim Lesen einstellen soll — das geht nicht mit ' +
-          'Artikeln. Am Anfang standen deshalb Handlungsanweisungen: „Mache ein Foto mit der dir ' +
-          'gegenüber sitzenden Person. Tausche Adresse und Namen aus." Das Heft sollte etwas ' +
-          'verlangen, nicht nur etwas zeigen.',
-        files: ['first-ideas', 'archive'],
-        layout: 'track',
-      },
-      {
-        title: 'Jedes Kapitel anders',
-        text:
-          'Eines entstand beim Gehen: Bleistiftskizzen von Dingen am Weg, die zufällig etwas ' +
-          'auslösen — eine Lampe, ein Stuhl, eine Treppe. Für „Black Swan" habe ich die ' +
-          'Reihenfolge der Doppelseiten mit Klebezetteln so lange verschoben, bis der Rhythmus ' +
-          'stimmte. Ein weiteres als Collage: gedruckte Doppelseiten, abfotografiert und wieder ' +
-          'überklebt.',
-        files: [
-          'spaziergang',
-          'black-swan',
-          'veites-kapitee',
-          'prototyp',
-          'kama-muta-magazine-prototype',
-        ],
-        layout: 'track',
-      },
-      {
-        title: 'Zwei Stühle, ein Buch',
-        text:
-          'Für den Pavillon am Schlossplatz in Stuttgart ist aus dem Heft ein Aufbau geworden: ' +
-          'zwei Fremde sitzen sich gegenüber, zwischen ihnen nichts als ein Buch. Das Gespräch ' +
-          'führt der Fragebogen, nicht der Mut der beiden. Grundlage ist der bekannte Katalog, ' +
-          'mit dem sich zwei Menschen in 36 Fragen näherkommen — auseinandergenommen und auf ' +
-          'drei Stufen verteilt. Erst das Leichte, dann das, was man sonst nicht erzählt. Die ' +
-          'Regeln stehen auf dem Buch selbst.',
-        files: ['fragenkatalog'],
-        layout: 'track',
-      },
-      {
-        title: 'Danach',
-        text: 'Das erste Design steht; für den nächsten Einsatz wird es überarbeitet.',
-        files: [],
-        textOnly: true,
       },
     ],
   },

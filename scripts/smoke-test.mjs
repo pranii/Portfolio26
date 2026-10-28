@@ -20,6 +20,12 @@ const TMP = path.join(ROOT, 'node_modules', '.smoke');
 const PAGES = [
   { html: 'index.html', entry: 'src/scripts/main.js', erwartet: '.phone__item' },
   { html: 'creative-technology.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  // Pfeil hoch, Balken, Pfeil runter — alle drei an der Schiene.
+  {
+    html: 'creative-technology.html',
+    entry: 'src/scripts/category.js',
+    erwartet: '.carousel__schiene .carousel__btn',
+  },
   { html: 'film.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   { html: 'game.html', entry: 'src/scripts/category.js', erwartet: '.card' },
   { html: 'kommunikationsdesign.html', entry: 'src/scripts/category.js', erwartet: '.card' },
@@ -40,7 +46,7 @@ const PAGES = [
     html: 'projekt.html',
     entry: 'src/scripts/project.js',
     erwartet: '.step',
-    query: '?id=kommunikationsdesign/kamamuta',
+    query: '?id=creative-technology/kamamuta',
   },
   {
     html: 'projekt.html',

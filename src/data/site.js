@@ -4,9 +4,11 @@
 
 export const site = {
   name: 'PREJNI', // TODO — steht gross auf der Startseite
-  role: 'Film · Kommunikationsdesign · Creative Technology · Game', // steht unter dem Namen
+  role: 'Creative Director · Creative Coding · Installationen', // steht unter dem Namen
   intro:
-    'Ich gestalte PRINT, DIGITALES und RAUM. Im folgenden sind verschiedene Projekte dokumentiert.', // TODO
+    'Creative Director mit Schwerpunkt auf Creative Coding und Installationen. Ich baue ' +
+    'Dinge, die man betritt, bedient oder in die Hand nimmt — vom Automaten im öffentlichen ' +
+    'Raum bis zum Heft, das man selbst faltet.',
   email: 'pranverapelaj@outlook.de',
   links: [
     { label: 'E-Mail', href: 'mailto:pranverapelaj@outlook.de' },
@@ -21,13 +23,13 @@ export const site = {
   ueber: {
     name: 'Pranvera Pelaj',
     kuerzel: 'PREJNI',
-    rolle: 'Designerin für Interaktive Medien',
+    rolle: 'Creative Director — Creative Coding und Installationen',
     ort: 'Regensburg',
     abschluesse: ['B.Sc. Marketing', 'M.A. Design Interaktiver Medien'],
     sprachen: ['Deutsch', 'Englisch', 'Albanisch'],
     instagram: { label: '@prejni.design', href: 'https://www.instagram.com/prejni.design/' },
     gruppe: 'Design',
-    klingelton: 'Nokia Tune',
+    kernkompetenz: 'Creative Coding und Installationen',
     text:
       'Ich gestalte an der Stelle, an der Print, Digitales und Raum aufhören, getrennte ' +
       'Disziplinen zu sein: Installationen, die man betritt, Hefte, die man faltet, Automaten, ' +
