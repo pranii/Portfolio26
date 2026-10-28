@@ -59,8 +59,9 @@ export const film = {
       huginn: {
         subtitle: 'Room rental, website and brand film',
         description:
-          'Sixteen drawn frames tell the film before the camera rolls — the visual language for ' +
-          'Huginn, from storyboard to website.',
+          'Huginn is café, bar, event venue and co-working space in one building. The task was ' +
+          'to show that range without becoming arbitrary — the raven as the mark holds it all ' +
+          'together.',
         role: 'Design, storyboard, photography',
         pull: 'Sixteen frames that tell the film before the camera rolls.',
       },
@@ -129,8 +130,9 @@ export const film = {
       huginn: {
         subtitle: 'Qiradhënie hapësirash, faqe interneti dhe film imazhi',
         description:
-          'Gjashtëmbëdhjetë kuadro të vizatuara e tregojnë filmin para se të ndizet kamera — gjuha ' +
-          'pamore për Huginn, nga storyboard-i te faqja e internetit.',
+          'Huginn është kafene, bar, hapësirë eventesh dhe co-working në një ndërtesë. Detyra ' +
+          'ishte ta tregosh këtë larmi pa u bërë i çfarëdoshëm — korbi si shenjë e mban ' +
+          'gjithçka bashkë.',
         role: 'Dizajn, storyboard, fotografi',
         pull: 'Gjashtëmbëdhjetë kuadro që e tregojnë filmin para se të ndizet kamera.',
       },

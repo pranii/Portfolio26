@@ -40,32 +40,48 @@ export const game = {
     projekte: {
       'botlnick-gamejam': {
         subtitle: 'Game jam — Godot, Blender, photogrammetry',
-        description: 'Made during a game jam with Prof. Christoph Müller and Julien Trübinger.',
+        description:
+          'A real underground car park, scanned with photogrammetry and made walkable in ' +
+          'Godot. Made at the game jam with Prof. Christoph Müller and Julien Trübinger.',
         role: 'Game design, 3D, level design, documentation',
         pull: 'An underground car park, scanned and made walkable.',
         kapitel: [
           {
-            title: 'Finding the idea',
+            title: 'An underground car park',
             text:
-              'It started with moodboards for style, cutscenes, key objects and comedic relief — ' +
+              'A game jam gives you little time and no safety. Instead of inventing a world we ' +
+              'brought one along: a car park, scanned and made walkable. Places like it are ' +
+              'liminal spaces — you are always only on your way somewhere else, never arrived. ' +
+              'It started with moodboards for style, cutscenes, key objects and comedic relief: ' +
               'the tone had to be able to tip between eerie and silly.',
           },
           {
-            title: 'Documentation',
+            title: 'From scan to room',
             text:
-              'The submitted documentation holds the whole path — from finding the idea through ' +
-              'setting and mechanics to post-production of the scans.',
+              'The car park came out of Polycam as a photogrammetry scan and was cleaned up in ' +
+              'Blender — closing holes, reducing geometry until Godot could carry it. Then the ' +
+              'figures: main and side character, reference sheets, the staging. The PSX look is ' +
+              'not a filter but the result — low resolution and hard edges hide exactly what a ' +
+              'scan cannot give you.',
+          },
+          {
+            title: 'Going in',
+            text:
+              'The car park can be entered at the top of this page — WASD to walk, mouse to ' +
+              'look, Esc gives the pointer back. The documentation holds the whole path, from ' +
+              'finding the idea through setting and mechanics to post-production of the scans.',
           },
         ],
       },
       umakeitgram: {
         subtitle: 'Video game — final project “Media Counter-Cultures”',
         description:
-          'uMakeItGram is a video game about an AI assistant “supporting” someone fresh out of ' +
-          'school in building a social media career — and taking over step by step.',
+          'A video game about an AI assistant „supporting" someone fresh out of school in ' +
+          'building a social media career. At every fork you decide yourself — and the bar ' +
+          'along the bottom keeps count.',
         role: 'Concept, story, game design',
         client: 'Furtwangen University, course “Media Counter-Cultures”',
-        pull: 'You are the result of the experiment.',
+        pull: 'The bar is not counting what you think it is.',
       },
     },
   },
@@ -97,33 +113,48 @@ export const game = {
     projekte: {
       'botlnick-gamejam': {
         subtitle: 'Game jam — Godot, Blender, fotogrametri',
-        description: 'Krijuar gjatë një game jam-i me Prof. Christoph Müller dhe Julien Trübinger.',
+        description:
+          'Një parking nëntokësor i vërtetë, i skanuar me fotogrametri dhe i bërë i kalueshëm ' +
+          'në Godot. Lindi në game jam me Prof. Christoph Müller dhe Julien Trübinger.',
         role: 'Dizajn loje, 3D, dizajn nivelesh, dokumentim',
         pull: 'Një parking nëntokësor, i skanuar dhe i bërë i shkelshëm.',
         kapitel: [
           {
-            title: 'Gjetja e idesë',
+            title: 'Një parking nëntokësor',
             text:
-              'Në fillim ishin moodboard-et për stilin, cutscene-t, objektet kyçe dhe lehtësimin ' +
-              'komik — toni duhej të mund të anonte mes së frikshmes dhe së marrës.',
+              'Një game jam të jep pak kohë dhe asnjë siguri. Në vend që të shpiknim një botë, ' +
+              'morëm një me vete: një parking, i skanuar dhe i bërë i kalueshëm. Vende të tilla ' +
+              'janë hapësira kalimtare — aty je gjithmonë vetëm rrugës diku tjetër, kurrë i ' +
+              'arritur. Në fillim ishin moodboard-et për stilin, cutscene-t, objektet kyçe dhe ' +
+              'çlirimin komik: toni duhej të anonte mes të llahtarshmes dhe qesharakes.',
           },
           {
-            title: 'Dokumentimi',
+            title: 'Nga skanimi te hapësira',
             text:
-              'Dokumentimi i dorëzuar mban tërë rrugën — nga gjetja e idesë te ambienti dhe ' +
-              'mekanika, deri te përpunimi i skanimeve.',
+              'Parkingu erdhi si skanim fotogrametrik nga Polycam dhe u përpunua në Blender — ' +
+              'mbyllje vrimash, pakësim gjeometrie, derisa Godot mundi ta mbante. Pastaj ' +
+              'figurat: personazhi kryesor dhe ai dytësor, fletët e referencës, skenografia. ' +
+              'Pamja PSX nuk është filtër, por rezultat — rezolucioni i ulët dhe tehet e forta ' +
+              'fshehin pikërisht atë që një skanim nuk e jep.',
+          },
+          {
+            title: 'Hyrja brenda',
+            text:
+              'Parkingu mund të shkelet lart në këtë faqe — WASD për të ecur, miu për të parë ' +
+              'rreth e rrotull, Esc e kthen kursorin. Dokumentimi e mban tërë rrugën, nga ' +
+              'gjetja e idesë te ambienti, mekanika dhe përpunimi i skanimeve.',
           },
         ],
       },
       umakeitgram: {
         subtitle: 'Videolojë — punim përfundimtar „Kundërkultura mediatike"',
         description:
-          'uMakeItGram është një videolojë për mënyrën si një asistent me inteligjencë artificiale ' +
-          '„ndihmon" një të ri sapo dalë nga shkolla të ndërtojë një karrierë në rrjete sociale — ' +
-          'dhe hap pas hapi merr kontrollin.',
+          'Një videolojë për një asistent me inteligjencë artificiale që „ndihmon" dikë sapo ' +
+          'dalë nga shkolla të ndërtojë një karrierë në rrjete sociale. Në çdo udhëkryq vendos ' +
+          'vetë — dhe shiriti poshtë numëron.',
         role: 'Koncept, histori, dizajn loje',
         client: 'Universiteti i Furtwangenit, lënda „Kundërkultura mediatike"',
-        pull: 'Ti je rezultati i eksperimentit.',
+        pull: 'Shiriti nuk numëron atë që mendon ti.',
       },
     },
   },

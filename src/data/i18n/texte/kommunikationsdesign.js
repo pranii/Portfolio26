@@ -34,7 +34,9 @@ export const kommunikationsdesign = {
       handwerkerexperten: {
         subtitle: 'Two brands, one stationery system',
         description:
-          'A redesign for two brands under one roof — the logo takes the shape of the house literally.',
+          'Killes und Benz Immobilien runs two divisions: Verwalterexperten for property and ' +
+          'office management, Handwerkerexperten for project and damage management. Both ' +
+          'needed a shared formal language without covering each other up.',
         role: 'Redesign, design, artwork',
         client: 'Killes und Benz Immobilien OHG, Fellbach',
         pull: 'Two fields, one roof — the logo takes the shape of the house literally.',
@@ -65,10 +67,8 @@ export const kommunikationsdesign = {
         description:
           'Kama muta is the sudden feeling that arises when closeness becomes unexpectedly ' +
           'tangible — goosebumps at an embrace, tears at a stranger’s song. The magazine does ' +
-          'not try to explain that feeling but to produce it: readers are asked to go and have ' +
-          'encounters themselves. The magazine has since become an installation that redeems ' +
-          'exactly this in a room — two strangers sitting opposite each other, getting into ' +
-          'conversation.',
+          'not try to explain the feeling but to produce it. It has since become an ' +
+          'installation that delivers exactly that in a room.',
         role: 'Concept, design, photography, illustration',
         pull: 'In Lak’ech — I am another you.',
       },
@@ -112,7 +112,9 @@ export const kommunikationsdesign = {
       handwerkerexperten: {
         subtitle: 'Dy marka, një pajisje zyre',
         description:
-          'Një ridizajn për dy marka nën një çati — logoja e merr fjalë për fjalë formën e shtëpisë.',
+          'Killes und Benz Immobilien ka dy degë: Verwalterexperten për menaxhim pronash dhe ' +
+          'zyrash, Handwerkerexperten për menaxhim projektesh dhe dëmesh. Të dyja kishin ' +
+          'nevojë për një gjuhë të përbashkët formash, pa e mbuluar njëra tjetrën.',
         role: 'Ridizajn, dizajn, përgatitje për shtyp',
         client: 'Killes und Benz Immobilien OHG, Fellbach',
         pull: 'Dy fusha, një çati — logoja e merr fjalë për fjalë formën e shtëpisë.',
@@ -141,11 +143,10 @@ export const kommunikationsdesign = {
       kamamuta: {
         subtitle: 'Një revistë për të qenit i prekur',
         description:
-          'Kama muta është ndjesia e papritur që lind kur afërsia bëhet befas e prekshme — lëkura ' +
-          'që ngrihet në një përqafim, lotët te kënga e një të panjohuri. Revista nuk përpiqet ta ' +
-          'shpjegojë këtë ndjesi, por ta krijojë: lexuesit ftohen të bëjnë vetë takime. Nga revista ' +
-          'ka lindur ndërkohë një instalim që e realizon pikërisht këtë në hapësirë — dy të ' +
-          'panjohur që ulen përballë njëri-tjetrit dhe hyjnë në bisedë.',
+          'Kama muta është ndjenja e papritur që lind kur afërsia bëhet befas e prekshme — ' +
+          'mornica në një përqafim, lot nga një këngë e huaj. Revista nuk kërkon ta shpjegojë ' +
+          'ndjenjën, por ta prodhojë. Prej saj tashmë ka dalë një instalim që e bën pikërisht ' +
+          'këtë në hapësirë.',
         role: 'Koncept, dizajn, fotografi, ilustrim',
         pull: 'In Lak’ech — unë jam një ti tjetër.',
       },
