@@ -36,11 +36,18 @@ export const AUFBAUTEN = {
   },
 
   nostalgia: {
-    alt: 'Eine Kamera geht an zwei TouchDesigner-Projekte, die auf zwei Röhrenmonitore streamen',
+    alt: 'Eine Kamera geht an TouchDesigner, das beide Ebenen auf einen Röhrenmonitor legt',
     spalten: [
-      { label: 'Eingabe', kaesten: ['Kamera|Körperhaltung, Hand'] },
-      { label: 'Rechner', kaesten: ['TouchDesigner|Schwellenwerte', 'Videospuren|RGB-Versatz'] },
-      { label: 'Ausgabe', kaesten: ['Röhre links|Ebene A', 'Röhre rechts|Ebene B'] },
+      { label: 'Eingabe', kaesten: ['Kamera|Abstand, Haltung, Hand'] },
+      {
+        label: 'Rechner',
+        kaesten: [
+          'TouchDesigner|Schwellenwerte',
+          'Rasterung|grob bis fein',
+          'RGB-Versatz|zwei Ebenen',
+        ],
+      },
+      { label: 'Ausgabe', kaesten: ['Röhrenmonitor|am Aufzug'] },
     ],
   },
 

@@ -233,7 +233,7 @@ const BAUPLAN = {
       <video class="portal__video" data-rolle="video" playsinline muted></video>
     </div>` +
     fenster({
-      titel: 'EBENEN.TOE',
+      titel: 'SCHIRM.TOE',
       rechts: t('portal.rechts.ebenen'),
       kennung: 'ebenen',
       koerperKlasse: 'window__body--portal',
@@ -252,12 +252,12 @@ const BAUPLAN = {
             <dd><span class="portal__lampe" data-wert="imbild" data-an="nein"></span></dd>
           </div>
           <div class="portal__wert">
-            <dt>${t('portal.position')}</dt>
-            <dd><span class="portal__schieber" data-wert="position"></span></dd>
+            <dt>${t('portal.abstand')}</dt>
+            <dd><span class="portal__balken" data-wert="abstand"></span></dd>
           </div>
           <div class="portal__wert">
-            <dt>${t('portal.naehe')}</dt>
-            <dd><span class="portal__balken" data-wert="naehe"></span></dd>
+            <dt>${t('portal.aufloesung')}</dt>
+            <dd><span class="portal__zahl" data-wert="aufloesung">—</span></dd>
           </div>
         </dl>`,
     }) +

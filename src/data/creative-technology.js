@@ -254,8 +254,8 @@ export const projects = [
     cover: 'header',
     description:
       'Eine Videoinstallation über Nostalgie als Abwehrmechanismus: Wir verdrängen, was ' +
-      'gerade passiert, und romantisieren es später durch den Filter von Social Media. Zwei ' +
-      'Röhrenmonitore an den Ausgängen des Aufzugs, gesteuert nur mit Körperhaltung und ' +
+      'gerade passiert, und romantisieren es später durch den Filter von Social Media. Ein ' +
+      'alter Röhrenmonitor am Ausgang des Aufzugs, gesteuert nur mit Körperhaltung und ' +
       'Handbewegung.',
     year: '2026',
     role: 'Konzept, Gestaltung, Interaktion',
@@ -285,10 +285,12 @@ export const projects = [
       {
         title: 'Technischer Aufbau',
         text:
-          'Eine Kamera liest die Körperhaltung aus, zwei TouchDesigner-Projekte rechnen ' +
-          'daraus Schwellenwerte und streamen live auf zwei Röhrenmonitore. Die Ästhetik ' +
-          'kommt vom Signalfehler — RGB-Versatz, Rauschen, verrissene Zeilen. Was auf einem ' +
-          'modernen Bildschirm wie ein Defekt aussieht, ist auf der Röhre normal.',
+          'Eine Kamera liest Abstand und Haltung aus, TouchDesigner rechnet daraus ' +
+          'Schwellenwerte und legt beide Ebenen übereinander auf einen Röhrenmonitor. Je ' +
+          'weiter man weg steht, desto gröber das Raster — beim Herangehen löst sich das ' +
+          'Bild auf. Die Ästhetik kommt vom Signalfehler: RGB-Versatz, Rauschen, verrissene ' +
+          'Zeilen. Was auf einem modernen Bildschirm wie ein Defekt aussieht, ist auf der ' +
+          'Röhre normal.',
         files: [],
         aufbau: 'nostalgia',
       },
@@ -296,7 +298,7 @@ export const projects = [
         title: 'Niemand bedient etwas',
         text:
           'Wer aus dem Aufzug tritt, steht im Bild, bevor er es merkt. Es gibt nichts zu ' +
-          'bedienen: Die Position im Raum und die Hand vor der Kamera sind die ganze ' +
+          'bedienen: Der Abstand zum Schirm und die Hand vor der Kamera sind die ganze ' +
           'Steuerung — die beiden Plakate erklären das wortlos. Oben läuft dieselbe ' +
           'Erkennung im Browser.',
         files: ['final'],

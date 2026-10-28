@@ -42,14 +42,16 @@ const EBENE_A = '#28d6ff';
 const EBENE_B = '#ff3ea5';
 const MATT = '#d8d4c8';
 
-/** Monitor A links, Monitor B rechts — so stehen sie am Aufzug. */
-const MONITORE = [
-  { x: 10, y: 12, b: 145, h: 112, farbe: EBENE_A, versatz: -1 },
-  { x: 165, y: 12, b: 145, h: 112, farbe: EBENE_B, versatz: 1 },
-];
+/** Der eine Bildschirm, auf dem beide Ebenen uebereinanderliegen. */
+const SCHIRM = { x: 10, y: 12, b: 300, h: 112 };
 
-/** Kantenlaenge eines Farbfelds im Monitor. */
-const FELD = 5;
+/**
+ * Wie grob das Bild wird. Weit weg sind die Felder gross, beim
+ * Naeherkommen werden sie kleiner — das Bild loest sich auf, waehrend
+ * man darauf zugeht.
+ */
+const FELD_FERN = 20;
+const FELD_NAH = 3;
 
 /** Das Raster des Nebels im zweiten Fenster. */
 const NEBEL = { spalte: 10, breite: 32, hoehe: 18 };
@@ -69,8 +71,8 @@ export async function startNostalgia(wurzel, melde = () => {}, worte = {}) {
   const knopfDemo = wurzel.querySelector('[data-rolle="demo"]');
   const anzeigen = {
     imbild: wurzel.querySelector('[data-wert="imbild"]'),
-    position: wurzel.querySelector('[data-wert="position"]'),
-    naehe: wurzel.querySelector('[data-wert="naehe"]'),
+    abstand: wurzel.querySelector('[data-wert="abstand"]'),
+    aufloesung: wurzel.querySelector('[data-wert="aufloesung"]'),
   };
 
   const stiftEbenen = schirmEbenen.getContext('2d');
@@ -81,9 +83,19 @@ export async function startNostalgia(wurzel, melde = () => {}, worte = {}) {
   // Das Kamerabild wird einmal klein gerechnet; aus diesem Raster kommen
   // alle Farbfelder. Groesser braucht es nie zu sein.
   const raster = document.createElement('canvas');
-  raster.width = Math.ceil(MONITORE[0].b / FELD);
-  raster.height = Math.ceil(MONITORE[0].h / FELD);
   const stiftRaster = raster.getContext('2d', { willReadFrequently: true });
+
+  // Die Kantenlaenge eines Felds und damit die Groesse des Rasters
+  // aendert sich mit dem Abstand — neu gesetzt wird nur, wenn sie
+  // wirklich springt.
+  let feld = FELD_FERN;
+  function setzeFeld(neu) {
+    if (neu === feld && raster.width) return;
+    feld = neu;
+    raster.width = Math.ceil(SCHIRM.b / neu);
+    raster.height = Math.ceil(SCHIRM.h / neu);
+  }
+  setzeFeld(FELD_FERN);
 
   let betrieb = 'aus'; // aus | kamera | demo
   let strom = null;
@@ -162,49 +174,49 @@ export async function startNostalgia(wurzel, melde = () => {}, worte = {}) {
 
   // ------------------------------------------------------------- Fenster 1
 
-  /** Rauschen fuer einen Monitor, der nichts zu zeigen hat. */
-  function static_(monitor, staerke) {
-    for (let y = 0; y < monitor.h; y += FELD) {
-      for (let x = 0; x < monitor.b; x += FELD) {
+  /** Rauschen, wenn niemand im Bild ist. */
+  function static_(staerke) {
+    for (let y = 0; y < SCHIRM.h; y += feld) {
+      for (let x = 0; x < SCHIRM.b; x += feld) {
         if (Math.random() > staerke) continue;
         stiftEbenen.fillStyle = MATT;
         stiftEbenen.globalAlpha = Math.random() * 0.18;
-        stiftEbenen.fillRect(monitor.x + x, monitor.y + y, FELD, FELD);
+        stiftEbenen.fillRect(SCHIRM.x + x, SCHIRM.y + y, feld, feld);
       }
     }
     stiftEbenen.globalAlpha = 1;
   }
 
   /**
-   * Ein Monitor: das Raster als Farbfelder, in den eigenen Kanal versetzt.
-   * Der Versatz waechst mit der Naehe — je naeher, desto kaputter das Bild.
+   * Eine Ebene: das Raster als Farbfelder, um ein Feld versetzt. Die
+   * beiden Ebenen liegen uebereinander, deshalb bleiben an den Raendern
+   * die Farbsaeume stehen — der RGB-Versatz der Installation.
    */
-  function zeichneEbene(monitor, bild, gewicht) {
+  function zeichneEbene(farbe, versatz, bild) {
     const spalten = raster.width;
     const zeilen = raster.height;
-    const schub = Math.round(monitor.versatz * (1 + koerper.naehe * 2.5));
 
-    stiftEbenen.fillStyle = monitor.farbe;
+    stiftEbenen.fillStyle = farbe;
     for (let zy = 0; zy < zeilen; zy += 1) {
       for (let zx = 0; zx < spalten; zx += 1) {
-        const quelle = Math.min(spalten - 1, Math.max(0, zx + schub));
+        const quelle = Math.min(spalten - 1, Math.max(0, zx + versatz));
         const i = (zy * spalten + quelle) * 4;
         // Helligkeit, grob gewichtet wie das Auge sie sieht.
         const hell = (bild[i] * 0.3 + bild[i + 1] * 0.59 + bild[i + 2] * 0.11) / 255;
         if (hell < 0.18) continue;
-        stiftEbenen.globalAlpha = Math.min(1, hell * gewicht);
-        stiftEbenen.fillRect(monitor.x + zx * FELD, monitor.y + zy * FELD, FELD, FELD);
+        stiftEbenen.globalAlpha = Math.min(1, hell * 1.15);
+        stiftEbenen.fillRect(SCHIRM.x + zx * feld, SCHIRM.y + zy * feld, feld, feld);
       }
     }
     stiftEbenen.globalAlpha = 1;
   }
 
   /** Waagerechte Linien ueber alles — so sieht eine Roehre aus. */
-  function zeilen(monitor) {
+  function zeilen() {
     stiftEbenen.fillStyle = GRUND;
     stiftEbenen.globalAlpha = 0.35;
-    for (let y = 0; y < monitor.h; y += 2) {
-      stiftEbenen.fillRect(monitor.x, monitor.y + y, monitor.b, 1);
+    for (let y = 0; y < SCHIRM.h; y += 2) {
+      stiftEbenen.fillRect(SCHIRM.x, SCHIRM.y + y, SCHIRM.b, 1);
     }
     stiftEbenen.globalAlpha = 1;
   }
@@ -217,26 +229,20 @@ export async function startNostalgia(wurzel, melde = () => {}, worte = {}) {
     // an den Raendern bleiben die Farbsaeume stehen.
     stiftEbenen.globalCompositeOperation = 'lighter';
 
-    MONITORE.forEach((monitor, i) => {
-      // Links traegt, wer links steht; rechts, wer rechts steht. Keiner
-      // geht ganz aus — es sind immer beide Ebenen zu sehen.
-      const naeher = i === 0 ? 1 - koerper.position : koerper.position;
-      const gewicht = 0.3 + naeher * 1.1;
-
-      if (koerper.imBild && bild) zeichneEbene(monitor, bild, gewicht);
-      static_(monitor, koerper.imBild ? 0.015 : 0.08);
-    });
+    if (koerper.imBild && bild) {
+      zeichneEbene(EBENE_A, -1, bild);
+      zeichneEbene(EBENE_B, 1, bild);
+    }
+    static_(koerper.imBild ? 0.015 : 0.08);
 
     stiftEbenen.globalCompositeOperation = 'source-over';
 
-    MONITORE.forEach((monitor) => {
-      zeilen(monitor);
-      stiftEbenen.strokeStyle = MATT;
-      stiftEbenen.globalAlpha = 0.5;
-      stiftEbenen.lineWidth = 2;
-      stiftEbenen.strokeRect(monitor.x - 1, monitor.y - 1, monitor.b + 2, monitor.h + 2);
-      stiftEbenen.globalAlpha = 1;
-    });
+    zeilen();
+    stiftEbenen.strokeStyle = MATT;
+    stiftEbenen.globalAlpha = 0.5;
+    stiftEbenen.lineWidth = 2;
+    stiftEbenen.strokeRect(SCHIRM.x - 1, SCHIRM.y - 1, SCHIRM.b + 2, SCHIRM.h + 2);
+    stiftEbenen.globalAlpha = 1;
   }
 
   // ------------------------------------------------------------- Fenster 2
@@ -330,11 +336,12 @@ export async function startNostalgia(wurzel, melde = () => {}, worte = {}) {
 
   function zeigeWerte() {
     if (anzeigen.imbild) anzeigen.imbild.dataset.an = koerper.imBild ? 'ja' : 'nein';
-    if (anzeigen.position) {
-      anzeigen.position.style.setProperty('--anteil', `${Math.round(koerper.position * 100)}%`);
+    if (anzeigen.abstand) {
+      // Voll heisst nah: Der Balken waechst, waehrend man herangeht.
+      anzeigen.abstand.style.setProperty('--anteil', `${Math.round(koerper.naehe * 100)}%`);
     }
-    if (anzeigen.naehe) {
-      anzeigen.naehe.style.setProperty('--anteil', `${Math.round(koerper.naehe * 100)}%`);
+    if (anzeigen.aufloesung) {
+      anzeigen.aufloesung.textContent = `${feld} px`;
     }
   }
 
@@ -368,6 +375,8 @@ export async function startNostalgia(wurzel, melde = () => {}, worte = {}) {
       felder = kamerabild();
     }
 
+    // Je naeher, desto feiner — das Bild loest sich beim Herangehen auf.
+    setzeFeld(Math.round(FELD_FERN + (FELD_NAH - FELD_FERN) * koerper.naehe));
     zeichneEbenen(felder);
     koerper.haende.forEach(wische);
     const offen = zeichneWischen(dt);
