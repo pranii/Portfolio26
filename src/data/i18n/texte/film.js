@@ -72,11 +72,6 @@ export const film = {
         client: 'Team project at Furtwangen University',
         pull: 'Conflicts dissolve through harmony, not through force.',
       },
-      animationen: {
-        title: 'Animation',
-        subtitle: 'Moving image and animation',
-        role: 'Animation, moving image',
-      },
     },
   },
 
@@ -146,11 +141,6 @@ export const film = {
         role: 'Storyboard, animacion',
         client: 'Projekt ekipor në Universitetin e Furtwangenit',
         pull: 'Konfliktet zgjidhen me harmoni, jo me dhunë.',
-      },
-      animationen: {
-        title: 'Animacione',
-        subtitle: 'Imazh në lëvizje dhe animacion',
-        role: 'Animacion, imazh në lëvizje',
       },
     },
   },

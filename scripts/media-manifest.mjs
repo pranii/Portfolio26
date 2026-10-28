@@ -116,13 +116,6 @@ export const projects = [
     slug: 'step-v',
     sources: [{ dir: 'Arbeit/STEP V', include: /^Copy of STEP V\.pdf$/i, pages: 12 }],
   },
-  {
-    // Das Bild aus dem Ordner STEP V steht auf der Seite als eigenes
-    // Projekt "Animationen" im Bereich Film.
-    category: 'arbeit',
-    slug: 'animationen',
-    sources: [{ dir: 'Arbeit/STEP V', include: IMG, prefix: 'animation' }],
-  },
 
   // ───────────────────────────────────────────── FREIZEIT ────────────
   {

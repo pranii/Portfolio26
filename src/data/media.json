@@ -804,19 +804,6 @@
       ],
       "videos": [],
       "docs": []
-    },
-    "animationen": {
-      "images": [
-        {
-          "type": "image",
-          "src": "/media/arbeit/animationen/animation-01.webp",
-          "thumb": "/media/arbeit/animationen/animation-01-thumb.webp",
-          "width": 1800,
-          "height": 1136
-        }
-      ],
-      "videos": [],
-      "docs": []
     }
   },
   "uni": {
