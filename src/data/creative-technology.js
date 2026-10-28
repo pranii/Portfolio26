@@ -364,36 +364,104 @@ export const projects = [
   {
     slug: 'interaktionsdesign',
     title: 'Inner Flow',
-    subtitle: 'Multimodale Visualisierung emotionaler Zustaende',
+    subtitle: 'Multimodale Visualisierung emotionaler Zustände',
     cover: 'header',
     description:
-      'Eine Studienarbeit im Interaktionsdesign: Wie lassen sich emotionale Zustände so ' +
-      'darstellen, dass sie therapeutische Prozesse unterstützen? Entwickelt im ' +
-      'Human-Centered-Design-Prozess mit Interviews, Personas und Prototypen.',
+      'Eine Anwendung, die während einer Therapiesitzung Mimik, Stimme und Puls mitliest und ' +
+      'daraus einen Verlauf zeichnet — als Gesprächsgrundlage für die Nachbesprechung, nicht ' +
+      'als Diagnose. Alles läuft lokal, Rohbilder werden nie gespeichert.',
     year: '2026',
-    role: 'Konzept, Recherche, Prototyp',
-    client: 'Hochschule Furtwangen, Prof. Dr.-Ing. Thomas Schlegel',
-    tools: ['Figma', 'InDesign'],
+    role: 'Experteninterviews, Video- und Audioanalyse, Prototyp, Evaluation',
+    client:
+      'Mit Rosa Stark, Johannes Merschroth und Marla Speth. Modul Interaktionsdesign bei ' +
+      'Prof. Dr.-Ing. Thomas Schlegel, Hochschule Furtwangen',
+    tools: [
+      'Python',
+      'DeepFace',
+      'OpenCV',
+      'librosa',
+      'scikit-learn',
+      'FastAPI',
+      'SQLite',
+      'Streamlit',
+      'Figma',
+      'InDesign',
+    ],
     tags: ['Interaktionsdesign', 'UX-Research', 'Prototyp', 'Datenvisualisierung'],
-    pull: 'Ein Gefühl lässt sich nicht messen — aber zeigen.',
+    pull: 'Die Einschätzung der Klient:innen steht über der KI.',
+    prototyp: { art: 'innerflow', titel: 'Selbst messen lassen' },
     chapters: [
       {
         title: 'Beschreiben reicht nicht',
         text:
-          'In der Therapie wird viel beschrieben und wenig gezeigt. Wer über Wochen von seinem ' +
-          'Befinden erzählt, verliert den Überblick über das eigene Muster — und die Therapeutin ' +
-          'sieht nur Ausschnitte. Die Frage war, ob sich emotionale Zustände so darstellen ' +
-          'lassen, dass beide dasselbe vor sich haben.',
+          'Therapeut:innen stützen sich auf das, was sie sehen und hören. Nur: Viele ' +
+          'Klient:innen erinnern Erlebtes ungenau, finden keine Worte für ihr Befinden oder ' +
+          'passen ihr Verhalten an — aus Scham, aus Angst vor Bewertung. Daraus wurde unsere ' +
+          'Frage: Wie kann eine multimodale Visualisierung emotionaler Zustände ' +
+          'Therapeut:innen helfen, Reaktionen besser zu erfassen und einzuordnen?',
         files: [],
         textOnly: true,
       },
       {
-        title: 'Vom Interview zum Dashboard',
+        title: 'Drei Psycholog:innen gefragt',
         text:
-          'Erst Interviews — mit Therapeutinnen und mit Betroffenen. Daraus Personas und ' +
-          'Anwendungsfälle, daraus Wireframes, am Ende das Dashboard. Entworfen in Figma.',
-        files: ['interaktionsdesign-projektbericht'],
-        layout: 'track',
+          'Ich habe drei angehende Psycholog:innen interviewt. Ihre Antworten haben das ' +
+          'Projekt gedreht. Heute messen sie mit Skalierungsfragen und Fragebögen, achten ' +
+          'nebenbei auf gebrochene Stimme, monotonen Tonfall, vermiedenen Blickkontakt. Von ' +
+          'konkreten Emotionslabels hielten sie wenig — Emotionen ließen sich ohnehin kaum ' +
+          'trennen. Was zählt, sind Tendenzen und Muster im Verlauf. Und ein Satz blieb ' +
+          'hängen: Ein technisches Werkzeug darf den Vertrauensaufbau nicht stören. Daraus ' +
+          'wurden die Leitplanken — lokale Verarbeitung, nachvollziehbare Logik, und die ' +
+          'Selbstwahrnehmung der Klient:innen zählt mehr als jede Messung.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Technischer Aufbau',
+        text:
+          'Drei Eingänge, alle lokal: Die Kamera liest über OpenCV und DeepFace die Mimik, ' +
+          'das Mikrofon über librosa die Stimme — Lautstärke, Tonhöhe, Sprechtempo, Pausen —, ' +
+          'ein Wearable den Puls. Jede Messung landet auf den drei Achsen des PAD-Modells ' +
+          '(Valenz, Arousal, Dominanz) und mit Zeitstempel in einer SQLite-Datenbank, aus der ' +
+          'das Dashboard sie liest. Keine Cloud, keine Rohbilder — nur abstrahierte Werte. ' +
+          'Den Puls mussten wir simulieren: An der Hochschule war kein Wearable aufzutreiben.',
+        files: [],
+        aufbau: 'interaktionsdesign',
+      },
+      {
+        title: 'Zwei Fenster',
+        text:
+          'Hier laufen die beiden Messungen im Browser, nach demselben Prinzip wie im ' +
+          'Prototyp: oben der Eingang, darunter eine Liste, die alle 0,4 Sekunden notiert und ' +
+          'nur die letzten beiden Einträge zeigt. Beim Ton gibt es eine Stilleschwelle. Die ' +
+          'brauchte es auch im Projekt: Das Modell war auf einem Datensatz ohne Pausen ' +
+          'trainiert und hat jede Stille als „happy" gelesen.',
+        files: [],
+        prototypHier: true,
+      },
+      {
+        title: 'Was der Test gezeigt hat',
+        text:
+          'Zwei Probanden haben eine Therapiesitzung gespielt — einer als Klient mit Kamera ' +
+          'und Mikrofon, einer als Therapeut. Aus den Messwerten wurde das Dashboard gebaut ' +
+          'und einer angehenden Psychologin vorgelegt. Ihre Kritik traf den Kern: Grün, Gelb ' +
+          'und Rot liest man als Ampel — und damit werden Gefühle ungewollt richtig oder ' +
+          'falsch. Und weil nirgends eine Konfidenz stand, wirkten die Werte eindeutiger, als ' +
+          'sie sind. Beides ist genau das, was ein solches Werkzeug nicht tun darf.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Was bliebe zu tun',
+        text:
+          'Die Farbcodierung müsste raus aus der Bewertung, die Unsicherheit sichtbar ' +
+          'werden — Konfidenzbereiche je Modalität, erklärende Texte, Notizen mit ' +
+          'Zeitstempel für den Kontext. Technisch fehlen definierte ' +
+          'Synchronisationsfenster, die Audioanalyse hängt drei bis fünf Sekunden hinterher, ' +
+          'und der simulierte Puls müsste einem echten Sensor weichen. Was bleibt, ist die ' +
+          'Haltung: Das System liefert Gesprächsanlässe, keine Diagnosen.',
+        files: [],
+        textOnly: true,
       },
     ],
   },

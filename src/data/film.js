@@ -62,25 +62,23 @@ export const projects = [
     title: 'Love',
     subtitle: 'LOVE - what love prompts us to do',
     cover: 'header',
-    description:
-      'Ein Kurzfilm über die verschiedenen Facetten der Liebe, entstanden mit einem offenen Casting über Instagram. Gedreht in Frankfurt, Februar 2025. Konzipiert, gefilmt und bearbeitet gemeinsam mit Dardan Shala.', // TODO
+    description: '',
     year: '2025',
     role: 'Konzept, Regie, Gestaltung, Sounddesign',
+    client: 'Mit Dardan Shala',
     tools: ['Photoshop', 'Premiere Pro'],
     tags: ['Kurzfilm', 'Artwork', 'Casting'],
     pull: 'a story of perspective on love',
     chapters: [
       {
         title: 'Offenes Casting',
-        text:
-          'Gesucht wurde über Instagram und TikTok. Gedreht im Februar 2025, gemeinsam mit ' +
-          'Dardan Shala.',
+        text: '',
         files: ['love-03', 'love-01', 'love-02', 'love-04', 'love'],
         layout: 'track',
       },
       {
         title: 'Der Film',
-        text: 'Der fertige Kurzfilm.',
+        text: '',
         files: [],
         embed: 'https://youtu.be/kmN_JAU1OH8',
       },

@@ -175,6 +175,31 @@ export const ui = {
     'portal.snippet2': 'Light, Future, Past',
     'portal.snippet3': 'nostalgia is a portal',
 
+    'prototyp.innerflow':
+      'Dieselben beiden Messungen wie im Prototyp, hier im Browser: Die Kamera liest die ' +
+      'Mimik, das Mikrofon Lautstärke, Tonhöhe und Nulldurchgangsrate. V, A und D sind die ' +
+      'Achsen des PAD-Modells — Valenz, Arousal, Dominanz. Das ist ein Anhaltspunkt, kein ' +
+      'Befund: Was eine Messung bedeutet, weiß nur der Mensch davor.',
+    'if.hinweis':
+      'Kamera und Mikrofon gehen erst nach einem Klick an. Nichts wird gespeichert und ' +
+      'nichts verlässt dein Gerät.',
+    'if.rechts.mimik': 'MediaPipe · alle 0,4 s',
+    'if.rechts.stimme': 'Web Audio · alle 0,4 s',
+    'if.gesicht.alt': 'Die erkannten Gesichtspunkte als Raster',
+    'if.pegel.alt': 'Die Wellenform des Mikrofons mit der Stilleschwelle',
+    'if.kameraan': 'Kamera einschalten',
+    'if.kameraaus': 'Kamera ausschalten',
+    'if.mikroan': 'Mikrofon einschalten',
+    'if.mikroaus': 'Mikrofon ausschalten',
+    'if.misst': 'Misst',
+    'if.keingesicht': 'kein Gesicht',
+    'if.stille': 'Stille',
+    'if.neutral': 'neutral',
+    'if.froh': 'froh',
+    'if.traurig': 'traurig',
+    'if.aerger': 'Ärger',
+    'if.ueberrascht': 'überrascht',
+
     'prototyp.botlnick':
       'Der Godot-Export aus dem Game Jam, hier im Fenster statt auf einer eigenen Seite. ' +
       'Die Tiefgarage ist eine echte, eingescannt und begehbar gemacht.',
@@ -371,6 +396,31 @@ export const ui = {
     'portal.snippet2': 'Light, Future, Past',
     'portal.snippet3': 'nostalgia is a portal',
 
+    'prototyp.innerflow':
+      'The same two measurements as in the prototype, here in the browser: the camera reads ' +
+      'the face, the microphone reads loudness, pitch and zero-crossing rate. V, A and D are ' +
+      'the axes of the PAD model — valence, arousal, dominance. It is a clue, not a finding: ' +
+      'what a measurement means is known only to the person in front of it.',
+    'if.hinweis':
+      'Camera and microphone only start after a click. Nothing is stored and nothing leaves ' +
+      'your device.',
+    'if.rechts.mimik': 'MediaPipe · every 0.4 s',
+    'if.rechts.stimme': 'Web Audio · every 0.4 s',
+    'if.gesicht.alt': 'The detected face points as a grid',
+    'if.pegel.alt': 'The microphone waveform with the silence threshold',
+    'if.kameraan': 'Turn the camera on',
+    'if.kameraaus': 'Turn the camera off',
+    'if.mikroan': 'Turn the microphone on',
+    'if.mikroaus': 'Turn the microphone off',
+    'if.misst': 'Measuring',
+    'if.keingesicht': 'no face',
+    'if.stille': 'silence',
+    'if.neutral': 'neutral',
+    'if.froh': 'happy',
+    'if.traurig': 'sad',
+    'if.aerger': 'anger',
+    'if.ueberrascht': 'surprised',
+
     'prototyp.botlnick':
       'The Godot export from the game jam, here in a window instead of on a page of its own. ' +
       'The car park is a real one, scanned and made walkable.',
@@ -565,6 +615,31 @@ export const ui = {
     'portal.snippet1': 'where does one begin and the other end?',
     'portal.snippet2': 'Light, Future, Past',
     'portal.snippet3': 'nostalgia is a portal',
+
+    'prototyp.innerflow':
+      'Të njëjtat dy matje si në prototip, këtu në shfletues: kamera lexon mimikën, mikrofoni ' +
+      'lexon volumin, lartësinë e zërit dhe shkallën e kalimeve përmes zeros. V, A dhe D janë ' +
+      'boshtet e modelit PAD — valenca, zgjimi, dominanca. Është një shenjë, jo një ' +
+      'diagnozë: çfarë do të thotë një matje e di vetëm njeriu përballë saj.',
+    'if.hinweis':
+      'Kamera dhe mikrofoni ndizen vetëm pas një klikimi. Asgjë nuk ruhet dhe asgjë nuk del ' +
+      'nga pajisja jote.',
+    'if.rechts.mimik': 'MediaPipe · çdo 0,4 s',
+    'if.rechts.stimme': 'Web Audio · çdo 0,4 s',
+    'if.gesicht.alt': 'Pikat e njohura të fytyrës si rrjetë',
+    'if.pegel.alt': 'Vala e mikrofonit me pragun e heshtjes',
+    'if.kameraan': 'Ndiz kamerën',
+    'if.kameraaus': 'Fik kamerën',
+    'if.mikroan': 'Ndiz mikrofonin',
+    'if.mikroaus': 'Fik mikrofonin',
+    'if.misst': 'Po mat',
+    'if.keingesicht': 'pa fytyrë',
+    'if.stille': 'heshtje',
+    'if.neutral': 'neutral',
+    'if.froh': 'i gëzuar',
+    'if.traurig': 'i trishtuar',
+    'if.aerger': 'zemërim',
+    'if.ueberrascht': 'i befasuar',
 
     'prototyp.botlnick':
       'Eksporti nga Godot i game jam-it, këtu në dritare dhe jo në një faqe më vete. ' +

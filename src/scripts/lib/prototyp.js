@@ -149,6 +149,44 @@ const BAUPLAN = {
         ></div>`,
     }) + fuss(t('prototyp.umakeitgram')),
 
+  // Zwei Messfenster: oben der Eingang, darunter die Liste, die alle
+  // 0,4 Sekunden notiert und nur die letzten beiden Eintraege zeigt.
+  innerflow: () =>
+    `
+    <p class="portal__hinweis">${t('if.hinweis')}</p>
+    <video class="portal__video" data-rolle="if-video" playsinline muted></video>` +
+    fenster({
+      titel: 'MIMIK.PY',
+      rechts: t('if.rechts.mimik'),
+      kennung: 'mimik',
+      koerperKlasse: 'window__body--innerflow',
+      koerper: `
+        <div class="if-eingang">
+          <canvas class="if-schirm" data-rolle="if-gesicht" width="320" height="240"
+            role="img" aria-label="${t('if.gesicht.alt')}"></canvas>
+          <button class="portal__knopf" type="button" data-rolle="if-kamera" aria-pressed="false">
+            ${t('if.kameraan')}
+          </button>
+        </div>
+        <ol class="if-liste" data-rolle="if-liste-mimik" aria-live="polite"></ol>`,
+    }) +
+    fenster({
+      titel: 'STIMME.PY',
+      rechts: t('if.rechts.stimme'),
+      kennung: 'stimme',
+      koerperKlasse: 'window__body--innerflow',
+      koerper: `
+        <div class="if-eingang">
+          <canvas class="if-schirm if-schirm--pegel" data-rolle="if-pegel" width="320" height="120"
+            role="img" aria-label="${t('if.pegel.alt')}"></canvas>
+          <button class="portal__knopf" type="button" data-rolle="if-mikro" aria-pressed="false">
+            ${t('if.mikroan')}
+          </button>
+        </div>
+        <ol class="if-liste" data-rolle="if-liste-stimme" aria-live="polite"></ol>`,
+    }) +
+    fuss(t('prototyp.innerflow')),
+
   // Der Godot-Export. 46 MB laedt man niemandem ungefragt herunter —
   // deshalb steht erst eine Karte da, die sagt, wie gross es ist.
   botlnick: () =>
@@ -329,6 +367,7 @@ export async function startPrototyp(project, wurzel) {
     if (art === 'shepard') await startShepardBlock(block, melde);
     if (art === 'nostalgia') await startNostalgiaBlock(block);
     if (art === 'botlnick') startBotlnickBlock(block, melde);
+    if (art === 'innerflow') await startInnerFlowBlock(block);
   } catch (fehler) {
     melde(`Fehler: ${fehler.message}`);
   }
@@ -423,6 +462,36 @@ function startBotlnickBlock(block, melde) {
     },
     { once: true },
   );
+}
+
+async function startInnerFlowBlock(block) {
+  const { startInnerFlow } = await import('./innerflow.js');
+
+  const melde = (welches, text) => {
+    const zeile = block.querySelector(`[data-status="${welches}"]`);
+    if (zeile) zeile.textContent = text;
+  };
+
+  const flow = await startInnerFlow(block, melde, {
+    kameraan: t('if.kameraan'),
+    kameraaus: t('if.kameraaus'),
+    mikroan: t('if.mikroan'),
+    mikroaus: t('if.mikroaus'),
+    aus: t('portal.aus'),
+    laedt: t('portal.laedt'),
+    misst: t('if.misst'),
+    fehler: t('portal.fehler'),
+    verweigert: t('portal.verweigert'),
+    keingesicht: t('if.keingesicht'),
+    stille: t('if.stille'),
+    neutral: t('if.neutral'),
+    froh: t('if.froh'),
+    traurig: t('if.traurig'),
+    aerger: t('if.aerger'),
+    ueberrascht: t('if.ueberrascht'),
+  });
+
+  beobachte(block, (sichtbar) => flow.pause(!sichtbar));
 }
 
 async function startNostalgiaBlock(block) {

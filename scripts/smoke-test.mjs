@@ -111,6 +111,18 @@ const PAGES = [
     erwartet: '.boot__start',
     query: '?id=game/botlnick-gamejam',
   },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.if-liste',
+    query: '?id=creative-technology/interaktionsdesign',
+  },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.aufbau',
+    query: '?id=creative-technology/in-lakech',
+  },
 ];
 
 fs.mkdirSync(TMP, { recursive: true });

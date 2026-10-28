@@ -95,15 +95,28 @@ for (const categorySlug of ['creative-technology', 'film', 'game', 'kommunikatio
               );
             }
           }
-        } else if (chapter.textOnly || chapter.embed !== undefined) {
-          // Kapitel bewusst ohne Medien: nur Text, eingebettetes Video oder
-          // reservierter Platz dafuer (embed: '').
+        } else if (
+          chapter.textOnly ||
+          chapter.embed !== undefined ||
+          chapter.aufbau ||
+          chapter.prototypHier
+        ) {
+          // Kapitel bewusst ohne Medien: nur Text, eingebettetes Video,
+          // reservierter Platz dafuer (embed: ''), eine Aufbauskizze oder
+          // der Prototyp, den das Kapitel zu sich holt.
         } else if (chapter.items.length === 0 && chapter.docs.length === 0) {
           problems.push(
             `${categorySlug}/${project.slug}: Kapitel "${chapter.title}" bleibt leer, kein Treffer fuer ${JSON.stringify(chapter.files ?? [])}`,
           );
         }
-        if (!chapter.text?.trim()) {
+        // Ein Kapitel darf ohne Text auskommen, wenn Bilder oder ein Video
+        // fuer sich sprechen. Ohne beides bliebe nur die Ueberschrift.
+        const zeigtMedien =
+          chapter.items.length > 0 ||
+          chapter.docs.length > 0 ||
+          chapter.embed ||
+          chapter.platzhalter;
+        if (!chapter.text?.trim() && !zeigtMedien) {
           problems.push(
             `${categorySlug}/${project.slug}: Kapitel "${chapter.title}" hat keinen Text`,
           );
