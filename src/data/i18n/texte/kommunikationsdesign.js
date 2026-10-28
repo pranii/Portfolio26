@@ -10,7 +10,7 @@ export const kommunikationsdesign = {
     kategorie: {
       title: 'Communication Design',
       kurz: 'Corporate design, campaigns and editorial.',
-      lead: 'Corporate design, campaigns and editorial for restaurants, trades, practices and schools.',
+      lead: 'Corporate design, campaigns and editorial for restaurants, trades, medical practices and schools.',
       schritte: [
         {
           title: 'Listen and analyse',
@@ -36,10 +36,10 @@ export const kommunikationsdesign = {
         description:
           'Killes und Benz Immobilien runs two divisions: Verwalterexperten for property and ' +
           'office management, Handwerkerexperten for project and damage management. Both ' +
-          'needed a shared formal language without covering each other up.',
+          'needed a shared visual language without one obscuring the other.',
         role: 'Redesign, design, artwork',
         client: 'Killes und Benz Immobilien OHG, Fellbach',
-        pull: 'Two fields, one roof — the logo takes the shape of the house literally.',
+        pull: 'Two divisions, one roof — the logo takes the shape of the house literally.',
       },
       'chiro-med': {
         subtitle: 'Corporate design for a chiropractic practice',
@@ -75,7 +75,7 @@ export const kommunikationsdesign = {
       citydep: {
         subtitle: 'Storyboards and trailers in a VHS look',
         description:
-          'For Citydep we made trailers that should look as if they had been rescued from a ' +
+          'For Citydep we made trailers meant to look as if they had been rescued from a ' +
           'cassette. The storyboards are built like archive blocks — with tape number, location ' +
           'and equipment for every shot.',
         role: 'Storyboard, edit, design',
@@ -110,11 +110,11 @@ export const kommunikationsdesign = {
     },
     projekte: {
       handwerkerexperten: {
-        subtitle: 'Dy marka, një pajisje zyre',
+        subtitle: 'Dy marka, një set materialesh zyrtare',
         description:
           'Killes und Benz Immobilien ka dy degë: Verwalterexperten për menaxhim pronash dhe ' +
           'zyrash, Handwerkerexperten për menaxhim projektesh dhe dëmesh. Të dyja kishin ' +
-          'nevojë për një gjuhë të përbashkët formash, pa e mbuluar njëra tjetrën.',
+          'nevojë për një gjuhë të përbashkët formash, pa e mbuluar njëra-tjetrën.',
         role: 'Ridizajn, dizajn, përgatitje për shtyp',
         client: 'Killes und Benz Immobilien OHG, Fellbach',
         pull: 'Dy fusha, një çati — logoja e merr fjalë për fjalë formën e shtëpisë.',
@@ -141,7 +141,7 @@ export const kommunikationsdesign = {
         client: 'Step V Studio',
       },
       kamamuta: {
-        subtitle: 'Një revistë për të qenit i prekur',
+        subtitle: 'Një revistë për ndjesinë e të prekurit',
         description:
           'Kama muta është ndjenja e papritur që lind kur afërsia bëhet befas e prekshme — ' +
           'mornica në një përqafim, lot nga një këngë e huaj. Revista nuk kërkon ta shpjegojë ' +

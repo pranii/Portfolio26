@@ -22,7 +22,7 @@ export const film = {
         },
         {
           title: 'Shoot',
-          text: 'Camera, light and direction — with room for whatever happens on set unplanned.',
+          text: 'Camera, light and direction — with room for whatever happens on set that nobody planned.',
         },
         {
           title: 'Edit and sound',
@@ -43,7 +43,7 @@ export const film = {
         subtitle: 'Staatstheater Tübingen',
         description:
           'An improvised theatre piece at the Staatstheater in Tübingen — filmed, edited and cut ' +
-          'into a trailer. Improvisation means, for the camera: nobody knows where the scene is ' +
+          'into a trailer. For the camera, improvisation means: nobody knows where the scene is ' +
           'going, there is no second take and no plan to hold on to. Shot together with Joscha ' +
           'Reuther and Jan Bangert.',
         role: 'Camera, edit',
@@ -52,7 +52,7 @@ export const film = {
         title: 'Music videos',
         subtitle: 'EREZA — a kishe guxu',
         description:
-          'Ereza is a friend by now, someone I like to talk music video ideas through with and ' +
+          'Ereza is a friend by now, someone I enjoy talking through music video ideas with, and ' +
           'have worked closely with more than once — for the shoot of “A kishe guxu?”, among others.',
         role: 'Direction, camera, edit',
       },
@@ -114,8 +114,8 @@ export const film = {
         subtitle: 'Staatstheater Tübingen',
         description:
           'Një shfaqje teatri improvizimi në Staatstheater në Tübingen — e xhiruar, e montuar dhe ' +
-          'e sjellë në një trailer. Improvizimi për kamerën do të thotë: askush nuk e di ku shkon ' +
-          'skena, nuk ka xhirim të dytë dhe as plan për t’u mbajtur. Xhiruar bashkë me Joscha ' +
+          'e përmbledhur në një trailer. Improvizimi për kamerën do të thotë: askush nuk e di ku shkon ' +
+          'skena, nuk ka xhirim të dytë dhe as plan për t’u kapur. Xhiruar bashkë me Joscha ' +
           'Reuther dhe Jan Bangert.',
         role: 'Kamera, montazh',
       },
@@ -124,7 +124,7 @@ export const film = {
         subtitle: 'EREZA — a kishe guxu',
         description:
           'Ereza tashmë është mike, me të cilën bisedoj me kënaqësi ide për videoklipe dhe me të ' +
-          'cilën kam punuar ngushtë disa herë — mes tjerash për xhirimin e „A kishe guxu?".',
+          'cilën kam punuar ngushtë disa herë — ndër të tjera për xhirimin e „A kishe guxu?".',
         role: 'Regji, kamera, montazh',
       },
       huginn: {

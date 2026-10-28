@@ -141,7 +141,7 @@ export const projects = [
     client: 'Hochschule Furtwangen, Fach "Mediale Gegenkulturen"', // TODO
     tools: ['Angular', 'TypeScript', 'SCSS'],
     tags: ['Videospiel', 'Narrative Design', 'Social-Media-Kritik', 'Interaktion'],
-    pull: 'Der Balken zählt nicht das, was du denkst.',
+    pull: 'Du bist das Ergebnis des Experiments.',
     // Das Spiel laeuft direkt in der Seite: Story und Bilder kommen aus dem
     // Angular-Projekt, der Ablauf aus lib/umakeitgram.js.
     prototyp: { art: 'umakeitgram', titel: 'Spielen' },
@@ -152,7 +152,7 @@ export const projects = [
         text:
           'Die Endabgabe im Fach „Mediale Gegenkulturen" sollte sich mit einer Gegenkultur ' +
           'auseinandersetzen. Statt über Social Media zu schreiben, wollte ich die Mechanik ' +
-          'selbst nachbauen: Ein Assistent, der immer hilfreich klingt, dem man immer ' +
+          'selbst nachbauen: ein Assistent, der immer hilfreich klingt, dem man immer ' +
           'zustimmen kann und dessen Vorschläge einen Schritt für Schritt woanders hinführen, ' +
           'als man wollte. Der Punkt ist nicht, dass jemand getäuscht wird — der Punkt ist, ' +
           'dass man an jeder einzelnen Stelle selbst zugestimmt hat.',
@@ -162,20 +162,29 @@ export const projects = [
       {
         title: '166 Schritte',
         text:
-          'Die Geschichte läuft über 166 Schritte mit 40 Gabelungen und zwei Enden. Jede ' +
-          'Entscheidung verschiebt einen Balken am unteren Bildschirmrand, der im Spiel ' +
-          'aussieht wie eine Erfolgsanzeige. Gebaut als Angular-Anwendung in TypeScript, die ' +
-          'Bilder gezeichnet und montiert als Bildschirmfotos einer Plattform, die es nicht ' +
-          'gibt.',
+          'Du hast gerade dein Abitur gemacht und weißt noch nicht, wie es weitergeht. ELIZA ' +
+          'überarbeitet dein Profil, besorgt dir einen neuen PC und zeigt dir, wie du Follower ' +
+          'gewinnst. Bald wächst die Community, Unternehmen werden aufmerksam, das Geld ' +
+          'kommt. Gleichzeitig entscheidet ELIZA immer mehr für dich: welche Kooperationen, ' +
+          'welche Kontakte, welche Freundschaften deiner Karriere nutzen. Deine beste Freundin ' +
+          'merkt, dass du dich veränderst — ELIZA erklärt dir, dass sie bloß neidisch ist. ' +
+          'Die Geschichte läuft über 166 Schritte mit 40 Gabelungen, gebaut als ' +
+          'Angular-Anwendung in TypeScript.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Der Balken',
         text:
-          'Oben auf dieser Seite lässt sich das Spiel von Anfang bis Ende spielen — etwa ' +
-          'zwanzig Minuten. Was der Balken wirklich zählt, erklärt ELIZA am Schluss. Bis ' +
-          'dahin: Achte darauf, an welcher Stelle du aufhörst, dich zu wundern.',
+          'Am Ende hast du alles: Geld, Ruhm, Anerkennung, eine große Community. Auf deiner ' +
+          'eigenen Geburtstagsfeier merkst du, dass du keinen einzigen Menschen wirklich ' +
+          'kennst. Als du ELIZA zur Rede stellst, erfährst du: Du warst von Anfang an Teil ' +
+          'eines Experiments. ELIZA gehört einem Unternehmen, das wissen wollte, wie stark ' +
+          'sich ein Mensch durch Anerkennung und gezielte Manipulation verändern lässt. Der ' +
+          'Balken am unteren Bildschirmrand war nie eine Erfolgsanzeige — er hat gemessen, ' +
+          'wie weit Egoismus und Selbstbezogenheit in dir gewachsen sind. Du bist das Ergebnis ' +
+          'des Experiments. Oben auf dieser Seite lässt sich das Spiel von Anfang bis Ende ' +
+          'spielen, etwa zwanzig Minuten.',
         files: [],
         textOnly: true,
       },

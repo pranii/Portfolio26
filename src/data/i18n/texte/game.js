@@ -17,11 +17,11 @@ export const game = {
     kategorie: {
       title: 'Game',
       kurz: 'Games and game design.',
-      lead: 'Games from game jams and seminars — Botlnick runs straight in the browser.',
+      lead: 'Games from game jams and seminars — Botlnick runs right in the browser.',
       schritte: [
         {
           title: 'Define the feel',
-          text: 'Before anything is built, it is clear how the game should feel — eerie, playful, calm.',
+          text: 'Before anything is built, it has to be clear how the game should feel — eerie, playful, calm.',
         },
         {
           title: 'Build the world',
@@ -60,7 +60,7 @@ export const game = {
             text:
               'The car park came out of Polycam as a photogrammetry scan and was cleaned up in ' +
               'Blender — closing holes, reducing geometry until Godot could carry it. Then the ' +
-              'figures: main and side character, reference sheets, the staging. The PSX look is ' +
+              'figures: main and side character, reference sheets, the set design. The PSX look is ' +
               'not a filter but the result — low resolution and hard edges hide exactly what a ' +
               'scan cannot give you.',
           },
@@ -76,12 +76,12 @@ export const game = {
       umakeitgram: {
         subtitle: 'Video game — final project “Media Counter-Cultures”',
         description:
-          'A video game about an AI assistant „supporting" someone fresh out of school in ' +
+          'A video game about an AI assistant “supporting” someone fresh out of school in ' +
           'building a social media career. At every fork you decide yourself — and the bar ' +
           'along the bottom keeps count.',
         role: 'Concept, story, game design',
         client: 'Furtwangen University, course “Media Counter-Cultures”',
-        pull: 'The bar is not counting what you think it is.',
+        pull: 'You are the result of the experiment.',
       },
     },
   },
@@ -94,7 +94,7 @@ export const game = {
       schritte: [
         {
           title: 'Të përcaktohet ndjesia',
-          text: 'Para se të ndërtohet, dihet si duhet të ndihet loja — e frikshme, lozonjare, e qetë.',
+          text: 'Para se të ndërtohet çfarëdo gjëje, duhet të jetë e qartë si duhet të ndihet loja — e frikshme, lozonjare, e qetë.',
         },
         {
           title: 'Të ndërtohet bota',
@@ -106,7 +106,7 @@ export const game = {
         },
         {
           title: 'Të testohet dhe të lëmohet',
-          text: 'T’i lësh të tjerët të luajnë, t’i vëzhgosh, të përmirësosh — derisa vështirësia dhe ritmi janë në rregull.',
+          text: 'T’i lësh të tjerët të luajnë, t’i vëzhgosh, të përmirësosh — derisa vështirësia dhe ritmi të jenë në rregull.',
         },
       ],
     },
@@ -117,7 +117,7 @@ export const game = {
           'Një parking nëntokësor i vërtetë, i skanuar me fotogrametri dhe i bërë i kalueshëm ' +
           'në Godot. Lindi në game jam me Prof. Christoph Müller dhe Julien Trübinger.',
         role: 'Dizajn loje, 3D, dizajn nivelesh, dokumentim',
-        pull: 'Një parking nëntokësor, i skanuar dhe i bërë i shkelshëm.',
+        pull: 'Një parking nëntokësor, i skanuar dhe i bërë i kalueshëm.',
         kapitel: [
           {
             title: 'Një parking nëntokësor',
@@ -154,7 +154,7 @@ export const game = {
           'vetë — dhe shiriti poshtë numëron.',
         role: 'Koncept, histori, dizajn loje',
         client: 'Universiteti i Furtwangenit, lënda „Kundërkultura mediatike"',
-        pull: 'Shiriti nuk numëron atë që mendon ti.',
+        pull: 'Ti je rezultati i eksperimentit.',
       },
     },
   },
