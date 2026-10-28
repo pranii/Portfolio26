@@ -10,6 +10,8 @@
  *   magazin      Rreth 02 zum Durchblaettern (lib/magazin.js)
  *   umakeitgram  Das Spiel ohne Angular (lib/umakeitgram.js)
  *   shepard      Der Hoersaal zum Durchlaufen (lib/shepard.js)
+ *   nostalgia    Die beiden Monitore mit MediaPipe (lib/nostalgia.js)
+ *   botlnick     Der Godot-Export der Tiefgarage
  *
  * Hier steht nur der Rahmen: das Fenster, die Knoepfe darunter und die
  * kurze Bedienungsanleitung. Das eigentliche Stueck Software wird erst
@@ -18,6 +20,7 @@
  */
 
 import { mediaFor } from './render.js';
+import { spiel } from '../../data/site.js';
 import { t } from './i18n.js';
 
 const esc = (text) =>
@@ -146,6 +149,35 @@ const BAUPLAN = {
           aria-label="uMakeItGram"
         ></div>`,
     }) + fuss(t('prototyp.umakeitgram')),
+
+  // Der Godot-Export. 46 MB laedt man niemandem ungefragt herunter —
+  // deshalb steht erst eine Karte da, die sagt, wie gross es ist.
+  botlnick: () =>
+    fenster({
+      titel: 'BOTLNICK.EXE',
+      rechts: t('botlnick.rechts', { mb: spiel.groesseGepacktMB }),
+      koerperKlasse: 'window__body--spiel',
+      koerper: `
+        <div class="boot" data-rolle="botlnick">
+          <p class="boot__logo" aria-hidden="true">▚▚▚</p>
+          <h3 class="boot__title">${esc(spiel.title)}</h3>
+          <p class="boot__text">${esc(spiel.untertitel)}</p>
+          <button class="boot__start" type="button" data-rolle="start">
+            ${t('botlnick.starten')}
+          </button>
+          <p class="boot__note">${t('botlnick.hinweis', { mb: spiel.groesseGepacktMB })}</p>
+        </div>`,
+    }) +
+    `
+    <dl class="keys">
+      ${spiel.steuerung
+        .map(
+          ([taste, was]) =>
+            `<div class="keys__row"><dt><kbd>${esc(taste)}</kbd></dt><dd>${esc(was)}</dd></div>`,
+        )
+        .join('')}
+    </dl>` +
+    fuss(t('prototyp.botlnick')),
 
   // Zwei Fenster: links die beiden Monitore, rechts der Text unter dem
   // Nebel. Beide haengen an derselben Kamera und derselben Erkennung.
@@ -297,6 +329,7 @@ export async function startPrototyp(project, wurzel) {
     if (art === 'umakeitgram') await startGramBlock(block, melde);
     if (art === 'shepard') await startShepardBlock(block, melde);
     if (art === 'nostalgia') await startNostalgiaBlock(block);
+    if (art === 'botlnick') startBotlnickBlock(block, melde);
   } catch (fehler) {
     melde(`Fehler: ${fehler.message}`);
   }
@@ -360,6 +393,37 @@ async function startGramBlock(block, melde) {
 
   // Ausser Sicht haelt die Schreibmaschine an, damit man keinen Text verpasst.
   beobachte(block, (sichtbar) => spiel.pause(!sichtbar));
+}
+
+/**
+ * Der Godot-Export laedt erst nach einem Klick: Das Spiel ist ein paar
+ * Dutzend Megabyte gross, und wer die Seite nur liest, soll sie nicht
+ * herunterladen.
+ */
+function startBotlnickBlock(block, melde) {
+  const karte = block.querySelector('[data-rolle="botlnick"]');
+  if (!spiel.build) {
+    melde(t('botlnick.keinbuild'));
+    return;
+  }
+
+  melde(t('botlnick.bereit'));
+
+  block.querySelector('[data-rolle="start"]').addEventListener(
+    'click',
+    () => {
+      melde(t('portal.laedt'));
+      const rahmen = document.createElement('iframe');
+      rahmen.className = 'window__frame';
+      rahmen.src = basis().replace(/\/$/, '') + spiel.build;
+      rahmen.title = spiel.title;
+      rahmen.allow = 'autoplay; fullscreen; gamepad; cross-origin-isolated';
+      rahmen.setAttribute('allowfullscreen', '');
+      rahmen.addEventListener('load', () => melde(t('botlnick.laeuft')));
+      karte.replaceWith(rahmen);
+    },
+    { once: true },
+  );
 }
 
 async function startNostalgiaBlock(block) {

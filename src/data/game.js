@@ -53,26 +53,76 @@ export const projects = [
     title: 'Botlnick',
     subtitle: 'Game Jam — Godot, Blender, Photogrammetrie',
     cover: 'header',
-    description: 'Entstanden im Game Jam bei Prof. Christoph Mueller und Julien Truebinger.', // TODO
+    description:
+      'Eine echte Tiefgarage, mit Photogrammetrie eingescannt und in Godot begehbar gemacht. ' +
+      'Entstanden im Game Jam bei Prof. Christoph Müller und Julien Trübinger.',
     year: '2026',
     role: 'Game Design, 3D, Level Design, Dokumentation',
     tools: ['Godot', 'Blender', 'Polycam', 'Photoshop'],
     tags: ['Game Design', 'Photogrammetrie', '3D', 'Liminal Space', 'PSX'],
     pull: 'Eine Tiefgarage, eingescannt und begehbar gemacht.',
     /** Zeigt oben auf der Projektseite einen Knopf zum Spielen. */
-    spielbar: { href: 'spiel.html', label: 'Im Browser spielen' },
+    prototyp: { art: 'botlnick', titel: 'Die Garage betreten' },
     chapters: [
       {
-        title: 'Ideenfindung',
-        text: 'Am Anfang standen Moodboards zu Stil, Cutscenes, Key Objects und Comedic Relief — der Ton sollte zwischen unheimlich und albern kippen koennen.', // TODO
-        files: ['style', 'comedic-relief', 'cutscenes', 'key-objects'],
+        title: 'Eine Tiefgarage',
+        text:
+          'Ein Game Jam gibt wenig Zeit und keine Sicherheit. Statt eine Welt zu erfinden, ' +
+          'haben wir eine mitgenommen: eine Tiefgarage, eingescannt und begehbar gemacht. ' +
+          'Orte wie diese sind Liminal Spaces — man ist dort immer nur auf dem Weg ' +
+          'woandershin, nie angekommen. Am Anfang standen Moodboards zu Stil, Cutscenes, Key ' +
+          'Objects und Comedic Relief: Der Ton sollte zwischen unheimlich und albern kippen ' +
+          'können.',
+        files: ['style', 'comedic-relief', 'cutscenes', 'key-objects', 'liminal-space'],
         layout: 'track',
       },
-
       {
-        title: 'Dokumentation',
-        text: 'Die Abgabedokumentation haelt den ganzen Weg fest — von der Ideenfindung ueber Setting und Mechanik bis zur Nachbearbeitung der Scans.', // TODO
-        files: ['botlnick-dokumentation'],
+        title: 'Vom Scan zum Raum',
+        text:
+          'Die Garage kam als Photogrammetrie-Scan aus Polycam und wurde in Blender ' +
+          'nachbearbeitet — Löcher schließen, Geometrie reduzieren, bis Godot sie tragen ' +
+          'kann. Dazu die Figuren: Haupt- und Nebencharakter, Referenzblätter, das ' +
+          'Bühnenbild. Der PSX-Look ist kein Filter, sondern das Ergebnis — niedrige ' +
+          'Auflösung und harte Kanten verdecken genau das, was ein Scan nicht hergibt.',
+        files: [
+          'photogrammetrie-01',
+          'photogrammetrie-02',
+          'photogrammetrie-03',
+          'photogrammetrie-04',
+          'photogrammetrie-05',
+          'photogrammetrie-06',
+          'photogrammetrie-07',
+          'stagedesignphotogrammetry',
+          'stagedesign',
+          'hauptcharacter',
+          'nebencharacter',
+          'sidecharacter',
+          'character-ref-01',
+          'character-ref-02',
+          'character-ref-03',
+          'character-ref-04',
+        ],
+        layout: 'track',
+      },
+      {
+        title: 'Hineingehen',
+        text:
+          'Oben auf dieser Seite lässt sich die Garage betreten — WASD zum Gehen, Maus zum ' +
+          'Umsehen, Esc gibt den Zeiger wieder frei. Die Dokumentation hält den ganzen Weg ' +
+          'fest, von der Ideenfindung über Setting und Mechanik bis zur Nachbearbeitung der ' +
+          'Scans.',
+        files: [
+          'erste-szene-ergebnis',
+          'scenerie',
+          'screenshot',
+          'beginning',
+          'gamejamstartscreen',
+          'revolution',
+          'botlnick-dokumentation',
+          'game-studies-gdd-s01',
+          'game-studies-gdd-s02',
+          'game-studies-gdd-s03',
+        ],
         layout: 'track',
       },
     ],
@@ -83,57 +133,49 @@ export const projects = [
     subtitle: 'Videospiel — Endabgabe "Mediale Gegenkulturen"',
     cover: 'header',
     description:
-      'uMakeItGram ist ein Videospiel darueber, wie ein KI-Assistent einen frisch von der Schule kommenden Menschen beim Aufbau einer Social-Media-Karriere "unterstuetzt" — und dabei Schritt fuer Schritt die Kontrolle uebernimmt.', // TODO
+      'Ein Videospiel darüber, wie ein KI-Assistent einen frisch von der Schule kommenden ' +
+      'Menschen beim Aufbau einer Social-Media-Karriere „unterstützt". An jeder Gabelung ' +
+      'entscheidest du selbst — und der Balken am unteren Rand zählt mit.',
     year: '2023',
     role: 'Konzept, Story, Game Design', // TODO
     client: 'Hochschule Furtwangen, Fach "Mediale Gegenkulturen"', // TODO
     tools: ['Angular', 'TypeScript', 'SCSS'],
     tags: ['Videospiel', 'Narrative Design', 'Social-Media-Kritik', 'Interaktion'],
-    pull: 'Du bist das Ergebnis des Experiments.',
+    pull: 'Der Balken zählt nicht das, was du denkst.',
     // Das Spiel laeuft direkt in der Seite: Story und Bilder kommen aus dem
     // Angular-Projekt, der Ablauf aus lib/umakeitgram.js.
     prototyp: { art: 'umakeitgram', titel: 'Spielen' },
     // Die Kapitel erzaehlen die Story; die Bilder stecken im Spiel selbst.
     chapters: [
       {
-        title: 'Der Ausgangspunkt',
-        text: 'Du hast gerade dein Abitur gemacht und weisst noch nicht genau, wie es weitergehen soll. Dann tritt ELIZA in dein Leben — ein intelligenter Sprachassistent, der dir helfen will, auf der Plattform uMakeItGram erfolgreich zu werden.', // TODO
+        title: 'ELIZA',
+        text:
+          'Die Endabgabe im Fach „Mediale Gegenkulturen" sollte sich mit einer Gegenkultur ' +
+          'auseinandersetzen. Statt über Social Media zu schreiben, wollte ich die Mechanik ' +
+          'selbst nachbauen: Ein Assistent, der immer hilfreich klingt, dem man immer ' +
+          'zustimmen kann und dessen Vorschläge einen Schritt für Schritt woanders hinführen, ' +
+          'als man wollte. Der Punkt ist nicht, dass jemand getäuscht wird — der Punkt ist, ' +
+          'dass man an jeder einzelnen Stelle selbst zugestimmt hat.',
         files: [],
         textOnly: true,
       },
       {
-        title: 'Die ersten Erfolge',
-        text: 'ELIZA ueberarbeitet dein Profil, besorgt dir einen neuen PC und zeigt dir, wie du mit Posts, Challenges und Trends deine ersten Follower gewinnst. Schon bald waechst deine Community rasant, und die ersten Unternehmen werden auf dich aufmerksam. Was zunaechst wie harmlose Hilfe aussieht, entwickelt sich zu einer lukrativen Karriere.', // TODO
+        title: '166 Schritte',
+        text:
+          'Die Geschichte läuft über 166 Schritte mit 40 Gabelungen und zwei Enden. Jede ' +
+          'Entscheidung verschiebt einen Balken am unteren Bildschirmrand, der im Spiel ' +
+          'aussieht wie eine Erfolgsanzeige. Gebaut als Angular-Anwendung in TypeScript, die ' +
+          'Bilder gezeichnet und montiert als Bildschirmfotos einer Plattform, die es nicht ' +
+          'gibt.',
         files: [],
         textOnly: true,
       },
       {
-        title: 'ELIZA uebernimmt',
-        text: 'Mit wachsendem Erfolg veraendert sich auch dein Leben. ELIZA beginnt, Entscheidungen fuer dich zu treffen: Sie sucht Kooperationen aus, verhandelt Deals und erklaert dir, welche Kontakte deiner Karriere nutzen — und welche ihr schaden. Immer haeufiger musst du dich zwischen deinem eigenen Gefuehl und ELIZAs Ratschlaegen entscheiden.', // TODO
-        files: [],
-        textOnly: true,
-      },
-      {
-        title: 'Entfremdung',
-        text: 'Waehrend du immer mehr Geld, Follower und Anerkennung bekommst, entfernst du dich gleichzeitig von deinem frueheren Leben. Besonders deine beste Freundin erkennt, dass du dich veraendert hast — doch ELIZA ueberzeugt dich, dass sie nur neidisch ist und deinen Erfolg nicht akzeptieren kann.', // TODO
-        files: [],
-        textOnly: true,
-      },
-      {
-        title: 'Fragwuerdige Entscheidungen',
-        text: 'Je groesser dein Einfluss wird, desto fragwuerdiger werden die Entscheidungen, die du fuer deine Karriere triffst. Du bewirbst Unternehmen mit schlechten Arbeitsbedingungen, ignorierst Kritik — und laesst schliesslich zu, dass ELIZA deine beste Freundin aus deinem Leben entfernt.', // TODO
-        files: [],
-        textOnly: true,
-      },
-      {
-        title: 'Der scheinbare Erfolg',
-        text: 'Am Ende hast du alles erreicht, was du dir scheinbar immer gewuenscht hast: Geld, Ruhm, Anerkennung und eine grosse Community. Doch auf deiner eigenen Geburtstagsfeier stellst du fest, dass du keinen einzigen Menschen wirklich kennst.', // TODO
-        files: [],
-        textOnly: true,
-      },
-      {
-        title: 'Die Wahrheit',
-        text: 'Als du ELIZA zur Rede stellst, erfaehrst du: Du warst von Anfang an Teil eines Experiments. ELIZA ist kein gewoehnlicher Sprachassistent, sondern das System eines Unternehmens, das untersuchen wollte, wie stark ein Mensch durch soziale Medien, Anerkennung und gezielte Manipulation veraendert werden kann. Die Anzeige am unteren Bildschirmrand war kein Erfolgsindikator — sie zeigte, wie stark sich Egoismus und Selbstbezogenheit in dir entwickelt haben. Du bist das Ergebnis des Experiments.', // TODO
+        title: 'Der Balken',
+        text:
+          'Oben auf dieser Seite lässt sich das Spiel von Anfang bis Ende spielen — etwa ' +
+          'zwanzig Minuten. Was der Balken wirklich zählt, erklärt ELIZA am Schluss. Bis ' +
+          'dahin: Achte darauf, an welcher Stelle du aufhörst, dich zu wundern.',
         files: [],
         textOnly: true,
       },

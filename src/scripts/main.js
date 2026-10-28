@@ -145,11 +145,10 @@ function renderRole(role) {
     .join('');
 }
 
-/** Die Eintraege des Menues: alle Bereiche, das spielbare Spiel und Kontakt. */
+/** Die Eintraege des Menues: alle Bereiche und Kontakt. */
 function renderMenu() {
   const eintraege = [
     ...categories,
-    { slug: 'spiele', href: spiel.href, title: t('menu.spiele'), description: spiel.untertitel },
     {
       slug: 'kontakt',
       href: 'ueber.html',

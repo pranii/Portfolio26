@@ -95,14 +95,13 @@ export const categories = [
 ];
 
 /**
- * Das Spiel, das direkt im Browser laeuft (spiel.html).
+ * Der Godot-Export, der im Projektfenster von Botlnick laeuft.
  * Neu bauen mit `npm run export:spiel`.
  */
 export const spiel = {
   slug: 'botlnick',
   title: 'BOTLNICK',
   untertitel: 'Ein Spiel aus eingescannten Orten',
-  href: 'spiel.html',
   beschreibung: 'Im Game Jam entstanden: Kein Download noetig.',
   steuerung: [
     ['W A S D', 'Bewegen'],

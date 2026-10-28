@@ -67,7 +67,6 @@ const PAGES = [
     erwartet: '.empty',
     query: '?id=film/gibtsnicht',
   },
-  { html: 'spiel.html', entry: 'src/scripts/spiel.js', erwartet: '.boot__start' },
   { html: 'ueber.html', entry: 'src/scripts/ueber.js', erwartet: '.kontakt__zeile' },
   // Die Prototypen liegen in den Projektseiten, nicht auf eigenen Seiten.
   {
@@ -105,6 +104,12 @@ const PAGES = [
     entry: 'src/scripts/project.js',
     erwartet: '.portal__knopf',
     query: '?id=creative-technology/nostalgia',
+  },
+  {
+    html: 'projekt.html',
+    entry: 'src/scripts/project.js',
+    erwartet: '.boot__start',
+    query: '?id=game/botlnick-gamejam',
   },
 ];
 

@@ -173,6 +173,18 @@ export const ui = {
     'portal.snippet2': 'Light, Future, Past',
     'portal.snippet3': 'nostalgia is a portal',
 
+    'prototyp.botlnick':
+      'Der Godot-Export aus dem Game Jam, hier im Fenster statt auf einer eigenen Seite. ' +
+      'Die Tiefgarage ist eine echte, eingescannt und begehbar gemacht.',
+    'botlnick.rechts': 'Godot · {mb} MB',
+    'botlnick.starten': 'Spiel starten',
+    'botlnick.hinweis':
+      'Lädt einmalig etwa {mb} MB. Läuft in Chrome, Edge und Firefox; Safari kann zicken. ' +
+      'Am besten mit Tastatur und Maus.',
+    'botlnick.keinbuild': 'Kein Build vorhanden',
+    'botlnick.bereit': 'Bereit',
+    'botlnick.laeuft': 'Läuft — zum Spielen ins Bild klicken',
+
     'gram.rechts': 'Angular · 2023',
     'gram.start': 'Drücken zum Starten.',
     'gram.nochmal': 'Noch einmal?',
@@ -355,6 +367,18 @@ export const ui = {
     'portal.snippet2': 'Light, Future, Past',
     'portal.snippet3': 'nostalgia is a portal',
 
+    'prototyp.botlnick':
+      'The Godot export from the game jam, here in a window instead of on a page of its own. ' +
+      'The car park is a real one, scanned and made walkable.',
+    'botlnick.rechts': 'Godot · {mb} MB',
+    'botlnick.starten': 'Start the game',
+    'botlnick.hinweis':
+      'Loads about {mb} MB once. Runs in Chrome, Edge and Firefox; Safari can be fussy. ' +
+      'Best with a keyboard and mouse.',
+    'botlnick.keinbuild': 'No build available',
+    'botlnick.bereit': 'Ready',
+    'botlnick.laeuft': 'Running — click into the picture to play',
+
     'gram.rechts': 'Angular · 2023',
     'gram.start': 'Press to start.',
     'gram.nochmal': 'Again?',
@@ -535,6 +559,18 @@ export const ui = {
     'portal.snippet1': 'where does one begin and the other end?',
     'portal.snippet2': 'Light, Future, Past',
     'portal.snippet3': 'nostalgia is a portal',
+
+    'prototyp.botlnick':
+      'Eksporti nga Godot i game jam-it, këtu në dritare dhe jo në një faqe më vete. ' +
+      'Parkingu nëntokësor është i vërtetë, i skanuar dhe i bërë i kalueshëm.',
+    'botlnick.rechts': 'Godot · {mb} MB',
+    'botlnick.starten': 'Nis lojën',
+    'botlnick.hinweis':
+      'Ngarkon rreth {mb} MB një herë. Punon në Chrome, Edge dhe Firefox; Safari mund të ' +
+      'bëjë naze. Më mirë me tastierë dhe mi.',
+    'botlnick.keinbuild': 'Nuk ka build',
+    'botlnick.bereit': 'Gati',
+    'botlnick.laeuft': 'Po luan — kliko brenda pamjes për të luajtur',
 
     'gram.rechts': 'Angular · 2023',
     'gram.start': 'Shtyp për të filluar.',

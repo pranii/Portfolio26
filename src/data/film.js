@@ -71,26 +71,30 @@ export const projects = [
     pull: 'a story of perspective on love',
     chapters: [
       {
-        title: 'Titel und Bildwelt',
-        text: '"LOVE" in schwarzer und roter Tusche. Das V als einziges rotes Zeichen. Als Geste der gewählten restlichen Bildsprache.', // TODO
+        title: 'Das rote V',
+        text:
+          'Liebe hat nicht ein Gesicht, sondern viele — und die meisten Kurzfilme darüber ' +
+          'zeigen nur eines. Die Frage war, wie man mehrere Perspektiven in einen Film ' +
+          'bekommt, ohne sie zu erklären. Der Titel setzt den Ton: „LOVE" in schwarzer und ' +
+          'roter Tusche, das V als einziges rotes Zeichen. Die übrige Bildsprache folgt ' +
+          'dieser Geste.',
         files: ['love-03'],
         layout: 'stack',
       },
       {
-        title: 'Casting Call',
-        text: 'Talente haben wir über Soziale Medien gesucht. Drehort, Drehtag und Altersgruppen stehen direkt auf dem Dokument.', // TODO
-        files: ['love-01', 'love-02', 'love-04'],
+        title: 'Offenes Casting',
+        text:
+          'Statt im Bekanntenkreis zu besetzen, lief ein offenes Casting über Instagram und ' +
+          'TikTok — Drehort, Drehtag und Altersgruppen stehen direkt auf dem Aufruf, die ' +
+          'Rückmeldungen liefen über dieselben Kanäle zusammen. So kamen Gesichter in den ' +
+          'Film, die niemand von uns vorher kannte. Gedreht in Frankfurt im Februar 2025, ' +
+          'konzipiert, gefilmt und bearbeitet gemeinsam mit Dardan Shala.',
+        files: ['love-01', 'love-02', 'love-04', 'love'],
         layout: 'track',
       },
       {
-        title: 'Verbreitung',
-        text: 'Verbreitet wurde der Aufruf über Instagram und TikTok, wo auch die Rückmeldungen zusammenliefen.', // TODO
-        files: ['love'],
-        layout: 'stack',
-      },
-      {
-        title: 'Der fertige Film',
-        text: 'Und so sieht der fertige Kurzfilm aus.',
+        title: 'Der Film',
+        text: 'Der fertige Kurzfilm.',
         files: [],
         embed: 'https://youtu.be/kmN_JAU1OH8',
       },
@@ -111,12 +115,25 @@ export const projects = [
     role: 'Kamera, Schnitt',
     tools: ['Premiere Pro'],
     tags: ['Theater', 'Dokumentation', 'Kamera'],
+    pull: 'Keine zweite Aufnahme, kein Plan, an den man sich halten könnte.',
     chapters: [
+      {
+        title: 'Kein zweiter Take',
+        text:
+          'Improvisation heißt für die Kamera: Niemand weiß vorher, wo die Szene hingeht, es ' +
+          'gibt keinen zweiten Take und keinen Plan, an den man sich halten könnte. Die ' +
+          'Frage war, wie man einen Abend einfängt, der nur einmal stattfindet — und daraus ' +
+          'einen Trailer schneidet, der die Unsicherheit nicht wegglättet. Gedreht gemeinsam ' +
+          'mit Joscha Reuther und Jan Bangert.',
+        files: [],
+        textOnly: true,
+      },
       {
         title: 'Der Trailer',
         text:
-          'Der Zusammenschnitt des Abends: Szenen, die es so nur einmal gegeben hat, weil ' +
-          'sie im Moment entstanden sind.',
+          'Der Zusammenschnitt des Abends: Szenen, die es so nur einmal gegeben hat, weil sie ' +
+          'im Moment entstanden sind.',
+        files: [],
         embed: 'https://vimeo.com/1227665449/8897decc48',
       },
     ],
@@ -132,6 +149,7 @@ export const projects = [
     role: 'Regie, Kamera, Schnitt',
     tools: ['Premiere Pro', 'DaVinci Resolve'],
     tags: ['Musikvideo', 'Regie', 'Schnitt'],
+    pull: 'Erst die Idee besprechen, dann die Kamera auspacken.',
     extern: {
       href: 'https://www.youtube.com/watch?v=GhhHAptcLss',
       label: 'Video auf YouTube ansehen',
@@ -139,16 +157,26 @@ export const projects = [
     },
     chapters: [
       {
-        title: 'EREZA — a kishe guxu',
-        text: 'Das fertige Video, offiziell veröffentlicht.',
-        embed: 'https://www.youtube.com/watch?v=GhhHAptcLss',
-        files: ['ereza'],
-        layout: 'stack',
+        title: 'Mit Ereza',
+        text:
+          'Ereza ist mittlerweile eine Freundin. Das verändert die Arbeit: Wir besprechen ' +
+          'Ideen für Musikvideos lange, bevor eine Kamera im Raum steht, und ich kann sagen, ' +
+          'wenn etwas nicht trägt. Was dabei herauskommt, sieht anders aus als ein Dreh nach ' +
+          'Briefing.',
+        files: [],
+        textOnly: true,
       },
       {
-        title: 'Jeriko',
-        text: 'Ein weiteres Musikvideo, erschienen als Reel.',
-        embed: 'https://www.instagram.com/reel/DEfoY2eo6Km/',
+        title: 'Zwei Videos',
+        text:
+          '„A kishe guxu?" ist offiziell veröffentlicht, „Jeriko" als Reel erschienen — zwei ' +
+          'Tonlagen derselben Zusammenarbeit.',
+        files: ['ereza'],
+        layout: 'stack',
+        embed: [
+          'https://www.youtube.com/watch?v=GhhHAptcLss',
+          'https://www.instagram.com/reel/DEfoY2eo6Km/',
+        ],
       },
     ],
   },
@@ -158,55 +186,58 @@ export const projects = [
     subtitle: 'Raumvermietung, Website und Imagefilm',
     cover: 'header',
     description:
-      'Huginn ist Cafe, Bar, Eventlocation und Co-Working-Space in einem Haus. Die Aufgabe war, diese Vielseitigkeit zu zeigen, ohne beliebig zu werden — die Rabe als Markenzeichen haelt alles zusammen.', // TODO
+      'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Die Aufgabe ' +
+      'war, diese Vielseitigkeit zu zeigen, ohne beliebig zu werden — der Rabe als ' +
+      'Markenzeichen hält alles zusammen.',
     year: '2025', // TODO
     role: 'Gestaltung, Storyboard, Fotografie',
     client: 'Huginn',
     tools: ['InDesign', 'Photoshop', 'Premiere Pro'],
     tags: ['Editorial', 'Storyboard', 'Bewegtbild', 'Fotografie'],
-    pull: 'Sechzehn Bilder, die den Film erzaehlen, bevor die Kamera laeuft.', // TODO
+    pull: 'Sechzehn Bilder, die den Film erzählen, bevor die Kamera läuft.',
     chapters: [
       {
-        title: 'Wortmarke',
-        text: 'Huginn ist einer der beiden Raben Odins — der Gedanke. Die Wortmarke bleibt entsprechend still: Kleinschreibung, weiche Rundungen, der Zusatz Café & Bar als schmaler Block darunter.', // TODO
+        title: 'Der Rabe',
+        text:
+          'Ein Haus, vier Nutzungen: Café, Bar, Eventlocation, Co-Working. Wer so etwas ' +
+          'bewirbt, landet schnell bei „für jeden etwas" — und damit bei niemandem. Die ' +
+          'Antwort steckte im Namen: Huginn ist einer der beiden Raben Odins, der Gedanke. ' +
+          'Die Wortmarke bleibt entsprechend still — Kleinschreibung, weiche Rundungen, der ' +
+          'Zusatz Café & Bar als schmaler Block darunter. Ein Zeichen, das alles überdacht, ' +
+          'statt jede Nutzung einzeln zu erklären.',
         files: ['logo-huginn'],
         layout: 'wide',
       },
       {
-        title: 'Bildmarke und Web-Header',
-        text: 'Aus dem Namen wurde das Bild: zwei gespiegelte Raben, die als Header der Website den Ton setzen — dunkel, etwas nordisch, mit Rot als einzigem Akzent.', // TODO
-        files: ['header-webseite'],
+        title: 'Vom Header bis zum Teller',
+        text:
+          'Aus dem Namen wurde das Bild: zwei gespiegelte Raben, die als Header der Website ' +
+          'den Ton setzen — dunkel, etwas nordisch, mit Rot als einzigem Akzent. Der Flyer ' +
+          'bringt beide Seiten des Hauses zusammen: vorne dunkel das Tagesgeschäft von ' +
+          'Brunch bis DJ, hinten hell die Eventlocation im ersten Stock, die Raben als ' +
+          'gesprühte Schablonen über beiden. Die Broschüre führt Etage für Etage durch das ' +
+          'Haus, jede Doppelseite ein Raum und ein Anlass. Die Gerichte für Speisekarte und ' +
+          'Social Media habe ich selbst fotografiert, vor Rot, damit sie sich einfügen statt ' +
+          'als Fremdkörper zu wirken.',
+        files: [
+          'header-webseite',
+          'flyer-vorne',
+          'flyer-hinten',
+          'huginn-raumvermietung',
+          'mangobowl',
+        ],
         layout: 'wide',
       },
       {
-        title: 'Flyer',
-        text: 'Der Flyer bringt beide Seiten des Hauses zusammen: vorne dunkel das Tagesgeschäft von Brunch bis DJ, hinten hell die Eventlocation im ersten Stock. Die Raben tauchen als gesprühte Schablonen wieder auf und halten beide Seiten zusammen.', // TODO
-        files: ['flyer-vorne', 'flyer-hinten'],
-        layout: 'wide',
-      },
-      {
-        title: 'Broschuere Raumvermietung',
-        text: 'Die Broschuere fuehrt durch das Haus: Etage fuer Etage, vom Cafe im Erdgeschoss bis zum Eventraum im Obergeschoss. Jede Doppelseite steht fuer einen Raum und einen Anlass.', // TODO
-        files: ['huginn-raumvermietung'],
-        layout: 'track',
-      },
-      {
-        title: 'Foodfotografie',
-        text: 'Fuer die Speisekarte und Social Media habe ich die Gerichte selbst fotografiert — vor Rot, damit sie sich in die Bildwelt einfuegen statt als Fremdkoerper zu wirken.', // TODO
-        files: ['mangobowl'],
-        layout: 'stack',
-      },
-      {
-        title: 'Storyboard Imagefilm',
-        text: 'Der Imagefilm zitiert "Breakfast at Tiffany\'s": eine Frau steigt aus dem Taxi, geht auf die Bar zu, dreht sich um. Das Storyboard haelt jeden Schnitt, jede Kameraeinstellung und die Shotlist fest, damit am Drehtag nichts diskutiert werden muss.', // TODO
+        title: 'Sechzehn Bilder',
+        text:
+          'Der Imagefilm zitiert „Breakfast at Tiffany\'s": eine Frau steigt aus dem Taxi, ' +
+          'geht auf die Bar zu, dreht sich um. Sechzehn gezeichnete Bilder erzählen den Film, ' +
+          'bevor die Kamera läuft — das Storyboard hält jeden Schnitt, jede Kameraeinstellung ' +
+          'und die Shotlist fest, damit am Drehtag nichts diskutiert werden muss. Der Schnitt ' +
+          'ist noch nicht fertig; bis dahin gibt es ein Reel, das Bilder und Tempo zeigt.',
         files: ['storyboard'],
         layout: 'track',
-      },
-      {
-        title: 'Der fertige Film',
-        text: 'Der Imagefilm selbst ist noch nicht fertig geschnitten. Bis es so weit ist, gibt es schon ein Reel zu sehen, das einen ersten Eindruck von Bildern und Tempo gibt.', // TODO
-        files: [],
-        // Platz reserviert: sobald huginn.mp4 im Ordner liegt, spielt sie hier.
         platzhalter: '/media/arbeit/huginn/huginn.mp4',
       },
     ],
@@ -227,7 +258,7 @@ export const projects = [
     client: 'Teamprojekt an der Hochschule Furtwangen',
     tools: ['Storyboarder', 'Photoshop', 'Blender', 'Celtx'],
     tags: ['Animation', 'Storyboard', 'Anime', 'Aikido', 'Auszeichnung'],
-    pull: 'Konflikte loesen sich durch Harmonie, nicht durch Gewalt.',
+    pull: 'Konflikte lösen sich durch Harmonie, nicht durch Gewalt.',
     extern: {
       href: 'https://hs-furtwangen.github.io/TheArtOfPeace/',
       label: 'Projektdokumentation ansehen',
@@ -235,41 +266,34 @@ export const projects = [
     },
     chapters: [
       {
-        title: 'Recherche und Erzaehlbogen',
+        title: 'Ueshiba',
         text:
-          'Aus der Recherche entstand eine Erzaehlung, die Ueshibas Leben chronologisch ' +
-          'folgt. Wichtig war uns, dass die Geschichte das Wesen der Kampfkunst selbst ' +
-          'widerspiegelt und nicht nur von ihr handelt. Geplant war eine Serie mit mehreren ' +
-          'Episoden — aus Zeitgruenden blieb es bei einer Pilotfolge.', // TODO
+          'Aikido ist die Kampfkunst, die Morihei Ueshiba Mitte des 20. Jahrhunderts in Japan ' +
+          'entwickelt hat und die Konflikte durch Harmonie statt durch Gewalt löst. Das ' +
+          'Teamprojekt sollte das Interesse daran wiederbeleben. Wichtig war uns, dass die ' +
+          'Geschichte das Wesen der Kampfkunst selbst widerspiegelt und nicht nur von ihr ' +
+          'handelt — eine Erzählung, die Ueshibas Leben chronologisch folgt. Geplant war eine ' +
+          'Serie; aus Zeitgründen blieb es bei einer Pilotfolge.',
+        files: [],
         textOnly: true,
       },
       {
-        title: 'Drehbuch',
+        title: 'Dreiundzwanzig Szenen',
         text:
-          'Geschrieben in Celtx, mehrfach ueberarbeitet. Die Folge erzaehlt von einem jungen ' +
-          'Schueler Ueshibas, der das wahre Wesen des Aikido durch eine ungewoehnliche ' +
-          'Begegnung mit einem Betrunkenen im Zug begreift.', // TODO
-        textOnly: true,
-      },
-      {
-        title: 'Storyboard',
-        text:
-          'Alle 23 Szenen wurden mit Storyboarder und Photoshop gezeichnet. Daraus entstand ' +
-          'eine animierte Fassung mit Musik und Toneffekten — das Storyboard nicht als ' +
-          'Planungswerkzeug, sondern als eigenstaendige Fassung des Films.', // TODO
+          'Das Drehbuch entstand in Celtx und wurde mehrfach überarbeitet: Ein junger Schüler ' +
+          'Ueshibas begreift das wahre Wesen des Aikido durch eine ungewöhnliche Begegnung ' +
+          'mit einem Betrunkenen im Zug. Alle 23 Szenen wurden mit Storyboarder und Photoshop ' +
+          'gezeichnet und zu einer animierten Fassung mit Musik und Toneffekten gebracht — ' +
+          'das Storyboard nicht als Planungswerkzeug, sondern als eigenständige Fassung des ' +
+          'Films. Für die eigentliche Animation fiel die Wahl auf Blender, frei verfügbar und ' +
+          'im Studium bereits gelernt; die Figuren entstanden in VRoid Studio. Animiert wurde ' +
+          'Szene 13, die Schlüsselszene im Zugwagen.',
+        files: [],
         embed: 'https://player.vimeo.com/video/669799645',
       },
       {
-        title: 'Animation',
-        text:
-          'Fuer die eigentliche Animation fiel die Wahl auf Blender — frei verfuegbar und im ' +
-          'Studium bereits gelernt. Die Figuren entstanden in VRoid Studio und wurden in ' +
-          'Blender geriggt. Animiert wurde Szene 13, die Schluesselszene im Zugwagen.', // TODO
-        textOnly: true,
-      },
-      {
-        title: 'Auszeichnung',
-        text: 'Der Scan der Preisverleihung — der Medienpreis fuer das animierte Storyboard.', // TODO
+        title: 'Medienpreis',
+        text: 'Das animierte Storyboard hat den Medienpreis bekommen.',
         files: ['medienpreis-scan'],
         layout: 'wide',
       },

@@ -486,12 +486,6 @@ export function renderProjectPage(project) {
         </div>
       </div>
       ${
-        project.spielbar
-          ? `<p class="play"><a class="play__button" href="${esc(project.spielbar.href)}" data-cursor="${esc(t('karte.spielen'))}">▶ ${esc(project.spielbar.label)}</a>
-             <span class="play__note">Läuft direkt im Browser, kein Download nötig.</span></p>`
-          : ''
-      }
-      ${
         project.extern
           ? `<p class="play"><a class="play__button" href="${esc(project.extern.href)}" target="_blank" rel="noopener" data-cursor="${esc(t('karte.oeffnen'))}">${esc(project.extern.label)} ↗</a>
              <span class="play__note">${esc(project.extern.note ?? '')}</span></p>`
