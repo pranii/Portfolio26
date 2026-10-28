@@ -44,7 +44,9 @@ for (const categorySlug of ['creative-technology', 'film', 'game', 'kommunikatio
       (chapter) => chapter.textOnly || chapter.embed !== undefined,
     );
 
-    const entry = mediaBySlug[project.slug];
+    // `medien` zeigt auf ein anderes Projekt: Dieselbe Arbeit kann in
+    // zwei Bereichen stehen, ohne die Dateien zu verdoppeln.
+    const entry = mediaBySlug[project.medien ?? project.slug];
     if (!entry) {
       if (!nurEingebettet) {
         problems.push(`${categorySlug}/${project.slug}: keine Medien importiert`);

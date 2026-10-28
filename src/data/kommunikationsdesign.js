@@ -103,6 +103,57 @@ export const projects = [
     ],
   },
   {
+    slug: 'huginn-gestaltung',
+    // Dieselben Dateien wie das Filmprojekt — die Arbeit gehoert in
+    // beide Bereiche, die Bilder liegen nur einmal im Repository.
+    medien: 'huginn',
+    title: 'Huginn',
+    subtitle: 'Marke, Drucksachen und Fotografie',
+    cover: 'header',
+    description:
+      'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Über ein ' +
+      'Jahr habe ich die Kommunikation gemacht: die Marke, alles Gedruckte und die ' +
+      'Fotografie.',
+    year: '2025',
+    role: 'Gestaltung, Fotografie, Social Media',
+    client: 'Huginn Lounge & Arts',
+    tools: ['InDesign', 'Photoshop', 'Illustrator'],
+    tags: ['Corporate Design', 'Editorial', 'Fotografie', 'Gastronomie'],
+    pull: 'Ein Zeichen, das alles überdacht.',
+    chapters: [
+      {
+        title: 'Der Rabe',
+        text:
+          'Ein Haus, vier Nutzungen. Wer so etwas bewirbt, landet schnell bei „für jeden ' +
+          'etwas" — und damit bei niemandem. Die Antwort steckte im Namen: Huginn ist einer ' +
+          'der beiden Raben Odins, der Gedanke. Die Wortmarke bleibt entsprechend still, und ' +
+          'zwei gespiegelte Raben setzen als Header den Ton: dunkel, nordisch, Rot als ' +
+          'einziger Akzent.',
+        files: ['logo-huginn', 'header-webseite'],
+        layout: 'wide',
+      },
+      {
+        title: 'Auf den Tischen',
+        text:
+          'Der Flyer bringt beide Seiten des Hauses zusammen: vorne dunkel das ' +
+          'Tagesgeschäft, hinten hell die Eventlocation. Dazu habe ich das WhatsApp Business ' +
+          'aufgesetzt und die Gerichte selbst fotografiert — vor Rot, damit sie sich in die ' +
+          'Bildwelt einfügen statt als Fremdkörper zu wirken.',
+        files: ['flyer-vorne', 'flyer-hinten', 'mangobowl'],
+        layout: 'wide',
+      },
+      {
+        title: 'Magazin für den Eventraum',
+        text:
+          'Für die Vermietung des Eventraums im Obergeschoss habe ich ein Magazin ' +
+          'entworfen: Etage für Etage durch das Haus, jede Doppelseite ein Raum und ein ' +
+          'Anlass.',
+        files: ['huginn-raumvermietung'],
+        layout: 'track',
+      },
+    ],
+  },
+  {
     slug: 'chiro-med',
     title: 'Chiro Med',
     subtitle: 'Corporate Design fuer eine chiropraktische Praxis',
@@ -154,7 +205,7 @@ export const projects = [
       'Die School of Design and Media der Hochschule Furtwangen brauchte eine Kampagne, die Studieninteressierte erreicht, ohne wie Hochschulwerbung auszusehen. Daraus entstanden zwei eigenstaendige Kampagnen: eine Social-Media-Strategie rund um die Serie "Victorious" und eine Live-Action-Plakatkampagne, die Schueler direkt anspricht.', // TODO
     year: '2025', // TODO
     role: 'Konzept, Strategie, Gestaltung',
-    client: 'Hochschule Furtwangen University',
+    client: 'Hochschule Furtwangen',
     tools: ['InDesign', 'Photoshop'],
     tags: ['Kampagne', 'Plakat', 'Social Media', 'Strategie'],
     pull: 'SoDaM FAKE — eine Kampagne, die zugibt, dass sie eine ist.',

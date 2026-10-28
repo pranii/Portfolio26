@@ -608,6 +608,13 @@
           "page": 8,
           "width": 1800,
           "height": 1012
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/konzept-guy-buffet.webp",
+          "thumb": "/media/arbeit/huginn/konzept-guy-buffet-thumb.webp",
+          "width": 1800,
+          "height": 1440
         }
       ],
       "videos": [],

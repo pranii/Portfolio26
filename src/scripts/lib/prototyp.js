@@ -19,7 +19,7 @@
  * dynamischen Import und nicht oben im Modulkopf.
  */
 
-import { mediaFor } from './render.js';
+import { mediaFor, medienVon } from './render.js';
 import { spiel } from '../../data/site.js';
 import { t } from './i18n.js';
 
@@ -336,7 +336,7 @@ export function prototypHtml(project) {
 /** Was der jeweilige Prototyp aus den Projektdaten braucht. */
 function quellen(project) {
   if (project.prototyp.art !== 'magazin') return {};
-  const { docs } = mediaFor(project.slug);
+  const { docs } = medienVon(project);
   const pdf = docs.find((doc) => doc.src.includes(project.prototyp.quelle));
   return { pdf: pdf ? basis() + pdf.src.replace(/^\//, '') : null };
 }
@@ -538,7 +538,7 @@ async function startShepardBlock(block, melde) {
 
 async function startMagazinBlock(project, block, melde) {
   const { startMagazin } = await import('./magazin.js');
-  const { images } = mediaFor(project.slug);
+  const { images } = medienVon(project);
   const seiten = images
     .filter((bild) => bild.fromPdf === project.prototyp.quelle)
     .sort((a, b) => a.page - b.page)

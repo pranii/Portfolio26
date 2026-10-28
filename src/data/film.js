@@ -159,51 +159,37 @@ export const projects = [
   {
     slug: 'huginn',
     title: 'Huginn',
-    subtitle: 'Raumvermietung, Website und Imagefilm',
+    subtitle: 'Zwei Werbefilme für Bar und Frühstück',
     cover: 'header',
     description:
-      'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Über ein Jahr ' +
-      'habe ich die Kommunikation gemacht: Konzepte für Bewegtbild, die Drucksachen und die ' +
-      'Fotografie.',
+      'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Für die ' +
+      'Vermarktung sind zwei Filmkonzepte entstanden — eines für die Cocktails, eines für ' +
+      'das Frühstück.',
     year: '2025', // TODO
-    role: 'Gestaltung, Storyboard, Fotografie',
+    role: 'Konzept, Storyboard, Kamera',
     client: 'Huginn',
-    tools: ['InDesign', 'Photoshop', 'Premiere Pro'],
-    tags: ['Editorial', 'Storyboard', 'Bewegtbild', 'Fotografie'],
+    tools: ['Premiere Pro', 'Photoshop'],
+    tags: ['Storyboard', 'Bewegtbild', 'Werbefilm'],
     pull: 'Sechzehn Bilder, die den Film erzählen, bevor die Kamera läuft.',
     chapters: [
       {
         title: 'The Perfect Martini',
         text:
-          'Das erste Konzept kam von Guy Buffet und seiner Serie „The Perfect Martini": ' +
-          'gemalte Szenen, in denen das Glas die Hauptrolle spielt. Der Plan war, darüber die ' +
-          'Cocktails zu vermarkten — so sieht das Ergebnis aus.',
-        files: [],
-        embed: 'https://youtube.com/shorts/bi1_YXsKkaI',
-      },
-      {
-        title: 'Tischaufsteller und WhatsApp Business',
-        text:
-          'Auf den Tischen steht, was die Gäste direkt betrifft. Dazu habe ich das WhatsApp ' +
-          'Business aufgesetzt und die passenden Fotos selbst geschossen — die Gerichte vor ' +
-          'Rot, damit sie sich in die Bildwelt einfügen statt als Fremdkörper zu wirken.',
-        files: ['logo-huginn', 'header-webseite', 'flyer-vorne', 'flyer-hinten', 'mangobowl'],
+          'Das Konzept kam von Guy Buffet und seiner Serie „The Perfect Martini": gemalte ' +
+          'Szenen, in denen das Glas die Hauptrolle spielt. Zwölf Bilder — Preparation, ' +
+          'Shaking, Finishing — wurden Bild für Bild in Bewegung übersetzt, dazu die ' +
+          'Kameraeinstellungen für beide Fassungen: Slow Shutter und normal. So sieht das ' +
+          'Ergebnis aus.',
+        files: ['konzept-guy-buffet'],
         layout: 'wide',
-      },
-      {
-        title: 'Magazin für den Eventraum',
-        text:
-          'Für die Vermietung des Eventraums im Obergeschoss habe ich ein Magazin entworfen: ' +
-          'Etage für Etage durch das Haus, jede Doppelseite ein Raum und ein Anlass.',
-        files: ['huginn-raumvermietung'],
-        layout: 'track',
+        embed: 'https://youtube.com/shorts/bi1_YXsKkaI',
       },
       {
         title: 'Breakfast at Jule’s',
         text:
-          'Für die Vermarktung des Frühstücks habe ich einen Videodreh geplant und gefilmt — ' +
-          'kurze Werbevideos und Reels unter der Kampagne „Breakfast at Jule’s". Sechzehn ' +
-          'gezeichnete Bilder erzählen den Film, bevor die Kamera läuft. Die Aufnahmen stehen, ' +
+          'Für das Frühstück habe ich einen zweiten Dreh geplant und gefilmt — kurze ' +
+          'Werbevideos und Reels. Sechzehn gezeichnete Bilder erzählen den Film, bevor die ' +
+          'Kamera läuft: jeder Schnitt, jede Einstellung, die Shotlist. Die Aufnahmen stehen, ' +
           'fertig geschnitten sind sie leider nicht.',
         files: ['storyboard'],
         layout: 'track',

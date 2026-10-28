@@ -72,8 +72,24 @@ async function main() {
   const projekt = daten[bereich][slug];
 
   // Was unter diesem Praefix schon dasteht, wird ersetzt.
-  projekt.images = projekt.images.filter((i) => i.fromPdf !== praefix);
+  projekt.images = projekt.images.filter(
+    (i) => i.fromPdf !== praefix && path.basename(i.src) !== `${praefix}.webp`,
+  );
   projekt.docs = projekt.docs.filter((d) => path.basename(d.src) !== `${praefix}.pdf`);
+
+  // Ein einzelnes Bild braucht nur die beiden Fassungen, kein Rendern.
+  if (!/\.pdf$/i.test(quelle)) {
+    const masse = await schreibe(fs.readFileSync(quelle), path.join(ordner, praefix));
+    projekt.images.push({
+      type: 'image',
+      src: `${oeffentlich}/${praefix}.webp`,
+      thumb: `${oeffentlich}/${praefix}-thumb.webp`,
+      ...masse,
+    });
+    fs.writeFileSync(datei, JSON.stringify(daten, null, 2) + '\n');
+    console.log(`Bild nach ${oeffentlich}/${praefix}.webp — media.json aktualisiert`);
+    return;
+  }
 
   const neu = [];
   let seite = 0;

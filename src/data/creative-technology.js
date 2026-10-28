@@ -113,8 +113,7 @@ export const projects = [
           'Melanie Kleins Objektbeziehungstheorie, Pete Walkers vier Überlebensstrategien. ' +
           'Der Satz, auf den alles hinausläuft: Jede dieser Strategien hat einmal ' +
           'funktioniert. Sie war nie ein Charakterfehler.',
-        files: ['have'],
-        layout: 'grid',
+        files: [],
         prototypHier: true,
       },
       {
@@ -324,7 +323,7 @@ export const projects = [
     year: 'Januar 2026',
     role: 'Konzept, Raumgestaltung, Sound',
     client:
-      'Mit Cara Brueggendieck und Kathrin Krell. Betreut von Prof. Norbert Schnell und Peter Kirschenbauer',
+      'Mit Cara Brüggendieck und Kathrin Krell. Betreut von Prof. Norbert Schnell und Peter Kirschenbauer',
     tools: ['Web Audio API', 'JavaScript', 'Polycam', 'InDesign'],
     tags: ['Klanginstallation', 'Raum', 'Wahrnehmung', 'Interaktion'],
     pull: 'Kann ich meinen Sinnen überhaupt trauen?',
@@ -479,7 +478,7 @@ export const projects = [
     year: '2026',
     role: 'Konzept, technische Umsetzung',
     client:
-      'Mit Cara Brueggendieck. Modul "Inszenierung Interaktiver Medien", Master Design Interaktiver Medien',
+      'Mit Cara Brüggendieck. Modul "Inszenierung Interaktiver Medien", Master Design Interaktiver Medien',
     tools: ['React', 'Flask', 'Raspberry Pi', 'ReportLab', 'InDesign'],
     tags: ['Interaktion', 'Zine', 'Prototyp', 'Generative Gestaltung'],
     prototyp: { art: 'zodizine', titel: 'Der Automat im Browser', label: 'Automat ausprobieren' },

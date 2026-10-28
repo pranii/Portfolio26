@@ -50,6 +50,15 @@ export function mediaFor(slug) {
   return mediaBySlug[slug] ?? { images: [], videos: [], docs: [] };
 }
 
+/**
+ * Die Medien eines Projekts. Steht `medien` darin, kommen sie aus einem
+ * anderen Projekt — so kann eine Arbeit in zwei Bereichen auftauchen,
+ * ohne dass die Dateien zweimal im Repository liegen.
+ */
+export function medienVon(project) {
+  return mediaFor(project.medien ?? project.slug);
+}
+
 /** Titelbild: das in `cover` genannte, sonst das erste Bild des Projekts. */
 export function coverFor(project, media) {
   if (project.cover) {
@@ -114,7 +123,7 @@ const nummer = (i) => String(i + 1).padStart(2, '0');
 
 /** Karte fuer ein Projekt im Karussell. */
 export function renderCard(project, category) {
-  const media = mediaFor(project.slug);
+  const media = medienVon(project);
   const cover = coverFor(project, media);
   const modus = cover ? passung(cover) : 'fill';
   const bild = cover
@@ -505,7 +514,7 @@ function factList(project) {
 }
 
 export function renderProjectPage(project) {
-  const media = mediaFor(project.slug);
+  const media = medienVon(project);
   const chapters = groupIntoChapters(project, media);
   const cover = coverFor(project, media);
   const poster = cover?.src;
