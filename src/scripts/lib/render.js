@@ -13,6 +13,7 @@
 
 import mediaIndex from '../../data/media.json';
 import { groupIntoChapters, basename } from './chapters.js';
+import { aufbauSvg } from './aufbau.js';
 import { t } from './i18n.js';
 
 const THUMB_WIDTH = 720;
@@ -371,13 +372,17 @@ function embedPlatzhalter() {
 
 function renderStep(chapter, poster) {
   const weit = WEITE_LAYOUTS.has(chapter.layout);
+  // Ein Kapitel kann den Prototypen zu sich holen, statt ihn oben auf der
+  // Seite stehen zu lassen — dann steht er neben dem Text, zu dem er
+  // gehoert. Gefuellt wird die Stelle in project.js.
   return `
-    <section class="step">
+    <section class="step"${chapter.prototypHier ? ' data-prototyp-hier' : ''}>
       <div class="step__head">
         <h2 class="step__title">${esc(chapter.title)}</h2>
         <p class="step__text">${esc(chapter.text)}</p>
         ${downloadLinks(chapter.docs)}
       </div>
+      ${chapter.aufbau ? aufbauSvg(chapter.aufbau) : ''}
       ${medienBloecke(chapter.items, poster, weit)}
       ${platzhalterBlock(chapter.platzhalter, poster)}
       ${embedBlock(chapter.embed, chapter.title)}

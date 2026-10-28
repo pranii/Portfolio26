@@ -70,7 +70,7 @@ const BAUPLAN = {
   'in-lakech': () =>
     fenster({
       titel: 'INLAKECH.PY',
-      rechts: 'A links · K rechts',
+      rechts: 'A links · B rechts',
       koerper: `
         <canvas
           class="window__frame duell__canvas"
@@ -84,9 +84,8 @@ const BAUPLAN = {
     `
     <div class="duell__keys">
       <button class="duell__key" type="button" data-knopf="A" aria-label="Knopf A, links">A</button>
-      <button class="duell__key" type="button" data-knopf="B" aria-label="Knopf K, rechts">K</button>
-    </div>` +
-    fuss(t('prototyp.inlakech')),
+      <button class="duell__key" type="button" data-knopf="B" aria-label="Knopf B, rechts">B</button>
+    </div>`,
 
   zodizine: () =>
     fenster({

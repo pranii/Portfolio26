@@ -1708,10 +1708,13 @@ body[data-page='index'] {
 }
 
 /* Schritte — der grosse Abstand zwischen ihnen ist die Gliederung */
+/* Viel Luft zwischen den Kapiteln: Der Abstand soll groesser sein als
+   jeder Abstand innerhalb eines Kapitels — nur dann sieht man auf einen
+   Blick, was zusammengehoert. */
 .steps {
   padding-block: var(--s-8) 0;
   display: grid;
-  gap: var(--s-8);
+  gap: var(--s-10);
 }
 
 .step {
@@ -2148,7 +2151,7 @@ body[data-page='index'] {
   display: flex;
   justify-content: space-between;
   gap: var(--s-5);
-  margin: calc(var(--s-7) * -0.5) 0 var(--s-6);
+  margin: var(--s-5) 0 var(--s-6);
 }
 
 .duell__key {
@@ -3730,4 +3733,36 @@ kbd {
     transition-duration: 0.01ms !important;
     animation: none !important;
   }
+}
+
+/* ── 10h Technischer Aufbau ───────────────────────────────────────── */
+
+/* Die Skizze erbt die Schriftfarbe des Kastens, in dem sie steht —
+   deshalb braucht sie keine eigenen Farben und passt in jeden Bereich,
+   hell wie dunkel. */
+.aufbau {
+  margin: 0;
+  padding: var(--s-4);
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  overflow-x: auto;
+}
+
+.aufbau svg {
+  display: block;
+  width: 100%;
+  min-width: 34rem;
+  height: auto;
+}
+
+/* Steht der Prototyp in einem Kapitel, braucht er dort keinen eigenen
+   Rahmen mehr — der Kapitelrahmen und die Spalte ordnen ihn schon ein. */
+.step .prototyp {
+  margin-top: 0;
+  padding-block: 0;
+  border: 0;
+}
+
+.step .prototyp .section-title {
+  display: none;
 }

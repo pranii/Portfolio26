@@ -48,7 +48,7 @@ const FADE = 0.2;
 const SCHUSS_BILD = 3;
 const TREFFER_BILD = 7;
 
-const HEADER = 'IT TAKES TWO TO TANGO.';
+const HEADER = "IN LAK'ECH";
 
 // Dialog-Sequenz ("Kampf"). who: A (links), B (rechts, Taste K) oder BOTH.
 // left/right: 'figur' (Taiyo bzw. Tsuki) oder 'hand'. shoot: wer angreift.

@@ -87,9 +87,14 @@ async function main() {
   wurzel.innerHTML = renderProjectPage(project);
 
   // Der Prototyp sitzt zwischen Projektkopf und Kapiteln — auf derselben
-  // Seite, nicht auf einer eigenen.
+  // Seite, nicht auf einer eigenen. Fordert ihn ein Kapitel mit
+  // `prototypHier` an, steht er stattdessen dort, neben dem Text, zu dem
+  // er gehoert.
   if (project.prototyp) {
-    wurzel.querySelector('.project-head').insertAdjacentHTML('afterend', prototypHtml(project));
+    const platz = wurzel.querySelector('[data-prototyp-hier]');
+    if (platz) platz.insertAdjacentHTML('beforeend', prototypHtml(project));
+    else
+      wurzel.querySelector('.project-head').insertAdjacentHTML('afterend', prototypHtml(project));
   }
 
   // Voriges und naechstes Projekt desselben Bereichs.
