@@ -7,7 +7,7 @@
           "src": "/media/arbeit/chiro-med/header.webp",
           "thumb": "/media/arbeit/chiro-med/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -92,7 +92,7 @@
           "src": "/media/arbeit/citydep/header.webp",
           "thumb": "/media/arbeit/citydep/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -127,7 +127,7 @@
           "src": "/media/arbeit/fischerhuette/header.webp",
           "thumb": "/media/arbeit/fischerhuette/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -168,7 +168,7 @@
           "src": "/media/arbeit/handwerkerexperten/header.webp",
           "thumb": "/media/arbeit/handwerkerexperten/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -388,7 +388,7 @@
           "src": "/media/arbeit/huginn/header.webp",
           "thumb": "/media/arbeit/huginn/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -627,7 +627,7 @@
           "src": "/media/arbeit/sodam/header.webp",
           "thumb": "/media/arbeit/sodam/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -745,7 +745,7 @@
           "src": "/media/arbeit/step-v/header.webp",
           "thumb": "/media/arbeit/step-v/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -822,6 +822,13 @@
   "uni": {
     "rreth": {
       "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/rreth/header.webp",
+          "thumb": "/media/uni/rreth/header-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
         {
           "type": "image",
           "src": "/media/uni/rreth/rreth02-s01.webp",
@@ -1674,7 +1681,7 @@
           "src": "/media/uni/botlnick-gamejam/header.webp",
           "thumb": "/media/uni/botlnick-gamejam/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -2088,6 +2095,13 @@
       "images": [
         {
           "type": "image",
+          "src": "/media/uni/zodizine/header.webp",
+          "thumb": "/media/uni/zodizine/header-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
           "src": "/media/uni/zodizine/zodizine-01.webp",
           "thumb": "/media/uni/zodizine/zodizine-01-thumb.webp",
           "width": 1800,
@@ -2131,7 +2145,7 @@
           "src": "/media/uni/art-of-peace/header.webp",
           "thumb": "/media/uni/art-of-peace/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -2151,7 +2165,7 @@
           "src": "/media/uni/interaktionsdesign/header.webp",
           "thumb": "/media/uni/interaktionsdesign/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -2301,6 +2315,13 @@
       "images": [
         {
           "type": "image",
+          "src": "/media/uni/shepard-tone/header.webp",
+          "thumb": "/media/uni/shepard-tone/header-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "type": "image",
           "src": "/media/uni/shepard-tone/shephard-tone-doku-s01.webp",
           "thumb": "/media/uni/shepard-tone/shephard-tone-doku-s01-thumb.webp",
           "fromPdf": "shephard-tone-doku",
@@ -2375,6 +2396,13 @@
     },
     "nostalgia": {
       "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/nostalgia/header.webp",
+          "thumb": "/media/uni/nostalgia/header-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
         {
           "type": "image",
           "src": "/media/uni/nostalgia/liminal-01.webp",
@@ -2532,7 +2560,7 @@
           "src": "/media/uni/umakeitgram/header.webp",
           "thumb": "/media/uni/umakeitgram/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         }
       ],
       "videos": [],
@@ -2540,6 +2568,13 @@
     },
     "in-lakech": {
       "images": [
+        {
+          "type": "image",
+          "src": "/media/uni/in-lakech/header.webp",
+          "thumb": "/media/uni/in-lakech/header-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
         {
           "type": "image",
           "src": "/media/uni/in-lakech/spielidee-01.webp",
@@ -2934,7 +2969,7 @@
           "src": "/media/freizeit/love/header.webp",
           "thumb": "/media/freizeit/love/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         },
         {
           "type": "image",
@@ -2982,7 +3017,7 @@
           "src": "/media/freizeit/musikvideos/header.webp",
           "thumb": "/media/freizeit/musikvideos/header-thumb.webp",
           "width": 1800,
-          "height": 1013
+          "height": 1200
         }
       ],
       "videos": [
@@ -2996,6 +3031,13 @@
     },
     "kamamuta": {
       "images": [
+        {
+          "type": "image",
+          "src": "/media/freizeit/kamamuta/header.webp",
+          "thumb": "/media/freizeit/kamamuta/header-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        },
         {
           "type": "image",
           "src": "/media/freizeit/kamamuta/first-ideas-01.webp",
@@ -3323,6 +3365,19 @@
           "bytes": 7845601
         }
       ]
+    },
+    "improtheater": {
+      "images": [
+        {
+          "type": "image",
+          "src": "/media/freizeit/improtheater/header.webp",
+          "thumb": "/media/freizeit/improtheater/header-thumb.webp",
+          "width": 1800,
+          "height": 1200
+        }
+      ],
+      "videos": [],
+      "docs": []
     }
   }
 }

@@ -99,6 +99,7 @@ export const projects = [
   {
     slug: 'improtheater',
     title: 'Improtheater',
+    cover: 'header',
     subtitle: 'Staatstheater Tübingen',
     description:
       'Ein Improvisationstheaterstück am Staatstheater in Tübingen — gefilmt, geschnitten ' +

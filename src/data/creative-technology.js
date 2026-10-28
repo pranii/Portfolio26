@@ -163,7 +163,7 @@ export const projects = [
     slug: 'in-lakech',
     title: 'In Lak’ech',
     subtitle: 'Ein Begegnungsautomat für den öffentlichen Raum',
-    cover: 'begegnung-02',
+    cover: 'header',
     description:
       '„In Lak’ech" ist ein Gruß der Maya und heißt: Ich bin ein anderes Du. Wer ' +
       'gegenübersteht, ist nicht das Fremde, sondern dasselbe in einer anderen Gestalt — ' +
@@ -293,7 +293,7 @@ export const projects = [
     slug: 'shepard-tone',
     title: 'Multi Shepard',
     subtitle: 'Audiovisuelle Rauminstallation',
-    cover: 'shephard-tone-doku-s01',
+    cover: 'header',
     description:
       'Der Shepard-Ton ist eine Hoertaeuschung: eine Tonhoehe, die endlos zu steigen oder ' +
       'zu fallen scheint, ohne je irgendwo anzukommen. Multi Shepard bringt ihn in einen ' +

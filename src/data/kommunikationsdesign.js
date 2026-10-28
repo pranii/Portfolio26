@@ -211,7 +211,7 @@ export const projects = [
     slug: 'kamamuta',
     title: 'Kama Muta',
     subtitle: 'Ein Magazin ueber das Ergriffensein',
-    cover: 'prototyp-03',
+    cover: 'header',
     description:
       'Kama Muta ist das plötzliche Gefühl, das entsteht, wenn Nähe unerwartet spürbar ' +
       'wird — Gänsehaut bei einer Umarmung, Tränen bei einem fremden Lied. Das Magazin ' +

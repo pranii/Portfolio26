@@ -1,6 +1,6 @@
 /**
- * Importiert die Titelbilder aus public/media/COVER/<kategorie>/ als
- * `header`-Bild in das jeweilige Projekt unter public/media/<kategorie>/<slug>/.
+ * Importiert die Titelbilder aus public/media/COVER/ als `header`-Bild in
+ * das jeweilige Projekt unter public/media/<kategorie>/<slug>/.
  *
  * Anders als media-manifest.mjs (das aus Desktop/Portofolio liest) liegen
  * diese Dateien schon im Projekt selbst — deshalb ein eigenes, kleines Skript
@@ -20,26 +20,30 @@ const COVER_DIR = path.join(ROOT, 'public', 'media', 'COVER');
 const MEDIA_DIR = path.join(ROOT, 'public', 'media');
 const DATA_FILE = path.join(ROOT, 'src', 'data', 'media.json');
 
-// { category, slug, file: Dateiname relativ zu public/media/COVER/<Ordner> }
+// Die Titelbilder liegen flach in public/media/COVER/, 1800 x 1200 im
+// Format 3:2. Hier steht, welches zu welchem Projekt gehoert und in
+// welchem Medienordner das Projekt liegt.
 const HEADERS = [
-  { category: 'arbeit', slug: 'chiro-med', folder: 'arbeit', file: 'chiromed.svg' },
-  { category: 'arbeit', slug: 'citydep', folder: 'arbeit', file: 'citydept.svg' },
-  { category: 'arbeit', slug: 'fischerhuette', folder: 'arbeit', file: 'fischerhütte.svg' },
-  { category: 'arbeit', slug: 'huginn', folder: 'arbeit', file: 'huginn.svg' },
-  { category: 'arbeit', slug: 'sodam', folder: 'arbeit', file: 'sodam.svg' },
-  { category: 'arbeit', slug: 'step-v', folder: 'arbeit', file: 'stepv.svg' },
-  { category: 'arbeit', slug: 'handwerkerexperten', folder: 'arbeit', file: 'Ingo.svg' },
-  { category: 'freizeit', slug: 'love', folder: 'Freizeit', file: 'love.svg' },
-  { category: 'freizeit', slug: 'musikvideos', folder: 'Freizeit', file: 'ereza.svg' },
-  { category: 'uni', slug: 'kamamuta', folder: 'uni', file: 'kamamuta.svg' },
-  { category: 'uni', slug: 'nostalgia', folder: 'uni', file: 'nostalgia.svg' },
-  { category: 'uni', slug: 'rreth', folder: 'uni', file: 'rreth.svg' },
-  { category: 'uni', slug: 'zodizine', folder: 'uni', file: 'zodizine.svg' },
-  { category: 'uni', slug: 'shepard-tone', folder: 'uni', file: 'shephardtone.svg' },
-  { category: 'uni', slug: 'botlnick-gamejam', folder: 'uni', file: 'botl.svg' },
-  { category: 'uni', slug: 'interaktionsdesign', folder: 'uni', file: 'innerflow.svg' },
-  { category: 'uni', slug: 'art-of-peace', folder: 'uni', file: 'aikido.svg' },
-  { category: 'uni', slug: 'umakeitgram', folder: 'uni', file: 'umakeitgram.svg' },
+  { category: 'arbeit', slug: 'chiro-med', file: 'ChiroMed.png' },
+  { category: 'arbeit', slug: 'citydep', file: 'CityDepartment.png' },
+  { category: 'arbeit', slug: 'fischerhuette', file: 'Fischerhütte Plochingen.png' },
+  { category: 'arbeit', slug: 'handwerkerexperten', file: 'Handwerkerexperten.png' },
+  { category: 'arbeit', slug: 'huginn', file: 'huginn.png' },
+  { category: 'arbeit', slug: 'sodam', file: 'SoDam.png' },
+  { category: 'arbeit', slug: 'step-v', file: 'StepV.png' },
+  { category: 'freizeit', slug: 'improtheater', file: 'Landestheater Thübingen.png' },
+  { category: 'freizeit', slug: 'kamamuta', file: 'KAMA MUTA.png' },
+  { category: 'freizeit', slug: 'love', file: 'LOVE.png' },
+  { category: 'freizeit', slug: 'musikvideos', file: 'MUSIKVIDEOS.png' },
+  { category: 'uni', slug: 'art-of-peace', file: 'AIKIDO.png' },
+  { category: 'uni', slug: 'botlnick-gamejam', file: 'BOTLNICK.png' },
+  { category: 'uni', slug: 'in-lakech', file: 'INLACKECH.png' },
+  { category: 'uni', slug: 'interaktionsdesign', file: 'InnerFlow.png' },
+  { category: 'uni', slug: 'nostalgia', file: 'NOSTALGIA.png' },
+  { category: 'uni', slug: 'rreth', file: 'RRETH.png' },
+  { category: 'uni', slug: 'shepard-tone', file: 'SHEPHARDTONE.png' },
+  { category: 'uni', slug: 'umakeitgram', file: 'u’llMakeItGram.png' },
+  { category: 'uni', slug: 'zodizine', file: 'ZODIZINE.png' },
 ];
 
 async function writeHeaderImage(inputBuffer, outBase) {
@@ -69,7 +73,7 @@ async function main() {
   const media = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
 
   for (const h of HEADERS) {
-    const src = path.join(COVER_DIR, h.folder, h.file);
+    const src = path.join(COVER_DIR, h.file);
     if (!fs.existsSync(src)) {
       console.error(`  FEHLT: ${src}`);
       continue;
