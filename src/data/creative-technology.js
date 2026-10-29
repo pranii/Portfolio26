@@ -250,10 +250,9 @@ export const projects = [
     subtitle: 'Interaktive Videoinstallation',
     cover: 'header',
     description:
-      'Eine Videoinstallation über Nostalgie als Abwehrmechanismus: Wir verdrängen, was ' +
-      'gerade passiert, und romantisieren es später durch den Filter von Social Media. Ein ' +
-      'alter Röhrenmonitor am Ausgang des Aufzugs, gesteuert nur mit Körperhaltung und ' +
-      'Handbewegung.',
+      'Eine interaktive Videoinstallation über Identität, Erinnerung und den Widerstand ' +
+      'gegen das Vergessen. Auf einem Röhrenmonitor liegen zwei Bildebenen übereinander. ' +
+      'Gesteuert wird allein über die Position im Raum und über Handbewegungen.',
     year: '2026',
     role: 'Konzept, Gestaltung, Interaktion',
     kontext: 'Städtische Galerie Villingen-Schwenningen, März–April 2026',
@@ -269,34 +268,34 @@ export const projects = [
       {
         title: 'Die Schwelle',
         text:
-          'Den Namen habe ich zuerst bei Likana Cana gelesen. Kurz darauf ging es in der ' +
-          'Hochschule um Liminalität — den Zustand zwischen zwei Zuständen — und da war die ' +
-          'Idee da. Aus Brainstorming und Materialarchiv kamen drei Stränge: Sprache, ' +
-          'nationale Identität, Spiritualität. Daraus die These: Nostalgie ist kein ' +
-          'Erinnern, sondern ein Ausweichen. Wir lassen das, was gerade passiert, nicht an ' +
-          'uns heran und holen es später gefiltert zurück.',
+          'Den Namen habe ich zuerst bei Likana Cana gelesen. Das Thema kam aus einem ' +
+          'Semester an der Hochschule über Liminalität, den Zustand zwischen zwei ' +
+          'Zuständen. Auf dem Plakat steht die Frage, die die Arbeit stellt: Was bleibt, ' +
+          'wenn der Schein trügt?',
         files: [],
         textOnly: true,
       },
       {
         title: 'Technischer Aufbau',
         text:
-          'Eine Kamera liest Abstand und Haltung aus, TouchDesigner rechnet daraus ' +
-          'Schwellenwerte und legt beide Ebenen übereinander auf einen Röhrenmonitor. Je ' +
-          'weiter man weg steht, desto gröber das Raster — beim Herangehen löst sich das ' +
-          'Bild auf. Die Ästhetik kommt vom Signalfehler: RGB-Versatz, Rauschen, verrissene ' +
-          'Zeilen. Was auf einem modernen Bildschirm wie ein Defekt aussieht, ist auf der ' +
-          'Röhre normal.',
+          'Eine Kamera erfasst die Position im Raum. TouchDesigner legt daraus zwei ' +
+          'Bildebenen übereinander und gibt sie auf einen Röhrenmonitor aus. Je weiter man ' +
+          'sich aus der Mitte bewegt, desto stärker verschiebt sich das Verhältnis zwischen ' +
+          'Vorder- und Hintergrundebene. Die eigene Silhouette wird dabei zur Maske: In ihr ' +
+          'erscheint eine andere Bildebene als im Rest des Bildes.',
         files: [],
         aufbau: 'nostalgia',
       },
       {
-        title: 'Niemand bedient etwas',
+        title: 'Die Steuerung',
         text:
-          'Wer aus dem Aufzug tritt, steht im Bild, bevor er es merkt. Es gibt nichts zu ' +
-          'bedienen: Der Abstand zum Schirm und die Hand vor der Kamera sind die ganze ' +
-          'Steuerung — die beiden Plakate erklären das wortlos. Oben läuft dieselbe ' +
-          'Erkennung im Browser.',
+          'Zwei Tafeln erklären die Bedienung. Die eine zeigt die Position: Die ' +
+          'Hintergrundebene besteht aus fließenden, geschwungenen Störeffekten und heißt ' +
+          'dort die Traumwelt, schön, aber ungreifbar; die Vordergrundebene aus kantigen, ' +
+          'harten Glitches und heißt die Kollision mit der Realität. Die andere Tafel ' +
+          'zeigt die Hände: Die Kamera erfasst ausschließlich Handbewegungen, eine ' +
+          'Bewegung nach links lässt Text Wort für Wort sichtbar werden, eine nach rechts ' +
+          'zieht ihn zurück ins Dunkel. Oben läuft dieselbe Erkennung im Browser.',
         files: ['final'],
         layout: 'grid',
       },

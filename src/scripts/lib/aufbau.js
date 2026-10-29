@@ -36,18 +36,17 @@ export const AUFBAUTEN = {
   },
 
   nostalgia: {
-    alt: 'Eine Kamera geht an TouchDesigner, das beide Ebenen auf einen Röhrenmonitor legt',
+    alt: 'Eine Kamera geht an TouchDesigner, das zwei Bildebenen auf einen Röhrenmonitor legt',
     spalten: [
-      { label: 'Eingabe', kaesten: ['Kamera|Abstand, Haltung, Hand'] },
+      { label: 'Eingabe', kaesten: ['Kamera|Position im Raum', 'Kamera|Handbewegung'] },
       {
         label: 'Rechner',
         kaesten: [
-          'TouchDesigner|Schwellenwerte',
-          'Rasterung|grob bis fein',
-          'RGB-Versatz|zwei Ebenen',
+          'TouchDesigner|zwei Bildebenen',
+          'Silhouette|als Maske',
         ],
       },
-      { label: 'Ausgabe', kaesten: ['Röhrenmonitor|am Aufzug'] },
+      { label: 'Ausgabe', kaesten: ['Röhrenmonitor'] },
     ],
   },
 
