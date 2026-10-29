@@ -42,7 +42,7 @@ export const game = {
         subtitle: 'Game jam — Godot, Blender, photogrammetry',
         description:
           'A real underground car park, scanned with photogrammetry and made walkable in ' +
-          'Godot. Made at the game jam with Prof. Christoph Müller and Julien Trübinger.',
+          'Godot. Made at the game jam with Prof. Christoph Müller and Julien Trübiger.',
         role: 'Game design, 3D, level design, documentation',
         pull: 'An underground car park, scanned and made walkable.',
         kapitel: [
@@ -115,7 +115,7 @@ export const game = {
         subtitle: 'Game jam — Godot, Blender, fotogrametri',
         description:
           'Një parking nëntokësor i vërtetë, i skanuar me fotogrametri dhe i bërë i kalueshëm ' +
-          'në Godot. Lindi në game jam me Prof. Christoph Müller dhe Julien Trübinger.',
+          'në Godot. Lindi në game jam me Prof. Christoph Müller dhe Julien Trübiger.',
         role: 'Dizajn loje, 3D, dizajn nivelesh, dokumentim',
         pull: 'Një parking nëntokësor, i skanuar dhe i bërë i kalueshëm.',
         kapitel: [

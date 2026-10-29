@@ -58,7 +58,7 @@ export const projects = [
       'frei, bis er den Weg nach draußen findet. Was alle für Müll halten, ist hier die ' +
       'Währung.',
     kontext:
-      'Game Jam im Sommersemester 2026 bei Prof. Christoph Müller und Julien Trübinger, ' +
+      'Game Jam im Sommersemester 2026 bei Prof. Christoph Müller und Julien Trübiger, ' +
       'HFU School of Design and Media',
     client: 'Sebastiana Augenstein, Cara Brüggendieck, Tobias Moser',
     year: '2026',

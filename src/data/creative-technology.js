@@ -155,7 +155,6 @@ export const projects = [
         files: ['pitch-version-1'],
         layout: 'track',
         aufbau: 'rreth-pitch',
-        embed: 'https://youtu.be/Krdg6cM746g',
       },
       {
         title: 'Erster Einblick',
