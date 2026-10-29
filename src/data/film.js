@@ -64,7 +64,7 @@ export const projects = [
     cover: 'header',
     description: '',
     year: '2025',
-    role: 'Konzept, Regie, Gestaltung, Sounddesign',
+    role: 'Konzept, Regie, Schnitt',
     kontext: 'Kurzfilm, Februar 2025 — Besetzung über ein offenes Casting auf Instagram und TikTok',
     client: 'Dardan Shala',
     tools: ['Photoshop', 'Premiere Pro'],
