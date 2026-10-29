@@ -158,7 +158,7 @@ export const categories = [
 export const spiel = {
   slug: 'botlnick',
   title: 'BOTLNICK',
-  untertitel: 'Ein Spiel aus eingescannten Orten',
+  untertitel: 'Sammle Pfandflaschen und finde hinaus',
   beschreibung: 'Im Game Jam entstanden: Kein Download nötig.',
   steuerung: [
     ['W A S D', 'Bewegen'],

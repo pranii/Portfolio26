@@ -11,7 +11,7 @@
  *   umakeitgram  Das Spiel ohne Angular (lib/umakeitgram.js)
  *   shepard      Der Hoersaal zum Durchlaufen (lib/shepard.js)
  *   nostalgia    Die beiden Monitore mit MediaPipe (lib/nostalgia.js)
- *   botlnick     Der Godot-Export der Tiefgarage
+ *   botlnick     Der Godot-Export aus dem Game Jam
  *
  * Hier steht nur der Rahmen: das Fenster, die Knoepfe darunter und die
  * kurze Bedienungsanleitung. Das eigentliche Stueck Software wird erst
@@ -207,7 +207,7 @@ const BAUPLAN = {
         )
         .join('')}
     </dl>` +
-    fuss(t('prototyp.botlnick')),
+    '',
 
   // Zwei Fenster: links die beiden Monitore, rechts der Text unter dem
   // Nebel. Beide haengen an derselben Kamera und derselben Erkennung.

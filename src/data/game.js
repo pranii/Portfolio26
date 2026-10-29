@@ -29,7 +29,7 @@ export const category = {
     },
     {
       title: 'Welt bauen',
-      text: 'Echte Orte werden per Photogrammetrie eingescannt und in Blender zu spielbaren Räumen aufbereitet.',
+      text: 'Die Welt entsteht in Blender — eigene Assets statt gekaufter, so viel wie die Zeit hergibt.',
     },
     {
       title: 'Spielbar machen',

@@ -192,9 +192,6 @@ export const ui = {
     'if.aerger': 'Ärger',
     'if.ueberrascht': 'überrascht',
 
-    'prototyp.botlnick':
-      'Der Godot-Export aus dem Game Jam, hier im Fenster statt auf einer eigenen Seite. ' +
-      'Die Tiefgarage ist eine echte, eingescannt und begehbar gemacht.',
     'botlnick.rechts': 'Godot · {mb} MB',
     'botlnick.starten': 'Spiel starten',
     'botlnick.hinweis':
@@ -406,9 +403,6 @@ export const ui = {
     'if.aerger': 'anger',
     'if.ueberrascht': 'surprised',
 
-    'prototyp.botlnick':
-      'The Godot export from the game jam, here in a window instead of on a page of its own. ' +
-      'The car park is a real one, scanned and made walkable.',
     'botlnick.rechts': 'Godot · {mb} MB',
     'botlnick.starten': 'Start the game',
     'botlnick.hinweis':
@@ -619,9 +613,6 @@ export const ui = {
     'if.aerger': 'zemërim',
     'if.ueberrascht': 'i befasuar',
 
-    'prototyp.botlnick':
-      'Eksporti nga Godot i game jam-it, këtu në dritare dhe jo në një faqe më vete. ' +
-      'Parkingu nëntokësor është i vërtetë, i skanuar dhe i bërë i kalueshëm.',
     'botlnick.rechts': 'Godot · {mb} MB',
     'botlnick.starten': 'Nis lojën',
     'botlnick.hinweis':

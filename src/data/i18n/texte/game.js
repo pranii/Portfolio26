@@ -25,7 +25,7 @@ export const game = {
         },
         {
           title: 'Build the world',
-          text: 'Real places are scanned by photogrammetry and turned into playable rooms in Blender.',
+          text: 'The world is built in Blender — our own assets rather than bought ones, as many as the time allows.',
         },
         {
           title: 'Make it playable',
@@ -39,39 +39,12 @@ export const game = {
     },
     projekte: {
       'botlnick-gamejam': {
-        subtitle: 'Game jam — Godot, Blender, photogrammetry',
+        subtitle: 'Four days of game jam — an exploration game in Godot',
         description:
-          'A real underground car park, scanned with photogrammetry and made walkable in ' +
+          'Nick collects deposit bottles in an empty building and unlocks abilities with them in ' +
           'Godot. Made at the game jam with Prof. Christoph Müller and Julien Trübiger.',
         role: 'Game design, 3D, level design, documentation',
-        pull: 'An underground car park, scanned and made walkable.',
-        kapitel: [
-          {
-            title: 'An underground car park',
-            text:
-              'A game jam gives you little time and no safety. Instead of inventing a world we ' +
-              'brought one along: a car park, scanned and made walkable. Places like it are ' +
-              'liminal spaces — you are always only on your way somewhere else, never arrived. ' +
-              'It started with moodboards for style, cutscenes, key objects and comedic relief: ' +
-              'the tone had to be able to tip between eerie and silly.',
-          },
-          {
-            title: 'From scan to room',
-            text:
-              'The car park came out of Polycam as a photogrammetry scan and was cleaned up in ' +
-              'Blender — closing holes, reducing geometry until Godot could carry it. Then the ' +
-              'figures: main and side character, reference sheets, the set design. The PSX look is ' +
-              'not a filter but the result — low resolution and hard edges hide exactly what a ' +
-              'scan cannot give you.',
-          },
-          {
-            title: 'Going in',
-            text:
-              'The car park can be entered at the top of this page — WASD to walk, mouse to ' +
-              'look, Esc gives the pointer back. The documentation holds the whole path, from ' +
-              'finding the idea through setting and mechanics to post-production of the scans.',
-          },
-        ],
+        pull: 'What others throw away is what the player needs.',
       },
       umakeitgram: {
         subtitle: 'Video game — final project “Media Counter-Cultures”',
@@ -98,7 +71,7 @@ export const game = {
         },
         {
           title: 'Të ndërtohet bota',
-          text: 'Vende reale skanohen me fotogrametri dhe bëhen hapësira të luajtshme në Blender.',
+          text: 'Bota ndërtohet në Blender — me asete tona në vend të të blerëve, aq sa lejon koha.',
         },
         {
           title: 'Të bëhet e luajtshme',
@@ -112,39 +85,13 @@ export const game = {
     },
     projekte: {
       'botlnick-gamejam': {
-        subtitle: 'Game jam — Godot, Blender, fotogrametri',
+        subtitle: 'Katër ditë game jam — një lojë eksplorimi në Godot',
         description:
-          'Një parking nëntokësor i vërtetë, i skanuar me fotogrametri dhe i bërë i kalueshëm ' +
-          'në Godot. Lindi në game jam me Prof. Christoph Müller dhe Julien Trübiger.',
+          'Nick mbledh shishe depozite në një ndërtesë të zbraztë dhe me to zhbllokon aftësi, ' +
+          'derisa gjen rrugën për të dalë. Lindi në game jam me Prof. Christoph Müller dhe ' +
+          'Julien Trübiger.',
         role: 'Dizajn loje, 3D, dizajn nivelesh, dokumentim',
-        pull: 'Një parking nëntokësor, i skanuar dhe i bërë i kalueshëm.',
-        kapitel: [
-          {
-            title: 'Një parking nëntokësor',
-            text:
-              'Një game jam të jep pak kohë dhe asnjë siguri. Në vend që të shpiknim një botë, ' +
-              'morëm një me vete: një parking, i skanuar dhe i bërë i kalueshëm. Vende të tilla ' +
-              'janë hapësira kalimtare — aty je gjithmonë vetëm rrugës diku tjetër, kurrë i ' +
-              'arritur. Në fillim ishin moodboard-et për stilin, cutscene-t, objektet kyçe dhe ' +
-              'çlirimin komik: toni duhej të anonte mes të llahtarshmes dhe qesharakes.',
-          },
-          {
-            title: 'Nga skanimi te hapësira',
-            text:
-              'Parkingu erdhi si skanim fotogrametrik nga Polycam dhe u përpunua në Blender — ' +
-              'mbyllje vrimash, pakësim gjeometrie, derisa Godot mundi ta mbante. Pastaj ' +
-              'figurat: personazhi kryesor dhe ai dytësor, fletët e referencës, skenografia. ' +
-              'Pamja PSX nuk është filtër, por rezultat — rezolucioni i ulët dhe tehet e forta ' +
-              'fshehin pikërisht atë që një skanim nuk e jep.',
-          },
-          {
-            title: 'Hyrja brenda',
-            text:
-              'Parkingu mund të shkelet lart në këtë faqe — WASD për të ecur, miu për të parë ' +
-              'rreth e rrotull, Esc e kthen kursorin. Dokumentimi e mban tërë rrugën, nga ' +
-              'gjetja e idesë te ambienti, mekanika dhe përpunimi i skanimeve.',
-          },
-        ],
+        pull: 'Ajo që të tjerët e hedhin, për lojëtarin ka vlerë.',
       },
       umakeitgram: {
         subtitle: 'Videolojë — punim përfundimtar „Kundërkultura mediatike"',
