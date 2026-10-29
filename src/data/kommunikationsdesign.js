@@ -16,7 +16,7 @@
 export const category = {
   slug: 'kommunikationsdesign',
   title: 'Kommunikations­design', // ­: unsichtbare Trennstelle fuer schmale Bildschirme
-  lead: 'Corporate Design, Kampagnen und Editorial fuer Gastronomie, Handwerk, Praxen und Bildungseinrichtungen.', // TODO
+  lead: 'Corporate Design, Kampagnen und Editorial — für Gastronomie, Handwerk, Praxen und Hochschulen.',
   /**
    * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
    * sind ideal, mehr oder weniger geht auch.
@@ -51,7 +51,7 @@ export const projects = [
   {
     slug: 'handwerkerexperten',
     title: 'Handwerkerexperten',
-    subtitle: 'Zwei Marken, eine Geschaeftsausstattung',
+    subtitle: 'Zwei Marken unter einem Dach',
     cover: 'header',
     description:
       'Killes und Benz Immobilien betreibt zwei Geschäftsbereiche: die Verwalterexperten ' +
@@ -60,9 +60,9 @@ export const projects = [
       'gegenseitig zu verdecken.',
     year: '2025', // TODO
     role: 'Redesign, Gestaltung, Reinzeichnung',
-    client: 'Killes und Benz Immobilien OHG, Fellbach',
+    auftrag: 'Killes und Benz Immobilien OHG, Fellbach',
     tools: ['Illustrator', 'InDesign', 'Wordpress'],
-    tags: ['Corporate Design', 'Logo', 'Geschaeftsausstattung', 'Print'],
+    tags: ['Corporate Design', 'Logo', 'Geschäftsausstattung', 'Print'],
     pull: 'Zwei Bereiche, ein Dach — das Logo nimmt die Hausform wörtlich.',
     chapters: [
       {
@@ -116,7 +116,7 @@ export const projects = [
       'Fotografie.',
     year: '2025',
     role: 'Gestaltung, Fotografie, Social Media',
-    client: 'Huginn Lounge & Arts',
+    auftrag: 'Huginn Lounge & Arts',
     tools: ['InDesign', 'Photoshop', 'Illustrator'],
     tags: ['Corporate Design', 'Editorial', 'Fotografie', 'Gastronomie'],
     pull: 'Ein Zeichen, das alles überdacht.',
@@ -156,13 +156,14 @@ export const projects = [
   {
     slug: 'chiro-med',
     title: 'Chiro Med',
-    subtitle: 'Corporate Design fuer eine chiropraktische Praxis',
+    subtitle: 'Corporate Design für eine chiropraktische Praxis',
     cover: 'header',
     description:
-      'Chiro Med in Prishtina behandelt chiropraktisch, physiotherapeutisch und mit Dry Needling. Das Erscheinungsbild sollte medizinisch genug wirken, um Vertrauen zu schaffen, und koerperlich genug, um zu zeigen, worum es geht.', // TODO
+      'Eine Praxis in Prishtina, die mit den Händen arbeitet. Das Zeichen sollte das sichtbar ' +
+      'machen, ohne seine medizinische Ruhe zu verlieren.',
     year: '2025', // TODO
     role: 'Konzept, Gestaltung, Styleguide',
-    client: 'Chiro Med, Novoselle / Prishtina',
+    auftrag: 'Chiro Med, Novoselle / Prishtina',
     tools: ['Illustrator', 'InDesign'],
     tags: ['Corporate Design', 'Logo', 'Styleguide'],
     pull: 'Ein Zeichen, das trägt, was es zeigt.',
@@ -193,13 +194,14 @@ export const projects = [
   {
     slug: 'sodam',
     title: 'SoDaM',
-    subtitle: 'Zwei Kampagnen fuer die School of Design and Media',
+    subtitle: 'Zwei Kampagnen für die School of Design and Media',
     cover: 'header',
     description:
-      'Die School of Design and Media der Hochschule Furtwangen brauchte eine Kampagne, die Studieninteressierte erreicht, ohne wie Hochschulwerbung auszusehen. Daraus entstanden zwei eigenstaendige Kampagnen: eine Social-Media-Strategie rund um die Serie "Victorious" und eine Live-Action-Plakatkampagne, die Schueler direkt anspricht.', // TODO
+      'Zwei Kampagnen mit demselben Ziel und gegensätzlichen Mitteln: eine leise, die sich an ' +
+      'eine Serie anlehnt, und eine laute, die vom Plakat herunter angreift.',
     year: '2025', // TODO
     role: 'Konzept, Strategie, Gestaltung',
-    client: 'Hochschule Furtwangen',
+    auftrag: 'Hochschule Furtwangen',
     tools: ['InDesign', 'Photoshop'],
     tags: ['Kampagne', 'Plakat', 'Social Media', 'Strategie'],
     pull: 'SoDaM FAKE — eine Kampagne, die zugibt, dass sie eine ist.',
@@ -242,10 +244,11 @@ export const projects = [
     subtitle: 'Gastronomie-Kommunikation in Plochingen',
     cover: 'header',
     description:
-      'Die Fischerhuette ist Ausflugslokal und Eventlocation zugleich. Gaeste sitzen im Gruenen, abends wird daraus eine Buehne — beide Zustaende mussten in derselben Bildsprache Platz haben.', // TODO
+      'Ein Haus mit zwei Lautstärken: mittags Ausflugslokal, abends Bühne. Beides musste in ' +
+      'dieselbe Bildsprache passen.',
     year: '2025', // TODO
     role: 'Fotografie, Gestaltung, Social Media',
-    client: 'Fischerhuette Plochingen',
+    auftrag: 'Fischerhütte Plochingen',
     tools: ['Photoshop', 'InDesign'],
     tags: ['Gastronomie', 'Print', 'Social Media', 'Fotografie'],
     pull: 'Mittags im Grünen, abends eine Bühne — dieselbe Bildsprache.',
@@ -253,9 +256,9 @@ export const projects = [
       {
         title: 'Mittags und abends',
         text:
-          'Die Fischerhütte ist Ausflugslokal und Eventlocation zugleich. Gäste sitzen mittags ' +
-          'im Grünen, abends wird daraus eine Bühne. Beide Zustände mussten in derselben ' +
-          'Bildsprache Platz haben.',
+          'Fotografiert habe ich beide Seiten selbst — den Mittag im Grünen und den Abend mit ' +
+          'Bühne. Aus diesen Bildern speist sich danach alles andere: was auf den Tischen liegt ' +
+          'und was auf Instagram geht.',
         files: [],
         textOnly: true,
       },
@@ -282,15 +285,16 @@ export const projects = [
   {
     slug: 'step-v',
     title: 'Step V',
-    subtitle: 'Markenpraesentation fuer ein Studio',
+    subtitle: 'Markenpräsentation für ein Studio',
     cover: 'header',
     description:
-      'Step V ist ein Studio, das sich neu positioniert. Neben Konzept und Gestaltung der Praesentation habe ich die Analyse und die Kommunikation nach aussen uebernommen, dazu Trendrecherche und Kundenakquise betrieben. Nebenbei habe ich, um das Unternehmen finanziell mit zu tragen, Videos geplant, geschnitten und mit Effekten bearbeitet.', // TODO
+      'Ein Studio, das sich neu aufstellt — und eine Präsentation, mit der es sich erklären ' +
+      'kann. Dazu kamen Analyse, Außenkommunikation und Akquise.',
     year: '2025', // TODO
-    role: 'Analyse, Kommunikation nach aussen, Trendrecherche, Kundenakquise, Videoproduktion',
-    client: 'Step V Studio',
+    role: 'Analyse, Außenkommunikation, Trendrecherche, Kundenakquise, Videoproduktion',
+    auftrag: 'Step V Studio',
     tools: ['InDesign', 'After Effects'],
-    tags: ['Editorial', 'Praesentation', 'Bewegtbild'],
+    tags: ['Editorial', 'Präsentation', 'Bewegtbild'],
     pull: 'Erst wofür das Studio steht, dann die Zahlen, dann die Aufforderung.',
     chapters: [
       {
@@ -320,8 +324,10 @@ export const projects = [
     subtitle: 'Storyboards und Trailer im VHS-Look',
     cover: 'header',
     description:
-      'Fuer Citydep entstanden Trailer, die aussehen sollen, als waeren sie von einer Kassette gerettet worden. Die Storyboards sind entsprechend als Archivbloecke aufgebaut — mit Kassettennummer, Ort und Equipment pro Einstellung.', // TODO
+      'Trailer, die aussehen sollen wie von einer Kassette gerettet. Selbst die Storyboards sind ' +
+      'als Fundstücke angelegt — mit Kassettennummer, Ort und Equipment pro Einstellung.',
     year: '2025', // TODO
+    auftrag: 'Citydep',
     role: 'Storyboard, Schnitt, Gestaltung',
     tools: ['Premiere Pro', 'After Effects', 'InDesign'],
     tags: ['Bewegtbild', 'Storyboard', 'VHS'],
@@ -330,9 +336,8 @@ export const projects = [
       {
         title: 'Wie von einer Kassette',
         text:
-          'Die Trailer sollten aussehen, als wären sie von einer Kassette gerettet worden. Ein ' +
-          'Look, den man nicht am Schluss drauflegen kann — wenn die Bildstörung nur ein Filter ' +
-          'ist, merkt man es. Also musste das Archiv schon in der Planung stecken.',
+          'Ein Look, den man nicht am Schluss drauflegen kann — wenn die Bildstörung nur ein ' +
+          'Filter ist, merkt man es. Also musste das Archiv schon in der Planung stecken.',
         files: [],
         textOnly: true,
       },

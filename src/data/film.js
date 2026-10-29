@@ -60,12 +60,13 @@ export const projects = [
   {
     slug: 'love',
     title: 'Love',
-    subtitle: 'LOVE - what love prompts us to do',
+    subtitle: 'Kurzfilm — what love prompts us to do',
     cover: 'header',
     description: '',
     year: '2025',
     role: 'Konzept, Regie, Gestaltung, Sounddesign',
-    client: 'Mit Dardan Shala',
+    kontext: 'Kurzfilm, Februar 2025 — Besetzung über ein offenes Casting auf Instagram und TikTok',
+    client: 'Dardan Shala',
     tools: ['Photoshop', 'Premiere Pro'],
     tags: ['Kurzfilm', 'Artwork', 'Casting'],
     pull: 'a story of perspective on love',
@@ -88,12 +89,14 @@ export const projects = [
     slug: 'improtheater',
     title: 'Improtheater',
     cover: 'header',
-    subtitle: 'Landestheater Tübingen',
+    subtitle: 'Trailer für ein Improvisationstheaterstück',
     description:
       'Ein Improvisationstheaterstück, gefilmt und auf einen Trailer gebracht. Niemand weiß ' +
       'vorher, wo die Szene hingeht — es gibt keinen zweiten Take.',
     year: '2026',
+    kontext: 'Landestheater Tübingen, Juli 2026',
     role: 'Kamera, Schnitt',
+    client: 'Joscha Reuther, Jan Bangert',
     tools: ['Premiere Pro'],
     tags: ['Theater', 'Dokumentation', 'Kamera'],
     pull: 'Keine zweite Aufnahme, kein Plan, an den man sich halten könnte.',
@@ -111,19 +114,22 @@ export const projects = [
   {
     slug: 'musikvideos',
     title: 'Musikvideos',
-    subtitle: 'EREZA — a kishe guxu',
+    subtitle: 'Videos für Ereza und Jeriko',
     cover: 'header',
     description:
-      'Ereza ist mittlerweile eine Freundin, mit der ich gerne Ideen fuer Musikvideos bespreche und auch schon oefter eng zusammengearbeitet habe — etwa fuer den Dreh von "A kishe guxu?".', // TODO
-    year: '2025', // TODO
+      'Zwei Musiker, zwei Arten zu arbeiten: Bei Ereza führe ich Regie, stehe an der Kamera ' +
+      'und schneide. Bei Jeriko komme ich für die Effekte dazu.',
+    year: '2025',
     role: 'Regie, Kamera, Schnitt',
+    kontext: 'Musikvideo, Visualizer und Promomaterial',
+    client: 'Ereza, Jeriko',
     tools: ['Premiere Pro', 'DaVinci Resolve'],
     tags: ['Musikvideo', 'Regie', 'Schnitt'],
     pull: 'Erst die Idee besprechen, dann die Kamera auspacken.',
     extern: {
       href: 'https://www.youtube.com/watch?v=GhhHAptcLss',
       label: 'Video auf YouTube ansehen',
-      note: 'EREZA — a kishe guxu, offiziell veroeffentlicht.',
+      note: 'EREZA — a kishe guxu, offiziell veröffentlicht.',
     },
     chapters: [
       {
@@ -167,10 +173,10 @@ export const projects = [
       'das Frühstück.',
     year: '2025', // TODO
     role: 'Konzept, Storyboard, Kamera',
-    client: 'Huginn',
+    auftrag: 'Huginn Lounge & Arts',
     tools: ['Premiere Pro', 'Photoshop'],
     tags: ['Storyboard', 'Bewegtbild', 'Werbefilm'],
-    pull: 'Sechzehn Bilder, die den Film erzählen, bevor die Kamera läuft.',
+    pull: 'Ein Haus, zwei Tonlagen — und für jede ein eigener Film.',
     chapters: [
       {
         title: 'The Perfect Martini',
@@ -199,24 +205,22 @@ export const projects = [
   {
     slug: 'art-of-peace',
     title: 'The Art of Peace',
-    subtitle: 'Anime-Pilotfolge ueber Aikido',
+    subtitle: 'Anime-Pilotfolge über Aikido',
     cover: 'header',
     description:
-      'Ein Teamprojekt mit dem Ziel, das Interesse an Aikido wiederzubeleben — der ' +
-      'Kampfkunst, die Morihei Ueshiba Mitte des 20. Jahrhunderts in Japan entwickelt hat ' +
-      'und die Konflikte durch Harmonie statt durch Gewalt loest. Entstanden sind zwei ' +
-      'Dinge: ein VR-Spiel und die Pilotfolge einer Anime-Serie. Mein Teil war das ' +
-      'Storyboard und dessen Animation.', // TODO
-    year: '2022',
+      'Ein Teamprojekt mit dem Ziel, das Interesse an Aikido wiederzubeleben. Entstanden sind ' +
+      'zwei Dinge: ein VR-Spiel und die Pilotfolge einer Anime-Serie. Mein Teil war das ' +
+      'Storyboard und dessen Animation.',
     role: 'Storyboard, Animation',
-    client: 'Teamprojekt an der Hochschule Furtwangen',
+    year: '2022',
+    kontext: 'Teamprojekt an der Hochschule Furtwangen',
     tools: ['Storyboarder', 'Photoshop', 'Blender', 'Celtx'],
     tags: ['Animation', 'Storyboard', 'Anime', 'Aikido', 'Auszeichnung'],
     pull: 'Konflikte lösen sich durch Harmonie, nicht durch Gewalt.',
     extern: {
       href: 'https://hs-furtwangen.github.io/TheArtOfPeace/',
       label: 'Projektdokumentation ansehen',
-      note: 'Die vollstaendige Doku des Teams mit Research, Assets und Trailer.',
+      note: 'Die vollständige Doku des Teams mit Research, Assets und Trailer.',
     },
     chapters: [
       {

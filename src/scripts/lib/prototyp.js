@@ -125,14 +125,7 @@ const BAUPLAN = {
       <button class="buch__knopf" type="button" data-rolle="vor" aria-label="${t('heft.vor')}">
         ▶
       </button>
-    </div>` +
-    fuss(
-      pdf
-        ? t('prototyp.magazin', {
-            pdf: `<a href="${esc(pdf)}" target="_blank" rel="noopener">${t('prototyp.magazin.pdf')}</a>`,
-          })
-        : t('prototyp.magazin.ohnepdf'),
-    ),
+    </div>`,
 
   umakeitgram: () =>
     fenster({

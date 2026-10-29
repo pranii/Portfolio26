@@ -57,7 +57,6 @@ async function main() {
     feld(t('ueber.feld.instagram'), ueber.instagram.label, ueber.instagram.href),
     feld(t('ueber.feld.abschluss'), ueber.abschluesse.join(' · ')),
     feld(t('ueber.feld.sprachen'), ueber.sprachen.join(' · ')),
-    feld(t('ueber.feld.gruppe'), ueber.gruppe),
     feld(t('ueber.feld.kernkompetenz'), ueber.kernkompetenz),
   ].join('');
 

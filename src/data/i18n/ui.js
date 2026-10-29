@@ -66,6 +66,8 @@ export const ui = {
     'karte.projekte': 'Projekte',
 
     'fakten.jahr': 'Jahr',
+    'fakten.auftrag': 'Auftraggeber',
+    'fakten.rahmen': 'Rahmen',
     'fakten.rolle': 'Meine Rolle',
     'fakten.mitwirkende': 'Mitwirkende',
     'fakten.werkzeuge': 'Werkzeuge',
@@ -127,12 +129,6 @@ export const ui = {
       'das Heft — acht Seiten auf einem Blatt A4, aus dem es gefaltet wird. Dazu passt die ' +
       '{anleitung}. Die Zeichnungen auf den Seiten sind von Cara Brüggendieck.',
     'prototyp.zodizine.anleitung': 'Faltanleitung aus dem Projekt',
-    'prototyp.magazin':
-      'Das Heft so, wie es gedruckt ist: zwei Querformat-Seiten nebeneinander, in der Mitte ' +
-      'der Bund, Vorder- und Rückseite für sich allein. {pdf}.',
-    'prototyp.magazin.pdf': 'Das ganze Magazin als PDF',
-    'prototyp.magazin.ohnepdf':
-      'Das Heft so, wie es gedruckt ist: zwei Querformat-Seiten nebeneinander.',
     'prototyp.umakeitgram':
       'Das Spiel von 2023, Bild für Bild wie in der Abgabe. An den Gabelungen entscheidest du ' +
       'selbst — und der Balken am unteren Rand zählt mit. Was er zählt, sagt dir ELIZA erst am ' +
@@ -288,6 +284,8 @@ export const ui = {
     'karte.projekte': 'projects',
 
     'fakten.jahr': 'Year',
+    'fakten.auftrag': 'Client',
+    'fakten.rahmen': 'Context',
     'fakten.rolle': 'My role',
     'fakten.mitwirkende': 'Collaborators',
     'fakten.werkzeuge': 'Tools',
@@ -349,11 +347,6 @@ export const ui = {
       'pages on a single A4 sheet that gets folded. The matching {anleitung} is included. The ' +
       'drawings on the pages are by Cara Brüggendieck.',
     'prototyp.zodizine.anleitung': 'folding guide from the project',
-    'prototyp.magazin':
-      'The magazine as it is printed: two landscape pages side by side, the gutter in the ' +
-      'middle, front and back cover on their own. {pdf}.',
-    'prototyp.magazin.pdf': 'The whole magazine as a PDF',
-    'prototyp.magazin.ohnepdf': 'The magazine as it is printed: two landscape pages side by side.',
     'prototyp.umakeitgram':
       'The game from 2023, image for image as it was handed in. At the forks you decide ' +
       'yourself — and the bar along the bottom keeps count. What it is counting, ELIZA only ' +
@@ -509,6 +502,8 @@ export const ui = {
     'karte.projekte': 'projekte',
 
     'fakten.jahr': 'Viti',
+    'fakten.auftrag': 'Klienti',
+    'fakten.rahmen': 'Konteksti',
     'fakten.rolle': 'Roli im',
     'fakten.mitwirkende': 'Bashkëpunëtorët',
     'fakten.werkzeuge': 'Mjetet',
@@ -569,12 +564,6 @@ export const ui = {
       'fletë A4 që pastaj paloset. Bashkë me të vjen {anleitung}. Vizatimet në faqe janë të ' +
       'Cara Brüggendieck.',
     'prototyp.zodizine.anleitung': 'udhëzimi i palosjes nga projekti',
-    'prototyp.magazin':
-      'Revista ashtu siç është shtypur: dy faqe horizontale krah për krah, kurrizi në mes, ' +
-      'kopertina e parë dhe e fundit secila veç. {pdf}.',
-    'prototyp.magazin.pdf': 'E gjithë revista si PDF',
-    'prototyp.magazin.ohnepdf':
-      'Revista ashtu siç është shtypur: dy faqe horizontale krah për krah.',
     'prototyp.umakeitgram':
       'Loja e vitit 2023, pamje pas pamjeje ashtu siç u dorëzua. Në udhëkryqe vendos vetë — ' +
       'dhe shiriti poshtë numëron. Çfarë numëron, ELIZA ta thotë vetëm në fund.',

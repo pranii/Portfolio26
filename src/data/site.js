@@ -3,7 +3,7 @@
  */
 
 export const site = {
-  name: 'PREJNI', // TODO — steht gross auf der Startseite
+  name: 'PREJNI', // steht gross auf der Startseite
   role: 'Creative Director · Creative Coding · Installationen', // steht unter dem Namen
   intro:
     'Creative Director mit Schwerpunkt auf Creative Coding und Installationen. Ich baue ' +
@@ -12,8 +12,7 @@ export const site = {
   email: 'pranverapelaj@outlook.de',
   links: [
     { label: 'E-Mail', href: 'mailto:pranverapelaj@outlook.de' },
-    { label: 'Instagram', href: 'https://www.instagram.com/prejniii/' }, // TODO
-    { label: 'Lebenslauf', href: '#' }, // TODO
+    { label: 'Instagram', href: 'https://www.instagram.com/prejni.design/' },
   ],
 
   /**
@@ -23,12 +22,11 @@ export const site = {
   ueber: {
     name: 'Pranvera Pelaj',
     kuerzel: 'PREJNI',
-    rolle: 'Creative Director — Creative Coding und Installationen',
+    rolle: 'Creative Director',
     ort: 'Regensburg',
     abschluesse: ['B.Sc. Marketing', 'M.A. Design Interaktiver Medien'],
     sprachen: ['Deutsch', 'Englisch', 'Albanisch'],
     instagram: { label: '@prejni.design', href: 'https://www.instagram.com/prejni.design/' },
-    gruppe: 'Design',
     kernkompetenz: 'Creative Coding und Installationen',
     text:
       'Ich gestalte an der Stelle, an der Print, Digitales und Raum aufhören, getrennte ' +
@@ -161,7 +159,7 @@ export const spiel = {
   slug: 'botlnick',
   title: 'BOTLNICK',
   untertitel: 'Ein Spiel aus eingescannten Orten',
-  beschreibung: 'Im Game Jam entstanden: Kein Download noetig.',
+  beschreibung: 'Im Game Jam entstanden: Kein Download nötig.',
   steuerung: [
     ['W A S D', 'Bewegen'],
     ['Maus', 'Umsehen'],

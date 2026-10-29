@@ -70,11 +70,11 @@ export const projects = [
       'Belastungsstörung, und 2028 eine Ausstellung, die beides zusammenbringt.',
     year: '2020–2025',
     role: 'Konzeption, Recherche, Regie, Videoschnitt, Sounddesign, Rauminstallation',
+    kontext:
+      'Bachelorthesis 2023, Online Medien — fortgeführt 2025 im Master Design Interaktiver ' +
+      'Medien, Hochschule Furtwangen',
     client:
-      'Bachelorthesis "Rreth — Dokumentation einer immersiven Rauminstallation", vorgelegt ' +
-      '2023 im Studiengang Online Medien, Fakultät Digitale Medien der Hochschule Furtwangen. ' +
-      'Betreuung: Prof. Thomas Krach und Prof. Matthias Reusch. Fortführung 2025 im Master ' +
-      'Design Interaktiver Medien mit Cara Brüggendieck und Laura Zahn',
+      'Cara Brüggendieck und Laura Zahn. Betreuung: Prof. Thomas Krach, Prof. Matthias Reusch',
     tools: [
       'Premiere Pro',
       'After Effects',
@@ -187,6 +187,7 @@ export const projects = [
       'Fremde zusammenbringt — ein Videospiel im Nokia-3310-Look auf einem Raspberry Pi, ' +
       'bedient über zwei Arcade-Knöpfe. Weiter geht es nur, wenn beide gleichzeitig drücken.',
     year: '2026',
+    kontext: 'Masterprojekt Design Interaktiver Medien — geplant für Regensburg, Sommer 2027',
     role: 'Konzept, Gestaltung, Programmierung',
     tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
     tags: ['Installation', 'Game', 'Partizipation', 'Raspberry Pi', 'Public Space'],
@@ -256,11 +257,10 @@ export const projects = [
       'Handbewegung.',
     year: '2026',
     role: 'Konzept, Gestaltung, Interaktion',
-    client:
-      'Städtische Galerie Villingen-Schwenningen, März–April 2026. Mit Julia Mamani und ' +
-      'Cara Brüggendieck',
+    kontext: 'Städtische Galerie Villingen-Schwenningen, März–April 2026',
+    client: 'Julia Mamani und Cara Brüggendieck',
     tools: ['TouchDesigner', 'Photoshop', 'CRT-Monitore'],
-    tags: ['Installation', 'Interaktionsdesign', 'TouchDesigner', 'Liminalitaet'],
+    tags: ['Installation', 'Interaktionsdesign', 'TouchDesigner', 'Liminalität'],
     pull: 'Was bleibt, wenn der Schein trügt?',
     // Video statt Titelbild oben auf der Seite.
     // Dieselbe Erkennung wie in der Galerie, nur mit MediaPipe statt
@@ -320,8 +320,8 @@ export const projects = [
       'bereits, bevor jemand da ist — der Weg nach unten ist das Erlebnis.',
     year: 'Januar 2026',
     role: 'Konzept, Raumgestaltung, Sound',
-    client:
-      'Mit Cara Brüggendieck und Kathrin Krell. Betreut von Prof. Norbert Schnell und Peter Kirschenbauer',
+    kontext: 'Hochschule Furtwangen, betreut von Prof. Norbert Schnell und Peter Kirschenbauer',
+    client: 'Cara Brüggendieck und Kathrin Krell',
     tools: ['Web Audio API', 'JavaScript', 'Polycam', 'InDesign'],
     tags: ['Klanginstallation', 'Raum', 'Wahrnehmung', 'Interaktion'],
     pull: 'Kann ich meinen Sinnen überhaupt trauen?',
@@ -363,7 +363,7 @@ export const projects = [
   {
     slug: 'kamamuta',
     title: 'Kama Muta',
-    subtitle: 'Table for two — eine Performance im öffentlichen Raum',
+    subtitle: 'Table for two — ein gedeckter Tisch für zwei Fremde',
     cover: 'header',
     description:
       'Zwei Fremde setzen sich an einen gedeckten Tisch mitten in der Stadt und lernen sich ' +
@@ -372,7 +372,7 @@ export const projects = [
       'machen die beiden selbst.',
     year: '2026',
     role: 'Konzept, Inszenierung, Gestaltung, Fotografie',
-    client: 'Performance im öffentlichen Raum, Sommer 2026 — Furtwangen und Stuttgart',
+    kontext: 'Performance im öffentlichen Raum — Furtwangen und Stuttgart, Sommer 2026',
     tools: ['Raspberry Pi', 'InDesign', 'Photoshop', 'After Effects'],
     tags: ['Performance', 'Öffentlicher Raum', 'Partizipation', 'Editorial'],
     pull: 'Der Mensch wird am Du zum Ich.',
@@ -423,16 +423,6 @@ export const projects = [
         layout: 'track',
       },
       {
-        title: 'Jedes Kapitel anders',
-        text:
-          'Für „Black Swan" habe ich die Reihenfolge der Doppelseiten mit Klebezetteln so ' +
-          'lange verschoben, bis der Rhythmus stimmte. Am Ende steht das gedruckte Heft — ' +
-          'drei Essays, ein Umschlag, und der Beweis, dass die Anweisungen auf Papier ' +
-          'funktionieren.',
-        files: ['black-swan', 'prototyp', 'kama-muta-magazine-prototype'],
-        layout: 'track',
-      },
-      {
         title: 'Der Fragenkatalog',
         text:
           'Grundlage ist der bekannte Katalog, mit dem sich zwei Menschen in 36 Fragen ' +
@@ -467,9 +457,9 @@ export const projects = [
       'als Diagnose. Alles läuft lokal, Rohbilder werden nie gespeichert.',
     year: '2026',
     role: 'Experteninterviews, Video- und Audioanalyse, Prototyp, Evaluation',
-    client:
-      'Mit Rosa Stark, Johannes Merschroth und Marla Speth. Modul Interaktionsdesign bei ' +
-      'Prof. Dr.-Ing. Thomas Schlegel, Hochschule Furtwangen',
+    kontext:
+      'Modul Interaktionsdesign bei Prof. Dr.-Ing. Thomas Schlegel, Hochschule Furtwangen',
+    client: 'Rosa Stark, Johannes Merschroth und Marla Speth',
     tools: [
       'Python',
       'DeepFace',
@@ -563,7 +553,7 @@ export const projects = [
   {
     slug: 'zodizine',
     title: 'ZodiZine',
-    subtitle: 'Banales Ding — ein Zine-Automat',
+    subtitle: 'Ein Automat, der Zines druckt',
     cover: 'header',
     description:
       'Eine Station, an der Besucher ihr Geburtsdatum eingeben und ein persönliches Zine ' +
@@ -571,8 +561,8 @@ export const projects = [
       'Alles läuft offline auf einem Raspberry Pi.',
     year: '2026',
     role: 'Konzept, technische Umsetzung',
-    client:
-      'Mit Cara Brüggendieck. Modul "Inszenierung Interaktiver Medien", Master Design Interaktiver Medien',
+    kontext: 'Modul „Inszenierung Interaktiver Medien“, Master Design Interaktiver Medien',
+    client: 'Cara Brüggendieck',
     tools: ['React', 'Flask', 'Raspberry Pi', 'ReportLab', 'InDesign'],
     tags: ['Interaktion', 'Zine', 'Prototyp', 'Generative Gestaltung'],
     prototyp: { art: 'zodizine', titel: 'Der Automat im Browser', label: 'Automat ausprobieren' },
@@ -595,7 +585,8 @@ export const projects = [
           'die Umgebung, der nüchterne Automat wird zum rituellen Ort. Die Berührung des ' +
           'Touchscreens, das Warten, während die Mechanik arbeitet, die Übergabe des noch ' +
           'warmen Papiers. Die Faltung macht den Nutzer zum Mitproduzenten — jedes Zine ist ' +
-          'ein Unikat in einer Serie von Unikaten.',
+          'ein Unikat in einer Serie von Unikaten. Oben auf dieser Seite lässt sich der ' +
+          'Automat bedienen.',
         files: [],
         embed: 'https://youtu.be/Ivilxs3Gcxg',
       },

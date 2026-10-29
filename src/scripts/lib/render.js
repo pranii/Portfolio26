@@ -500,6 +500,8 @@ function platzhalterBlock(datei, poster) {
  */
 function factList(project) {
   const rows = [
+    [t('fakten.auftrag'), project.auftrag],
+    [t('fakten.rahmen'), project.kontext],
     [t('fakten.rolle'), project.role],
     [t('fakten.mitwirkende'), project.client],
     [t('fakten.werkzeuge'), project.tools?.join(', ')],

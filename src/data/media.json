@@ -2609,113 +2609,6 @@
         },
         {
           "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-01.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-01-thumb.webp",
-          "width": 1024,
-          "height": 683
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-02.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-02-thumb.webp",
-          "width": 744,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-03.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-03-thumb.webp",
-          "width": 659,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-04.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-04-thumb.webp",
-          "width": 1024,
-          "height": 737
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-05.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-05-thumb.webp",
-          "width": 672,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-06.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-06-thumb.webp",
-          "width": 1024,
-          "height": 753
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-07.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-07-thumb.webp",
-          "width": 1024,
-          "height": 748
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-08.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-08-thumb.webp",
-          "width": 699,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-09.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-09-thumb.webp",
-          "width": 609,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/black-swan-10.webp",
-          "thumb": "/media/freizeit/kamamuta/black-swan-10-thumb.webp",
-          "width": 682,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/prototyp-01.webp",
-          "thumb": "/media/freizeit/kamamuta/prototyp-01-thumb.webp",
-          "width": 353,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/prototyp-02.webp",
-          "thumb": "/media/freizeit/kamamuta/prototyp-02-thumb.webp",
-          "width": 343,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/prototyp-03.webp",
-          "thumb": "/media/freizeit/kamamuta/prototyp-03-thumb.webp",
-          "width": 675,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/prototyp-04.webp",
-          "thumb": "/media/freizeit/kamamuta/prototyp-04-thumb.webp",
-          "width": 703,
-          "height": 1024
-        },
-        {
-          "type": "image",
-          "src": "/media/freizeit/kamamuta/kama-muta-magazine-prototype-s01.webp",
-          "thumb": "/media/freizeit/kamamuta/kama-muta-magazine-prototype-s01-thumb.webp",
-          "fromPdf": "kama-muta-magazine-prototype",
-          "page": 1,
-          "width": 1738,
-          "height": 5044
-        },
-        {
-          "type": "image",
           "src": "/media/freizeit/kamamuta/fragenkatalog-s01.webp",
           "thumb": "/media/freizeit/kamamuta/fragenkatalog-s01-thumb.webp",
           "fromPdf": "fragenkatalog",
@@ -2753,12 +2646,6 @@
       ],
       "videos": [],
       "docs": [
-        {
-          "type": "doc",
-          "src": "/media/freizeit/kamamuta/kama-muta-magazine-prototype.pdf",
-          "label": "KAMA MUTA MAGAZINE PROTOTYPE.pdf",
-          "bytes": 7845601
-        },
         {
           "type": "doc",
           "src": "/media/freizeit/kamamuta/fragenkatalog.pdf",
