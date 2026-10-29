@@ -261,8 +261,8 @@ export const projects = [
     tags: ['Installation', 'Interaktionsdesign', 'TouchDesigner', 'Liminalität'],
     pull: 'Was bleibt, wenn der Schein trügt?',
     // Video statt Titelbild oben auf der Seite.
-    // Dieselbe Erkennung wie in der Galerie, nur mit MediaPipe statt
-    // TouchDesigner: zwei Monitore und der Satz unter dem Nebel.
+    // Aehnliche Erkennung wie in der Galerie, nur mit MediaPipe statt
+    // TouchDesigner: ein Schirm und der Satz unter dem Nebel.
     prototyp: { art: 'nostalgia', titel: 'Selbst ins Bild treten' },
     chapters: [
       {
@@ -295,7 +295,8 @@ export const projects = [
           'harten Glitches und heißt die Kollision mit der Realität. Die andere Tafel ' +
           'zeigt die Hände: Die Kamera erfasst ausschließlich Handbewegungen, eine ' +
           'Bewegung nach links lässt Text Wort für Wort sichtbar werden, eine nach rechts ' +
-          'zieht ihn zurück ins Dunkel. Oben läuft dieselbe Erkennung im Browser.',
+          'zieht ihn zurück ins Dunkel. Oben im Browser läuft eine ähnliche Erkennung wie in ' +
+          'der Galerie.',
         files: ['final'],
         layout: 'grid',
       },

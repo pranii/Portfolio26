@@ -136,7 +136,8 @@ export const ui = {
       'nah du den Boxen kommst.',
 
     'prototyp.nostalgia':
-      'Dieselbe Erkennung wie in der Galerie, nur im Browser: Beide Ebenen liegen auf einem ' +
+      'Eine ähnliche Erkennung wie in der Galerie, nur im Browser: Beide Ebenen liegen auf ' +
+      'einem ' +
       'Bildschirm übereinander, und der Abstand entscheidet, wie grob das Bild wird. ' +
       'Im zweiten Fenster liegt ein Satz unter Nebel; die Hand wischt ihn frei, und der Nebel ' +
       'zieht wieder zu. Gezeichnet wird nur mit Farben, nie mit dem Kamerabild.',
@@ -347,7 +348,7 @@ export const ui = {
       'in which direction, and how close you get to the speakers.',
 
     'prototyp.nostalgia':
-      'The same detection as in the gallery, only in the browser: whoever is in frame sees ' +
+      'A detection similar to the one in the gallery, only in the browser: whoever is in frame sees ' +
       'both layers at once — and where you stand decides which of them carries. In the second ' +
       'window a sentence lies under fog; your hand wipes it clear, and the fog closes again. ' +
       'It is drawn with colours only, never with the camera image.',
@@ -557,7 +558,7 @@ export const ui = {
       'dhe sa afër u vjen altoparlantëve.',
 
     'prototyp.nostalgia':
-      'I njëjti njohje si në galeri, vetëm në shfletues: kush është në kuadër i sheh të dy ' +
+      'Një njohje e ngjashme me atë në galeri, vetëm në shfletues: kush është në kuadër i sheh të dy ' +
       'shtresat njëherësh — dhe vendi ku qëndron vendos cila prej tyre mban. Në dritaren e ' +
       'dytë një fjali rri nën mjegull; dora e pastron, dhe mjegulla kthehet. Vizatohet vetëm ' +
       'me ngjyra, kurrë me pamjen e kamerës.',
