@@ -151,6 +151,14 @@
 html {
   -webkit-text-size-adjust: 100%;
   background: var(--lcd-lo);
+  /* Auf dem Handy zoomte ein Doppeltipp ins Bild — bei den Prototypen
+     tippt man aber schnell hintereinander, und das Zoomen kam dauernd
+     dazwischen. "manipulation" nimmt genau diese Geste weg und laesst
+     Scrollen und Pinch-Zoom unberuehrt. Weil der Browser die erlaubten
+     Gesten aus Element und allen Vorfahren schneidet, genuegt es hier
+     oben: kein Nachfahre kann den Doppeltipp-Zoom wieder einschalten,
+     strengere Werte weiter unten (pan-y, none) gelten weiterhin. */
+  touch-action: manipulation;
   /* Kein kuenstliches Fett und Kursiv — die Pixelschriften haben nur
      einen Schnitt, alles andere waere verschmiert. */
   font-synthesis: none;

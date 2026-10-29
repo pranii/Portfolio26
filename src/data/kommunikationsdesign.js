@@ -224,7 +224,6 @@ export const projects = [
         files: ['socialmediaauftritt'],
         layout: 'track',
         embed: 'https://www.instagram.com/reel/DPoii6bAhuc/',
-        platzhalter: ['/media/arbeit/sodam/Sodam1.mp4', '/media/arbeit/sodam/Sodam2.mp4'],
       },
       {
         title: 'Der Stempel',
@@ -278,7 +277,6 @@ export const projects = [
           'Lautstärke höher.',
         files: ['fischerhuette-01', 'tischaufsteller-04'],
         layout: 'track',
-        platzhalter: '/media/arbeit/fischerhuette/Fischerhuette.mp4',
       },
     ],
   },
