@@ -65,7 +65,7 @@ async function main() {
   // Die Werkzeuge kommen aus den Projekten selbst, nicht aus einer
   // gepflegten Liste — so fehlt nie eines, das irgendwo benutzt wurde.
   const bereiche = await Promise.all(Object.values(LOADERS).map((laden) => laden()));
-  const alleProjekte = bereiche.flatMap((bereich) => bereich.projects);
+  const alleProjekte = bereiche.flatMap((bereich) => bereich.projects).filter((p) => !p.versteckt);
   document.querySelector('[data-slot="werkzeuge"]').innerHTML = renderWerkzeuge(
     ueber.werkzeuge,
     alleProjekte,

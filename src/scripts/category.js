@@ -34,7 +34,7 @@ async function main() {
 
   const geladen = await LOADERS[page]();
   const category = uebersetzeKategorie(geladen.category);
-  const projects = geladen.projects.map(uebersetzeProjekt);
+  const projects = geladen.projects.filter((p) => !p.versteckt).map(uebersetzeProjekt);
   document.title = `${category.title} — Portfolio`;
 
   document.documentElement.dataset.accent = page;

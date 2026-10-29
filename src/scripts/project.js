@@ -43,10 +43,17 @@ function notFound(message) {
   document.querySelector('.pager')?.remove();
 }
 
-/** Das Projekt davor oder danach — mit uebersetztem Titel. */
-function uebersetztesNachbarprojekt(data, index) {
-  const nachbar = data.projects[index];
-  return nachbar ? uebersetzeProjekt(nachbar) : null;
+/**
+ * Das naechste sichtbare Projekt in dieser Richtung — mit
+ * uebersetztem Titel. Versteckte werden uebersprungen, damit das
+ * Blaettern nicht auf eine Seite fuehrt, die sonst nirgends steht.
+ */
+function uebersetztesNachbarprojekt(data, index, richtung) {
+  for (let i = index; i >= 0 && i < data.projects.length; i += richtung) {
+    const nachbar = data.projects[i];
+    if (!nachbar.versteckt) return uebersetzeProjekt(nachbar);
+  }
+  return null;
 }
 
 async function main() {
@@ -108,8 +115,8 @@ async function main() {
     link.innerHTML = `<span class="pager__dir">${richtung}</span><span class="pager__title">${target.title}</span>`;
   };
 
-  setPager('prev', uebersetztesNachbarprojekt(data, index - 1), t('projekt.vorheriges'));
-  setPager('next', uebersetztesNachbarprojekt(data, index + 1), t('projekt.naechstes'));
+  setPager('prev', uebersetztesNachbarprojekt(data, index - 1, -1), t('projekt.vorheriges'));
+  setPager('next', uebersetztesNachbarprojekt(data, index + 1, 1), t('projekt.naechstes'));
 
   initScroll();
   initPageTransitions();

@@ -61,6 +61,8 @@ export const category = {
 export const projects = [
   {
     slug: 'rreth',
+    /** Vorerst nicht auf der Seite. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Rreth',
     subtitle: 'Take It All Off // Break the Silence',
     cover: 'header',
