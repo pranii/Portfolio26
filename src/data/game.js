@@ -51,38 +51,76 @@ export const projects = [
   {
     slug: 'botlnick-gamejam',
     title: 'Botlnick',
-    subtitle: 'Eine eingescannte Tiefgarage, begehbar gemacht',
+    subtitle: 'Vier Tage Game Jam — ein Exploration-Spiel in Godot',
     cover: 'header',
     description:
-      'Ein Ort, den jeder kennt und niemand gern betritt: die Tiefgarage. Wir haben eine ' +
-      'echte eingescannt und daraus einen Raum gemacht, den man ablaufen kann.',
-    kontext: 'Game Jam bei Prof. Christoph Müller und Julien Trübinger, Hochschule Furtwangen',
+      'Nick sammelt Pfandflaschen in einem leeren Gebäude und schaltet damit Fähigkeiten ' +
+      'frei, bis er den Weg nach draußen findet. Was alle für Müll halten, ist hier die ' +
+      'Währung.',
+    kontext:
+      'Game Jam im Sommersemester 2026 bei Prof. Christoph Müller und Julien Trübinger, ' +
+      'HFU School of Design and Media',
+    client: 'Sebastiana Augenstein, Cara Brüggendieck, Tobias Moser',
     year: '2026',
     role: 'Game Design, 3D, Level Design, Dokumentation',
-    tools: ['Godot', 'Blender', 'Polycam', 'Photoshop'],
-    tags: ['Game Design', 'Photogrammetrie', '3D', 'Liminal Space', 'PSX'],
-    pull: 'Ein Ort, den jeder kennt und niemand gern betritt.',
+    tools: ['Godot', 'Blender', 'BlendKit', 'Polycam', 'Photoshop'],
+    tags: ['Game Design', 'Level Design', '3D', 'Liminal Space', 'Game Jam'],
+    pull: 'Was andere wegwerfen, hat für den Spieler Wert.',
     /** Zeigt oben auf der Projektseite einen Knopf zum Spielen. */
     prototyp: { art: 'botlnick', titel: 'Die Garage betreten' },
     chapters: [
       {
-        title: 'Eine Tiefgarage',
+        title: 'Vier Tage',
         text:
-          'Die Wände sind abfotografiert und per Photogrammetrie zu einem Modell gerechnet, der ' +
-          'Rest in Godot gebaut. Oben lässt sich die Garage betreten — WASD zum Gehen, Maus ' +
-          'zum Umsehen.',
+          'Vom ersten Einfall bis zum spielbaren Prototyp waren es vier Tage. In dieser Zeit ' +
+          'musste alles einmal passieren: die Idee, die Spielwelt, die Technik und die eigenen ' +
+          'Assets. Oben lässt sich das Ergebnis starten — WASD zum Gehen, Maus zum Umsehen.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Nick und die Flaschen',
+        text:
+          'Eine kurze Cutscene am Anfang: Ein goldener Blob wirft achtlos eine Plastikflasche ' +
+          'weg. Danach übernimmt man Nick. Überall liegen Pfandflaschen herum, und sie sind die ' +
+          'Währung des Spiels — beim Roboter Walbert schaltet man damit Fähigkeiten frei: ' +
+          'werfen, schrumpfen, Flaschen kleben lassen, schweben. Jede neue Fähigkeit öffnet ' +
+          'einen Teil des Gebäudes, der vorher unerreichbar war, und nebenher muss man Gegnern ' +
+          'ausweichen. Am Ende steht der Ausgang.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Vier Säulen',
+        text:
+          'Das Design steht auf vier Entscheidungen. Gesammelt wird nur eines, die Flasche. ' +
+          'Fortschritt heißt neue Möglichkeiten statt größerer Zahlen. Der Weg führt nach oben, ' +
+          'räumlich wie erzählerisch — von ganz unten bis zur Elite. Und die Räume bleiben ' +
+          'leer: reduzierte Backrooms, die ihre Dystopie nicht erklären, sondern über Hall, ' +
+          'Stille und vereinzelte Geräusche spürbar machen. Man merkt, dass dieser Ort nicht ' +
+          'für einen gebaut wurde.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Was unterwegs wegfiel',
+        text:
+          'Geplant waren Räume, die wir aus unserer realen Umgebung einscannen wollten; die ' +
+          'Photogrammetrie lief schon. Mitten im Jam haben wir sie verworfen und die Zeit in ' +
+          'die Mechanik gesteckt statt in die Umgebung. Dieselbe Rechnung steckt in den ' +
+          'Vorbildern: Die „Hidden Levels" aus Super Mario Sunshine beschneiden eine Mechanik ' +
+          'und gewinnen dadurch Schwierigkeit, ohne dass jemand mehr bauen muss — bei vier ' +
+          'Tagen ist das das richtige Prinzip. Die Levelauswahl über Gemälde aus Super Mario 64 ' +
+          'und eine Basketball-Mechanik als Levelabschluss haben wir geprüft und liegen lassen.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Dokumentation',
-        text: 'Der ganze Weg: Ideenfindung, Setting, Mechanik, Nachbearbeitung der Scans.',
-        files: [
-          'botlnick-dokumentation',
-          'game-studies-gdd-s01',
-          'game-studies-gdd-s02',
-          'game-studies-gdd-s03',
-        ],
+        text:
+          'Die Dokumentation des Jams, Seite für Seite: Ideenfindung, Game Design Dokument, ' +
+          'Kernsysteme, Assets und Level Design.',
+        files: ['botlnick-dokumentation'],
         layout: 'track',
       },
     ],

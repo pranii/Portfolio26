@@ -163,7 +163,7 @@ export const projects = [
           'Drehbuch, Regie und Schnitt: Pranvera Pelaj, Cara Brüggendieck, Laura Zahn. ' +
           'Kamera und Licht: Joscha Reuther, Jan Borghart.',
         files: [],
-        textOnly: true,
+        embed: 'https://youtu.be/21GWCYnf_ww',
       },
       {
         title: 'Kampagne und Zukunftsausblick',

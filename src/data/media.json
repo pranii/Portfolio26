@@ -1718,33 +1718,6 @@
           "page": 20,
           "width": 1191,
           "height": 1684
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s01.webp",
-          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s01-thumb.webp",
-          "fromPdf": "game-studies-gdd",
-          "page": 1,
-          "width": 1191,
-          "height": 1685
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s02.webp",
-          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s02-thumb.webp",
-          "fromPdf": "game-studies-gdd",
-          "page": 2,
-          "width": 1191,
-          "height": 1685
-        },
-        {
-          "type": "image",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd-s03.webp",
-          "thumb": "/media/uni/botlnick-gamejam/game-studies-gdd-s03-thumb.webp",
-          "fromPdf": "game-studies-gdd",
-          "page": 3,
-          "width": 1191,
-          "height": 1685
         }
       ],
       "videos": [
@@ -1764,20 +1737,7 @@
           "bytes": 17907280
         }
       ],
-      "docs": [
-        {
-          "type": "doc",
-          "src": "/media/uni/botlnick-gamejam/botlnick-dokumentation-2.pdf",
-          "label": "BOTLNICK.Dokumentation-2.pdf",
-          "bytes": 12627464
-        },
-        {
-          "type": "doc",
-          "src": "/media/uni/botlnick-gamejam/game-studies-gdd.pdf",
-          "label": "Game Studies (GDD).pdf",
-          "bytes": 121571
-        }
-      ]
+      "docs": []
     },
     "zodizine": {
       "images": [
