@@ -140,7 +140,7 @@ const BAUPLAN = {
           role="application"
           aria-label="uMakeItGram"
         ></div>`,
-    }) + fuss(t('prototyp.umakeitgram')),
+    }),
 
   // Zwei Messfenster: oben der Eingang, darunter die Liste, die alle
   // 0,4 Sekunden notiert und nur die letzten beiden Eintraege zeigt.

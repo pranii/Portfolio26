@@ -129,10 +129,6 @@ export const ui = {
       'das Heft — acht Seiten auf einem Blatt A4, aus dem es gefaltet wird. Dazu passt die ' +
       '{anleitung}. Die Zeichnungen auf den Seiten sind von Cara Brüggendieck.',
     'prototyp.zodizine.anleitung': 'Faltanleitung aus dem Projekt',
-    'prototyp.umakeitgram':
-      'Das Spiel von 2023, Bild für Bild wie in der Abgabe. An den Gabelungen entscheidest du ' +
-      'selbst — und der Balken am unteren Rand zählt mit. Was er zählt, sagt dir ELIZA erst am ' +
-      'Schluss.',
     'prototyp.shepard':
       'Der Hörsaal von oben: links der einzige Weg, vorne die Leinwand und die beiden Boxen. ' +
       'Der Ton klingt wie in der Installation — elf Oszillatoren von 20 Hz bis 20.480 Hz — und ' +
@@ -347,10 +343,6 @@ export const ui = {
       'pages on a single A4 sheet that gets folded. The matching {anleitung} is included. The ' +
       'drawings on the pages are by Cara Brüggendieck.',
     'prototyp.zodizine.anleitung': 'folding guide from the project',
-    'prototyp.umakeitgram':
-      'The game from 2023, image for image as it was handed in. At the forks you decide ' +
-      'yourself — and the bar along the bottom keeps count. What it is counting, ELIZA only ' +
-      'tells you at the end.',
     'prototyp.shepard':
       'The lecture hall from above: the only way through on the left, the screen and the two ' +
       'speakers at the front. The sound is the one from the installation — eleven oscillators ' +
@@ -564,9 +556,6 @@ export const ui = {
       'fletë A4 që pastaj paloset. Bashkë me të vjen {anleitung}. Vizatimet në faqe janë të ' +
       'Cara Brüggendieck.',
     'prototyp.zodizine.anleitung': 'udhëzimi i palosjes nga projekti',
-    'prototyp.umakeitgram':
-      'Loja e vitit 2023, pamje pas pamjeje ashtu siç u dorëzua. Në udhëkryqe vendos vetë — ' +
-      'dhe shiriti poshtë numëron. Çfarë numëron, ELIZA ta thotë vetëm në fund.',
     'prototyp.shepard':
       'Salla e leksioneve parë nga lart: majtas rruga e vetme, përpara ekrani dhe dy ' +
       'altoparlantët. Tingulli është ai i instalimit — njëmbëdhjetë oshilatorë nga 20 Hz deri ' +
