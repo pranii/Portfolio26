@@ -562,7 +562,9 @@ export const projects = [
       'Alles läuft offline auf einem Raspberry Pi.',
     year: '2026',
     role: 'Konzept, technische Umsetzung',
-    kontext: 'Modul „Inszenierung Interaktiver Medien“, Master Design Interaktiver Medien',
+    kontext:
+      'Modul „Inszenierung Interaktiver Medien“ bei Prof. Regina Reusch, Master Design ' +
+      'Interaktiver Medien',
     client: 'Cara Brüggendieck',
     tools: ['React', 'Flask', 'Raspberry Pi', 'ReportLab', 'InDesign'],
     tags: ['Interaktion', 'Zine', 'Prototyp', 'Generative Gestaltung'],
