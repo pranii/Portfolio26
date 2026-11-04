@@ -14,5 +14,7 @@ dist/
 #   public/media/   aus Desktop/Portofolio, via npm run import
 #   public/spiel/   Godot-Web-Export, via npm run export:spiel
 
-# Rohvideo fuer den Launcher (~70 MB) — nur opener.gif wird ausgeliefert.
-public/launcher/OPENER.mp4
+# Der Launcher laeuft jetzt als Video, und opener.mp4 (0,7 MB) muss
+# deshalb mit ins Repo — sonst fehlt es auf der fertigen Seite.
+# Rohmaterial gehoert nicht hierher: grosse Quelldateien bitte
+# ausserhalb von public/ ablegen.
