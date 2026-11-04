@@ -13,7 +13,17 @@
 
   <body data-page="index">
     <div class="launcher" data-slot="launcher" aria-hidden="true">
-      <img class="launcher__gif" src="/launcher/opener.gif" alt="" />
+      <video
+        class="launcher__gif"
+        src="/launcher/opener.mp4"
+        poster="/launcher/opener-poster.webp"
+        autoplay
+        muted
+        playsinline
+        loop
+        disablepictureinpicture
+        tabindex="-1"
+      ></video>
       <div class="launcher__text">
         <p class="launcher__title" data-slot="launcher-title">Portfolio</p>
         <p class="launcher__subtitle">Loading&hellip;</p>

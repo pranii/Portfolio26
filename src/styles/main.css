@@ -613,6 +613,10 @@ html.lenis body {
   pointer-events: none;
 }
 
+/* Der Startbildschirm lief als GIF mit 56 MB — jedes Mal vor dem
+   ersten Blick auf die Seite. Als Video sind es 0,7 MB, und es
+   streamt statt zu blockieren. Zeigefinger weg: Der Klick soll den
+   Launcher schliessen, nicht das Video bedienen. */
 .launcher__gif {
   position: absolute;
   inset: 0;
@@ -620,6 +624,7 @@ html.lenis body {
   height: 100%;
   object-fit: cover;
   opacity: 0.45;
+  pointer-events: none;
 }
 
 .launcher__text {
