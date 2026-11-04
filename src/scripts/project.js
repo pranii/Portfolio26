@@ -47,11 +47,23 @@ function notFound(message) {
  * Das naechste sichtbare Projekt in dieser Richtung — mit
  * uebersetztem Titel. Versteckte werden uebersprungen, damit das
  * Blaettern nicht auf eine Seite fuehrt, die sonst nirgends steht.
+ *
+ * Am Rand wird umgebrochen: Vom ersten Projekt fuehrt "zurueck" auf
+ * das letzte. Vorher endete der Weg dort einfach, und man stand
+ * ohne Rueckweg da.
  */
-function uebersetztesNachbarprojekt(data, index, richtung) {
-  for (let i = index; i >= 0 && i < data.projects.length; i += richtung) {
+function uebersetztesNachbarprojekt(data, start, richtung) {
+  const anzahl = data.projects.length;
+  if (!anzahl) return null;
+  const ring = (n) => ((n % anzahl) + anzahl) % anzahl;
+  // Von wo aus geblaettert wird: start ist schon der erste Kandidat.
+  const hier = ring(start - richtung);
+
+  for (let schritt = 0; schritt < anzahl; schritt += 1) {
+    const i = ring(start + schritt * richtung);
+    if (i === hier) break; // einmal herum, nichts anderes Sichtbares
     const nachbar = data.projects[i];
-    if (!nachbar.versteckt) return uebersetzeProjekt(nachbar);
+    if (nachbar && !nachbar.versteckt) return uebersetzeProjekt(nachbar);
   }
   return null;
 }

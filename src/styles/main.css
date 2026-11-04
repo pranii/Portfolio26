@@ -583,6 +583,13 @@ html.lenis body {
   color: var(--ink-dim);
 }
 
+/* Jeder Krumel bleibt ein Wort. Ohne das schrumpft der Flex-Kasten
+   den Link unter seine Textbreite, und "Kommunikationsdesign" bricht
+   mitten im Wort um. Umgebrochen wird zwischen den Krumeln. */
+.breadcrumb > * {
+  white-space: nowrap;
+}
+
 .breadcrumb a {
   border-bottom: 1px dashed transparent;
   transition: border-color 0.12s steps(2);
