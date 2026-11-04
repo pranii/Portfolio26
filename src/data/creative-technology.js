@@ -209,42 +209,53 @@ export const projects = [
       {
         title: 'Ideenfindung',
         text:
-          'Das Modul „Interaktionsdesign" stellte uns vor die Aufgabe, fremde Menschen im ' +
-          'öffentlichen Raum unaufgefordert zur Interaktion zu bewegen. Angefangen habe ich ' +
-          'damit, Kinderspiele aufzuzeichnen, die vielen noch vertraut sind, und bin durch ' +
-          'meine Stadt gelaufen, um Orte für erste Tests zu finden. Dabei wurde schnell klar: ' +
-          'Papier oder Kreide auf Asphalt zieht kaum Aufmerksamkeit auf sich. Was dagegen ' +
-          'funktioniert, sind offene Fragen. Der nächste Versuch lief über eine Treppe — zwei ' +
-          'Menschen beginnen an je einem Ende und werden auf dem Weg zur Mitte mit Fragen ' +
-          'konfrontiert. Die Fragen waren allerdings so persönlich gestellt, dass sich niemand ' +
-          'bereiterklärte mitzumachen. Daraus habe ich gelernt, dass der Einstieg leichter ' +
-          'werden muss.',
+          'Das Modul „Interaktionsdesign" stellte uns vor die Herausforderung, fremde ' +
+          'Personen im öffentlichen Raum unaufgefordert zur Interaktion zu bewegen. Begonnen ' +
+          'habe ich damit, verschiedene Kinderspiele, die vielen Menschen aus ihrer Kindheit ' +
+          'bekannt sein dürften, aufzuzeichnen, und bin dann in meiner Stadt spazieren ' +
+          'gegangen, um gute Locations für erste Testings zu finden. Durch die Testings wurde ' +
+          'mir klar, dass einfache Mittel wie Papier oder Kreide auf Asphalt wenig ' +
+          'Aufmerksamkeit auf sich ziehen. Weiterhin habe ich jedoch erkannt, dass Menschen ' +
+          'vor allem durch offene Fragen gut in ein Gespräch kommen. Die Idee war nun, auf ' +
+          'einer Treppe von jeweils einem Ende zu beginnen und auf dem Weg zum Mittelpunkt ' +
+          'mit Fragen konfrontiert zu werden. Die Fragen waren jedoch sehr persönlich ' +
+          'gestellt und es hat sich niemand dazu bereiterklärt, das Testing durchzuführen. ' +
+          'Hier bin ich für mich dann auf die Einsicht gelangt, den Einstieg einfacher machen ' +
+          'zu müssen. Mein Ziel mit dem Projekt ist es, aufzuzeigen, dass jeder Mensch auch ' +
+          'eine Repräsentation seines Gegenübers ist. So habe ich mich dem Maya-Gruß ' +
+          '„In Lak’ech" bedient, mit dem ich mich auch in der Vergangenheit schon gerne ' +
+          'auseinandergesetzt habe. Die Idee war nun, aufzuzeigen, wie wir einer fremden ' +
+          'Person auf den ersten Blick erstmal misstrauisch gegenüberstehen. Dieses ' +
+          'Misstrauen dafür sorgt, dass wir uns vielleicht nicht ganz fair verhalten und ' +
+          'dieses Verhalten dann zurückgespiegelt wird.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Eingrenzung',
         text:
-          'Mit Idee und Thema zufrieden, habe ich an einer User Journey gearbeitet. Es sollte ' +
-          'etwas Technisches, Interaktives werden, und der Raspberry Pi stand schnell fest. ' +
-          'Prof. Kuschmirz hat mir ein Kameramodul geliehen, das sich direkt einbetten ließ. ' +
-          'Einen Bondrucker wollte ich unbedingt, um den Moment festzuhalten, der dort ' +
-          'entsteht. Für Thermopapier habe ich mich zuerst wegen der Kosten entschieden — der ' +
-          'Look gefiel mir aber auch, und dass die Bons mit der Zeit ausbleichen, spielt der ' +
-          'Symbolik der Vergangenheit gut in die Karten.',
+          'Als ich zufrieden mit der Idee und dem Thema war, habe ich begonnen, an einer ' +
+          'User Journey zu arbeiten. Ich wollte gerne etwas technisch Interaktives und habe ' +
+          'schnell überlegt, einen Raspberry Pi zu verwenden. Prof. Kuschmirz hat mir ein ' +
+          'Kameramodul ausgeliehen, welches ich direkt an den Raspberry einbetten konnte. Ich ' +
+          'wollte unbedingt einen Bondrucker verwenden, um den Moment, der entstehen soll, ' +
+          'einzufangen. Ich habe mich für Thermopapier in erster Linie auf Grund der Kosten ' +
+          'entschieden. Jedoch hat mir auch der Look gut gefallen und spielt der Symbolik der ' +
+          'Vergangenheit durch das Ausbleichen mit der Zeit gut in die Karten.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Das Videospiel',
         text:
-          'Das Herzstück ist das Videospiel, das läuft, bevor es zur Aufnahme übergeht. Die ' +
-          'Idee entstand aus einer eigenen Collage des Buches „Feuerwaffen" aus dem ' +
-          'Ariel Verlag, einer Dokumentation verschiedener Kampfwaffen. Die Figuren habe ich ' +
-          'dem Buch entnommen und an Julien Trübiger übergeben, der sie im 8-Bit-Stil ' +
-          'animiert hat. Danach habe ich den technischen Aufbau des Automaten gezeichnet und ' +
-          'die Teile besorgt. Das Spiel ist noch ein Prototyp und soll bis Sommer 2027 ' +
-          'überarbeitet werden.',
+          'Das eigentliche Herzstück der Installation ist das Videospiel, welches abgespielt ' +
+          'wird, bevor es zum Moment der Aufnahme übergeht. Die Idee ist entstanden durch ' +
+          'eine eigene Collage des Buches „Feuerwaffen" des Ariel Verlages, eine ' +
+          'Dokumentation verschiedener Kampfwaffen. Ich habe die Charaktere aus dem Buch ' +
+          'entnommen und Julien Trübiger übergeben, um diese in einem 8-Bit-Stil zu ' +
+          'animieren. Daraufhin habe ich den technischen Aufbau des Automaten gezeichnet und ' +
+          'mir die einzelnen Teile besorgt. Das Spiel selber ist bisher noch in einer ' +
+          'Prototypphase und soll bis Sommer 2027 nochmal überarbeitet werden.',
         files: [],
         textOnly: true,
       },
@@ -311,14 +322,15 @@ export const projects = [
       {
         title: 'Ideenfindung',
         text:
-          'Die Hochschule Furtwangen hat mit der Städtischen Galerie kooperiert: Im Rahmen ' +
-          'der Ausstellung „Liminalität" waren einen Tag lang studentische Arbeiten zu ' +
-          'sehen. Julia, Cara und ich haben uns dafür zusammengetan und den Begriff erst ' +
-          'einmal auseinandergenommen. Schnell waren wir bei Heimat — Julia und ich kommen ' +
-          'ursprünglich aus anderen Ländern. Diese Liminalität haben wir in mehrere Stränge ' +
-          'gespalten und daraus ein erstes Konzept gebaut. Den Namen habe ich zuerst bei ' +
-          'Likana Cana gelesen; er ist mir im Kopf geblieben und passte so gut, dass wir ihn ' +
-          'übernommen haben.',
+          'Die Hochschule Furtwangen hat mit der Städtischen Galerie kooperiert und im ' +
+          'Rahmen der Ausstellung „LIMINALITÄT" einen Tag lang Studentenprojekte ' +
+          'vorgestellt. Hierfür haben Julia, Cara und ich uns zu einer Gruppe geformt und ' +
+          'gemeinsam den Begriff ausdiskutiert. Wir sind schnell auf den Begriff der Heimat ' +
+          'gekommen, da Julia und ich ursprünglich aus anderen Ländern kommen. Diese ' +
+          'Liminalität haben wir zunächst in verschiedene Stränge gespalten und letzten ' +
+          'Endes ein erstes Konzept gebastelt. Den Namen habe ich zuerst bei Likana Cana ' +
+          'gelesen. Der Name ist mir sehr im Hinterkopf geblieben und passte sehr gut zu ' +
+          'unserem Thema, weshalb wir ihn übernommen haben.',
         files: [],
         textOnly: true,
       },
@@ -326,25 +338,22 @@ export const projects = [
         title: 'Technischer Aufbau',
         text:
           'Eine Kamera erfasst die Position im Raum. TouchDesigner spaltet das Bild in zwei ' +
-          'Ebenen und legt auf die Mattes jeweils andere Filter. Je weiter man sich aus der ' +
-          'Mitte bewegt, desto stärker verschiebt sich das Verhältnis zwischen Vorder- und ' +
-          'Hintergrundebene; die eigene Silhouette wird dabei zur Maske, in der eine andere ' +
-          'Ebene erscheint als im Rest des Bildes. Dazu kommt über Googles MediaPipe eine ' +
-          'Funktion, die Verdecktes durch eine Handbewegung sichtbar macht.',
+          'Ebenen und legt jeweils verschiedene Filter auf die Mattes. Je weiter man sich ' +
+          'aus der Mitte bewegt, desto stärker verschiebt sich das Verhältnis zwischen ' +
+          'Vorder- und Hintergrundebene. Zudem wurde über Einbindung von Googles Media Pipe ' +
+          'eine Funktion erstellt, die Verdecktes über eine Handbewegung erkenntlich macht.',
         files: [],
         aufbau: 'nostalgia',
       },
       {
         title: 'Die Steuerung',
         text:
-          'Zwei Tafeln erklären die Bedienung. Die eine zeigt die Position: Die ' +
-          'Hintergrundebene besteht aus fließenden, geschwungenen Störeffekten und heißt ' +
-          'dort die Traumwelt, schön, aber ungreifbar; die Vordergrundebene aus kantigen, ' +
-          'harten Glitches und heißt die Kollision mit der Realität. Die andere Tafel ' +
-          'zeigt die Hände: Die Kamera erfasst ausschließlich Handbewegungen, eine ' +
-          'Bewegung nach links lässt Text Wort für Wort sichtbar werden, eine nach rechts ' +
-          'zieht ihn zurück ins Dunkel. Oben im Browser läuft eine ähnliche Erkennung wie in ' +
-          'der Galerie.',
+          'Zwei Tafeln erklären die Bedienung und Bedeutung. Die Hintergrundebene besteht ' +
+          'aus fließenden, geschwungenen Störeffekten und wird durch eine Traumwelt ' +
+          'symbolisiert. Schön, aber ungreifbar. Die Vordergrundebene aus kantigen, harten ' +
+          'Glitches und stellt die Kollision mit der Realität dar. Die andere Tafel zeigt ' +
+          'die Hände. Eine Bewegung nach links lässt Text Wort für Wort sichtbar werden. ' +
+          'Eine nach rechts zieht ihn zurück ins Dunkel.',
         files: ['final'],
         layout: 'grid',
       },
@@ -379,12 +388,13 @@ export const projects = [
       {
         title: 'Ideenfindung',
         text:
-          'Die Aufgabe war, eine Mensch-Computer-Interaktion zu gestalten. Wir wollten eine ' +
-          'Dissonanz herstellen zwischen dem, was man wahrnimmt, und dem, was wirklich ' +
-          'passiert. Cara kam darauf, dafür den Shepard-Ton zu nehmen. Danach ging es um die ' +
-          'Frage, wie man diesen Ton in einen Raum stellt. Wir haben uns Actionfilme ' +
-          'angesehen und sind bei der Laserszene aus „Ocean’s 12" hängen geblieben — nach ' +
-          'diesem Vorbild haben wir einen Hörsaal umgebaut.',
+          'Die Aufgabe bestand darin, eine Mensch-Computer-Interaktion zu gestalten. Wir ' +
+          'wollten eine Dissonanz herstellen zwischen Wahrnehmung und Realität. Cara ist ' +
+          'dann auf die Idee gekommen, mit dem Shepard Tone eine Wahrnehmungsstörung ' +
+          'herzustellen. Daraufhin haben wir überlegt, wie wir diesen Ton in einem Raum ' +
+          'inszenieren, und haben uns an verschiedenen Actionfilmen orientiert. So sind wir ' +
+          'auf die Laser-Szene von „Ocean’s 12" geraten und haben einen Hörsaal in diesem ' +
+          'Stil umgebaut.',
         files: [],
         textOnly: true,
       },
