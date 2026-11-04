@@ -24,7 +24,7 @@ export const site = {
     kuerzel: 'PREJNI',
     rolle: 'Creative Director',
     ort: 'Regensburg',
-    abschluesse: ['B.Sc. Marketing', 'M.A. Design Interaktiver Medien'],
+    abschluesse: ['B.Sc. Online Medien', 'M.A. Design Interaktiver Medien'],
     sprachen: ['Deutsch', 'Englisch', 'Albanisch'],
     instagram: { label: '@prejni.design', href: 'https://www.instagram.com/prejni.design/' },
     kernkompetenz: 'Creative Coding und Installationen',
