@@ -161,22 +161,21 @@ export const projects = [
     subtitle: 'Corporate Design für eine chiropraktische Praxis',
     cover: 'header',
     description:
-      'Eine Praxis in Prishtina, die mit den Händen arbeitet. Das Zeichen sollte das sichtbar ' +
-      'machen, ohne seine medizinische Ruhe zu verlieren.',
+      'Chiro Med in Prishtina behandelt chiropraktisch, physiotherapeutisch und mit Dry ' +
+      'Needling.',
     year: '2025', // TODO
     role: 'Konzept, Gestaltung, Styleguide',
     auftrag: 'Chiro Med, Novoselle / Prishtina',
     tools: ['Illustrator', 'InDesign', 'WordPress'],
     tags: ['Corporate Design', 'Logo', 'Styleguide'],
-    pull: 'Ein Zeichen, das trägt, was es zeigt.',
+    pull: 'Das Logo macht das, was die Praxis macht.',
     chapters: [
       {
         title: 'Zwei Entwürfe',
         text:
-          'Chiro Med in Prishtina behandelt chiropraktisch, physiotherapeutisch und mit Dry ' +
-          'Needling. Das Erscheinungsbild musste medizinisch genug wirken, um Vertrauen zu ' +
-          'schaffen, und körperlich genug, um zu zeigen, worum es geht. Zu Beginn standen ' +
-          'zwei Ansätze nebeneinander.',
+          'Das Erscheinungsbild musste medizinisch genug wirken, um Vertrauen zu schaffen, und ' +
+          'körperlich genug, um zu zeigen, worum es geht. Zu Beginn standen zwei Ansätze ' +
+          'nebeneinander.',
         files: ['chiro-07', 'chiro-08', 'chiro-02'],
         layout: 'track',
       },
@@ -184,9 +183,8 @@ export const projects = [
         title: 'Die Wirbelsäule',
         text:
           'Durchgesetzt hat sich die Wirbelsäule. Sie steht zwischen „chiro" und „med" und ' +
-          'trägt die beiden Wörter buchstäblich — Trennzeichen und Bild zugleich. Damit macht ' +
-          'das Logo das, was die Praxis macht, statt es zu behaupten. Den Abschluss bildet ' +
-          'ein Styleguide mit Farbwelt, Schutzraum und Anwendungen, damit die Praxis das ' +
+          'trägt die beiden Wörter. Trennzeichen und Bild zugleich. Zum Schluss kam ein ' +
+          'Styleguide mit Farbwelt, Schutzraum und Anwendungen, damit die Praxis das ' +
           'Erscheinungsbild selbst weiterführen kann.',
         files: ['chiro-01', 'chiro-03', 'chiro-04', 'chiro-05', 'chiro-06'],
         layout: 'track',
@@ -259,21 +257,20 @@ export const projects = [
     subtitle: 'Gastronomie-Kommunikation in Plochingen',
     cover: 'header',
     description:
-      'Ein Haus mit zwei Lautstärken: mittags Ausflugslokal, abends Bühne. Beides musste in ' +
+      'Die Fischerhütte ist Ausflugslokal und Eventlocation zugleich. Beide Seiten mussten in ' +
       'dieselbe Bildsprache passen.',
     year: '2025', // TODO
-    role: 'Fotografie, Gestaltung, Social Media',
+    role: 'Gestaltung, Social Media',
     auftrag: 'Fischerhütte Plochingen',
     tools: ['Photoshop', 'InDesign'],
-    tags: ['Gastronomie', 'Print', 'Social Media', 'Fotografie'],
-    pull: 'Mittags im Grünen, abends eine Bühne — dieselbe Bildsprache.',
+    tags: ['Gastronomie', 'Print', 'Social Media', 'Editorial'],
+    pull: 'Mittags im Grünen, abends eine Bühne.',
     chapters: [
       {
         title: 'Mittags und abends',
         text:
-          'Fotografiert habe ich beide Seiten selbst — den Mittag im Grünen und den Abend mit ' +
-          'Bühne. Aus diesen Bildern speist sich danach alles andere: was auf den Tischen liegt ' +
-          'und was auf Instagram geht.',
+          'Mittags sitzt man im Grünen, abends wird daraus eine Bühne. Die Grafiken mussten ' +
+          'beides tragen, ohne dass es nach zwei Häusern aussieht.',
         files: [],
         textOnly: true,
       },
@@ -281,16 +278,16 @@ export const projects = [
         title: 'Auf den Tischen',
         text:
           'Mittagstisch, Hinweise, QR-Code zur Karte. Handschriftliche Logotype und viel ' +
-          'Weißraum halten es freundlich statt betrieblich — das ist die leise Hälfte.',
+          'Weißraum halten es freundlich statt betrieblich.',
         files: ['tischaufsteller-01', 'tischaufsteller-03'],
         layout: 'track',
       },
       {
         title: 'Eine Lautstärke höher',
         text:
-          'Für Social Media und die Hocketse am 1. Mai wird die Bildsprache lauter: ' +
-          'Farbverläufe, große Versalien, „Tradition trifft Moderne". Dieselbe Marke, nur eine ' +
-          'Lautstärke höher.',
+          'Für Social Media und die Hocketse am 1. Mai wird die Bildsprache lauter. ' +
+          'Farbverläufe, große Versalien, „Tradition trifft Moderne". Dieselbe Marke, nur ' +
+          'lauter.',
         files: ['fischerhuette-01', 'tischaufsteller-04'],
         layout: 'track',
       },
@@ -303,9 +300,7 @@ export const projects = [
     title: 'Step V',
     subtitle: 'Markenpräsentation für ein Studio',
     cover: 'header',
-    description:
-      'Ein Studio, das sich neu aufstellt — und eine Präsentation, mit der es sich erklären ' +
-      'kann. Dazu kamen Analyse, Außenkommunikation und Akquise.',
+    description: 'Step V ist ein Studio, das sich neu positioniert. Dafür ist eine Präsentation entstanden.',
     year: '2025', // TODO
     role: 'Analyse, Außenkommunikation, Trendrecherche, Kundenakquise, Videoproduktion',
     auftrag: 'Step V Studio',
@@ -316,9 +311,8 @@ export const projects = [
       {
         title: 'Eine Entscheidung treffen',
         text:
-          'Step V ist ein Studio, das sich neu positioniert. Eine Positionierung ist aber erst ' +
-          'dann eine, wenn jemand von außen sie nachsprechen kann. Die Präsentation musste also ' +
-          'nicht aufzählen, was das Studio alles kann, sondern sich entscheiden.',
+          'Step V positioniert sich neu. Die Präsentation sollte nicht aufzählen, was das ' +
+          'Studio alles kann, sondern sich entscheiden.',
         files: [],
         textOnly: true,
       },
@@ -327,8 +321,8 @@ export const projects = [
         text:
           'Der Aufbau folgt einer einfachen Dramaturgie: erst wofür das Studio steht, dann die ' +
           'Zahlen, dann die Aufforderung. Neben Konzept und Gestaltung habe ich Analyse, ' +
-          'Außenkommunikation, Trendrecherche und Kundenakquise übernommen — dazu Videos ' +
-          'geplant, geschnitten und bearbeitet.',
+          'Außenkommunikation, Trendrecherche und Kundenakquise übernommen. Dazu habe ich ' +
+          'Videos geplant, geschnitten und bearbeitet.',
         files: ['copy-of-step-v'],
         layout: 'track',
       },

@@ -90,22 +90,21 @@ export const projects = [
     title: 'Improtheater',
     cover: 'header',
     subtitle: 'Trailer für ein Improvisationstheaterstück',
-    description:
-      'Ein Improvisationstheaterstück, gefilmt und auf einen Trailer gebracht. Niemand weiß ' +
-      'vorher, wo die Szene hingeht — es gibt keinen zweiten Take.',
+    description: 'Ein Improvisationstheaterstück, gefilmt und zu einem Trailer geschnitten.',
     year: '2026',
     kontext: 'Landestheater Tübingen, Juli 2026',
     role: 'Kamera, Schnitt',
     client: 'Joscha Reuther, Jan Bangert',
     tools: ['Premiere Pro'],
     tags: ['Theater', 'Dokumentation', 'Kamera'],
-    pull: 'Keine zweite Aufnahme, kein Plan, an den man sich halten könnte.',
+    pull: 'Es gibt keinen zweiten Take.',
     chapters: [
       {
         title: 'Der Trailer',
         text:
-          'Gedreht im Juli 2026 in Tübingen beim Landestheater, mit Joscha Reuther und Jan ' +
-          'Bangert.',
+          'Gedreht im Juli 2026 in Tübingen beim Landestheater, zusammen mit Joscha Reuther und ' +
+          'Jan Bangert. Niemand weiß vorher, wo eine Szene hingeht, und wiederholen lässt sie ' +
+          'sich nicht.',
         files: [],
         embed: 'https://vimeo.com/1227665449/8897decc48',
       },
@@ -117,15 +116,15 @@ export const projects = [
     subtitle: 'Videos für Ereza und Jeriko',
     cover: 'header',
     description:
-      'Zwei Musiker, zwei Arten zu arbeiten: Bei Ereza führe ich Regie, stehe an der Kamera ' +
-      'und schneide. Bei Jeriko komme ich für die Effekte dazu.',
+      'Für Ereza führe ich Regie, stehe an der Kamera und schneide. Bei Jeriko war ich für die ' +
+      'VFX zuständig.',
     year: '2025',
     role: 'Regie, Kamera, Schnitt',
     kontext: 'Musikvideo, Visualizer und Promomaterial',
     client: 'Ereza, Jeriko',
     tools: ['Premiere Pro', 'DaVinci Resolve'],
     tags: ['Musikvideo', 'Regie', 'Schnitt'],
-    pull: 'Erst die Idee besprechen, dann die Kamera auspacken.',
+    pull: 'Wir besprechen Ideen lange, bevor eine Kamera im Raum steht.',
     extern: {
       href: 'https://www.youtube.com/watch?v=GhhHAptcLss',
       label: 'Video auf YouTube ansehen',
@@ -135,7 +134,7 @@ export const projects = [
       {
         title: 'Mit Ereza',
         text:
-          'Ereza ist mittlerweile eine Freundin. Das verändert die Arbeit: Wir besprechen Ideen ' +
+          'Ereza ist mittlerweile eine Freundin. Das verändert die Arbeit. Wir besprechen Ideen ' +
           'lange, bevor eine Kamera im Raum steht.',
         files: [],
         textOnly: true,
@@ -143,8 +142,8 @@ export const projects = [
       {
         title: 'A kishe guxu?',
         text:
-          'Das Musikvideo, offiziell veröffentlicht — dazu der Visualizer, der auf Instagram ' +
-          'lief. Ein Beispiel aus der Promophase kommt noch dazu.',
+          'Das Musikvideo ist offiziell veröffentlicht. Dazu kam der Visualizer, der auf ' +
+          'Instagram lief. Ein Beispiel aus der Promophase reiche ich noch nach.',
         files: ['ereza'],
         layout: 'stack',
         embed: [
@@ -225,12 +224,11 @@ export const projects = [
         text:
           'Morihei Ueshiba hat Aikido Mitte des 20. Jahrhunderts aus mehreren Strömungen ' +
           'zusammengeführt. Die Technik kommt aus dem Daitō-ryū Aiki-jūjutsu, der Umgang mit ' +
-          'dem Gegner aus dem Zen: nicht gewinnen, sondern auflösen. Dazu die Ōmoto-kyō, eine ' +
-          'shintoistische Bewegung, aus der Ueshiba den Gedanken nahm, dass Kampfkunst dem ' +
-          'Schutz allen Lebens dient. Und das Prinzip des Ki — die Kraft, die man nicht gegen ' +
-          'den anderen richtet, sondern mit ihm führt. Das Teamprojekt sollte das Interesse ' +
-          'daran wiederbeleben; wichtig war uns, dass die Geschichte das Wesen der Kampfkunst ' +
-          'widerspiegelt und nicht nur von ihr handelt.',
+          'dem Gegner aus dem Zen: nicht gewinnen, sondern auflösen. Dazu kommt die Ōmoto-kyō, ' +
+          'eine shintoistische Bewegung, aus der Ueshiba den Gedanken nahm, dass Kampfkunst dem ' +
+          'Schutz allen Lebens dient. Und das Prinzip des Ki, die Kraft, die man nicht gegen ' +
+          'den anderen richtet, sondern mit ihm führt. Uns war wichtig, dass die Geschichte das ' +
+          'Wesen der Kampfkunst widerspiegelt und nicht nur von ihr handelt.',
         files: [],
         textOnly: true,
       },
@@ -238,10 +236,9 @@ export const projects = [
         title: 'Dreiundzwanzig Szenen',
         text:
           'Ein junger Schüler Ueshibas begreift das Wesen des Aikido durch eine Begegnung mit ' +
-          'einem Betrunkenen im Zug — ein Konflikt, der sich auflöst, ohne dass jemand ' +
-          'zuschlägt. Alle 23 Szenen wurden gezeichnet und zu einer animierten Fassung mit ' +
-          'Musik und Ton gebracht. Animiert wurde Szene 13 in Blender, die Schlüsselszene im ' +
-          'Zugwagen.',
+          'einem Betrunkenen im Zug. Der Konflikt löst sich auf, ohne dass jemand zuschlägt. ' +
+          'Alle 23 Szenen wurden gezeichnet und zu einer animierten Fassung mit Musik und Ton ' +
+          'gebracht. Szene 13, die Schlüsselszene im Zugwagen, habe ich in Blender animiert.',
         files: [],
         embed: 'https://player.vimeo.com/video/669799645',
       },
