@@ -332,6 +332,8 @@ export const projects = [
   },
   {
     slug: 'citydep',
+    /** Vorerst nicht auf der Seite. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Citydep',
     subtitle: 'Trailer im VHS-Look um Nostalgie zu erwecken.',
     cover: 'header',

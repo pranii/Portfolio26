@@ -418,118 +418,6 @@
         },
         {
           "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-01.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-01-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-02.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-02-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-03.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-03-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-04.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-04-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-05.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-05-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-06.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-06-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-07.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-07-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-08.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-08-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-09.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-09-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-10.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-10-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-11.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-11-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-12.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-12-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-13.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-13-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-14.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-14-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-15.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-15-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/huginn/storyboard-16.webp",
-          "thumb": "/media/arbeit/huginn/storyboard-16-thumb.webp",
-          "width": 1800,
-          "height": 1440
-        },
-        {
-          "type": "image",
           "src": "/media/arbeit/huginn/huginn-raumvermietung-s01.webp",
           "thumb": "/media/arbeit/huginn/huginn-raumvermietung-s01-thumb.webp",
           "fromPdf": "huginn-raumvermietung",
@@ -602,8 +490,99 @@
         },
         {
           "type": "image",
-          "src": "/media/arbeit/huginn/konzept-guy-buffet.webp",
-          "thumb": "/media/arbeit/huginn/konzept-guy-buffet-thumb.webp",
+          "src": "/media/arbeit/huginn/guy-buffet.webp",
+          "thumb": "/media/arbeit/huginn/guy-buffet-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-01.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-01-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-02.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-02-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-03.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-03-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-04.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-04-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-05.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-05-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-06.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-06-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-07.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-07-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-08.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-08-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-09.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-09-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-10.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-10-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-11.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-11-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-12.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-12-thumb.webp",
+          "width": 1800,
+          "height": 1440
+        },
+        {
+          "type": "image",
+          "src": "/media/arbeit/huginn/breakfast-13.webp",
+          "thumb": "/media/arbeit/huginn/breakfast-13-thumb.webp",
           "width": 1800,
           "height": 1440
         }

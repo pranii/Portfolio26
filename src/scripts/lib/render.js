@@ -125,7 +125,9 @@ const nummer = (i) => String(i + 1).padStart(2, '0');
 export function renderCard(project, category) {
   const media = medienVon(project);
   const cover = coverFor(project, media);
-  const modus = cover ? passung(cover) : 'fill';
+  // In der Uebersicht fuellt das Bild immer die Kachel. Die Passung
+  // nach Seitenverhaeltnis gilt weiter fuer Abbildungen im Projekt.
+  const modus = 'fill';
   const bild = cover
     ? imageTag(cover, '(max-width: 700px) 85vw, 26rem', { modus, ganzesBild: true })
     : `<span class="card__placeholder">${esc(project.title)}</span>`;

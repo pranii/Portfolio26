@@ -102,9 +102,13 @@
   /* Fliesstext laeuft ueber die ganze Seitenbreite und teilt sich dabei
      in bis zu vier Spalten. --column-min ist die Breite, die eine Spalte
      mindestens braucht: Es werden so viele Spalten, wie nebeneinander
-     passen — vier auf einem breiten Monitor, drei auf einem Laptop, zwei
-     auf dem Tablet, eine auf dem Handy. Nach aussen begrenzt nur --shell. */
-  --column-min: 30ch;
+     passen — drei auf einem breiten Monitor, zwei auf dem Laptop, eine
+     auf dem Handy. Nach aussen begrenzt nur --shell.
+
+     42ch, nicht 30: Die bequeme Zeile liegt bei 45 bis 75 Zeichen,
+     und 40 ist die unterste Grenze, die fuer Spalten noch vertretbar
+     ist. Mit 30 sprang das Auge staendig um. */
+  --column-min: 42ch;
 
   /* Raster */
   /* Breit genug, dass auf grossen Bildschirmen kein leerer Streifen
@@ -175,7 +179,10 @@ body {
     var(--lcd);
   font-family: var(--font);
   font-size: var(--t-0);
-  line-height: 1.3;
+  /* 1.45 statt 1.3: Bei 60 Zeichen Zeilenlaenge braucht das Auge mehr
+     Weg zurueck an den Zeilenanfang. Liegt im empfohlenen Bereich und
+     erfuellt die Textabstands-Anforderung aus WCAG 1.4.12. */
+  line-height: 1.45;
   text-shadow: var(--ghost);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -1349,10 +1356,15 @@ body[data-page='index'] {
   overflow: hidden;
 }
 
+/* Fuellen, nicht einpassen. Im Raster tragen gleich grosse, gleich
+   beschnittene Kacheln die Aehnlichkeit; ein Bild, das mit wechselnd
+   breiten Leerraendern in der Kachel schwimmt, bricht die Reihe.
+   Oben beschnitten, weil dort in der Regel das Motiv sitzt. */
 .card__media--fill img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
 }
 .card__media--fit img {
   width: 100%;
@@ -1841,12 +1853,18 @@ body[data-page='index'] {
      "Technischer Aufbau" gemischt, "eingrenzung" klein. */
 }
 
-/* Im Entwurf laufen die laengeren Texte in zwei Spalten durch den
-   Kasten. Erst ab genug Breite, sonst werden die Zeilen zu kurz. */
-@media (min-width: 52rem) {
-  .step__text {
+/* Im Entwurf laufen die laengeren Texte zweispaltig durch den Kasten.
+   Der Kasten muss dafuer breit genug sein: zwei Spalten von je rund
+   45 Zeichen plus Steg. Bei der normalen Kastenbreite von 60ch waeren
+   es 28 Zeichen je Spalte, und das liest sich schlecht. Deshalb wird
+   der Kasten hier breiter und teilt sich erst dann. */
+@media (min-width: 72rem) {
+  .step:has(> .step__head:only-child) .step__head {
+    max-width: calc(100ch + 2 * var(--s-4) + 4px);
+  }
+  .step:has(> .step__head:only-child) .step__text {
     columns: 2;
-    column-gap: var(--s-6);
+    column-gap: var(--s-7);
   }
 }
 

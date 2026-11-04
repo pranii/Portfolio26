@@ -75,8 +75,6 @@ export const projects = [
     kontext:
       'Bachelorthesis 2023, Online Medien — fortgeführt 2025 im Master Design Interaktiver ' +
       'Medien, Hochschule Furtwangen',
-    client:
-      'Cara Brüggendieck und Laura Zahn. Betreuung: Prof. Thomas Krach, Prof. Matthias Reusch',
     tools: [
       'Premiere Pro',
       'After Effects',

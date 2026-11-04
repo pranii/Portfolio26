@@ -59,8 +59,6 @@ export const category = {
 export const projects = [
   {
     slug: 'love',
-    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
-    versteckt: true,
     title: 'Love',
     subtitle: 'Kurzfilm — what love prompts us to do',
     cover: 'header',
@@ -89,8 +87,6 @@ export const projects = [
   },
   {
     slug: 'improtheater',
-    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
-    versteckt: true,
     title: 'Improtheater',
     cover: 'header',
     subtitle: 'Trailer für ein Improvisationstheaterstück',
@@ -116,8 +112,6 @@ export const projects = [
   },
   {
     slug: 'musikvideos',
-    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
-    versteckt: true,
     title: 'Musikvideos',
     subtitle: 'Videos für Ereza und Jeriko',
     cover: 'header',
@@ -188,7 +182,7 @@ export const projects = [
           'Shaking, Finishing — wurden Bild für Bild in Bewegung übersetzt, dazu die ' +
           'Kameraeinstellungen für beide Fassungen: Slow Shutter und normal. So sieht das ' +
           'Ergebnis aus.',
-        files: ['konzept-guy-buffet'],
+        files: ['guy-buffet'],
         layout: 'wide',
         embed: 'https://youtube.com/shorts/bi1_YXsKkaI',
       },
@@ -199,15 +193,13 @@ export const projects = [
           'Werbevideos und Reels. Sechzehn gezeichnete Bilder erzählen den Film, bevor die ' +
           'Kamera läuft: jeder Schnitt, jede Einstellung, die Shotlist. Die Aufnahmen stehen, ' +
           'fertig geschnitten sind sie leider nicht.',
-        files: ['storyboard'],
+        files: ['breakfast'],
         layout: 'track',
       },
     ],
   },
   {
     slug: 'art-of-peace',
-    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
-    versteckt: true,
     title: 'The Art of Peace',
     subtitle: 'Anime-Pilotfolge über Aikido',
     cover: 'header',
