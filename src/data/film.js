@@ -188,11 +188,6 @@ export const projects = [
       },
       {
         title: 'Breakfast at Jule’s',
-        text:
-          'Für das Frühstück habe ich einen zweiten Dreh geplant und mit Dardan Shala gefilmt — kurze ' +
-          'Werbevideos und Reels. Sechzehn gezeichnete Bilder erzählen den Film, bevor die ' +
-          'Kamera läuft: jeder Schnitt, jede Einstellung, die Shotlist. Die Aufnahmen stehen, ' +
-          'fertig geschnitten sind sie leider nicht.',
         files: ['breakfast'],
         layout: 'track',
       },
