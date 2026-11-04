@@ -104,23 +104,6 @@ const ICON_GRIDS = {
     '1000000000000001',
     '1111111111111111',
   ],
-  // Tischtelefon — der Knopf auf dem Startbildschirm
-  telefon: [
-    '0011111111111100',
-    '0111111111111110',
-    '1111000000001111',
-    '1111000000001111',
-    '0110000000000110',
-    '0000011111100000',
-    '0000111111110000',
-    '0001100110011000',
-    '0011111111111100',
-    '0111100110011110',
-    '0111111111111110',
-    '0111100110011110',
-    '0111111111111110',
-    '0111111111111110',
-  ],
 };
 
 function pixelIcon(slug) {
@@ -221,7 +204,6 @@ async function main() {
   document.querySelector('[data-slot="launcher-title"]').textContent = site.name;
   document.querySelector('[data-slot="hero"]').textContent = site.name;
   document.querySelector('[data-slot="role"]').innerHTML = renderRole(site.role);
-  document.querySelector('[data-slot="call"]').innerHTML = pixelIcon('telefon');
   document.querySelector('[data-slot="menu"]').innerHTML = renderMenu();
 
   initLauncher();

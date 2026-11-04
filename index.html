@@ -44,16 +44,24 @@
         <p class="home__tags" data-fade="0.1" data-slot="role"></p>
       </div>
 
-      <button
-        class="home__call"
-        type="button"
-        data-slot="call"
-        data-fade="0.2"
-        data-cursor="Anrufen"
-        data-t-cursor="menu.anrufen"
-        data-t-label="menu.oeffnen"
-        aria-haspopup="dialog"
-      ></button>
+      <!-- Die beiden Softkeys unter dem Display, wie beim Telefon:
+           links das Menue, rechts der Weg zu mir. -->
+      <div class="home__keys" data-fade="0.2">
+        <button
+          class="home__key home__key--links"
+          type="button"
+          data-slot="call"
+          data-cursor="Menü"
+          data-t-cursor="menu.anrufen"
+          data-t-label="menu.oeffnen"
+          aria-haspopup="dialog"
+        >
+          <span data-t="menu.titel">Menü</span>
+        </button>
+        <a class="home__key home__key--rechts" href="ueber.html">
+          <span data-t="menu.ueber">Über mich</span>
+        </a>
+      </div>
     </main>
 
     <!-- Menue im Fenster. Beim Oeffnen wird die ganze Seite negativ. -->

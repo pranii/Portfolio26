@@ -761,43 +761,68 @@ body[data-page='index'] {
 }
 
 /* Das Telefon. Klingelt alle paar Sekunden kurz, damit man es findet. */
-.home__call {
-  display: grid;
-  place-items: center;
-  width: clamp(4.5rem, 8vw, 6rem);
-  padding: var(--s-3);
+/* Die Softkeyleiste sitzt wie beim Telefon unter dem Display: der
+   linke Schriftzug links aussen, der rechte rechts aussen, dazwischen
+   Luft. Ein Wort erklaert sich selbst, ein Symbol nicht. */
+.home__keys {
+  justify-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s-4);
+}
+
+.home__key {
+  font-family: var(--font-mono);
+  font-size: var(--t--1);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: var(--s-2) var(--s-3);
+  border: 0;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
   transition:
     background-color 0.12s steps(2),
     color 0.12s steps(2);
 }
-.home__call svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  shape-rendering: crispEdges;
-  animation: klingeln 4s steps(1) infinite;
-}
-.home__call:hover {
+
+/* Invertiert beim Anfassen - derselbe Zustand wie in der Navigation. */
+.home__key:hover,
+.home__key:focus-visible {
   background: var(--accent);
   color: var(--accent-ink);
 }
-.home__call:hover svg {
-  animation-duration: 0.6s;
+
+/* Der linke Softkey blinkt langsam, damit das Auge ihn findet. */
+.home__key--links {
+  animation: softkey 2.4s steps(1) infinite;
+}
+.home__key--links:hover,
+.home__key--links:focus-visible {
+  animation: none;
 }
 
-@keyframes klingeln {
+@keyframes softkey {
   0%,
-  76%,
+  72% {
+    opacity: 1;
+  }
+  73%,
+  86% {
+    opacity: 0.35;
+  }
+  87%,
   100% {
-    transform: none;
+    opacity: 1;
   }
-  80%,
-  88% {
-    transform: rotate(-10deg);
-  }
-  84%,
-  92% {
-    transform: rotate(10deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home__key--links {
+    animation: none;
   }
 }
 
@@ -938,19 +963,25 @@ body[data-page='index'] {
   padding: var(--s-4) var(--s-3);
   min-height: 9rem;
   overflow-wrap: anywhere;
-  border: 2px solid var(--ink);
+  /* Kein Rahmen und kein Kasten: Auf einem Telefon stehen die Symbole
+     frei im Display. Was nicht dran ist, tritt zurueck. */
+  opacity: 0.5;
   transition:
-    background-color 0.1s steps(2),
-    color 0.1s steps(2);
+    opacity 0.1s steps(2),
+    filter 0.1s steps(2);
 }
 
-/* Auswahl heisst invertiert — so markiert das Telefon seit jeher, was
-   gerade dran ist. Das Symbol erbt die Farbe und bleibt lesbar. */
+/* Was gerade dran ist, steht vorn und leuchtet etwas staerker. */
 .phone.is-raster .phone__link:hover,
+.phone.is-raster .phone__link:focus-visible,
 .phone.is-raster .phone__item.is-active .phone__link {
-  background: var(--accent);
-  color: var(--accent-ink);
-  text-shadow: none;
+  opacity: 1;
+}
+
+.phone.is-raster .phone__item.is-active .phone__icon svg,
+.phone.is-raster .phone__link:hover .phone__icon svg,
+.phone.is-raster .phone__link:focus-visible .phone__icon svg {
+  filter: drop-shadow(0 0 0.3rem color-mix(in oklab, var(--lcd-hi) 70%, transparent));
 }
 
 .phone.is-raster .phone__icon {
@@ -959,7 +990,7 @@ body[data-page='index'] {
 }
 
 .phone.is-raster .phone__icon svg {
-  filter: none;
+  transition: filter 0.1s steps(2);
 }
 
 .phone.is-raster .phone__name {
