@@ -104,6 +104,8 @@ export const projects = [
   },
   {
     slug: 'huginn-gestaltung',
+    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     // Dieselben Dateien wie das Filmprojekt — die Arbeit gehoert in
     // beide Bereiche, die Bilder liegen nur einmal im Repository.
     medien: 'huginn',
