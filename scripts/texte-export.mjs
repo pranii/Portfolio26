@@ -90,6 +90,8 @@ function projektZeilen(projekt) {
   nimm('title', projekt.title);
   nimm('subtitle', projekt.subtitle);
   nimm('year', projekt.year);
+  nimm('auftrag', projekt.auftrag);
+  nimm('kontext', projekt.kontext);
   nimm('role', projekt.role);
   nimm('client', projekt.client);
   nimm('description', projekt.description);

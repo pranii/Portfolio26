@@ -282,6 +282,8 @@ export const projects = [
   },
   {
     slug: 'step-v',
+    /** Vorerst nicht auf der Seite. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Step V',
     subtitle: 'Markenpräsentation für ein Studio',
     cover: 'header',

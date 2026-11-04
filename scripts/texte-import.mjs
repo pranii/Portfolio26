@@ -114,7 +114,8 @@ for (const bereich of BEREICHE) {
     merke(`category.vorgehen[${i}].text`, schritt.text, datei);
   });
   for (const projekt of projects) {
-    for (const feld of ['title', 'subtitle', 'year', 'role', 'client', 'description', 'pull']) {
+    const felder = ['title', 'subtitle', 'year', 'auftrag', 'kontext', 'role', 'client', 'description', 'pull'];
+    for (const feld of felder) {
       merke(`${projekt.slug}.${feld}`, projekt[feld], datei);
       merke(feld, projekt[feld], datei); // Schluessel ohne Slug, wie im Dokument
     }
