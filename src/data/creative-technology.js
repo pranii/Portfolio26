@@ -199,23 +199,23 @@ export const projects = [
         text:
           'Das Modul „Interaktionsdesign" stellte uns vor die Herausforderung, fremde ' +
           'Personen im öffentlichen Raum unaufgefordert zur Interaktion zu bewegen. Begonnen ' +
-          'habe ich damit, verschiedene Kinderspiele, die vielen Menschen aus ihrer Kindheit ' +
-          'bekannt sein dürften, aufzuzeichnen, und bin dann in meiner Stadt spazieren ' +
+          'habe ich damit, verschiedene Kinderspiele aufzuzeichnen, die vielen Menschen aus ' +
+          'ihrer Kindheit bekannt sein dürften. Dann bin ich in meiner Stadt spazieren ' +
           'gegangen, um gute Locations für erste Testings zu finden. Durch die Testings wurde ' +
           'mir klar, dass einfache Mittel wie Papier oder Kreide auf Asphalt wenig ' +
           'Aufmerksamkeit auf sich ziehen. Weiterhin habe ich jedoch erkannt, dass Menschen ' +
           'vor allem durch offene Fragen gut in ein Gespräch kommen. Die Idee war nun, auf ' +
           'einer Treppe von jeweils einem Ende zu beginnen und auf dem Weg zum Mittelpunkt ' +
           'mit Fragen konfrontiert zu werden. Die Fragen waren jedoch sehr persönlich ' +
-          'gestellt und es hat sich niemand dazu bereiterklärt, das Testing durchzuführen. ' +
-          'Hier bin ich für mich dann auf die Einsicht gelangt, den Einstieg einfacher machen ' +
-          'zu müssen. Mein Ziel mit dem Projekt ist es, aufzuzeigen, dass jeder Mensch auch ' +
-          'eine Repräsentation seines Gegenübers ist. So habe ich mich dem Maya-Gruß ' +
+          'gestellt, und niemand hat sich bereiterklärt, das Testing durchzuführen. Daraus ' +
+          'bin ich zu der Einsicht gelangt, dass der Einstieg einfacher werden muss. Mein ' +
+          'Ziel mit dem Projekt ist es, aufzuzeigen, dass jeder Mensch auch eine ' +
+          'Repräsentation seines Gegenübers ist. So habe ich mich des Maya-Grußes ' +
           '„In Lak’ech" bedient, mit dem ich mich auch in der Vergangenheit schon gerne ' +
-          'auseinandergesetzt habe. Die Idee war nun, aufzuzeigen, wie wir einer fremden ' +
-          'Person auf den ersten Blick erstmal misstrauisch gegenüberstehen. Dieses ' +
-          'Misstrauen dafür sorgt, dass wir uns vielleicht nicht ganz fair verhalten und ' +
-          'dieses Verhalten dann zurückgespiegelt wird.',
+          'auseinandergesetzt habe. Zeigen wollte ich, wie misstrauisch wir einer fremden ' +
+          'Person auf den ersten Blick gegenüberstehen — und wie dieses Misstrauen dafür ' +
+          'sorgt, dass wir uns vielleicht nicht ganz fair verhalten und dieses Verhalten ' +
+          'dann zurückgespiegelt wird.',
         files: ['spielidee', 'test'],
         layout: 'track',
       },
@@ -223,13 +223,13 @@ export const projects = [
         title: 'eingrenzung',
         text:
           'Als ich zufrieden mit der Idee und dem Thema war, habe ich begonnen, an einer ' +
-          'User Journey zu arbeiten. Ich wollte gerne etwas technisch Interaktives und habe ' +
-          'schnell überlegt, einen Raspberry Pi zu verwenden. Prof. Kuschmirz hat mir ein ' +
+          'User Journey zu arbeiten. Ich wollte gerne etwas technisch Interaktives und kam ' +
+          'schnell auf einen Raspberry Pi. Prof. Kuschmirz hat mir ein ' +
           'Kameramodul ausgeliehen, welches ich direkt an den Raspberry einbetten konnte. Ich ' +
           'wollte unbedingt einen Bondrucker verwenden, um den Moment, der entstehen soll, ' +
           'einzufangen. Ich habe mich für Thermopapier in erster Linie auf Grund der Kosten ' +
-          'entschieden. Jedoch hat mir auch der Look gut gefallen und spielt der Symbolik der ' +
-          'Vergangenheit durch das Ausbleichen mit der Zeit gut in die Karten.',
+          'entschieden. Der Look hat mir aber auch gut gefallen, und dass die Bons mit der ' +
+          'Zeit ausbleichen, spielt der Symbolik der Vergangenheit in die Karten.',
         files: ['wireframe'],
         layout: 'track',
       },
@@ -239,11 +239,11 @@ export const projects = [
           'Das eigentliche Herzstück der Installation ist das Videospiel, welches abgespielt ' +
           'wird, bevor es zum Moment der Aufnahme übergeht. Die Idee ist entstanden durch ' +
           'eine eigene Collage des Buches „Feuerwaffen" des Ariel Verlages, eine ' +
-          'Dokumentation verschiedener Kampfwaffen. Ich habe die Charaktere aus dem Buch ' +
-          'entnommen und Julien Trübiger übergeben, um diese in einem 8-Bit-Stil zu ' +
-          'animieren. Daraufhin habe ich den technischen Aufbau des Automaten gezeichnet und ' +
-          'mir die einzelnen Teile besorgt. Das Spiel selber ist bisher noch in einer ' +
-          'Prototypphase und soll bis Sommer 2027 nochmal überarbeitet werden.',
+          'Dokumentation verschiedener Kampfwaffen. Die Charaktere habe ich dem Buch ' +
+          'entnommen und an Julien Trübiger übergeben, der sie im 8-Bit-Stil animiert hat. ' +
+          'Daraufhin habe ich den technischen Aufbau des Automaten gezeichnet und mir die ' +
+          'einzelnen Teile besorgt. Das Spiel ist bisher noch in einer Prototypphase und ' +
+          'soll bis Sommer 2027 nochmal überarbeitet werden.',
         files: ['collage', 'animation'],
         layout: 'track',
       },
@@ -307,15 +307,18 @@ export const projects = [
       {
         title: 'IDEENFINDUNG',
         text:
-          'Die Hochschule Furtwangen hat mit der Städtischen Galerie kooperiert und im ' +
-          'Rahmen der Ausstellung „LIMINALITÄT" einen Tag lang Studentenprojekte ' +
-          'vorgestellt. Hierfür haben Julia, Cara und ich uns zu einer Gruppe geformt und ' +
-          'gemeinsam den Begriff ausdiskutiert. Wir sind schnell auf den Begriff der Heimat ' +
-          'gekommen, da Julia und ich ursprünglich aus anderen Ländern kommen. Diese ' +
-          'Liminalität haben wir zunächst in verschiedene Stränge gespalten und letzten ' +
-          'Endes ein erstes Konzept gebastelt. Den Namen habe ich zuerst bei Likana Cana ' +
-          'gelesen. Der Name ist mir sehr im Hinterkopf geblieben und passte sehr gut zu ' +
-          'unserem Thema, weshalb wir ihn übernommen haben.',
+          'Die Hochschule Furtwangen hat in Kooperation mit der Städtischen Galerie im Rahmen ' +
+          'der Ausstellung „LIMINALITÄT" einen Tag lang studentische Projekte präsentiert. ' +
+          'Hierfür haben Julia, Cara und ich uns zu einer Gruppe zusammengeschlossen und ' +
+          'gemeinsam den Begriff der Liminalität diskutiert. Schnell sind wir dabei auf das ' +
+          'Thema Heimat gekommen, da Julia und ich ursprünglich aus anderen Ländern stammen. ' +
+          'Zunächst haben wir die verschiedenen Facetten dieser Liminalität in unterschiedliche ' +
+          'Stränge unterteilt und daraus schließlich ein erstes Konzept entwickelt. Auf den ' +
+          'Namen bin ich ursprünglich bei Likana Cana gestoßen. Er ist mir besonders im ' +
+          'Gedächtnis geblieben und passte inhaltlich sehr gut zu unserem Thema, weshalb wir uns ' +
+          'entschieden haben, ihn zu übernehmen. Nach längeren Gesprächen haben wir uns ' +
+          'schließlich darauf geeinigt, die Dissonanz zwischen Selbstaufopferung und ' +
+          'Selbstbestimmung anhand von Erinnerung und Handlung zu beleuchten.',
         files: [],
         textOnly: true,
       },
@@ -373,13 +376,14 @@ export const projects = [
       {
         title: 'Ideenfindung',
         text:
-          'Die Aufgabe bestand darin, eine Mensch-Computer-Interaktion zu gestalten. Wir ' +
-          'wollten eine Dissonanz herstellen zwischen Wahrnehmung und Realität. Cara ist ' +
-          'dann auf die Idee gekommen, mit dem Shepard Tone eine Wahrnehmungsstörung ' +
-          'herzustellen. Daraufhin haben wir überlegt, wie wir diesen Ton in einem Raum ' +
-          'inszenieren, und haben uns an verschiedenen Actionfilmen orientiert. So sind wir ' +
-          'auf die Laser-Szene von „Ocean’s 12" geraten und haben einen Hörsaal in diesem ' +
-          'Stil umgebaut.',
+          'Die Aufgabe bestand darin, eine Mensch-Computer-Interaktion zu gestalten. Dabei ' +
+          'wollten wir eine Dissonanz zwischen Wahrnehmung und Realität erzeugen. Cara kam ' +
+          'schließlich auf die Idee, mithilfe des Shepard-Tons eine akustische ' +
+          'Wahrnehmungsstörung hervorzurufen. Daraufhin überlegten wir, wie wir diesen Ton ' +
+          'räumlich inszenieren könnten. Als Inspiration dienten uns verschiedene Actionfilme. ' +
+          'Dabei stießen wir auf die sogenannte „Laser-Szene" aus Ocean’s Twelve, an deren ' +
+          'visueller Ästhetik wir uns orientierten. Auf dieser Grundlage gestalteten wir einen ' +
+          'Hörsaal um und verwandelten ihn in eine immersive Installation.',
         files: [],
         textOnly: true,
       },
@@ -432,15 +436,14 @@ export const projects = [
       {
         title: 'Table for two',
         text:
-          'Kama muta ist indisches Sanskrit und bedeutet so viel wie „von Liebe bewegt". ' +
-          'Das plötzliche Gefühl, wenn Nähe unerwartet ' +
-          'spürbar wird. Mitten im öffentlichen Raum steht ein gedeckter Tisch, ohne ' +
-          'Erklärung. Wer sich setzt, trifft auf eine fremde Person, die sich unabhängig ' +
-          'davon gesetzt hat. Der Kellner serviert und schweigt, im Hintergrund steht ein ' +
-          'Securityguard, dazu eine Soundkulisse. Die Karte sagt: „please feel welcome. I can ' +
-          'not hear you. you are being watched. act accordingly." Der Abend beginnt ' +
-          'bedrohlich und endet, wenn es gut läuft, mit zwei Menschen, die sich vorher nicht ' +
-          'kannten.',
+          'Kama Muta ist ein Begriff aus dem Sanskrit und bedeutet so viel wie „von Liebe ' +
+          'bewegt". Er beschreibt jenes plötzliche Gefühl, das entsteht, wenn Nähe unerwartet ' +
+          'spürbar wird. Mitten im öffentlichen Raum befindet sich ein gedeckter Tisch. Wer sich ' +
+          'setzt, begegnet einer fremden Person, die unabhängig davon ebenfalls Platz genommen ' +
+          'hat. Ein Kellner serviert und schweigt. Im Hintergrund positioniert sich ein Security ' +
+          'Guard, begleitet von einer eigens komponierten Soundkulisse. Die auf dem Tisch ' +
+          'liegende Karte gibt eine erste Anweisung: „please feel welcome. I cannot hear you. ' +
+          'you are being watched. act accordingly."',
         files: [],
         textOnly: true,
       },
@@ -531,14 +534,10 @@ export const projects = [
       {
         title: 'INTERVIEWS',
         text:
-          'Ich habe drei angehende Psycholog:innen interviewt. Ihre Antworten haben das ' +
-          'Projekt gedreht. Heute messen sie mit Skalierungsfragen und Fragebögen, achten ' +
-          'nebenbei auf gebrochene Stimme, monotonen Tonfall, vermiedenen Blickkontakt. Von ' +
-          'konkreten Emotionslabels hielten sie wenig — Emotionen ließen sich ohnehin kaum ' +
-          'trennen. Was zählt, sind Tendenzen und Muster im Verlauf. Und ein Satz blieb ' +
-          'hängen: Ein technisches Werkzeug darf den Vertrauensaufbau nicht stören. Daraus ' +
-          'wurden die Leitplanken — lokale Verarbeitung, nachvollziehbare Logik, und die ' +
-          'Selbstwahrnehmung der Klient:innen zählt mehr als jede Messung.',
+          'Ich habe drei angehende Psycholog:innen interviewt. Ihre Antworten haben das Projekt ' +
+          'gedreht. Von konkreten Emotionslabels hielten sie wenig. Emotionen ließen sich ' +
+          'ohnehin schwer trennen. Was zählt, sind Tendenzen und Muster im Verlauf. Und ein Satz ' +
+          'blieb hängen: Ein technisches Werkzeug darf den Vertrauensaufbau nicht stören.',
         files: [],
         textOnly: true,
       },
