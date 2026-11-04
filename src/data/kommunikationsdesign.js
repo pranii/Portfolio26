@@ -207,8 +207,9 @@ export const projects = [
     pull: 'SoDaM FAKE — eine Kampagne, die zugibt, dass sie eine ist.',
     chapters: [
       {
-        title: 'Nicht nach Hochschule aussehen',
+        title: 'Konzeptarbeit',
         text:
+          'Aufgeführt sind nur Ideen, die als Konzepte aus Zeitgründen zurückgelegt wurden. ' +
           'Die School of Design and Media brauchte eine Kampagne, die Studieninteressierte ' +
           'erreicht, ohne wie Hochschulwerbung auszusehen. Sobald eine Institution über sich ' +
           'selbst spricht, hört die Zielgruppe weg.',
@@ -220,7 +221,9 @@ export const projects = [
         text:
           'Szenen der Serie „Victorious" werden nachgestellt, weil die Hochschule inhaltlich ' +
           'parallel zur Serie liegt. Die Videos habe ich konzipiert, gedreht und geschnitten, ' +
-          'dazu Bilder für Social Media gemacht und auf Messen gesprochen.',
+          'dazu Bilder für Social Media gemacht und auf Messen gesprochen. Geplant war, über ' +
+          'TikTok und Instagram nach und nach Hinweise zu verstecken und erst langsam ' +
+          'aufzudecken, dass hier eine Serie nachgeahmt wird.',
         files: ['socialmediaauftritt'],
         layout: 'track',
         embed: 'https://www.instagram.com/reel/DPoii6bAhuc/',
@@ -336,6 +339,15 @@ export const projects = [
     pull: 'and then we unite — we become the stars',
     chapters: [
       {
+        title: 'Ziel',
+        text:
+          'Das Citydepartment hat nach coronabedingtem Ausfall neu eröffnet. Die Kampagne ' +
+          'sollte Interessierte wieder ansprechen: Trailer, die an die Clubzeiten der ' +
+          '2000er erinnern, inszeniert über Röhrenfernseher und VHS-Kassetten.',
+        files: [],
+        textOnly: true,
+      },
+      {
         title: 'Wie von einer Kassette',
         text:
           'Ein Look, den man nicht am Schluss drauflegen kann — wenn die Bildstörung nur ein ' +
@@ -344,11 +356,12 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Kassette #4',
+        title: 'Idee',
         text:
           'Jede Storyboard-Seite ist wie ein Fundstück aufgebaut: „Kassette #4", „Lost Fire #7", ' +
           'dazu Frame, Beschreibung, Ton und Equipment. Das Raster gehört damit zur Erzählung, ' +
-          'nicht nur zur Planung.',
+          'nicht nur zur Planung. Die Kassetten wurden nach Absprache eigenhändig präpariert; ' +
+          'aus Zeit- und finanziellen Gründen haben wir ohne professionelles Equipment gedreht.',
         files: ['storyboard-storyboard-in-black'],
         layout: 'track',
       },

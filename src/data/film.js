@@ -169,8 +169,8 @@ export const projects = [
     cover: 'header',
     description:
       'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Für die ' +
-      'Vermarktung sind zwei Filmkonzepte entstanden — eines für die Cocktails, eines für ' +
-      'das Frühstück.',
+      'Vermarktung sind zwei Filmkonzepte entstanden und ein Magazin — eines für die ' +
+      'Cocktails, eines für das Frühstück.',
     year: '2025', // TODO
     role: 'Konzept, Storyboard, Kamera',
     auftrag: 'Huginn Lounge & Arts',

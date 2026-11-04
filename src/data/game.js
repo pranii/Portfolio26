@@ -157,7 +157,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: '166 Schritte',
+        title: 'Prämisse',
         text:
           'Du hast gerade dein Abitur gemacht. ELIZA überarbeitet dein Profil, besorgt dir einen ' +
           'neuen PC und zeigt dir, wie du Follower gewinnst. Bald wächst die Community, das Geld ' +
@@ -168,7 +168,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Der Balken',
+        title: 'Funktionen',
         text:
           'Am Ende hast du alles: Geld, Ruhm, eine große Community. Auf deiner eigenen ' +
           'Geburtstagsfeier merkst du, dass du keinen einzigen Menschen wirklich kennst. Als du ' +

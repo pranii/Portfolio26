@@ -207,6 +207,48 @@ export const projects = [
         textOnly: true,
       },
       {
+        title: 'Ideenfindung',
+        text:
+          'Das Modul „Interaktionsdesign" stellte uns vor die Aufgabe, fremde Menschen im ' +
+          'öffentlichen Raum unaufgefordert zur Interaktion zu bewegen. Angefangen habe ich ' +
+          'damit, Kinderspiele aufzuzeichnen, die vielen noch vertraut sind, und bin durch ' +
+          'meine Stadt gelaufen, um Orte für erste Tests zu finden. Dabei wurde schnell klar: ' +
+          'Papier oder Kreide auf Asphalt zieht kaum Aufmerksamkeit auf sich. Was dagegen ' +
+          'funktioniert, sind offene Fragen. Der nächste Versuch lief über eine Treppe — zwei ' +
+          'Menschen beginnen an je einem Ende und werden auf dem Weg zur Mitte mit Fragen ' +
+          'konfrontiert. Die Fragen waren allerdings so persönlich gestellt, dass sich niemand ' +
+          'bereiterklärte mitzumachen. Daraus habe ich gelernt, dass der Einstieg leichter ' +
+          'werden muss.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Eingrenzung',
+        text:
+          'Mit Idee und Thema zufrieden, habe ich an einer User Journey gearbeitet. Es sollte ' +
+          'etwas Technisches, Interaktives werden, und der Raspberry Pi stand schnell fest. ' +
+          'Prof. Kuschmirz hat mir ein Kameramodul geliehen, das sich direkt einbetten ließ. ' +
+          'Einen Bondrucker wollte ich unbedingt, um den Moment festzuhalten, der dort ' +
+          'entsteht. Für Thermopapier habe ich mich zuerst wegen der Kosten entschieden — der ' +
+          'Look gefiel mir aber auch, und dass die Bons mit der Zeit ausbleichen, spielt der ' +
+          'Symbolik der Vergangenheit gut in die Karten.',
+        files: [],
+        textOnly: true,
+      },
+      {
+        title: 'Das Videospiel',
+        text:
+          'Das Herzstück ist das Videospiel, das läuft, bevor es zur Aufnahme übergeht. Die ' +
+          'Idee entstand aus einer eigenen Collage des Buches „Feuerwaffen" aus dem ' +
+          'Ariel Verlag, einer Dokumentation verschiedener Kampfwaffen. Die Figuren habe ich ' +
+          'dem Buch entnommen und an Julien Trübiger übergeben, der sie im 8-Bit-Stil ' +
+          'animiert hat. Danach habe ich den technischen Aufbau des Automaten gezeichnet und ' +
+          'die Teile besorgt. Das Spiel ist noch ein Prototyp und soll bis Sommer 2027 ' +
+          'überarbeitet werden.',
+        files: [],
+        textOnly: true,
+      },
+      {
         title: 'Technischer Aufbau',
         text:
           'Zwei Arcade-Knöpfe, ein Raspberry Pi, ein Display im Nokia-Format. Jeder Knopf ' +
@@ -267,23 +309,28 @@ export const projects = [
     prototyp: { art: 'nostalgia', titel: 'Selbst ins Bild treten' },
     chapters: [
       {
-        title: 'Die Schwelle',
+        title: 'Ideenfindung',
         text:
-          'Den Namen habe ich zuerst bei Likana Cana gelesen. Das Thema kam aus einem ' +
-          'Semester an der Hochschule über Liminalität, den Zustand zwischen zwei ' +
-          'Zuständen. Auf dem Plakat steht die Frage, die die Arbeit stellt: Was bleibt, ' +
-          'wenn der Schein trügt?',
+          'Die Hochschule Furtwangen hat mit der Städtischen Galerie kooperiert: Im Rahmen ' +
+          'der Ausstellung „Liminalität" waren einen Tag lang studentische Arbeiten zu ' +
+          'sehen. Julia, Cara und ich haben uns dafür zusammengetan und den Begriff erst ' +
+          'einmal auseinandergenommen. Schnell waren wir bei Heimat — Julia und ich kommen ' +
+          'ursprünglich aus anderen Ländern. Diese Liminalität haben wir in mehrere Stränge ' +
+          'gespalten und daraus ein erstes Konzept gebaut. Den Namen habe ich zuerst bei ' +
+          'Likana Cana gelesen; er ist mir im Kopf geblieben und passte so gut, dass wir ihn ' +
+          'übernommen haben.',
         files: [],
         textOnly: true,
       },
       {
         title: 'Technischer Aufbau',
         text:
-          'Eine Kamera erfasst die Position im Raum. TouchDesigner legt daraus zwei ' +
-          'Bildebenen übereinander und gibt sie auf einen Röhrenmonitor aus. Je weiter man ' +
-          'sich aus der Mitte bewegt, desto stärker verschiebt sich das Verhältnis zwischen ' +
-          'Vorder- und Hintergrundebene. Die eigene Silhouette wird dabei zur Maske: In ihr ' +
-          'erscheint eine andere Bildebene als im Rest des Bildes.',
+          'Eine Kamera erfasst die Position im Raum. TouchDesigner spaltet das Bild in zwei ' +
+          'Ebenen und legt auf die Mattes jeweils andere Filter. Je weiter man sich aus der ' +
+          'Mitte bewegt, desto stärker verschiebt sich das Verhältnis zwischen Vorder- und ' +
+          'Hintergrundebene; die eigene Silhouette wird dabei zur Maske, in der eine andere ' +
+          'Ebene erscheint als im Rest des Bildes. Dazu kommt über Googles MediaPipe eine ' +
+          'Funktion, die Verdecktes durch eine Handbewegung sichtbar macht.',
         files: [],
         aufbau: 'nostalgia',
       },
@@ -302,8 +349,8 @@ export const projects = [
         layout: 'grid',
       },
       {
-        title: 'Im Raum',
-        text: 'Die Installation in der Städtischen Galerie.',
+        title: 'Die Installation',
+        text: 'Ein kleines Video zur Anwendung der Installation.',
         files: [],
         embed: 'https://youtu.be/RwLj7i3BUq4',
       },
@@ -329,6 +376,18 @@ export const projects = [
     // und denselben drei Parametern wie die Installation.
     prototyp: { art: 'shepard', titel: 'Den Raum durchlaufen' },
     chapters: [
+      {
+        title: 'Ideenfindung',
+        text:
+          'Die Aufgabe war, eine Mensch-Computer-Interaktion zu gestalten. Wir wollten eine ' +
+          'Dissonanz herstellen zwischen dem, was man wahrnimmt, und dem, was wirklich ' +
+          'passiert. Cara kam darauf, dafür den Shepard-Ton zu nehmen. Danach ging es um die ' +
+          'Frage, wie man diesen Ton in einen Raum stellt. Wir haben uns Actionfilme ' +
+          'angesehen und sind bei der Laserszene aus „Ocean’s 12" hängen geblieben — nach ' +
+          'diesem Vorbild haben wir einen Hörsaal umgebaut.',
+        files: [],
+        textOnly: true,
+      },
       {
         title: 'Technischer Aufbau',
         text:
@@ -428,12 +487,12 @@ export const projects = [
           'Grundlage ist der bekannte Katalog, mit dem sich zwei Menschen in 36 Fragen ' +
           'näherkommen — auseinandergenommen und auf drei Gänge verteilt. Erst das Leichte, ' +
           'dann das, was man sonst nicht erzählt. Die Regeln stehen auf dem Zine selbst, ' +
-          'damit kein Erklärer daneben stehen muss.',
+          'damit kein Erklärer daneben stehen muss. Das Design wird noch überarbeitet.',
         files: ['fragenkatalog'],
         layout: 'track',
       },
       {
-        title: 'Zwei Orte',
+        title: 'Zukunftsausblick',
         text:
           'Dasselbe Setup an zwei verschiedenen Orten, um zu sehen, was der Ort ändert: ' +
           'Regensburg und der Pavillon am Schlossplatz in Stuttgart. Zum ' +
@@ -477,7 +536,7 @@ export const projects = [
     prototyp: { art: 'innerflow', titel: 'Selbst messen lassen' },
     chapters: [
       {
-        title: 'Beschreiben reicht nicht',
+        title: 'These',
         text:
           'Therapeut:innen stützen sich auf das, was sie sehen und hören. Nur: Viele ' +
           'Klient:innen erinnern Erlebtes ungenau, finden keine Worte für ihr Befinden oder ' +
@@ -488,7 +547,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Drei Psycholog:innen gefragt',
+        title: 'Interviews',
         text:
           'Ich habe drei angehende Psycholog:innen interviewt. Ihre Antworten haben das ' +
           'Projekt gedreht. Heute messen sie mit Skalierungsfragen und Fragebögen, achten ' +
@@ -525,7 +584,7 @@ export const projects = [
         prototypHier: true,
       },
       {
-        title: 'Was der Test gezeigt hat',
+        title: 'Testsitzung',
         text:
           'Zwei Probanden haben eine Therapiesitzung gespielt — einer als Klient mit Kamera ' +
           'und Mikrofon, einer als Therapeut. Aus den Messwerten wurde das Dashboard gebaut ' +
@@ -537,7 +596,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Was bliebe zu tun',
+        title: 'Zukunftsausblick',
         text:
           'Die Farbcodierung müsste raus aus der Bewertung, die Unsicherheit sichtbar ' +
           'werden — Konfidenzbereiche je Modalität, erklärende Texte, Notizen mit ' +
