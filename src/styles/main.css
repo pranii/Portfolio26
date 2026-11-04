@@ -1868,6 +1868,22 @@ body[data-page='index'] {
   }
 }
 
+/* Der durchgehende Balken fuer Abschnitte, die nur Medien zeigen.
+   Er laeuft ueber die ganze Inhaltsbreite statt nur ueber die
+   Satzbreite: So trennt er die Seite sichtbar in Abschnitte, und das
+   Auge findet die Gliederung, ohne lesen zu muessen. */
+.step__banner {
+  margin: 0;
+  padding: var(--s-2) var(--s-4);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: var(--t-0);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+}
+
 .step__text {
   margin: 0;
   max-width: none;

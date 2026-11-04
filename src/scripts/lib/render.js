@@ -424,11 +424,16 @@ function renderStep(chapter, poster) {
   // gehoert. Gefuellt wird die Stelle in project.js.
   return `
     <section class="step"${chapter.prototypHier ? ' data-prototyp-hier' : ''}>
-      <div class="step__head">
+      ${
+        chapter.text
+          ? `<div class="step__head">
         <h2 class="step__title">${esc(chapter.title)}</h2>
         <p class="step__text">${esc(chapter.text)}</p>
         ${downloadLinks(chapter.docs)}
-      </div>
+      </div>`
+          : `<h2 class="step__banner">${esc(chapter.title)}</h2>
+      ${downloadLinks(chapter.docs)}`
+      }
       ${chapter.aufbau ? aufbauSvg(chapter.aufbau) : ''}
       ${medienBloecke(chapter.items, poster, weit)}
       ${platzhalterBlock(chapter.platzhalter, poster)}

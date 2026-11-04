@@ -126,10 +126,10 @@ export const ui = {
       'Kamera und Kassenbon-Drucker aus; im Browser bleibt es beim Blitz und einem Bon auf dem ' +
       'Bildschirm.',
     'prototyp.zodizine':
-      'Aus einem Geburtsdatum werden drei Zeichen: eines aus dem chinesischen Mondkalender, ' +
-      'eines aus der indischen Rashi, eines aus dem keltischen Baumkalender. Daraus entsteht ' +
-      'das Heft — acht Seiten auf einem Blatt A4, aus dem es gefaltet wird. Dazu passt die ' +
-      '{anleitung}. Die Zeichnungen auf den Seiten sind von Cara Brüggendieck.',
+      'Aus einem Geburtsdatum werden drei Sternzeichen: eines aus dem chinesischen ' +
+      'Mondkalender, eines aus der indischen Rashi, eines aus dem keltischen Baumkalender. ' +
+      'Daraus entsteht das Zine. Acht Seiten auf einem Blatt A4, aus dem es gefaltet wird. ' +
+      'Dazu passt die {anleitung}. Die Zeichnungen auf den Seiten sind von Cara Brüggendieck.',
     'prototyp.zodizine.anleitung': 'Faltanleitung aus dem Projekt',
     'prototyp.shepard':
       'Der Hörsaal von oben: links der einzige Weg, vorne die Leinwand und die beiden Boxen. ' +
