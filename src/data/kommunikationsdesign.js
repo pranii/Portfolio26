@@ -337,6 +337,7 @@ export const projects = [
     tools: ['DaVinci Resolve', 'Canva', 'Meta'],
     tags: ['Bewegtbild', 'Storyboard', 'VHS'],
     pull: 'and then we unite — we become the stars',
+    pullLabel: 'Ziel',
     chapters: [
       {
         title: 'Ziel',

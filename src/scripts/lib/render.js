@@ -537,7 +537,11 @@ export function renderProjectPage(project) {
       ${project.year ? `<p class="project-head__kicker">${esc(project.year)}</p>` : ''}
       <h1 class="project-head__title">${esc(project.title)}</h1>
       ${project.subtitle ? `<p class="project-head__sub">${esc(project.subtitle)}</p>` : ''}
-      ${project.pull ? `<p class="pull">${esc(project.pull)}</p>` : ''}
+      ${
+        project.pull
+          ? `<p class="pull" data-marke="&gt; ${esc(project.pullLabel ?? 'NACHRICHT')}">${esc(project.pull)}</p>`
+          : ''
+      }
       <p class="project-head__text">${esc(project.description)}</p>
       ${tags}
       ${factList(project)}

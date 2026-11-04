@@ -1839,6 +1839,15 @@ body[data-page='index'] {
   text-transform: uppercase;
 }
 
+/* Im Entwurf laufen die laengeren Texte in zwei Spalten durch den
+   Kasten. Erst ab genug Breite, sonst werden die Zeilen zu kurz. */
+@media (min-width: 52rem) {
+  .step__text {
+    columns: 2;
+    column-gap: var(--s-6);
+  }
+}
+
 .step__text {
   margin: 0;
   max-width: none;
@@ -2045,8 +2054,10 @@ body[data-page='index'] {
   text-wrap: balance;
 }
 
+/* Die Marke darueber steht in den Projektdaten: meist "Nachricht",
+   bei Citydep zum Beispiel "Ziel". */
 .pull::before {
-  content: '> NACHRICHT';
+  content: attr(data-marke);
   display: block;
   margin-bottom: var(--s-4);
   font-family: var(--font-mono);
