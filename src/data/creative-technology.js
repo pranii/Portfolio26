@@ -228,8 +228,8 @@ export const projects = [
           'Person auf den ersten Blick erstmal misstrauisch gegenüberstehen. Dieses ' +
           'Misstrauen dafür sorgt, dass wir uns vielleicht nicht ganz fair verhalten und ' +
           'dieses Verhalten dann zurückgespiegelt wird.',
-        files: [],
-        textOnly: true,
+        files: ['spielidee', 'test'],
+        layout: 'track',
       },
       {
         title: 'Eingrenzung',
@@ -242,8 +242,8 @@ export const projects = [
           'einzufangen. Ich habe mich für Thermopapier in erster Linie auf Grund der Kosten ' +
           'entschieden. Jedoch hat mir auch der Look gut gefallen und spielt der Symbolik der ' +
           'Vergangenheit durch das Ausbleichen mit der Zeit gut in die Karten.',
-        files: [],
-        textOnly: true,
+        files: ['wireframe'],
+        layout: 'track',
       },
       {
         title: 'Das Videospiel',
@@ -256,8 +256,8 @@ export const projects = [
           'animieren. Daraufhin habe ich den technischen Aufbau des Automaten gezeichnet und ' +
           'mir die einzelnen Teile besorgt. Das Spiel selber ist bisher noch in einer ' +
           'Prototypphase und soll bis Sommer 2027 nochmal überarbeitet werden.',
-        files: [],
-        textOnly: true,
+        files: ['collage', 'animation'],
+        layout: 'track',
       },
       {
         title: 'Technischer Aufbau',
@@ -449,7 +449,8 @@ export const projects = [
       {
         title: 'Table for two',
         text:
-          'Kama muta kommt aus dem Sanskrit und heißt „von Liebe bewegt" — das plötzliche Gefühl, wenn Nähe unerwartet ' +
+          'Kama muta ist indisches Sanskrit und bedeutet so viel wie „von Liebe bewegt". ' +
+          'Das plötzliche Gefühl, wenn Nähe unerwartet ' +
           'spürbar wird. Mitten im öffentlichen Raum steht ein gedeckter Tisch, ohne ' +
           'Erklärung. Wer sich setzt, trifft auf eine fremde Person, die sich unabhängig ' +
           'davon gesetzt hat. Der Kellner serviert und schweigt, im Hintergrund steht ein ' +
@@ -474,7 +475,7 @@ export const projects = [
       {
         title: 'Technischer Aufbau',
         text:
-          'Am Ende stellt der Host eine Photobooth auf den Tisch — ein Raspberry Pi mit ' +
+          'Am Ende stellt der Host eine Photobooth auf den Tisch. Ein Raspberry Pi mit ' +
           'Kamera und Bondrucker. Heraus kommt das gemeinsame Foto, das auf Seite zwei des ' +
           'Zines geklebt wird, und die Rechnung: „A new connection. 2 Servings. Price: 30 ' +
           'minutes. Bill has been covered. Invite the next person to this experience."',
