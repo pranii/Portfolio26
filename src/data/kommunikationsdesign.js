@@ -207,7 +207,7 @@ export const projects = [
     pull: 'SoDaM FAKE — eine Kampagne, die zugibt, dass sie eine ist.',
     chapters: [
       {
-        title: 'Konzeptarbeit',
+        title: 'KONZEPTARBEIT',
         text:
           'Aufgeführt sind nur Ideen, die als Konzepte aus Zeitgründen zurückgelegt wurden. ' +
           'Die School of Design and Media brauchte eine Kampagne, die Studieninteressierte ' +
@@ -229,7 +229,7 @@ export const projects = [
         embed: 'https://www.instagram.com/reel/DPoii6bAhuc/',
       },
       {
-        title: 'Der Stempel',
+        title: 'Kampagne zum Schulende',
         text:
           'Die zweite Kampagne setzt auf Live-Action: Die Plakate „attackieren" Schüler ' +
           'förmlich. Der Witz liegt im Widerspruch — ein Motiv, das angreift, und dahinter die ' +
@@ -324,11 +324,11 @@ export const projects = [
   {
     slug: 'citydep',
     title: 'Citydep',
-    subtitle: 'Storyboards und Trailer im VHS-Look',
+    subtitle: 'Trailer im VHS-Look um Nostalgie zu erwecken.',
     cover: 'header',
     description:
-      'Trailer, die aussehen sollen wie von einer Kassette gerettet. Selbst die Storyboards sind ' +
-      'als Fundstücke angelegt — mit Kassettennummer, Ort und Equipment pro Einstellung.',
+      'Trailer, die an die 2000er Clubzeiten erinnern. Dargestellt durch die Inszenierung von ' +
+      'Röhrenfernseher, sowie VHS Kassetten.',
     year: '2025', // TODO
     auftrag: 'Citydep',
     role: 'Storyboard, Schnitt, Gestaltung',
@@ -336,7 +336,9 @@ export const projects = [
     bearbeitungszeit: '3 Wochen',
     tools: ['DaVinci Resolve', 'Canva', 'Meta'],
     tags: ['Bewegtbild', 'Storyboard', 'VHS'],
-    pull: 'and then we unite — we become the stars',
+    pull:
+      'Das Citydepartment hat nach coronabedingtem Ausfall neu eröffnet. Die Kampagne diente dazu, ' +
+      'Interessierte anzusprechen.',
     pullLabel: 'Ziel',
     chapters: [
       {
@@ -357,7 +359,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Idee',
+        title: 'IDEE',
         text:
           'Jede Storyboard-Seite ist wie ein Fundstück aufgebaut: „Kassette #4", „Lost Fire #7", ' +
           'dazu Frame, Beschreibung, Ton und Equipment. Das Raster gehört damit zur Erzählung, ' +
@@ -367,7 +369,7 @@ export const projects = [
         layout: 'track',
       },
       {
-        title: 'Die Trailer',
+        title: 'Beispieltrailer',
         text: 'Bildstörung, Zeitcode und Bandrauschen sind bewusst stehen geblieben.',
         files: ['citydep-part2-remake'],
         layout: 'stack',

@@ -1836,7 +1836,9 @@ body[data-page='index'] {
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
+  /* Kein text-transform: Die Ueberschriften stehen so da, wie sie
+     geschrieben sind. Der Entwurf mischt bewusst — IDEENFINDUNG gross,
+     "Technischer Aufbau" gemischt, "eingrenzung" klein. */
 }
 
 /* Im Entwurf laufen die laengeren Texte in zwei Spalten durch den

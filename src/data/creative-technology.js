@@ -182,9 +182,8 @@ export const projects = [
     subtitle: 'Ein Begegnungsautomat für den öffentlichen Raum',
     cover: 'header',
     description:
-      '„In Lak’ech" ist ein Gruß der Maya: Ich bin ein anderes Du. Ein Automat, der zwei ' +
-      'Fremde zusammenbringt — ein Videospiel im Nokia-3310-Look auf einem Raspberry Pi, ' +
-      'bedient über zwei Arcade-Knöpfe. Weiter geht es nur, wenn beide gleichzeitig drücken.',
+      '„In Lak’ech" ist ein Gruß der Maya: Ich bin ein anderes Du. Eine Intervention im ' +
+      'öffentlichen Raum.',
     year: '2026',
     kontext: 'Masterprojekt, angeleitet von Prof. Gregor Kuschmirz',
     role: 'Konzept, Gestaltung, Programmierung, Verkabelung, Testing',
@@ -207,7 +206,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Ideenfindung',
+        title: 'IDEENFINDUNG',
         text:
           'Das Modul „Interaktionsdesign" stellte uns vor die Herausforderung, fremde ' +
           'Personen im öffentlichen Raum unaufgefordert zur Interaktion zu bewegen. Begonnen ' +
@@ -232,7 +231,7 @@ export const projects = [
         layout: 'track',
       },
       {
-        title: 'Eingrenzung',
+        title: 'eingrenzung',
         text:
           'Als ich zufrieden mit der Idee und dem Thema war, habe ich begonnen, an einer ' +
           'User Journey zu arbeiten. Ich wollte gerne etwas technisch Interaktives und habe ' +
@@ -246,7 +245,7 @@ export const projects = [
         layout: 'track',
       },
       {
-        title: 'Das Videospiel',
+        title: 'Das videospiel',
         text:
           'Das eigentliche Herzstück der Installation ist das Videospiel, welches abgespielt ' +
           'wird, bevor es zum Moment der Aufnahme übergeht. Die Idee ist entstanden durch ' +
@@ -280,7 +279,7 @@ export const projects = [
         embed: { url: 'https://youtube.com/shorts/W-grDBfjafc', stumm: true },
       },
       {
-        title: 'Gedruckte Begegnungen',
+        title: 'Kassenzettel',
         text:
           'Jede gelungene Begegnung wird fotografiert und auf einen Kassenbon gedruckt, ' +
           'durchnummeriert. Zwei Menschen, die sich vorher nicht kannten, halten danach ' +
@@ -289,7 +288,7 @@ export const projects = [
         layout: 'track',
       },
       {
-        title: 'Regensburg, Sommer 2027',
+        title: 'Zukunftsausblick',
         text:
           'Im Sommer 2027 soll der Automat in der Innenstadt von Regensburg stehen — dort, wo ' +
           'die Leute ohnehin aneinander vorbeigehen.',
@@ -304,9 +303,8 @@ export const projects = [
     subtitle: 'Interaktive Videoinstallation',
     cover: 'header',
     description:
-      'Eine interaktive Videoinstallation über Identität, Erinnerung und den Widerstand ' +
-      'gegen das Vergessen. Auf einem Röhrenmonitor liegen zwei Bildebenen übereinander. ' +
-      'Gesteuert wird allein über die Position im Raum und über Handbewegungen.',
+      'Eine interaktive Videoinstallation über Identität, Erinnerung und den Widerstand gegen das ' +
+      'Vergessen.',
     year: '2026',
     role: 'Konzept, Gestaltung',
     kontext: 'Städtische Galerie Villingen-Schwenningen, März–April 2026',
@@ -320,7 +318,7 @@ export const projects = [
     prototyp: { art: 'nostalgia', titel: 'Selbst ins Bild treten' },
     chapters: [
       {
-        title: 'Ideenfindung',
+        title: 'IDEENFINDUNG',
         text:
           'Die Hochschule Furtwangen hat mit der Städtischen Galerie kooperiert und im ' +
           'Rahmen der Ausstellung „LIMINALITÄT" einen Tag lang Studentenprojekte ' +
@@ -432,13 +430,11 @@ export const projects = [
   {
     slug: 'kamamuta',
     title: 'Kama Muta',
-    subtitle: 'Table for two — ein gedeckter Tisch für zwei Fremde',
+    subtitle: 'Table for two',
     cover: 'header',
     description:
-      'Zwei Fremde setzen sich an einen gedeckten Tisch mitten in der Stadt und lernen sich ' +
-      'über ein inszeniertes Dinner kennen. Anfangs soll es bedrohlich wirken — dafür sorgen ' +
-      'eine Soundkulisse, ein schweigender Kellner und ein Securityguard. Was dann passiert, ' +
-      'machen die beiden selbst.',
+      'Zwei Fremde setzen sich an einen gedeckten Tisch und lernen sich über ein inszeniertes ' +
+      'Dinner kennen.',
     year: '2026',
     role: 'Konzept, Inszenierung, Gestaltung, Umsetzung',
     kontext: 'Performance im öffentlichen Raum — Stuttgart, Sommer 2027',
@@ -483,16 +479,6 @@ export const projects = [
         aufbau: 'kamamuta',
       },
       {
-        title: 'Mache ein Foto',
-        text:
-          'Angefangen hat es als Magazin über dasselbe Gefühl — mit Handlungsanweisungen ' +
-          'statt Artikeln: „Mache ein Foto mit der dir gegenüber sitzenden Person. Tausche ' +
-          'Adresse und Namen aus." Das Heft sollte etwas verlangen, nicht nur etwas zeigen. ' +
-          'Parallel lief ein Notizarchiv mit Sätzen, die später Kapitelnamen wurden.',
-        files: ['first-ideas', 'archive'],
-        layout: 'track',
-      },
-      {
         title: 'Der Fragenkatalog',
         text:
           'Grundlage ist der bekannte Katalog, mit dem sich zwei Menschen in 36 Fragen ' +
@@ -523,8 +509,7 @@ export const projects = [
     cover: 'header',
     description:
       'Eine Anwendung, die während einer Therapiesitzung Mimik, Stimme und Puls mitliest und ' +
-      'daraus einen Verlauf zeichnet — als Gesprächsgrundlage für die Nachbesprechung, nicht ' +
-      'als Diagnose. Alles läuft lokal, Rohbilder werden nie gespeichert.',
+      'daraus einen Verlauf zeichnet, als Gesprächsgrundlage, nicht zur Diagnose.',
     year: '2026',
     role: 'Experteninterviews, Video- und Audioanalyse, Prototyp, Evaluation',
     kontext:
@@ -543,11 +528,11 @@ export const projects = [
       'InDesign',
     ],
     tags: ['Interaktionsdesign', 'UX-Research', 'Prototyp', 'Datenvisualisierung'],
-    pull: 'Die Einschätzung der Klient:innen steht über der KI.',
+    pull: 'Emotionstracker',
     prototyp: { art: 'innerflow', titel: 'Selbst messen lassen' },
     chapters: [
       {
-        title: 'These',
+        title: 'THESE',
         text:
           'Therapeut:innen stützen sich auf das, was sie sehen und hören. Nur: Viele ' +
           'Klient:innen erinnern Erlebtes ungenau, finden keine Worte für ihr Befinden oder ' +
@@ -558,7 +543,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Interviews',
+        title: 'INTERVIEWS',
         text:
           'Ich habe drei angehende Psycholog:innen interviewt. Ihre Antworten haben das ' +
           'Projekt gedreht. Heute messen sie mit Skalierungsfragen und Fragebögen, achten ' +
@@ -626,9 +611,8 @@ export const projects = [
     subtitle: 'Ein Automat, der Zines druckt',
     cover: 'header',
     description:
-      'Eine Station, an der Besucher ihr Geburtsdatum eingeben und ein persönliches Zine ' +
-      'gedruckt bekommen — berechnet aus chinesischem, indischem und keltischem Tierkreis. ' +
-      'Alles läuft offline auf einem Raspberry Pi.',
+      'Eine Station, an der Besucher ihr Geburtsdatum eingeben und ein persönliches Zine gedruckt ' +
+      'bekommen.',
     year: '2026',
     role: 'Konzept, technische Umsetzung',
     kontext:
@@ -638,7 +622,7 @@ export const projects = [
     tools: ['React', 'Flask', 'Raspberry Pi', 'ReportLab', 'InDesign'],
     tags: ['Interaktion', 'Zine', 'Prototyp', 'Generative Gestaltung'],
     prototyp: { art: 'zodizine', titel: 'Der Automat im Browser', label: 'Automat ausprobieren' },
-    pull: 'Banalität als Input, Interaktion als Verstärker, Emotion als Ziel.',
+    pull: 'Zinedrucker',
     chapters: [
       {
         title: 'Technischer Aufbau',

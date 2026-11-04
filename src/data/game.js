@@ -116,7 +116,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Dokumentation',
+        title: 'GAME DESIGN DOCUMENT',
         text:
           'Die Dokumentation des Jams, Seite für Seite: Ideenfindung, Game Design Dokument, ' +
           'Kernsysteme, Assets und Level Design.',
@@ -157,7 +157,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Prämisse',
+        title: 'PRÄMISSE',
         text:
           'Du hast gerade dein Abitur gemacht. ELIZA überarbeitet dein Profil, besorgt dir einen ' +
           'neuen PC und zeigt dir, wie du Follower gewinnst. Bald wächst die Community, das Geld ' +
@@ -168,7 +168,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'Funktionen',
+        title: 'FUNKTIONEN',
         text:
           'Am Ende hast du alles: Geld, Ruhm, eine große Community. Auf deiner eigenen ' +
           'Geburtstagsfeier merkst du, dass du keinen einzigen Menschen wirklich kennst. Als du ' +

@@ -167,16 +167,13 @@ export const projects = [
     title: 'Huginn',
     subtitle: 'Zwei Werbefilme für Bar und Frühstück',
     cover: 'header',
-    description:
-      'Huginn ist Café, Bar, Eventlocation und Co-Working-Space in einem Haus. Für die ' +
-      'Vermarktung sind zwei Filmkonzepte entstanden und ein Magazin — eines für die ' +
-      'Cocktails, eines für das Frühstück.',
+    description: 'Für die Vermarktung sind zwei Filmkonzepte entstanden und ein Magazin.',
     year: '2025', // TODO
     role: 'Konzept, Storyboard, Kamera',
     auftrag: 'Huginn Lounge & Arts',
     tools: ['Premiere Pro', 'Photoshop'],
     tags: ['Storyboard', 'Bewegtbild', 'Werbefilm'],
-    pull: 'Ein Haus, zwei Tonlagen — und für jede ein eigener Film.',
+    pull: 'Bar auf einer Etage, Eventraum auf der nächsten.',
     chapters: [
       {
         title: 'The Perfect Martini',
