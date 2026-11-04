@@ -97,8 +97,8 @@
   --s-10: 10rem;
 
   /* Satzbreiten */
-  --measure: 60ch;
-  --measure-short: 36ch;
+  --measure: 70ch;
+  --measure-short: 42ch;
   /* Fliesstext laeuft ueber die ganze Seitenbreite und teilt sich dabei
      in bis zu vier Spalten. --column-min ist die Breite, die eine Spalte
      mindestens braucht: Es werden so viele Spalten, wie nebeneinander
@@ -527,6 +527,11 @@ html.lenis body {
   box-shadow: inset 0 0 18vmin color-mix(in oklab, var(--pixel) 22%, transparent);
 }
 
+/* Ein Bit, sonst nichts. Keine Groessenwechsel, keine Beschriftung,
+   kein weiches Nachziehen - der Punkt sitzt genau da, wo der Zeiger
+   ist. Beim Klick wird er negativ: difference kehrt um, was darunter
+   liegt, und funktioniert damit auf hellem Display genauso wie auf
+   dem dunklen Gehaeuse. */
 .cursor {
   position: fixed;
   top: 0;
@@ -537,35 +542,11 @@ html.lenis body {
   margin: -5px 0 0 -5px;
   background: var(--pixel);
   pointer-events: none;
-  transition:
-    width 0.25s steps(4),
-    height 0.25s steps(4),
-    margin 0.25s steps(4);
 }
 
-.cursor[data-state='link'] {
-  width: 72px;
-  height: 72px;
-  margin: -36px 0 0 -36px;
-}
-
-.cursor__label {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-mono);
-  font-size: var(--t--2);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--lcd-hi);
-  text-shadow: var(--glow);
-  opacity: 0;
-  transition: opacity 0.2s steps(2);
-}
-
-.cursor[data-state='link'] .cursor__label {
-  opacity: 1;
+.cursor.is-down {
+  background: #fff;
+  mix-blend-mode: difference;
 }
 
 .wipe {
@@ -2086,7 +2067,7 @@ body[data-page='index'] {
   font-size: clamp(var(--t-1), 5vw, var(--t-4));
   font-weight: 500;
   line-height: 1.05;
-  max-width: 22ch;
+  max-width: 26ch;
   text-wrap: balance;
 }
 
