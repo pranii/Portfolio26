@@ -155,6 +155,8 @@ export const projects = [
   },
   {
     slug: 'chiro-med',
+    /** Vorerst nicht auf der Seite. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Chiro Med',
     subtitle: 'Corporate Design für eine chiropraktische Praxis',
     cover: 'header',
@@ -226,7 +228,6 @@ export const projects = [
           'aufzudecken, dass hier eine Serie nachgeahmt wird.',
         files: ['socialmediaauftritt'],
         layout: 'track',
-        embed: 'https://www.instagram.com/reel/DPoii6bAhuc/',
       },
       {
         title: 'Kampagne zum Schulende',
@@ -237,6 +238,18 @@ export const projects = [
           'Mitschüler kurzerhand „sodamisiert".',
         files: ['plakat-01', 'plakat-02', 'plakat-03', 'plakat-alt'],
         layout: 'grid',
+      },
+      {
+        title: 'Außenkommunikation',
+        text:
+          'Von Oktober 2025 bis August 2026 habe ich vor allem auf Instagram und YouTube ' +
+          'mitgewirkt.',
+        files: [],
+        embed: [
+          'https://www.instagram.com/reel/DPoii6bAhuc/',
+          'https://www.instagram.com/reel/DQRpdQoAi4K/',
+          'https://www.instagram.com/p/DRZ4dHWgjJV/',
+        ],
       },
     ],
   },
@@ -341,23 +354,6 @@ export const projects = [
       'Interessierte anzusprechen.',
     pullLabel: 'Ziel',
     chapters: [
-      {
-        title: 'Ziel',
-        text:
-          'Das Citydepartment hat nach coronabedingtem Ausfall neu eröffnet. Die Kampagne ' +
-          'sollte Interessierte wieder ansprechen: Trailer, die an die Clubzeiten der ' +
-          '2000er erinnern, inszeniert über Röhrenfernseher und VHS-Kassetten.',
-        files: [],
-        textOnly: true,
-      },
-      {
-        title: 'Wie von einer Kassette',
-        text:
-          'Ein Look, den man nicht am Schluss drauflegen kann — wenn die Bildstörung nur ein ' +
-          'Filter ist, merkt man es. Also musste das Archiv schon in der Planung stecken.',
-        files: [],
-        textOnly: true,
-      },
       {
         title: 'IDEE',
         text:

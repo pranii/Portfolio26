@@ -195,17 +195,6 @@ export const projects = [
     pull: 'Ich werde an dir zu mir.',
     chapters: [
       {
-        title: 'Himmel und Hölle',
-        text:
-          'Wer gegenübersteht, ist nicht das Fremde, sondern dasselbe in anderer Gestalt. ' +
-          'Diesen Satz wollte ich nicht als Spruch weitergeben, sondern als Erfahrung. Also ' +
-          'ein Spiel, das zwei Fremde zueinander bringt, ohne dass einer anfangen muss. ' +
-          'Daraus wurde die Idee, mit dem zu spielen, was zwischen Fremden immer zuerst da ' +
-          'ist: Misstrauen.',
-        files: [],
-        textOnly: true,
-      },
-      {
         title: 'IDEENFINDUNG',
         text:
           'Das Modul „Interaktionsdesign" stellte uns vor die Herausforderung, fremde ' +
@@ -261,9 +250,9 @@ export const projects = [
       {
         title: 'Technischer Aufbau',
         text:
-          'Zwei Arcade-Knöpfe, ein Raspberry Pi, ein Display im Nokia-Format. Jeder Knopf ' +
-          'gehört zu einer Figur und leuchtet nur, wenn sie spricht. Am Ende löst die Kamera ' +
-          'aus und der Bon-Drucker gibt die Begegnung durchnummeriert aus.',
+          'Zwei Arcade-Knöpfe, ein Raspberry Pi, ein Display und ein Bondrucker. Jeder Knopf gehört zu ' +
+          'einer Figur und leuchtet nur, wenn sie spricht. Am Ende löst die Kamera aus und der ' +
+          'Bon-Drucker gibt die Begegnung durchnummeriert aus.',
         files: [],
         aufbau: 'in-lakech',
       },
@@ -281,17 +270,15 @@ export const projects = [
       {
         title: 'Kassenzettel',
         text:
-          'Jede gelungene Begegnung wird fotografiert und auf einen Kassenbon gedruckt, ' +
-          'durchnummeriert. Zwei Menschen, die sich vorher nicht kannten, halten danach ' +
-          'denselben Zettel in der Hand.',
+          'Ein paar dokumentierte Begegnungen.',
         files: ['begegnung'],
         layout: 'track',
       },
       {
         title: 'Zukunftsausblick',
         text:
-          'Im Sommer 2027 soll der Automat in der Innenstadt von Regensburg stehen — dort, wo ' +
-          'die Leute ohnehin aneinander vorbeigehen.',
+          'Im Sommer 2027 soll der Automat in der Innenstadt von Regensburg stehen — dort, wo die ' +
+          'Leute ohnehin aneinander vorbeigehen.',
         files: [],
         textOnly: true,
       },
@@ -534,10 +521,9 @@ export const projects = [
       {
         title: 'THESE',
         text:
-          'Therapeut:innen stützen sich auf das, was sie sehen und hören. Nur: Viele ' +
-          'Klient:innen erinnern Erlebtes ungenau, finden keine Worte für ihr Befinden oder ' +
-          'passen ihr Verhalten an — aus Scham, aus Angst vor Bewertung. Daraus wurde unsere ' +
-          'Frage: Wie kann eine multimodale Visualisierung emotionaler Zustände ' +
+          'Viele Klient:innen erinnern Erlebtes ungenau, finden keine Worte für ihr Befinden oder ' +
+          'passen ihr Verhalten an. Aus Scham oder aus Angst vor Bewertung. Unter dieser Bedingung ' +
+          'formte unsere Frage: Wie kann eine multimodale Visualisierung emotionaler Zustände ' +
           'Therapeut:innen helfen, Reaktionen besser zu erfassen und einzuordnen?',
         files: [],
         textOnly: true,
@@ -559,12 +545,12 @@ export const projects = [
       {
         title: 'Technischer Aufbau',
         text:
-          'Drei Eingänge, alle lokal: Die Kamera liest über OpenCV und DeepFace die Mimik, ' +
-          'das Mikrofon über librosa die Stimme — Lautstärke, Tonhöhe, Sprechtempo, Pausen —, ' +
-          'ein Wearable den Puls. Jede Messung landet auf den drei Achsen des PAD-Modells ' +
-          '(Valenz, Arousal, Dominanz) und mit Zeitstempel in einer SQLite-Datenbank, aus der ' +
-          'das Dashboard sie liest. Keine Cloud, keine Rohbilder — nur abstrahierte Werte. ' +
-          'Den Puls mussten wir simulieren: An der Hochschule war kein Wearable aufzutreiben.',
+          'Drei Eingänge. Alle lokal: Die Kamera liest über OpenCV und DeepFace die Mimik, das ' +
+          'Mikrofon über librosa die Stimme — Lautstärke, Tonhöhe, Sprechtempo, Pausen —, ein Wearable ' +
+          'den Puls. Jede Messung landet auf den drei Achsen des PAD-Modells (Valenz, Arousal, ' +
+          'Dominanz) und mit Zeitstempel in einer SQLite-Datenbank, aus der das Dashboard sie liest. ' +
+          'Keine Cloud, keine Rohbilder — nur abstrahierte Werte. Den Puls mussten wir simulieren: An ' +
+          'der Hochschule war kein Wearable aufzutreiben.',
         files: [],
         aufbau: 'interaktionsdesign',
       },
@@ -582,12 +568,11 @@ export const projects = [
       {
         title: 'Testsitzung',
         text:
-          'Zwei Probanden haben eine Therapiesitzung gespielt — einer als Klient mit Kamera ' +
-          'und Mikrofon, einer als Therapeut. Aus den Messwerten wurde das Dashboard gebaut ' +
-          'und einer angehenden Psychologin vorgelegt. Ihre Kritik traf den Kern: Grün, Gelb ' +
-          'und Rot liest man als Ampel — und damit werden Gefühle ungewollt richtig oder ' +
-          'falsch. Und weil nirgends eine Konfidenz stand, wirkten die Werte eindeutiger, als ' +
-          'sie sind. Beides ist genau das, was ein solches Werkzeug nicht tun darf.',
+          'Zwei Probanden haben eine Therapiesitzung nachgeahmt. Einer als Klient mit Kamera und ' +
+          'Mikrofon, einer als Therapeut. Aus den Messwerten wurde ein Dashboard gebaut und einer ' +
+          'angehenden Psychologin vorgelegt. Ihre Kritik traf den Kern: Grün, Gelb und Rot liest man ' +
+          'als Ampel — und damit werden Gefühle ungewollt richtig oder falsch. Und weil nirgends eine ' +
+          'Konfidenz stand, wirkten die Werte eindeutiger, als sie sind.',
         files: [],
         textOnly: true,
       },
