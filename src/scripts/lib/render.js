@@ -505,6 +505,7 @@ function factList(project) {
     [t('fakten.rolle'), project.role],
     [t('fakten.mitwirkende'), project.client],
     [t('fakten.werkzeuge'), project.tools?.join(', ')],
+    [t('fakten.dauer'), project.bearbeitungszeit],
   ].filter(([, value]) => value);
 
   if (rows.length === 0) return '';

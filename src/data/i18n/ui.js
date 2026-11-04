@@ -71,6 +71,7 @@ export const ui = {
     'fakten.rolle': 'Meine Rolle',
     'fakten.mitwirkende': 'Mitwirkende',
     'fakten.werkzeuge': 'Werkzeuge',
+    'fakten.dauer': 'Bearbeitungszeit',
 
     'projekt.weiteres': 'Weiteres Material',
     'projekt.nichtgefunden': 'Projekt nicht gefunden',
@@ -283,6 +284,7 @@ export const ui = {
     'fakten.rolle': 'My role',
     'fakten.mitwirkende': 'Collaborators',
     'fakten.werkzeuge': 'Tools',
+    'fakten.dauer': 'Time spent',
 
     'projekt.weiteres': 'More material',
     'projekt.nichtgefunden': 'Project not found',
@@ -494,6 +496,7 @@ export const ui = {
     'fakten.rolle': 'Roli im',
     'fakten.mitwirkende': 'Bashkëpunëtorët',
     'fakten.werkzeuge': 'Mjetet',
+    'fakten.dauer': 'Koha e punës',
 
     'projekt.weiteres': 'Material tjetër',
     'projekt.nichtgefunden': 'Projekti nuk u gjet',

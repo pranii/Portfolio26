@@ -186,8 +186,9 @@ export const projects = [
       'Fremde zusammenbringt — ein Videospiel im Nokia-3310-Look auf einem Raspberry Pi, ' +
       'bedient über zwei Arcade-Knöpfe. Weiter geht es nur, wenn beide gleichzeitig drücken.',
     year: '2026',
-    kontext: 'Masterprojekt Design Interaktiver Medien — geplant für Regensburg, Sommer 2027',
-    role: 'Konzept, Gestaltung, Programmierung',
+    kontext: 'Masterprojekt, angeleitet von Prof. Gregor Kuschmirz',
+    role: 'Konzept, Gestaltung, Programmierung, Verkabelung, Testing',
+    client: 'Julien Trübiger (Animation)',
     tools: ['Python', 'Pygame', 'Raspberry Pi', 'Photoshop'],
     tags: ['Installation', 'Game', 'Partizipation', 'Raspberry Pi', 'Public Space'],
     prototyp: { art: 'in-lakech', titel: 'Das Duell im Browser', label: 'Prototyp spielen' },
@@ -254,7 +255,7 @@ export const projects = [
       'gegen das Vergessen. Auf einem Röhrenmonitor liegen zwei Bildebenen übereinander. ' +
       'Gesteuert wird allein über die Position im Raum und über Handbewegungen.',
     year: '2026',
-    role: 'Konzept, Gestaltung, Interaktion',
+    role: 'Konzept, Gestaltung',
     kontext: 'Städtische Galerie Villingen-Schwenningen, März–April 2026',
     client: 'Julia Mamani und Cara Brüggendieck',
     tools: ['TouchDesigner', 'Photoshop', 'CRT-Monitore'],
@@ -370,8 +371,8 @@ export const projects = [
       'eine Soundkulisse, ein schweigender Kellner und ein Securityguard. Was dann passiert, ' +
       'machen die beiden selbst.',
     year: '2026',
-    role: 'Konzept, Inszenierung, Gestaltung, Fotografie',
-    kontext: 'Performance im öffentlichen Raum — Furtwangen und Stuttgart, Sommer 2026',
+    role: 'Konzept, Inszenierung, Gestaltung, Umsetzung',
+    kontext: 'Performance im öffentlichen Raum — Stuttgart, Sommer 2027',
     tools: ['Raspberry Pi', 'InDesign', 'Photoshop', 'After Effects'],
     tags: ['Performance', 'Öffentlicher Raum', 'Partizipation', 'Editorial'],
     pull: 'Der Mensch wird am Du zum Ich.',
@@ -379,7 +380,7 @@ export const projects = [
       {
         title: 'Table for two',
         text:
-          'Kama muta heißt „von Liebe bewegt" — das plötzliche Gefühl, wenn Nähe unerwartet ' +
+          'Kama muta kommt aus dem Sanskrit und heißt „von Liebe bewegt" — das plötzliche Gefühl, wenn Nähe unerwartet ' +
           'spürbar wird. Mitten im öffentlichen Raum steht ein gedeckter Tisch, ohne ' +
           'Erklärung. Wer sich setzt, trifft auf eine fremde Person, die sich unabhängig ' +
           'davon gesetzt hat. Der Kellner serviert und schweigt, im Hintergrund steht ein ' +
@@ -435,7 +436,7 @@ export const projects = [
         title: 'Zwei Orte',
         text:
           'Dasselbe Setup an zwei verschiedenen Orten, um zu sehen, was der Ort ändert: ' +
-          'Furtwangen und der Pavillon am Schlossplatz in Stuttgart, Sommer 2026. Zum ' +
+          'Regensburg und der Pavillon am Schlossplatz in Stuttgart. Zum ' +
           'Vergleich lag Marina Abramović’ „The Artist Is Present" auf dem Tisch — nur ' +
           'Präsenz, offen, Scheitern erlaubt. Hier ist es das Gegenteil: dreißig gerahmte ' +
           'Minuten, drei Gänge, Wärme und ein Geschenk. Nicht „ich halte mich im Anderen ' +
@@ -457,7 +458,7 @@ export const projects = [
     year: '2026',
     role: 'Experteninterviews, Video- und Audioanalyse, Prototyp, Evaluation',
     kontext:
-      'Modul Interaktionsdesign bei Prof. Dr.-Ing. Thomas Schlegel, Hochschule Furtwangen',
+      'Master Design Interaktiver Medien, angeleitet von Prof. Dr.-Ing. Thomas Schlegel',
     client: 'Rosa Stark, Johannes Merschroth und Marla Speth',
     tools: [
       'Python',

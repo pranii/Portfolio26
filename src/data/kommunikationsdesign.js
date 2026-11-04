@@ -164,7 +164,7 @@ export const projects = [
     year: '2025', // TODO
     role: 'Konzept, Gestaltung, Styleguide',
     auftrag: 'Chiro Med, Novoselle / Prishtina',
-    tools: ['Illustrator', 'InDesign'],
+    tools: ['Illustrator', 'InDesign', 'WordPress'],
     tags: ['Corporate Design', 'Logo', 'Styleguide'],
     pull: 'Ein Zeichen, das trägt, was es zeigt.',
     chapters: [
@@ -329,7 +329,9 @@ export const projects = [
     year: '2025', // TODO
     auftrag: 'Citydep',
     role: 'Storyboard, Schnitt, Gestaltung',
-    tools: ['Premiere Pro', 'After Effects', 'InDesign'],
+    client: 'Dardan Shala',
+    bearbeitungszeit: '3 Wochen',
+    tools: ['DaVinci Resolve', 'Canva', 'Meta'],
     tags: ['Bewegtbild', 'Storyboard', 'VHS'],
     pull: 'and then we unite — we become the stars',
     chapters: [

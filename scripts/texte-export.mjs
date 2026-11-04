@@ -95,6 +95,7 @@ function projektZeilen(projekt) {
   nimm('role', projekt.role);
   nimm('client', projekt.client);
   nimm('description', projekt.description);
+  nimm('bearbeitungszeit', projekt.bearbeitungszeit);
   nimm('pull', projekt.pull);
 
   (projekt.chapters ?? []).forEach((kapitel, i) => {
