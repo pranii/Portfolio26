@@ -253,6 +253,8 @@ export const projects = [
   },
   {
     slug: 'fischerhuette',
+    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Fischerhütte',
     subtitle: 'Gastronomie-Kommunikation in Plochingen',
     cover: 'header',

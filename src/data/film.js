@@ -59,6 +59,8 @@ export const category = {
 export const projects = [
   {
     slug: 'love',
+    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Love',
     subtitle: 'Kurzfilm — what love prompts us to do',
     cover: 'header',
@@ -87,6 +89,8 @@ export const projects = [
   },
   {
     slug: 'improtheater',
+    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Improtheater',
     cover: 'header',
     subtitle: 'Trailer für ein Improvisationstheaterstück',
@@ -112,6 +116,8 @@ export const projects = [
   },
   {
     slug: 'musikvideos',
+    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'Musikvideos',
     subtitle: 'Videos für Ereza und Jeriko',
     cover: 'header',
@@ -200,6 +206,8 @@ export const projects = [
   },
   {
     slug: 'art-of-peace',
+    /** Noch nicht ueberarbeitet. Zeile entfernen, dann ist es zurueck. */
+    versteckt: true,
     title: 'The Art of Peace',
     subtitle: 'Anime-Pilotfolge über Aikido',
     cover: 'header',
