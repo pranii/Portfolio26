@@ -16,20 +16,19 @@
 export const category = {
   slug: 'kommunikationsdesign',
   title: 'Kommunikations­design', // ­: unsichtbare Trennstelle fuer schmale Bildschirme
-  lead: 'Corporate Design, Kampagnen und Editorial — für Gastronomie, Handwerk, Praxen und Hochschulen.',
+  lead: 'Corporate Design, Kampagnen und Editorial für Gastronomie, Handwerk, eine Praxis und eine Hochschule.',
   /**
    * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
    * sind ideal, mehr oder weniger geht auch.
    */
   vorgehen: [
-    // TODO: eigene Formulierung
     {
       title: 'Zuhören und analysieren',
       text: 'Was macht den Auftraggeber aus, wer soll erreicht werden, was gibt es schon? Daraus entsteht das Briefing.',
     },
     {
       title: 'Konzept',
-      text: 'Eine klare Idee, die sich in einem Satz erklären lässt — sie trägt alle späteren Entscheidungen.',
+      text: 'Eine Idee, die sich in einem Satz erklären lässt. An ihr messe ich jede spätere Entscheidung.',
     },
     {
       title: 'Gestaltung und System',
@@ -37,7 +36,7 @@ export const category = {
     },
     {
       title: 'Reinzeichnung und Übergabe',
-      text: 'Druckfertige Daten, Styleguide und Vorlagen, damit das Design auch ohne mich weiterlebt.',
+      text: 'Druckfertige Daten, Styleguide und Vorlagen, mit denen der Auftraggeber ohne mich weiterarbeiten kann.',
     },
   ],
   /**
@@ -63,12 +62,12 @@ export const projects = [
     auftrag: 'Killes und Benz Immobilien OHG, Fellbach',
     tools: ['Illustrator', 'InDesign', 'Wordpress'],
     tags: ['Corporate Design', 'Logo', 'Geschäftsausstattung', 'Print'],
-    pull: 'Zwei Bereiche, ein Dach — das Logo nimmt die Hausform wörtlich.',
+    pull: 'Zwei Bereiche, ein Dach. Das Logo nimmt die Hausform wörtlich.',
     chapters: [
       {
         title: 'Die Krone muss weg',
         text:
-          'Ausgangspunkt war das alte Logo von Killes und Benz — eine Wortmarke mit Krone, die ' +
+          'Ausgangspunkt war das alte Logo von Killes und Benz, eine Wortmarke mit Krone, die ' +
           'weder zum Immobilien- noch zum Handwerksbereich passte. Die Aufgabe lag dazwischen: ' +
           'Zwei Bereiche brauchen ein gemeinsames Zeichen, damit man sie einem Haus zuordnet — ' +
           'und genug Eigenes, damit niemand den Handwerker anruft, wenn er die Verwaltung meint.',
@@ -79,7 +78,7 @@ export const projects = [
         title: 'Ein Dach, zwei Farben',
         text:
           'Aus dem Dach wurde das gemeinsame Zeichen: ein Winkel, der sich für beide Bereiche ' +
-          'wiederholt und sie farblich trennt — Grün für die Verwalterexperten, Gelb für die ' +
+          'wiederholt und sie farblich trennt: Grün für die Verwalterexperten, Gelb für die ' +
           'Handwerkerexperten. Dieselbe Form, zwei Temperaturen.',
         files: ['logo-kombiniert', 'anwendung'],
         layout: 'track',
@@ -87,8 +86,8 @@ export const projects = [
       {
         title: 'Was man übergibt',
         text:
-          'Jede Visitenkarte trägt vorne den Namen, hinten das Logo des jeweiligen Bereichs — ' +
-          'beim Übergeben ist sofort klar, aus welchem Haus jemand kommt. Dazu zwei Flyer für ' +
+          'Jede Visitenkarte trägt vorne den Namen, hinten das Logo des jeweiligen Bereichs. ' +
+          'Beim Übergeben ist sofort klar, aus welchem Haus jemand kommt. Dazu zwei Flyer für ' +
           'die Akquise und zum Schluss die stillste Anwendung: ein Briefbogen, der die Dachform ' +
           'nur noch andeutet.',
         files: [
@@ -184,7 +183,7 @@ export const projects = [
       {
         title: 'Die Wirbelsäule',
         text:
-          'Durchgesetzt hat sich die Wirbelsäule. Sie steht zwischen „chiro" und „med" und ' +
+          'Durchgesetzt hat sich die Wirbelsäule. Sie steht zwischen „chiro“ und „med“ und ' +
           'trägt die beiden Wörter. Trennzeichen und Bild zugleich. Zum Schluss kam ein ' +
           'Styleguide mit Farbwelt, Schutzraum und Anwendungen, damit die Praxis das ' +
           'Erscheinungsbild selbst weiterführen kann.',
@@ -206,10 +205,10 @@ export const projects = [
     auftrag: 'Hochschule Furtwangen',
     tools: ['InDesign', 'Photoshop'],
     tags: ['Kampagne', 'Plakat', 'Social Media', 'Strategie'],
-    pull: 'SoDaM FAKE — eine Kampagne, die zugibt, dass sie eine ist.',
+    pull: 'SoDaM FAKE: eine Kampagne, die zugibt, dass sie eine ist.',
     chapters: [
       {
-        title: 'KONZEPTARBEIT',
+        title: 'Konzeptarbeit',
         text:
           'Aufgeführt sind nur Ideen, die als Konzepte aus Zeitgründen zurückgelegt wurden. ' +
           'Die School of Design and Media brauchte eine Kampagne, die Studieninteressierte ' +
@@ -221,7 +220,7 @@ export const projects = [
       {
         title: 'Victorious',
         text:
-          'Szenen der Serie „Victorious" werden nachgestellt, weil die Hochschule inhaltlich ' +
+          'Szenen der Serie „Victorious“ werden nachgestellt, weil die Hochschule inhaltlich ' +
           'parallel zur Serie liegt. Die Videos habe ich konzipiert, gedreht und geschnitten, ' +
           'dazu Bilder für Social Media gemacht und auf Messen gesprochen. Geplant war, über ' +
           'TikTok und Instagram nach und nach Hinweise zu verstecken und erst langsam ' +
@@ -232,10 +231,10 @@ export const projects = [
       {
         title: 'Kampagne zum Schulende',
         text:
-          'Die zweite Kampagne setzt auf Live-Action: Die Plakate „attackieren" Schüler ' +
-          'förmlich. Der Witz liegt im Widerspruch — ein Motiv, das angreift, und dahinter die ' +
+          'Die zweite Kampagne setzt auf Live-Action: Die Plakate „attackieren“ Schüler ' +
+          'förmlich. Der Witz liegt im Widerspruch: ein Motiv, das angreift, und dahinter die ' +
           'Einladung einer Hochschule. Dazu ein Stempel, mit dem man Gegenstände oder ' +
-          'Mitschüler kurzerhand „sodamisiert".',
+          'Mitschüler kurzerhand „sodamisiert“.',
         files: ['plakat-01', 'plakat-02', 'plakat-03', 'plakat-alt'],
         layout: 'grid',
       },
@@ -290,7 +289,7 @@ export const projects = [
         title: 'Eine Lautstärke höher',
         text:
           'Für Social Media und die Hocketse am 1. Mai wird die Bildsprache lauter. ' +
-          'Farbverläufe, große Versalien, „Tradition trifft Moderne". Dieselbe Marke, nur ' +
+          'Farbverläufe, große Versalien, „Tradition trifft Moderne“. Dieselbe Marke, nur ' +
           'lauter.',
         files: ['fischerhuette-01', 'tischaufsteller-04'],
         layout: 'track',
@@ -337,7 +336,7 @@ export const projects = [
     /** Vorerst nicht auf der Seite. Zeile entfernen, dann ist es zurueck. */
     versteckt: true,
     title: 'Citydep',
-    subtitle: 'Trailer im VHS-Look um Nostalgie zu erwecken.',
+    subtitle: 'Trailer im VHS-Look für die Wiedereröffnung eines Clubs',
     cover: 'header',
     description:
       'Trailer, die an die 2000er Clubzeiten erinnern. Dargestellt durch die Inszenierung von ' +
@@ -355,9 +354,9 @@ export const projects = [
     pullLabel: 'Ziel',
     chapters: [
       {
-        title: 'IDEE',
+        title: 'Idee',
         text:
-          'Jede Storyboard-Seite ist wie ein Fundstück aufgebaut: „Kassette #4", „Lost Fire #7", ' +
+          'Jede Storyboard-Seite ist wie ein Fundstück aufgebaut: „Kassette #4“, „Lost Fire #7“, ' +
           'dazu Frame, Beschreibung, Ton und Equipment. Das Raster gehört damit zur Erzählung, ' +
           'nicht nur zur Planung. Die Kassetten wurden nach Absprache eigenhändig präpariert; ' +
           'aus Zeit- und finanziellen Gründen haben wir ohne professionelles Equipment gedreht.',

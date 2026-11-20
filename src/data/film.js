@@ -16,13 +16,12 @@
 export const category = {
   slug: 'film',
   title: 'Film',
-  lead: 'Kurzfilme, Musikvideos, Animation und Imagefilme — von Storyboard bis Schnitt.', // TODO
+  lead: 'Kurzfilm, Musikvideo, Werbefilm, Trailer und Animation. Oft zeichne ich vorher das Storyboard und schneide am Ende selbst.',
   /**
    * "So gehe ich vor" — erscheint unter dem Karussell. Vier Schritte
    * sind ideal, mehr oder weniger geht auch.
    */
   vorgehen: [
-    // TODO: eigene Formulierung
     {
       title: 'Idee und Recherche',
       text: 'Worum geht es wirklich? Ich sammle Bilder, Musik und Referenzen, bis die Stimmung des Films klar ist.',
@@ -33,7 +32,7 @@ export const category = {
     },
     {
       title: 'Dreh',
-      text: 'Kamera, Licht und Regie — mit Raum für das, was am Set ungeplant passiert.',
+      text: 'Kamera, Licht und Regie. Was am Set ungeplant passiert, darf bleiben, wenn es dem Film hilft.',
     },
     {
       title: 'Schnitt und Ton',
@@ -60,12 +59,14 @@ export const projects = [
   {
     slug: 'love',
     title: 'Love',
-    subtitle: 'Kurzfilm — what love prompts us to do',
+    subtitle: 'Kurzfilm: what love prompts us to do',
     cover: 'header',
-    description: '',
+    description:
+      'Ein Kurzfilm über die vielen Gesichter der Liebe, gedreht im Februar 2025 in Frankfurt. ' +
+      'Konzept, Dreh und Schnitt habe ich zusammen mit Dardan Shala gemacht.',
     year: '2025',
     role: 'Konzept, Regie, Schnitt',
-    kontext: 'Kurzfilm, Februar 2025 — Besetzung über ein offenes Casting auf Instagram und TikTok',
+    kontext: 'Kurzfilm, Februar 2025. Besetzt über ein offenes Casting auf Instagram und TikTok',
     client: 'Dardan Shala',
     tools: ['Photoshop', 'Premiere Pro'],
     tags: ['Kurzfilm', 'Artwork', 'Casting'],
@@ -128,7 +129,7 @@ export const projects = [
     extern: {
       href: 'https://www.youtube.com/watch?v=GhhHAptcLss',
       label: 'Video auf YouTube ansehen',
-      note: 'EREZA — a kishe guxu, offiziell veröffentlicht.',
+      note: '„A kishe guxu?“ von Ereza, offiziell veröffentlicht.',
     },
     chapters: [
       {
@@ -152,9 +153,9 @@ export const projects = [
         ],
       },
       {
-        title: 'Jeriko — Pay Me',
+        title: 'Jeriko: Pay Me',
         text:
-          'Jeriko ist Rapper aus Frankfurt. Beim Musikvideo zu „Pay Me" war ich für die VFX ' +
+          'Jeriko ist Rapper aus Frankfurt. Beim Musikvideo zu „Pay Me“ war ich für die VFX ' +
           'zuständig.',
         files: [],
         embed: 'https://www.instagram.com/reel/DEfoY2eo6Km/',
@@ -177,9 +178,9 @@ export const projects = [
       {
         title: 'The Perfect Martini',
         text:
-          'Das Konzept kam von Guy Buffet und seiner Serie „The Perfect Martini": gemalte ' +
-          'Szenen, in denen das Glas die Hauptrolle spielt. Zwölf Bilder — Preparation, ' +
-          'Shaking, Finishing — wurden Bild für Bild in Bewegung übersetzt, dazu die ' +
+          'Das Konzept kam von Guy Buffet und seiner Serie „The Perfect Martini“: gemalte ' +
+          'Szenen, in denen das Glas die Hauptrolle spielt. Zwölf Bilder aus den Phasen ' +
+          'Preparation, Shaking und Finishing wurden Bild für Bild in Bewegung übersetzt, dazu die ' +
           'Kameraeinstellungen für beide Fassungen: Slow Shutter und normal. So sieht das ' +
           'Ergebnis aus.',
         files: ['guy-buffet'],

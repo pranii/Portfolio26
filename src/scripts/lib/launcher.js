@@ -8,6 +8,8 @@
  * im sessionStorage — beim naechsten Besuch bootet es wieder.
  */
 
+import { prefersReducedMotion } from './scroll.js';
+
 const SPEICHER = 'portfolio-gebootet';
 
 /** War der Startbildschirm in dieser Sitzung schon zu sehen? */
@@ -44,8 +46,10 @@ export function initLauncher(selector = '[data-slot="launcher"]') {
   const launcher = document.querySelector(selector);
   if (!launcher) return;
 
-  // Schon gebootet: den Bildschirm gar nicht erst zeigen.
-  if (schonGebootet()) {
+  // Schon gebootet, oder "weniger Bewegung" eingestellt: den Bildschirm
+  // gar nicht erst zeigen. Die blinkende Unterzeile flackert mit gut vier
+  // Wechseln pro Sekunde, das soll niemand sehen muessen, der es abgestellt hat.
+  if (schonGebootet() || prefersReducedMotion) {
     launcher.remove();
     return;
   }

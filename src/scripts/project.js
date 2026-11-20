@@ -94,7 +94,7 @@ async function main() {
   const project = uebersetzeProjekt(data.projects[index]);
   const bereich = uebersetzeKategorie(data.category);
   document.documentElement.dataset.accent = category;
-  document.title = `${project.title} — ${bereich.title} — Portfolio`;
+  document.title = `${project.title} | ${bereich.title} | Pranvera Pelaj`;
 
   const meta = categories.find((c) => c.slug === category);
   const crumb = document.querySelector('[data-slot="crumb-category"]');

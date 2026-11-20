@@ -78,7 +78,7 @@ export const ui = {
     'projekt.zurstartseite': 'Zur Startseite',
     'projekt.kein-bereich':
       'Die Adresse enthält keinen gültigen Bereich. Erwartet wird zum Beispiel projekt.html?id=film/love.',
-    'projekt.kein-projekt': 'Im Bereich {bereich} gibt es kein Projekt mit dem Kürzel „{slug}".',
+    'projekt.kein-projekt': 'Im Bereich {bereich} gibt es kein Projekt mit dem Kürzel „{slug}“.',
     'projekt.vorheriges': '← Vorheriges Projekt',
     'projekt.naechstes': 'Nächstes Projekt →',
 
@@ -112,7 +112,7 @@ export const ui = {
     'spiel.laeuftimbrowser': 'Läuft im Browser',
     'spiel.bereit': 'Bereit',
     'spiel.laedt': 'Lädt …',
-    'spiel.laeuft': 'Läuft — zum Spielen ins Bild klicken',
+    'spiel.laeuft': 'Läuft. Zum Spielen ins Bild klicken',
     'spiel.esc': 'Esc gibt die Maus wieder frei',
     'spiel.keinbuild': 'Kein Build',
     'spiel.steuerung': 'Steuerung',
@@ -121,7 +121,7 @@ export const ui = {
     'spiel.zumprojekt': '← Zurück zum Projekt',
 
     'prototyp.inlakech':
-      'Ein Automat für zwei Fremde: Erst wenn beide gleichzeitig drücken, geht es weiter — am ' +
+      'Ein Automat für zwei Fremde: Erst wenn beide gleichzeitig drücken, geht es weiter. Am ' +
       'besten zu zweit an einer Tastatur oder einem Handy. In der Installation lösen am Ende ' +
       'Kamera und Kassenbon-Drucker aus; im Browser bleibt es beim Blitz und einem Bon auf dem ' +
       'Bildschirm.',
@@ -133,7 +133,7 @@ export const ui = {
     'prototyp.zodizine.anleitung': 'Faltanleitung aus dem Projekt',
     'prototyp.shepard':
       'Der Hörsaal von oben: links der einzige Weg, vorne die Leinwand und die beiden Boxen. ' +
-      'Der Ton klingt wie in der Installation — elf Oszillatoren von 20 Hz bis 20.480 Hz — und ' +
+      'Der Ton klingt wie in der Installation, mit elf Oszillatoren von 20 bis 20.480 Hz, und ' +
       'hängt an denselben drei Parametern: wie schnell du gehst, in welche Richtung und wie ' +
       'nah du den Boxen kommst.',
 
@@ -173,7 +173,7 @@ export const ui = {
     'prototyp.innerflow':
       'Dieselben beiden Messungen wie im Prototyp, hier im Browser: Die Kamera liest die ' +
       'Mimik, das Mikrofon Lautstärke, Tonhöhe und Nulldurchgangsrate. V, A und D sind die ' +
-      'Achsen des PAD-Modells — Valenz, Arousal, Dominanz. Das ist ein Anhaltspunkt, kein ' +
+      'Achsen des PAD-Modells: Valenz, Arousal, Dominanz. Das ist ein Anhaltspunkt, kein ' +
       'Befund: Was eine Messung bedeutet, weiß nur der Mensch davor.',
     'if.hinweis':
       'Kamera und Mikrofon gehen erst nach einem Klick an. Nichts wird gespeichert und ' +
@@ -202,7 +202,7 @@ export const ui = {
       'Am besten mit Tastatur und Maus.',
     'botlnick.keinbuild': 'Kein Build vorhanden',
     'botlnick.bereit': 'Bereit',
-    'botlnick.laeuft': 'Läuft — zum Spielen ins Bild klicken',
+    'botlnick.laeuft': 'Läuft. Zum Spielen ins Bild klicken',
 
     'gram.rechts': 'Angular · 2023',
     'gram.start': 'Drücken zum Starten.',
@@ -212,7 +212,7 @@ export const ui = {
     'gram.status.ende': 'Ende',
 
     'shepard.rechts': '11 Oszillatoren · 20–20.480 Hz',
-    'shepard.plan': 'Grundriss des Hörsaals — mit Pfeiltasten oder Finger gehen',
+    'shepard.plan': 'Grundriss des Hörsaals. Mit Pfeiltasten oder Finger gehen',
     'shepard.an': 'Ton an',
     'shepard.aus': 'Ton aus',
     'shepard.laeuft': 'Der Ton läuft',
@@ -505,7 +505,7 @@ export const ui = {
     'projekt.zurstartseite': 'Te faqja kryesore',
     'projekt.kein-bereich':
       'Adresa nuk përmban një fushë të vlefshme. Pritet diçka si projekt.html?id=film/love.',
-    'projekt.kein-projekt': 'Në fushën {bereich} nuk ka projekt me emrin „{slug}".',
+    'projekt.kein-projekt': 'Në fushën {bereich} nuk ka projekt me emrin „{slug}“.',
     'projekt.vorheriges': '← Projekti i mëparshëm',
     'projekt.naechstes': 'Projekti tjetër →',
 
