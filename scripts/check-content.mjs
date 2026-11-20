@@ -226,7 +226,14 @@ for (const [page, scripts] of Object.entries(PAGE_SCRIPTS)) {
 
   for (const script of scripts) {
     const code = fs.readFileSync(path.join(ROOT, script), 'utf8');
-    const wanted = new Set([...code.matchAll(/\[data-slot="([^"]+)"\]/g)].map((m) => m[1]));
+    // Namen, die erst zur Laufzeit entstehen (`[data-slot="${name}"]`),
+    // lassen sich hier nicht pruefen — sie werden uebersprungen statt
+    // als fehlend gemeldet.
+    const wanted = new Set(
+      [...code.matchAll(/\[data-slot="([^"]+)"\]/g)]
+        .map((m) => m[1])
+        .filter((slot) => !slot.includes('${')),
+    );
 
     for (const slot of wanted) {
       if (!present.has(slot))
@@ -238,7 +245,7 @@ for (const [page, scripts] of Object.entries(PAGE_SCRIPTS)) {
 console.log(`${fileCount} Mediendateien geprueft.`);
 
 if (notes.length > 0) {
-  console.log(`\nHinweise (${notes.length}) — landen auf der Seite unter "Weiteres Material":`);
+  console.log(`\nHinweise (${notes.length}) — diese Dateien werden auf der Seite nicht gezeigt:`);
   notes.forEach((n) => console.log('  · ' + n));
 }
 

@@ -12,9 +12,11 @@
  */
 
 import mediaIndex from '../../data/media.json';
+import { categories } from '../../data/site.js';
 import { groupIntoChapters, basename } from './chapters.js';
 import { aufbauSvg } from './aufbau.js';
-import { t } from './i18n.js';
+import { LOADERS } from './bereiche.js';
+import { t, uebersetzeKategorie, uebersetzeProjekt } from './i18n.js';
 
 const THUMB_WIDTH = 720;
 const VORSCHAU_BILDER = 6;
@@ -121,16 +123,21 @@ function kurz(text = '', anzahl = 3) {
 
 const nummer = (i) => String(i + 1).padStart(2, '0');
 
-/** Karte fuer ein Projekt im Karussell. */
-export function renderCard(project, category) {
+/**
+ * Eine Arbeit in der Uebersicht: Bild, darunter die Angaben wie auf
+ * dem Schild neben einem Exponat — Titel, Untertitel, Jahr, Rolle,
+ * Medium. Die ganze Tafel ist der Link; das liest sich mit Tastatur
+ * und Screenreader als ein Ziel statt als vier.
+ */
+export function renderPlate(project, category) {
   const media = medienVon(project);
   const cover = coverFor(project, media);
-  // In der Uebersicht fuellt das Bild immer die Kachel. Die Passung
-  // nach Seitenverhaeltnis gilt weiter fuer Abbildungen im Projekt.
-  const modus = 'fill';
   const bild = cover
-    ? imageTag(cover, '(max-width: 700px) 85vw, 26rem', { modus, ganzesBild: true })
-    : `<span class="card__placeholder">${esc(project.title)}</span>`;
+    ? imageTag(cover, '(max-width: 48rem) 92vw, (max-width: 72rem) 44vw, 21rem', {
+        modus: 'fill',
+        ganzesBild: true,
+      })
+    : `<span class="plate__platzhalter">${esc(project.title)}</span>`;
 
   const tags = (project.tags ?? [])
     .slice(0, 3)
@@ -138,31 +145,121 @@ export function renderCard(project, category) {
     .join('');
 
   return `
-    <li class="carousel__slide">
-      <article class="card">
-        <span class="card__media card__media--${modus}">${bild}</span>
-        <div class="card__top">
-          ${project.year ? `<span class="card__year">${esc(project.year)}</span>` : ''}
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">${esc(project.title)}</h3>
-          <p class="card__sub">${esc(project.subtitle ?? '')}</p>
-          ${project.role ? `<p class="card__role">${esc(kurz(project.role))}</p>` : ''}
-          ${tags ? `<ul class="card__tags">${tags}</ul>` : ''}
-        </div>
-        <div class="card__foot">
-          <a
-            class="card__waehlen"
-            href="projekt.html?id=${esc(category)}/${esc(project.slug)}"
-            data-cursor="${esc(t('karte.ansehen'))}"
-          >${esc(t('karte.ansehen'))}</a>
-        </div>
-      </article>
-    </li>`;
+    <article class="plate">
+      <a class="plate__link" href="projekt.html?id=${esc(category)}/${esc(project.slug)}"
+         data-cursor="${esc(t('karte.ansehen'))}">
+        <span class="plate__media">${bild}</span>
+        <span class="plate__caption">
+          <span class="plate__kopf">
+            <span class="plate__titel">${esc(project.title)}</span>
+            ${project.year ? `<span class="plate__jahr">${esc(project.year)}</span>` : ''}
+          </span>
+          ${project.subtitle ? `<span class="plate__sub">${esc(project.subtitle)}</span>` : ''}
+          ${tags ? `<ul class="plate__tags">${tags}</ul>` : ''}
+        </span>
+      </a>
+    </article>`;
 }
 
-export function renderCards(projects, category) {
-  return projects.map((project) => renderCard(project, category)).join('');
+export function renderPlates(projects, category) {
+  return projects.map((project) => renderPlate(project, category)).join('');
+}
+
+/* ──────────────────────────────────── Startseite: Verzeichnis ──── */
+
+/**
+ * Das Jahr als Zahl, zum Sortieren. In den Daten steht es als Text —
+ * "2026", "2020–2025" oder "Januar 2026". Gewertet wird die letzte
+ * Jahreszahl darin: eine Arbeit gilt als so neu, wie sie zuletzt
+ * bearbeitet wurde.
+ */
+export function jahrZahl(year = '') {
+  const treffer = String(year).match(/\d{4}/g);
+  return treffer ? Number(treffer[treffer.length - 1]) : 0;
+}
+
+/**
+ * Laedt alle Bereiche mit ihren sichtbaren Projekten.
+ *
+ * Die Startseite braucht alle Bereiche auf einmal; die Bereichsseiten
+ * laden weiterhin nur ihren eigenen.
+ */
+export async function ladeAlleProjekte() {
+  const eintraege = await Promise.all(
+    categories.map(async (bereich) => {
+      const laden = LOADERS[bereich.slug];
+      if (!laden) return null;
+      const geladen = await laden();
+      const kategorie = uebersetzeKategorie(geladen.category);
+      const projekte = geladen.projects
+        .filter((projekt) => !projekt.versteckt)
+        .map(uebersetzeProjekt)
+        .map((projekt) => ({ ...projekt, bereich: bereich.slug, bereichTitel: bereich.title }));
+      return {
+        slug: bereich.slug,
+        href: bereich.href,
+        title: bereich.title,
+        description: bereich.description ?? kategorie.lead ?? '',
+        lead: kategorie.lead ?? '',
+        projekte,
+      };
+    }),
+  );
+  return eintraege.filter(Boolean);
+}
+
+/**
+ * Das Werkverzeichnis: alle Arbeiten als Liste, neueste zuerst.
+ * Jahr, Titel mit Untertitel, Bereich — und jede Zeile ist der Weg
+ * zur Arbeit.
+ */
+export function renderIndex(projekte = []) {
+  return [...projekte]
+    .sort((a, b) => jahrZahl(b.year) - jahrZahl(a.year) || a.title.localeCompare(b.title, 'de'))
+    .map((projekt) => {
+      // Das Titelbild haengt an der Zeile und erscheint beim
+      // Darueberfahren — so sieht man die Arbeit schon beim Lesen
+      // der Liste, ohne sie oeffnen zu muessen.
+      const cover = coverFor(projekt, medienVon(projekt));
+      const vorschau = cover ? ` data-vorschau="${esc(asset(cover.thumb ?? cover.src))}"` : '';
+
+      return `
+      <a class="index__row" href="projekt.html?id=${esc(projekt.bereich)}/${esc(projekt.slug)}"
+         data-cursor="${esc(t('karte.ansehen'))}"${vorschau}>
+        <span class="index__jahr">${esc(projekt.year ?? '')}</span>
+        <span class="index__titel">${esc(projekt.title)}
+          ${projekt.subtitle ? `<span class="index__sub">${esc(projekt.subtitle)}</span>` : ''}
+        </span>
+        <span class="index__bereich">${esc(projekt.bereichTitel)}</span>
+      </a>`;
+    })
+    .join('');
+}
+
+/**
+ * Die Bereiche als Flaechen. Das Bild kommt aus der jüngsten Arbeit
+ * des Bereichs — so zeigt die Kachel, was dort zu sehen ist, statt
+ * ein Symbol dafuer zu erfinden.
+ */
+export function renderAreas(bereiche = []) {
+  return bereiche
+    .map((bereich) => {
+      const neueste = [...bereich.projekte].sort((a, b) => jahrZahl(b.year) - jahrZahl(a.year))[0];
+      const cover = neueste ? coverFor(neueste, medienVon(neueste)) : null;
+      const bild = cover
+        ? imageTag(cover, '(max-width: 48rem) 92vw, 20rem', { modus: 'fill', ganzesBild: true })
+        : '';
+      const anzahl = bereich.projekte.length;
+
+      return `
+      <a class="area" href="${esc(bereich.href)}" data-cursor="${esc(t('karte.oeffnen'))}">
+        ${bild ? `<span class="area__media">${bild}</span>` : ''}
+        <h3 class="area__titel">${bereich.title}</h3>
+        <p class="area__text">${esc(bereich.description)}</p>
+        <p class="area__zahl">${anzahl} ${anzahl === 1 ? t('karte.projekt') : t('karte.projekte')}</p>
+      </a>`;
+    })
+    .join('');
 }
 
 /** "So gehe ich vor": nummerierte Schritte eines Bereichs. */

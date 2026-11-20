@@ -50,7 +50,6 @@ export const ui = {
     'kat.spiel': 'Spiel',
 
     'abschnitt.projekte': 'Projekte',
-    'abschnitt.werkzeuge': 'Werkzeuge',
     'abschnitt.womiticharbeite': 'Womit ich arbeite',
     'abschnitt.vorgehen': 'Vorgehen',
     'abschnitt.sogeheichvor': 'So gehe ich vor',
@@ -268,7 +267,6 @@ export const ui = {
     'abschnitt.womiticharbeite': 'What I work with',
     'abschnitt.vorgehen': 'Method',
     'abschnitt.sogeheichvor': 'How I work',
-    'abschnitt.werkzeuge': 'Tools',
     'abschnitt.software': 'Software',
     'abschnitt.softwarehinweis':
       'The number behind it shows how many projects in this section used the program.',
@@ -481,7 +479,6 @@ export const ui = {
     'abschnitt.womiticharbeite': 'Me çfarë punoj',
     'abschnitt.vorgehen': 'Mënyra e punës',
     'abschnitt.sogeheichvor': 'Si punoj',
-    'abschnitt.werkzeuge': 'Mjetet',
     'abschnitt.software': 'Programet',
     'abschnitt.softwarehinweis':
       'Numri pas emrit tregon në sa projekte të kësaj fushe është përdorur programi.',

@@ -8,14 +8,18 @@
     <meta name="theme-color" content="#c6e173" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap"
+    />
   </head>
 
   <body data-page="projekt">
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
     <div class="progress" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="site-header__mark" href="index.html#menu" data-slot="name">Portfolio</a>
+      <a class="site-header__mark" href="index.html" data-slot="name">PREJNI</a>
       <nav class="site-nav" data-t-label="nav.bereiche">
         <a href="creative-technology.html" data-t="kat.creative-technology">Creative Technology</a>
         <a href="film.html" data-t="kat.film">Film</a>
@@ -23,10 +27,11 @@
         <a href="kommunikationsdesign.html" data-t="kat.kommunikationsdesign"
           >Kommunikationsdesign</a
         >
+        <a href="ueber.html" data-t="menu.ueber">Über mich</a>
       </nav>
     </header>
 
-    <main class="shell">
+    <main class="shell" id="inhalt">
       <nav class="breadcrumb" data-t-label="nav.pfad">
         <a href="index.html" data-t="nav.start">Start</a>
         <span aria-hidden="true">/</span>

@@ -12,80 +12,65 @@
     <meta name="theme-color" content="#c6e173" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap"
+    />
   </head>
 
   <body data-page="ueber">
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
     <div class="progress" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="site-header__mark" href="index.html#menu" data-slot="name">Portfolio</a>
+      <a class="site-header__mark" href="index.html" data-slot="name">PREJNI</a>
       <nav class="site-nav" data-t-label="nav.bereiche">
         <a href="creative-technology.html" data-t="kat.creative-technology">Creative Technology</a>
         <a href="film.html" data-t="kat.film">Film</a>
         <a href="game.html" data-t="kat.game">Game</a>
-        <a href="kommunikationsdesign.html" data-t="kat.kommunikationsdesign">
-          Kommunikationsdesign
-        </a>
+        <a href="kommunikationsdesign.html" data-t="kat.kommunikationsdesign"
+          >Kommunikationsdesign</a
+        >
+        <a href="ueber.html" aria-current="page" data-t="menu.ueber">Über mich</a>
       </nav>
     </header>
 
-    <main class="shell">
+    <main class="shell" id="inhalt">
       <nav class="breadcrumb" data-t-label="nav.pfad">
         <a href="index.html" data-t="nav.start">Start</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page" data-t="ueber.titel">Über mich</span>
       </nav>
 
-      <!-- Der Eintrag im Telefonbuch: Name oben, darunter die Felder. -->
-      <section class="kontakt" aria-labelledby="kontakt-titel">
-        <div class="window__bar">
-          <span class="window__title" id="kontakt-titel">
-            <span class="window__icon" aria-hidden="true">▣</span>
-            <span data-t="ueber.kontakte">Kontakte</span>
-          </span>
-          <span class="window__buttons" aria-hidden="true">
-            <span class="window__btn">_</span>
-            <span class="window__btn">□</span>
-            <span class="window__btn window__btn--close">✕</span>
-          </span>
-        </div>
-
-        <div class="kontakt__karte">
-          <div class="kontakt__kopf">
-            <span class="kontakt__avatar" data-slot="avatar" aria-hidden="true"></span>
-            <p class="kontakt__name" data-slot="kontakt-name">Pranvera Pelaj</p>
-            <p class="kontakt__rolle" data-slot="kontakt-rolle"></p>
-          </div>
-          <dl class="kontakt__felder" data-slot="kontakt-felder"></dl>
-        </div>
-
-        <div class="window__status">
-          <span class="window__status-cell window__status-cell--grow" data-slot="kontakt-status"
-            >1 / 1</span
-          >
-          <span class="window__status-cell" data-t="ueber.gespeichert">Gespeichert</span>
-        </div>
+      <section class="intro">
+        <h1 class="intro__title" data-slot="kontakt-name">Pranvera Pelaj</h1>
+        <p class="intro__lead" data-fade data-slot="kontakt-rolle"></p>
       </section>
 
-      <section class="ueber__text">
-        <p class="pull" data-slot="ueber-text"></p>
+      <!-- Der eigene Standpunkt, dann die Angaben zum Nachschlagen. -->
+      <section class="block--tight ueber-profil">
+        <p class="lead" data-slot="ueber-text"></p>
+        <dl class="facts" data-slot="kontakt-felder"></dl>
       </section>
 
-      <section class="werkzeuge">
+      <section class="block">
         <div class="section-head">
-          <p class="label" data-t="abschnitt.werkzeuge">Werkzeuge</p>
-          <h2 class="h-section" data-t="abschnitt.womiticharbeite">Womit ich arbeite</h2>
+          <h2 class="section-head__title" data-t="abschnitt.womiticharbeite">Womit ich arbeite</h2>
+          <p class="section-head__note">
+            Die Programme aus allen gezeigten Arbeiten, nach Feldern sortiert.
+          </p>
         </div>
-        <div class="werkzeuge__felder" data-slot="werkzeuge"></div>
+        <div class="werkzeuge" data-slot="werkzeuge"></div>
       </section>
 
-      <section class="method">
+      <section class="block">
         <div class="section-head">
-          <p class="label" data-t="abschnitt.vorgehen">Vorgehen</p>
-          <h2 class="h-section" data-t="abschnitt.sogeheichvor">So gehe ich vor</h2>
+          <h2 class="section-head__title" data-t="abschnitt.sogeheichvor">So gehe ich vor</h2>
+          <p class="section-head__note">
+            Vier Schritte, die in jedem Projekt wiederkehren — vom Rahmen bis zur Ausspielung.
+          </p>
         </div>
-        <ol class="method__list" data-slot="vorgehen"></ol>
+        <ol class="method" data-slot="vorgehen"></ol>
       </section>
     </main>
 

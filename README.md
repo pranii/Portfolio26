@@ -3,9 +3,11 @@
 Die Seite hat drei Ebenen. Man kann sich an keiner Stelle verlaufen:
 
 ```
-Startseite            Vier Bereiche als Kacheln
+Startseite            Werkverzeichnis: alle Arbeiten als Liste,
+                      darunter die vier Bereiche
    ↓
-Übersicht             Alle Projekte eines Bereichs als Karten
+Übersicht             Alle Projekte eines Bereichs als Tafeln,
+                      darunter Vorgehen und Werkzeuge
    ↓
 Projektseite          Ein Projekt, Schritt für Schritt
 ```

@@ -3,131 +3,90 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pranvera Pelaj | Creative Director, Creative Coding und Installationen</title>
+    <title>Pranvera Pelaj — Creative Director für Installationen und Creative Coding</title>
     <meta
       name="description"
-      content="Portfolio von Pranvera Pelaj (PREJNI), Creative Director: Installationen, Creative Coding, Film, Kommunikationsdesign und Games."
+      content="Portfolio von Pranvera Pelaj (PREJNI), Creative Director in Regensburg: Installationen, Creative Coding, Film, Kommunikationsdesign und Games."
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#c6e173" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap"
+    />
   </head>
 
   <body data-page="index">
-    <div class="launcher" data-slot="launcher" aria-hidden="true">
-      <video
-        class="launcher__gif"
-        src="/launcher/opener.mp4"
-        poster="/launcher/opener-poster.webp"
-        autoplay
-        muted
-        playsinline
-        loop
-        disablepictureinpicture
-        tabindex="-1"
-      ></video>
-      <div class="launcher__text">
-        <p class="launcher__title" data-slot="launcher-title">Portfolio</p>
-        <p class="launcher__subtitle">Loading&hellip;</p>
-      </div>
-    </div>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+    <div class="progress" aria-hidden="true"></div>
 
-    <div class="grain" aria-hidden="true"></div>
-
-    <!-- Startbildschirm: fuellt genau das Fenster, scrollt nicht. -->
-    <main class="home">
-      <div class="home__status" aria-hidden="true">
-        <span class="home__signal"></span>
-        <span class="home__battery"></span>
-      </div>
-
-      <div class="home__center">
-        <h1 class="home__title" data-fade data-slot="hero">Portfolio</h1>
-        <p class="home__tags" data-fade="0.1" data-slot="role"></p>
-      </div>
-
-      <!-- Die beiden Softkeys unter dem Display, wie beim Telefon:
-           links das Menue, rechts der Weg zu mir. -->
-      <div class="home__keys" data-fade="0.2">
-        <button
-          class="home__key home__key--links"
-          type="button"
-          data-slot="call"
-          data-cursor="Menü"
-          data-t-cursor="menu.anrufen"
-          data-t-label="menu.oeffnen"
-          aria-haspopup="dialog"
+    <header class="site-header">
+      <a class="site-header__mark" href="index.html" data-slot="name">PREJNI</a>
+      <nav class="site-nav" data-t-label="nav.bereiche">
+        <a href="creative-technology.html" data-t="kat.creative-technology">Creative Technology</a>
+        <a href="film.html" data-t="kat.film">Film</a>
+        <a href="game.html" data-t="kat.game">Game</a>
+        <a href="kommunikationsdesign.html" data-t="kat.kommunikationsdesign"
+          >Kommunikationsdesign</a
         >
-          <span data-t="menu.titel">Menü</span>
-        </button>
-        <a class="home__key home__key--rechts" href="ueber.html">
-          <span data-t="menu.ueber">Über mich</span>
-        </a>
-      </div>
-    </main>
+        <a href="ueber.html" data-t="menu.ueber">Über mich</a>
+      </nav>
+    </header>
 
-    <!-- Menue im Fenster. Beim Oeffnen wird die ganze Seite negativ. -->
-    <dialog class="menu-window" data-slot="menu-window" aria-label="Menü">
-      <section class="phone">
-        <!-- Oben die Statuszeile, darunter der Name des Menues: derselbe
-             Aufbau wie auf dem Telefon selbst. -->
-        <div class="phone__status" aria-hidden="true">
-          <span class="home__signal"></span>
-          <span class="phone__titel" data-t="menu.titel">Menü</span>
-          <span class="home__battery"></span>
-        </div>
-
-        <div class="phone__screen" tabindex="0">
-          <ul class="phone__list" data-slot="menu" aria-live="polite"></ul>
-        </div>
-
-        <!-- Die beiden Softkeys, wie sie unter dem Display eines 3310
-             sitzen: links auswaehlen, rechts zurueck. -->
-        <div class="phone__softkeys">
-          <button class="phone__softkey" type="button" data-menu="select" data-t="menu.waehlen">
-            Wählen
-          </button>
-          <div class="phone__steuerkreuz">
-            <button
-              class="phone__nav phone__nav--prev"
-              type="button"
-              data-menu="prev"
-              data-t-label="menu.voriger"
-            >
-              <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
-                <rect x="3" y="0" width="1" height="1" />
-                <rect x="2" y="1" width="2" height="1" />
-                <rect x="1" y="2" width="6" height="1" />
-                <rect x="0" y="3" width="7" height="1" />
-                <rect x="1" y="4" width="6" height="1" />
-                <rect x="2" y="5" width="2" height="1" />
-                <rect x="3" y="6" width="1" height="1" />
-              </svg>
-            </button>
-            <button
-              class="phone__nav phone__nav--next"
-              type="button"
-              data-menu="next"
-              data-t-label="menu.naechster"
-            >
-              <svg viewBox="0 0 7 7" fill="currentColor" aria-hidden="true">
-                <rect x="3" y="0" width="1" height="1" />
-                <rect x="2" y="1" width="2" height="1" />
-                <rect x="1" y="2" width="6" height="1" />
-                <rect x="0" y="3" width="7" height="1" />
-                <rect x="1" y="4" width="6" height="1" />
-                <rect x="2" y="5" width="2" height="1" />
-                <rect x="3" y="6" width="1" height="1" />
-              </svg>
-            </button>
+    <main id="inhalt">
+      <!-- Der Einstieg: der Satz, der die Arbeit erklaert, und gleich
+           darunter das Verzeichnis aller Arbeiten. -->
+      <section class="shell hero">
+        <p class="hero__name" data-fade>
+          <strong data-slot="kuerzel">PREJNI</strong>
+          <span data-slot="person"></span>
+        </p>
+        <h1 class="hero__claim" data-fade="0.05" data-slot="claim"></h1>
+        <div class="hero__body">
+          <div data-fade="0.12">
+            <p class="hero__intro" data-slot="intro"></p>
+            <p class="hero__rolle" data-slot="role"></p>
           </div>
-          <button class="phone__softkey" type="button" data-menu="close" data-t="menu.zurueck">
-            Zurück
-          </button>
+          <p class="hero__aktionen" data-fade="0.18">
+            <a class="button" href="#arbeiten">Arbeiten ansehen</a>
+            <a class="button button--quiet" href="ueber.html">Über mich</a>
+          </p>
         </div>
       </section>
-    </dialog>
+
+      <!-- Werkverzeichnis: alle Arbeiten, neueste zuerst. -->
+      <section class="shell block--tight" id="arbeiten">
+        <div class="section-head">
+          <h2 class="section-head__title">Arbeiten</h2>
+          <p class="section-head__note" data-slot="arbeiten-note"></p>
+        </div>
+        <div class="index" data-slot="index"></div>
+      </section>
+
+      <!-- Die vier Bereiche, jeder mit einem Bild aus seiner jüngsten Arbeit. -->
+      <section class="shell block">
+        <div class="section-head">
+          <h2 class="section-head__title">Bereiche</h2>
+          <p class="section-head__note">
+            Vier Felder, in denen ich arbeite — oft greift eine Arbeit in mehrere.
+          </p>
+        </div>
+        <div class="areas" data-slot="areas"></div>
+      </section>
+
+      <!-- Wie ich arbeite: die vier Schritte aus der Seite über mich. -->
+      <section class="shell block">
+        <div class="section-head">
+          <h2 class="section-head__title">So arbeite ich</h2>
+          <p class="section-head__note">
+            Vier Schritte, die in jedem Projekt wiederkehren — vom Rahmen bis zur Ausspielung.
+          </p>
+        </div>
+        <ol class="method" data-slot="vorgehen"></ol>
+      </section>
+    </main>
 
     <script type="module" src="/src/scripts/main.js"></script>
   </body>

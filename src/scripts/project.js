@@ -4,12 +4,12 @@
  */
 
 import '../styles/main.css';
-import { site, categories } from '../data/site.js';
+import { categories } from '../data/site.js';
 import { initScroll, initProgressBar, ScrollTrigger } from './lib/scroll.js';
-import { revealFade, revealOnScroll } from './lib/reveal.js';
+import { revealFade } from './lib/reveal.js';
 import { initCursor } from './lib/cursor.js';
+import { initShell, themaAnwenden } from './lib/shell.js';
 import { initLightbox } from './lib/lightbox.js';
-import { initPageTransitions } from './lib/transitions.js';
 import { initShowMore } from './lib/showmore.js';
 import { initVideoSlots } from './lib/videoslot.js';
 import { renderProjectPage } from './lib/render.js';
@@ -25,6 +25,8 @@ import {
 } from './lib/i18n.js';
 import { initTonschalter } from './lib/ton.js';
 import { LOADERS } from './lib/bereiche.js';
+
+themaAnwenden();
 
 function parseId() {
   const raw = new URLSearchParams(location.search).get('id') ?? '';
@@ -73,7 +75,7 @@ async function main() {
   uebersetzeSeite();
   initSprachschalter();
   initTonschalter({ an: t('ton.an'), aus: t('ton.aus') });
-  document.querySelector('[data-slot="name"]').textContent = site.name;
+  initShell();
 
   const { category, slug } = parseId();
   const load = LOADERS[category];
@@ -131,12 +133,9 @@ async function main() {
   setPager('next', uebersetztesNachbarprojekt(data, index + 1, 1), t('projekt.naechstes'));
 
   initScroll();
-  initPageTransitions();
   initCursor();
   initProgressBar();
   revealFade();
-  revealOnScroll('.step__head', { y: 24 });
-  revealOnScroll('.figure', { y: 16 });
   initShowMore();
   initVideoSlots();
   initLightbox();

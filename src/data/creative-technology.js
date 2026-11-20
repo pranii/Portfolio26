@@ -71,8 +71,11 @@ export const projects = [
     year: '2020–2025',
     role: 'Konzeption, Recherche, Regie, Videoschnitt, Sounddesign, Rauminstallation',
     kontext:
-      'Bachelorthesis 2023, Online Medien — fortgeführt 2025 im Master Design Interaktiver ' +
-      'Medien, Hochschule Furtwangen',
+      'Studienarbeit und Bachelorthesis 2023 bei Prof. Thomas Krach, Online Medien, ' +
+      'Hochschule Furtwangen',
+    client:
+      'Carina Borgards und Mathis Harrer (Performance), Halis Coskunyürek und Mathis ' +
+      'Harrer (Soundtrack)',
     tools: [
       'Premiere Pro',
       'After Effects',
@@ -107,8 +110,12 @@ export const projects = [
       {
         title: 'Das Magazin',
         text:
-          'Das Heft führt durch die Modelle hinter der Arbeit: Freuds Instanzenmodell, die ' +
-          'vier Reaktionstypen — Fight, Flight, Freeze, Fawn —, die Polyvagal-Theorie und ' +
+          'Angefangen hat alles im Modul Responsive Web-Design: ein kompaktes Magazin mit ' +
+          'Schlüsselanhänger, gezeigt in der Busking Box in Villingen-Schwenningen. Im ' +
+          'Semester darauf wurde daraus als Studienarbeit ein Informationsheft. ' +
+          'Es führt durch die Modelle hinter der Arbeit: Freuds Instanzenmodell, die ' +
+          'vier Reaktionstypen nach Pete Walker — Fight, Flight, Freeze, Fawn —, die ' +
+          'Polyvagal-Theorie und ' +
           'den Trauma-Response-Zyklus. Dazu Shadowwork zum Mitmachen und am Ende ' +
           'Anlaufstellen. Der Satz, auf den alles hinausläuft: Jede dieser Strategien hat ' +
           'einmal funktioniert. Sie war nie ein Charakterfehler.',
@@ -137,30 +144,6 @@ export const projects = [
           'Villingen-Schwenningen zu sehen.',
         files: [],
         textOnly: true,
-      },
-      {
-        title: 'Projektpitch',
-        text:
-          '2025 im Master noch einmal angefasst, zu dritt mit Cara Brüggendieck und Laura ' +
-          'Zahn. Daraus wurde ein anderer Entwurf: nicht mehr ein Video im Raum, sondern ein ' +
-          'Weg durch fünf Phasen. Drei Minuten absolute Dunkelheit mit Theta-Wellen, dann ' +
-          'fünfzehn Minuten auf drei Flächen — Shadow, Pain, Ignite, Break, Light. Danach ' +
-          'eine einzige Minute Stille, in der man den eigenen Herzschlag hört; ohne diese ' +
-          'Pause keine Katharsis. Dann 10.000 Lux, fast schmerzhaft hell, und Glaskabinen ' +
-          'mit offenem Mikrofon: Wer will, erzählt anonym, wer nicht will, hört zu. Am Ende ' +
-          'gibt es die Magazine mit auf den Weg. Vorgearbeitet wurde viel; die Umsetzung ' +
-          'musste aus Zeitgründen warten.',
-        files: ['pitch-version-1'],
-        layout: 'track',
-        aufbau: 'rreth-pitch',
-      },
-      {
-        title: 'Erster Einblick',
-        text:
-          'Drehbuch, Regie und Schnitt: Pranvera Pelaj, Cara Brüggendieck, Laura Zahn. ' +
-          'Kamera und Licht: Joscha Reuther, Jan Borghart.',
-        files: [],
-        embed: 'https://youtu.be/21GWCYnf_ww',
       },
       {
         title: 'Kampagne und Zukunftsausblick',
@@ -193,7 +176,7 @@ export const projects = [
     pull: 'Ich werde an dir zu mir.',
     chapters: [
       {
-        title: 'IDEENFINDUNG',
+        title: 'Ideenfindung',
         text:
           'Das Modul „Interaktionsdesign" stellte uns vor die Herausforderung, fremde ' +
           'Personen im öffentlichen Raum unaufgefordert zur Interaktion zu bewegen. Begonnen ' +
@@ -218,7 +201,7 @@ export const projects = [
         layout: 'track',
       },
       {
-        title: 'eingrenzung',
+        title: 'Eingrenzung',
         text:
           'Als ich zufrieden mit der Idee und dem Thema war, habe ich begonnen, an einer ' +
           'User Journey zu arbeiten. Ich wollte gerne etwas technisch Interaktives und kam ' +
@@ -232,7 +215,7 @@ export const projects = [
         layout: 'track',
       },
       {
-        title: 'Das videospiel',
+        title: 'Das Videospiel',
         text:
           'Das eigentliche Herzstück der Installation ist das Videospiel, welches abgespielt ' +
           'wird, bevor es zum Moment der Aufnahme übergeht. Die Idee ist entstanden durch ' +
@@ -267,8 +250,7 @@ export const projects = [
       },
       {
         title: 'Kassenzettel',
-        text:
-          'Ein paar dokumentierte Begegnungen.',
+        text: 'Ein paar dokumentierte Begegnungen.',
         files: ['begegnung'],
         layout: 'track',
       },
@@ -303,7 +285,7 @@ export const projects = [
     prototyp: { art: 'nostalgia', titel: 'Selbst ins Bild treten' },
     chapters: [
       {
-        title: 'IDEENFINDUNG',
+        title: 'Ideenfindung',
         text:
           'Die Hochschule Furtwangen hat in Kooperation mit der Städtischen Galerie im Rahmen ' +
           'der Ausstellung „LIMINALITÄT" einen Tag lang studentische Projekte präsentiert. ' +
@@ -500,8 +482,7 @@ export const projects = [
       'daraus einen Verlauf zeichnet, als Gesprächsgrundlage, nicht zur Diagnose.',
     year: '2026',
     role: 'Experteninterviews, Video- und Audioanalyse, Prototyp, Evaluation',
-    kontext:
-      'Master Design Interaktiver Medien, angeleitet von Prof. Dr.-Ing. Thomas Schlegel',
+    kontext: 'Master Design Interaktiver Medien, angeleitet von Prof. Dr.-Ing. Thomas Schlegel',
     client: 'Rosa Stark, Johannes Merschroth und Marla Speth',
     tools: [
       'Python',
@@ -520,7 +501,7 @@ export const projects = [
     prototyp: { art: 'innerflow', titel: 'Selbst messen lassen' },
     chapters: [
       {
-        title: 'THESE',
+        title: 'These',
         text:
           'Viele Klient:innen erinnern Erlebtes ungenau, finden keine Worte für ihr Befinden oder ' +
           'passen ihr Verhalten an. Aus Scham oder aus Angst vor Bewertung. Unter dieser Bedingung ' +
@@ -530,7 +511,7 @@ export const projects = [
         textOnly: true,
       },
       {
-        title: 'INTERVIEWS',
+        title: 'Interviews',
         text:
           'Ich habe drei angehende Psycholog:innen interviewt. Ihre Antworten haben das Projekt ' +
           'gedreht. Von konkreten Emotionslabels hielten sie wenig. Emotionen ließen sich ' +

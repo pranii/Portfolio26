@@ -18,17 +18,17 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const TMP = path.join(ROOT, 'node_modules', '.smoke');
 
 const PAGES = [
-  { html: 'index.html', entry: 'src/scripts/main.js', erwartet: '.phone__item' },
-  { html: 'creative-technology.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  { html: 'index.html', entry: 'src/scripts/main.js', erwartet: '.index__row, .area' },
+  { html: 'creative-technology.html', entry: 'src/scripts/category.js', erwartet: '.plate' },
   // Pfeil hoch, Balken, Pfeil runter — alle drei an der Schiene.
   {
     html: 'creative-technology.html',
     entry: 'src/scripts/category.js',
-    erwartet: '.carousel__schiene .carousel__btn',
+    erwartet: '.method__step',
   },
-  { html: 'film.html', entry: 'src/scripts/category.js', erwartet: '.card' },
-  { html: 'game.html', entry: 'src/scripts/category.js', erwartet: '.card' },
-  { html: 'kommunikationsdesign.html', entry: 'src/scripts/category.js', erwartet: '.card' },
+  { html: 'film.html', entry: 'src/scripts/category.js', erwartet: '.plate' },
+  { html: 'game.html', entry: 'src/scripts/category.js', erwartet: '.plate' },
+  { html: 'kommunikationsdesign.html', entry: 'src/scripts/category.js', erwartet: '.plate' },
   // Die Projektseite liest ihr Projekt aus der Adresse.
   {
     html: 'projekt.html',

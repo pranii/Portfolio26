@@ -5,6 +5,12 @@
 export const site = {
   name: 'PREJNI', // steht gross auf der Startseite
   role: 'Creative Director · Creative Coding · Installationen', // steht unter dem Namen
+  /**
+   * Die groesste Zeile der Startseite: ein Satz, der die Arbeit erklaert,
+   * bevor man ein einziges Bild gesehen hat. Kurz halten — er wird sehr
+   * gross gesetzt und soll in zwei bis drei Zeilen passen.
+   */
+  claim: 'Dinge, die man betritt, bedient oder in die Hand nimmt.',
   intro:
     'Creative Director mit Schwerpunkt auf Creative Coding und Installationen. Ich baue ' +
     'Dinge, die man betritt, bedient oder in die Hand nimmt — vom Automaten im öffentlichen ' +

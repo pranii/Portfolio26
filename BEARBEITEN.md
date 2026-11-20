@@ -5,6 +5,7 @@
 | Ich will ändern …                            | Datei                                        |
 | -------------------------------------------- | -------------------------------------------- |
 | Meinen Namen, Kontakt, Links, Ort            | `src/data/site.js`                           |
+| Den großen Satz auf der Startseite           | `src/data/site.js` (`claim`)                 |
 | Die vier Bereichstexte auf der Startseite    | `src/data/site.js` (unten, `categories`)     |
 | Steuerung und Text der Spielseite            | `src/data/site.js` (ganz unten, `spiel`)     |
 | Projekte im Bereich **Creative Technology**  | `src/data/creative-technology.js`            |
@@ -16,6 +17,7 @@
 | Welche Dateien überhaupt importiert werden   | `scripts/media-manifest.mjs`                 |
 | Farben, Schriftgrößen, Abstände              | `src/styles/main.css`, ganz oben bei `:root` |
 | Spaltensatz der Fließtexte                   | `src/styles/main.css`, `--column-min`        |
+| Aussehen der interaktiven Projektstücke      | `src/styles/module.css`                      |
 
 **Finger weg von** `src/data/media.json` — die Datei wird von `npm run import`
 erzeugt und bei jedem Lauf überschrieben.
