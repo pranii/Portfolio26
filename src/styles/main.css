@@ -9,23 +9,24 @@
 
    Haltung
    ───────
-   Katalog einer Ausstellung, nicht Bildschirm eines Geraets. Die Seite
-   verhaelt sich wie gutes Papier: heller, warmer Grund, schwarze
-   Schrift, viel Luft, und an genau einer Stelle Farbe — das Gruen der
-   Marke, eingesetzt wie ein Marker auf einem Blatt.
+   Ein Werkbuch, kein Bildschirm. Die Seite verhaelt sich wie das
+   Dossier eines Studios: grauweisses Papier, schwarze Schrift,
+   durchnummerierte Abschnitte, Abbildungen mit Nummer und Legende.
+   Keine Akzentfarbe — die Farbe kommt aus den Arbeiten selbst.
 
    Prinzipien
    ──────────
-   1  Inhalt zuerst.  Schon der erste Bildschirm zeigt die Arbeiten,
-      nicht nur einen Namen. Wer die Seite oeffnet, soll sofort sehen,
-      was es hier zu sehen gibt.
-   2  Eine Schrift.  Schibsted Grotesk, ueber die Groesse gewichtet:
-      grosse, eng gesetzte Zeilen gegen ruhigen, luftigen Lesetext.
-   3  Struktur traegt Information.  Linien, Spalten und Bildunterschriften
-      erklaeren die Arbeit (Titel, Untertitel, Jahr, Rolle) — sie sind
-      keine Dekoration.
-   4  Eine Farbe, eine Stelle.  Gruen markiert, was gerade gilt: aktive
-      Navigation, Fortschritt, der Kontaktabschnitt am Fuss.
+   1  Inhalt zuerst.  Schon der erste Bildschirm zeigt das Verzeichnis
+      aller Arbeiten, nicht nur einen Namen.
+   2  Zwei Schriften mit klaren Aufgaben.  Bodoni Moda setzt die
+      grossen Zeilen — eine Didone mit starkem Strichkontrast, die
+      roemisch und kursiv im selben Wort mischt. Schibsted Grotesk
+      traegt alles, was gelesen wird. Mono nur fuer Nummern und
+      Legenden, also dort, wo der Inhalt selbst technisch ist.
+   3  Nummern sind Navigation.  Abschnitte heissen 1.0, 2.0, 3.0,
+      Abbildungen fig. 1.1 — man kann auf sie zeigen und sie nennen.
+   4  Harte Kanten.  Keine runden Ecken, keine Schatten. Eine Abbildung
+      ist eine Flaeche auf Papier, kein Objekt im Raum.
    5  Bewegung antwortet.  Ein einziger Einstieg beim Laden, danach
       bewegt sich nur, was auf eine Handlung reagiert.
 
@@ -39,60 +40,51 @@
 :root {
   color-scheme: light;
 
-  /* Grundflaechen. Warmes Weiss, kein Creme: Die Arbeiten sind farbig,
-     der Grund soll ihnen nichts unterlegen. */
-  --paper: #fbfbf9;
-  --paper-sunk: #f2f2ed;
-  --surface: #ffffff;
+  /* Papier. Warmes Grauweiss wie ein Werkdruckpapier — kein Weiss,
+     damit die Abbildungen nicht ausgeschnitten wirken. */
+  --paper: #e9e7e1;
+  --paper-sunk: #e2e0d9;
+  /* Die helle Flaeche fuer Trennseiten und Tafeln. */
+  --surface: #f4f3ef;
 
-  /* Schrift. Ein Schwarz mit einem Hauch Gruen darin, damit es neben
-     dem Akzent nicht kalt wirkt. */
-  --ink: #14150f;
-  --ink-soft: #3d3f36;
-  --ink-dim: #6b6d63;
-  --rule: #e2e2db;
-  --rule-strong: #c9c9c0;
+  --ink: #1a1a17;
+  --ink-soft: #46463f;
+  --ink-dim: #76766c;
+  --rule: #c8c6bd;
+  --rule-strong: #a8a69c;
 
-  /* Die Marke. Hell und gesaettigt — traegt keine schwarze Schrift in
-     kleinen Graden, deshalb nur als Flaeche und Markierung. */
+  /* Kein Akzent mehr: was hervorsticht, ist dunkel, nicht bunt.
+     Die Module benutzen dieses Paar als Flaeche und Schrift darauf. */
+  --accent: var(--ink);
+  --accent-ink: var(--paper);
+
+  /* Die Hausfarbe bleibt als Token erhalten — sie steckt noch im
+     Favicon und in einzelnen Arbeiten. */
   --marke: #c6e173;
-  --marke-tief: #a9c84f;
 
-  /* Fuer die Module: ein Paar aus Flaeche und Schrift darauf. */
-  --accent: var(--marke);
-  --accent-ink: var(--ink);
-
-  /* Dunkle Flaechen (Spielfenster, Lightbox) und der neutrale Grund
-     hinter Abbildungen. */
-  --bezel: #15160f;
-  --bezel-hi: #1f2117;
-  --bild-grund: #edede8;
+  --bezel: #16160f;
+  --bezel-hi: #20211a;
+  --bild-grund: #dedcd4;
   --pixel: var(--ink);
+  --bereich: var(--ink);
 
-  /* Bereichsfarben: jeder Bereich bekommt einen eigenen Ton fuer
-     Marker und aktive Zustaende. Das Gruen bleibt die Hausfarbe und
-     gilt, solange kein Bereich gesetzt ist. */
-  --bereich: var(--marke);
-
-  /* Schrift. Eine Familie; Mono nur dort, wo der Inhalt selbst
-     technisch ist (Kassenzettel, Steuerung, Code). */
   --font: 'Schibsted Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: var(--font);
-  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+  --font-display: 'Bodoni Moda', 'Times New Roman', Times, serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
 
-  /* Groessenskala. Die grossen Grade wachsen mit dem Fenster, die
-     Lesegrade bleiben stehen — Fliesstext soll nicht zittern. */
+  /* Groessenskala. Die Didone traegt sehr grosse Grade; der Lesetext
+     bleibt klein und ruhig, wie in einem gesetzten Buch. */
+  --t--3: 0.6875rem;
   --t--2: 0.75rem;
   --t--1: 0.8125rem;
-  --t-0: 1.0625rem;
-  --t-1: 1.1875rem;
-  --t-2: 1.5rem;
-  --t-3: clamp(1.75rem, 2.4vw, 2.125rem);
-  --t-4: clamp(2.125rem, 3.6vw, 3rem);
-  --t-5: clamp(2.5rem, 5.4vw, 4.25rem);
-  --t-6: clamp(2.875rem, 7.6vw, 6rem);
+  --t-0: 1rem;
+  --t-1: 1.125rem;
+  --t-2: 1.375rem;
+  --t-3: clamp(1.625rem, 2.2vw, 2rem);
+  --t-4: clamp(2rem, 3.4vw, 2.75rem);
+  --t-5: clamp(2.5rem, 5.6vw, 4.5rem);
+  --t-6: clamp(3rem, 9vw, 7.5rem);
 
-  /* Abstandsskala */
   --s-1: 0.25rem;
   --s-2: 0.5rem;
   --s-3: 0.75rem;
@@ -104,88 +96,70 @@
   --s-9: 7rem;
   --s-10: 10rem;
 
-  /* Satzbreiten. Deutsch baut lange Woerter — 64 Zeichen lesen sich
-     ruhiger als die oft genannten 75. */
-  --measure: 64ch;
-  --measure-short: 46ch;
-  --column-min: 42ch;
+  --measure: 62ch;
+  --measure-short: 44ch;
+  --column-min: 40ch;
 
-  /* Raster */
-  --shell: 82rem;
+  --shell: 84rem;
   --shell-wide: 96rem;
-  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
   --tile-ratio: 4 / 3;
 
-  --radius: 3px;
-  --radius-media: 5px;
+  /* Harte Kanten: die Werte bleiben als Token, damit die Module sie
+     weiter lesen koennen, stehen aber auf null. */
+  --radius: 0px;
+  --radius-media: 0px;
   --lift: 0px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Bereichsfarben. Gesetzt wird der Bereich auf <html data-accent>. */
-:root[data-accent='creative-technology'] {
-  --bereich: #c6e173;
-}
-:root[data-accent='film'] {
-  --bereich: #f3c969;
-}
-:root[data-accent='game'] {
-  --bereich: #b6c7f5;
-}
-:root[data-accent='kommunikationsdesign'] {
-  --bereich: #f0b8c8;
-}
-
-/* Dunkle Flaechen: dieselben Tokens, getauscht. So funktionieren die
-   Module, die im Dunkeln liegen, ohne eigene Farbregeln. */
+/* Dunkle Flaechen: dasselbe Blatt, nur umgedreht. */
 .is-dark,
 .lightbox,
 .window {
   --paper: var(--bezel);
   --paper-sunk: var(--bezel-hi);
   --surface: var(--bezel-hi);
-  --ink: #f4f5ee;
-  --ink-soft: #d2d4c8;
-  --ink-dim: #9a9c90;
-  --rule: #343729;
-  --rule-strong: #4a4d3c;
-  --accent: var(--marke);
+  --ink: #f1f0e9;
+  --ink-soft: #cfcec5;
+  --ink-dim: #93928a;
+  --rule: #34342b;
+  --rule-strong: #4b4b40;
+  --accent: #f1f0e9;
   --accent-ink: var(--bezel);
   color: var(--ink);
 }
 
-/* Dunkles Systemthema. Die helle Fassung bleibt die gemeinte — das
-   Dunkle ist eine Ruecksicht, kein zweiter Entwurf. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --paper: #101109;
-    --paper-sunk: #181a10;
-    --surface: #181a10;
-    --ink: #f4f5ee;
-    --ink-soft: #cfd1c4;
-    --ink-dim: #93958a;
-    --rule: #2b2d20;
-    --rule-strong: #3f4230;
-    --bild-grund: #1d1f15;
-    --accent: var(--marke);
-    --accent-ink: #101109;
+    --paper: #15150f;
+    --paper-sunk: #1c1c15;
+    --surface: #1c1c15;
+    --ink: #f1f0e9;
+    --ink-soft: #ccccc2;
+    --ink-dim: #8e8e84;
+    --rule: #33332a;
+    --rule-strong: #4a4a3f;
+    --bild-grund: #22221a;
+    --accent: #f1f0e9;
+    --accent-ink: #15150f;
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #101109;
-  --paper-sunk: #181a10;
-  --surface: #181a10;
-  --ink: #f4f5ee;
-  --ink-soft: #cfd1c4;
-  --ink-dim: #93958a;
-  --rule: #2b2d20;
-  --rule-strong: #3f4230;
-  --bild-grund: #1d1f15;
-  --accent: var(--marke);
-  --accent-ink: #101109;
+  --paper: #15150f;
+  --paper-sunk: #1c1c15;
+  --surface: #1c1c15;
+  --ink: #f1f0e9;
+  --ink-soft: #ccccc2;
+  --ink-dim: #8e8e84;
+  --rule: #33332a;
+  --rule-strong: #4a4a3f;
+  --bild-grund: #22221a;
+  --accent: #f1f0e9;
+  --accent-ink: #15150f;
 }
 
 /* ── 2 Reset ──────────────────────────────────────────────────────── */
@@ -212,16 +186,48 @@ html {
 }
 
 body {
-  background: var(--paper);
+  background-color: var(--paper);
   color: var(--ink);
   font-family: var(--font);
   font-size: var(--t-0);
-  line-height: 1.6;
-  font-weight: 400;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   min-height: 100svh;
   overflow-x: hidden;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+/* Die Faserung des Papiers. Ein feines Rauschen, direkt im Stylesheet
+   gezeichnet — keine Bilddatei, und auf dunklem Grund schwaecher. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) body::before {
+    mix-blend-mode: screen;
+    opacity: 0.28;
+  }
+}
+
+:root[data-theme='dark'] body::before {
+  mix-blend-mode: screen;
+  opacity: 0.28;
+}
+
+/* Alles Sichtbare liegt ueber der Faserung. */
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 img,
@@ -271,34 +277,31 @@ dd {
   margin: 0;
 }
 
-/* Sichtbarer Fokus, ueberall gleich: ein Rahmen mit Abstand, damit er
-   auch auf Bildern zu sehen ist. */
 :focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
-  border-radius: 2px;
 }
 
 .is-dark :focus-visible,
 .lightbox :focus-visible {
-  outline-color: var(--marke);
+  outline-color: var(--paper);
 }
 
 ::selection {
-  background: var(--marke);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
 }
 
-/* Sprungmarke zum Inhalt — sichtbar, sobald sie den Fokus hat. */
 .skip-link {
   position: fixed;
   top: var(--s-3);
   left: var(--s-3);
   z-index: 200;
   padding: var(--s-2) var(--s-4);
-  background: var(--marke);
-  color: #14150f;
-  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
   transform: translateY(-200%);
 }
 
@@ -323,44 +326,33 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.1;
   text-wrap: balance;
+  hyphens: manual;
 }
 
-h3,
-h4 {
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+/* Die Didone. Sehr gross, eng, mit kursiven Einsprengseln — das ist
+   die Stimme der Seite. Nie in kleinen Graden: dort bricht der feine
+   Strich weg. */
+.didone {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+  line-height: 0.92;
+}
+
+.didone em,
+.kursiv {
+  font-style: italic;
+  font-weight: 400;
 }
 
 p {
   text-wrap: pretty;
 }
 
-/* Deutsch baut lange Komposita. Ohne Trennung sprengt ein
-   "Improvisationstheaterstück" auf dem Handy die Spalte, in der es
-   steht. Ueberschriften bleiben ungetrennt — dort faellt jede
-   Trennung sofort auf. */
-body {
-  hyphens: auto;
-  overflow-wrap: break-word;
-}
-
-h1,
-h2,
-h3,
-h4,
-.hero__claim,
-.index__titel,
-.plate__titel,
-.project-head__title {
-  hyphens: manual;
-}
-
-/* Lesetext: eine Spalte, begrenzte Zeile. */
 .prose {
   max-width: var(--measure);
   color: var(--ink-soft);
@@ -371,73 +363,75 @@ h4,
 }
 
 .lead {
-  font-size: var(--t-2);
-  line-height: 1.4;
-  letter-spacing: -0.015em;
-  max-width: 34ch;
+  font-size: var(--t-1);
+  line-height: 1.5;
+  max-width: 46ch;
   color: var(--ink);
 }
 
-/* Zahlen, die untereinander stehen, laufen auf gleicher Breite.
-   Nur hier — bei dieser Schrift bekommt sonst auch das Komma die
-   Breite einer Ziffer, und im Fliesstext entstehen Luecken davor. */
-.index__jahr,
-.plate__jahr,
-.method__num,
-.lightbox__counter {
+/* Die Mikroschrift des Dokuments: Nummern, Legenden, Kolumnentitel.
+   Mono, klein, gesperrt — und in Kleinschreibung, nicht in Versalien. */
+.mono,
+.fig,
+.kolumne,
+.nummer {
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
   font-variant-numeric: tabular-nums;
 }
 
-/* Kleine Nebenangabe: Jahr, Anzahl, Herkunft. Nicht in Versalien —
-   die Groesse reicht, um sie als Nebensache zu lesen. */
-.meta {
-  font-size: var(--t--1);
-  color: var(--ink-dim);
-  letter-spacing: 0.01em;
+.fig {
+  display: block;
 }
 
-/* Abschnittsmarke: der Titel steht auf einer Linie, die ueber die
-   ganze Breite laeuft. Die Linie zeigt, wo ein Abschnitt beginnt. */
+/* Abschnittskopf: Nummer, Titel, rechts die Erlaeuterung. Darueber
+   eine Linie, die ueber die ganze Breite laeuft — sie trennt die
+   Abschnitte des Dokuments. */
 .section-head {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) minmax(0, 22rem);
   align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s-3) var(--s-5);
-  padding-top: var(--s-4);
+  gap: var(--s-4);
+  padding-top: var(--s-3);
   border-top: 1px solid var(--ink);
   margin-bottom: var(--s-6);
 }
 
+.section-head__num {
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
+}
+
 .section-head__title {
-  font-size: var(--t-3);
+  font-size: var(--t-2);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-family: var(--font);
 }
 
 .section-head__note {
-  font-size: var(--t--1);
+  font-size: var(--t--2);
   color: var(--ink-dim);
-  max-width: 42ch;
+  line-height: 1.5;
 }
 
-/* Textlink im Fliesstext: Unterstrich jetzt, Marker beim Darueberfahren. */
 .link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
+  text-underline-offset: 0.2em;
   text-decoration-color: var(--rule-strong);
-  transition: background-color 0.18s var(--ease);
 }
 
 .link:hover {
-  background: var(--marke);
-  color: #14150f;
-  text-decoration-color: transparent;
-  box-shadow: 0 0 0 2px var(--marke);
+  text-decoration-color: var(--ink);
 }
 
-/* Knopf: dunkle Flaeche, helle Schrift. Das Gruen bleibt dem
-   Kontaktabschnitt und den aktiven Zustaenden vorbehalten — eine
-   Farbe, die ueberall auftaucht, sagt nichts mehr. */
+/* Knopf: ein beschriftetes Feld mit Rahmen, wie ein Stempel. */
 .button {
   display: inline-flex;
   align-items: center;
@@ -445,18 +439,18 @@ h4,
   padding: var(--s-3) var(--s-5);
   background: var(--ink);
   color: var(--paper);
-  border-radius: 999px;
-  font-size: var(--t--1);
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.04em;
   transition:
     background-color 0.2s var(--ease),
     color 0.2s var(--ease);
 }
 
 .button:hover {
-  background: var(--marke);
-  color: #14150f;
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
 }
 
 .button--quiet {
@@ -468,26 +462,41 @@ h4,
 .button--quiet:hover {
   background: var(--ink);
   color: var(--paper);
-  box-shadow: inset 0 0 0 1px var(--ink);
+  box-shadow: none;
 }
 
-/* Schlagwort: nennt Medium oder Disziplin einer Arbeit. */
-.tagbox,
-.tags li,
-.card__tags li {
-  display: inline-block;
-  padding: 0.15em 0.6em;
-  border: 1px solid var(--rule-strong);
-  border-radius: 999px;
-  font-size: var(--t--2);
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-
+/* Schlagworte: eine Reihe kleiner Angaben, durch Striche getrennt. */
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-2);
+  gap: var(--s-1) var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
+  color: var(--ink-dim);
+}
+
+.tags li {
+  position: relative;
+}
+
+.tags li + li::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--s-3) / -2);
+  top: 0.4em;
+  bottom: 0.4em;
+  width: 1px;
+  background: var(--rule-strong);
+}
+
+.tagbox {
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  padding: 0.25em 0.6em;
+  border: 1px solid var(--rule);
 }
 
 /* ── 4 Layout ─────────────────────────────────────────────────────── */
@@ -504,46 +513,34 @@ h4,
 }
 
 .block {
-  padding-block: clamp(var(--s-7), 7vw, var(--s-9));
+  padding-block: clamp(var(--s-7), 6vw, var(--s-9));
 }
 
 .block--tight {
   padding-block: var(--s-7);
 }
 
-/* Fortschritt des Scrollens: eine Linie am oberen Rand. Sie sagt,
-   wie lang die Seite noch ist. */
 .progress {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--bereich);
+  background: var(--ink);
   transform: scaleX(0);
   transform-origin: left;
   z-index: 90;
 }
 
-/* Die Flaeche fuer den Seitenwechsel. */
+.grain,
 .wipe {
-  position: fixed;
-  inset: 0;
-  z-index: 95;
-  background: var(--ink);
-  transform: scaleY(0);
-  transform-origin: top;
-  pointer-events: none;
-}
-
-/* Das Filmkorn der alten Fassung ist weg; die Regel bleibt, damit ein
-   uebrig gebliebenes Element nichts anrichtet. */
-.grain {
   display: none;
 }
 
 /* ── 5 Kopf ───────────────────────────────────────────────────────── */
 
+/* Der Kolumnentitel des Dokuments: links das Kuerzel, in der Mitte
+   die Abschnitte, rechts die Schalter. Alles klein und mono. */
 .site-header {
   position: sticky;
   top: 0;
@@ -553,32 +550,30 @@ h4,
   justify-content: space-between;
   gap: var(--s-5);
   padding: var(--s-3) var(--gutter);
-  background: color-mix(in oklab, var(--paper) 86%, transparent);
-  backdrop-filter: blur(12px) saturate(1.4);
-  border-bottom: 1px solid var(--rule);
+  background: color-mix(in oklab, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ink);
 }
 
 .site-header__mark {
-  font-family: var(--font-display);
-  font-size: var(--t-1);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.site-header__mark:hover {
-  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.14em;
+  color: var(--ink);
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(var(--s-3), 2vw, var(--s-6));
+  gap: clamp(var(--s-3), 2vw, var(--s-5));
 }
 
 .site-nav a {
   position: relative;
-  font-size: var(--t--1);
-  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
+  color: var(--ink-dim);
   padding-block: var(--s-2);
   transition: color 0.18s var(--ease);
 }
@@ -587,20 +582,11 @@ h4,
   color: var(--ink);
 }
 
-/* Wo man ist: ein Streifen in der Bereichsfarbe unter dem Eintrag. */
+/* Wo man ist: ein ausgefuelltes Feld, kein farbiger Strich. */
 .site-nav a[aria-current='page'] {
-  color: var(--ink);
-}
-
-.site-nav a[aria-current='page']::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.3em;
-  height: 3px;
-  background: var(--bereich);
-  border-radius: 2px;
+  color: var(--paper);
+  background: var(--ink);
+  padding-inline: 0.5em;
 }
 
 .site-header__tools {
@@ -609,82 +595,72 @@ h4,
   gap: var(--s-2);
 }
 
-/* Themenschalter: zeigt, was ein Klick bewirkt. */
 .theme-toggle {
   display: grid;
   place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 999px;
-  color: var(--ink-soft);
-  transition:
-    background-color 0.18s var(--ease),
-    color 0.18s var(--ease);
+  width: 2rem;
+  height: 2rem;
+  color: var(--ink-dim);
+  transition: color 0.18s var(--ease);
 }
 
 .theme-toggle:hover {
-  background: var(--paper-sunk);
   color: var(--ink);
 }
 
 .theme-toggle svg {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1rem;
+  height: 1rem;
 }
 
-/* Auf schmalen Bildschirmen klappt die Navigation unter den Kopf. */
 .nav-toggle {
   display: none;
   align-items: center;
-  gap: var(--s-2);
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   padding: var(--s-2) var(--s-3);
-  border-radius: 999px;
   box-shadow: inset 0 0 0 1px var(--rule-strong);
 }
 
 /* ── 6 Fuss ───────────────────────────────────────────────────────── */
 
-/* Der eine laute Ort der Seite: der Kontakt steht in der Hausfarbe,
-   damit der Weg zu ihr nicht gesucht werden muss. */
+/* Das Impressum des Hefts: Kontakt links, Inhalt rechts, darunter
+   eine Zeile mit Name, Ort und Jahr. */
 .site-footer {
-  background: var(--marke);
-  color: #14150f;
   margin-top: var(--s-9);
-}
-
-.site-footer a {
-  color: inherit;
+  border-top: 1px solid var(--ink);
+  background: var(--surface);
 }
 
 .site-footer__inner {
   display: grid;
   gap: var(--s-7);
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   align-items: start;
-  padding-block: clamp(var(--s-8), 8vw, var(--s-9));
+  padding-block: clamp(var(--s-7), 6vw, var(--s-8));
 }
 
 .site-footer__call {
-  font-size: var(--t--1);
-  margin-bottom: var(--s-3);
-  color: #3a4420;
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  margin-bottom: var(--s-4);
 }
 
 .site-footer__mail {
   display: inline-block;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.75rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
   word-break: break-word;
-  border-bottom: 2px solid rgba(20, 21, 15, 0.25);
-  transition: border-color 0.2s var(--ease);
+  border-bottom: 1px solid var(--rule-strong);
 }
 
 .site-footer__mail:hover {
-  border-color: #14150f;
+  border-color: var(--ink);
 }
 
 .site-footer__links {
@@ -692,27 +668,30 @@ h4,
   flex-wrap: wrap;
   gap: var(--s-4);
   margin-top: var(--s-5);
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.04em;
 }
 
 .site-footer__links a {
-  border-bottom: 1px solid rgba(20, 21, 15, 0.3);
+  border-bottom: 1px solid var(--rule-strong);
 }
 
 .site-footer__links a:hover {
-  border-color: #14150f;
+  border-color: var(--ink);
 }
 
 .site-footer__nav {
   display: grid;
   gap: var(--s-2);
-  font-size: var(--t--1);
+  font-size: var(--t--2);
 }
 
 .site-footer__nav h2 {
-  font-size: var(--t--1);
-  font-weight: 600;
-  letter-spacing: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
   margin-bottom: var(--s-1);
 }
 
@@ -726,42 +705,59 @@ h4,
   flex-wrap: wrap;
   gap: var(--s-2) var(--s-5);
   justify-content: space-between;
-  padding-block: var(--s-4);
-  border-top: 1px solid rgba(20, 21, 15, 0.2);
-  font-size: var(--t--2);
-  color: #3a4420;
+  padding-block: var(--s-3);
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
+  color: var(--ink-dim);
 }
 
 /* ── 7 Startseite ─────────────────────────────────────────────────── */
 
 .hero {
-  padding-top: clamp(var(--s-7), 7vw, var(--s-9));
+  padding-top: clamp(var(--s-6), 6vw, var(--s-8));
   padding-bottom: var(--s-7);
+}
+
+/* Der Titel laeuft ueber die Seitenkante hinaus — wie ein Buchtitel,
+   der ueber den Bund gesetzt ist. */
+.hero__wort {
+  font-family: var(--font-display);
+  font-size: var(--t-6);
+  line-height: 0.86;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  margin-bottom: var(--s-6);
+}
+
+.hero__wort em {
+  font-style: italic;
 }
 
 .hero__name {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
   gap: var(--s-2) var(--s-4);
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
   color: var(--ink-dim);
-  margin-bottom: var(--s-5);
+  margin-bottom: var(--s-4);
 }
 
 .hero__name strong {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--ink);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.14em;
 }
 
-/* Der Satz, der die Arbeit erklaert — die groesste Zeile der Seite. */
 .hero__claim {
-  font-size: var(--t-6);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-  max-width: 26ch;
+  font-family: var(--font-display);
+  font-size: var(--t-4);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  max-width: 24ch;
   margin-bottom: var(--s-6);
 }
 
@@ -773,8 +769,9 @@ h4,
 }
 
 .hero__intro {
-  max-width: 52ch;
+  max-width: 48ch;
   color: var(--ink-soft);
+  font-size: var(--t--1);
 }
 
 .hero__rolle {
@@ -791,16 +788,15 @@ h4,
   justify-content: flex-end;
 }
 
-/* Das Werkverzeichnis: alle Arbeiten als Liste, gleich auf der
-   Startseite. Jahr, Titel, Bereich — wie das Inhaltsverzeichnis eines
-   Katalogs, und jede Zeile fuehrt zur Arbeit. */
+/* Das Werkverzeichnis. Jede Arbeit bekommt eine Nummer, unter der
+   sie im Dokument steht. */
 .index {
   border-top: 1px solid var(--ink);
 }
 
 .index__row {
   display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr) minmax(0, auto);
+  grid-template-columns: 4.5rem minmax(0, 1fr) 7rem minmax(0, 12rem);
   align-items: baseline;
   gap: var(--s-4);
   padding-block: var(--s-4);
@@ -809,83 +805,45 @@ h4,
 }
 
 .index__row:hover {
-  background: var(--paper-sunk);
+  background: var(--surface);
 }
 
-.index__jahr {
-  font-size: var(--t--1);
+.index__fig,
+.index__jahr,
+.index__bereich {
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
 }
 
 .index__titel {
   font-family: var(--font-display);
   font-size: var(--t-2);
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .index__sub {
   display: block;
   font-family: var(--font);
-  font-size: var(--t--1);
-  font-weight: 400;
+  font-size: var(--t--2);
   letter-spacing: 0;
   color: var(--ink-dim);
-  margin-top: 0.15em;
-  max-width: 52ch;
+  margin-top: 0.3em;
+  max-width: 54ch;
+  line-height: 1.5;
 }
 
-.index__bereich {
-  font-size: var(--t--2);
-  color: var(--ink-soft);
-  white-space: nowrap;
-  padding: 0.2em 0.7em;
-  border-radius: 999px;
-  background: var(--paper-sunk);
+.index__row:hover .index__fig {
+  color: var(--ink);
 }
 
-.index__row:hover .index__bereich {
-  background: var(--bereich);
-  color: #14150f;
-}
-
-/* Die Bildvorschau am Verzeichnis: haengt am Zeiger, zeigt die
-   Arbeit, ueber der man gerade steht. */
-.peek {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 70;
-  width: clamp(14rem, 22vw, 20rem);
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: var(--radius-media);
-  background: var(--bild-grund);
-  pointer-events: none;
-  opacity: 0;
-  scale: 0.96;
-  transition:
-    opacity 0.22s var(--ease),
-    scale 0.22s var(--ease);
-}
-
-.peek.is-sichtbar {
-  opacity: 1;
-  scale: 1;
-}
-
-.peek img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Die Bereiche als Flaechen mit Titelbild. Vier Stueck, deshalb ein
-   festes Raster: vier nebeneinander, zwei auf dem Laptop, eine auf
-   dem Handy — nie drei und eine allein darunter. */
+/* Die vier Bereiche als Tafeln. */
 .areas {
   display: grid;
-  gap: var(--s-4);
+  gap: var(--s-5) var(--s-4);
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -901,8 +859,6 @@ h4,
   }
 }
 
-/* Kein Kasten um die Kachel: das Bild steht fuer sich, die Angaben
-   darunter. Ein Rahmen waere eine Linie, die nichts erklaert. */
 .area {
   display: grid;
   gap: var(--s-3);
@@ -910,11 +866,9 @@ h4,
 }
 
 .area__media {
-  position: relative;
   display: block;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: var(--radius-media);
   background: var(--bild-grund);
   margin-bottom: var(--s-1);
 }
@@ -923,73 +877,101 @@ h4,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: scale 0.5s var(--ease);
+  filter: saturate(0.95);
+  transition: scale 0.6s var(--ease);
 }
 
 .area:hover .area__media img {
-  scale: 1.04;
+  scale: 1.03;
 }
 
 .area__titel {
-  font-size: var(--t-1);
+  font-family: var(--font-display);
+  font-size: var(--t-2);
+  letter-spacing: -0.01em;
 }
 
 .area:hover .area__titel {
   text-decoration: underline;
+  text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
 }
 
 .area__text {
-  font-size: var(--t--1);
+  font-size: var(--t--2);
   color: var(--ink-soft);
-  max-width: 30ch;
+  max-width: 32ch;
+  line-height: 1.5;
 }
 
 .area__zahl {
-  font-size: var(--t--2);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
+}
+
+/* Die Bildvorschau am Verzeichnis. */
+.peek {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  width: clamp(13rem, 20vw, 18rem);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bild-grund);
+  outline: 1px solid var(--ink);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s var(--ease);
+}
+
+.peek.is-sichtbar {
+  opacity: 1;
+}
+
+.peek img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ── 8 Uebersicht ─────────────────────────────────────────────────── */
 
 .intro {
-  padding-top: clamp(var(--s-7), 6vw, var(--s-8));
+  padding-top: clamp(var(--s-6), 5vw, var(--s-8));
   padding-bottom: var(--s-7);
   display: grid;
   gap: var(--s-5);
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   align-items: end;
 }
 
 .intro__title {
+  font-family: var(--font-display);
   font-size: var(--t-5);
-  letter-spacing: -0.035em;
-  max-width: 18ch;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  max-width: 16ch;
 }
 
 .intro__lead {
-  font-size: var(--t-1);
+  font-size: var(--t--1);
   color: var(--ink-soft);
-  max-width: 48ch;
+  max-width: 46ch;
+  line-height: 1.6;
 }
 
-/* Die Arbeiten eines Bereichs: ein Raster aus Tafeln. Keine Kaesten
-   mit Schatten — Bild, darunter die Angaben wie auf einem Schild
-   neben dem Exponat. */
 .grid-work {
   display: grid;
-  gap: clamp(var(--s-5), 4vw, var(--s-7)) var(--s-5);
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
-}
-
-.plate {
-  display: block;
+  gap: clamp(var(--s-6), 4vw, var(--s-7)) var(--s-4);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
 }
 
 .plate__link {
   display: grid;
-  gap: var(--s-4);
+  gap: var(--s-3);
 }
 
 .plate__media {
@@ -997,7 +979,6 @@ h4,
   position: relative;
   aspect-ratio: var(--tile-ratio);
   overflow: hidden;
-  border-radius: var(--radius-media);
   background: var(--bild-grund);
 }
 
@@ -1005,11 +986,11 @@ h4,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s var(--ease);
+  transition: scale 0.6s var(--ease);
 }
 
 .plate__link:hover .plate__media img {
-  transform: scale(1.03);
+  scale: 1.03;
 }
 
 .plate__platzhalter {
@@ -1019,12 +1000,23 @@ h4,
   padding: var(--s-4);
   text-align: center;
   color: var(--ink-dim);
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
 }
 
 .plate__caption {
   display: grid;
   gap: var(--s-2);
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--rule);
+}
+
+.plate__fig {
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
+  color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
 }
 
 .plate__kopf {
@@ -1037,41 +1029,39 @@ h4,
 .plate__titel {
   font-family: var(--font-display);
   font-size: var(--t-2);
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
+  hyphens: manual;
 }
 
 .plate__link:hover .plate__titel {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.18em;
 }
 
 .plate__jahr {
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .plate__sub {
   color: var(--ink-soft);
-  font-size: var(--t--1);
-  max-width: 42ch;
-}
-
-.plate__rolle {
   font-size: var(--t--2);
-  color: var(--ink-dim);
+  line-height: 1.5;
+  max-width: 44ch;
 }
 
-/* Die Medien einer Arbeit. Sie stehen zuletzt und am leisesten:
-   erst was es ist, dann wovon es handelt, dann womit. */
 .plate__tags {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-1) var(--s-3);
-  margin-top: var(--s-1);
-  font-size: var(--t--2);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
 }
 
@@ -1079,50 +1069,51 @@ h4,
   position: relative;
 }
 
-/* Ein feiner Strich statt eines Punktes zwischen den Begriffen. */
 .plate__tags li + li::before {
   content: '';
   position: absolute;
   left: calc(var(--s-3) / -2);
-  top: 0.45em;
-  bottom: 0.45em;
+  top: 0.4em;
+  bottom: 0.4em;
   width: 1px;
   background: var(--rule-strong);
 }
 
-/* So gehe ich vor: vier Schritte in ihrer Reihenfolge. Hier sind
-   Nummern eine Aussage — die Schritte bauen aufeinander auf. */
+/* So gehe ich vor: eine nummerierte Folge. */
 .method {
   display: grid;
-  gap: var(--s-5);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  counter-reset: schritt;
+  gap: var(--s-5) var(--s-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
 }
 
 .method__step {
   display: grid;
   gap: var(--s-2);
   align-content: start;
-  padding-top: var(--s-4);
-  border-top: 1px solid var(--rule-strong);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--ink);
 }
 
 .method__num {
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
   color: var(--ink-dim);
   font-variant-numeric: tabular-nums;
 }
 
 .method__title {
   font-size: var(--t-1);
+  font-weight: 500;
 }
 
 .method__text {
-  font-size: var(--t--1);
+  font-size: var(--t--2);
   color: var(--ink-soft);
+  line-height: 1.55;
 }
 
-/* Werkzeuge: eine Aufzaehlung, keine Wertung. */
+/* Werkzeuge: eine Liste, keine Wertung. */
 .skills__list,
 .werkzeuge__liste {
   display: flex;
@@ -1132,44 +1123,35 @@ h4,
 
 .skill,
 .werkzeuge__liste li {
-  padding: 0.3em 0.8em;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-soft);
-  background: var(--surface);
+  padding: 0.3em 0.7em;
+  border: 1px solid var(--rule);
 }
 
 .werkzeuge {
   display: grid;
-  gap: var(--s-6);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--s-6) var(--s-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
 .werkzeuge__feld {
   display: grid;
   gap: var(--s-3);
   align-content: start;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--rule);
 }
 
 .werkzeuge__titel {
   font-size: var(--t--1);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--ink);
-}
-
-/* Seite ueber mich: der Standpunkt, darunter die Angaben. */
-.ueber-profil {
-  display: grid;
-  gap: var(--s-7);
-}
-
-.ueber-profil .lead {
-  max-width: 44ch;
-}
-
-.ueber-profil .facts {
-  margin-top: 0;
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: var(--font);
 }
 
 /* ── 9 Projektseite ───────────────────────────────────────────────── */
@@ -1179,15 +1161,15 @@ h4,
   flex-wrap: wrap;
   align-items: center;
   gap: var(--s-2);
-  padding-top: var(--s-6);
-  font-size: var(--t--1);
+  padding-top: var(--s-5);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
 }
 
 .breadcrumb a:hover {
   color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
 }
 
 .breadcrumb [aria-current='page'] {
@@ -1195,63 +1177,67 @@ h4,
 }
 
 .project-head {
-  padding-top: var(--s-6);
+  padding-top: var(--s-5);
   padding-bottom: var(--s-7);
 }
 
 .project-head__kicker {
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
   color: var(--ink-dim);
   margin-bottom: var(--s-3);
+  font-variant-numeric: tabular-nums;
 }
 
 .project-head__title {
+  font-family: var(--font-display);
   font-size: var(--t-6);
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-  max-width: 24ch;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  max-width: 20ch;
+  hyphens: manual;
 }
 
 .project-head__sub {
-  font-size: var(--t-2);
+  font-family: var(--font-display);
+  font-size: var(--t-3);
+  font-style: italic;
   color: var(--ink-soft);
-  letter-spacing: -0.01em;
-  max-width: 40ch;
+  max-width: 36ch;
   margin-top: var(--s-4);
+  line-height: 1.15;
 }
 
 .project-head__text {
   max-width: var(--measure);
   color: var(--ink-soft);
   margin-top: var(--s-5);
-  font-size: var(--t-1);
+  font-size: var(--t--1);
+  line-height: 1.6;
 }
 
 .project-head .tags {
   margin-top: var(--s-5);
 }
 
-/* Das Zitat aus dem Projekt: ein Satz, der die Arbeit traegt. */
+/* Das Zitat: gross gesetzt, eingerueckt, ohne Anfuehrungszeichen. */
 .pull {
   font-family: var(--font-display);
   font-size: var(--t-3);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-style: italic;
   line-height: 1.2;
-  max-width: 34ch;
+  max-width: 32ch;
   margin-top: var(--s-6);
   padding-left: var(--s-5);
-  border-left: 3px solid var(--bereich);
+  border-left: 1px solid var(--ink);
 }
 
-/* Die Eckdaten: nachschlagbar, nicht laut. Zwei Spalten, Begriff
-   links, Angabe rechts. */
+/* Die Eckdaten als Tabelle des Dokuments. */
 .facts {
-  display: grid;
-  gap: 0;
   margin-top: var(--s-7);
   max-width: 62rem;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--ink);
 }
 
 .facts__row {
@@ -1263,16 +1249,18 @@ h4,
 }
 
 .facts dt {
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
 }
 
 .facts dd {
-  font-size: var(--t--1);
+  font-size: var(--t--2);
   color: var(--ink-soft);
+  line-height: 1.5;
 }
 
-/* Knopf zu Spiel oder externer Seite */
 .play {
   display: flex;
   flex-wrap: wrap;
@@ -1288,58 +1276,70 @@ h4,
   padding: var(--s-3) var(--s-5);
   background: var(--ink);
   color: var(--paper);
-  border-radius: 999px;
-  font-size: var(--t--1);
-  font-weight: 500;
-  transition: background-color 0.2s var(--ease);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.04em;
+  transition:
+    background-color 0.2s var(--ease),
+    color 0.2s var(--ease);
 }
 
 .play__button:hover {
-  background: var(--marke);
-  color: #14150f;
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
 }
 
 .play__note {
-  font-size: var(--t--2);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
 }
 
-/* Die Kapitel. Der Abstand zwischen ihnen ist die Gliederung; links
-   steht, worum es geht, rechts die Abbildungen dazu. */
+/* Die Kapitel: links der Text, rechts die Abbildungen. */
 .steps {
   display: grid;
-  gap: clamp(var(--s-8), 9vw, var(--s-10));
-  padding-bottom: var(--s-9);
+  gap: clamp(var(--s-7), 7vw, var(--s-9));
+  padding-bottom: var(--s-8);
 }
 
 .step {
   display: grid;
-  gap: var(--s-6);
-  grid-template-columns: minmax(0, 27ch) minmax(0, 1fr);
+  gap: var(--s-5);
+  grid-template-columns: minmax(0, 26ch) minmax(0, 1fr);
   align-items: start;
 }
 
 .step__head {
   position: sticky;
-  top: 5.5rem;
+  top: 5rem;
   display: grid;
   gap: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--ink);
 }
 
 .step__title {
-  font-size: var(--t-3);
+  font-size: var(--t-1);
+  font-weight: 500;
+  font-family: var(--font);
+  letter-spacing: 0;
 }
 
 .step__text {
   color: var(--ink-soft);
-  font-size: var(--t--1);
+  font-size: var(--t--2);
+  line-height: 1.6;
 }
 
 .step__downloads {
   display: flex;
   flex-direction: column;
   gap: var(--s-2);
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.04em;
   margin-top: var(--s-2);
 }
 
@@ -1353,12 +1353,11 @@ h4,
   text-decoration-color: var(--ink);
 }
 
-/* Ein Kapitel ohne Text: nur eine Zeile als Zwischentitel, die
-   Abbildungen laufen darunter ueber die ganze Breite. */
 .step__banner {
   grid-column: 1 / -1;
+  font-family: var(--font-display);
   font-size: var(--t-3);
-  padding-bottom: var(--s-3);
+  padding-bottom: var(--s-2);
   border-bottom: 1px solid var(--ink);
 }
 
@@ -1366,33 +1365,24 @@ h4,
   grid-template-columns: minmax(0, 1fr);
 }
 
-/* Blaetterbares Heft und Aufbauskizze stehen ueber die ganze Breite —
-   sie sind selbst der Inhalt, nicht eine Abbildung dazu. */
 .step > .buch-slot,
 .step > .aufbau,
 .step > .prototyp {
   grid-column: 1 / -1;
 }
 
-/* Vorheriges und naechstes Projekt */
 .pager {
   display: grid;
   gap: var(--s-4);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  padding-block: var(--s-7);
+  padding-block: var(--s-6);
   border-top: 1px solid var(--ink);
 }
 
 .pager__link {
   display: grid;
   gap: var(--s-1);
-  padding: var(--s-4);
-  border-radius: var(--radius);
-  transition: background-color 0.18s var(--ease);
-}
-
-.pager__link:hover {
-  background: var(--paper-sunk);
+  padding: var(--s-3) 0;
 }
 
 .pager__link--next {
@@ -1400,18 +1390,24 @@ h4,
 }
 
 .pager__dir {
-  font-size: var(--t--2);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink-dim);
 }
 
 .pager__title {
   font-family: var(--font-display);
   font-size: var(--t-2);
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
-/* Projekt nicht gefunden */
+.pager__link:hover .pager__title {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
 .empty {
   display: grid;
   gap: var(--s-4);
@@ -1420,6 +1416,7 @@ h4,
 }
 
 .empty__title {
+  font-family: var(--font-display);
   font-size: var(--t-4);
 }
 
@@ -1430,14 +1427,15 @@ h4,
 
 /* ── 10 Bilder ────────────────────────────────────────────────────── */
 
+/* Das modulare Bildraster: gleich grosse Felder, schmale Stege. */
 .gallery {
   display: grid;
-  gap: var(--s-4);
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: var(--s-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
 }
 
 .gallery--wide {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
 }
 
 .figure {
@@ -1445,7 +1443,6 @@ h4,
   position: relative;
 }
 
-/* Breite Abbildungen und Videos sprengen das Raster der Galerie. */
 .figure--wide {
   grid-column: 1 / -1;
 }
@@ -1453,13 +1450,9 @@ h4,
 .figure__button {
   display: block;
   width: 100%;
-  border-radius: var(--radius-media);
-  overflow: hidden;
   background: var(--bild-grund);
 }
 
-/* Fotos fuellen ihren Platz, Plakate und Seiten werden eingepasst —
-   ein beschnittenes Plakat waere eine Falschaussage ueber die Arbeit. */
 .figure--fill .figure__button img {
   width: 100%;
   aspect-ratio: var(--tile-ratio);
@@ -1474,7 +1467,7 @@ h4,
 
 .figure--fit .figure__button img {
   width: auto;
-  max-height: 32rem;
+  max-height: 30rem;
   object-fit: contain;
 }
 
@@ -1483,13 +1476,12 @@ h4,
 }
 
 .figure__button:hover img {
-  opacity: 0.88;
+  opacity: 0.85;
 }
 
 .figure video,
 .figure iframe {
   width: 100%;
-  border-radius: var(--radius-media);
   background: var(--bezel);
 }
 
@@ -1498,12 +1490,10 @@ h4,
   border: 0;
 }
 
-/* Hochformat: Reels und Shorts stehen nebeneinander, sonst fuellt ein
-   Handyvideo die halbe Seite. */
 .embeds-hoch {
   display: grid;
-  gap: var(--s-4);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--s-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   grid-column: 1 / -1;
 }
 
@@ -1515,13 +1505,13 @@ h4,
   display: none;
 }
 
-/* Knopf unter einer gekuerzten Galerie. */
 .more {
   justify-self: start;
   margin-top: var(--s-4);
   padding: var(--s-2) var(--s-4);
-  border-radius: 999px;
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.05em;
   color: var(--ink);
   box-shadow: inset 0 0 0 1px var(--rule-strong);
   transition:
@@ -1534,16 +1524,14 @@ h4,
   color: var(--paper);
 }
 
-/* Reservierter Platz fuer ein Video, das noch fehlt. */
-.slot.is-empty,
-.slot:has(video[data-fehlt]) {
+.slot.is-empty {
   display: grid;
   place-items: center;
-  min-height: 12rem;
+  min-height: 11rem;
   border: 1px dashed var(--rule-strong);
-  border-radius: var(--radius-media);
   color: var(--ink-dim);
-  font-size: var(--t--1);
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
 }
 
 /* ── 11 Lightbox ──────────────────────────────────────────────────── */
@@ -1555,8 +1543,7 @@ h4,
   display: none;
   place-items: center;
   padding: clamp(var(--s-5), 6vw, var(--s-8)) var(--gutter);
-  background: color-mix(in oklab, #0a0b06 92%, transparent);
-  backdrop-filter: blur(6px);
+  background: color-mix(in oklab, #0d0d08 94%, transparent);
 }
 
 .lightbox.is-open {
@@ -1567,7 +1554,6 @@ h4,
   max-width: min(100%, 74rem);
   max-height: 80svh;
   object-fit: contain;
-  border-radius: var(--radius-media);
 }
 
 .lightbox__close,
@@ -1578,10 +1564,11 @@ h4,
   min-width: 2.75rem;
   min-height: 2.75rem;
   padding: var(--s-2) var(--s-3);
-  border-radius: 999px;
-  font-size: var(--t--1);
-  color: #f4f5ee;
-  background: rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: var(--t--2);
+  letter-spacing: 0.05em;
+  color: #f1f0e9;
+  box-shadow: inset 0 0 0 1px rgba(241, 240, 233, 0.3);
   transition:
     background-color 0.18s var(--ease),
     color 0.18s var(--ease);
@@ -1589,8 +1576,8 @@ h4,
 
 .lightbox__close:hover,
 .lightbox__nav:hover {
-  background: var(--marke);
-  color: #14150f;
+  background: #f1f0e9;
+  color: #15150f;
 }
 
 .lightbox__close {
@@ -1601,7 +1588,6 @@ h4,
 .lightbox__nav {
   top: 50%;
   transform: translateY(-50%);
-  font-size: var(--t-1);
 }
 
 .lightbox__nav[data-dir='prev'] {
@@ -1617,33 +1603,31 @@ h4,
   bottom: var(--s-5);
   left: 50%;
   transform: translateX(-50%);
-  font-size: var(--t--2);
-  color: #9a9c90;
+  font-family: var(--font-mono);
+  font-size: var(--t--3);
+  letter-spacing: 0.06em;
+  color: #93928a;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── 12 Zeiger ────────────────────────────────────────────────────── */
 
-/* Der eigene Zeiger bleibt ein Punkt, jetzt nur noch als weicher Ring —
-   er soll die Arbeit nicht uebertoenen. Der Systemzeiger bleibt
-   sichtbar, damit nichts verloren geht. */
 .cursor {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: -0.75rem 0 0 -0.75rem;
-  border: 1px solid color-mix(in oklab, var(--ink) 45%, transparent);
-  border-radius: 999px;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: -0.625rem 0 0 -0.625rem;
+  border: 1px solid color-mix(in oklab, var(--ink) 50%, transparent);
   pointer-events: none;
   transition: scale 0.18s var(--ease);
 }
 
 .cursor.is-down {
   scale: 0.7;
-  background: color-mix(in oklab, var(--marke) 70%, transparent);
-  border-color: transparent;
+  background: color-mix(in oklab, var(--ink) 35%, transparent);
 }
 
 /* ── 13 Responsive und Barrierefreiheit ───────────────────────────── */
@@ -1667,8 +1651,20 @@ h4,
     position: static;
   }
 
-  .facts__row {
-    grid-template-columns: minmax(7rem, 9rem) minmax(0, 1fr);
+  .section-head {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+  }
+
+  .section-head__note {
+    grid-column: 2;
+  }
+
+  .index__row {
+    grid-template-columns: 3.5rem minmax(0, 1fr) 6rem;
+  }
+
+  .index__bereich {
+    grid-column: 2 / -1;
   }
 }
 
@@ -1681,8 +1677,6 @@ h4,
     display: inline-flex;
   }
 
-  /* Die Navigation klappt unter den Kopf, sobald der Knopf sie
-     aufmacht. Ohne JavaScript bleibt sie sichtbar. */
   .site-header[data-nav='zu'] .site-nav {
     display: none;
   }
@@ -1699,31 +1693,17 @@ h4,
   .site-header[data-nav] .site-nav a {
     padding-block: var(--s-3);
     border-top: 1px solid var(--rule);
-    font-size: var(--t-0);
+    font-size: var(--t--2);
   }
 
-  .site-header[data-nav] .site-nav a[aria-current='page']::after {
-    inset: auto auto 0.6em -0.6em;
-    width: 3px;
-    height: 1.2em;
-    right: auto;
-  }
-
-  /* Auf dem Handy stehen die drei Angaben untereinander: Jahr,
-     Titel, Bereich. Nebeneinander waere der Bereichsname laenger
-     als der Platz, den er bekommen kann. */
   .index__row {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: var(--s-2);
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    row-gap: var(--s-1);
   }
 
+  .index__jahr,
   .index__bereich {
-    justify-self: start;
-    white-space: normal;
-  }
-
-  .hero__claim {
-    max-width: 18ch;
+    grid-column: 2;
   }
 
   .facts__row {
@@ -1734,10 +1714,12 @@ h4,
   .pager__link--next {
     text-align: left;
   }
+
+  .hero__wort {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
 }
 
-/* Weniger Bewegung: nichts bewegt sich von selbst. Die Zustaende
-   bleiben, nur die Uebergaenge fallen weg. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1747,20 +1729,20 @@ h4,
     transition-duration: 0.001ms !important;
   }
 
-  .plate__link:hover .plate__media img {
-    transform: none;
+  .plate__link:hover .plate__media img,
+  .area:hover .area__media img {
+    scale: 1;
   }
 }
 
-/* Drucken: die Seite soll als Dokument lesbar bleiben. */
 @media print {
   .site-header,
   .site-footer,
   .pager,
   .progress,
-  .wipe,
   .cursor,
-  .more {
+  .more,
+  body::before {
     display: none !important;
   }
 

@@ -261,60 +261,6 @@
         },
         {
           "type": "image",
-          "src": "/media/arbeit/handwerkerexperten/briefpapier-s01.webp",
-          "thumb": "/media/arbeit/handwerkerexperten/briefpapier-s01-thumb.webp",
-          "fromPdf": "briefpapier",
-          "page": 1,
-          "width": 1190,
-          "height": 1683
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/handwerkerexperten/briefpapier-s02.webp",
-          "thumb": "/media/arbeit/handwerkerexperten/briefpapier-s02-thumb.webp",
-          "fromPdf": "briefpapier",
-          "page": 2,
-          "width": 1190,
-          "height": 1683
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/handwerkerexperten/briefpapier-s03.webp",
-          "thumb": "/media/arbeit/handwerkerexperten/briefpapier-s03-thumb.webp",
-          "fromPdf": "briefpapier",
-          "page": 3,
-          "width": 1190,
-          "height": 1683
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/handwerkerexperten/briefpapier-s04.webp",
-          "thumb": "/media/arbeit/handwerkerexperten/briefpapier-s04-thumb.webp",
-          "fromPdf": "briefpapier",
-          "page": 4,
-          "width": 1190,
-          "height": 1683
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/handwerkerexperten/briefpapier-s05.webp",
-          "thumb": "/media/arbeit/handwerkerexperten/briefpapier-s05-thumb.webp",
-          "fromPdf": "briefpapier",
-          "page": 5,
-          "width": 1190,
-          "height": 1683
-        },
-        {
-          "type": "image",
-          "src": "/media/arbeit/handwerkerexperten/briefpapier-s06.webp",
-          "thumb": "/media/arbeit/handwerkerexperten/briefpapier-s06-thumb.webp",
-          "fromPdf": "briefpapier",
-          "page": 6,
-          "width": 1190,
-          "height": 1683
-        },
-        {
-          "type": "image",
           "src": "/media/arbeit/handwerkerexperten/flyer-digital-handwerker-s01.webp",
           "thumb": "/media/arbeit/handwerkerexperten/flyer-digital-handwerker-s01-thumb.webp",
           "fromPdf": "flyer-digital-handwerker",
@@ -352,12 +298,6 @@
       ],
       "videos": [],
       "docs": [
-        {
-          "type": "doc",
-          "src": "/media/arbeit/handwerkerexperten/briefpapier.pdf",
-          "label": "BRIEFPAPIER_.pdf",
-          "bytes": 335118
-        },
         {
           "type": "doc",
           "src": "/media/arbeit/handwerkerexperten/flyer-digital-handwerker.pdf",

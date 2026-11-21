@@ -36,14 +36,16 @@
     </header>
 
     <main id="inhalt">
-      <!-- Der Einstieg: der Satz, der die Arbeit erklaert, und gleich
-           darunter das Verzeichnis aller Arbeiten. -->
+      <!-- Der Einstieg: der Titel des Hefts, darunter der Satz, der die
+           Arbeit erklaert, und gleich danach das Verzeichnis. -->
       <section class="shell hero">
-        <p class="hero__name" data-fade>
+        <p class="hero__wort" aria-hidden="true" data-fade>Port<em>folio</em></p>
+        <p class="hero__name" data-fade="0.05">
           <strong data-slot="kuerzel">PREJNI</strong>
           <span data-slot="person"></span>
+          <span data-slot="jahrgang"></span>
         </p>
-        <h1 class="hero__claim" data-fade="0.05" data-slot="claim"></h1>
+        <h1 class="hero__claim" data-fade="0.08" data-slot="claim"></h1>
         <div class="hero__body">
           <div data-fade="0.12">
             <p class="hero__intro" data-slot="intro"></p>

@@ -88,14 +88,14 @@ export const projects = [
         text:
           'Jede Visitenkarte trägt vorne den Namen, hinten das Logo des jeweiligen Bereichs. ' +
           'Beim Übergeben ist sofort klar, aus welchem Haus jemand kommt. Dazu zwei Flyer für ' +
-          'die Akquise und zum Schluss die stillste Anwendung: ein Briefbogen, der die Dachform ' +
-          'nur noch andeutet.',
+          'die Akquise.',
+        // Der Briefbogen ist bewusst nicht Teil der Seite: Die Vorlagen
+        // tragen Daten des Auftraggebers, die nicht ins Netz gehoeren.
         files: [
           'visitenkarte',
           'flyer-digital-handwerker',
           'handwerkerexperten-flyerdruck',
           'verwalterexperten',
-          'briefpapier',
         ],
         layout: 'grid',
       },
